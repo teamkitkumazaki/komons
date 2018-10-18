@@ -1,0 +1,9 @@
+#contents {
+  width: calc(100vw - 80px);
+  margin-left: 80px;
+  min-height: 100vh; }
+  #contents .linkButton a {
+    display: block;
+    width: 300px;
+    height: 80px;
+    position: relative; }

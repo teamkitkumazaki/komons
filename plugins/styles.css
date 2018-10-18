@@ -1,0 +1,29 @@
+.wpcf7c-elm-step2 {}
+
+.wpcf7c-elm-step3 {}
+
+.wpcf7 .ajax-loader {}
+
+.wpcf7c-hide {
+  display: none;
+}
+
+.wpcf7c-force-hide {
+  display: none !important;
+}
+.wpcf7-display-none{
+  display: none;
+}
+
+.sent .sentout,
+.screen-reader-response {
+  display: none !important;
+}
+}
+.wpcf7c-conf {
+  background-color: #fff !important;
+  color: black;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}

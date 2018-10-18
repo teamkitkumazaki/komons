@@ -1,0 +1,757 @@
+@charset "UTF-8";
+
+#contact {
+	margin: 50px auto;
+	@media screen and (max-width: 1149px){
+		margin: 0 auto 50px;
+	}
+
+	.ttl_h3 {
+		@include waku;
+		padding: 5px 10px;
+		background: #f1f1f1;
+		font-size: 16px;
+		margin-bottom: 20px;
+		height: 30px;
+		line-height: 30px;
+	}
+
+	.txt_main {
+		@include waku;
+
+		.contact_lead {
+			font-size: 14px;
+			line-height: 1.8;
+			padding-bottom: 50px;
+			margin-bottom: 50px;
+			letter-spacing: 1px;
+			border-bottom: 1px solid #f1f1f1;
+
+			p {
+				margin-bottom: 10px;
+
+				span {
+					display: block;
+				}
+			}
+
+			#guideNav {
+				margin: 30px 0;
+
+				ul {
+					padding: 0 10px;
+					@include flexSet;
+					justify-content: flex-start;
+
+					li {
+						width: 32%;
+						margin-right: 2%;
+						padding: 5px 0;
+						margin-bottom: 5px;
+
+						&:nth-child(3n) {
+							margin-right: 0;
+						}
+
+						a {
+							display: block;
+							color: #fff;
+							font-size: 12px;
+							padding: 5px 0 5px 40px;
+							position: relative;
+							transition: opacity 0.5s;
+							background: #312c24;
+							border-radius: 5px;
+
+							&::before {
+								position: absolute;
+								width: 6px;
+								height: 6px;
+								content: "";
+								top: 0;
+								bottom: 0;
+								left: 10px;
+								margin: auto;
+								border-top: 2px solid #fff;
+								border-right: 2px solid #fff;
+								-webkit-transform: rotate(45deg);
+								-ms-transform: rotate(45deg);
+								transform: rotate(45deg);
+								-webkit-transition: all 0.5s;
+								-o-transition: all 0.5s;
+								transition: all 0.5s;
+							}
+
+							&:hover {
+								opacity: 0.7;
+							}
+						}
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 1150px) {
+			.contact_lead {
+				#guideNav {
+					ul {
+						li {
+							width: 49%;
+							margin-right: 2%;
+							padding: 5px 0;
+							margin-bottom: 5px;
+
+							&:nth-child(3n) {
+								margin-right: 2%;
+							}
+
+							&:nth-child(2n) {
+								margin-right: 0;
+							}
+
+							a {
+								padding: 8px 0 8px 40px;
+
+								&:hover {
+									opacity: 1;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 750px) {
+			.ttl_h3{
+				width: 100%;
+				margin: 0 auto 15px;
+				box-sizing: border-box;
+				padding: 0 10px;
+				height: 35px;
+				line-height: 35px;
+			}
+			.contact_lead {
+				padding-bottom: 30px;
+				margin-bottom: 40px;
+				#guideNav {
+					ul {
+						padding: 0 5px;
+						li {
+							width: 100%;
+							margin-right: 0;
+							padding: 5px 0;
+							margin-bottom: 5px;
+
+							&:nth-child(3n) {
+								margin-right: 0;
+							}
+
+							&:nth-child(2n) {
+								margin-right: 0;
+							}
+
+							a {
+								&:hover {
+									opacity: 1;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.wpcf7 {
+		@include waku;
+
+		.form_wrap {
+			margin-bottom: 50px;
+
+			.screen-reader-response {
+				margin-bottom: 50px;
+				color: red;
+				font-size: 16px;
+				font-weight: bold;
+
+				ul {
+					display: none;
+				}
+			}
+
+			.wpcf7-response-output {
+				text-align: center;
+				margin-top: -50px;
+				color: #312c24;
+				font-weight: bold;
+				border: 2px solid #222;
+				padding: 10px 0;
+				@media screen and (max-width: 750px) {
+					font-size: 10px;
+				}
+			}
+
+			label {
+				display: block;
+				font-size: 16px;
+				letter-spacing: 1px;
+				color: #111111;
+				margin-bottom: 20px;
+			}
+
+			span {
+				display: inline-block;
+				min-width: 50px;
+				position: relative;
+
+				&.wpcf7-not-valid-tip {
+					position: absolute !important;
+					width: 500px;
+					left: 0;
+					bottom: -30px;
+					margin: auto;
+					font-size: 10px;
+					color: red;
+					font-weight: bold;
+				}
+			}
+
+			select {
+				position: relative;
+				-webkit-appearance: none;
+				appearance: none;
+				height: 45px;
+				border: solid 1px #c0c0c0;
+				border-radius: 0;
+				font-size: 15px;
+				text-indent: 20px;
+				background: {
+					color: #fff;
+					image: url("../img/contact/selector_caret.png");
+					size: 10px;
+					repeat: no-repeat;
+					position: center right 15px;
+				}
+			}
+
+			textarea {
+				width: 1044px;
+				height: 160px;
+				border: solid 1px #c0c0c0;
+				box-sizing: border-box;
+				padding: 5px;
+				border-radius: 0;
+				-webkit-appearance: none;
+				box-shadow: none;
+			}
+
+			input {
+				transition: all 0.3s;
+			}
+
+			input[type="text"]:focus,
+			input[type="email"]:focus,
+			input[type="tel"]:focus,
+			select:focus,
+			textarea:focus {
+				outline: 0;
+				border-color: rgba($basicGreen, 0.8);
+			}
+
+			input[type="text"],
+			input[type="email"],
+			input[type="tel"] {
+				width: 520px;
+				box-sizing: border-box;
+				padding: 3px;
+				-webkit-appearance: none;
+				appearance: none;
+				border-radius: 0;
+				height: 46px;
+				line-height: 45px;
+				border: 0;
+				border-bottom: solid 1px #c0c0c0;
+				padding: 0 5px;
+				font-size: 16px;
+			}
+
+			input[name="birthyear"] {
+				width: 140px;
+				margin-right: 10px;
+				box-sizing: border-box;
+				padding: 5px;
+			}
+
+			input[name="birthmonth"],
+			input[name="birthday"] {
+				width: 60px;
+				margin-right: 10px;
+				box-sizing: border-box;
+				padding: 3px;
+			}
+
+			input[type="radio"] {
+				-webkit-appearance: none;
+				position: relative;
+				appearance: none;
+				border-radius: 50%;
+				margin-right: 13px;
+				width: 40px;
+				height: 40px;
+				box-sizing: border-box;
+				border: solid 1px #979797;
+
+				&:focus {
+					outline: 0;
+				}
+
+				&:checked {
+					&::before {
+						position: absolute;
+						content: "";
+						top: 0;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						margin: auto;
+						width: 20px;
+						height: 20px;
+						border-radius: 50%;
+						background: #000;
+					}
+				}
+			}
+
+			input[name="yourname"],
+			input[name="yourcareer"] {
+				margin-right: 40px;
+			}
+
+			.form01 {
+				width: 520px;
+			}
+
+			.form05 {
+				span.wpcf7-list-item {
+					margin: 0 !important;
+				}
+
+				span.wpcf7-list-item-label {
+					display: inline-block;
+					padding-right: 40px;
+					margin: 0 !important;
+					font-weight: normal !important;
+				}
+			}
+		}
+
+		.flex_wrap {
+			margin-bottom: 50px;
+			@include flexSet;
+
+			.form_left {
+				width: 520px;
+				margin-right: 40px;
+			}
+
+			.form_right {
+				width: 520px;
+			}
+		}
+
+		.confirm_wrap {
+			margin: 0 auto 100px;
+
+			.confirmButton {
+				display: block;
+				width: 300px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				letter-spacing: 0.2em;
+				font-size: 16px;
+				position: relative;
+				border: solid 2px #1b4e37;
+				transition: all 0.3s;
+				box-sizing: border-box;
+
+				input[type="submit"] {
+					-webkit-appearance: none;
+					appearance: none;
+					background: #fff;
+					width: 100%;
+					height: 44px;
+					font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+					font-size: 16px;
+					letter-spacing: 2.5px;
+					text-align: center;
+					color: #000000;
+					display: block;
+					color: #00381f;
+					border: none;
+					text-indent: -2em;
+					transition: all 0.5s;
+				}
+
+				&::before {
+					position: absolute;
+					width: 7px;
+					height: 7px;
+					content: "";
+					top: 0;
+					bottom: 3px;
+					right: 0;
+					left: 10em;
+					margin: auto;
+					border-top: 2px solid $basicGreen;
+					border-right: 2px solid $basicGreen;
+					transform: rotate(45deg);
+					transition: all 0.5s;
+				}
+
+				&:hover {
+					border: 0 solid rgba($basicGreen, 0.8);
+					background: rgba($basicGreen, 0.8);
+
+					input[type="submit"] {
+						height: 48px;
+						background: rgba($basicGreen, 0.8);
+						color: #fff;
+					}
+
+					&::before {
+						border-top: 2px solid #fff;
+						border-right: 2px solid #fff;
+					}
+				}
+			}
+
+			.send_wrap {
+				#backButton {
+					display: inline-block;
+					background: #fff;
+					width: 300px;
+					height: 50px;
+					line-height: 50px;
+					margin-right: 30px;
+					text-align: center;
+					letter-spacing: 0.05em;
+					font-size: 16px;
+					font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+					position: relative;
+					border: 1px solid #000;
+					transition: all 0.3s;
+					box-sizing: border-box;
+					-webkit-appearance: none;
+				}
+
+				input[type="submit"] {
+					display: inline-block;
+					background: #111;
+					color: #fff;
+					width: 300px;
+					height: 50px;
+					line-height: 50px;
+					text-align: center;
+					letter-spacing: 0.05em;
+					font-size: 16px;
+					font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+					position: relative;
+					border: 1px solid #000;
+					transition: all 0.3s;
+					box-sizing: border-box;
+					-webkit-appearance: none;
+				}
+			}
+		}
+		@media screen and (max-width:1150px) {
+			.form_wrap {
+				margin-bottom: 50px;
+
+				label {
+					font-size: 14px;
+					margin-bottom: 20px;
+				}
+
+				span {
+					min-width: 50px;
+				}
+
+				select {
+					font-size: 15px;
+				}
+
+				textarea {
+					width: 750px;
+				}
+
+				input[type="text"],
+				input[type="email"],
+				input[type="tel"] {
+					width: 350px;
+				}
+
+				input[name="birthyear"] {
+					width: 140px;
+				}
+
+				input[name="birthmonth"],
+				input[name="birthday"] {
+					width: 60px;
+				}
+
+				input[type="radio"] {
+					width: 40px;
+					height: 40px;
+
+					&:focus {
+						outline: 0;
+					}
+				}
+
+				input[name="yourname"],
+				input[name="yourcareer"] {
+					margin-right: 45px;
+				}
+
+				.form01 {
+					width: 520px;
+				}
+
+				.form14 {
+					width: 350px;
+				}
+
+				.send_wrap {
+					#backButton {
+						margin-right: 20px;
+						margin-bottom: 0;
+						font-size: 16px;
+					}
+
+					input[type="submit"] {
+						text-align: center;
+						letter-spacing: 0.05em;
+						font-size: 16px;
+					}
+				}
+			}
+
+			.flex_wrap {
+				margin-bottom: 50px;
+
+				.form_left {
+					width: 350px;
+					margin-right: 50px;
+				}
+
+				.form_right {
+					width: 350px;
+				}
+			}
+
+			.confirm_wrap {
+				margin: 80px auto 100px;
+
+				.confirmButton {
+					display: block;
+				}
+			}
+		}
+		@media screen and (max-width: 750px) {
+			.form_wrap {
+				margin-bottom: 30px;
+
+				label {
+					font-size: 4.3vw;
+					margin-bottom: 15px;
+				}
+
+				span {
+					display: inline-block;
+					min-width: 50px;
+				}
+
+				select {
+					position: relative;
+					-webkit-appearance: none;
+					appearance: none;
+					height: 45px;
+					border: solid 1px #c0c0c0;
+					border-radius: 0;
+					font-size: 15px;
+					text-indent: 20px;
+					background: {
+						color: #fff;
+						image: url("../img/contact/selector_caret.png");
+						size: 10px;
+						repeat: no-repeat;
+						position: center right 15px;
+					}
+				}
+
+				textarea {
+					width: 84vw;
+					height: 100px;
+					margin-bottom: 10px;
+
+					&[name="vision"] {
+						margin-bottom: 0;
+					}
+				}
+
+				input {
+					transition: all 0.3s;
+				}
+
+				input[type="text"]:focus,
+				input[type="email"]:focus,
+				input[type="tel"]:focus,
+				select:focus,
+				textarea:focus {
+					outline: 0;
+					border-color: rgba($basicGreen, 0.8);
+				}
+
+				input[type="text"],
+				input[type="email"],
+				input[type="tel"] {
+					width: 84vw;
+					padding: 3px;
+					height: 46px;
+					line-height: 45px;
+					border: 0;
+					border-bottom: solid 1px #c0c0c0;
+					font-size: 16px;
+				}
+
+				input[name="birthyear"] {
+					width: 90px;
+					margin-right: 5px;
+				}
+
+				input[name="birthmonth"],
+				input[name="birthday"] {
+					width: 50px;
+					margin-right: 5px;
+				}
+
+				input[type="radio"] {
+					-webkit-appearance: none;
+					position: relative;
+					appearance: none;
+					border-radius: 50%;
+					margin-right: 13px;
+					width: 40px;
+					height: 40px;
+					box-sizing: border-box;
+					border: solid 1px #979797;
+
+					&:focus {
+						outline: 0;
+					}
+
+					&:checked {
+						&::before {
+							position: absolute;
+							content: "";
+							top: 0;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							margin: auto;
+							width: 20px;
+							height: 20px;
+							border-radius: 50%;
+							background: #000;
+						}
+					}
+				}
+
+				input[name="yourname"],
+				input[name="yourcareer"] {
+					margin-right: 0;
+				}
+
+				.form01 {
+					width: 84vw;
+				}
+
+				.form14 {
+					width: 84vw;
+				}
+			}
+
+			.flex_wrap {
+				margin-bottom: 30px;
+				display: block;
+
+				.form_left {
+					width: 84vw;
+					margin-right: 0;
+					margin-bottom: 30px;
+				}
+
+				.form_right {
+					width: 84vw;
+				}
+			}
+
+			.confirm_wrap {
+				margin: 20px auto 60px;
+
+				.confirmButton {
+					display: block;
+					width: 84vw;
+					height: 70px;
+					line-height: 70px;
+					font-size: 3.6vw;
+
+					input[type="submit"] {
+						height: 64px;
+						-webkit-appearance: none;
+						appearance: none;
+						background: #fff;
+						font-size: 3.5vw;
+						letter-spacing: 1.5px;
+					}
+
+					&::before {
+						bottom: 0;
+						width: 12px;
+						height: 12px;
+						content: "";
+						bottom: 3px;
+						right: 0;
+						left: 9em;
+					}
+					&:hover{
+						input[type="submit"] {
+							height: 70px;
+						}
+					}
+				}
+
+				.send_wrap {
+					#backButton {
+						display: block;
+						width: 84vw;
+						height: 60px;
+						line-height: 60px;
+						margin-right: 0;
+						margin-bottom: 15px;
+						font-size: 3.6vw;
+					}
+
+					input[type="submit"] {
+						width: 84vw;
+						text-align: center;
+						height: 60px;
+						line-height: 60px;
+						letter-spacing: 0.05em;
+						font-size: 3.6vw;
+					}
+				}
+			}
+		}
+	}
+}

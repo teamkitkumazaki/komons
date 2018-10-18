@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+#itemList {
+	.main {
+		width: 100%;
+		height: 580px;
+		background: {
+			image: url("../img/product_list/main.jpg");
+			size: cover;
+			position: center center;
+		}
+	}
+
+	.list_section {
+		.section_ttl {
+			padding: 80px 0 60px;
+			position: relative;
+			#cat{
+				font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+				position: absolute;
+				top:20px;
+				bottom:0;
+				right:0;
+				margin: auto;
+				width: 120px;
+  			height: 20px;
+  			font-size: 14px;
+				background: none;
+				border: none;
+				-webkit-appearance: none;
+				@include bgSet;
+				background:{
+					image: url(../img/product_list/caret.png);
+					size: 14px;
+					position: center right;
+				}
+				&:focus{
+					outline: 0;
+				}
+				@media screen and (max-width: 750px){
+					top:0px;
+					bottom:0;
+					right:5%;
+					width: 120px;
+	  			height: 6vw;
+	  			font-size: 4vw;
+					background:{
+						size: 14px;
+					}
+				}
+			}
+		}
+
+
+	}
+
+	.gift_section {
+		background: linear-gradient(180deg, #fafafa 0%, #fafafa 70%,#fff 70%, #fff 100%);
+		padding-top: 90px;
+		margin-bottom: 150px;
+
+		.gift_ttl {
+			font-size: 32px;
+			color: #00381f;
+			text-align: center;
+			margin-bottom: 55px;
+		}
+
+		.img_wrap {
+			@include waku;
+			position: relative;
+			z-index: 20;
+
+			.txt_block {
+				position: absolute;
+				left: 60px;
+				bottom: 60px;
+				color: #fff;
+
+				h3 {
+					font-size: 16px;
+					letter-spacing: 1px;
+					margin-bottom: 5px;
+
+					span {
+						display: inline-block;
+						padding-right: 0.3em;
+						@include libre-r;
+						letter-spacing: 1px;
+						font-size: 64px;
+					}
+				}
+
+				h4 {
+					font-size: 18px;
+					font-weight: 400;
+					position: relative;
+				}
+			}
+
+			.link_block {
+				position: absolute;
+				right: -60px;
+				bottom: 60px;
+				text-align: center;
+
+				a {
+					width: 258px;
+					padding: 20px 0;
+					display: block;
+					font-size: 16px;
+					color: #223d31;
+					background-color: #ffffff;
+					border: solid 1px #133023;
+					position: relative;
+
+					.caret {
+						position: absolute;
+						width: 16px;
+						height: 16px;
+						border-radius: 100%;
+						background: #1b4e37;
+						top: 0;
+						bottom: 0;
+						right: 20px;
+						margin: auto;
+
+						&::before {
+							position: absolute;
+							width: 4px;
+							height: 4px;
+							content: "";
+							top: 0;
+							bottom: 0;
+							right: 3px;
+							left: 0;
+							margin: auto;
+							border-top: 2px solid #fff;
+							border-right: 2px solid #fff;
+							transform: rotate(45deg);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1150px) {
+	#itemList {
+		.main {
+			width: 100%;
+			height: 48vw;
+		}
+
+		.list_section {
+			.section_ttl {
+				padding: 60px 0;
+			}
+		}
+
+		.gift_section {
+			background: linear-gradient(180deg, #fafafa 0%, #fafafa 70%,#fff 70%, #fff 100%);
+			padding-top: 60px;
+			margin-bottom: 150px;
+
+			.img_wrap {
+				.txt_block {
+					position: absolute;
+					left: 3%;
+					bottom: 30px;
+					color: #fff;
+
+					h3 {
+						margin-bottom: 15px;
+
+						span {
+							font-size: 50px;
+						}
+					}
+
+					h4 {}
+				}
+
+				.link_block {
+					display: none;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 750px){
+	#itemList {
+		.main {
+			height: 54vw;
+		}
+
+		.list_section {
+			.section_ttl {
+				width: 100%;
+				padding: 20px 0;
+				border-bottom: 1px solid #f2f2f2;
+				font{display: none;}
+				h2{
+					width: 84%;
+					margin: 0 auto;
+				}
+			}
+		}
+
+		.gift_section {
+			padding-top: 50px;
+			margin-bottom: 80px;
+
+			.gift_ttl {
+				font-size: 6vw;
+				margin-bottom: 30px;
+			}
+
+			.img_wrap {
+				width: 84%;
+				height: 56vw;
+				position: relative;
+				background: {
+					image: url("../img/product_list/gift_sp.png");
+					position: center center;
+					size: cover;
+				}
+
+				.cover_link{
+					display: block;
+					position: absolute;
+					z-index: 10;
+					width: 100%;
+					height: 100%;
+					top:0;
+					bottom:0;
+					left:0;
+					right:0;
+					margin: auto;
+				}
+				img{display: none;}
+
+				.txt_block {
+					position: absolute;
+					left: 15px;
+					bottom: 15px;
+
+					h3 {
+						margin-bottom: 10px;
+
+						span {
+							padding-right: 0;
+							letter-spacing: 0.01em;
+							font-size: 9vw;
+						}
+
+						font {
+							display: none;
+						}
+					}
+
+					h4 {
+						font-size: 3.2vw;
+					}
+				}
+
+				.link_block {}
+			}
+		}
+	}
+}

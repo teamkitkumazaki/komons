@@ -1,0 +1,80 @@
+@charset "UTF-8";
+$basicGray: #f9f9f9;
+$basicBlack: #0B1A17;
+$basicGreen: #00381f;
+/* ----- Google Fonts ----- */
+@font-face {
+    font-family: 'libre-regular';
+		font-weight: 400;
+    src: url('../fonts/LibreBaskerville-Regular.eot'),url('../fonts/LibreBaskerville-Regular.woff') format('woff'),
+    url('../fonts/LibreBaskerville-Regular.ttf') format('truetype'),
+}
+@font-face {
+    font-family: 'libre-bold';
+		font-weight: 700;
+    src: url('../fonts/librebaskerville-bold-webfont.eot'),url('../fonts/librebaskerville-bold-webfont.woff') format('woff'),
+    url('../fonts/LibreBaskerville-Bold.ttf') format('truetype'),
+}
+@mixin libre-r {
+  font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+@mixin libre-b {
+  font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+@mixin waku{
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 1150px){
+    max-width: 750px;
+  }
+  @media screen and (max-width: 750px){
+    width: 84%;
+  }
+}
+@mixin flexSet {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+@mixin bgSet{
+  background:{
+    repeat: no-repeat;
+    position: center center;
+  }
+}
+/*デフォルトCSSのリセット*/
+@import 'reset.scss';
+/*ヘッダーのレイアウト*/
+@import 'header.scss';
+/*フッターのレイアウト*/
+@import 'footer.scss';
+/*ハンバーガーメニューのレイアウト*/
+@import 'hummenu.scss';
+/*共通レイアウト*/
+@import 'common.scss';
+/*トップページのレイアウト*/
+@import 'index.scss';
+/*ローディング部分のレイアウト*/
+@import 'loading.scss';
+/*商品一覧のレイアウト*/
+@import 'item_list.scss';
+/*商品詳細のレイアウト*/
+@import 'item_detail.scss';
+/*ジャーナルのレイアウト*/
+@import 'journal.scss';
+@import 'journal_detail.scss';
+/*コンセプトのレイアウト*/
+@import 'concept.scss';
+/*下層ページのレイアウト*/
+@import 'underpage.scss';
+/*コンタクトフォームのレイアウト*/
+@import 'contact.scss';
+/*よくある質問のレイアウト*/
+@import 'faq.scss';
+/*ギフトページのレイアウト*/
+@import 'gift.scss';
