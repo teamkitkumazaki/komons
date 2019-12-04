@@ -22,103 +22,43 @@
   }
 
   .main {
-    width: 100%;
-    height: 680px;
-    @include bgSet;
-    background-size: cover;
-    background-image: url("../img/gift/gift_main_l.jpg");
-  }
+    position: relative;
 
-  .lead {
-    padding: 120px 0 30px;
-
-    .flex_wrap {
-      padding: 30px 0;
-
-      ul {
-        @include waku;
-
-        li {
-          @include flexSet;
-          align-items: center;
-          margin-bottom: 80px;
-
-          .img_wrap {
-            width: 500px;
-            margin-left: 100px;
-          }
-
-          .txt_wrap {
-            width: calc(100% - 600px);
-            font-size: 18px;
-            line-height: 2;
-            font-weight: bold;
-
-            h3 {
-              font-size: 26px;
-              margin-bottom: 40px;
-            }
-
-            p {
-              span {
-                display: block;
-              }
-
-              &.mb {
-                margin-bottom: 40px;
-              }
-            }
-          }
-
-          &.reverse {
-            flex-direction: row-reverse;
-
-            .img_wrap {
-              margin-left: 0;
-              margin-right: 100px;
-            }
-          }
-        }
-      }
+    .main_img {
+      width: 100%;
+      height: 100vh;
+      @include bgSet;
+      background-size: cover;
+      background-image: url("../img/gift/gift_main_l.jpg");
     }
 
-    .view_more {
-      display: block;
-      width: 360px;
-      height: 64px;
-      line-height: 62px;
-      margin: 0 auto;
-      border: solid 1px #00381f;
-      text-align: center;
-      font-size: 16px;
-      font-weight: bold;
-      color: #00381f;
-      position: relative;
-      transition: all 0.5s;
+    .lead_txt {
+      position: absolute;
+      left: calc(50vw - 540px);
+      bottom: 60px;
+      color: #ffffff;
 
-      &::after {
-        display: block;
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        content: "";
-        top: 0;
-        bottom: 0;
-        right: 20px;
-        margin: auto;
-        border-top: 2px solid #aaa;
-        border-right: 2px solid #aaa;
-        transform: rotate(45deg);
-        transition: all 0.5s;
+      .main_ttl {
+        font-size: 24px;
+        margin-bottom: 15px;
       }
 
-      &:hover {
-        background: $basicGreen;
-        color: #fff;
+      p {
+        font-size: 16px;
+        line-height: 2.13;
 
-        &::after {
-          border-top: 2px solid #fff;
-          border-right: 2px solid #fff;
+        a {
+          color: #fff;
+          pointer-events: none;
+        }
+
+        span {
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        font {
+          display: block;
         }
       }
     }
@@ -126,7 +66,7 @@
 
   .product_list {
     @include waku;
-    padding: 120px 0 0;
+    padding: 90px 0 0;
 
     .product_ttl {
       padding: 15px 10px;
@@ -303,10 +243,11 @@
               &.detail_button {
                 color: $basicGreen;
 
-                .arrow{
+                .arrow {
                   display: block;
                   position: relative;
-                  padding-right: 0px;
+                  padding-right: 0;
+
                   &::after {
                     display: block;
                     content: "";
@@ -324,8 +265,9 @@
                     background-size: 24px;
                   }
                 }
-                &:hover{
-                  .arrow{
+
+                &:hover {
+                  .arrow {
                     &::after {
                       right: 10px;
                     }
@@ -348,6 +290,11 @@
           min-height: 220px;
         }
       }
+      &#set_full {
+        .txt_wrap {
+          min-height: 240px;
+        }
+      }
     }
   }
 
@@ -360,40 +307,27 @@
       @include waku;
 
       li {
-        width: 430px;
-        margin-right: 130px;
+        width: 290px;
+        margin-right: 100px;
 
         &:last-child {
           margin-right: 0;
         }
 
         .option_ttl {
-          text-align: center;
-          font-size: 30px;
-          text-align: center;
-          color: #00381f;
-          margin-bottom: 60px;
+          font-size: 24px;
+          text-align: left;
+          color: $basicGreen;
+          margin-bottom: 30px;
           position: relative;
-
-          &::after {
-            position: absolute;
-            display: block;
-            content: "";
-            width: 36px;
-            height: 2px;
-            bottom: -20px;
-            left: 0;
-            right: 0;
-            margin: auto;
-            background-color: #c2cfc9;
-          }
         }
 
         .img_wrap {
-          margin-bottom: 25px;
+          margin-bottom: 20px;
         }
 
         p {
+          text-align: left;
           font-size: 15px;
           line-height: 1.8;
           color: #00381f;
@@ -524,50 +458,56 @@
     }
 
     .main {
-      height: 400px;
-    }
+      .main_img {
+        height: 400px;
+      }
 
-    .lead {
-      padding: 80px 0 30px;
-
-      .flex_wrap {
+      .lead_txt {
+        text-align: center;
+        width: 100%;
+        @include waku;
+        position: static;
+        font-size: 16px;
+        line-height: 2.13;
+        color: $basicGreen;
         padding: 30px 0;
 
-        ul {
-          li {
-            margin-bottom: 60px;
+        .main_ttl {
+          font-size: 40px;
+          letter-spacing: 1.1px;
+          text-align: center;
+          color: $basicGreen;
+          position: relative;
+          margin-bottom: 100px;
 
-            .img_wrap {
-              width: 300px;
-              margin-left: 50px;
-            }
+          &::after {
+            display: block;
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -30px;
+            margin: auto;
+            width: 36px;
+            height: 2px;
+            background-color: #c2cfc9;
+          }
+        }
 
-            .txt_wrap {
-              width: calc(100% - 350px);
-              font-size: 16px;
+        p {
+          a {
+            color: $basicGreen;
+            text-decoration: underline;
+            pointer-events: all;
+          }
 
-              h3 {
-                font-size: 22px;
-                margin-bottom: 30px;
-              }
+          span {
+            display: block;
+            margin-bottom: 10px;
+          }
 
-              p {
-                span {
-                  display: block;
-                }
-
-                &.mb {
-                  margin-bottom: 30px;
-                }
-              }
-            }
-
-            &.reverse {
-              .img_wrap {
-                margin-left: 0;
-                margin-right: 50px;
-              }
-            }
+          font {
+            display: inline;
           }
         }
       }
@@ -575,7 +515,7 @@
 
     .product_list {
       @include waku;
-      padding: 100px 0 0;
+      padding: 40px 0 0;
 
       .product_ttl {
         font-size: 20px;
@@ -618,9 +558,20 @@
       padding: 80px 0;
 
       ul {
+        justify-content: flex-start;
+
         li {
           width: 48%;
           margin-right: 4%;
+          margin-bottom: 50px;
+
+          &:nth-child(even) {
+            margin-right: 0;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
 
           .img_wrap {
             margin-bottom: 25px;
@@ -654,9 +605,34 @@
     }
 
     .main {
-      width: 100%;
-      height: 75vw;
-      background-image: url("../img/gift/gift_main_sp.jpg");
+      .main_img {
+        width: 100%;
+        height: 75vw;
+        background-image: url("../img/gift/gift_main_sp.jpg");
+      }
+
+      .lead_txt {
+        text-align: left;
+        width: 100%;
+        @include waku;
+        position: static;
+        padding: 30px 0 0;
+        .main_ttl{
+          font-size: 7vw;
+          margin-bottom: 45px;
+          &::after{
+            bottom: -15px;
+          }
+        }
+        p{
+          font-size: 4.3vw;
+          line-height: 2.13;
+          span {
+            display: block;
+            margin-bottom: 10px;
+          }
+        }
+      }
     }
 
     .lead {
@@ -802,13 +778,14 @@
         }
 
         &#set_full {
+          min-height: auto;
           margin-bottom: 80px;
         }
       }
     }
 
     .gift_option {
-      padding: 60px 0 1px;
+      padding: 60px 0;
 
       ul {
         display: block;
@@ -833,6 +810,7 @@
           }
 
           p {
+            text-align: left;
             font-size: 15px;
           }
         }
