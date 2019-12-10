@@ -1,0 +1,112 @@
+.comp-flex-cart{
+  @include flexSet;
+  justify-content: space-between;
+  .cart_item{
+    width: 49%;
+    position: relative;
+    line-height: 1.8;
+    padding: 10px 0;
+    .button_wrap{
+      display: block;
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      pointer-events: none;
+      .title{
+        display: inline-block;
+        position: relative;
+        color: #fff;
+        font-size: 20px;
+        letter-spacing: 1.2px;
+        padding: 5px 0 5px 35px;
+        &::before{
+          display: block;
+          content: "";
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          left: 0px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          @include bgSet;
+          background-size: 25px;
+        }
+        &.cart_in{
+          &::before{
+            background-image: url(../img/cart_icon.png);
+          }
+        }
+        &.subscription{
+          &::before{
+            background-image: url(../img/common/icon_subscription.svg);
+            top: 2px;
+            background-size: 22px;
+          }
+        }
+      }
+      .sub_text{
+        display: block;
+        color: #fff;
+        font-size: 14px;
+        letter-spacing: 1.2px;
+      }
+    }
+    input[type="submit"]{
+      cursor: pointer;
+    }
+  }
+  &.no_flex{
+    display: block;
+    .cart_item{
+      width: 100%;
+      margin-bottom: 10px;
+      &:nth-last-of-type(1){
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px){
+  .comp-flex-cart{
+    display: block;
+    .cart_item{
+      width: 100%;
+      position: relative;
+      line-height: 1.6;
+      padding: 10px 0;
+      margin-bottom: 10px;
+      &:nth-last-of-type(1){
+        margin-bottom: 0;
+      }
+      .button_wrap{
+        .title{
+          display: inline-block;
+          position: relative;
+          color: #fff;
+          font-size: 18px;
+          letter-spacing: 1.2px;
+          padding: 5px 0 5px 30px;
+          &::before{
+            width: 26px;
+            height: 26px;
+            background-size: 22px;
+          }
+          &.subscription{
+            &::before{
+              top: 2px;
+              background-size: 20px;
+            }
+          }
+        }
+        .sub_text{
+          display: block;
+          color: #fff;
+          font-size: 12px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
