@@ -5808,7 +5808,6 @@ body.loaded #loading {
     #faq .toggle_menu .toggle_item .toggle_button {
       padding: 10px 15px;
       font-size: 14px;
-      margin-bottom: 5px;
       color: #00381f !important;
       border: 1px solid #00381f;
       display: block;
@@ -5868,50 +5867,49 @@ body.loaded #loading {
     margin-bottom: 50px;
     padding-bottom: 50px; }
     #faq #guideNav .item_wrap ul {
-      padding: 0 5px; }
+      padding: 0; }
       #faq #guideNav .item_wrap ul li {
         width: 100%;
         margin-right: 0;
-        padding: 5px 0;
-        margin-bottom: 5px; }
+        padding: 0;
+        margin-bottom: 6px; }
         #faq #guideNav .item_wrap ul li:nth-child(3n) {
           margin-right: 0; }
         #faq #guideNav .item_wrap ul li:nth-child(2n) {
           margin-right: 0; }
         #faq #guideNav .item_wrap ul li a {
-          height: 20px;
-          line-height: 20px;
-          font-size: 12px; }
+          font-size: 14px;
+          padding: 15px 10px;
+          letter-spacing: 1px; }
           #faq #guideNav .item_wrap ul li a:hover {
             opacity: 1; }
   #faq .toggle_menu {
     margin-bottom: 30px; }
     #faq .toggle_menu p {
       font-size: 12px !important; }
-    #faq .toggle_menu .toggle_item .toggle_button {
-      padding: 17px 20px 10px 10px;
-      font-size: 2.7vw;
-      margin-bottom: 5px;
-      height: 50px;
-      line-height: 1.5;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box; }
-      #faq .toggle_menu .toggle_item .toggle_button.row2 {
-        padding: 10px 20px 10px 10px; }
-      #faq .toggle_menu .toggle_item .toggle_button::before {
-        display: none;
-        content: "Q.";
-        padding-right: 0.1em; }
-      #faq .toggle_menu .toggle_item .toggle_button::after {
-        right: 8px;
-        margin: auto;
-        width: 10px;
-        height: 10px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 10px; }
-      #faq .toggle_menu .toggle_item .toggle_button.active::after {
-        background-size: 10px; } }
+    #faq .toggle_menu .toggle_item {
+      margin-bottom: 5px; }
+      #faq .toggle_menu .toggle_item .toggle_button {
+        padding: 15px 30px 15px 10px;
+        font-size: 13px;
+        letter-spacing: 1.5;
+        line-height: 1.5;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; }
+        #faq .toggle_menu .toggle_item .toggle_button::before {
+          display: none;
+          content: "Q.";
+          padding-right: 0.1em; }
+        #faq .toggle_menu .toggle_item .toggle_button::after {
+          right: 10px;
+          margin: auto;
+          width: 15px;
+          height: 15px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 15px; }
+        #faq .toggle_menu .toggle_item .toggle_button.active::after {
+          background-size: 10px; } }
 
 /*ギフトページのレイアウト*/
 #gift .gift_ttl {
@@ -6766,85 +6764,121 @@ body.loaded #loading {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between; }
-  .comp-flex-cart .cart_item {
-    width: 49%;
-    position: relative;
-    line-height: 1.8;
-    padding: 10px 0; }
-    .comp-flex-cart .cart_item .button_wrap {
-      display: block;
+  .comp-flex-cart .cart_box {
+    width: 49%; }
+    .comp-flex-cart .cart_box .cart_item {
       position: relative;
-      z-index: 10;
-      text-align: center;
-      pointer-events: none; }
-      .comp-flex-cart .cart_item .button_wrap .title {
-        display: inline-block;
-        position: relative;
-        color: #fff;
-        font-size: 20px;
-        letter-spacing: 1.2px;
-        padding: 5px 0 5px 35px; }
-        .comp-flex-cart .cart_item .button_wrap .title::before {
-          display: block;
-          content: "";
-          position: absolute;
-          width: 30px;
-          height: 30px;
-          left: 0px;
-          top: 0;
-          bottom: 0;
-          margin: auto;
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size: 25px; }
-        .comp-flex-cart .cart_item .button_wrap .title.cart_in::before {
-          background-image: url(../img/cart_icon.png); }
-        .comp-flex-cart .cart_item .button_wrap .title.subscription::before {
-          background-image: url(../img/common/icon_subscription.svg);
-          top: 2px;
-          background-size: 22px; }
-      .comp-flex-cart .cart_item .button_wrap .sub_text {
+      line-height: 1.8;
+      padding: 10px 0; }
+      .comp-flex-cart .cart_box .cart_item .button_wrap {
         display: block;
-        color: #fff;
-        font-size: 14px;
-        letter-spacing: 1.2px; }
-    .comp-flex-cart .cart_item input[type="submit"] {
-      cursor: pointer; }
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        pointer-events: none; }
+        .comp-flex-cart .cart_box .cart_item .button_wrap .title {
+          display: inline-block;
+          position: relative;
+          color: #fff;
+          font-size: 20px;
+          letter-spacing: 1.2px;
+          padding: 5px 0 5px 35px; }
+          .comp-flex-cart .cart_box .cart_item .button_wrap .title::before {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 0px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 25px; }
+          .comp-flex-cart .cart_box .cart_item .button_wrap .title.cart_in::before {
+            background-image: url(../img/cart_icon.png); }
+          .comp-flex-cart .cart_box .cart_item .button_wrap .title.subscription::before {
+            background-image: url(../img/common/icon_subscription.svg);
+            top: 2px;
+            background-size: 22px; }
+        .comp-flex-cart .cart_box .cart_item .button_wrap .sub_text {
+          display: block;
+          color: #fff;
+          font-size: 14px;
+          letter-spacing: 1.2px; }
+      .comp-flex-cart .cart_box .cart_item input[type="submit"] {
+        cursor: pointer; }
+    .comp-flex-cart .cart_box .about_subscription {
+      margin: 15px auto 0; }
+      .comp-flex-cart .cart_box .about_subscription a {
+        display: block;
+        font-size: 12px;
+        border-radius: 5px;
+        color: #222;
+        -webkit-transition: opacity .3s;
+        -o-transition: opacity .3s;
+        transition: opacity .3s;
+        text-align: center;
+        line-height: normal; }
+        .comp-flex-cart .cart_box .about_subscription a:hover {
+          opacity: 0.75; }
+        .comp-flex-cart .cart_box .about_subscription a span {
+          display: inline-block;
+          position: relative;
+          padding: 0px 30px 0px 20px;
+          font-size: 14x;
+          letter-spacing: 1px; }
+          .comp-flex-cart .cart_box .about_subscription a span::after {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            content: "";
+            top: 0;
+            bottom: 0;
+            right: 15px;
+            margin: auto;
+            border-top: 1px solid #222;
+            border-right: 1px solid #222;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }
   .comp-flex-cart.no_flex {
     display: block; }
-    .comp-flex-cart.no_flex .cart_item {
+    .comp-flex-cart.no_flex .cart_box {
       width: 100%;
-      margin-bottom: 10px; }
-      .comp-flex-cart.no_flex .cart_item:nth-last-of-type(1) {
+      margin-bottom: 5px; }
+      .comp-flex-cart.no_flex .cart_box:nth-last-of-type(1) {
         margin-bottom: 0; }
 
 @media screen and (max-width: 760px) {
   .comp-flex-cart {
     display: block; }
-    .comp-flex-cart .cart_item {
+    .comp-flex-cart .cart_box {
       width: 100%;
-      position: relative;
-      line-height: 1.6;
-      padding: 10px 0;
-      margin-bottom: 10px; }
-      .comp-flex-cart .cart_item:nth-last-of-type(1) {
+      margin-bottom: 5px; }
+      .comp-flex-cart .cart_box:nth-last-of-type(1) {
         margin-bottom: 0; }
-      .comp-flex-cart .cart_item .button_wrap .title {
-        display: inline-block;
+      .comp-flex-cart .cart_box .cart_item {
         position: relative;
-        color: #fff;
-        font-size: 18px;
-        letter-spacing: 1.2px;
-        padding: 5px 0 5px 30px; }
-        .comp-flex-cart .cart_item .button_wrap .title::before {
-          width: 26px;
-          height: 26px;
-          background-size: 22px; }
-        .comp-flex-cart .cart_item .button_wrap .title.subscription::before {
-          top: 2px;
-          background-size: 20px; }
-      .comp-flex-cart .cart_item .button_wrap .sub_text {
-        display: block;
-        color: #fff;
-        font-size: 12px;
-        letter-spacing: 1px; } }
+        line-height: 1.6;
+        padding: 10px 0; }
+        .comp-flex-cart .cart_box .cart_item .button_wrap .title {
+          display: inline-block;
+          position: relative;
+          color: #fff;
+          font-size: 18px;
+          letter-spacing: 1.2px;
+          padding: 5px 0 5px 30px; }
+          .comp-flex-cart .cart_box .cart_item .button_wrap .title::before {
+            width: 26px;
+            height: 26px;
+            background-size: 22px; }
+          .comp-flex-cart .cart_box .cart_item .button_wrap .title.subscription::before {
+            top: 2px;
+            background-size: 20px; }
+        .comp-flex-cart .cart_box .cart_item .button_wrap .sub_text {
+          display: block;
+          color: #fff;
+          font-size: 11px;
+          letter-spacing: 1px; } }

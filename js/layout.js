@@ -474,26 +474,15 @@ $(function() {
         toggleButton[e].addClass('active');
         var tagetHeight = toggleContents[e].height();
         toggleItem[e].css({
-          'height': 90 + tagetHeight + 'px'
+          'height': 110 + tagetHeight + 'px'
         });
         toggleState[e] = 1;
       } else {
         toggleButton[e].removeClass('active');
-        var w = $(window).width();
-        if (w > 750) {
+        var toggleHeight = toggleButton[e].outerHeight();
           toggleItem[e].css({
-            'height': 50 + 'px'
+            'height': toggleHeight + 4 + 'px'
           });
-        } else if (toggleButton[e].parent('div').hasClass('row2')) {
-          toggleItem[e].css({
-            'height': 70 + 'px'
-          });
-        } else {
-          toggleItem[e].css({
-            'height': 50 + 'px'
-          });
-        }
-
         toggleState[e] = 0;
       }
     }
@@ -503,6 +492,7 @@ $(function() {
         toggleItem[index] = $(this);
         toggleButton[index] = $(this).find('.toggle_button');
         toggleContents[index] = $(this).find('.toggle_contents');
+        $(this).css({'height': toggleButton[index].outerHeight() + 4 + 'px'});
         toggleState[index] = -1;
         toggleButton[index].on({
           'click': function() {

@@ -47,6 +47,12 @@ $basicGreen: #00381f;
     position: center center;
   }
 }
+@mixin hover{
+  transition: opacity .3s;
+  &:hover{
+    opacity: 0.75;
+  }
+}
 /*デフォルトCSSのリセット*/
 @import 'reset.scss';
 /*ヘッダーのレイアウト*/

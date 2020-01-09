@@ -39,16 +39,29 @@ $(function() {
       <{if $product.soldout_flg == false}>
       <{if $sid_name == "refill"}>
       <div class="cart_wrap">
-        <div class="cart_flex">
-          <div class="button_item">
-            <span class="txt normal">通常購入する</span>
-            <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
-          </div>
-          <div id="subscriptionButton02" class="button_item">
-            <span class="txt subscription">定期購入する</span>
-            <a class="product_cart_btn colorme-repeat-checkout" href="https://colorme-repeat.jp/redirect/6d6f9f03/1624" data-user-slug="6d6f9f03" data-course-id="1624">購入する</a>
-          </div>
-        </div><!-- cart_flex -->
+        <div class="comp-flex-cart">
+          <div class="cart_box">
+            <div class="cart_item">
+              <span class="button_wrap">
+                <span class="title cart_in">通常購入する</span>
+                <span class="sub_text">5,000円以上のお買い上げで送料無料</span>
+              </span>
+              <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
+            </div>
+          </div><!-- cart_box -->
+          <div class="cart_box">
+            <div id="subscriptionButton" class="cart_item">
+              <span class="button_wrap">
+                <span class="title subscription">定期購入する</span>
+                <span class="sub_text">定価より15％OFF&amp;送料無料</span>
+              </span>
+              <a class="product_cart_btn colorme-repeat-checkout" href="https://colorme-repeat.jp/redirect/6d6f9f03/1624" data-user-slug="6d6f9f03" data-course-id="1624">購入する</a>
+            </div>
+            <div class="about_subscription">
+              <a href="/?mode=f2#fqSubscription"><span>定期購入についての詳細はこちら</span></a>
+            </div>
+          </div><!-- cart_box -->
+        </div><!-- comp-flex-cart -->
       </div>
       <{else}>
       <div class="cart_wrap">
@@ -95,12 +108,26 @@ $(function() {
       <{if $product.soldout_flg == false}>
       <{if $sid_name == "refill"}>
       <div class="cart_wrap">
-        <span class="txt normal">通常購入する</span>
-        <input class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる" onclick="gtag_report_conversion(); return false;">
-      </div>
-      <div id="subscriptionButton" class="cart_wrap">
-        <span class="txt subscription">定期購入する</span>
-        <a class="product_cart_btn colorme-repeat-checkout" href="https://colorme-repeat.jp/redirect/6d6f9f03/1624" data-user-slug="6d6f9f03" data-course-id="1624">購入する</a>
+        <div class="comp-flex-cart no_flex">
+          <div class="cart_box">
+          <div class="cart_item">
+            <span class="button_wrap">
+              <span class="title cart_in">通常購入する</span>
+              <span class="sub_text">5,000円以上のお買い上げで送料無料</span>
+            </span>
+            <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
+          </div>
+        </div><!-- cart_box -->
+        <div class="cart_box">
+          <div id="subscriptionButton02" class="cart_item">
+            <span class="button_wrap">
+              <span class="title subscription">定期購入する</span>
+              <span class="sub_text">定価より15％OFF&amp;送料無料</span>
+            </span>
+            <a class="product_cart_btn colorme-repeat-checkout" href="https://colorme-repeat.jp/redirect/6d6f9f03/1624" data-user-slug="6d6f9f03" data-course-id="1624">購入する</a>
+          </div>
+        </div><!-- cart_box -->
+        </div><!-- comp-flex-cart -->
       </div>
       <{else}>
       <div class="cart_wrap">
