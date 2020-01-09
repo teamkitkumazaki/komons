@@ -6,6 +6,7 @@
 			<select name="cat" id="cat" class="postform">
 				<option class="option-1" value="?mode=cate&csid=0&cbid=2421809">全ての商品</option>
 				<option class="option-1" value="?mode=cate&cbid=2421809&csid=10">発売中の商品</option>
+        <option class="option-1" value="?mode=cate&cbid=2421809&csid=11">詰め替え用商品</option>
 				<option class="option-1" value="?mode=cate&cbid=2421809&csid=9">Upcoming商品</option>
 			</select>
     </div>

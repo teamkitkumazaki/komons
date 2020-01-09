@@ -5,19 +5,25 @@
   <div class="variation_wrap">
     <a href="javascript:void(0)" class="display_wrap">
       <span class="title">サイズ:</span>
-      <span class="current_page">詰め替え版:500ml</span>
+      <span class="current_page">通常版(280ml)</span>
     </a>
     <div class="display_toggle">
       <a href="/?pid=132301791">
         <span class="wrap">
-          <span class="title">通常版(500ml)</span>
-          <span class="desc">&yen;3,000</span>
+          <span class="title">通常版(280ml)</span>
+          <span class="desc">&yen;2,500</span>
         </span>
       </a>
-      <a class="current" href="#aaaa">
+      <a href="/?pid=134615755">
+        <span class="wrap">
+          <span class="title">ミニサイズ版(30ml)</span>
+          <span class="desc">&yen;480</span>
+        </span>
+      </a>
+      <a class="current" href="/?pid=145236871">
         <span class="wrap">
           <span class="title">詰め替え版(500ml)</span>
-          <span>&yen;1,700</span>
+          <span>&yen;3,000</span>
         </span>
       </a>
     </div>
@@ -121,12 +127,15 @@
   (function(d,s,id){var js,sjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://colorme-repeat.jp/dist/checkout.js";sjs.parentNode.insertBefore(js,sjs);}(document,'script','colorme-repeat-checkout-script'));
 </script>
 <script>
-  function insertConversionTag(target){
-    var itemId = '1624'
-    var subHref = 'https://colorme-repeat.jp/redirect/6d6f9f03/' + itemId;
-    target.attr('href', subHref);
-    target.attr('data-course-id', itemId);
-  }
-
-  insertConversionTag('#subscriptionButton');
+  $(function(){
+    function insertConversionTag(target){
+      var targetObj = target.find('a');
+      var itemId = '1624'
+      var subHref = 'https://colorme-repeat.jp/redirect/6d6f9f03/' + itemId;
+      targetObj.attr('href', subHref);
+      targetObj.attr('data-course-id', itemId);
+    }
+    insertConversionTag($('#subscriptionButton'));
+    insertConversionTag($('#subscriptionButton02'));
+  });
 </script>
