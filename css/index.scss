@@ -484,26 +484,72 @@
 		}
 
 		&#topGift {
-			padding-top: 130px;
+			padding-top: 0;
+
+			.section_ttl{
+				padding-top: 100px;
+			}
 
 			.img_wrap {
+				position: relative;
+				transition: opacity 1s;
+				&:hover{
+					opacity: 0.8;
+				}
+				.cover_link{
+					display: block;
+					position: absolute;
+					z-index: 10;
+					top:0;
+					bottom:0;
+					left:0;
+					right:0;
+					margin: auto;
+					span.caret {
+	          position: absolute;
+	          width: 30px;
+	          height: 30px;
+	          border-radius: 100%;
+	          background: rgba(255,255,255,0.3);
+	          top: 0;
+	          bottom: 0;
+	          right: 25px;
+	          margin: auto;
+	          transition: all 0.5s;
+
+	          &::before {
+	            position: absolute;
+	            width: 6px;
+	            height: 6px;
+	            content: "";
+	            top: 0;
+	            bottom: 0;
+	            right: 3px;
+	            left: 0;
+	            margin: auto;
+	            border-top: 2px solid #fff;
+	            border-right: 2px solid #fff;
+	            transform: rotate(45deg);
+	            transition: all 0.5s;
+	          }
+	        }
+				}
 				.txt_block {
 					position: absolute;
-					left: 60px;
-					bottom: 60px;
+					left: 70px;
+					bottom: 70px;
 					color: #fff;
 
 					h3 {
-						font-size: 16px;
-						letter-spacing: 1px;
-						margin-bottom: 5px;
+						margin-bottom: 35px;
+						font-size: 35px;
+						letter-spacing: 1.5px;
+						color: #ffffff;
+						font-weight: bold;
 
 						span {
 							display: inline-block;
-							padding-right: 0.3em;
-							@include libre-r;
-							letter-spacing: 1px;
-							font-size: 64px;
+							padding-right: 0.1em;
 						}
 					}
 
@@ -511,7 +557,6 @@
 						font-size: 18px;
 						font-weight: 400;
 						position: relative;
-						padding-left: 0.2em;
 					}
 				}
 
@@ -712,6 +757,25 @@
 				width: 20%;
 				padding: 1px;
 				box-sizing: border-box;
+				&:nth-child(n+6){
+					display: none;
+				}
+				a{
+					display: block;
+					position: relative;
+					height: 216px;
+					img{
+						position: absolute;
+						width: auto;
+						height: 100%;
+						max-width: 150%;
+						top:0;
+						bottom:0;
+						left:0;
+						right:0;
+						margin: auto;
+					}
+				}
 			}
 		}
 	}
@@ -936,18 +1000,18 @@
 			}
 
 			&#topGift {
-				padding-top: 130px;
 
 				.img_wrap {
 					.txt_block {
 						position: absolute;
-						left: 3%;
-						bottom: 30px;
+						left: 5%;
+						bottom: 40px;
 						color: #fff;
 
 						h3 {
+							margin-bottom: 25px;
+
 							span {
-								font-size: 50px;
 							}
 						}
 
@@ -1029,8 +1093,11 @@
 					padding: 0 1px;
 					box-sizing: border-box;
 
-					&:last-child {
+					&:nth-child(n+5) {
 						display: none;
+					}
+					a{
+						height: 25vw;
 					}
 				}
 			}
@@ -1284,6 +1351,8 @@
 		}
 
 		.bn_section {
+			max-width: 100%;
+			width: 100%;
 			.img_wrap {
 				position: relative;
 
@@ -1293,39 +1362,45 @@
 			}
 
 			&#topGift {
-				padding-top: 60px;
+				padding-top: 0px;
+
+				.section_ttl{
+					padding: 50px 0 30px;
+				}
+
 
 				.img_wrap {
 					width: 100%;
-					height: 56vw;
+					height: 60vw;
 					position: relative;
 					background-image: url("../img/gift_sp.png");
 					background-position: center center;
 					background-size: cover;
 
-					a {
-						position: absolute;
-						top: 0;
-						bottom: 0;
-						left: 0;
-						right: 0;
-						margin: auto;
-						z-index: 20;
+					.cover_link{
+						span.caret {
+		          width: 26px;
+		          height: 26px;
+		          right: 10px;
+		        }
 					}
 
 					.txt_block {
 						position: absolute;
-						left: 15px;
-						bottom: 15px;
+						left: 25px;
+						bottom: 25px;
 
 						h3 {
+							font-size: 5.5vw;
+							margin-bottom: 15px;
+
 							span {
+								padding-right: 0;
 								letter-spacing: 0.01em;
-								font-size: 9vw;
 							}
 
 							font {
-								font-size: 4vw;
+								display: none;
 							}
 						}
 
@@ -1422,7 +1497,14 @@
 				margin: 25px auto 0;
 
 				li {
+					width: calc(100% / 3);
 					padding: 0;
+					&:nth-child(n+5){
+						display: block;
+					}
+					a{
+						height: 33vw;
+					}
 				}
 			}
 		}

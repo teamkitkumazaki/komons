@@ -235,7 +235,7 @@ body.fixed-header {
 		height: 88px;
 		border-top: 2px solid $basicGreen;
 		background: #fff;
-		box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.06);
+		box-shadow: none !important;
 		.header_inner{
 			position: relative;
 			width: 100%;
@@ -271,6 +271,9 @@ body.fixed-header {
 			#hLogo{
 				opacity: 1 !important;
 				pointer-events: all !important;
+				a{
+					background-image: url(../img/h_logo.png) !important;
+				}
 			}
 		}
 	}
@@ -309,6 +312,9 @@ body.fixed-header {
 				#hLogo{
 					opacity: 1 !important;
 					pointer-events: all !important;
+					a{
+						background-image: url(../img/h_logo.png) !important;
+					}
 				}
 			}
 		}

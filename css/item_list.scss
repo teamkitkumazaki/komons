@@ -55,9 +55,13 @@
 	}
 
 	.gift_section {
-		background: linear-gradient(180deg, #fafafa 0%, #fafafa 70%,#fff 70%, #fff 100%);
-		padding-top: 90px;
+		background: linear-gradient(180deg, #f6f6f6 0%, #f6f6f6 70%,#fff 70%, #fff 100%);
+		padding-top: 0px;
 		margin-bottom: 150px;
+
+		.section_ttl{
+			padding: 80px 0 60px;
+		}
 
 		.gift_ttl {
 			font-size: 32px;
@@ -69,25 +73,69 @@
 		.img_wrap {
 			@include waku;
 			position: relative;
-			z-index: 20;
+			z-index: 10;
+			transition: opacity 1s;
+
+			&:hover{
+				opacity: 0.8;
+			}
+
+
+			.cover_link{
+				display: block;
+				position: absolute;
+				z-index: 20;
+				top:0;
+				bottom:0;
+				left:0;
+				right:0;
+				margin: auto;
+				span.caret {
+					position: absolute;
+					width: 30px;
+					height: 30px;
+					border-radius: 100%;
+					background: rgba(255,255,255,0.3);
+					top: 0;
+					bottom: 0;
+					right: 25px;
+					margin: auto;
+					transition: all 0.5s;
+
+					&::before {
+						position: absolute;
+						width: 6px;
+						height: 6px;
+						content: "";
+						top: 0;
+						bottom: 0;
+						right: 3px;
+						left: 0;
+						margin: auto;
+						border-top: 2px solid #fff;
+						border-right: 2px solid #fff;
+						transform: rotate(45deg);
+						transition: all 0.5s;
+					}
+				}
+			}
 
 			.txt_block {
 				position: absolute;
-				left: 60px;
-				bottom: 60px;
+				left: 70px;
+				bottom: 70px;
 				color: #fff;
 
 				h3 {
-					font-size: 16px;
-					letter-spacing: 1px;
-					margin-bottom: 5px;
+					margin-bottom: 35px;
+					font-size: 35px;
+					letter-spacing: 1.5px;
+					color: #ffffff;
+					font-weight: bold;
 
 					span {
 						display: inline-block;
-						padding-right: 0.3em;
-						@include libre-r;
-						letter-spacing: 1px;
-						font-size: 64px;
+						padding-right: 0.1em;
 					}
 				}
 
@@ -160,21 +208,19 @@
 
 		.gift_section {
 			background: linear-gradient(180deg, #fafafa 0%, #fafafa 70%,#fff 70%, #fff 100%);
-			padding-top: 60px;
 			margin-bottom: 150px;
 
 			.img_wrap {
 				.txt_block {
 					position: absolute;
-					left: 3%;
-					bottom: 30px;
+					left: 5%;
+					bottom: 40px;
 					color: #fff;
 
 					h3 {
-						margin-bottom: 15px;
+						margin-bottom: 25px;
 
 						span {
-							font-size: 50px;
 						}
 					}
 
@@ -208,8 +254,11 @@
 		}
 
 		.gift_section {
-			padding-top: 50px;
-			margin-bottom: 80px;
+			margin-bottom: 60px;
+
+			.section_ttl{
+				padding: 50px 0 30px;
+			}
 
 			.gift_ttl {
 				font-size: 6vw;
@@ -217,41 +266,37 @@
 			}
 
 			.img_wrap {
-				width: 84%;
-				height: 56vw;
+				width: 100%;
+				height: 60vw;
 				position: relative;
 				background: {
-					image: url("../img/product_list/gift_sp.png");
+					image: url("../img/product_list/gift_sp.jpg");
 					position: center center;
 					size: cover;
 				}
 
 				.cover_link{
-					display: block;
-					position: absolute;
-					z-index: 10;
-					width: 100%;
-					height: 100%;
-					top:0;
-					bottom:0;
-					left:0;
-					right:0;
-					margin: auto;
+					span.caret {
+						width: 26px;
+						height: 26px;
+						right: 10px;
+					}
 				}
+
 				img{display: none;}
 
 				.txt_block {
 					position: absolute;
-					left: 15px;
-					bottom: 15px;
+					left: 25px;
+					bottom: 25px;
 
 					h3 {
-						margin-bottom: 10px;
+						font-size: 5.5vw;
+						margin-bottom: 15px;
 
 						span {
 							padding-right: 0;
 							letter-spacing: 0.01em;
-							font-size: 9vw;
 						}
 
 						font {
