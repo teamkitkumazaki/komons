@@ -1,9 +1,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg">
 <link href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg" rel="apple-touch-icon" sizes="200x200">
-<link rel="stylesheet" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/css/style.css?ver191218">
+<link rel="stylesheet" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/css/style.css?ver191220">
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500" rel="stylesheet">
-<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/layout.js?ver191218" charset="UTF-8"></script>
+<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/layout.min.js?ver191220" charset="UTF-8"></script>
 <script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/instafeed.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120930116-1"></script>
@@ -62,3 +62,12 @@ src="https://www.facebook.com/tr?id=643672039115143&ev=PageView
 </noscript>
 <!-- End Facebook Pixel Code -->
 </script>
+<!-- Begin Mieruca Embed Code -->
+<script type="text/javascript" id="mierucajs">
+window.__fid = window.__fid || [];__fid.push([395289376]);
+(function() {
+function mieruca(){if(typeof window.__fjsld != "undefined") return; window.__fjsld = 1; var fjs = document.createElement('script'); fjs.type = 'text/javascript'; fjs.async = true; fjs.id = "fjssync"; var timestamp = new Date;fjs.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://hm.mieru-ca.com/service/js/mieruca-hm.js?v='+ timestamp.getTime(); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(fjs, x); };
+setTimeout(mieruca, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent("onload", mieruca) : window.addEventListener("load", mieruca, false)) : mieruca();
+})();
+</script>
+<!-- End Mieruca Embed Code -->

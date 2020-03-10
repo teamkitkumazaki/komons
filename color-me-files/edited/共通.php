@@ -63,7 +63,7 @@
     </div>
     <div class="footer_sns">
       <div class="img_wrap">
-        <a href="<{$home_url}>"><img src="hhttps://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/footer_logo_v4o9g8.png" alt="komons"></a>
+        <a href="<{$home_url}>"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/footer_logo_v4o9g8.png" alt="komons"></a>
       </div>
       <ul>
         <li><a href="https://business.facebook.com/komons.japan/" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/tw_icon_t4kisb.png"></a></li>
