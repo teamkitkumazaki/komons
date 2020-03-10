@@ -1295,15 +1295,15 @@ body {
       #index #main #slideShow li img {
         opacity: 0; }
       #index #main #slideShow li.slide0 {
-        background-image: url(../img/main_slide02.jpg); }
+        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide02_eygdqi.jpg); }
         @media screen and (max-width: 750px) {
           #index #main #slideShow li.slide0 {
-            background-image: url(../img/main_slide02_sp.jpg); } }
+            background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide02_sp_bphwgj.jpg); } }
       #index #main #slideShow li.slide1 {
-        background-image: url(../img/main_slide01.jpg); }
+        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_piirph.jpg); }
         @media screen and (max-width: 750px) {
           #index #main #slideShow li.slide1 {
-            background-image: url(../img/main_slide01_sp.jpg); } }
+            background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_sp_dzdwrd.jpg); } }
   #index #main #sliderBtn {
     position: absolute;
     top: 0;
@@ -1496,7 +1496,7 @@ body {
             margin: auto;
             background-repeat: no-repeat;
             background-position: center center;
-            background-image: url("../img/arrow.png");
+            background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/arrow_vuojtf.png");
             background-size: 25px;
             background-position: center center; }
           #index .product_section .txt_wrapper .txt_block .link_button a:hover span {
@@ -1517,37 +1517,37 @@ body {
       #index .product_section .txt_wrapper.reverse .txt_block {
         text-align: right; }
   #index .product_section#product01 .productBg {
-    background-image: url("../img/product01.jpg"); }
+    background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product01_wujmgk.jpg"); }
     @media screen and (max-width: 750px) {
       #index .product_section#product01 .productBg {
-        background-image: url("../img/product01_sp.jpg"); } }
+        background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product01_sp_db9icl.jpg"); } }
   #index .product_section#product02 .productBg {
-    background-image: url("../img/product02.jpg"); }
+    background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product02_lcfen8.jpg"); }
     @media screen and (max-width: 750px) {
       #index .product_section#product02 .productBg {
-        background-image: url("../img/product02_sp.jpg"); } }
+        background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product02_sp_ozdi2k.jpg"); } }
   #index .product_section#product03 .productBg {
-    background-image: url("../img/product03.jpg"); }
+    background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product03_gtmkyr.jpg"); }
     @media screen and (max-width: 750px) {
       #index .product_section#product03 .productBg {
-        background-image: url("../img/product03_sp.jpg"); } }
+        background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product03_sp_pgvzg5.jpg"); } }
   #index .product_section#product04 .productBg {
-    background-image: url("../img/product04.jpg"); }
+    background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product04_d7v3nw.jpg"); }
     @media screen and (max-width: 750px) {
       #index .product_section#product04 .productBg {
-        background-image: url("../img/product04_sp.jpg"); } }
+        background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product04_sp_cc9jbc.jpg"); } }
   #index .product_section#product05 .productBg {
-    background-image: url("../img/product05.jpg"); }
+    background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product05_khhgxv.jpg"); }
     @media screen and (max-width: 750px) {
       #index .product_section#product05 .productBg {
-        background-image: url("../img/product05_sp.jpg"); } }
+        background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product05_sp_bmzwou.jpg"); } }
   #index .product_section#product06 {
     margin-bottom: 0; }
     #index .product_section#product06 .productBg {
-      background-image: url("../img/product06.jpg"); }
+      background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product06_ntdae7.jpg"); }
       @media screen and (max-width: 750px) {
         #index .product_section#product06 .productBg {
-          background-image: url("../img/product06_sp.jpg"); } }
+          background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/index/products/product06_sp_axclry.jpg"); } }
 
 #index .product_link {
   padding: 20px 0;
@@ -1850,7 +1850,7 @@ body {
         -webkit-transition: all 0.5s;
         -o-transition: all 0.5s;
         transition: all 0.5s;
-        background-image: url("../img/ig_icon.png");
+        background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/slider/ig_icon.png");
         background-size: 65px; }
       #index #instagram p a:hover {
         opacity: 0.7; }
@@ -2349,7 +2349,7 @@ body {
         width: 100%;
         height: 60vw;
         position: relative;
-        background-image: url("../img/gift_sp.png");
+        background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582970334/komons/index/gift_img_yql8sa.png");
         background-position: center center;
         background-size: cover; }
         #index .bn_section#topGift .img_wrap .cover_link span.caret {
@@ -2386,7 +2386,7 @@ body {
       #index .bn_section#topCF .img_wrap {
         width: 100%;
         height: 56vw;
-        background-image: url("../img/cf_sp.png");
+        background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/slider/cf_sp.png");
         background-position: center center;
         background-size: cover;
         position: relative; }

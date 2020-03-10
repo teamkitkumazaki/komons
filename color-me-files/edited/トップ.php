@@ -22,7 +22,7 @@
 <div id="loading">
   <div class="load_inner">
   <div class="main_txt">
-      <div class="main_img"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/h_logo.png"></div>
+      <div class="main_img"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/h_logo_nwjm8r.png"></div>
       <p id="loadingBar"><span></span></p>
     </div>
   </div><!-- load_inner -->
@@ -38,7 +38,7 @@
   <div id="slideShow">
     <ul>
       <li class="slide0"></li>
-      <li class="slide1" ><img class="first_view" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/main_slide01.png"></li>
+      <li class="slide1" ><img class="first_view" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_piirph.jpg"></li>
     </ul>
   </div>
   <!-- slideShow -->
@@ -220,7 +220,7 @@
     <a class="cover_link" href="https://www.komons-japan.com/?mode=f5">
       <span class="caret"></span>
     </a>
-    <img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/gift_img.png">
+    <img src="https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582970334/komons/index/gift_img_yql8sa.png">
     <div class="txt_block">
       <h3><span>Komonsのギフトセット</span></h3>
       <h4>大切な人への贈り物に。</h4>
