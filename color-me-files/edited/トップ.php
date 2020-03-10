@@ -220,7 +220,7 @@
     <a class="cover_link" href="https://www.komons-japan.com/?mode=f5">
       <span class="caret"></span>
     </a>
-    <img src="https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582970334/komons/index/gift_img_yql8sa.png">
+    <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/gift_img_lim2gn.png">
     <div class="txt_block">
       <h3><span>Komonsのギフトセット</span></h3>
       <h4>大切な人への贈り物に。</h4>

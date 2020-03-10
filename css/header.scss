@@ -28,7 +28,7 @@ header{
 				transition: all .5s;
 				@include bgSet;
 				background:{
-					image: url(../img/menu_icon.png);
+					image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_acfmbl.png);
 					size: 39px;
 				}
 				&:hover{
@@ -87,14 +87,14 @@ header{
 					}
 					a{
 						&::before{
-							background-image: url(../img/login_icon.png);
+							background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/login_icon_qymxnh.png);
 						}
 					}
 				}
 				&#hCart{
 					a{
 						&::before{
-							background-image: url(../img/cart_icon.png);
+							background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_r3jbwu.png);
 						}
 					}
 				}
@@ -120,7 +120,7 @@ header{
 				width: 145px;
 				height: 31px;
 				background:{
-					image: url(../img/h_logo_white.png);
+					image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/h_logo_white_fs5tkm.png);
 					size: 145px;
 					position: center center;
 					repeat: no-repeat;
@@ -194,7 +194,7 @@ body.rolled{
 		.header_inner{
 			#humMenu{
 				a{
-					background-image: url(../img/menu_icon_rolled.png);
+					background-image: url(.https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_rolled_ddjxzw.png);
 				}
 			}
 			#hNavi{
@@ -205,14 +205,14 @@ body.rolled{
 					&#hLogin{
 						a{
 							&::before{
-								background-image: url(../img/login_icon_rolled.png);
+								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/login_icon_rolled_oy80ng.png);
 							}
 						}
 					}
 					&#hCart{
 						a{
 							&::before{
-								background-image: url(../img/cart_icon_rolled.png);
+								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_rolled_tnklrf.png);
 							}
 						}
 					}
@@ -222,7 +222,7 @@ body.rolled{
 				opacity: 1 !important;
 				a{
 					pointer-events: all !important;
-					background-image: url(../img/h_logo.png);
+					background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/h_logo_nwjm8r.png);
 				}
 			}
 		}
@@ -242,7 +242,7 @@ body.fixed-header {
 			height: 88px;
 			#humMenu{
 				a{
-					background-image: url(../img/menu_icon_rolled.png);
+					background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_rolled_ddjxzw.png);
 				}
 			}
 			#hNavi{
@@ -255,14 +255,14 @@ body.fixed-header {
 						position: relative;
 						a{
 							&::before{
-								background-image: url(../img/login_icon_rolled.png);
+								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/login_icon_rolled_oy80ng.png);
 							}
 						}
 					}
 					&#hCart{
 						a{
 							&::before{
-								background-image: url(../img/cart_icon_rolled.png);
+								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_rolled_tnklrf.png);
 							}
 						}
 					}
@@ -272,7 +272,7 @@ body.fixed-header {
 				opacity: 1 !important;
 				pointer-events: all !important;
 				a{
-					background-image: url(../img/h_logo.png) !important;
+					background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/h_logo_nwjm8r.png) !important;
 				}
 			}
 		}
@@ -296,14 +296,14 @@ body.fixed-header {
 							position: relative;
 							a{
 								&::before{
-									background-image: url(../img/login_icon_rolled.png);
+									background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/login_icon_rolled_oy80ng.png);
 								}
 							}
 						}
 						&#hCart{
 							a{
 								&::before{
-									background-image: url(../img/cart_icon_rolled.png);
+									background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_rolled_tnklrf.png);
 								}
 							}
 						}
@@ -313,7 +313,7 @@ body.fixed-header {
 					opacity: 1 !important;
 					pointer-events: all !important;
 					a{
-						background-image: url(../img/h_logo.png) !important;
+						background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/h_logo_nwjm8r.png) !important;
 					}
 				}
 			}

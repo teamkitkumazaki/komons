@@ -55,7 +55,7 @@
 				}
 				@include bgSet;
 				background: {
-					image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/lomons_logo_jlrsgn.png");
+					image: url("../img/lomons_logo.png");
 					size: 171px;
 				}
 			}
@@ -824,7 +824,7 @@
 					transform: translateX(20px);
 					@include bgSet;
 					background: {
-						image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/lomons_logo_jlrsgn.png");
+						image: url("../img/lomons_logo.png");
 						size: 171px;
 					}
 				}
@@ -1373,7 +1373,7 @@
 					width: 100%;
 					height: 60vw;
 					position: relative;
-					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/gift_img_lim2gn.png");
+					background-image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582970334/komons/index/gift_img_yql8sa.png");
 					background-position: center center;
 					background-size: cover;
 
@@ -1410,6 +1410,56 @@
 					}
 
 					.link_block {}
+				}
+			}
+
+			&#topCF {
+				@include waku;
+				margin: 25px auto 20px;
+
+				.img_wrap {
+					width: 100%;
+					height: 56vw;
+					background: {
+						image: url("https://res.cloudinary.com/agestream/image/upload/f_auto,q_auto/v1582968050/komons/slider/cf_sp.png");
+						position: center center;
+						size: cover;
+					}
+					position: relative;
+
+					.cover_link {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						margin: auto;
+					}
+
+					.txt_block {
+						left: 15px;
+						right: 15px;
+						bottom: 10px;
+						margin: auto;
+						padding: 0;
+
+						h3 {
+							font-size: 4.2vw;
+							line-height: 1.5;
+							margin-bottom: 0;
+							&.sp_ttl{
+								span{
+									display: block;
+								}
+							}
+						}
+
+						h4 {
+							display: none;
+						}
+					}
 				}
 			}
 		}
