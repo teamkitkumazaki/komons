@@ -55,7 +55,7 @@
 				}
 				@include bgSet;
 				background: {
-					image: url("../img/lomons_logo.png");
+					image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/lomons_logo_jlrsgn.png");
 					size: 171px;
 				}
 			}
@@ -94,15 +94,15 @@
 					opacity: 0;
 				}
 				&.slide0{
-					background-image: url(../img/main_slide02.jpg);
+					background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide02_eygdqi.jpg);
 					@media screen and (max-width: 750px){
-						background-image: url(../img/main_slide02_sp.jpg);
+						background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide02_sp_bphwgj.jpg);
 					}
 				}
 				&.slide1{
-					background-image: url(../img/main_slide01.jpg);
+					background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_piirph.jpg);
 					@media screen and (max-width: 750px){
-						background-image: url(../img/main_slide01_sp.jpg);
+						background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_sp_dzdwrd.jpg);
 					}
 				}
 			}
@@ -319,7 +319,7 @@
 							margin: auto;
 							@include bgSet;
 							background: {
-								image: url("../img/arrow.png");
+								image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/arrow_vuojtf.png");
 								size: 25px;
 								position: center center;
 							}
@@ -354,45 +354,45 @@
 
 		&#product01 {
 			.productBg {
-				background-image: url("../img/product01.jpg");
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product01_atfg8i.jpg");
 				@media screen and (max-width: 750px){
-					background-image: url("../img/product01_sp.jpg");
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product01_sp_jx2008.jpg");
 				}
 			}
 		}
 
 		&#product02 {
 			.productBg {
-				background-image: url("../img/product02.jpg");
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product02_iblhds.jpg");
 				@media screen and (max-width: 750px){
-					background-image: url("../img/product02_sp.jpg");
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product02_sp_ejieo8.jpg");
 				}
 			}
 		}
 
 		&#product03 {
 			.productBg {
-				background-image: url("../img/product03.jpg");
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product03_aaqven.jpg");
 				@media screen and (max-width: 750px){
-					background-image: url("../img/product03_sp.jpg");
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product03_sp_pgjppz.jpg");
 				}
 			}
 		}
 
 		&#product04 {
 			.productBg {
-				background-image: url("../img/product04.jpg");
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product04_zssf0l.jpg");
 				@media screen and (max-width: 750px){
-					background-image: url("../img/product04_sp.jpg");
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product04_sp_wvauxn.jpg");
 				}
 			}
 		}
 
 		&#product05 {
 			.productBg {
-				background-image: url("../img/product05.jpg");
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product05_mk7ir7.jpg");
 				@media screen and (max-width: 750px){
-					background-image: url("../img/product05_sp.jpg");
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product05_sp_klwgtl.jpg");
 				}
 			}
 		}
@@ -401,9 +401,9 @@
 			margin-bottom: 0;
 
 			.productBg {
-				background-image: url("../img/product06.jpg");
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product06_mbahhf.jpg");
 				@media screen and (max-width: 750px){
-					background-image: url("../img/product06_sp.jpg");
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product06_sp_ol3fru.jpg");
 				}
 			}
 		}
@@ -682,7 +682,7 @@
 								margin: auto;
 								background-repeat: no-repeat;
 								background-position: center center;
-								background-image: url("../img/arrow_white.png");
+								background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/arrow_white_bfpcpy.png");
 								background-size: 25px;
 								background-position: center center;
 							}
@@ -734,7 +734,7 @@
 					@include bgSet;
 					transition: all 0.5s;
 					background: {
-						image: url("../img/ig_icon.png");
+						image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/ig_icon_lbrgzr.png");
 						size: 65px;
 					}
 				}
@@ -824,7 +824,7 @@
 					transform: translateX(20px);
 					@include bgSet;
 					background: {
-						image: url("../img/lomons_logo.png");
+						image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/lomons_logo_jlrsgn.png");
 						size: 171px;
 					}
 				}
@@ -1373,7 +1373,7 @@
 					width: 100%;
 					height: 60vw;
 					position: relative;
-					background-image: url("../img/gift_sp.png");
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/gift_img_lim2gn.png");
 					background-position: center center;
 					background-size: cover;
 
@@ -1410,56 +1410,6 @@
 					}
 
 					.link_block {}
-				}
-			}
-
-			&#topCF {
-				@include waku;
-				margin: 25px auto 20px;
-
-				.img_wrap {
-					width: 100%;
-					height: 56vw;
-					background: {
-						image: url("../img/cf_sp.png");
-						position: center center;
-						size: cover;
-					}
-					position: relative;
-
-					.cover_link {
-						position: absolute;
-						width: 100%;
-						height: 100%;
-						top: 0;
-						bottom: 0;
-						left: 0;
-						right: 0;
-						margin: auto;
-					}
-
-					.txt_block {
-						left: 15px;
-						right: 15px;
-						bottom: 10px;
-						margin: auto;
-						padding: 0;
-
-						h3 {
-							font-size: 4.2vw;
-							line-height: 1.5;
-							margin-bottom: 0;
-							&.sp_ttl{
-								span{
-									display: block;
-								}
-							}
-						}
-
-						h4 {
-							display: none;
-						}
-					}
 				}
 			}
 		}
