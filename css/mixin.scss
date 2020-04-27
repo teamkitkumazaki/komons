@@ -1,0 +1,62 @@
+/* ----- Google Fonts ----- */
+/*
+@font-face {
+    font-family: 'opensans';
+		font-weight: 700;
+    src: url('../fonts/opensans-light.eot'),url('../fonts/opensans-light.woff') format('woff'),
+    url('../fonts/opensans-light.ttf') format('truetype'),
+}
+*/
+@mixin opensans{
+  font-family: 'opensans', 'Open Sans', 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: 300;
+}
+
+@mixin basicP {
+	font-size: 14px;
+	line-height: 2;
+	letter-spacing: 0.1em;
+}
+@mixin smallP{
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+}
+@mixin waku {
+	max-width: 1080px;
+	margin-left: auto;
+	margin-right: auto;
+  @media screen and (max-width: 1100px){
+    max-width: 720px;
+  }
+  @media screen and (max-width: 740px){
+    max-width: 90vw;
+  }
+}
+@mixin flexSet {
+	display: flex;
+	flex-wrap: wrap;
+}
+@mixin bgSet{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+@mixin hover{
+  transition: opacity .3s;
+  &:hover{
+    opacity: 0.75;
+  }
+}
+@function get-vw($target) {
+  $vw-context: (1280*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+@function responsive-vw($target) {
+  $vw-context: (375*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+@function responsive-vh($target) {
+  $vw-context: (671*.01) * 1px;
+  @return ($target/$vw-context) * 1vh;
+}

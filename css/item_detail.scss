@@ -320,14 +320,41 @@
 				font-size: 16px;
 				letter-spacing: 1px;
 			}
-		}
-		.cart-notice{
-			margin-top: 20px;
-			font-size: 14px;
-			letter-spacing: 0.5px;
-			line-height: 1.5;
-			color: #D62538;
-			text-align: center;
+			.cart-notice{
+				margin-top: 15px;
+				text-align: center;
+				color: #D62538;
+				font-size: 16px;
+				letter-spacing: 0.5px;
+				line-height: 1.6;
+				strong{
+					display: inline-block;
+					font-size: 18px;
+					letter-spacing: 2px;
+					padding: 0 2px 0 4px;
+				}
+				span{
+					padding-top: 5px;
+					display: block;
+					font-size: 14px;
+					letter-spacing: 0.5px;
+					line-height: 1.6;
+				}
+				@media screen and (max-width: 760px){
+					text-align: left;
+					font-size: 14px;
+					letter-spacing: 0.5px;
+					strong{
+						font-size: 16px;
+						letter-spacing: 2px;
+					}
+					span{
+						font-size: 12px;
+						letter-spacing: 0.5px;
+						line-height: 1.6;
+					}
+				}
+			}
 		}
 	}
 
@@ -449,6 +476,16 @@
 					}
 				}
 
+				&.img_full {
+					display: block;
+
+					.txt_wrap {
+						width: 100%;
+						margin: 0;
+					}
+				}
+
+
 				&.last {
 					border: 0 !important;
 					padding-bottom: 0 !important;
@@ -569,6 +606,16 @@
 				margin-bottom: 20px;
 				line-height: 1;
 				letter-spacing: 2px;
+			}
+
+			h6{
+				font-size: 16px;
+				letter-spacing: 0.8px;
+				padding-bottom: 10px;
+				margin-bottom: 10px;
+				background: #f4f4f4;
+				padding: 10px;
+				/*border-bottom: 1px dotted #d8d8d8;*/
 			}
 
 			p {
@@ -765,6 +812,42 @@
 					color: $basicGreen;
 					font-size: 16px;
 					letter-spacing: 1px;
+				}
+
+				.cart-notice{
+					margin-top: 15px;
+					text-align: left;
+					color: #D62538;
+					font-size: 16px;
+					letter-spacing: 0.5px;
+					line-height: 1.6;
+					strong{
+						display: inline-block;
+						font-size: 18px;
+						letter-spacing: 2px;
+						padding: 0 2px 0 4px;
+					}
+					span{
+						padding-top: 5px;
+						display: block;
+						font-size: 14px;
+						letter-spacing: 0.5px;
+						line-height: 1.6;
+					}
+					@media screen and (max-width: 760px){
+						text-align: left;
+						font-size: 14px;
+						letter-spacing: 0.5px;
+						strong{
+							font-size: 16px;
+							letter-spacing: 2px;
+						}
+						span{
+							font-size: 12px;
+							letter-spacing: 0.5px;
+							line-height: 1.6;
+						}
+					}
 				}
 			}
 		}

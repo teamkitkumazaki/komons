@@ -292,6 +292,11 @@ $(function() {
     var strInnerHTML = target.html();
     $('#excerpt').prepend(strInnerHTML);
     target.remove();
+    if (document.getElementById('cartNotice')) {
+      var strCartNotice = $('#cartNotice').html();
+      $('.cart_button').append(strCartNotice);
+      $('#cartNotice').remove();
+    }
   }
 
   if (document.getElementById('itemDetail')) {
