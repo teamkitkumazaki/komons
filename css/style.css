@@ -7207,3 +7207,84 @@ body.loaded #loading {
       width: 5px;
       height: 5px;
       background-color: #5b5b5b; } }
+
+.comp-waiting-button {
+  max-width: 700px;
+  margin: 0 auto; }
+  .comp-waiting-button a {
+    display: block;
+    padding: 15px 0;
+    text-align: center;
+    background: #f8f8f8;
+    border: 1px solid #979797;
+    color: #2f281e;
+    -webkit-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    transition: opacity .3s;
+    cursor: pointer; }
+    .comp-waiting-button a:hover {
+      opacity: 0.75; }
+    .comp-waiting-button a .title {
+      display: inline-block;
+      position: relative;
+      font-size: 20px;
+      letter-spacing: 1.2px;
+      padding: 5px 0 5px 35px;
+      pointer-events: none; }
+      .comp-waiting-button a .title::before {
+        pointer-events: none;
+        display: block;
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 0;
+        top: 2px;
+        bottom: 0;
+        margin: auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 22px;
+        background-image: url(../img/waitinglist/info.svg); }
+    .comp-waiting-button a .desc {
+      pointer-events: none;
+      display: block;
+      font-size: 14px;
+      letter-spacing: 1.2px;
+      margin-top: 10px; }
+
+@media screen and (max-width: 760px) {
+  .comp-waiting-button {
+    max-width: 700px;
+    margin: 0 auto; }
+    .comp-waiting-button a {
+      display: block;
+      padding: 15px 0 20px !important;
+      text-align: center;
+      background: #f8f8f8;
+      border: 1px solid #979797;
+      color: #2f281e;
+      -webkit-transition: opacity .3s;
+      -o-transition: opacity .3s;
+      transition: opacity .3s; }
+      .comp-waiting-button a:hover {
+        opacity: 0.75; }
+      .comp-waiting-button a .title {
+        display: inline-block;
+        position: relative;
+        font-size: 18px;
+        letter-spacing: 1px;
+        padding: 5px 0 5px 30px; }
+        .comp-waiting-button a .title::before {
+          width: 30px;
+          height: 30px;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          background-size: 18px; }
+      .comp-waiting-button a .desc {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        margin-top: 5px; } }
