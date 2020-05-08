@@ -1,0 +1,134 @@
+.comp-waiting-list{
+  max-width: 600px;
+  margin: 40px auto 0;
+  .mailpoet_hp_email_label{display:none;}
+  .mailpoet_text_label{
+    display: block;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  input[type="email"]{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    appearance: none;
+    height: 46px;
+    line-height: 45px;
+    border-radius: 5px;
+    border: solid 1px #c0c0c0;
+    font-size: 14px;
+  }
+  input[type="submit"]{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    border: 1px solid #c8c8c9;
+    padding: 10px 15px;
+    background: #333;
+    color: #fff;
+    border: 0px;
+    border-radius: 5px;
+    position: relative;
+    appearance: none;
+    transition: color .3s, background .3s;
+    box-sizing: border-box;
+    font-family: initial;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    transition: all 0.5s;
+    z-index: 10;
+    cursor: pointer;
+    @include hover;
+    &:focus{
+      outline: none; 
+    }
+  }
+  .mailpoet_validate_success {
+    padding: 10px 0;
+    color: #666;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid #468847;
+    margin-top: 15px;
+  }
+  .mailpoet_validate_error {
+    padding: 10px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #b94a48;
+    border: 1px solid #b94a48;
+  }
+  .mailpoet_form_loading {
+    width: 30px;
+    text-align: center;
+    line-height: normal;
+  }
+  .mailpoet_form_loading > span {
+    width: 5px;
+    height: 5px;
+    background-color: #5b5b5b;
+  }
+}
+@media screen and (max-width: 740px){
+  .comp-waiting-list{
+    margin: 30px auto 0;
+    .mailpoet_text_label{
+      display: block;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    input[type="email"]{
+      font-size: 16px;
+    }
+    input[type="submit"]{
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      display: block;
+      border: 1px solid #c8c8c9;
+      padding: 10px 15px;
+      background: #333;
+      color: #fff;
+      border: 0px;
+      border-radius: 5px;
+      position: relative;
+      appearance: none;
+      transition: color .3s, background .3s;
+      box-sizing: border-box;
+      font-family: initial;
+      font-size: 16px;
+      letter-spacing: 1.5px;
+      text-align: center;
+      transition: all 0.5s;
+      z-index: 10;
+      cursor: pointer;
+      @include hover;
+    }
+    .mailpoet_validate_success {
+      padding: 5px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      letter-spacing: 1px;
+      text-align: left;
+    }
+    .mailpoet_validate_error { color: #b94a48; }
+    .mailpoet_form_loading {
+      width: 30px;
+      text-align: center;
+      line-height: normal;
+    }
+    .mailpoet_form_loading > span {
+      width: 5px;
+      height: 5px;
+      background-color: #5b5b5b;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.comp-title{
+  margin-bottom: 40px;
+  .ttl_ja{
+    font-size: 28px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    color: $basicGreen;
+    margin-bottom: 10px;
+    .en{
+      display: inline-block;
+      @include libre-r;
+      padding-left: 30px;
+      font-size: 18px;
+      color: $basicGreen;
+      letter-spacing: 1.6px;
+    }
+  }
+  .ttl_en{
+    display: block;
+    @include libre-r;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.6px;
+  }
+  &.center{
+    text-align: center;
+  }
+  @media screen and (max-width: 740px){
+    margin-bottom: 30px;
+    .ttl_ja{
+      font-size: 20px;
+      letter-spacing: 1.6px;
+      line-height: 1.5;
+      margin-bottom: 7px;
+      span{
+        display: block;
+      }
+      .ja{
+        padding-right:0;
+      }
+      .en{
+        margin-top: 7px;
+        display: block;
+        padding-left:0;
+        font-size: 16px;
+        letter-spacing: 1.6px;
+      }
+    }
+    .ttl_en{
+      font-size: 18px;
+      letter-spacing: 1.6px;
+    }
+  }
+}
