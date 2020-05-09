@@ -82,7 +82,16 @@ $(function() {
       <{/if}>
       <{else}>
       <div class="cart_wrap">
-        <span class="sold_out">在庫切れ</span>
+        <{if $product.model == 'K0038' || $product.model == 'K0037'}>
+        <div class="comp-waiting-button">
+          <a href="https://journal.komons-japan.com/waiting-list/<{$product.model}>">
+            <span class="title">再入荷リクエスト</span>
+            <span class="desc">販売再開をメールでお知らせいたします</span>
+          </a>
+        </div>
+        <{else}>
+          <span class="sold_out">在庫切れ</span>
+        <{/if}>
       </div>
       <{/if}>
     </div>
@@ -155,7 +164,16 @@ $(function() {
       <{/if}>
       <{else}>
       <div class="cart_wrap">
-        <span class="sold_out">在庫切れ</span>
+        <{if $product.model == 'K0038' || $product.model == 'K0037'}>
+        <div class="comp-waiting-button">
+          <a href="https://journal.komons-japan.com/waiting-list/<{$product.model}>">
+            <span class="title">再入荷リクエスト</span>
+            <span class="desc">販売再開をメールでお知らせいたします</span>
+          </a>
+        </div>
+        <{else}>
+          <span class="sold_out">在庫切れ</span>
+        <{/if}>
       </div>
       <{/if}>
     </form>

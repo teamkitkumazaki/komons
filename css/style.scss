@@ -84,8 +84,14 @@ $basicGreen: #00381f;
 @import 'faq.scss';
 /*ギフトページのレイアウト*/
 @import 'gift.scss';
+/*ギフトページのレイアウト*/
+@import 'waitingList.scss';
 
 
 /*########## コンポーネント ##########*/
+@import 'component/comp-title.scss';
+@import 'component/comp-linkbutton.scss';
 @import 'component/comp-variation.scss';
 @import 'component/comp-flex-cart.scss';
+@import 'component/comp-waiting-list.scss';
+@import 'component/comp-waiting-button.scss';

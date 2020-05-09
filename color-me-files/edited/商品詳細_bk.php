@@ -44,9 +44,10 @@ $(function() {
             <div class="cart_item">
               <span class="button_wrap">
                 <span class="title cart_in">通常購入する</span>
-                <span class="sub_text">5,000円以上のお買い上げで送料無料</span>
+                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
               </span>
               <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
+              <{$product.info}>
             </div>
           </div><!-- cart_box -->
           <div class="cart_box">
@@ -58,18 +59,26 @@ $(function() {
               <a class="product_cart_btn colorme-repeat-checkout" href="https://colorme-repeat.jp/redirect/6d6f9f03/1624" data-user-slug="6d6f9f03" data-course-id="1624">購入する</a>
             </div>
             <div class="about_subscription">
-              <a href="/?mode=f2#fqSubscription"><span>定期購入についての詳細はこちら</span></a>
+              <a href="/?mode=f2#fqSubscription"><span>定期購入に関するFAQはこちら</span></a>
             </div>
           </div><!-- cart_box -->
         </div><!-- comp-flex-cart -->
       </div>
       <{else}>
       <div class="cart_wrap">
-        <span class="txt">カートに入れる</span>
-        <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" />
-        <{$product.info}>
-      </div>
-      <span class="souryou">5,000円以上のお買い上げで送料無料</span>
+        <div class="comp-flex-cart no_flex">
+          <div class="cart_box">
+            <div class="cart_item">
+              <span class="button_wrap">
+          <span class="title cart_in">購入する</span>
+              <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+              </span>
+              <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
+              <{$product.info}>
+            </div>
+          </div>
+          <!-- cart_box -->
+        </div>
       <{/if}>
       <{else}>
       <div class="cart_wrap">
@@ -113,7 +122,7 @@ $(function() {
           <div class="cart_item">
             <span class="button_wrap">
               <span class="title cart_in">通常購入する</span>
-              <span class="sub_text">5,000円以上のお買い上げで送料無料</span>
+              <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
             </span>
             <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
           </div>
@@ -131,11 +140,18 @@ $(function() {
       </div>
       <{else}>
       <div class="cart_wrap">
-        <span class="txt">カートに入れる</span>
-        <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" />
-        <{$product.info}>
-      </div>
-      <span class="souryou">5,000円以上のお買い上げで送料無料</span>
+        <div class="comp-flex-cart no_flex">
+          <div class="cart_box">
+            <div class="cart_item">
+              <span class="button_wrap">
+          <span class="title cart_in">通常購入する</span>
+              <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+              </span>
+              <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
+            </div>
+          </div>
+          <!-- cart_box -->
+        </div>
       <{/if}>
       <{else}>
       <div class="cart_wrap">
