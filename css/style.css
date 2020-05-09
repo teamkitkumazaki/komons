@@ -7217,11 +7217,12 @@ body.loaded #loading {
     text-align: center;
     background: #f8f8f8;
     border: 1px solid #979797;
-    color: #2f281e;
+    color: #2f281e !important;
     -webkit-transition: opacity .3s;
     -o-transition: opacity .3s;
     transition: opacity .3s;
-    cursor: pointer; }
+    cursor: pointer;
+    line-height: 1; }
     .comp-waiting-button a:hover {
       opacity: 0.75; }
     .comp-waiting-button a .title {
@@ -7230,7 +7231,8 @@ body.loaded #loading {
       font-size: 20px;
       letter-spacing: 1.2px;
       padding: 5px 0 5px 35px;
-      pointer-events: none; }
+      pointer-events: none;
+      color: #2f281e !important; }
       .comp-waiting-button a .title::before {
         pointer-events: none;
         display: block;
@@ -7251,7 +7253,8 @@ body.loaded #loading {
       display: block;
       font-size: 14px;
       letter-spacing: 1.2px;
-      margin-top: 10px; }
+      margin-top: 10px;
+      color: #2f281e !important; }
 
 @media screen and (max-width: 760px) {
   .comp-waiting-button {

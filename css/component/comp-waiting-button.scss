@@ -7,9 +7,10 @@
     text-align: center;
     background: #f8f8f8;
     border: 1px solid #979797;
-    color: #2f281e;
+    color: #2f281e !important;
     @include hover;
     cursor: pointer;
+    line-height: 1;
     .title{
       display: inline-block;
       position: relative;
@@ -17,6 +18,7 @@
       letter-spacing: 1.2px;
       padding: 5px 0 5px 35px;
       pointer-events: none;
+      color: #2f281e !important;
       &::before{
         pointer-events: none;
         display: block;
@@ -40,6 +42,7 @@
       font-size: 14px;
       letter-spacing: 1.2px;
       margin-top: 10px;
+      color: #2f281e !important;
     }
   }
 }
