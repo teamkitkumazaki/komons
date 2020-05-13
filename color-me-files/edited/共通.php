@@ -56,7 +56,7 @@
           <li><a href="/?tid=1&mode=f2">FAQ</a></li>
           <li><a href="<{$sk_url}>">特定商取引法に基づく表記</a></li>
           <li><a href="https://unsungs-web.com/" target="_blank">運営会社</a></li>
-          <li><a href="<{$view_inq_url}>">お問い合わせ</a></li>
+          <li><a href="https://journal.komons-japan.com/contact">お問い合わせ</a></li>
         </ul>
       </div>
       <!-- fmenu -->
