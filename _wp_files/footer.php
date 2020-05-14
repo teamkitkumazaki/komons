@@ -25,7 +25,7 @@
 						<li><a href="https://cart.shop-pro.jp/proxy/basket?shop_id=PA01416697&shop_domain=komons-japan.com">カートを見る</a></li>
 						<li><a href="https://www.komons-japan.com/?mode=privacy">プライバシーポリシー</a></li>
 						<li><a href="https://www.komons-japan.com/?mode=sk">特定商取引法に基づく表記</a></li>
-						<li><a href="#">運営会社</a></li>
+						<li><a target="_blank" href="https://unsungs-web.com/">運営会社</a></li>
 						<li><a href="https://journal.komons-japan.com/contact">お問い合わせ</a></li>
 					</ul>
 				</div><!-- fmenu -->

@@ -228,6 +228,9 @@
 		background: #aaa;
 		position: relative;
 		margin-bottom: 200px;
+		&#product06{
+			margin-bottom: 0;
+		}
 
 		.productBg {
 			position: absolute;
@@ -242,6 +245,47 @@
 			background: {
 				position: center center;
 				size: cover;
+			}
+			&#bgDish {
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product01_atfg8i.jpg");
+				@media screen and (max-width: 750px){
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product01_sp_jx2008.jpg");
+				}
+			}
+
+			&#bgMist {
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product02_iblhds.jpg");
+				@media screen and (max-width: 750px){
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product02_sp_ejieo8.jpg");
+				}
+			}
+
+			&#bgToilet {
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product03_aaqven.jpg");
+				@media screen and (max-width: 750px){
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product03_sp_pgjppz.jpg");
+				}
+			}
+
+			&#bgMulti {
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product04_zssf0l.jpg");
+				@media screen and (max-width: 750px){
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product04_sp_wvauxn.jpg");
+				}
+			}
+
+			&#bgBath {
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product05_mk7ir7.jpg");
+				@media screen and (max-width: 750px){
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product05_sp_klwgtl.jpg");
+				}
+			}
+
+			&#bgHand {
+				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product06_mbahhf.jpg");
+				@media screen and (max-width: 750px){
+					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product06_sp_ol3fru.jpg");
+				}
 			}
 		}
 
@@ -348,62 +392,6 @@
 
 				.txt_block {
 					text-align: right;
-				}
-			}
-		}
-
-		&#product01 {
-			.productBg {
-				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product01_atfg8i.jpg");
-				@media screen and (max-width: 750px){
-					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product01_sp_jx2008.jpg");
-				}
-			}
-		}
-
-		&#product02 {
-			.productBg {
-				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product02_iblhds.jpg");
-				@media screen and (max-width: 750px){
-					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product02_sp_ejieo8.jpg");
-				}
-			}
-		}
-
-		&#product03 {
-			.productBg {
-				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product03_aaqven.jpg");
-				@media screen and (max-width: 750px){
-					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product03_sp_pgjppz.jpg");
-				}
-			}
-		}
-
-		&#product04 {
-			.productBg {
-				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product04_zssf0l.jpg");
-				@media screen and (max-width: 750px){
-					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product04_sp_wvauxn.jpg");
-				}
-			}
-		}
-
-		&#product05 {
-			.productBg {
-				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product05_mk7ir7.jpg");
-				@media screen and (max-width: 750px){
-					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product05_sp_klwgtl.jpg");
-				}
-			}
-		}
-
-		&#product06 {
-			margin-bottom: 0;
-
-			.productBg {
-				background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product06_mbahhf.jpg");
-				@media screen and (max-width: 750px){
-					background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product06_sp_ol3fru.jpg");
 				}
 			}
 		}
