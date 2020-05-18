@@ -7363,3 +7363,153 @@ body.loaded #loading {
         font-size: 12px;
         letter-spacing: 0.5px;
         margin-top: 5px; } }
+
+.comp-pickup-items {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  @media screen and (max-width: 1150px) {
+    .comp-pickup-items {
+      max-width: 750px; } }
+  @media screen and (max-width: 750px) {
+    .comp-pickup-items {
+      width: 84%; } }
+  .comp-pickup-items .pickup_item {
+    width: 48%; }
+    .comp-pickup-items .pickup_item .img_wrap {
+      margin-bottom: 20px; }
+      .comp-pickup-items .pickup_item .img_wrap a {
+        display: block;
+        -webkit-transition: opacity .3s;
+        -o-transition: opacity .3s;
+        transition: opacity .3s; }
+        .comp-pickup-items .pickup_item .img_wrap a:hover {
+          opacity: 0.75; }
+    .comp-pickup-items .pickup_item .txt_wrap .prod_detail {
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #d8d8d8; }
+      .comp-pickup-items .pickup_item .txt_wrap .prod_detail .cat_ttl {
+        letter-spacing: normal;
+        color: rgba(0, 56, 31, 0.8);
+        font-size: 14px;
+        margin-bottom: 10px; }
+        .comp-pickup-items .pickup_item .txt_wrap .prod_detail .cat_ttl span {
+          display: inline-block;
+          font-size: 16px;
+          font-weight: bold;
+          margin-right: 0.5em; }
+          .comp-pickup-items .pickup_item .txt_wrap .prod_detail .cat_ttl span::after {
+            display: inline-block;
+            content: "-";
+            padding-left: 0.5em; }
+      .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name {
+        display: block;
+        letter-spacing: normal;
+        color: rgba(0, 56, 31, 0.8);
+        font-size: 24px;
+        font-weight: bold;
+        -webkit-transition: opacity .3s;
+        -o-transition: opacity .3s;
+        transition: opacity .3s;
+        margin-bottom: 15px; }
+        .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name:hover {
+          opacity: 0.75; }
+        .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name span {
+          font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+          font-weight: 500;
+          letter-spacing: 1px;
+          font-weight: bold;
+          font-size: 24px; }
+      .comp-pickup-items .pickup_item .txt_wrap .prod_detail .price {
+        display: block;
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: 1px;
+        color: rgba(0, 56, 31, 0.8); }
+    .comp-pickup-items .pickup_item .txt_wrap .arrow_link {
+      display: block;
+      font-size: 14px;
+      color: #00381f; }
+      .comp-pickup-items .pickup_item .txt_wrap .arrow_link .link_wrap {
+        display: inline-block;
+        position: relative;
+        padding-right: 40px; }
+        .comp-pickup-items .pickup_item .txt_wrap .arrow_link .link_wrap .arrow {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          margin: auto;
+          width: 24px;
+          height: 10px;
+          -webkit-transition: all 0.3s;
+          -o-transition: all 0.3s;
+          transition: all 0.3s;
+          background-image: url(../img/product_list/arrow.png);
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 24px; }
+      .comp-pickup-items .pickup_item .txt_wrap .arrow_link:hover .link_wrap .arrow {
+        right: -10px; }
+
+@media screen and (max-width: 1100px) {
+  .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 15px; }
+    .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name span {
+      display: block;
+      font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-weight: bold;
+      font-size: 20px; } }
+
+@media screen and (max-width: 760px) {
+  .comp-pickup-items {
+    display: block; }
+    .comp-pickup-items .pickup_item {
+      width: 100%;
+      margin-bottom: 40px; }
+      .comp-pickup-items .pickup_item .img_wrap {
+        margin-bottom: 20px; }
+        .comp-pickup-items .pickup_item .img_wrap a {
+          display: block;
+          -webkit-transition: opacity .3s;
+          -o-transition: opacity .3s;
+          transition: opacity .3s; }
+          .comp-pickup-items .pickup_item .img_wrap a:hover {
+            opacity: 0.75; }
+      .comp-pickup-items .pickup_item .txt_wrap .prod_detail {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        border-bottom: 0px solid #d8d8d8; }
+        .comp-pickup-items .pickup_item .txt_wrap .prod_detail .cat_ttl {
+          font-size: 14px;
+          margin-bottom: 5px; }
+          .comp-pickup-items .pickup_item .txt_wrap .prod_detail .cat_ttl span {
+            font-size: 14px; }
+        .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 10px; }
+          .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name span {
+            display: inline-block;
+            font-size: 20px; }
+        .comp-pickup-items .pickup_item .txt_wrap .prod_detail .price {
+          font-size: 14px; }
+      .comp-pickup-items .pickup_item .txt_wrap .arrow_link {
+        display: none; } }
