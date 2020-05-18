@@ -72,32 +72,37 @@
   <h2><span>Products</span><font>Komonsの商品</font></h2>
 </div>
 <section id="product01" class="product_section">
-  <div id="bgHand" class="productBg">
-    <a class="product_caret" href="https://www.komons-japan.com/?pid=132301791"><span class="caret"></span></a>
+  <div class="productBg">
+    <a class="product_caret" href="https://www.komons-japan.com/?pid=132268831
+"><span class="caret"></span></a>
     <div class="txt_wrapper">
       <div class="txt_block">
-        <h4><span>Hand Soap</span>- ハンドソープ</h4>
-        <h3>I can hear music</h3>
-        <p>
-          <span>家に帰り、いちばん最初にする「手を洗う」という行為は、心も体もONからOFFへと切替えるスイッチ。</span>
-          <span>手を洗うたびに気持ちの良いメロディが流れるかような香りと手触りのハンドソープを作りました</span></p>
+        <h4><span>Dish Wash</span>- 食器用洗剤</h4>
+        <h3>Don't Look Back in Anger</h3>
+        <p>ちょっと面倒な、食事のあとの食器洗い。
+          <span>誰がやるかでおしつけあったりもするこの時間を、</span>
+          <span>もっと「プラスの時間」に変えられたら。</span>
+          <span>そんな思いでつくった、</span>
+          <span>使うたびに豊かな香りが部屋中に広がる手にも優しい洗剤です。</span></p>
         <div class="link_button">
-          <a href="https://www.komons-japan.com/?pid=132301791">詳しく見る<span></span></a>
+          <a href="https://www.komons-japan.com/?pid=132268831
+">詳しく見る<span></span></a>
         </div>
       </div>
       <div class="height_adjuster"></div>
     </div>
     <!-- txt_wrapper -->
   </div>
+
 </section>
-<!-- product06 -->
+<!-- product01 -->
 <section id="product02" class="product_section">
-  <div id="bgMist" class="productBg">
+  <div class="productBg">
     <a class="product_caret" href="https://www.komons-japan.com/?pid=132298880
 "><span class="caret"></span></a>
     <div class="txt_wrapper">
       <div class="txt_block">
-        <h4><span>Fabric Mist</span>- 除菌消臭ミスト</h4>
+        <h4><span>Fabric Mist</span>- ファブリックミスト</h4>
         <h3>Free as a Bird</h3>
         <p>ソファーやベッド、お気に入りの衣類に。
           <span>思わず深呼吸をしたくなるような、やさしい空気を届けます。</span>
@@ -115,7 +120,30 @@
 </section>
 <!-- product02 -->
 <section id="product03" class="product_section">
-  <div id="bgMulti" class="productBg">
+  <div class="productBg">
+    <a class="product_caret" href="https://www.komons-japan.com/?pid=132301627
+"><span class="caret"></span></a>
+    <div class="txt_wrapper">
+      <div class="txt_block">
+        <h4><span>Toilet Cleaner</span>- トイレクリーナー</h4>
+        <h3>Shelter From The Storm</h3>
+        <p>せわしない社会の中で、本当に「ひとり」になれる場所は、
+          <span>とても少ないものです。トイレはきっと、そのひとつ。</span>
+          <span>狭いけれど、とても静かで、とても落ち着く場所。</span>
+          <span>トイレをもっと豊かで、より気持ちのいい空間にします。</span></p>
+        <div class="link_button">
+          <a href="https://www.komons-japan.com/?pid=132301627
+">詳しく見る<span></span></a>
+        </div>
+      </div>
+      <div class="height_adjuster"></div>
+    </div>
+    <!-- txt_wrapper -->
+  </div>
+</section>
+<!-- product03 -->
+<section id="product04" class="product_section">
+  <div class="productBg">
     <a class="product_caret" href="https://www.komons-japan.com/?pid=132301713"><span class="caret"></span></a>
     <div class="txt_wrapper reverse">
       <div class="txt_block">
@@ -138,32 +166,8 @@
 
 </section>
 <!-- product04 -->
-<section id="product04" class="product_section">
-  <div id="bgDish" class="productBg">
-    <a class="product_caret" href="https://www.komons-japan.com/?pid=132268831
-"><span class="caret"></span></a>
-    <div class="txt_wrapper">
-      <div class="txt_block">
-        <h4><span>Dish Wash</span>- 食器用洗剤</h4>
-        <h3>Don't Look Back in Anger</h3>
-        <p>ちょっと面倒な、食事のあとの食器洗い。
-          <span>誰がやるかでおしつけあったりもするこの時間を、</span>
-          <span>もっと「プラスの時間」に変えられたら。</span>
-          <span>そんな思いでつくった、</span>
-          <span>使うたびに豊かな香りが部屋中に広がる手にも優しい洗剤です。</span></p>
-        <div class="link_button">
-          <a href="https://www.komons-japan.com/?pid=132268831
-">詳しく見る<span></span></a>
-        </div>
-      </div>
-      <div class="height_adjuster"></div>
-    </div>
-    <!-- txt_wrapper -->
-  </div>
-</section>
-<!-- product01 -->
 <section id="product05" class="product_section">
-  <div id="bgBath" class="productBg">
+  <div class="productBg">
     <a class="product_caret" href="https://www.komons-japan.com/?pid=132301743"><span class="caret"></span></a>
     <div class="txt_wrapper reverse">
       <div class="txt_block">
@@ -184,20 +188,17 @@
 </section>
 <!-- product05 -->
 <section id="product06" class="product_section">
-  <div id="bgToilet" class="productBg">
-    <a class="product_caret" href="https://www.komons-japan.com/?pid=132301627
-"><span class="caret"></span></a>
+  <div class="productBg">
+    <a class="product_caret" href="https://www.komons-japan.com/?pid=132301791"><span class="caret"></span></a>
     <div class="txt_wrapper">
       <div class="txt_block">
-        <h4><span>Toilet Cleaner</span>- トイレクリーナー</h4>
-        <h3>Shelter From The Storm</h3>
-        <p>せわしない社会の中で、本当に「ひとり」になれる場所は、
-          <span>とても少ないものです。トイレはきっと、そのひとつ。</span>
-          <span>狭いけれど、とても静かで、とても落ち着く場所。</span>
-          <span>トイレをもっと豊かで、より気持ちのいい空間にします。</span></p>
+        <h4><span>Hand Soap</span>- ハンドソープ</h4>
+        <h3>I can hear music</h3>
+        <p>
+          <span>家に帰り、いちばん最初にする「手を洗う」という行為は、心も体もONからOFFへと切替えるスイッチ。</span>
+          <span>手を洗うたびに気持ちの良いメロディが流れるかような香りと手触りのハンドソープを作りました</span></p>
         <div class="link_button">
-          <a href="https://www.komons-japan.com/?pid=132301627
-">詳しく見る<span></span></a>
+          <a href="https://www.komons-japan.com/?pid=132301791">詳しく見る<span></span></a>
         </div>
       </div>
       <div class="height_adjuster"></div>
@@ -205,8 +206,7 @@
     <!-- txt_wrapper -->
   </div>
 </section>
-<!-- product03 -->
-
+<!-- product06 -->
 <div class="product_link">
   <a href="/?mode=cate&csid=0&cbid=2421809"><span class="txt_wrap">商品をもっとみる<span class="caret"></span></span></a>
 </div>
