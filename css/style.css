@@ -1227,6 +1227,30 @@ body {
         -o-transition: all 1.5s;
         transition: all 1.5s;
         background: rgba(0, 0, 0, 0.15) !important; }
+  #index #main .main_logo {
+    position: absolute;
+    z-index: 10;
+    right: 70px;
+    bottom: 50px;
+    width: 100px;
+    height: 146px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../img/index/logo_main.svg");
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    transform: translateX(50px);
+    -webkit-transition: opacity 1s, -webkit-transform 1s;
+    transition: opacity 1s, -webkit-transform 1s;
+    -o-transition: opacity 1s, transform 1s;
+    transition: opacity 1s, transform 1s;
+    transition: opacity 1s, transform 1s, -webkit-transform 1s; }
+    #index #main .main_logo.loaded {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0); }
   #index #main .main_txt {
     position: absolute;
     height: 250px;
@@ -1237,49 +1261,6 @@ body {
     margin: auto;
     text-align: center;
     z-index: 11; }
-    #index #main .main_txt .main_img {
-      width: 100%;
-      height: 200px;
-      margin: 0 auto 50px;
-      opacity: 0;
-      -webkit-transform: translateX(50px);
-      -ms-transform: translateX(50px);
-      transform: translateX(50px);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/lomons_logo_jlrsgn.png");
-      background-size: 171px; }
-      #index #main .main_txt .main_img.loaded {
-        opacity: 1;
-        -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-        transform: translateX(0);
-        -webkit-transition: opacity 1s, -webkit-transform 1s;
-        transition: opacity 1s, -webkit-transform 1s;
-        -o-transition: opacity 1s, transform 1s;
-        transition: opacity 1s, transform 1s;
-        transition: opacity 1s, transform 1s, -webkit-transform 1s; }
-    #index #main .main_txt h1 {
-      color: #fff;
-      line-height: 1;
-      font-weight: normal;
-      letter-spacing: 3px;
-      font-size: 18px;
-      text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      -webkit-transform: translateX(50px);
-      -ms-transform: translateX(50px);
-      transform: translateX(50px); }
-      #index #main .main_txt h1.loaded {
-        opacity: 1;
-        -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-        transform: translateX(0);
-        -webkit-transition: opacity 1s, -webkit-transform 1s;
-        transition: opacity 1s, -webkit-transform 1s;
-        -o-transition: opacity 1s, transform 1s;
-        transition: opacity 1s, transform 1s;
-        transition: opacity 1s, transform 1s, -webkit-transform 1s; }
   #index #main #slideShow {
     width: 100%;
     height: 100vh;
@@ -1885,7 +1866,8 @@ body {
       #index #instagram ul#instafeed li a {
         display: block;
         position: relative;
-        height: 216px; }
+        height: 216px;
+        overflow: hidden; }
         #index #instagram ul#instafeed li a img {
           position: absolute;
           width: auto;
@@ -1912,6 +1894,13 @@ body {
       width: 100%;
       height: 500px;
       position: relative; }
+      #index #main .main_inner .main_logo {
+        position: absolute;
+        z-index: 10;
+        right: 30px;
+        bottom: 30px;
+        width: 100px;
+        height: 146px; }
       #index #main .main_inner .slide_fil {
         position: absolute;
         z-index: 10;
@@ -2148,6 +2137,12 @@ body {
       width: 100%;
       height: 100vw;
       position: relative; }
+      #index #main .main_inner .main_logo {
+        right: 5%;
+        bottom: 25px;
+        width: 60px;
+        height: 85px;
+        background-size: cover; }
     #index #main .main_txt {
       height: 56vw; }
       #index #main .main_txt .main_img {
@@ -2468,7 +2463,7 @@ body #loading {
       opacity: 0; }
     body #loading .load_inner .main_txt {
       position: absolute;
-      height: 100px;
+      height: 110px;
       top: 0;
       bottom: 0;
       left: 0;
@@ -2478,11 +2473,23 @@ body #loading {
       z-index: 11;
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
+      body #loading .load_inner .main_txt .main_img {
+        display: block;
+        width: 145px;
+        height: 31px;
+        margin: 0 auto 30px; }
+      body #loading .load_inner .main_txt .main_ttl {
+        color: #00381f;
+        line-height: 1;
+        font-weight: normal;
+        letter-spacing: 2px;
+        font-size: 14px;
+        margin-bottom: 30px; }
       body #loading .load_inner .main_txt #loadingBar {
         position: relative;
         width: 250px;
         margin: 0 auto;
-        height: 2px;
+        height: 1px;
         background: rgba(0, 56, 31, 0.5);
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0); }
@@ -2495,17 +2502,57 @@ body #loading {
           width: 20%;
           -webkit-animation: loading 1s linear -2s infinite normal;
           animation: loading 1s linear -2s infinite normal;
-          height: 2px;
+          height: 1px;
           background: #00381f; }
+
+body.loaded #loading {
+  width: 0;
+  pointer-events: none; }
+
+@media screen and (max-width: 760px) {
+  body #loading {
+    position: fixed;
+    background-color: #f1f1f1;
+    background-size: 1000px; }
+    body #loading .load_inner .main_txt {
+      height: 160px;
+      bottom: 0; }
       body #loading .load_inner .main_txt .main_img {
         display: block;
         width: 145px;
         height: 31px;
         margin: 0 auto 30px; }
-
-body.loaded #loading {
-  width: 0;
-  pointer-events: none; }
+      body #loading .load_inner .main_txt .main_ttl {
+        color: #00381f;
+        line-height: 1.6;
+        font-weight: normal;
+        letter-spacing: 2px;
+        font-size: 14px;
+        margin-bottom: 30px; }
+        body #loading .load_inner .main_txt .main_ttl span {
+          display: block; }
+      body #loading .load_inner .main_txt #loadingBar {
+        position: relative;
+        width: 250px;
+        margin: 0 auto;
+        height: 1px;
+        background: rgba(0, 56, 31, 0.5);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0); }
+        body #loading .load_inner .main_txt #loadingBar span {
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 20%;
+          -webkit-animation: loading 1s linear -2s infinite normal;
+          animation: loading 1s linear -2s infinite normal;
+          height: 1px;
+          background: #00381f; }
+  body.loaded #loading {
+    width: 0;
+    pointer-events: none; } }
 
 /*商品一覧のレイアウト*/
 #itemList .main {

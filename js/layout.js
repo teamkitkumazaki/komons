@@ -21,7 +21,7 @@ $(function() {
 
             setTimeout(function() {
               $('.main_img').addClass('loaded');
-              $('.main_ttl').addClass('loaded');
+              $('.main_logo').addClass('loaded');
               backGroundSlider($('#sliderBtn'));
             }, 100);
           }, 1200);
