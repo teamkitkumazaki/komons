@@ -2865,6 +2865,8 @@ body.loaded #loading {
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
     background: -o-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%); }
+  #itemDetail .main .sp_img {
+    display: none; }
 
 #itemDetail .cart_wrap01 {
   max-width: 1080px;
