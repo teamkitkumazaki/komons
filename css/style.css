@@ -736,6 +736,9 @@ body {
       #iframe .article_wrap ul li .img_wrap a,
       .journal_wrap .article_wrap ul li .img_wrap a {
         display: block;
+        height: 132px;
+        position: relative;
+        overflow: hidden;
         -webkit-transition: opacity .5s;
         -o-transition: opacity .5s;
         transition: opacity .5s; }
@@ -743,6 +746,12 @@ body {
         #topJournal .article_wrap ul li .img_wrap a img,
         #iframe .article_wrap ul li .img_wrap a img,
         .journal_wrap .article_wrap ul li .img_wrap a img {
+          position: absolute;
+          width: 120%;
+          max-width: initial;
+          left: -10%;
+          right: -10%;
+          margin: auto;
           height: auto; }
         #journalDetail .article_wrap ul li .img_wrap a:hover,
         #topJournal .article_wrap ul li .img_wrap a:hover,
@@ -915,6 +924,11 @@ body {
       #iframe .article_wrap ul li .img_wrap,
       .journal_wrap .article_wrap ul li .img_wrap {
         width: 250px; }
+        #journalDetail .article_wrap ul li .img_wrap a,
+        #topJournal .article_wrap ul li .img_wrap a,
+        #iframe .article_wrap ul li .img_wrap a,
+        .journal_wrap .article_wrap ul li .img_wrap a {
+          height: 160px; }
       #journalDetail .article_wrap ul li .txt_wrap,
       #topJournal .article_wrap ul li .txt_wrap,
       #iframe .article_wrap ul li .txt_wrap,
@@ -969,6 +983,11 @@ body {
       .journal_wrap .article_wrap ul li .img_wrap {
         width: 38%;
         margin-right: 4%; }
+        #journalDetail .article_wrap ul li .img_wrap a,
+        #topJournal .article_wrap ul li .img_wrap a,
+        #iframe .article_wrap ul li .img_wrap a,
+        .journal_wrap .article_wrap ul li .img_wrap a {
+          height: 22vw; }
       #journalDetail .article_wrap ul li .txt_wrap,
       #topJournal .article_wrap ul li .txt_wrap,
       #iframe .article_wrap ul li .txt_wrap,
@@ -1230,7 +1249,7 @@ body {
   #index #main .main_logo {
     position: absolute;
     z-index: 10;
-    right: 70px;
+    right: 90px;
     bottom: 50px;
     width: 100px;
     height: 146px;
