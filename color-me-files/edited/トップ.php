@@ -21,41 +21,41 @@
 </script>
 <div id="loading">
   <div class="load_inner">
-  <div class="main_txt">
+    <div class="main_txt">
       <div class="main_img"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/h_logo_nwjm8r.png"></div>
+      <h1 class="main_ttl">毎日の家事を「プラスな時間」に変える<span>ホームケアブランド</span></h1>
       <p id="loadingBar"><span></span></p>
     </div>
-  </div><!-- load_inner -->
-</div><!-- loading -->
-<article id="index">
-<section id="main">
-<div class="main_inner">
-  <div class="slide_fil"></div>
-  <div class="main_txt">
-    <div class="main_img"></div>
-    <h1 class="main_ttl">毎日の家事を「プラスな時間」に変える<span>ホームケアブランド</span></h1>
   </div>
-  <div id="slideShow">
-    <ul>
-      <li class="slide0"></li>
-      <li class="slide1" ><img class="first_view" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_piirph.jpg"></li>
-    </ul>
-  </div>
-  <!-- slideShow -->
-  <div id="sliderBtn">
-    <ul>
-      <li class="active" value="slide1" number="0"><a href="javascript:void(0)"></a></li>
-      <li value="slide2" number="1" class=""><a href="javascript:void(0)"></a></li>
-    </ul>
-  </div>
+  <!-- load_inner -->
 </div>
-</section>
+<!-- loading -->
+<article id="index">
+  <section id="main">
+    <div class="main_inner">
+      <div class="slide_fil"></div>
+      <div class="main_logo"></div>
+      <div id="slideShow">
+        <ul>
+          <li class="slide0"></li>
+          <li class="slide1"><img class="first_view" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_piirph.jpg"></li>
+        </ul>
+      </div>
+      <!-- slideShow -->
+      <div id="sliderBtn">
+        <ul>
+          <li value="slide1" number="0"><a href="javascript:void(0)"></a></li>
+          <li class="active" value="slide2" number="1" class=""><a href="javascript:void(0)"></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 <section id="topConcept">
 <div class="concept_wrap">
     <div class="txt_wrap">
-      <h2>毎日使うからこそ、<span>こだわりたい。</h2>
+      <h2>毎日使うからこそ、<span>こだわりたい。</span></h2>
       <p>掃除、洗濯、食器洗い。<span class="sp_block">家事は時に面倒で、余計なものに思えます。</span></p>
-        <p><span>だけど、それらがより楽しく、</span><span>幸せな時間に変わるとしたら、</span><span>毎日も人生もより豊かなものになるはずです。</span></p>
+      <p><span>だけど、それらがより楽しく、</span><span>幸せな時間に変わるとしたら、</span><span>毎日も人生もより豊かなものになるはずです。</span></p>
       <p><span>Komonsはマイナスだった家事を</span><span>プラスな時間に変えるためにつくった</span><span>ホームケアブランドです。</span></p>
         <p><span class="sp_block">天然素材にこだわること。</span><span class="sp_block">国産にこだわること。</span><span class="sp_block">そして香りに徹底的にこだわること。</span><span>Komonsは「Crafted in Japan」にこだわり、</span><span>ただただ丁寧に作りました。</span>
       </p>
@@ -65,7 +65,7 @@
         <a href="https://www.komons-japan.com/?tid=1&mode=f1">もっと詳しくみる<span class="caret"></span></a>
       </div>
     </div>
-</div>
+</div><!-- concept_wrap -->
 </section>
 <div id="product_wrap">
 <div class="section_ttl">
@@ -226,6 +226,41 @@
       <h4>大切な人への贈り物に。</h4>
     </div>
   </div>
+</section>
+<section class="section-pickup">
+  <div class="inner">
+  <div class="section_ttl">
+    <h2><span>Pickup</span><font>ピックアップ商品</font></h2>
+  </div>
+  <div class="comp-pickup-items">
+    <div class="pickup_item">
+      <div class="img_wrap">
+        <a href="/?pid=151138500"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/pickup_img01_xu8bmw.jpg"></a>
+      </div>
+      <div class="txt_wrap">
+        <div class="prod_detail">
+          <h3 class="cat_ttl"><span>Hand Wash</span>ハンドソープ</h3>
+          <a class="prod_name" href="/?pid=151138500"><span>I can hear music</span> ボトル + レフィルセット</a>
+          <span class="price">5,200円(税抜)</span>
+        </div>
+        <a class="arrow_link" href="/?pid=151138500"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
+      </div><!-- txt_wrap -->
+    </div><!-- pickup_item -->
+    <div class="pickup_item">
+      <div class="img_wrap">
+        <a href="/?pid=139975276"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/pickup_img02_mxmena.jpg"></a>
+      </div>
+      <div class="txt_wrap">
+        <div class="prod_detail">
+          <h3 class="cat_ttl"><span>Fabric Mist</span>除菌消臭ミスト</h3>
+          <a class="prod_name" href="https://www.komons-japan.com/?pid=139975276"><span>Free as a Bird</span>(Mini・ギフト)</a>
+          <span class="price">750円(税抜)</span>
+        </div>
+        <a class="arrow_link" href="/?pid=139975276"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
+      </div><!-- txt_wrap -->
+    </div><!-- pickup_item -->
+  </div>
+</div><!-- section_inner -->
 </section>
 <section id="topJournal">
 <div class="section_ttl">
