@@ -132,8 +132,19 @@ body {
 					margin-right: 33px;
 					a{
 						display: block;
+						height: 132px;
+						position: relative;
+						overflow: hidden;
 						transition: opacity .5s;
-						img{height: auto;}
+						img{
+							position: absolute;
+							width: 120%;
+							max-width: initial;
+							left: -10%;
+							right: -10%;
+							margin: auto;
+							height: auto;
+						}
 						&:hover{
 							opacity: 0.7;
 						}
@@ -254,6 +265,9 @@ body {
 
 					.img_wrap {
 						width: 250px;
+						a{
+							height: 160px;
+						}
 					}
 
 					.txt_wrap {
@@ -285,6 +299,9 @@ body {
 					.img_wrap {
 						width: 38%;
 						margin-right: 4%;
+						a{
+							height: 22vw;
+						}
 					}
 
 					.txt_wrap {

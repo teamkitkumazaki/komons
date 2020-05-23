@@ -31,6 +31,24 @@
 			}
 		}
 
+		.main_logo {
+			position: absolute;
+			z-index: 10;
+			right: 90px;
+			bottom: 50px;
+			width: 100px;
+			height: 146px;
+			@include bgSet;
+			background-image: url("../img/index/logo_main.svg");
+			opacity: 0;
+			transform: translateX(50px);
+			transition: opacity 1s, transform 1s;
+			&.loaded{
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+
 		.main_txt {
 			position: absolute;
 			height: 250px;
@@ -41,40 +59,6 @@
 			margin: auto;
 			text-align: center;
 			z-index: 11;
-
-			.main_img {
-				width: 100%;
-				height: 200px;
-				margin: 0 auto 50px;
-				opacity: 0;
-				transform: translateX(50px);
-				&.loaded{
-					opacity: 1;
-					transform: translateX(0);
-					transition: opacity 1s, transform 1s;
-				}
-				@include bgSet;
-				background: {
-					image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/lomons_logo_jlrsgn.png");
-					size: 171px;
-				}
-			}
-
-			h1 {
-				color: #fff;
-				line-height: 1;
-				font-weight: normal;
-				letter-spacing: 3px;
-				font-size: 18px;
-				text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-				opacity: 0;
-				transform: translateX(50px);
-				&.loaded{
-					opacity: 1;
-					transform: translateX(0);
-					transition: opacity 1s, transform 1s;
-				}
-			}
 		}
 
 		#slideShow {
@@ -752,6 +736,7 @@
 					display: block;
 					position: relative;
 					height: 216px;
+					overflow: hidden;
 					img{
 						position: absolute;
 						width: auto;
@@ -785,6 +770,15 @@
 				width: 100%;
 				height: 500px;
 				position: relative;
+
+				.main_logo {
+					position: absolute;
+					z-index: 10;
+					right: 30px;
+					bottom: 30px;
+					width: 100px;
+					height: 146px;
+				}
 
 				.slide_fil {
 					position: absolute;
@@ -1102,6 +1096,13 @@
 				width: 100%;
 				height: 100vw;
 				position: relative;
+				.main_logo {
+					right: 5%;
+					bottom: 25px;
+					width: 60px;
+					height: 85px;
+					background-size: cover;
+				}
 			}
 
 			.main_txt {
