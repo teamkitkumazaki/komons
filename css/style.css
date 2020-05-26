@@ -7448,10 +7448,6 @@ body.loaded #loading {
         .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name:hover {
           opacity: 0.75; }
         .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name span {
-          font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
-          font-weight: 500;
-          letter-spacing: 1px;
-          font-weight: bold;
           font-size: 24px; }
       .comp-pickup-items .pickup_item .txt_wrap .prod_detail .price {
         display: block;
@@ -7493,10 +7489,6 @@ body.loaded #loading {
     margin-bottom: 15px; }
     .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name span {
       display: block;
-      font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
-      font-weight: 500;
-      letter-spacing: 1px;
-      font-weight: bold;
       font-size: 20px; } }
 
 @media screen and (max-width: 760px) {

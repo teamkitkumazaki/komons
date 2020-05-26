@@ -42,8 +42,6 @@
           @include hover;
           margin-bottom: 15px;
           span{
-            @include libre-b;
-            font-weight: bold;
             font-size: 24px;
           }
         }
@@ -102,8 +100,6 @@
             margin-bottom: 15px;
             span{
               display: block;
-              @include libre-b;
-              font-weight: bold;
               font-size: 20px;
             }
           }
