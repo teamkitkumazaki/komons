@@ -1353,13 +1353,14 @@ body {
     writing-mode: vertical-rl; }
     #index #topConcept .txt_wrap h2 {
       text-align: left;
-      font-size: 28px;
+      font-size: 32px;
+      font-weight: normal;
       line-height: 1.75;
       letter-spacing: 3px;
       margin-left: 90px; }
       #index #topConcept .txt_wrap h2 span {
         display: block;
-        text-indent: 4.7em; }
+        text-indent: 4.2em; }
     #index #topConcept .txt_wrap p {
       text-align: left;
       font-size: 14px;
@@ -2214,10 +2215,14 @@ body {
       width: 100%;
       margin: 0 auto; }
       #index #topConcept .txt_wrap h2 {
-        font-size: 5vw;
-        line-height: 1;
-        letter-spacing: 0.02em;
-        margin-bottom: 30px; }
+        font-size: 7.6vw;
+        line-height: 1.4;
+        letter-spacing: 0.04em;
+        margin-bottom: 25px;
+        text-indent: -2px; }
+        #index #topConcept .txt_wrap h2 span {
+          display: block;
+          text-indent: -2px; }
       #index #topConcept .txt_wrap p {
         font-size: 3.6vw;
         letter-spacing: 0.1em;
@@ -4784,6 +4789,7 @@ body.loaded #loading {
         line-height: 40px; }
     #concept .concept_content .concept_section_top .sec_title {
       font-size: 36px;
+      font-weight: normal;
       margin-bottom: 25px; }
     #concept .concept_content .concept_section_part {
       display: -webkit-box;
@@ -4798,11 +4804,16 @@ body.loaded #loading {
       -ms-flex-pack: start;
       justify-content: flex-start; }
       #concept .concept_content .concept_section_part h3 {
-        line-height: 34px;
-        font-size: 18px;
+        line-height: 1.6;
+        font-size: 24px;
+        font-weight: normal;
         margin-bottom: 25px; }
+        #concept .concept_content .concept_section_part h3 span {
+          /*display: inline-block;
+          text-indent: -0.5em;*/ }
       #concept .concept_content .concept_section_part .sec_title {
         font-size: 38px;
+        font-weight: normal;
         letter-spacing: 4px;
         -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
@@ -5018,9 +5029,11 @@ body.loaded #loading {
         padding-bottom: 50px;
         margin-bottom: 35px; }
         #concept .concept_content .concept_section .concept_body {
-          line-height: 36px; }
+          font-size: 14px;
+          line-height: 2; }
       #concept .concept_content .concept_section_top .sec_title {
-        font-size: 22px;
+        font-size: 28px;
+        line-height: 1.4;
         margin-bottom: 20px; }
       #concept .concept_content .concept_section_part {
         display: block;
@@ -5030,16 +5043,23 @@ body.loaded #loading {
           -webkit-writing-mode: initial;
           -ms-writing-mode: initial;
           writing-mode: initial;
-          font-size: 22px;
-          margin-bottom: 30px;
+          font-size: 26px;
+          margin-bottom: 15px;
           width: 100%;
           letter-spacing: 1px; }
         #concept .concept_content .concept_section_part .concept_part_content {
           padding-left: 0; }
           #concept .concept_content .concept_section_part .concept_part_content h3 {
-            font-size: 15px;
-            margin-bottom: 15px;
-            line-height: 30px; }
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dotted #d8d8d8;
+            line-height: 1.6;
+            text-align: justify; }
+            #concept .concept_content .concept_section_part .concept_part_content h3 span {
+              display: inline; }
+            #concept .concept_content .concept_section_part .concept_part_content h3 br {
+              display: none; }
     #concept .concept_links h2 {
       font-size: 6vw; }
     #concept .concept_links ul {
