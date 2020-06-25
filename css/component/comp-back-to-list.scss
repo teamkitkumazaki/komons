@@ -1,0 +1,111 @@
+.comp-back-to-list{
+  @include waku;
+  margin-bottom: 100px;
+  @include flexSet;
+  justify-content: space-between;
+  .item_wrap{
+    width: 520px;
+    a{
+      position: relative;
+      display: block;
+      height: 265px;
+      @include bgSet;
+      @include hover;
+      background-color: #f4f4f4;
+      background-size: cover;
+      .txt_wrap{
+        position: absolute;
+        left: 0px;
+        bottom:0;
+        width: 100%;
+        color: #fff;
+        padding: 0 0 20px 20px;
+        box-sizing: border-box;
+        @include flexSet;
+        justify-content: flex-start;
+        align-items: center;
+        background-image: linear-gradient(to bottom, rgba(34, 34, 34, 0), #222222);
+        .txt_en{
+          display: block;
+          font-size: 34px;
+          letter-spacing: 1.5px;
+          @include libre-r;
+          margin-right: 15px;
+        }
+        .txt_ja{
+          display: block;
+          font-size: 16px;
+          letter-spacing: 0.8px;
+          padding-top: 10px;
+        }
+      }
+      &.items{
+        background-image: url(../img/item/all_items.jpg);
+      }
+      &.gifts{
+        background-image: url(../img/item/all_gifts.jpg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .comp-back-to-list{
+    @include waku;
+    margin-bottom: 100px;
+    @include flexSet;
+    justify-content: space-between;
+    .item_wrap{
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+      margin-bottom: 30px;
+      a{
+        position: relative;
+        display: block;
+        height: 370px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px){
+  .comp-back-to-list{
+    @include waku;
+    margin-bottom: 60px;
+    display: block;
+    .item_wrap{
+      width: 100%;
+      margin-bottom: 10px;
+      a{
+        height: 43vw;
+        .txt_wrap{
+          position: absolute;
+          left: 0px;
+          right:0px;
+          bottom: 0;
+          margin: auto;
+          justify-content: center;
+          padding: 0 0 15px 0px;
+          .txt_en{
+            font-size: 26px;
+            letter-spacing: 1px;
+            margin-right: 10px;
+          }
+          .txt_ja{
+            display: block;
+            font-size: 14px;
+            letter-spacing: 0.7px;
+            padding-top: 5px;
+          }
+        }
+        &.items{
+          background-image: url(../img/item/all_items.jpg);
+        }
+        &.gifts{
+          background-image: url(../img/item/all_gifts.jpg);
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 .comp-product-list {
-	ul {
+	.item_wrapper {
 		@include waku;
 		@include flexSet;
 		justify-content: flex-start;
 
-		li {
+		.item_box {
       position: relative;
 			width: 340px;
 			margin-right: 30px;
@@ -140,8 +140,8 @@
 }
 @media screen and (max-width: 1150px) {
   .comp-product-list {
-    ul {
-      li {
+    .item_wrapper {
+      .item_box {
         width: 48%;
         margin-right: 4%;
         margin-bottom: 75px;
@@ -159,11 +159,11 @@
 }
 @media screen and (max-width: 750px) {
   .comp-product-list {
-    ul {
+    .item_wrapper {
       width: 92%;
       padding-top: 30px;
 
-      li {
+      .item_box {
         width: 48%;
         margin-right: 4%;
         margin-bottom: 30px;
@@ -227,6 +227,17 @@
                 display: none;
               }
             }
+						&.related{
+							font-size: 14px;
+							span {
+								display: inline-block;
+								padding-right: 0.5em;
+
+								&::after {
+									display: inline-block;
+								}
+							}
+						}
           }
           .prod_name {
             line-height: 1.3;

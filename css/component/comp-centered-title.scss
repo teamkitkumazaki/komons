@@ -1,0 +1,32 @@
+.comp-centered-title{
+  font-weight: normal;
+  font-size: 30px;
+  letter-spacing: 1.1px;
+  text-align: center;
+  color: #00381f;
+  position: relative;
+  margin-bottom: 100px;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    margin: auto;
+    width: 36px;
+    height: 2px;
+    background-color: #c2cfc9;
+  }
+}
+@media screen and (max-width: 760px) {
+  .comp-centered-title {
+    font-size: 7vw;
+    margin-bottom: 60px;
+
+    &::after {
+      bottom: -20px;
+    }
+  }
+}
