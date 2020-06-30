@@ -74,14 +74,14 @@
         min-height: 95px;
         .cat_ttl {
           display: block;
-          font-size: 14px;
+          font-size: 16px;
           line-height: 1;
           letter-spacing: 1px;
-          color: rgba(#00381f, 0.8);
+          color: rgba(#00381f, 1);
           margin-bottom: 5px;
 
           span {
-            display: inline-block;
+            display: none;
             padding-right: 0.5em;
 
             &::after {

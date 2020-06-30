@@ -3611,11 +3611,14 @@ body.loaded #loading {
             line-height: 1.6; } }
 
 #itemDetail .journal_wrap {
-  padding-bottom: 60px; }
+  padding-bottom: 60px;
+  background: #f9f9f9;
+  padding: 0px 0 0; }
 
 #itemDetail .related_item {
-  padding: 100px 0 30px;
-  background: #f9f9f9; }
+  padding: 30px 0 0 0;
+  margin-bottom: 40px;
+  /*background: $basicGray;*/ }
 
 @media screen and (max-width: 1150px) {
   #itemDetail .detail_ttl {
@@ -3859,8 +3862,8 @@ body.loaded #loading {
   #itemDetail .journal_wrap {
     padding-bottom: 60px; }
   #itemDetail .related_item {
-    padding: 100px 0 30px;
-    background: #f9f9f9; } }
+    /*padding: 100px 0 30px;*/
+    /*background: $basicGray;*/ } }
 
 @media screen and (max-width: 750px) {
   #itemDetail .detail_ttl {
@@ -4156,8 +4159,8 @@ body.loaded #loading {
   #itemDetail .journal_wrap {
     padding-bottom: 30px; }
   #itemDetail .related_item {
-    padding: 40px 0 30px;
-    background: #f9f9f9; }
+    padding: 40px 0 0px;
+    /*background: $basicGray;*/ }
     #itemDetail .related_item .products ul {
       width: 85% !important;
       padding-top: 0; }
@@ -7628,13 +7631,13 @@ body.loaded #loading {
       min-height: 95px; }
       .comp-product-list .item_wrapper .item_box .txt_wrap .cat_ttl {
         display: block;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1;
         letter-spacing: 1px;
-        color: rgba(0, 56, 31, 0.8);
+        color: #00381f;
         margin-bottom: 5px; }
         .comp-product-list .item_wrapper .item_box .txt_wrap .cat_ttl span {
-          display: inline-block;
+          display: none;
           padding-right: 0.5em; }
           .comp-product-list .item_wrapper .item_box .txt_wrap .cat_ttl span::after {
             display: inline-block;
@@ -7857,13 +7860,13 @@ body.loaded #loading {
         margin-top: 0px;
         z-index: 10;
         display: inline-block;
-        content: "購入";
-        color: #00381f;
+        content: "カートに入れる";
+        color: #fff;
         font-size: 14px;
         padding-left: 30px;
         background-repeat: no-repeat;
         background-position: center center;
-        background-image: url(../img/gift/cart_img_green.png);
+        /*background-image: url(../img/gift/cart_img_green.png);*/
         background-size: 20px;
         background-position: center left;
         line-height: 20px; }
@@ -7878,7 +7881,7 @@ body.loaded #loading {
         width: 100% !important;
         border-radius: 0 !important;
         display: block !important;
-        border: 1px solid #f4f4f4 !important;
+        border: 1px solid #00381f !important;
         height: 40px !important;
         line-height: 38px !important;
         text-align: center !important;
@@ -7886,7 +7889,7 @@ body.loaded #loading {
         -webkit-transition: opacity 0.5s !important;
         -o-transition: opacity 0.5s !important;
         transition: opacity 0.5s !important;
-        background: #f4f4f4 !important;
+        background: #00381f !important;
         color: #fff !important;
         margin-bottom: 10px !important;
         -webkit-appearance: none;
@@ -8096,7 +8099,7 @@ body.loaded #loading {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 100px;
+  margin-bottom: 160px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8214,7 +8217,7 @@ body.loaded #loading {
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     display: block; } }
   @media screen and (max-width: 760px) and (max-width: 1150px) {
     .comp-back-to-list {

@@ -16,7 +16,7 @@
   gtag('js', new Date());
   gtag('config', 'UA-120930116-1', {
     'linker': {
-       'domains': ['komons-japan.com', 'journal.komons-japan.com', 'cart.shop-pro.jp', 'shop-pro.jp']
+       'domains': ['komons-japan.com', 'journal.komons-japan.com', 'cart.shop-pro.jp', 'shop-pro.jp', 'payments.amazon.co.jp', 'amazon.co.jp']
     }
   });
   function gtag_report_conversion() {

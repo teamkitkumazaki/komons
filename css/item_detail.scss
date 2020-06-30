@@ -858,11 +858,14 @@
 
 	.journal_wrap {
 		padding-bottom: 60px;
+		background: $basicGray;
+		padding: 0px 0 0;
 	}
 
 	.related_item {
-		padding: 100px 0 30px;
-		background: $basicGray;
+		padding: 30px 0 0 0;
+		margin-bottom: 40px;
+		/*background: $basicGray;*/
 	}
 }
 @media screen and (max-width: 1150px) {
@@ -1154,8 +1157,8 @@
 		}
 
 		.related_item {
-			padding: 100px 0 30px;
-			background: $basicGray;
+			/*padding: 100px 0 30px;*/
+			/*background: $basicGray;*/
 		}
 	}
 }
@@ -1597,8 +1600,8 @@
 		}
 
 		.related_item {
-			padding: 40px 0 30px;
-			background: $basicGray;
+			padding: 40px 0 0px;
+			/*background: $basicGray;*/
 
 			.products {
 				ul {

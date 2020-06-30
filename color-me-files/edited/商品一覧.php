@@ -7,7 +7,7 @@
 				<option class="option-1" value="?mode=cate&csid=0&cbid=2421809">全ての商品</option>
 				<option class="option-1" value="?mode=cate&cbid=2421809&csid=10">ボトル商品</option>
         <option class="option-1" value="?mode=cate&cbid=2421809&csid=11">レフィル商品</option>
-        <option class="option-1" value="?mode=cate&csid=0&cbid=2618680">ボトル＆レフィル</option>
+        <option class="option-1" value="?mode=cate&cbid=2421809&csid=12">ボトル＆レフィル</option>
 				<option class="option-1" value="?mode=cate&cbid=2421809&csid=9">Upcoming商品</option>
 			</select>
     </div>
