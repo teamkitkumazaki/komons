@@ -3612,13 +3612,16 @@ body.loaded #loading {
 
 #itemDetail .journal_wrap {
   padding-bottom: 60px;
-  background: #f9f9f9;
-  padding: 0px 0 0; }
+  padding: 0px 0 0;
+  margin-top: -100px; }
 
 #itemDetail .related_item {
-  padding: 30px 0 0 0;
-  margin-bottom: 40px;
-  /*background: $basicGray;*/ }
+  padding: 0 0 0 0;
+  margin-bottom: 0px; }
+
+#itemDetail .section-back {
+  padding: 100px 0 0;
+  background: #f9f9f9; }
 
 @media screen and (max-width: 1150px) {
   #itemDetail .detail_ttl {
@@ -3807,7 +3810,7 @@ body.loaded #loading {
           display: block; }
   #itemDetail .cart_wrap02 {
     display: block;
-    margin-bottom: 140px; }
+    margin-bottom: 100px; }
     #itemDetail .cart_wrap02 .img_wrap {
       width: 600px;
       margin-right: auto;
@@ -3863,7 +3866,9 @@ body.loaded #loading {
     padding-bottom: 60px; }
   #itemDetail .related_item {
     /*padding: 100px 0 30px;*/
-    /*background: $basicGray;*/ } }
+    /*background: $basicGray;*/ }
+  #itemDetail .section-back {
+    padding: 100px 0 80px; } }
 
 @media screen and (max-width: 750px) {
   #itemDetail .detail_ttl {
@@ -4157,9 +4162,11 @@ body.loaded #loading {
         margin: 15px 0 0;
         font-size: 4vw; }
   #itemDetail .journal_wrap {
-    padding-bottom: 30px; }
+    padding-bottom: 40px; }
+  #itemDetail .section-back {
+    padding: 60px 0; }
   #itemDetail .related_item {
-    padding: 40px 0 0px;
+    padding: 40px 0 100px;
     /*background: $basicGray;*/ }
     #itemDetail .related_item .products ul {
       width: 85% !important;
@@ -8099,7 +8106,7 @@ body.loaded #loading {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 160px;
+  margin-bottom: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8182,7 +8189,7 @@ body.loaded #loading {
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 100px;
+    margin-bottom: 1px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -8217,7 +8224,7 @@ body.loaded #loading {
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 80px;
+    margin-bottom: 0px;
     display: block; } }
   @media screen and (max-width: 760px) and (max-width: 1150px) {
     .comp-back-to-list {
