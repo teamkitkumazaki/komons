@@ -11,16 +11,22 @@
 				<option class="option-1" value="?mode=cate&cbid=2421809&csid=9">Upcoming商品</option>
 			</select>
     </div>
-    <div class="products">
-      <ul class="">
+    <div class="comp-product-list">
+      <ul class="item_wrapper">
         <{section name=num loop=$productlist}>
-        <li>
-          <h4 class="cat_ttl"><{$productlist[num].s_expl}></h4>
+        <li class="item_box">
+          <span class="cat_ttl"><{$productlist[num].s_expl}></span>
           <div class="img_wrap">
-            <a href="<{$productlist[num].link_url}>"><img src="<{$productlist[num].img_url}>"></a>
+            <a href="<{$productlist[num].link_url}>" style="background-image: url(<{$productlist[num].img_url}>)"></a>
           </div>
           <div class="txt_wrap">
-            <h3><a href="<{$productlist[num].link_url}>"><{$productlist[num].name}></a></h3>
+            <h3 class="prod_name">
+              <{if $productlist[num].name|count_characters < 28}>
+                <a href="<{$productlist[num].link_url}>"><{$productlist[num].name}></a>
+              <{else}>
+                <a class="small" href="<{$productlist[num].link_url}>"><{$productlist[num].name}></a>
+              <{/if}>
+            </h3>
             <span class="product_detail">
               <{if $productlist[num].teika_disp == true}>
 							<span class="price"><{$productlist[num].price}></span>
@@ -28,8 +34,13 @@
               <span class="price">未定</span>
               <{/if}>
 						</span>
-            <a class="arrow_link" href="<{$productlist[num].link_url}>"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
           </div>
+          <div class="comp-list-cart-button">
+            <{if $productlist[num].soldout_flg == false}>
+            <script type='text/javascript' src='https://komons-japan.shop-pro.jp/?mode=cartjs&pid=<{$productlist[num].id}>&style=normal_gray&name=n&img=n&expl=n&stock=n&price=n&inq=n&sk=n' charset='euc-jp'></script>
+            <{else}>
+            <span class="soldout">在庫切れ</span>
+            <{/if}>
         </li>
         <{/section}>
       </ul>
