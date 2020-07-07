@@ -282,8 +282,8 @@
 							<a href="?pid=134415561" style="background-image: url(https://img21.shop-pro.jp/PA01416/697/product/134415561_th.jpg?cmsp_timestamp=20180821092255)"></a>
 						</div>
 						<div class="txt_wrap">
+							<span class="cat_ttl related"><span>Gift Set</span>ギフトセット</span>
 							<div class="product_info">
-								<span class="cat_ttl related"><span>Gift Set</span>ギフトセット</span>
 								<h3 class="prod_name"><a href="?pid=134415561">キッチンコンビ</a></h3>
 							</div>
 							<span class="product_detail">3,900円(税抜)</span>
@@ -312,8 +312,8 @@
 							<a href="?pid=134403536" style="background-image: url(https://img21.shop-pro.jp/PA01416/697/product/134403536_th.jpg?cmsp_timestamp=20180821000344)"></a>
 						</div>
 						<div class="txt_wrap">
+							<span class="cat_ttl related"><span>Gift Set</span>ギフトセット</span>
 							<div class="product_info">
-								<span class="cat_ttl related"><span>Gift Set</span>ギフトセット</span>
 								<h3 class="prod_name"><a href="?pid=134403536">キッチントリオ</a></h3>
 							</div>
 							<span class="product_detail">6,400円(税抜)</span>
@@ -469,5 +469,24 @@
 		</div>
 	</div>
 </body>
-
+<link rel="stylesheet" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/slick/slick.css">
+<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/slick/slick.min.js" charset="UTF-8"></script>
+<script>
+$('#relatedSlider').slick({
+  accessibility: false,
+  infinite: false,
+  dots: true,
+  slidesToShow: 3,
+  centerMode: true,
+  autoplay: false,
+  responsive: [{
+    breakpoint: 760,
+    settings: {
+      slidesToShow: 1,
+      centerPadding: '10%',
+      centerMode: false,
+    }
+  }]
+});
+</script>
 </html>
