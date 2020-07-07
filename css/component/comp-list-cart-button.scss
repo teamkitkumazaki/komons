@@ -1,0 +1,207 @@
+.comp-list-cart-button{
+  .soldout{
+    background: #f1f1f1;
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    margin-top: 17px;
+  }
+  .cartjs_box {
+    padding: 0 !important;
+
+    .cartjs_cart_in {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      text-align: center;
+      cursor: pointer;
+
+      &::before {
+        position: relative;
+        pointer-events: none;
+        margin-top: 8px;
+        z-index: 10;
+        display: inline-block;
+        content: "カートに入れる";
+        color: #fff;
+        font-size: 16px;
+        padding-left: 30px;
+        @include bgSet;
+        background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/cart_img_kjoshz.png");
+        background-size: 20px;
+        background-position: center left;
+      }
+
+      input[type="submit"] {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-indent: -9999px;
+        width: 100% !important;
+        border-radius: 0 !important;
+        display: block !important;
+        border: 1px solid $basicGreen !important;
+        height: 48px !important;
+        line-height: 46px !important;
+        text-align: center !important;
+        font-size: 15px !important;
+        transition: opacity 0.5s !important;
+        background: $basicGreen !important;
+        color: #fff !important;
+        margin-bottom: 10px !important;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 0;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .cartjs_product_num {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 760px){
+  .comp-list-cart-button{
+    .soldout{
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      margin-top: -5px;
+    }
+    .cartjs_box {
+      padding: 0 !important;
+
+      .cartjs_cart_in {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        margin-top: -10px !important;
+        text-align: center;
+        cursor: pointer;
+
+        &::before {
+          position: relative;
+          pointer-events: none;
+          margin-top: 0px;
+          z-index: 10;
+          display: inline-block;
+          content: "カートに入れる";
+          color: #fff;
+          font-size: 14px;
+          padding-left: 30px;
+          @include bgSet;
+          /*background-image: url(../img/gift/cart_img_green.png);*/
+          background-size: 20px;
+          background-position: center left;
+          line-height: 20px;
+          @media screen and (max-width: 350px){
+            font-size: 12px;
+            padding-left: 24px;
+            background-size: 18px;
+          }
+        }
+
+        input[type="submit"] {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          text-indent: -9999px;
+          width: 100% !important;
+          border-radius: 0 !important;
+          display: block !important;
+          border: 1px solid $basicGreen !important;
+          height: 40px !important;
+          line-height: 38px !important;
+          text-align: center !important;
+          font-size: 15px !important;
+          transition: opacity 0.5s !important;
+          background: $basicGreen !important;
+          color: #fff !important;
+          margin-bottom: 10px !important;
+          -webkit-appearance: none;
+          appearance: none;
+          border-radius: 0;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+    &.related{
+      .cartjs_box {
+        padding: 0 !important;
+
+        .cartjs_cart_in {
+          position: relative;
+          width: 100%;
+          height: 40px;
+          margin-top: -10px !important;
+          text-align: center;
+          cursor: pointer;
+
+          &::before {
+            position: relative;
+            pointer-events: none;
+            margin-top: 0px;
+            z-index: 10;
+            display: inline-block;
+            content: "カートに入れる";
+            color: #fff;
+            font-size: 16px;
+            padding-left: 30px;
+            @include bgSet;
+            background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/cart_img_kjoshz.png");
+            background-size: 20px;
+            background-position: center left;
+            line-height: 17px;
+          }
+
+          input[type="submit"] {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-indent: -9999px;
+            width: 100% !important;
+            border-radius: 0 !important;
+            display: block !important;
+            border: 1px solid $basicGreen !important;
+            height: 45px !important;
+            line-height: 43px !important;
+            text-align: center !important;
+            font-size: 15px !important;
+            transition: opacity 0.5s !important;
+            background: $basicGreen !important;
+            color: #fff !important;
+            margin-bottom: 10px !important;
+            -webkit-appearance: none;
+            appearance: none;
+            border-radius: 0;
+
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+  }
+}

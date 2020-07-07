@@ -749,5 +749,4 @@ $(function() {
     });
   }
   toggleBtn();
-
 });

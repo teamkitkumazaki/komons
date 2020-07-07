@@ -858,10 +858,16 @@
 
 	.journal_wrap {
 		padding-bottom: 60px;
+		padding: 0px 0 0;
+		margin-top: -100px;
 	}
 
 	.related_item {
-		padding: 100px 0 30px;
+		padding: 0 0 0 0;
+		margin-bottom: 0px;
+	}
+	.section-back{
+		padding: 100px 0 0;
 		background: $basicGray;
 	}
 }
@@ -1071,7 +1077,7 @@
 
 		.cart_wrap02 {
 			display: block;
-			margin-bottom: 140px;
+			margin-bottom: 100px;
 
 			.img_wrap {
 				width: 600px;
@@ -1154,8 +1160,11 @@
 		}
 
 		.related_item {
-			padding: 100px 0 30px;
-			background: $basicGray;
+			/*padding: 100px 0 30px;*/
+			/*background: $basicGray;*/
+		}
+		.section-back{
+			padding: 100px 0 80px;
 		}
 	}
 }
@@ -1593,12 +1602,15 @@
 		}
 
 		.journal_wrap {
-			padding-bottom: 30px;
+			padding-bottom: 40px;
+		}
+		.section-back{
+			padding: 60px 0;
 		}
 
 		.related_item {
-			padding: 40px 0 30px;
-			background: $basicGray;
+			padding: 40px 0 100px;
+			/*background: $basicGray;*/
 
 			.products {
 				ul {
