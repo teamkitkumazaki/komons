@@ -8,7 +8,6 @@ $(function() {
 
     function init() {
       target.find('form').each(function(index) {
-        console.log(index);
         submitForm[index] = $(this);
         submitForm[index].attr('id', 'form' + index);
         submitButton[index] = $(this).find('.cartjs_cart_in').find('input');

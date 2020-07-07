@@ -1,9 +1,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg">
 <link href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg" rel="apple-touch-icon" sizes="200x200">
-<link rel="stylesheet" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/css/style.css?ver200612">
+<link rel="stylesheet" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/css/style.css?ver200707">
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500" rel="stylesheet">
-<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/layout.min.js?ver200612" charset="UTF-8"></script>
+<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/layout.min.js?ver200707" charset="UTF-8"></script>
 <script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/instafeed.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120930116-1"></script>
@@ -33,10 +33,10 @@
 	function gtag_report_conversion2(e) {
 	var callback = function () {
 	     console.log(e);
-             $('#form'+ e).submit();
+       $('#form'+ e).submit();
 	};
 	gtag('event', 'submit', {
-	  'event_category': 'cartIn',
+	  'event_category': 'listCartIn',
 	  'event_callback': callback,
 	});
 	return false;

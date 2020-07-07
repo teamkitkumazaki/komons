@@ -210,7 +210,7 @@ $(function() {
    <div class="detail_ttl">
      <h3><span class="en_ttl">Related Items</span><span class="jp_ttl">よく一緒に購入されている商品</span></h3>
    </div>
-   <div class="comp-related-product comp-product-list">
+   <div id="productList" class="comp-related-product comp-product-list">
      <div id="relatedSlider" class="item_wrapper">
        <{section name=num loop=$together_product}>
        <div class="item_box slick-slide">
@@ -266,6 +266,7 @@ $(function() {
  </section>
 </article>
 <link rel="stylesheet" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/slick/slick.css">
+<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/conversion.js"></script>
 <script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/slick/slick.min.js" charset="UTF-8"></script>
 <script>
 $('#relatedSlider').slick({

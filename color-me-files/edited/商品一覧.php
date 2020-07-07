@@ -11,7 +11,7 @@
 				<option class="option-1" value="?mode=cate&cbid=2421809&csid=9">Upcoming商品</option>
 			</select>
     </div>
-    <div class="comp-product-list">
+    <div id="productList" class="comp-product-list">
       <ul class="item_wrapper">
         <{section name=num loop=$productlist}>
         <li class="item_box">
@@ -62,3 +62,4 @@
 	    </div>
 		</section>
 </article>
+<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/conversion.js"></script>
