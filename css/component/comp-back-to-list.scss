@@ -40,10 +40,10 @@
         }
       }
       &.items{
-        background-image: url(../img/item/all_items.jpg);
+        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1594360161/item/all_items_jaj1or.jpg);
       }
       &.gifts{
-        background-image: url(../img/item/all_gifts.jpg);
+        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1594360161/item/all_gifts_c1jptw.jpg);
       }
     }
   }
@@ -98,12 +98,6 @@
             letter-spacing: 0.7px;
             padding-top: 5px;
           }
-        }
-        &.items{
-          background-image: url(../img/item/all_items.jpg);
-        }
-        &.gifts{
-          background-image: url(../img/item/all_gifts.jpg);
         }
       }
     }

@@ -95,7 +95,7 @@ $(function() {
       <{/if}>
       <{else}>
       <div class="cart_wrap">
-        <{if $product.model == 'K0038' || $product.model == 'K0037'}>
+        <{if $product.model == 'K0038' || $product.model == 'K0037' || $product.model == 'K0026' || $product.model == 'K0009'}>
         <div class="comp-waiting-button">
           <a href="https://journal.komons-japan.com/waiting-list/<{$product.model}>">
             <span class="title">再入荷リクエスト</span>
@@ -189,7 +189,7 @@ $(function() {
       <{/if}>
       <{else}>
       <div class="cart_wrap">
-        <{if $product.model == 'K0038' || $product.model == 'K0037'}>
+        <{if $product.model == 'K0038' || $product.model == 'K0037' || $product.model == 'K0026' || $product.model == 'K0009'}>
         <div class="comp-waiting-button">
           <a href="https://journal.komons-japan.com/waiting-list/<{$product.model}>">
             <span class="title">再入荷リクエスト</span>
@@ -220,7 +220,13 @@ $(function() {
          <div class="txt_wrap">
            <div class="product_info">
              <span class="cat_ttl related"><{$together_product[num].s_expl}></span>
-             <h3 class="prod_name"><a href="<{$together_product[num].link_url}>"><{$together_product[num].name}></a></h3>
+             <h3 class="prod_name">
+               <{if $together_product[num].name|count_characters < 28}>
+               <a class="normal"  href="<{$together_product[num].link_url}>"><{$together_product[num].name}></a>
+               <{else}>
+               <a class="small" href="<{$together_product[num].link_url}>"><{$together_product[num].name}></a>
+               <{/if}>
+             </h3>
            </div>
            <span class="product_detail"><{$together_product[num].teika}></span>
          </div>

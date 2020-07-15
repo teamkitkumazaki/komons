@@ -240,7 +240,7 @@
       <div class="txt_wrap">
         <div class="prod_detail">
           <h3 class="cat_ttl"><span>Hand Wash</span>ハンドソープ</h3>
-          <a class="prod_name" href="/?pid=151138500"><span>I can hear music</span> ボトル + レフィルセット</a>
+          <a class="prod_name" href="/?pid=151138500">I can hear music ボトル + レフィルセット</a>
           <span class="price">5,200円(税抜)</span>
         </div>
         <a class="arrow_link" href="/?pid=151138500"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
@@ -248,15 +248,15 @@
     </div><!-- pickup_item -->
     <div class="pickup_item">
       <div class="img_wrap">
-        <a href="/?pid=139975276"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/pickup_img02_mxmena.jpg"></a>
+        <a href="/?pid=144106203"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1594359474/index/pickup_img02_zsiuz2.jpg"></a>
       </div>
       <div class="txt_wrap">
         <div class="prod_detail">
           <h3 class="cat_ttl"><span>Fabric Mist</span>除菌消臭ミスト</h3>
-          <a class="prod_name" href="https://www.komons-japan.com/?pid=139975276"><span>Free as a Bird</span>(Mini・ギフト)</a>
-          <span class="price">750円(税抜)</span>
+					<a class="prod_name" href="/?pid=144106203"><span>2020 Summer "山椒"/ Free as a Bird (Mini)</span></a>
+          <span class="price">680円(税抜)</span>
         </div>
-        <a class="arrow_link" href="/?pid=139975276"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
+        <a class="arrow_link" href="/?pid=144106203"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
       </div><!-- txt_wrap -->
     </div><!-- pickup_item -->
   </div>
