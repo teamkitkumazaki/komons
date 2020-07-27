@@ -278,21 +278,10 @@
     <h2>#komons</h2>
   </div>
   <div class="insta_wrap">
-    <ul id="instafeed"></ul>
+    <div class="iframe_wrap">
+      <iframe class="autoHeight" src="https://journal.komons-japan.com/iframe-instagram" scrolling="no" frameborder="0"></iframe>
+    </div>
     <p><a href="https://www.instagram.com/komons.jp/" target="_blank"><span>@komons.jp</span></a></p>
   </div>
 </section>
-<script type="text/javascript">
-var feed = new Instafeed({
-  clientId: '0996b23f3c8d4f01ac623c4e3e524a92',
-  get: 'user',
-  userId: '7964470405',
-  accessToken:'7964470405.0996b23.ce82338312eb4577aca0350224d33424',
-  links: true,
-  limit: 6, // 取得件数
-  resolution:'standard_resolution',
-  template: '<li><a href="{{link}}"><img src={{image}} alt={{caption}}></a></li>' // 画像URL：{{image}} リンク：{{link}} キャプションテキスト{{caption}} いいね数：{{likes}} コメント数：{{comments}}
-});
-feed.run();
-</script>
 </article>

@@ -749,4 +749,23 @@ $(function() {
     });
   }
   toggleBtn();
+
+
+  $('#relatedSlider').slick({
+    accessibility: false,
+    infinite: false,
+    dots: true,
+    slidesToShow: 3,
+    centerMode: true,
+    autoplay: false,
+    responsive: [{
+      breakpoint: 760,
+      settings: {
+        slidesToShow: 1,
+        centerPadding: '10%',
+        centerMode: false,
+      }
+    }]
+  });
+
 });
