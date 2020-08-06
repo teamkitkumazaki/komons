@@ -24,7 +24,16 @@ $(function() {
       <h1 class="prodcut_name"><{$product_name}></h1>
       <div id="excerpt" class="excerpt"></div>
     </div>
+    <{if $sid_name == "upcoming"}>
+    <div class="comp-waiting-button upcoming_button">
+      <a href="https://journal.komons-japan.com/waiting-list/<{$product.model}>">
+        <span class="title">再入荷リクエスト</span>
+        <span class="desc">販売再開をメールでお知らせいたします</span>
+      </a>
+    </div>
+    <{/if}>
     <!-- product_ex -->
+    <{if $sid_name != "upcoming"}>
     <div class="product_detail">
       <div class="detail_block detail01">
         <{if $product.weight != null }>
@@ -108,10 +117,12 @@ $(function() {
       </div>
       <{/if}>
     </div>
+    <{/if}>
       </form>
   </section>
   <!-- cart_wrap01 -->
 <{$product.explain}>
+<{if $sid_name != "upcoming"}>
 <section class="cart_wrap02">
   <div class="img_wrap">
     <img src="<{$product.ot2_url}>">
@@ -204,6 +215,7 @@ $(function() {
     </form>
   </div>
 </section>
+<{/if}>
 <!-- cart_wrap02 -->
  <{if $together_product_num != 0}>
  <section class="related_item item_detail">

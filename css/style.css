@@ -7301,6 +7301,8 @@ body.loaded #loading {
 .comp-waiting-button {
   max-width: 700px;
   margin: 0 auto; }
+  .comp-waiting-button.upcoming_button {
+    margin-top: -20px; }
   .comp-waiting-button a {
     display: block;
     padding: 15px 0;
@@ -7350,6 +7352,9 @@ body.loaded #loading {
   .comp-waiting-button {
     max-width: 700px;
     margin: 0 auto; }
+    .comp-waiting-button.upcoming_button {
+      margin-top: 0px;
+      margin-bottom: 80px; }
     .comp-waiting-button a {
       display: block;
       padding: 15px 0 20px !important;

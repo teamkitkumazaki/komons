@@ -1,6 +1,9 @@
 .comp-waiting-button{
   max-width: 700px;
   margin: 0 auto;
+  &.upcoming_button{
+    margin-top: -20px;
+  }
   a{
     display: block;
     padding: 15px 0;
@@ -51,6 +54,10 @@
   .comp-waiting-button{
     max-width: 700px;
     margin: 0 auto;
+    &.upcoming_button{
+      margin-top: 0px;
+      margin-bottom: 80px;
+    }
     a{
       display: block;
       padding: 15px 0 20px !important;
