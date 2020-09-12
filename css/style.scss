@@ -33,7 +33,7 @@ $basicGreen: #00381f;
     max-width: 750px;
   }
   @media screen and (max-width: 750px){
-    width: 84%;
+    width: 84vw;
   }
 }
 @mixin flexSet {
@@ -84,6 +84,9 @@ $basicGreen: #00381f;
 @import 'faq.scss';
 /*ギフトページのレイアウト*/
 @import 'gift.scss';
+/* ギフトサービスページのレイアウト*/
+@import 'giftService.scss';
+
 /*ギフトページのレイアウト*/
 @import 'waitingList.scss';
 
@@ -102,3 +105,5 @@ $basicGreen: #00381f;
 @import 'component/comp-centered-title.scss';
 @import 'component/comp-back-to-list.scss';
 @import 'component/comp-insta-wrap.scss';
+@import 'component/comp-gift-service-wrap.scss';
+@import 'component/comp-qa.scss';

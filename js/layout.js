@@ -519,6 +519,10 @@ $(function() {
     faqToggle($('article'));
   }
 
+  if (document.getElementById('giftService')) {
+    faqToggle($('article'));
+  }
+
   //ギフトサービスへのスクロール
   function giftScroll(target) {
 

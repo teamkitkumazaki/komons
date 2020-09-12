@@ -1,0 +1,214 @@
+.comp-qa{
+  padding: 120px 0 80px;
+  .gift_ttl {
+    font-size: 40px;
+    letter-spacing: 1.1px;
+    text-align: center;
+    color: #00381f;
+    position: relative;
+    margin-bottom: 100px;
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -30px;
+      margin: auto;
+      width: 36px;
+      height: 2px;
+      background-color: #c2cfc9;
+    }
+  }
+  .qa_toggle {
+    @include waku;
+
+    .toggle_item {
+      height: 50px;
+      margin-bottom: 10px;
+      transition: height 0.5s;
+      overflow: hidden;
+
+      .toggle_button {
+        padding: 15px 15px 15px 45px;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #00381f !important;
+        background: #f8f8f8;
+        display: block;
+        position: relative;
+
+        &::before {
+          display: block;
+          content: "";
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          top: 0;
+          bottom: 0;
+          left: 10px;
+          margin: auto;
+          @include bgSet;
+          background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/q_nltzrn.png");
+          background-size: 20px;
+        }
+
+        &::after {
+          display: block;
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 10px;
+          margin: auto;
+          width: 25px;
+          height: 25px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/faq/plus_u1luqf.png");
+          background-size: 20px;
+          background-position: center center;
+        }
+
+        &.active {
+          &::after {
+            background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/faq/minus_njtgyg.png");
+            background-size: 20px;
+            background-position: center center;
+          }
+        }
+      }
+
+      .toggle_contents {
+        padding: 15px 0 15px 45px;
+        position: relative;
+
+        &::before {
+          display: block;
+          content: "";
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          top: 10px;
+          left: 10px;
+          @include bgSet;
+          background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/a_dktkar.png");
+          background-size: 20px;
+        }
+
+        p {
+          line-height: 1.6;
+        }
+      }
+    }
+
+    .others {
+      text-align: center;
+      margin: 50px auto;
+
+      a {
+        color: $basicGreen;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .comp-qa{
+    padding: 100px 30px 40px;
+  }
+}
+
+@media screen and (max-width: 760px){
+  .comp-qa{
+    padding: 60px 0 40px;
+    .gift_ttl {
+      font-size: 7vw;
+      margin-bottom: 60px;
+
+      &::after {
+        bottom: -20px;
+      }
+    }
+    .qa_toggle {
+      @include waku;
+
+      .toggle_item {
+        height: 50px;
+        margin-bottom: 10px;
+        transition: height 0.5s;
+        overflow: hidden;
+
+        &.row2 {
+          height: 70px;
+        }
+
+        .toggle_button {
+          padding: 10px 35px 10px 45px;
+          line-height: 1.6;
+          font-size: 3.4vw;
+          margin-bottom: 5px;
+
+          &::before {
+            width: 20px;
+            height: 20px;
+            left: 10px;
+            background-size: 15px;
+          }
+
+          &::after {
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            background-size: 15px;
+          }
+
+          &.active {
+            &::after {
+              background-size: 15px;
+            }
+          }
+        }
+
+        .toggle_contents {
+          padding: 15px 0 15px 45px;
+          position: relative;
+
+          &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 10px;
+            left: 10px;
+            @include bgSet;
+            background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/a_dktkar.png");
+            background-size: 20px;
+          }
+
+          p {
+            line-height: 1.6;
+          }
+        }
+      }
+
+      .others {
+        text-align: center;
+        margin: 40px auto 0;
+        line-height: 1.6;
+
+        a {
+          color: $basicGreen;
+          text-decoration: underline;
+        }
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
