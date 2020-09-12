@@ -13,7 +13,9 @@ body {
 	min-height: 100vh;
 	padding-top: 120px;
 }
-
+.section_inner{
+	@include waku;
+}
 .section_ttl {
 	@include waku;
 	padding: 130px 0 70px;

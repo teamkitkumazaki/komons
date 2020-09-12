@@ -1,0 +1,195 @@
+.comp-gift-service-wrap{
+  .service_item{
+    @include flexSet;
+    align-items: center;
+    margin-bottom: 40px;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
+    .service_img{
+      width: 350px;
+      margin-right: 40px;
+    }
+    .service_txt{
+      width: calc(100% - 390px);
+      .service_name{
+        font-size: 23px;
+        font-weight: normal;
+        line-height: normal;
+        letter-spacing: 0.8px;
+        margin-bottom: 5px;
+      }
+      .txt_wrap{
+        .desc{
+          font-size: 14px;
+          line-height: 1.57;
+          letter-spacing: 0.78px;
+          margin-bottom: 5px;
+          a{
+            color: #068acc;
+            @include hover;
+          }
+        }
+        .added{
+          font-size: 13px;
+          line-height: 1.57;
+          letter-spacing: 0.78px;
+          color: #797979;
+        }
+        .sub_ttl{
+          font-size: 18px;
+          font-weight: normal;
+          line-height: normal;
+          letter-spacing: 0.5px;
+          margin-top: 15px;
+          margin-bottom: 10px;
+        }
+        .noshi_text{
+          @include flexSet;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          span{
+            display: block;
+            width: 110px;
+            padding: 10px 0;
+            font-size: 13px;
+            line-height: 1;
+            letter-spacing: 0.56px;
+            text-align: center;
+            color: #00381f;
+            border-radius: 5px;
+            border: solid 1px #979797;
+          }
+        }
+      }
+      .link_button{
+        margin-top: 20px;
+        a{
+          display: block;
+          width: 250px;
+          background-color: #00381f;
+          box-sizing: border-box;
+          padding: 15px 0;
+          @include hover;
+          span{
+            display: block;
+            font-size: 15px;
+            line-height: normal;
+            letter-spacing: 0.2px;
+            padding: 0 15px;
+            color: #fff;
+            position: relative;
+            &::after{
+              display: block;
+              content: "";
+              position: absolute;
+              top:0;
+              bottom:0;
+              right: 15px;
+              margin: auto;
+              width: 24px;
+              height: 9px;
+              @include bgSet;
+              background-size: contain;
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/arrow_white_ghx7mf.png);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .comp-gift-service-wrap{
+    box-sizing: border-box;
+    .service_item{
+      display: block;
+      margin-bottom: 40px;
+      .service_img{
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 20px;
+        img{
+          width: 100%;
+        }
+      }
+      .service_txt{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px){
+  .comp-gift-service-wrap{
+    .service_item{
+      @include flexSet;
+      align-items: center;
+      margin-bottom: 45px;
+      &:nth-last-of-type(1){
+        margin-bottom: 0;
+      }
+      .service_img{
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 15px;
+      }
+      .service_txt{
+        width: 100%;
+        .service_name{
+          font-size: 20px;
+          letter-spacing: 0.8px;
+          margin-bottom: 10px;
+        }
+        .txt_wrap{
+          .desc{
+            font-size: 14px;
+            line-height: 1.6;
+            letter-spacing: 0.6px;
+            margin-bottom: 5px;
+          }
+          .added{
+            font-size: 14px;
+            line-height: 1.57;
+            letter-spacing: 0.78px;
+            color: #646464;
+          }
+          .sub_ttl{
+            font-size: 18px;
+            font-weight: normal;
+            line-height: normal;
+            letter-spacing: 0.5px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+          }
+          .noshi_text{
+            margin-bottom: 10px;
+            span{
+              display: block;
+              width: 32%;
+              margin-bottom: 5px;
+            }
+          }
+        }
+        .link_button{
+          margin-top: 20px;
+          a{
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+            span{
+              display: block;
+              font-size: 15px;
+              line-height: normal;
+              letter-spacing: 0.2px;
+              padding: 0 15px;
+              color: #fff;
+              position: relative;
+            }
+          }
+        }
+      }
+    }
+  }
+}
