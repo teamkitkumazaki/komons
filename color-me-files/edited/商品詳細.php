@@ -53,6 +53,11 @@ $(function() {
       </div>
     </div>
     <!-- product_detail -->
+    <{if $sid_name == "gift"}>
+      <div class="product_option_table">
+        <{$option_table}>
+      </div>
+    <{/if}>
     <div class="cart_button">
       <{if $product.soldout_flg == false}>
       <{if $sid_name == "refill" || $sid_name == 'bottle-refill'}>

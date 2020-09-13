@@ -1,0 +1,82 @@
+.comp-gift-option{
+  max-width: 500px;
+  margin: -10px auto 30px;
+  .display_wrap{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 35px 15px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    @include flexSet;
+    color: #fff;
+    background: #00381f;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    @include hover;
+    &::after{
+      display: block;
+      content: "";
+      position: absolute;
+      top:0;
+      bottom:0;
+      right: 15px;
+      margin: auto;
+      width: 12px;
+      height: 12px;
+      @include bgSet;
+      background-size: 12px;
+      background-image: url(../img/common/icon_plus_white.png);
+    }
+  }
+  .option_desc{
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    color: #00381f;
+    a{
+      color: #068acc;
+      @include hover;
+    }
+  }
+}
+
+@media screen and (max-width: 760px){
+  .comp-gift-option{
+    max-width: 100%;
+    margin: -10px auto 30px;
+    .display_wrap{
+      width: 100%;
+      padding: 15px 35px 15px 15px;
+      margin-bottom: 10px;
+      display: block;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      .title{
+        display: block;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .current_option{
+        font-size: 13px;
+        letter-spacing: 0.5px;
+      }
+    }
+    .option_desc{
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+      color: #00381f;
+      a{
+        color: #068acc;
+        @include hover;
+      }
+    }
+  }
+}

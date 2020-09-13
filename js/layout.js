@@ -754,22 +754,91 @@ $(function() {
   }
   toggleBtn();
 
+  //企業一覧ページ 動画ポップアップ
+  function optionPopup(target){
+    var optionPop = $('#optionPop');
+    var optionSelect = $('#optionSelect');
+    var popBg = $('#popBg');
+    var mizuhiki = $('.mizuhiki');
+    var popClose = $('#popClose');
+    var optionFix = $('#optionFix');
+    var muzihikiState = $('input[name="mizuhiki"]');
 
-  $('#relatedSlider').slick({
-    accessibility: false,
-    infinite: false,
-    dots: true,
-    slidesToShow: 3,
-    centerMode: true,
-    autoplay: false,
-    responsive: [{
-      breakpoint: 760,
-      settings: {
-        slidesToShow: 1,
-        centerPadding: '10%',
-        centerMode: false,
+    function popOpen(){
+      target.addClass('open');
+    }
+
+    function popClose(){
+    }
+
+    function displayMizuhikiOption(){
+      var state = $('input[name="mizuhiki"]:checked').val();
+      var contentsHeight = mizuhiki.find('.mizuhiki_inner').outerHeight();
+      if(state == 'on'){
+        mizuhiki.css({'height': contentsHeight});
+      }else{
+        mizuhiki.css({'height': 0 + 'px'});
       }
-    }]
-  });
+    }
+
+    function init(){
+
+      optionSelect.on({
+        'click': function(){
+          popOpen();
+        }
+      });
+
+      popBg.on({
+        'click': function(){
+          target.removeClass('open');
+        }
+      });
+
+      popClose.on({
+        'click': function(){
+          target.removeClass('open');
+        }
+      });
+
+      optionFix.on({
+        'click': function(){
+          target.removeClass('open');
+        }
+      });
+
+      muzihikiState.on({
+        'click': function(){
+          displayMizuhikiOption();
+        }
+      });
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('itemDetail')) {
+    optionPopup($('#optionPop'));
+  }
+
+  if (document.getElementById('itemDetail')) {
+    $('#relatedSlider').slick({
+      accessibility: false,
+      infinite: false,
+      dots: true,
+      slidesToShow: 3,
+      centerMode: true,
+      autoplay: false,
+      responsive: [{
+        breakpoint: 760,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '10%',
+          centerMode: false,
+        }
+      }]
+    });
+  }
 
 });
