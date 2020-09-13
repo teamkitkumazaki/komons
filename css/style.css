@@ -9203,7 +9203,8 @@ body.loaded #loading {
           .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .mizuhiki_desc {
             font-size: 14px;
             line-height: 1.6;
-            letter-spacing: 0.4px; }
+            letter-spacing: 0.4px;
+            margin-top: 5px; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_fix {
           margin-top: 25px; }
           .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_fix a {

@@ -763,47 +763,68 @@ $(function() {
     var popClose = $('#popClose');
     var optionFix = $('#optionFix');
     var muzihikiState = $('input[name="mizuhiki"]');
+    var tesageDisplay = $('#tesageDisplay');
+    var mizuhikiDisplay = $('#mizuhikiDisplay');
 
-    function popOpen(){
+    function optionPopOpen(){
       target.addClass('open');
     }
 
-    function popClose(){
+    function optionPopClose(){
+      target.removeClass('open');
+      var tesageCheck = $("input[name='tesage']:checked").val();
+      var mizuhikiCheck = $("input[name='mizuhiki_option']:checked");
+      console.log(tesageCheck);
+      if(tesageCheck == 'tesage'){
+        var checkedValue = mizuhikiCheck.attr('tesageAri');
+        var tesageText = '有り';
+      }else{
+        var checkedValue = mizuhikiCheck.attr('tesageNashi');
+        var tesageText = '無し';
+      }
+      console.log(checkedValue);
+      $(checkedValue).click();
+      tesageDisplay.text(tesageText);
+      mizuhikiDisplay.text(mizuhikiCheck.val());
     }
 
     function displayMizuhikiOption(){
       var state = $('input[name="mizuhiki"]:checked').val();
       var contentsHeight = mizuhiki.find('.mizuhiki_inner').outerHeight();
-      if(state == 'on'){
+      if(state == 'mizuhiki'){
         mizuhiki.css({'height': contentsHeight});
+        $("input[name='mizuhiki_option']").val(["表書き無し"]);
       }else{
         mizuhiki.css({'height': 0 + 'px'});
+        $("input[name='mizuhiki_option']").val(["無し"]);
       }
     }
 
     function init(){
 
+      optionPopClose();
+
       optionSelect.on({
         'click': function(){
-          popOpen();
+          optionPopOpen();
         }
       });
 
       popBg.on({
         'click': function(){
-          target.removeClass('open');
+          optionPopClose();
         }
       });
 
       popClose.on({
         'click': function(){
-          target.removeClass('open');
+          optionPopClose();
         }
       });
 
       optionFix.on({
         'click': function(){
-          target.removeClass('open');
+          optionPopClose();
         }
       });
 

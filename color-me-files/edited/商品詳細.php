@@ -54,7 +54,7 @@ $(function() {
     </div>
     <!-- product_detail -->
     <{if $sid_name == "gift"}>
-      <div class="product_option_table">
+    <div class="product_option_table">
         <{$option_table}>
       </div>
     <{/if}>
