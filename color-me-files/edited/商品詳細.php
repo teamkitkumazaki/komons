@@ -63,7 +63,7 @@ $(function() {
         <span class="current_option">手提げ：<span id="tesageDisplay">無し</span> / 水引：<span id="mizuhikiDisplay">無し</span>
       </a>
       <div class="option_desc">
-        ※ギフトオプションに関する詳細は<a href="#aaaa">こちら</a>
+        ※ギフトオプションに関する詳細は<a href="/?mode=f6">こちら</a>
       </div>
     </div>
     <{/if}>
@@ -338,7 +338,7 @@ $(function() {
             <div class="mizuhiki_option">
               <div class="option_item">
                 <input id="mizu01" type="radio" name="mizuhiki_option" tesageAri="#0-0" tesageNashi="#0-1" value="表書き無し">
-                <label for="mizu01">表書き無し</label>
+                <label for="mizu01">無地(表書きなし)</label>
               </div>
               <div class="option_item">
                 <input id="mizu02" type="radio" name="mizuhiki_option" tesageAri="#1-2" tesageNashi="#1-3" value="御祝">

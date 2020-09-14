@@ -12,6 +12,34 @@
   }
   .cartjs_box {
     padding: 0 !important;
+    margin-top: 10px !important;
+
+    .cartjs_product_table > table{
+      width: 100% !important;
+      .cartjs_option{
+        @include flexSet;
+        justify-content: flex-start;
+        align-items: center;
+        th{
+          width: 120px;
+        }
+        td{
+          width: calc(100% - 120px);
+        }
+      }
+      select{
+        border-radius:5px !important;
+        height: 35px !important;
+        line-height: 35px !important;
+        padding: 0px 10px !important;
+        background: none !important;
+        background-image: url(../img/contact/selector_caret.png) !important;
+        background-size: 8px !important;
+        background-repeat: no-repeat !important;
+        background-position: center right 8px !important;
+        appearance: none;
+      }
+    }
 
     .cartjs_cart_in {
       position: relative;

@@ -7969,7 +7969,42 @@ body.loaded #loading {
   color: #979797; }
 
 .comp-list-cart-button .cartjs_box {
-  padding: 0 !important; }
+  padding: 0 !important;
+  margin-top: 10px !important; }
+  .comp-list-cart-button .cartjs_box .cartjs_product_table > table {
+    width: 100% !important; }
+    .comp-list-cart-button .cartjs_box .cartjs_product_table > table .cartjs_option {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .comp-list-cart-button .cartjs_box .cartjs_product_table > table .cartjs_option th {
+        width: 120px; }
+      .comp-list-cart-button .cartjs_box .cartjs_product_table > table .cartjs_option td {
+        width: calc(100% - 120px); }
+    .comp-list-cart-button .cartjs_box .cartjs_product_table > table select {
+      border-radius: 5px !important;
+      height: 35px !important;
+      line-height: 35px !important;
+      padding: 0px 10px !important;
+      background: none !important;
+      background-image: url(../img/contact/selector_caret.png) !important;
+      background-size: 8px !important;
+      background-repeat: no-repeat !important;
+      background-position: center right 8px !important;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none; }
   .comp-list-cart-button .cartjs_box .cartjs_cart_in {
     position: relative;
     width: 100%;
@@ -9353,7 +9388,7 @@ body.loaded #loading {
           -ms-flex-pack: justify;
           justify-content: space-between; }
           .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .mizuhiki_option .option_item {
-            width: 32%;
+            width: 49%;
             margin-bottom: 5px; }
             .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .mizuhiki_option .option_item label {
               font-size: 13px;
