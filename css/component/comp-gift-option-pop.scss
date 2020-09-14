@@ -1,0 +1,340 @@
+.comp-gift-option-pop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+  z-index: 1000;
+  &.open{
+    opacity: 1;
+    pointer-events: all;
+  }
+  .pop_bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(34, 34, 34, 0.7);
+    cursor: pointer;
+  }
+  .pop_flex{
+    @include flexSet;
+    align-items: center;
+    justify-content: center;
+    .height_adjust{
+      width: 1px;
+      height: 100vh;
+      pointer-events: none;
+    }
+    .pop_contents{
+      position: relative;
+      z-index: 100;
+      max-width: 650px;
+      width: 100%;
+      margin-right: 1px;
+      box-sizing: border-box;
+      .pop_close{
+        position: absolute;
+        top: -35px;
+        right: -35px;
+        width: 20px;
+        height: 20px;
+        display: block;
+        @include hover;
+        cursor: pointer;
+        @include bgSet;
+        background-image: url(../img/common/pop_close.svg);
+        z-index: 20;
+        @media screen and (max-width: 1110px){
+          right: 0;
+        }
+      }
+      .contents_inner{
+        max-height: 80vh;
+        overflow: scroll;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        padding: 30px;
+        .pop_title{
+          font-size: 20px;
+          font-weight: normal;
+          line-height: 1;
+          letter-spacing: 0.8px;
+          text-align: center;
+          margin-bottom: 30px;
+        }
+        .option_select{
+          margin-bottom: 20px;
+          .option_item{
+            margin-bottom: 5px;
+            label{
+              display: block;
+              @include flexSet;
+              justify-content: flex-start;
+              align-items: center;
+              cursor: pointer;
+              @include hover;
+              border: solid 1px #d8d8d8;
+              background-color: #f4f4f4;
+              .img_wrap{
+                width: 120px;
+                height: 80px;
+                @include bgSet;
+                margin-left: -1px;
+                background-size: contain;
+              }
+              .input_wrap{
+                padding: 0 20px;
+                @include flexSet;
+                justify-content: flex-start;
+                align-items: center;
+                input[type="checkbox"]{
+                  margin: 0;
+                  margin-right: 5px;
+                }
+                .option_name{
+                  @include flexSet;
+                  justify-content: flex-start;
+                  align-items: center;
+                  .name{
+                    font-size: 16px;
+                    line-height: 1;
+                    letter-spacing: 0.51px;
+                    margin-right: 5px;
+                  }
+                  .price{
+                    font-size: 14px;
+                    line-height: 1;
+                    letter-spacing: 1px;
+                    color: #797979;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .mizuhiki{
+          overflow: hidden;
+          height: 0;
+          transition: height .3s;
+          .pop_subtitle{
+            font-size: 18px;
+            font-weight: normal;
+            line-height: 1;
+            letter-spacing: 1.28px;
+            margin-bottom: 15px;
+          }
+          .mizuhiki_option{
+            @include flexSet;
+            justify-content: space-between;
+            .option_item{
+              width: 32%;
+              margin-bottom: 10px;
+              label{
+                display: block;
+                cursor: pointer;
+                border-radius: 5px;
+                border: solid 1px #acacac;
+                box-sizing: border-box;
+                text-align: center;
+                font-size: 14px;
+                line-height: 1;
+                letter-spacing: 0.7px;
+                padding: 12px 0;
+                cursor: pointer;
+                transition: background .3s, border .3s, color .3s;
+              }
+              input[type="radio"]{
+                display: none;
+              }
+              input[type="radio"]:checked + label{
+                background: #00381f;
+                border: 1px solid #00381f;
+                color: #fff;
+              }
+              &:hover{
+                background: #f4f4f4;
+              }
+            }
+          }
+          .mizuhiki_desc{
+            font-size: 14px;
+            line-height: 1.6;
+            letter-spacing: 0.4px;
+            margin-top: 5px;
+          }
+        }
+        .option_fix{
+          margin-top: 25px;
+          a{
+            max-width: 330px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 30px;
+            background-color: #00381f;
+            color: #fff;
+            padding: 12px 0;
+            text-align: center;
+            span{
+              position: relative;
+              font-size: 15px;
+              line-height: normal;
+              letter-spacing: 0.5px;
+              padding-right: 35px;
+              &::after{
+                display: block;
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                width: 24px;
+                height: 9px;
+                @include bgSet;
+                background-size: contain;
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/arrow_white_ghx7mf.png);
+                transition: right .3s;
+              }
+            }
+            &:hover{
+              span{
+                &::after{
+                  right: -10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 760px){
+  .comp-gift-option-pop{
+    .pop_flex{
+      @include flexSet;
+      align-items: center;
+      justify-content: center;
+      .height_adjust{
+        width: 1px;
+        height: 100vh;
+        pointer-events: none;
+      }
+      .pop_contents{
+        max-width: 88vw;
+        width: 88vw;
+        margin-right: 1px;
+        box-sizing: border-box;
+        .pop_close{
+          position: absolute;
+          top: -35px;
+          right: 0;
+          width: 20px;
+          height: 20px;
+        }
+        .contents_inner{
+          max-height: 65vh;
+          overflow: scroll;
+          overflow-x: hidden;
+          -webkit-overflow-scrolling: touch;
+          background: #fff;
+          padding: 25px 20px;
+          .pop_title{
+            font-size: 20px;
+            font-weight: normal;
+            line-height: 1;
+            letter-spacing: 0.8px;
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          .option_select{
+            margin-bottom: 15px;
+            .option_item{
+              margin-bottom: 5px;
+              label{
+                display: block;
+                @include flexSet;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+                @include hover;
+                border: solid 1px #d8d8d8;
+                background-color: #f4f4f4;
+                .img_wrap{
+                  width: 110px;
+                  height: 74px;
+                }
+                .input_wrap{
+                  width: calc(100% - 110px);
+                  padding: 0 20px;
+                  box-sizing: border-box;
+                  input[type="checkbox"]{
+                    width: 15px;
+                    margin: 0;
+                    margin-right: 7px;
+                  }
+                  .option_name{
+                    width: calc(100% - 22px);
+                    display: block;
+                    .name{
+                      display: block;
+                      font-size: 15px;
+                      line-height: 1;
+                      letter-spacing: 0.51px;
+                      margin-right: 0px;
+                      margin-bottom: 5px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .mizuhiki{
+            .pop_subtitle{
+              font-size: 16px;
+              letter-spacing: 1px;
+              margin-bottom: 15px;
+            }
+            .mizuhiki_option{
+              @include flexSet;
+              justify-content: space-between;
+              .option_item{
+                width: 49%;
+                margin-bottom: 5px;
+                label{
+                  font-size: 13px;
+                  padding: 12px 0;
+                }
+              }
+            }
+            .mizuhiki_desc{
+              font-size: 13px;
+              line-height: 1.6;
+              letter-spacing: 0.4px;
+              margin-top: 5px;
+            }
+          }
+          .option_fix{
+            margin-top: 15px;
+            a{
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
