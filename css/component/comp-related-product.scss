@@ -35,6 +35,9 @@
 							margin-top: 7px;
 							color: #979797;
 						}
+						&.wide{
+							margin-top: 5px;
+						}
 					}
 				}
 			}
@@ -67,6 +70,10 @@
             right: 6vw;
 						.soldout{
 							font-size: 16px;
+						}
+						&.wide{
+							width: 100%;
+							margin-top: 5px;
 						}
           }
 				}

@@ -53,6 +53,20 @@ $(function() {
       </div>
     </div>
     <!-- product_detail -->
+    <{if $sid_name == "gift"}>
+    <div class="product_option_table">
+        <{$option_table}>
+    </div>
+    <div class="comp-gift-option">
+      <a id="optionSelect" class="display_wrap" href="javascript:void(0);">
+        <span class="title">ギフトオプション</span>
+        <span class="current_option">手提げ：<span id="tesageDisplay">無し</span> / 水引：<span id="mizuhikiDisplay">無し</span>
+      </a>
+      <div class="option_desc">
+        ※ギフトオプションに関する詳細は<a href="/?mode=f6">こちら</a>
+      </div>
+    </div>
+    <{/if}>
     <div class="cart_button">
       <{if $product.soldout_flg == false}>
       <{if $sid_name == "refill" || $sid_name == 'bottle-refill'}>
@@ -283,6 +297,85 @@ $(function() {
    </div><!-- section_back -->
  </section>
 </article>
+<{if $sid_name == "gift"}>
+<div id="optionPop" class="comp-gift-option-pop">
+  <div id="popBg" class="pop_bg"></div>
+  <div class="pop_flex">
+    <div class="height_adjust"></div>
+    <div class="pop_contents">
+      <div id="popClose" class="pop_close"></div>
+      <div class="contents_inner">
+        <p class="pop_title">ギフトオプション</p>
+        <div class="option_select">
+          <div class="option_item">
+            <label>
+              <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_tesage_yv4i6v.jpg)"></div>
+              <div class="input_wrap">
+                <input type="checkbox" name="tesage" value="tesage">
+                <div class="option_name">
+                  <span class="name">手提げ布バッグ</span>
+                  <span class="price">+300円(税抜)</span>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="option_item">
+            <label>
+              <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_mizuhiki_nl5vi0.jpg)"></div>
+              <div class="input_wrap">
+                <input type="checkbox" name="mizuhiki" value="mizuhiki">
+                <div class="option_name">
+                  <span class="name">梅結び水引</span>
+                  <span class="price">+100円(税抜)</span>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div><!-- option_select -->
+        <div class="mizuhiki">
+          <div class="mizuhiki_inner">
+            <p class="pop_subtitle">水引の表書き</p>
+            <div class="mizuhiki_option">
+              <div class="option_item">
+                <input id="mizu01" type="radio" name="mizuhiki_option" tesageAri="#0-0" tesageNashi="#0-1" value="表書き無し">
+                <label for="mizu01">無地(表書きなし)</label>
+              </div>
+              <div class="option_item">
+                <input id="mizu02" type="radio" name="mizuhiki_option" tesageAri="#1-2" tesageNashi="#1-3" value="御祝">
+                <label for="mizu02">御祝</label>
+              </div>
+              <div class="option_item">
+                <input id="mizu03" type="radio" name="mizuhiki_option" tesageAri="#2-4" tesageNashi="#2-5" value="内祝">
+                <label for="mizu03">内祝</label>
+              </div>
+              <div class="option_item">
+                <input id="mizu04" type="radio" name="mizuhiki_option" tesageAri="#3-6" tesageNashi="#3-7" value="御結婚祝">
+                <label for="mizu04">御結婚祝</label>
+              </div>
+              <div class="option_item">
+                <input id="mizu05" type="radio" name="mizuhiki_option" tesageAri="#4-8" tesageNashi="#4-9" value="御礼">
+                <label for="mizu05">御礼</label>
+              </div>
+              <div class="option_item">
+                <input id="mizu06" type="radio" name="mizuhiki_option" tesageAri="#5-10" tesageNashi="#5-11" value="その他">
+                <label for="mizu06">その他</label>
+              </div>
+              <div class="option_item" style="display: none;">
+                <input id="mizu00" type="radio" checked name="mizuhiki_option" tesageAri="#6-12" tesageNashi="#6-13" value="無し">
+                <label for="mizu00">無し</label>
+              </div>
+            </div><!-- mizuhiki_option -->
+            <p class="mizuhiki_desc">※「その他」を選択した方は、表書きの内容を購入手続き画面の「備考欄」にご記入ください。ご記入のない場合は無地熨斗にて対応させていただきます。</p>
+          </div>
+        </div><!-- mizuhiki -->
+        <div class="option_fix">
+          <a id="optionFix" href="javascript:void(0);"><span>ギフトオプションを確定</span></a>
+        </div>
+      </div>
+    </div><!-- pop_contents -->
+  </div><!-- pop_flex -->
+</div><!-- comp-gift-option-pop -->
+<{/if}>
 <link rel="stylesheet" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/slick/slick.css">
 <script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/conversion.js"></script>
 <script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/slick/slick.min.js" charset="UTF-8"></script>

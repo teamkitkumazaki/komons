@@ -23,14 +23,17 @@
     left: 0;
     right: 0;
     margin: auto;
-    background-color: rgba(34, 34, 34, 0.7);
+    background-color: rgba(60, 60, 60, 0.6);
     cursor: pointer;
   }
   .pop_flex{
-    @include flexSet;
+    /*@include flexSet;
     align-items: center;
-    justify-content: center;
+    justify-content: center;*/
+    display: block;
+    margin-top: 50px;
     .height_adjust{
+      display: none;
       width: 1px;
       height: 100vh;
       pointer-events: none;
@@ -40,38 +43,57 @@
       z-index: 100;
       max-width: 650px;
       width: 100%;
-      margin-right: 1px;
+      margin: 0px auto;
       box-sizing: border-box;
       .pop_close{
         position: absolute;
-        top: -35px;
-        right: -35px;
-        width: 20px;
-        height: 20px;
+        top: -30px;
+        right: -30px;
+        width: 15px;
+        height: 15px;
         display: block;
         @include hover;
         cursor: pointer;
         @include bgSet;
         background-image: url(../img/common/pop_close.svg);
         z-index: 20;
+        pointer-events: none;
         @media screen and (max-width: 1110px){
           right: 0;
         }
       }
       .contents_inner{
-        max-height: 80vh;
+        max-height: 60vh;
         overflow: scroll;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
         background: #fff;
-        padding: 30px;
+        padding: 30px 30px 50px;
+        .item_thumb{
+          width: 100%;
+          .pc_thumb{
+            width: 100%;
+            height: 230px;
+            display: block;
+            @include bgSet;
+            background-size: cover;
+            background-position: center top -25px;
+          }
+          .prod_name{
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            margin-top: -10px;
+            margin-bottom: 20px;
+          }
+        }
         .pop_title{
-          font-size: 20px;
+          font-size: 18px;
           font-weight: normal;
           line-height: 1;
           letter-spacing: 0.8px;
           text-align: center;
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
         .option_select{
           margin-bottom: 20px;
@@ -99,8 +121,33 @@
                 justify-content: flex-start;
                 align-items: center;
                 input[type="checkbox"]{
-                  margin: 0;
-                  margin-right: 5px;
+                  display: none;
+                }
+                .radio_checker{
+                  width: 13px;
+                  height: 13px;
+                  border: 1px solid #979797;
+                  background: #fff;
+                  background: #fff;
+                  border-radius: 50%;
+                  margin-right: 7px;
+                  position: relative;
+                }
+                input[type="checkbox"]:checked + .radio_checker{
+                  &::before{
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    top: -1px;
+                    bottom: -1px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 7px;
+                    height: 7px;
+                    background: #333;
+                    border-radius: 50%;
+                  }
                 }
                 .option_name{
                   @include flexSet;
@@ -124,9 +171,15 @@
           }
         }
         .mizuhiki{
-          overflow: hidden;
-          height: 0;
-          transition: height .3s;
+          /*overflow: hidden;
+          height: 0;*/
+          pointer-events: none;
+          opacity: 0.4;
+          transition: height .3s, opacity .3s;
+          &.active{
+            pointer-events: all;
+            opacity: 1;
+          }
           .pop_subtitle{
             font-size: 18px;
             font-weight: normal;
@@ -138,8 +191,8 @@
             @include flexSet;
             justify-content: space-between;
             .option_item{
-              width: 32%;
-              margin-bottom: 10px;
+              width: 32.5%;
+              margin-bottom: 6px;
               label{
                 display: block;
                 cursor: pointer;
@@ -174,45 +227,70 @@
             margin-top: 5px;
           }
         }
-        .option_fix{
-          margin-top: 25px;
-          a{
-            max-width: 330px;
-            margin: 0 auto;
-            display: block;
-            border-radius: 30px;
-            background-color: #00381f;
-            color: #fff;
-            padding: 12px 0;
-            text-align: center;
-            span{
-              position: relative;
-              font-size: 15px;
-              line-height: normal;
-              letter-spacing: 0.5px;
-              padding-right: 35px;
-              &::after{
-                display: block;
-                content: "";
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                right: 0;
-                margin: auto;
-                width: 24px;
-                height: 9px;
-                @include bgSet;
-                background-size: contain;
-                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/arrow_white_ghx7mf.png);
-                transition: right .3s;
-              }
-            }
-            &:hover{
-              span{
-                &::after{
-                  right: -10px;
-                }
-              }
+      }
+      .fix_wrapper{
+        background: #fff;
+        width: 100vw;
+        padding: 15px 15px;
+        box-sizing: border-box;
+        position: fixed;
+        left:0;
+        right:0;
+        bottom:0;
+        box-shadow: 0 -1px 4px 0 rgba(102, 102, 102, 0.3);
+      }
+      .option_fix{
+        margin-top: 0px;
+        @include hover;
+        position: relative;
+        cursor: pointer;
+        input{
+          position: absolute;
+          display: block;
+          top:0;
+          bottom:0;
+          left:0;
+          right:0;
+          margin: auto;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          cursor: pointer;
+        }
+        .option_fix_button{
+          display: block;
+          max-width: 500px;
+          width: 100%;
+          font-family: inherit;
+          margin: 0 auto;
+          display: block;
+          border-radius: 5px;
+          background-color: #00381f;
+          border: 1px solid #fff;
+          color: #fff;
+          padding: 12px 0;
+          text-align: center;
+          pointer-events: none;
+          span{
+            position: relative;
+            font-size: 18px;
+            line-height: normal;
+            letter-spacing: 0.5px;
+            padding-left: 35px;
+            &::before{
+              display: block;
+              content: "";
+              position: absolute;
+              width: 30px;
+              height: 30px;
+              left: 0px;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: 25px;
+              background-image: url(../img/cart_icon.png);
             }
           }
         }
@@ -224,19 +302,22 @@
 
 @media screen and (max-width: 760px){
   .comp-gift-option-pop{
+    .pop_bg{
+      background-color: rgba(60, 60, 60, 0.7);
+    }
+    .pop_close{
+      pointer-events: none;
+    }
     .pop_flex{
-      @include flexSet;
-      align-items: center;
-      justify-content: center;
+      display: block;
+      margin-top: 50px;
       .height_adjust{
-        width: 1px;
-        height: 100vh;
-        pointer-events: none;
+        display: none;
       }
       .pop_contents{
-        max-width: 88vw;
-        width: 88vw;
-        margin-right: 1px;
+        max-width: 94vw;
+        width: 94vw;
+        margin: 0 auto;
         box-sizing: border-box;
         .pop_close{
           position: absolute;
@@ -247,18 +328,23 @@
         }
         .contents_inner{
           max-height: 65vh;
-          overflow: scroll;
-          overflow-x: hidden;
-          -webkit-overflow-scrolling: touch;
-          background: #fff;
-          padding: 25px 20px;
+          padding: 20px 20px 50px;
+          .item_thumb{
+            width: 100%;
+            .pc_thumb{
+              height: 50vw;
+            }
+          }
           .pop_title{
-            font-size: 20px;
+            font-size: 16px;
             font-weight: normal;
-            line-height: 1;
+            line-height: 1.4;
             letter-spacing: 0.8px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            span{
+              display: block;
+            }
           }
           .option_select{
             margin-bottom: 15px;
@@ -270,9 +356,11 @@
                 justify-content: flex-start;
                 align-items: center;
                 cursor: pointer;
-                @include hover;
                 border: solid 1px #d8d8d8;
                 background-color: #f4f4f4;
+                &:hover{
+                  opacity: 1;
+                }
                 .img_wrap{
                   width: 110px;
                   height: 74px;
@@ -281,11 +369,6 @@
                   width: calc(100% - 110px);
                   padding: 0 20px;
                   box-sizing: border-box;
-                  input[type="checkbox"]{
-                    width: 15px;
-                    margin: 0;
-                    margin-right: 7px;
-                  }
                   .option_name{
                     width: calc(100% - 22px);
                     display: block;
@@ -327,11 +410,22 @@
               margin-top: 5px;
             }
           }
-          .option_fix{
-            margin-top: 15px;
-            a{
-              max-width: 100%;
-            }
+        }
+        .fix_wrapper{
+          background: #fff;
+          width: 100vw;
+          padding: 15px 15px;
+          box-sizing: border-box;
+          position: fixed;
+          left:0;
+          right:0;
+          bottom:0;
+          box-shadow: 0 -1px 4px 0 rgba(102, 102, 102, 0.3);
+        }
+        .option_fix{
+          margin-top: 0;
+          .option_fix_button{
+            max-width: 100%;
           }
         }
       }
