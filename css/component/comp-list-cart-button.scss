@@ -10,6 +10,45 @@
     margin-top: 17px;
     color: #979797;
   }
+  .gift_detail_button{
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #f1f1f1;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    color: #00381f;
+    span{
+      display: inline-block;
+      position: relative;
+      padding-right: 30px;
+      &::before{
+        display: block;
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 15px;
+        top: 0;
+        bottom: 0;
+        right: 0px;
+        transition: right 0.5s;
+        margin: auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/arrow_vuojtf.png);
+        background-size: contain;
+        background-position: center center;
+      }
+    }
+    &:hover{
+      span{
+        &::before{
+          right: -10px;
+        }
+      }
+    }
+  }
   .cartjs_box {
     padding: 0 !important;
     margin-top: 10px !important;

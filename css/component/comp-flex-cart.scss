@@ -52,6 +52,12 @@
           font-size: 14px;
           letter-spacing: 1.2px;
         }
+        &.option_select{
+          background: #2f281e;
+          padding: 15px 0 20px !important;
+          pointer-events: all;
+          @include hover;
+        }
       }
       input[type="submit"]{
         cursor: pointer;
@@ -87,6 +93,17 @@
             transform: rotate(45deg);
           }
         }
+      }
+    }
+    .cart_desc{
+      font-size: 16px;
+      line-height: 2;
+      letter-spacing: 1px;
+      margin-top: 15px;
+      a{
+        color: #068acc !important;
+        @include hover;
+        text-decoration: underline;
       }
     }
   }
@@ -141,6 +158,21 @@
             font-size: 11px;
             letter-spacing: 1px;
           }
+        }
+      }
+      .cart_desc{
+        font-size: 14px;
+        line-height: 1.6;
+        letter-spacing: 0.8px;
+        margin-top: 15px;
+        a{
+          display: inline !important;
+          color: #068acc;
+          @include hover;
+          text-decoration: underline;
+          font-size: 14px;
+          line-height: 1.6;
+          letter-spacing: 1.2px;
         }
       }
     }
