@@ -6746,6 +6746,173 @@ body.loaded #loading {
         #gift .qa #qaToggle .others span {
           display: block; } }
 
+/* ⇦temp */
+.page-gift-list .section_ttl {
+  padding: 0;
+  margin-bottom: 50px; }
+
+.page-gift-list .gift_ttl {
+  font-size: 40px;
+  letter-spacing: 1.1px;
+  text-align: center;
+  color: #00381f;
+  position: relative;
+  margin-bottom: 100px; }
+  .page-gift-list .gift_ttl::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    margin: auto;
+    width: 36px;
+    height: 2px;
+    background-color: #c2cfc9; }
+
+.page-gift-list .section-main {
+  position: relative;
+  margin-bottom: 80px; }
+  .page-gift-list .section-main .main_img {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_main_l_cyiipp.jpg"); }
+  .page-gift-list .section-main .lead_txt {
+    position: absolute;
+    left: calc(50vw - 540px);
+    bottom: 60px;
+    color: #ffffff; }
+    .page-gift-list .section-main .lead_txt .title_wrap {
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #fff; }
+      .page-gift-list .section-main .lead_txt .title_wrap .title_en {
+        display: block;
+        font-size: 54px;
+        font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+        font-weight: 400;
+        letter-spacing: 1px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        letter-spacing: 1px;
+        padding-right: 0.2em;
+        margin-bottom: 5px;
+        text-indent: -2px; }
+      .page-gift-list .section-main .lead_txt .title_wrap .main_ttl {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: normal;
+        letter-spacing: normal; }
+    .page-gift-list .section-main .lead_txt .main_desc {
+      font-size: 16px;
+      line-height: 2.13; }
+      .page-gift-list .section-main .lead_txt .main_desc a {
+        color: #fff;
+        pointer-events: none; }
+      .page-gift-list .section-main .lead_txt .main_desc span {
+        display: block;
+        margin-bottom: 10px; }
+      .page-gift-list .section-main .lead_txt .main_desc font {
+        display: block; }
+
+.page-gift-list .section-filter {
+  margin-bottom: 40px; }
+  .page-gift-list .section-filter .filter_wrap {
+    margin-top: -35px; }
+    .page-gift-list .section-filter .filter_wrap .filter_ttl {
+      font-size: 18px;
+      font-weight: normal;
+      line-height: normal;
+      letter-spacing: 0.19px;
+      color: #00381f;
+      margin-bottom: 15px; }
+
+.page-gift-list .section-gift-products {
+  margin-bottom: 100px; }
+
+.page-gift-list .section-gift-service {
+  padding: 100px 0;
+  background: #f4f4f4; }
+  .page-gift-list .section-gift-service .gift_service_list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    justify-content: center;
+    margin-bottom: 60px; }
+    .page-gift-list .section-gift-service .gift_service_list .service_item {
+      width: 335px;
+      margin-right: 35px; }
+      .page-gift-list .section-gift-service .gift_service_list .service_item:nth-last-of-type(1) {
+        margin-right: 0; }
+      .page-gift-list .section-gift-service .gift_service_list .service_item .img_wrap {
+        margin-bottom: 20px; }
+      .page-gift-list .section-gift-service .gift_service_list .service_item .title_wrap .service_name {
+        font-size: 20px;
+        color: #00381f;
+        font-weight: normal;
+        margin-bottom: 15px; }
+      .page-gift-list .section-gift-service .gift_service_list .service_item .title_wrap .service_desc {
+        font-size: 14px;
+        line-height: 1.5;
+        letter-spacing: 0.3px;
+        text-indent: 1px; }
+        .page-gift-list .section-gift-service .gift_service_list .service_item .title_wrap .service_desc a {
+          color: #068acc;
+          -webkit-transition: opacity .3s;
+          -o-transition: opacity .3s;
+          transition: opacity .3s; }
+          .page-gift-list .section-gift-service .gift_service_list .service_item .title_wrap .service_desc a:hover {
+            opacity: 0.75; }
+        .page-gift-list .section-gift-service .gift_service_list .service_item .title_wrap .service_desc span {
+          font-size: 12px;
+          display: block;
+          margin-top: 7px;
+          color: #646464; }
+  .page-gift-list .section-gift-service .gift_link_button {
+    max-width: 400px;
+    margin: 0 auto; }
+    .page-gift-list .section-gift-service .gift_link_button a {
+      display: block;
+      background: #00381f;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 15px 0;
+      -webkit-transition: opacity .3s;
+      -o-transition: opacity .3s;
+      transition: opacity .3s; }
+      .page-gift-list .section-gift-service .gift_link_button a:hover {
+        opacity: 0.75; }
+      .page-gift-list .section-gift-service .gift_link_button a span {
+        display: block;
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: 0.3px;
+        padding: 0 15px;
+        color: #fff;
+        position: relative; }
+        .page-gift-list .section-gift-service .gift_link_button a span::after {
+          display: block;
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 15px;
+          margin: auto;
+          width: 24px;
+          height: 9px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+          background-image: url(../img/gift_service/arrow_white.png); }
+
 /* ギフトサービスページのレイアウト*/
 .gift-service .section_ttl {
   padding: 0;
@@ -8417,6 +8584,23 @@ body.loaded #loading {
     .comp-centered-title::after {
       bottom: -20px; } }
 
+.comp-centered-section-title {
+  text-align: center;
+  margin-bottom: 60px; }
+  .comp-centered-section-title .title_en {
+    display: block;
+    font-size: 54px;
+    font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    letter-spacing: 1px;
+    margin-bottom: 10px; }
+  .comp-centered-section-title .title_ja {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal; }
+
 .comp-back-to-list {
   max-width: 1080px;
   margin-left: auto;
@@ -9544,3 +9728,273 @@ body.loaded #loading {
         margin-top: 0; }
         .comp-gift-option-pop .pop_flex .pop_contents .option_fix .option_fix_button {
           max-width: 100%; } }
+
+.comp-filter-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start; }
+  .comp-filter-wrap .filter_item {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    .comp-filter-wrap .filter_item.filter01 {
+      width: 320px;
+      margin-right: 20px; }
+    .comp-filter-wrap .filter_item.filter02 {
+      width: calc(100% - 340px); }
+    .comp-filter-wrap .filter_item .fil_ttl {
+      display: block;
+      width: 100px;
+      font-size: 16px;
+      line-height: normal;
+      letter-spacing: normal; }
+    .comp-filter-wrap .filter_item .input_wrap {
+      width: calc(100% - 100px); }
+      .comp-filter-wrap .filter_item .input_wrap.flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between; }
+      .comp-filter-wrap .filter_item .input_wrap .radio_wrap input[type="checkbox"] {
+        display: none; }
+      .comp-filter-wrap .filter_item .input_wrap .radio_wrap label {
+        width: 145px;
+        display: block;
+        cursor: pointer;
+        background: #fff;
+        padding: 10px 0;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        -webkit-transition: background .15s, color .15s;
+        -o-transition: background .15s, color .15s;
+        transition: background .15s, color .15s; }
+        .comp-filter-wrap .filter_item .input_wrap .radio_wrap label:hover {
+          background: #dcdcdc; }
+      .comp-filter-wrap .filter_item .input_wrap .radio_wrap input[type="checkbox"]:checked + label {
+        background: #00381f;
+        color: #fff; }
+      .comp-filter-wrap .filter_item .input_wrap select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: #00381f;
+        color: #fff;
+        width: 100%;
+        font-family: inherit;
+        border: none;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        padding: 7px 10px;
+        border-radius: 5px;
+        background-repeat: no-repeat;
+        background-size: 12px;
+        background-position: center right 10px;
+        background-image: url(../img/giftList/caret_white.png); }
+        .comp-filter-wrap .filter_item .input_wrap select:focus {
+          outline: none; }
+
+.comp-gift-product-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start; }
+  .comp-gift-product-list .list_item {
+    width: 335px;
+    margin-right: 35px;
+    margin-bottom: 35px; }
+    .comp-gift-product-list .list_item:nth-of-type(3n) {
+      margin-right: 0; }
+    .comp-gift-product-list .list_item .item_thumb {
+      display: block;
+      position: relative;
+      margin-bottom: 20px; }
+      .comp-gift-product-list .list_item .item_thumb .img_wrap {
+        display: block;
+        width: 100%;
+        height: 220px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover; }
+      .comp-gift-product-list .list_item .item_thumb::after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: rgba(70, 70, 70, 0.8);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 160px;
+        background-image: url(../img/common/viewmore.png);
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transition: opacity 0.3s;
+        -o-transition: opacity 0.3s;
+        transition: opacity 0.3s; }
+      .comp-gift-product-list .list_item .item_thumb:hover::after {
+        opacity: 1; }
+    .comp-gift-product-list .list_item .txt_wrap .name {
+      display: block;
+      font-size: 20px;
+      color: #00381f;
+      font-weight: normal;
+      margin-bottom: 20px; }
+      .comp-gift-product-list .list_item .txt_wrap .name.small {
+        font-size: 18px; }
+      .comp-gift-product-list .list_item .txt_wrap .name span {
+        display: block;
+        font-weight: normal;
+        margin-top: 12px;
+        font-size: 14px;
+        letter-spacing: 0.3px;
+        text-indent: 1px; }
+    .comp-gift-product-list .list_item .content_icon {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; }
+      .comp-gift-product-list .list_item .content_icon .icon {
+        width: 49%;
+        margin-right: 2%;
+        border: 1px solid #00381f;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        text-align: center;
+        margin-bottom: 7px; }
+        .comp-gift-product-list .list_item .content_icon .icon span {
+          position: relative;
+          display: inline-block;
+          font-size: 13px;
+          padding: 12px 0;
+          letter-spacing: 0.2px; }
+          .comp-gift-product-list .list_item .content_icon .icon span::before {
+            display: block;
+            content: "";
+            width: 23px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain; }
+          .comp-gift-product-list .list_item .content_icon .icon span::after {
+            display: block;
+            font-size: 13px;
+            font-family: inherit;
+            color: #00381f;
+            letter-spacing: 0.2px; }
+          .comp-gift-product-list .list_item .content_icon .icon span.dish {
+            padding-left: 27px; }
+            .comp-gift-product-list .list_item .content_icon .icon span.dish::before {
+              width: 21px;
+              background-image: url(../img/giftList/icon_dish.svg); }
+            .comp-gift-product-list .list_item .content_icon .icon span.dish::after {
+              content: "食器用洗剤"; }
+          .comp-gift-product-list .list_item .content_icon .icon span.multi {
+            padding-left: 25px; }
+            .comp-gift-product-list .list_item .content_icon .icon span.multi::before {
+              width: 19px;
+              background-image: url(../img/giftList/icon_multi.svg); }
+            .comp-gift-product-list .list_item .content_icon .icon span.multi::after {
+              content: "マルチクリーナー"; }
+          .comp-gift-product-list .list_item .content_icon .icon span.hand {
+            padding-left: 27px; }
+            .comp-gift-product-list .list_item .content_icon .icon span.hand::before {
+              width: 22px;
+              background-image: url(../img/giftList/icon_hand.svg); }
+            .comp-gift-product-list .list_item .content_icon .icon span.hand::after {
+              content: "ハンドソープ"; }
+          .comp-gift-product-list .list_item .content_icon .icon span.fabric {
+            padding-left: 25px; }
+            .comp-gift-product-list .list_item .content_icon .icon span.fabric::before {
+              width: 20px;
+              background-image: url(../img/giftList/icon_fabric.svg); }
+            .comp-gift-product-list .list_item .content_icon .icon span.fabric::after {
+              content: "除菌消臭ミスト"; }
+          .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini {
+            padding-left: 25px; }
+            .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini::before {
+              width: 20px;
+              background-image: url(../img/giftList/icon_fabric.svg); }
+            .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini::after {
+              font-size: 12px;
+              content: "除菌消臭ミスト(Mini)"; }
+          .comp-gift-product-list .list_item .content_icon .icon span.toilet {
+            padding-left: 25px; }
+            .comp-gift-product-list .list_item .content_icon .icon span.toilet::before {
+              width: 20px;
+              background-image: url(../img/giftList/icon_toilet.svg); }
+            .comp-gift-product-list .list_item .content_icon .icon span.toilet::after {
+              content: "トイレクリーナー"; }
+          .comp-gift-product-list .list_item .content_icon .icon span.towel {
+            padding-left: 23px; }
+            .comp-gift-product-list .list_item .content_icon .icon span.towel::before {
+              width: 18px;
+              background-image: url(../img/giftList/icon_towel.svg); }
+            .comp-gift-product-list .list_item .content_icon .icon span.towel::after {
+              content: "ウォッシュタオル"; }
+          .comp-gift-product-list .list_item .content_icon .icon span.bath {
+            padding-left: 27px; }
+            .comp-gift-product-list .list_item .content_icon .icon span.bath::before {
+              bottom: 1px;
+              width: 20px;
+              background-image: url(../img/giftList/icon_bath.svg); }
+            .comp-gift-product-list .list_item .content_icon .icon span.bath::after {
+              content: "バスクリーナー"; }
+        .comp-gift-product-list .list_item .content_icon .icon:nth-of-type(2n) {
+          margin-right: 0; }
+    .comp-gift-product-list .list_item .comp-list-cart-button {
+      margin-top: 5px; }

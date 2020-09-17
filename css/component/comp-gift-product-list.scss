@@ -1,0 +1,194 @@
+.comp-gift-product-list{
+  @include flexSet;
+  justify-content: flex-start;
+  .list_item{
+    width: 335px;
+    margin-right: 35px;
+    margin-bottom: 35px;
+    &:nth-of-type(3n){
+      margin-right: 0;
+    }
+    .item_thumb{
+      display: block;
+      position: relative;
+      margin-bottom: 20px;
+      .img_wrap{
+        display: block;
+        width: 100%;
+        height: 220px;
+        @include bgSet;
+        background-size: cover;
+      }
+      &::after{
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: rgba(70, 70, 70, 0.8);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 160px;
+        background-image: url(../img/common/viewmore.png);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+      }
+      &:hover{
+        &::after{
+          opacity: 1;
+        }
+      }
+    }
+    .txt_wrap{
+      .name{
+        display: block;
+        font-size: 20px;
+        color: #00381f;
+        font-weight: normal;
+        margin-bottom: 20px;
+        &.small{
+          font-size: 18px;
+        }
+        span{
+          display: block;
+          font-weight: normal;
+          margin-top: 12px;
+          font-size: 14px;
+          letter-spacing: 0.3px;
+          text-indent: 1px;
+        }
+      }
+    }
+    .content_icon{
+      @include flexSet;
+      justify-content: flex-start;
+      .icon{
+        width: 49%;
+        margin-right: 2%;
+        border: 1px solid #00381f;
+        box-sizing: border-box;
+        text-align: center;
+        margin-bottom: 7px;
+        span{
+          position: relative;
+          display: inline-block;
+          font-size: 13px;
+          padding: 12px 0;
+          letter-spacing: 0.2px;
+          &::before{
+            display: block;
+            content: "";
+            width: 23px;
+            height: 100%;
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            margin: auto;
+            @include bgSet;
+            background-size: contain;
+          }
+          &::after{
+            display: block;
+            font-size: 13px;
+            font-family: inherit;
+            color: #00381f;
+            letter-spacing: 0.2px;
+          }
+          &.dish{
+            padding-left: 27px;
+            &::before{
+              width: 21px;
+              background-image: url(../img/giftList/icon_dish.svg);
+            }
+            &::after{
+              content: "食器用洗剤";
+            }
+          }
+          &.multi{
+            padding-left: 25px;
+            &::before{
+              width: 19px;
+              background-image: url(../img/giftList/icon_multi.svg);
+            }
+            &::after{
+              content: "マルチクリーナー";
+            }
+          }
+          &.hand{
+            padding-left: 27px;
+            &::before{
+              width: 22px;
+              background-image: url(../img/giftList/icon_hand.svg);
+            }
+            &::after{
+              content: "ハンドソープ";
+            }
+          }
+          &.fabric{
+            padding-left: 25px;
+            &::before{
+              width: 20px;
+              background-image: url(../img/giftList/icon_fabric.svg);
+            }
+            &::after{
+              content: "除菌消臭ミスト";
+            }
+          }
+          &.fabric_mini{
+            padding-left: 25px;
+            &::before{
+              width: 20px;
+              background-image: url(../img/giftList/icon_fabric.svg);
+            }
+            &::after{
+              font-size: 12px;
+              content: "除菌消臭ミスト(Mini)";
+            }
+          }
+          &.toilet{
+            padding-left: 25px;
+            &::before{
+              width: 20px;
+              background-image: url(../img/giftList/icon_toilet.svg);
+            }
+            &::after{
+              content: "トイレクリーナー";
+            }
+          }
+          &.towel{
+            padding-left: 23px;
+            &::before{
+              width: 18px;
+              background-image: url(../img/giftList/icon_towel.svg);
+            }
+            &::after{
+              content: "ウォッシュタオル";
+            }
+          }
+          &.bath{
+            padding-left: 27px;
+            &::before{
+              bottom: 1px;
+              width: 20px;
+              background-image: url(../img/giftList/icon_bath.svg);
+            }
+            &::after{
+              content: "バスクリーナー";
+            }
+          }
+        }
+        &:nth-of-type(2n){
+          margin-right: 0;
+        }
+      }
+    }
+    .comp-list-cart-button{
+      margin-top: 5px;
+    }
+  }
+}

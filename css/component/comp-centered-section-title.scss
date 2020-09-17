@@ -1,0 +1,17 @@
+.comp-centered-section-title{
+  text-align: center;
+  margin-bottom: 60px;
+  .title_en{
+    display: block;
+    font-size: 54px;
+    @include libre-r;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .title_ja{
+    font-size: 18px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+}

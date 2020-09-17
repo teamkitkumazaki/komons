@@ -1,0 +1,176 @@
+.page-gift-list {
+  .section_ttl{
+    padding: 0;
+    margin-bottom: 50px;
+  }
+  .gift_ttl {
+    font-size: 40px;
+    letter-spacing: 1.1px;
+    text-align: center;
+    color: #00381f;
+    position: relative;
+    margin-bottom: 100px;
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -30px;
+      margin: auto;
+      width: 36px;
+      height: 2px;
+      background-color: #c2cfc9;
+    }
+  }
+  .section-main{
+    position: relative;
+    margin-bottom: 80px;
+    .main_img {
+      width: 100%;
+      height: 100vh;
+      @include bgSet;
+      background-size: cover;
+      background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_main_l_cyiipp.jpg");
+    }
+    .lead_txt {
+      position: absolute;
+      left: calc(50vw - 540px);
+      bottom: 60px;
+      color: #ffffff;
+      .title_wrap{
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #fff;
+        .title_en{
+          display: block;
+          font-size: 54px;
+          @include libre-r;
+          font-weight: 400;
+          letter-spacing: 1px;
+          letter-spacing: 1px;
+          padding-right: 0.2em;
+          margin-bottom: 5px;
+          text-indent: -2px;
+        }
+        .main_ttl{
+          font-size: 18px;
+          font-weight: normal;
+          line-height: normal;
+          letter-spacing: normal;
+        }
+      }
+      .main_desc {
+        font-size: 16px;
+        line-height: 2.13;
+        a {
+          color: #fff;
+          pointer-events: none;
+        }
+        span {
+          display: block;
+          margin-bottom: 10px;
+        }
+        font {
+          display: block;
+        }
+      }
+    }
+  }
+  .section-filter{
+    margin-bottom: 40px;
+    .filter_wrap{
+      margin-top: -35px;
+      .filter_ttl{
+        font-size: 18px;
+        font-weight: normal;
+        line-height: normal;
+        letter-spacing: 0.19px;
+        color: #00381f;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .section-gift-products{
+    margin-bottom: 100px;
+  }
+  .section-gift-service{
+    padding: 100px 0;
+    background: #f4f4f4;
+    .gift_service_list{
+      @include flexSet;
+      justify-content: center;
+      margin-bottom: 60px;
+      .service_item{
+        width: 335px;
+        margin-right: 35px;
+        &:nth-last-of-type(1){
+          margin-right: 0;
+        }
+        .img_wrap{
+          margin-bottom: 20px;
+        }
+        .title_wrap{
+          .service_name{
+            font-size: 20px;
+            color: #00381f;
+            font-weight: normal;
+            margin-bottom: 15px;
+          }
+          .service_desc{
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+            text-indent: 1px;
+            a{
+              color: #068acc;
+              @include hover;
+            }
+            span{
+              font-size: 12px;
+              display: block;
+              margin-top: 7px;
+              color: #646464;
+            }
+          }
+        }
+      }
+    }
+    .gift_link_button{
+      max-width: 400px;
+      margin: 0 auto;
+      a{
+        display: block;
+        background: #00381f;
+        box-sizing: border-box;
+        padding: 15px 0;
+        @include hover;
+        span{
+          display: block;
+          font-size: 16px;
+          line-height: normal;
+          letter-spacing: 0.3px;
+          padding: 0 15px;
+          color: #fff;
+          position: relative;
+          &::after{
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 15px;
+            margin: auto;
+            width: 24px;
+            height: 9px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            background-image: url(../img/gift_service/arrow_white.png);
+          }
+        }
+      }
+    }
+  }
+}
