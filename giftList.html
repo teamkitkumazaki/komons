@@ -73,31 +73,31 @@
 						<span class="fil_ttl">並び順</span>
 						<div class="input_wrap">
 							<select name="filter_array" id="arrayFilter" class="postform">
-								<option class="option-1" value="?mode=cate&amp;cbid=2421809&amp;csid=12">おすすめ順</option>
-								<option class="option-1" value="?mode=cate&amp;csid=0&amp;cbid=2421809">人気順</option>
-								<option class="option-1" value="?mode=cate&amp;cbid=2421809&amp;csid=10">価格の安い順</option>
-        				<option class="option-1" value="?mode=cate&amp;cbid=2421809&amp;csid=11">価格の高い順</option>
+								<option class="option-1" value="recommend">おすすめ順</option>
+								<option class="option-1" value="popular">人気順</option>
+								<option class="option-1" value="priceDesc">価格の安い順</option>
+        				<option class="option-1" value="priceAsc">価格の高い順</option>
 							</select>
 						</div>
 					</div><!-- filter_item -->
 					<div class="filter_item filter02">
 						<span class="fil_ttl">ご予算</span>
-						<div class="input_wrap flex">
+						<div id="priceRangeFilter" class="input_wrap flex">
 							<div class="radio_wrap">
-								<input id="price01" type="checkbox" name="price_filter">
-								<label for="price01">3,000円未満</label>
+								<input id="price01" type="checkbox" name="price_filter" minPrice="0" maxPrice="3000" val="0">
+								<label for="price01">3,000円以下</label>
 							</div>
 							<div class="radio_wrap">
-								<input id="price02" type="checkbox" name="price_filter">
-								<label for="price02">3,000円~5,000円</label>
+								<input id="price02" type="checkbox" name="price_filter" minPrice="3001" maxPrice="5000" val="1">
+								<label for="price02">3,001円~5,000円</label>
 							</div>
 							<div class="radio_wrap">
-								<input id="price03" type="checkbox" name="price_filter">
+								<input id="price03" type="checkbox" name="price_filter" minPrice="5001" maxPrice="10000" val="2">
 								<label for="price03">5,001円~10,000円</label>
 							</div>
 							<div class="radio_wrap">
-								<input id="price04" type="checkbox" name="price_filter">
-								<label for="price04">10,000円以上</label>
+								<input id="price04" type="checkbox" name="price_filter" minPrice="10001" maxPrice="100000" val="3">
+								<label for="price04">10,001円以上</label>
 							</div>
 						</div>
 					</div>
@@ -107,8 +107,8 @@
 	</section>
 	<section class="section-gift-products">
 		<div class="section_inner">
-			<div class="comp-gift-product-list">
-				<div class="list_item">
+			<div id="giftProductList" class="comp-gift-product-list">
+				<div class="list_item" price="2680" recommend="2">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(img/giftList/gift_whitebox01.jpg);">
 					</a>
@@ -129,7 +129,7 @@
             </a>
           </div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="2780" recommend="1">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(img/giftList/gift_whitebox02.jpg);">
 					</a>
@@ -150,7 +150,7 @@
             </a>
           </div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="3500" recommend="4">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(img/giftList/gift_whitebox03.jpg);">
 					</a>
@@ -171,7 +171,7 @@
             </a>
           </div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="4100" recommend="6">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(img/giftList/gift_whitebox04.jpg);">
 					</a>
@@ -192,7 +192,7 @@
             </a>
           </div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="3900" recommend="5">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_product01_y26hyw.jpg);">
 					</a>
@@ -213,7 +213,7 @@
             </a>
           </div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="4600" recommend="8">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_product02_lkrqyc.jpg);">
 					</a>
@@ -234,7 +234,7 @@
             </a>
           </div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="5000" recommend="7">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_product02_lkrqyc.jpg);">
 					</a>
@@ -255,7 +255,7 @@
 						</a>
 					</div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="6400" recommend="10">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_product04_e6w3dw.jpg);">
 					</a>
@@ -279,7 +279,7 @@
             </a>
           </div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="5400" recommend="9">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_product05_em4huj.jpg);">
 					</a>
@@ -303,7 +303,7 @@
             </a>
           </div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="6900" recommend="12">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_product06_pbaki7.jpg);">
 					</a>
@@ -327,7 +327,7 @@
             </a>
           </div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="8700" recommend="11">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_product08_xbmdh3.jpg);">
 					</a>
@@ -354,7 +354,7 @@
             </a>
           </div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="10800" recommend="14">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_product09_aydjsk.jpg);">
 					</a>
@@ -384,7 +384,7 @@
             </a>
           </div>
 				</div><!-- list_item -->
-				<div class="list_item">
+				<div class="list_item" price="750" recommend="13">
 					<a class="item_thumb" href="#aaaa">
 						<span class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_product07_nlahmc.jpg);">
 					</a>

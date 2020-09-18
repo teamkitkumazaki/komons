@@ -758,7 +758,7 @@ $(function() {
   }
   toggleBtn();
 
-  //企業一覧ページ 動画ポップアップ
+  //ギフト商品オプション選択欄
   function optionPopup(target){
     var posi;
     var optionPop = $('#optionPop');
@@ -879,6 +879,128 @@ $(function() {
 
   if (document.getElementById('itemDetail')) {
     optionPopup($('#optionPop'));
+  }
+
+  //ギフト商品一覧ページ 商品フィルター
+  function giftProductFilter(target){
+    var time = 300;
+    var priceRangeFilter = $('#priceRangeFilter');
+    var itemLength = target.find(".list_item").length;
+    var priceMin = 0;
+    var priceMax = 10000;
+    var priceMinBox = [];
+    var priceMaxBox = [];
+    var giftListArray = [];
+
+    function displaySortedList(){
+      target.stop().animate({ opacity: 0 }, time, function() {
+        target.html('');
+        for (var i=0; i<itemLength; i++) {
+          if(priceMin < giftListArray[i].price && giftListArray[i].price < priceMax){
+            target.append(giftListArray[i].html);
+          }
+        }
+        target.stop().animate({ opacity: 1 }, time);
+      });
+    }
+
+    function priceRangeSort(min,max){
+      console.log('min: ' + min + ' max: ' + max);
+      target.stop().animate({ opacity: 0 }, time, function() {
+        target.html('');
+        for (var i=0; i<itemLength; i++) {
+          if(min < giftListArray[i].price && giftListArray[i].price < max){
+            target.append(giftListArray[i].html);
+          }
+        }
+        target.stop().animate({ opacity: 1 }, time);
+      });
+    }
+
+    function priceDescSort(){
+      giftListArray.sort(function(a,b){
+        if(a.price< b.price) return -1;
+        if(a.price > b.price) return 1;
+        return 0;
+      });
+      displaySortedList();
+    }
+
+    function priceAscSort(){
+      giftListArray.sort(function(a,b){
+        if(a.price > b.price) return -1;
+        if(a.price < b.price) return 1;
+        return 0;
+      });
+      displaySortedList();
+    }
+
+    function popularSort(){
+      giftListArray.sort(function(a,b){
+        if(a.number > b.number) return -1;
+        if(a.number < b.number) return 1;
+        return 0;
+      });
+      displaySortedList();
+    }
+
+    function recommendSort(){
+      giftListArray.sort(function(a,b){
+        if(a.recommend > b.recommend) return -1;
+        if(a.recommend < b.recommend) return 1;
+        return 0;
+      });
+      displaySortedList();
+    }
+
+    function init(){
+      target.find(".list_item").each(function(index) {
+        $(this).attr('number', index);
+        giftListArray[index] = {
+          html : $(this),
+          price : Number($(this).attr('price')),
+          recommend : Number($(this).attr('recommend')),
+          number : Number($(this).attr('number'))
+        };
+      });
+
+      $('#arrayFilter').on({
+        'change': function() {
+          const expr = $(this).val();
+          switch (expr) {
+            case 'recommend': recommendSort();break;
+            case 'popular': popularSort();break;
+            case 'priceDesc': priceDescSort();break;
+            case 'priceAsc': priceAscSort();break;
+            default: console.log('error');
+          }
+        }
+      });
+      $('input[name="price_filter"]').on({
+        'click': function() {
+          var checkedRadio = $('input[name="price_filter"]:checked').length;
+          console.log(checkedRadio);
+          if(checkedRadio != 0){
+            $('input[name="price_filter"]:checked').each(function(index) {
+              priceMinBox[index] = Number($(this).attr('minPrice'));
+              priceMaxBox[index] = Number($(this).attr('maxPrice'));
+            });
+            priceMin = Number(Math.min.apply(null,priceMinBox));
+            priceMax = Number(Math.max.apply(null,priceMaxBox));
+          }else{
+            priceMin = Number(0);
+            priceMax = Number(99999999);
+          }
+          priceRangeSort(priceMin, priceMax);
+        }
+      });
+    }
+
+    init();
+  }
+
+  if (document.getElementById('giftList')) {
+    giftProductFilter($('#giftProductList'));
   }
 
   if (document.getElementById('itemDetail')) {
