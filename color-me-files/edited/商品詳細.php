@@ -342,7 +342,7 @@ $(function() {
           <span class="pc_thumb" style="background-image: url(<{$product.ot1_url}>);"></span>
             <p class="prod_name"><{$product_name}></p>
         </div>
-        <p class="pop_title">下記よりギフトオプションを<span>お選びください</span></p>
+        <p class="pop_title">下記よりギフトオプションを<span>お選びいただけます</span></p>
         <div class="option_select">
           <div class="option_item">
             <label>
