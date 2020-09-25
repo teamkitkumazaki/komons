@@ -6829,19 +6829,19 @@ body.loaded #loading {
     justify-content: center;
     margin-bottom: 60px; }
     .page-gift-list .section-gift-service .gift_service_list .service_item {
-      width: 335px;
-      margin-right: 35px; }
+      width: 250px;
+      margin-right: 25px; }
       .page-gift-list .section-gift-service .gift_service_list .service_item:nth-last-of-type(1) {
         margin-right: 0; }
       .page-gift-list .section-gift-service .gift_service_list .service_item .img_wrap {
         margin-bottom: 20px; }
       .page-gift-list .section-gift-service .gift_service_list .service_item .title_wrap .service_name {
-        font-size: 20px;
+        font-size: 18px;
         color: #00381f;
         font-weight: normal;
         margin-bottom: 15px; }
       .page-gift-list .section-gift-service .gift_service_list .service_item .title_wrap .service_desc {
-        font-size: 14px;
+        font-size: 13px;
         line-height: 1.5;
         letter-spacing: 0.3px;
         text-indent: 1px; }
@@ -6998,7 +6998,7 @@ body.loaded #loading {
         width: 48%;
         margin-right: 4%;
         margin-bottom: 50px; }
-        .page-gift-list .section-gift-service .gift_service_list .service_item:nth-last-of-type(2) {
+        .page-gift-list .section-gift-service .gift_service_list .service_item:nth-of-type(2n) {
           margin-right: 0; } }
 
 @media screen and (max-width: 760px) {

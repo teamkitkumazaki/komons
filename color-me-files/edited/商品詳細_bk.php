@@ -52,21 +52,12 @@ $(function() {
         <span class="right_txt">合計：<{$product.price}></span>
       </div>
     </div>
-    <!-- product_detail -->
     <{if $sid_name == "gift"}>
     <div class="product_option_table">
-        <{$option_table}>
-    </div>
-    <div class="comp-gift-option">
-      <a id="optionSelect" class="display_wrap" href="javascript:void(0);">
-        <span class="title">ギフトオプション</span>
-        <span class="current_option">手提げ：<span id="tesageDisplay">無し</span> / 水引：<span id="mizuhikiDisplay">無し</span>
-      </a>
-      <div class="option_desc">
-        ※ギフトオプションに関する詳細は<a href="/?mode=f6">こちら</a>
-      </div>
+      <{$option_table}>
     </div>
     <{/if}>
+    <!-- product_detail -->
     <div class="cart_button">
       <{if $product.soldout_flg == false}>
       <{if $sid_name == "refill" || $sid_name == 'bottle-refill'}>
@@ -104,14 +95,33 @@ $(function() {
       <div class="cart_wrap">
         <div class="comp-flex-cart no_flex">
           <div class="cart_box">
+            <{if $sid_name != "gift"}>
             <div class="cart_item">
               <span class="button_wrap">
-          <span class="title cart_in">購入する</span>
-              <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
-              </span>
+                <span class="title cart_in">購入する</span>
+                <{if $product.price|replace:',':'' < 5000}>
+                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+                <{else}>
+                <span class="sub_text">送料無料で配送致します</span>
+                <{/if}>
+                </span>
               <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
               <{$product.info}>
             </div>
+            <{else}>
+            <div class="cart_item">
+              <a id="optionSelect" href="javascript:void(0);" class="button_wrap option_select">
+                <span class="title cart_in">オプションを選択して購入</span>
+                <{if $product.price|replace:',':'' < 5000}>
+                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+                <{else}>
+                <span class="sub_text">送料無料で配送致します</span>
+                <{/if}>
+                <{$product.info}>
+              </a>
+              <p class="cart_desc">※ギフトオプションに関する詳細は<a href="/?tid=1&mode=f6">こちら</a></p>
+            </div>
+              <{/if}>
           </div>
           <!-- cart_box -->
         </div>
@@ -197,9 +207,10 @@ $(function() {
       <div class="cart_wrap">
         <div class="comp-flex-cart no_flex">
           <div class="cart_box">
+            <{if $sid_name != "gift"}>
             <div class="cart_item">
               <span class="button_wrap">
-                <span class="title cart_in">通常購入する</span>
+                <span class="title cart_in">購入する</span>
                 <{if $product.price|replace:',':'' < 5000}>
                 <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
                 <{else}>
@@ -207,7 +218,20 @@ $(function() {
                 <{/if}>
               </span>
               <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
+            </div><!-- cart_item -->
+            <{else}>
+            <div class="cart_item">
+              <a id="optionSelect02" href="javascript:void(0);" class="button_wrap option_select">
+                <span class="title cart_in">オプションを選択して購入</span>
+                <{if $product.price|replace:',':'' < 5000}>
+                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+                <{else}>
+                <span class="sub_text">送料無料で配送致します</span>
+                <{/if}>
+              </a>
+              <p class="cart_desc">※ギフトオプションに関する詳細は<a href="/?tid=1&mode=f6">こちら</a></p>
             </div>
+            <{/if}>
           </div>
           <!-- cart_box -->
         </div>
@@ -241,7 +265,7 @@ $(function() {
        <{section name=num loop=$together_product}>
        <div class="item_box slick-slide">
          <div class="img_wrap">
-           <a href="?pid=134415561" style="background-image: url(<{$together_product[num].img_url}>)"></a>
+           <a href="<{$together_product[num].link_url}>" style="background-image: url(<{$together_product[num].img_url}>)"></a>
          </div>
          <div class="txt_wrap">
            <div class="product_info">
@@ -256,9 +280,17 @@ $(function() {
            </div>
            <span class="product_detail"><{$together_product[num].teika}></span>
          </div>
+         <{if $sid_name != "gift"}>
          <div class="comp-list-cart-button related">
            <script type='text/javascript' src='https://komons-japan.shop-pro.jp/?mode=cartjs&pid=<{$together_product[num].id}>&style=normal_gray&name=n&img=n&expl=n&stock=n&price=n&inq=n&sk=n' charset='euc-jp'></script>
          </div>
+         <{else}>
+         <div class="comp-list-cart-button related wide">
+           <a class="gift_detail_button" href="<{$together_product[num].link_url}>">
+            <span>詳細を見る</span>
+            </a>
+          </div>
+         <{/if}>
        </div>
        <{/section}>
      </div>
@@ -300,18 +332,24 @@ $(function() {
 <{if $sid_name == "gift"}>
 <div id="optionPop" class="comp-gift-option-pop">
   <div id="popBg" class="pop_bg"></div>
+  <form name="product_form" method="post" action="<{$cart_url}>">
   <div class="pop_flex">
     <div class="height_adjust"></div>
     <div class="pop_contents">
       <div id="popClose" class="pop_close"></div>
       <div class="contents_inner">
-        <p class="pop_title">ギフトオプション</p>
+        <div class="item_thumb">
+          <span class="pc_thumb" style="background-image: url(<{$product.ot1_url}>);"></span>
+            <p class="prod_name"><{$product_name}></p>
+        </div>
+        <p class="pop_title">下記より有料オプションを<span>お選びいただけます</span></p>
         <div class="option_select">
           <div class="option_item">
             <label>
               <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_tesage_yv4i6v.jpg)"></div>
               <div class="input_wrap">
                 <input type="checkbox" name="tesage" value="tesage">
+                <span class="radio_checker"></span>
                 <div class="option_name">
                   <span class="name">手提げ布バッグ</span>
                   <span class="price">+300円(税抜)</span>
@@ -324,6 +362,7 @@ $(function() {
               <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_mizuhiki_nl5vi0.jpg)"></div>
               <div class="input_wrap">
                 <input type="checkbox" name="mizuhiki" value="mizuhiki">
+                <span class="radio_checker"></span>
                 <div class="option_name">
                   <span class="name">梅結び水引</span>
                   <span class="price">+100円(税抜)</span>
@@ -368,12 +407,17 @@ $(function() {
             <p class="mizuhiki_desc">※「その他」を選択した方は、表書きの内容を購入手続き画面の「備考欄」にご記入ください。ご記入のない場合は無地熨斗にて対応させていただきます。</p>
           </div>
         </div><!-- mizuhiki -->
+      </div>
+      <div class="fix_wrapper">
         <div class="option_fix">
-          <a id="optionFix" href="javascript:void(0);"><span>ギフトオプションを確定</span></a>
+          <button id="optionFix" class="option_fix_button" href="javascript:void(0);"><span>購入する</span></button>
+          <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
+          <{$product.info}>
         </div>
       </div>
     </div><!-- pop_contents -->
   </div><!-- pop_flex -->
+  </form>
 </div><!-- comp-gift-option-pop -->
 <{/if}>
 <link rel="stylesheet" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/slick/slick.css">

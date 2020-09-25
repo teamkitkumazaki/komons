@@ -20,7 +20,11 @@ $(function() {
   <section class="cart_wrap01">
       <form id="cartIn" name="product_form" method="post" action="<{$cart_url}>">
     <div class="product_ex">
-      <h2 class="product_cat"><{$product.simple_explain}></h2>
+      <{if $sid_name == "gift"}>
+        <h2 class="product_cat"><span>Gift Set</span>ギフトセット</h2>
+      <{else}>
+        <h2 class="product_cat"><{$product.simple_explain}></h2>
+      <{/if}>
       <h1 class="prodcut_name"><{$product_name}></h1>
       <div id="excerpt" class="excerpt"></div>
     </div>
@@ -153,7 +157,11 @@ $(function() {
   </div>
   <div class="txt_wrap">
       <form name="product_form" method="post" action="<{$cart_url}>">
-    <h3><{$product.simple_explain}></h3>
+        <{if $sid_name == "gift"}>
+          <h3><span>Gift Set</span>ギフトセット</h3>
+        <{else}>
+          <h3><{$product.simple_explain}></h3>
+        <{/if}>
     <h2><{$product_name}></h2>
     <div class="product_detail">
       <div class="detail_block detail01">
@@ -342,7 +350,7 @@ $(function() {
           <span class="pc_thumb" style="background-image: url(<{$product.ot1_url}>);"></span>
             <p class="prod_name"><{$product_name}></p>
         </div>
-        <p class="pop_title">下記よりギフトオプションを<span>お選びいただけます</span></p>
+        <p class="pop_title">下記より有料オプションを<span>お選びいただけます</span></p>
         <div class="option_select">
           <div class="option_item">
             <label>
