@@ -7012,7 +7012,7 @@ body.loaded #loading {
     .page-gift-list .section_ttl h2 font {
       font-size: 4.1vw; }
   .page-gift-list .section-main {
-    margin-bottom: 50px; }
+    margin-bottom: 35px; }
     .page-gift-list .section-main .main_img {
       width: 100%;
       height: 75vw;
@@ -7020,23 +7020,14 @@ body.loaded #loading {
     .page-gift-list .section-main .lead_txt {
       text-align: left;
       width: 100%;
-      max-width: 1080px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 88vw;
       position: static;
-      padding: 30px 0 0; } }
-    @media screen and (max-width: 760px) and (max-width: 1150px) {
-      .page-gift-list .section-main .lead_txt {
-        max-width: 750px; } }
-    @media screen and (max-width: 760px) and (max-width: 750px) {
-      .page-gift-list .section-main .lead_txt {
-        width: 84vw; } }
-
-@media screen and (max-width: 760px) {
+      margin: 0 auto;
+      padding: 30px 0 0; }
       .page-gift-list .section-main .lead_txt .title_wrap {
         display: block;
-        margin-bottom: 25px;
-        text-align: center; }
+        margin-bottom: 18px;
+        text-align: left; }
         .page-gift-list .section-main .lead_txt .title_wrap .title_en {
           display: block;
           font-size: 30px;
@@ -7046,12 +7037,14 @@ body.loaded #loading {
           padding-right: 0.2em;
           margin-bottom: 10px; }
         .page-gift-list .section-main .lead_txt .title_wrap .main_ttl {
+          display: none;
           font-size: 16px;
           line-height: 1; }
       .page-gift-list .section-main .lead_txt .main_desc {
         font-size: 16px;
+        letter-spacing: 0.5px;
         line-height: 1.6;
-        text-align: justify; }
+        text-align: left; }
         .page-gift-list .section-main .lead_txt .main_desc a {
           text-decoration: underline; }
   .page-gift-list .section-filter {
@@ -10020,7 +10013,7 @@ body.loaded #loading {
         border: none;
         font-size: 14px;
         letter-spacing: 0.2px;
-        padding: 7px 10px;
+        padding: 10px;
         border-radius: 5px;
         background-repeat: no-repeat;
         background-size: 12px;
@@ -10088,7 +10081,12 @@ body.loaded #loading {
         .comp-filter-wrap .filter_item .input_wrap .radio_wrap label {
           width: 100%;
           font-size: 14.5px;
-          letter-spacing: 0.1px; }
+          letter-spacing: 0.1px; } }
+        @media screen and (max-width: 760px) and (max-width: 330px) {
+          .comp-filter-wrap .filter_item .input_wrap .radio_wrap label {
+            font-size: 12.5px; } }
+
+@media screen and (max-width: 760px) {
           .comp-filter-wrap .filter_item .input_wrap .radio_wrap label:hover {
             background: #fff; }
       .comp-filter-wrap .filter_item .input_wrap select {

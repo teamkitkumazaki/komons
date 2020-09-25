@@ -8,7 +8,6 @@ $(function() {
     var img = $('.first_view');
     var originSrc = img.attr('src');
     img.attr('src', "");
-    console.log(originSrc);
 
     img.on({
       'load': function() {
@@ -264,7 +263,6 @@ $(function() {
 
     function init() {
       target.find('li').each(function(index) {
-        console.log(index);
         btnList[index] = $(this);
         $($(this).find('a')).on({
           'click': function() {
@@ -357,7 +355,6 @@ $(function() {
         var url = 'https://www.komons-japan.com' + u;
       }
 
-      console.log(u);
       if (u !== 'undefined') {
         location.href = url;
       }
@@ -384,13 +381,11 @@ $(function() {
       $.each(target.find('.option-1'), function(index) {
         optionVal[index] = $(this).attr('links');
         if (optionVal[index] = search) {
-          console.log(optionVal[index]);
           target.val(optionVal[index]);
         }
       });
 
       target.change(function() {
-        console.log('change');
         onCatChange();
       });
     }
@@ -432,7 +427,6 @@ $(function() {
 
     function windowMove(e) {
       var w = $(window).width();
-      console.log(scrollObj[e]);
       var scrollHeight = $(scrollObj[e]).offset().top;
       if (w > 1100) {
         var adScroll = scrollHeight - 100;
@@ -591,7 +585,6 @@ $(function() {
   //トップページ用ヘッダーの制御
 
   function topHeader(target) {
-    console.log('topHeader');
 
     function init() {
       target.addClass('fade');
@@ -777,13 +770,11 @@ $(function() {
     function optionShifter(){
       var tesageCheck = $("input[name='tesage']:checked").val();
       var mizuhikiCheck = $("input[name='mizuhiki_option']:checked");
-      console.log(tesageCheck);
       if(tesageCheck == 'tesage'){
         var checkedValue = mizuhikiCheck.attr('tesageAri');
       }else{
         var checkedValue = mizuhikiCheck.attr('tesageNashi');
       }
-      console.log(checkedValue);
       $(checkedValue).click();
       mizuhikiDisplay.text(mizuhikiCheck.val());
     }
@@ -905,7 +896,6 @@ $(function() {
     }
 
     function priceRangeSort(min,max){
-      console.log('min: ' + min + ' max: ' + max);
       target.stop().animate({ opacity: 0 }, time, function() {
         target.html('');
         for (var i=0; i<itemLength; i++) {
@@ -978,8 +968,16 @@ $(function() {
       });
       $('input[name="price_filter"]').on({
         'click': function() {
+          var clickId = $(this).attr('id');
+          if(clickId == 'price01'){
+            $('#price04').prop('checked', false);
+          }
+          if(clickId == 'price04'){
+            $('#price01').prop('checked', false);
+          }
+          priceMinBox = [];
+          priceMaxBox = [];
           var checkedRadio = $('input[name="price_filter"]:checked').length;
-          console.log(checkedRadio);
           if(checkedRadio != 0){
             $('input[name="price_filter"]:checked').each(function(index) {
               priceMinBox[index] = Number($(this).attr('minPrice'));
