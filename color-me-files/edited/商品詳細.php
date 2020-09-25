@@ -277,7 +277,11 @@ $(function() {
          </div>
          <div class="txt_wrap">
            <div class="product_info">
+             <{if $sid_name != "gift"}>
              <span class="cat_ttl related"><{$together_product[num].s_expl}></span>
+             <{else}>
+             <span class="cat_ttl related"><span>Gift Set</span>ギフトセット</span>
+             <{/if}>
              <h3 class="prod_name">
                <{if $together_product[num].name|count_characters < 28}>
                <a class="normal"  href="<{$together_product[num].link_url}>"><{$together_product[num].name}></a>
@@ -352,7 +356,7 @@ $(function() {
         </div>
         <p class="pop_title">下記より有料オプションを<span>お選びいただけます</span></p>
         <div class="option_select">
-          <div class="option_item">
+          <div class="option_item tesage">
             <label>
               <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_tesage_yv4i6v.jpg)"></div>
               <div class="input_wrap">
@@ -365,14 +369,14 @@ $(function() {
               </div>
             </label>
           </div>
-          <div class="option_item">
+          <div class="option_item nosi">
             <label>
               <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_mizuhiki_nl5vi0.jpg)"></div>
               <div class="input_wrap">
                 <input type="checkbox" name="mizuhiki" value="mizuhiki">
                 <span class="radio_checker"></span>
                 <div class="option_name">
-                  <span class="name">梅結び水引</span>
+                  <span class="name">熨斗(のし)</span>
                   <span class="price">+100円(税抜)</span>
                 </div>
               </div>
@@ -412,7 +416,7 @@ $(function() {
                 <label for="mizu00">無し</label>
               </div>
             </div><!-- mizuhiki_option -->
-            <p class="mizuhiki_desc">※「その他」を選択した方は、表書きの内容を購入手続き画面の「備考欄」にご記入ください。ご記入のない場合は無地熨斗にて対応させていただきます。</p>
+            <p class="mizuhiki_desc">※「その他」を選択した方は、表書きの内容を購入手続き画面の記入欄にご記入ください。ご記入のない場合は無地熨斗にて対応させていただきます。</p>
           </div>
         </div><!-- mizuhiki -->
       </div>

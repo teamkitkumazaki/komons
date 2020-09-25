@@ -946,9 +946,17 @@ $(function() {
     function init(){
       target.find(".list_item").each(function(index) {
         $(this).attr('number', index);
+        var propBox = $(this).find('.product_type');
+        var contentIcon = $(this).find('.content_icon');
+        var propRecommend = propBox.attr('recommend');
+        $(this).attr('recommend', propRecommend);
+        var propType = propBox.attr('prop').split(',');
+        for (var i=0; i<propType.length; i++) {
+          contentIcon.append('<div class="icon"><span class="' + propType[i] + '"></span></div>');
+        }
         giftListArray[index] = {
           html : $(this),
-          price : Number($(this).attr('price')),
+          price : Number($(this).attr('price').replace(/,/g, '')),
           recommend : Number($(this).attr('recommend')),
           number : Number($(this).attr('number'))
         };

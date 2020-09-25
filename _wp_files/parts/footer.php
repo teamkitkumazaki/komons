@@ -13,7 +13,7 @@
 					<ul>
 						<li><a href="https://www.komons-japan.com/?tid=1&mode=f2#fqProduct">注文方法について</a></li>
 						<li><a href="https://www.komons-japan.com/?tid=1&mode=f2#fqPurchase">お支払いについて</a></li>
-						<li><a href="https://www.komons-japan.com/?tid=1&mode=f2#fqGift">ギフトについて</a></li>
+						<li><a href="https://www.komons-japan.com/?mode=f6">ギフトについて</a></li>
 						<li><a href="https://www.komons-japan.com/?tid=1&mode=f2#fqPurchase#fqDelivery">配送について</a></li>
 						<li><a href="https://www.komons-japan.com/?mode=f2#fqCancel">キャンセルポリシー</a></li>
 

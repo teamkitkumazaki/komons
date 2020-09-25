@@ -84,7 +84,7 @@
           <li><a href="<{$home_url}>"><span>Top</span>トップ</a></li>
           <li><a href="/?tid=1&mode=f1"><span>Concept</span>Komonsについて</a></li>
           <li><a href="/?mode=cate&csid=0&cbid=2421809"><span>Products</span>商品一覧</a></li>
-          <li><a href="/?mode=f5"><span>Gift</span>ギフトセット</a></li>
+          <li><a href="/?mode=cate&cbid=2448903&csid=2"><span>Gift</span>ギフトセット</a></li>
           <li><a href="https://journal.komons-japan.com/"><span>Journal</span>記事一覧</a></li>
           <li><a href="https://journal.komons-japan.com/contact"><span>Contact</span>お問い合わせ</a></li>
           <li><a href="/?mode=f2"><span>FAQ</span>よくある質問</a></li>
