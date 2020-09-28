@@ -91,8 +91,7 @@
           <span class="fil_ttl">並び順</span>
           <div class="input_wrap">
             <select name="filter_array" id="arrayFilter" class="postform">
-              <option class="option-1" value="recommend">おすすめ順</option>
-              <option class="option-1" value="popular">人気順</option>
+              <option class="option-1" value="recommend">人気順</option>
               <option class="option-1" value="priceDesc">価格の安い順</option>
               <option class="option-1" value="priceAsc">価格の高い順</option>
             </select>
@@ -210,7 +209,7 @@
       </div><!-- service_item -->
     </div><!-- gift_service_list -->
     <div class="gift_link_button">
-      <a href="#aaaa"><span>ギフトサービスを詳しく見る</span></a>
+      <a href="/?mode=f6"><span>ギフトサービスを詳しく見る</span></a>
     </div>
   </div>
 </section>
@@ -242,7 +241,7 @@
     </div>
 
     <div class="toggle_item">
-      <a href="javascript:void(0);" class="toggle_button">メッセージカード</a>
+      <a href="javascript:void(0);" class="toggle_button">メッセージカードはつけられますか？メッセージの印字はできますか？</a>
       <div class="toggle_contents">
         <p>無料でご利用いただけるメッセージカード（名刺サイズ、Komosロゴ入り）をご用意しています。カート画面にてメッセージカード「希望する」を選択してください。カード裏面にメッセージの印刷も承ります。詳しくはご購入手続き画面をご確認ください。</p>
       </div>
