@@ -83,7 +83,8 @@ $basicGreen: #00381f;
 /*よくある質問のレイアウト*/
 @import 'faq.scss';
 /*ギフトページのレイアウト*/
-@import 'gift.scss';
+@import 'gift.scss'; /* ⇦temp */
+@import 'giftList.scss';
 /* ギフトサービスページのレイアウト*/
 @import 'giftService.scss';
 
@@ -103,9 +104,12 @@ $basicGreen: #00381f;
 @import 'component/comp-list-cart-button.scss';
 @import 'component/comp-related-product.scss';
 @import 'component/comp-centered-title.scss';
+@import 'component/comp-centered-section-title.scss';
 @import 'component/comp-back-to-list.scss';
 @import 'component/comp-insta-wrap.scss';
 @import 'component/comp-gift-service-wrap.scss';
 @import 'component/comp-qa.scss';
 @import 'component/comp-gift-option.scss';
 @import 'component/comp-gift-option-pop.scss';
+@import 'component/comp-filter-wrap.scss';
+@import 'component/comp-gift-product-list.scss';

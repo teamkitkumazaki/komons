@@ -8,7 +8,6 @@ $(function() {
     var img = $('.first_view');
     var originSrc = img.attr('src');
     img.attr('src', "");
-    console.log(originSrc);
 
     img.on({
       'load': function() {
@@ -264,7 +263,6 @@ $(function() {
 
     function init() {
       target.find('li').each(function(index) {
-        console.log(index);
         btnList[index] = $(this);
         $($(this).find('a')).on({
           'click': function() {
@@ -357,7 +355,6 @@ $(function() {
         var url = 'https://www.komons-japan.com' + u;
       }
 
-      console.log(u);
       if (u !== 'undefined') {
         location.href = url;
       }
@@ -384,13 +381,11 @@ $(function() {
       $.each(target.find('.option-1'), function(index) {
         optionVal[index] = $(this).attr('links');
         if (optionVal[index] = search) {
-          console.log(optionVal[index]);
           target.val(optionVal[index]);
         }
       });
 
       target.change(function() {
-        console.log('change');
         onCatChange();
       });
     }
@@ -432,7 +427,6 @@ $(function() {
 
     function windowMove(e) {
       var w = $(window).width();
-      console.log(scrollObj[e]);
       var scrollHeight = $(scrollObj[e]).offset().top;
       if (w > 1100) {
         var adScroll = scrollHeight - 100;
@@ -519,6 +513,10 @@ $(function() {
     faqToggle($('article'));
   }
 
+  if (document.getElementById('giftList')) {
+    faqToggle($('article'));
+  }
+
   if (document.getElementById('giftService')) {
     faqToggle($('article'));
   }
@@ -587,7 +585,6 @@ $(function() {
   //トップページ用ヘッダーの制御
 
   function topHeader(target) {
-    console.log('topHeader');
 
     function init() {
       target.addClass('fade');
@@ -754,7 +751,7 @@ $(function() {
   }
   toggleBtn();
 
-  //企業一覧ページ 動画ポップアップ
+  //ギフト商品オプション選択欄
   function optionPopup(target){
     var posi;
     var optionPop = $('#optionPop');
@@ -773,13 +770,11 @@ $(function() {
     function optionShifter(){
       var tesageCheck = $("input[name='tesage']:checked").val();
       var mizuhikiCheck = $("input[name='mizuhiki_option']:checked");
-      console.log(tesageCheck);
       if(tesageCheck == 'tesage'){
         var checkedValue = mizuhikiCheck.attr('tesageAri');
       }else{
         var checkedValue = mizuhikiCheck.attr('tesageNashi');
       }
-      console.log(checkedValue);
       $(checkedValue).click();
       mizuhikiDisplay.text(mizuhikiCheck.val());
     }
@@ -816,6 +811,8 @@ $(function() {
     }
 
     function init(){
+
+      $('#6-13').click();
 
       optionPopClose();
 
@@ -875,6 +872,143 @@ $(function() {
 
   if (document.getElementById('itemDetail')) {
     optionPopup($('#optionPop'));
+  }
+
+  //ギフト商品一覧ページ 商品フィルター
+  function giftProductFilter(target){
+    var time = 300;
+    var priceRangeFilter = $('#priceRangeFilter');
+    var itemLength = target.find(".list_item").length;
+    var priceMin = 0;
+    var priceMax = 10000;
+    var priceMinBox = [];
+    var priceMaxBox = [];
+    var giftListArray = [];
+
+    function displaySortedList(){
+      target.stop().animate({ opacity: 0 }, time, function() {
+        target.html('');
+        for (var i=0; i<itemLength; i++) {
+          if(priceMin < giftListArray[i].price && giftListArray[i].price < priceMax){
+            target.append(giftListArray[i].html);
+          }
+        }
+        target.stop().animate({ opacity: 1 }, time);
+      });
+    }
+
+    function priceRangeSort(min,max){
+      target.stop().animate({ opacity: 0 }, time, function() {
+        target.html('');
+        for (var i=0; i<itemLength; i++) {
+          if(min < giftListArray[i].price && giftListArray[i].price < max){
+            target.append(giftListArray[i].html);
+          }
+        }
+        target.stop().animate({ opacity: 1 }, time);
+      });
+    }
+
+    function priceDescSort(){
+      giftListArray.sort(function(a,b){
+        if(a.price< b.price) return -1;
+        if(a.price > b.price) return 1;
+        return 0;
+      });
+      displaySortedList();
+    }
+
+    function priceAscSort(){
+      giftListArray.sort(function(a,b){
+        if(a.price > b.price) return -1;
+        if(a.price < b.price) return 1;
+        return 0;
+      });
+      displaySortedList();
+    }
+
+    function popularSort(){
+      giftListArray.sort(function(a,b){
+        if(a.number < b.number) return -1;
+        if(a.number > b.number) return 1;
+        return 0;
+      });
+      displaySortedList();
+    }
+
+    function recommendSort(){
+      giftListArray.sort(function(a,b){
+        if(a.recommend < b.recommend) return -1;
+        if(a.recommend > b.recommend) return 1;
+        return 0;
+      });
+      displaySortedList();
+    }
+
+    function init(){
+      target.find(".list_item").each(function(index) {
+        $(this).attr('number', index);
+        var propBox = $(this).find('.product_type');
+        var contentIcon = $(this).find('.content_icon');
+        var propRecommend = propBox.attr('recommend');
+        $(this).attr('recommend', propRecommend);
+        var propType = propBox.attr('prop').split(',');
+        for (var i=0; i<propType.length; i++) {
+          contentIcon.append('<div class="icon"><span class="' + propType[i] + '"></span></div>');
+        }
+        giftListArray[index] = {
+          html : $(this),
+          price : Number($(this).attr('price').replace(/,/g, '')),
+          recommend : Number($(this).attr('recommend')),
+          number : Number($(this).attr('number'))
+        };
+      });
+
+      $('#arrayFilter').on({
+        'change': function() {
+          const expr = $(this).val();
+          switch (expr) {
+            case 'recommend': recommendSort();break;
+            case 'popular': popularSort();break;
+            case 'priceDesc': priceDescSort();break;
+            case 'priceAsc': priceAscSort();break;
+            default: console.log('error');
+          }
+        }
+      });
+      $('input[name="price_filter"]').on({
+        'click': function() {
+          var clickId = $(this).attr('id');
+          if(clickId == 'price01'){
+            $('#price04').prop('checked', false);
+          }
+          if(clickId == 'price04'){
+            $('#price01').prop('checked', false);
+          }
+          priceMinBox = [];
+          priceMaxBox = [];
+          var checkedRadio = $('input[name="price_filter"]:checked').length;
+          if(checkedRadio != 0){
+            $('input[name="price_filter"]:checked').each(function(index) {
+              priceMinBox[index] = Number($(this).attr('minPrice'));
+              priceMaxBox[index] = Number($(this).attr('maxPrice'));
+            });
+            priceMin = Number(Math.min.apply(null,priceMinBox));
+            priceMax = Number(Math.max.apply(null,priceMaxBox));
+          }else{
+            priceMin = Number(0);
+            priceMax = Number(99999999);
+          }
+          priceRangeSort(priceMin, priceMax);
+        }
+      });
+    }
+
+    init();
+  }
+
+  if (document.getElementById('giftList')) {
+    giftProductFilter($('#giftProductList'));
   }
 
   if (document.getElementById('itemDetail')) {

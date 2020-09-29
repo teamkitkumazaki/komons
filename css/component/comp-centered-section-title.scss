@@ -1,0 +1,39 @@
+.comp-centered-section-title{
+  text-align: center;
+  margin-bottom: 60px;
+  .title_en{
+    display: block;
+    font-size: 54px;
+    @include libre-r;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .title_ja{
+    font-size: 18px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .comp-centered-section-title{
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 760px){
+  .comp-centered-section-title{
+    text-align: center;
+    margin-bottom: 40px;
+    .title_en{
+      font-size: 30px;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .title_ja{
+      font-size: 16px;
+    }
+  }
+}
