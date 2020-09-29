@@ -812,6 +812,8 @@ $(function() {
 
     function init(){
 
+      $('#6-13').click();
+
       optionPopClose();
 
       optionSelect.on({
