@@ -1347,6 +1347,9 @@ body {
         height: 2px;
         opacity: 1; }
 
+#index .section-pickup .section_ttl {
+  padding-top: 80px; }
+
 #index #topConcept {
   width: 100%;
   background: #f9f9f9; }
@@ -1370,14 +1373,14 @@ body {
     writing-mode: vertical-rl; }
     #index #topConcept .txt_wrap h2 {
       text-align: left;
-      font-size: 32px;
+      font-size: 28px;
       font-weight: normal;
       line-height: 1.75;
       letter-spacing: 3px;
       margin-left: 90px; }
       #index #topConcept .txt_wrap h2 span {
         display: block;
-        text-indent: 4.2em; }
+        text-indent: 4.7em; }
     #index #topConcept .txt_wrap p {
       text-align: left;
       font-size: 14px;
@@ -2202,14 +2205,14 @@ body {
       width: 100%;
       margin: 0 auto; }
       #index #topConcept .txt_wrap h2 {
-        font-size: 7.6vw;
-        line-height: 1.4;
-        letter-spacing: 0.04em;
-        margin-bottom: 25px;
-        text-indent: -2px; }
-        #index #topConcept .txt_wrap h2 span {
-          display: block;
-          text-indent: -2px; }
+        font-size: 5vw;
+        line-height: 1;
+        letter-spacing: 0.02em;
+        margin-bottom: 30px;
+        /*line-height: 1.4;
+    			letter-spacing: 0.04em;
+    			margin-bottom: 25px;
+    			text-indent: -2px;*/ }
       #index #topConcept .txt_wrap p {
         font-size: 3.6vw;
         letter-spacing: 0.1em;
@@ -2218,14 +2221,48 @@ body {
         margin-bottom: 15px; }
       #index #topConcept .txt_wrap .button_wrap {
         text-align: center;
-        margin: 25px auto 0; }
+        margin: 15px auto 0; }
         #index #topConcept .txt_wrap .button_wrap a {
           width: 100%;
-          padding: 20px 0;
+          padding: 10px 0;
           font-weight: bold;
-          background: #fff;
-          border: 1px solid #00381f; }
+          background: transparent;
+          border: 0px solid #00381f;
+          letter-spacing: 0.5px;
+          text-align: left; }
+          #index #topConcept .txt_wrap .button_wrap a .txt_wrap {
+            width: auto;
+            display: inline-block;
+            padding-right: 25px;
+            position: relative; }
+            #index #topConcept .txt_wrap .button_wrap a .txt_wrap::before {
+              display: block;
+              content: "";
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              border-radius: 100%;
+              background: #1b4e37;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              margin: auto; }
+            #index #topConcept .txt_wrap .button_wrap a .txt_wrap::after {
+              position: absolute;
+              width: 3px;
+              height: 3px;
+              content: "";
+              top: 0;
+              bottom: 0;
+              right: 6px;
+              margin: auto;
+              border-top: 2px solid #fff;
+              border-right: 2px solid #fff;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
           #index #topConcept .txt_wrap .button_wrap a .caret {
+            display: none;
             position: absolute;
             width: 20px;
             height: 20px;
@@ -2252,6 +2289,9 @@ body {
               transform: rotate(45deg); }
           #index #topConcept .txt_wrap .button_wrap a::before {
             display: none; }
+  #index .section-pickup .section_ttl {
+    width: 84vw !important;
+    padding-top: 50px; }
   #index .product_section {
     height: 66vw;
     margin-bottom: 0; }
@@ -2340,6 +2380,8 @@ body {
             -webkit-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
             transform: rotate(45deg); }
+  #index #topJournal .article_wrap .button_wrap {
+    margin-bottom: 60px; }
   #index .bn_section {
     max-width: 100%;
     width: 100%; }
@@ -8084,6 +8126,8 @@ body.loaded #loading {
     .comp-pickup-items .pickup_item {
       width: 100%;
       margin-bottom: 40px; }
+      .comp-pickup-items .pickup_item:nth-last-of-type(1) {
+        margin-bottom: 0; }
       .comp-pickup-items .pickup_item .img_wrap {
         margin-bottom: 20px; }
         .comp-pickup-items .pickup_item .img_wrap a {
