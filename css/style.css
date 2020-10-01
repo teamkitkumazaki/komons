@@ -7724,6 +7724,33 @@ body.loaded #loading {
         text-decoration: underline; }
         .comp-flex-cart .cart_box .cart_desc a:hover {
           opacity: 0.75; }
+  .comp-flex-cart .amazon_pay {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .comp-flex-cart .amazon_pay .logo {
+      width: 100px;
+      height: 19px;
+      margin-right: 10px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      background-image: url(../img/item/amazon.png); }
+    .comp-flex-cart .amazon_pay .text {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      line-height: 1.6;
+      padding-bottom: 4px; }
   .comp-flex-cart.no_flex {
     display: block; }
     .comp-flex-cart.no_flex .cart_box {
@@ -7779,7 +7806,22 @@ body.loaded #loading {
           line-height: 1.6;
           letter-spacing: 1.2px; }
           .comp-flex-cart .cart_box .cart_desc a:hover {
-            opacity: 0.75; } }
+            opacity: 0.75; }
+    .comp-flex-cart .amazon_pay {
+      margin-top: 20px;
+      display: block; }
+      .comp-flex-cart .amazon_pay .logo {
+        display: block;
+        width: 100px;
+        margin: 0 auto;
+        height: 19px;
+        margin-bottom: 5px; }
+      .comp-flex-cart .amazon_pay .text {
+        display: block;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        line-height: 1.6;
+        padding-bottom: 4px; } }
 
 .comp-waiting-list {
   max-width: 600px;
@@ -8542,6 +8584,16 @@ body.loaded #loading {
     font-size: 12px;
     letter-spacing: 0.5px;
     margin-top: -5px; }
+  .comp-list-cart-button .gift_detail_button {
+    height: 42px;
+    line-height: 42px;
+    margin-top: -6px; }
+    .comp-list-cart-button .gift_detail_button span {
+      display: inline-block;
+      position: relative;
+      padding-right: 30px; }
+    .comp-list-cart-button .gift_detail_button:hover span::before {
+      right: 0px; }
   .comp-list-cart-button .cartjs_box {
     padding: 0 !important; }
     .comp-list-cart-button .cartjs_box .cartjs_cart_in {
@@ -8652,7 +8704,7 @@ body.loaded #loading {
           margin-top: 7px;
           color: #979797; }
         .comp-related-product .slick-list .slick-track .slick-slide .comp-list-cart-button.wide {
-          margin-top: 5px; } }
+          margin-top: 17px; } }
 
 @media screen and (max-width: 760px) {
   .comp-related-product {
@@ -10382,33 +10434,21 @@ body.loaded #loading {
       .comp-gift-product-list .list_item .item_thumb {
         display: block;
         position: relative;
-        margin-bottom: 10px; }
+        margin-bottom: 10px;
+        -webkit-transition: opacity .3s;
+        -o-transition: opacity .3s;
+        transition: opacity .3s; }
+        .comp-gift-product-list .list_item .item_thumb:hover {
+          opacity: 0.75; }
         .comp-gift-product-list .list_item .item_thumb .img_wrap {
           display: block;
           width: 100%;
-          height: 30vw;
+          height: 28vw;
           background-repeat: no-repeat;
           background-position: center center;
           background-size: cover; }
         .comp-gift-product-list .list_item .item_thumb::after {
-          display: block;
-          content: "";
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-          background-color: rgba(70, 70, 70, 0.8);
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-size: 160px;
-          background-image: url(../img/common/viewmore.png);
-          opacity: 0;
-          pointer-events: none;
-          -webkit-transition: opacity 0.3s;
-          -o-transition: opacity 0.3s;
-          transition: opacity 0.3s; }
+          display: none; }
         .comp-gift-product-list .list_item .item_thumb:hover::after {
           opacity: 1; }
       .comp-gift-product-list .list_item .txt_wrap .name {

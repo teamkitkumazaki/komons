@@ -107,6 +107,26 @@
       }
     }
   }
+  .amazon_pay{
+    margin-top: 20px;
+    @include flexSet;
+    align-items: center;
+    .logo{
+      width: 100px;
+      height: 19px;
+      margin-right: 10px;
+      @include bgSet;
+      background-size: contain;
+      background-image: url(../img/item/amazon.png);
+    }
+    .text{
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      line-height: 1.6;
+      padding-bottom: 4px;
+    }
+  }
   &.no_flex{
     display: block;
     .cart_box{
@@ -174,6 +194,24 @@
           line-height: 1.6;
           letter-spacing: 1.2px;
         }
+      }
+    }
+    .amazon_pay{
+      margin-top: 20px;
+      display: block;
+      .logo{
+        display: block;
+        width: 100px;
+        margin: 0 auto;
+        height: 19px;
+        margin-bottom: 5px;
+      }
+      .text{
+        display: block;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        line-height: 1.6;
+        padding-bottom: 4px;
       }
     }
   }

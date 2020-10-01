@@ -56,7 +56,7 @@ $(function() {
         <span class="right_txt">合計：<{$product.price}></span>
       </div>
     </div>
-    <{if $sid_name == "gift"}>
+    <{if $sid_name == "gift" && $product.model != "K0026"}>
     <div class="product_option_table">
       <{$option_table}>
     </div>
@@ -99,7 +99,7 @@ $(function() {
       <div class="cart_wrap">
         <div class="comp-flex-cart no_flex">
           <div class="cart_box">
-            <{if $sid_name != "gift"}>
+            <{if $sid_name != "gift" || $product.model == "K0026"}>
             <div class="cart_item">
               <span class="button_wrap">
                 <span class="title cart_in">購入する</span>
@@ -215,7 +215,7 @@ $(function() {
       <div class="cart_wrap">
         <div class="comp-flex-cart no_flex">
           <div class="cart_box">
-            <{if $sid_name != "gift"}>
+            <{if $sid_name != "gift" || $product.model == "K0026"}>
             <div class="cart_item">
               <span class="button_wrap">
                 <span class="title cart_in">購入する</span>
@@ -277,10 +277,10 @@ $(function() {
          </div>
          <div class="txt_wrap">
            <div class="product_info">
-             <{if $sid_name != "gift"}>
-             <span class="cat_ttl related"><{$together_product[num].s_expl}></span>
-             <{else}>
+             <{if $together_product[num].option_price != null}>
              <span class="cat_ttl related"><span>Gift Set</span>ギフトセット</span>
+             <{else}>
+             <span class="cat_ttl related"><{$together_product[num].s_expl}></span>
              <{/if}>
              <h3 class="prod_name">
                <{if $together_product[num].name|count_characters < 28}>
@@ -292,16 +292,16 @@ $(function() {
            </div>
            <span class="product_detail"><{$together_product[num].teika}></span>
          </div>
-         <{if $sid_name != "gift"}>
-         <div class="comp-list-cart-button related">
-           <script type='text/javascript' src='https://komons-japan.shop-pro.jp/?mode=cartjs&pid=<{$together_product[num].id}>&style=normal_gray&name=n&img=n&expl=n&stock=n&price=n&inq=n&sk=n' charset='euc-jp'></script>
-         </div>
-         <{else}>
+         <{if $together_product[num].option_price != null}>
          <div class="comp-list-cart-button related wide">
            <a class="gift_detail_button" href="<{$together_product[num].link_url}>">
             <span>詳細を見る</span>
             </a>
           </div>
+         <{else}>
+         <div class="comp-list-cart-button related">
+           <script type='text/javascript' src='https://komons-japan.shop-pro.jp/?mode=cartjs&pid=<{$together_product[num].id}>&style=normal_gray&name=n&img=n&expl=n&stock=n&price=n&inq=n&sk=n' charset='euc-jp'></script>
+         </div>
          <{/if}>
        </div>
        <{/section}>
@@ -341,7 +341,7 @@ $(function() {
    </div><!-- section_back -->
  </section>
 </article>
-<{if $sid_name == "gift"}>
+<{if $sid_name == "gift" && $product.model != "K0026"}>
 <div id="optionPop" class="comp-gift-option-pop">
   <div id="popBg" class="pop_bg"></div>
   <form name="product_form" method="post" action="<{$cart_url}>">

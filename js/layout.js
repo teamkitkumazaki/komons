@@ -879,8 +879,9 @@ $(function() {
     var time = 300;
     var priceRangeFilter = $('#priceRangeFilter');
     var itemLength = target.find(".list_item").length;
+    var lengthNum = itemLength + 1;
     var priceMin = 0;
-    var priceMax = 10000;
+    var priceMax = 100000;
     var priceMinBox = [];
     var priceMaxBox = [];
     var giftListArray = [];
@@ -890,6 +891,7 @@ $(function() {
         target.html('');
         for (var i=0; i<itemLength; i++) {
           if(priceMin < giftListArray[i].price && giftListArray[i].price < priceMax){
+            console.log('index:' + i);
             target.append(giftListArray[i].html);
           }
         }

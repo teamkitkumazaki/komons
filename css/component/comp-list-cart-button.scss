@@ -149,6 +149,23 @@
       letter-spacing: 0.5px;
       margin-top: -5px;
     }
+    .gift_detail_button{
+      height: 42px;
+      line-height: 42px;
+      margin-top: -6px;
+      span{
+        display: inline-block;
+        position: relative;
+        padding-right: 30px;
+      }
+      &:hover{
+        span{
+          &::before{
+            right: 0px;
+          }
+        }
+      }
+    }
     .cartjs_box {
       padding: 0 !important;
 

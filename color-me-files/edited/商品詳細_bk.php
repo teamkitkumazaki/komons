@@ -20,7 +20,11 @@ $(function() {
   <section class="cart_wrap01">
       <form id="cartIn" name="product_form" method="post" action="<{$cart_url}>">
     <div class="product_ex">
-      <h2 class="product_cat"><{$product.simple_explain}></h2>
+      <{if $sid_name == "gift"}>
+        <h2 class="product_cat"><span>Gift Set</span>ギフトセット</h2>
+      <{else}>
+        <h2 class="product_cat"><{$product.simple_explain}></h2>
+      <{/if}>
       <h1 class="prodcut_name"><{$product_name}></h1>
       <div id="excerpt" class="excerpt"></div>
     </div>
@@ -153,7 +157,11 @@ $(function() {
   </div>
   <div class="txt_wrap">
       <form name="product_form" method="post" action="<{$cart_url}>">
-    <h3><{$product.simple_explain}></h3>
+        <{if $sid_name == "gift"}>
+          <h3><span>Gift Set</span>ギフトセット</h3>
+        <{else}>
+          <h3><{$product.simple_explain}></h3>
+        <{/if}>
     <h2><{$product_name}></h2>
     <div class="product_detail">
       <div class="detail_block detail01">
@@ -269,7 +277,11 @@ $(function() {
          </div>
          <div class="txt_wrap">
            <div class="product_info">
+             <{if $together_product[num].option_price != null}>
+             <span class="cat_ttl related"><span>Gift Set</span>ギフトセット</span>
+             <{else}>
              <span class="cat_ttl related"><{$together_product[num].s_expl}></span>
+             <{/if}>
              <h3 class="prod_name">
                <{if $together_product[num].name|count_characters < 28}>
                <a class="normal"  href="<{$together_product[num].link_url}>"><{$together_product[num].name}></a>
@@ -280,16 +292,16 @@ $(function() {
            </div>
            <span class="product_detail"><{$together_product[num].teika}></span>
          </div>
-         <{if $sid_name != "gift"}>
-         <div class="comp-list-cart-button related">
-           <script type='text/javascript' src='https://komons-japan.shop-pro.jp/?mode=cartjs&pid=<{$together_product[num].id}>&style=normal_gray&name=n&img=n&expl=n&stock=n&price=n&inq=n&sk=n' charset='euc-jp'></script>
-         </div>
-         <{else}>
+         <{if $together_product[num].option_price != null}>
          <div class="comp-list-cart-button related wide">
            <a class="gift_detail_button" href="<{$together_product[num].link_url}>">
             <span>詳細を見る</span>
             </a>
           </div>
+         <{else}>
+         <div class="comp-list-cart-button related">
+           <script type='text/javascript' src='https://komons-japan.shop-pro.jp/?mode=cartjs&pid=<{$together_product[num].id}>&style=normal_gray&name=n&img=n&expl=n&stock=n&price=n&inq=n&sk=n' charset='euc-jp'></script>
+         </div>
          <{/if}>
        </div>
        <{/section}>
@@ -344,7 +356,7 @@ $(function() {
         </div>
         <p class="pop_title">下記より有料オプションを<span>お選びいただけます</span></p>
         <div class="option_select">
-          <div class="option_item">
+          <div class="option_item tesage">
             <label>
               <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_tesage_yv4i6v.jpg)"></div>
               <div class="input_wrap">
@@ -357,14 +369,14 @@ $(function() {
               </div>
             </label>
           </div>
-          <div class="option_item">
+          <div class="option_item nosi">
             <label>
               <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_mizuhiki_nl5vi0.jpg)"></div>
               <div class="input_wrap">
                 <input type="checkbox" name="mizuhiki" value="mizuhiki">
                 <span class="radio_checker"></span>
                 <div class="option_name">
-                  <span class="name">梅結び水引</span>
+                  <span class="name">熨斗(のし)</span>
                   <span class="price">+100円(税抜)</span>
                 </div>
               </div>
@@ -404,7 +416,7 @@ $(function() {
                 <label for="mizu00">無し</label>
               </div>
             </div><!-- mizuhiki_option -->
-            <p class="mizuhiki_desc">※「その他」を選択した方は、表書きの内容を購入手続き画面の「備考欄」にご記入ください。ご記入のない場合は無地熨斗にて対応させていただきます。</p>
+            <p class="mizuhiki_desc">※「その他」を選択した方は、表書きの内容を購入手続き画面の記入欄にご記入ください。ご記入のない場合は無地熨斗にて対応させていただきます。</p>
           </div>
         </div><!-- mizuhiki -->
       </div>
