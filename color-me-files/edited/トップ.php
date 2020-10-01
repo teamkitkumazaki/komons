@@ -62,36 +62,51 @@
       <p class="last">
         <span class="sp_block">使う度に、豊かな気持ちになるように、</span><span>Komonsは、日常に小さな幸せを届けます。</span></p>
       <div class="button_wrap">
-        <a href="https://www.komons-japan.com/?tid=1&mode=f1">もっと詳しくみる<span class="caret"></span></a>
+        <a href="https://www.komons-japan.com/?tid=1&mode=f1"><span class="txt_wrap">もっと詳しくみる<span class="caret"></span></span></a>
       </div>
     </div>
 </div><!-- concept_wrap -->
+</section>
+<section class="section-pickup">
+  <div class="inner">
+  <div class="section_ttl">
+    <h2><span>Pickup</span><font>ピックアップ商品</font></h2>
+  </div>
+  <div class="comp-pickup-items">
+    <div class="pickup_item">
+      <div class="img_wrap">
+        <a href="/?pid=134416035"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1601276406/index/200928_pickup_img01_xriarx.jpg"></a>
+      </div>
+      <div class="txt_wrap">
+        <div class="prod_detail">
+          <h3 class="cat_ttl"><span>Gift Set</span>ギフトセット</h3>
+          <a class="prod_name" href="/?pid=134416035">ハンドケアコンビ</a>
+          <span class="price">4,600円(税抜)</span>
+        </div>
+        <a class="arrow_link" href="/?pid=134416035"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
+      </div><!-- txt_wrap -->
+    </div><!-- pickup_item -->
+    <div class="pickup_item">
+      <div class="img_wrap">
+        <a href="/?pid=139975276"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1601276406/index/200928_pickup_img02_x2njzs.jpg"></a>
+      </div>
+      <div class="txt_wrap">
+        <div class="prod_detail">
+          <h3 class="cat_ttl"><span>Fabric Mist</span>除菌消臭ミスト</h3>
+          <a class="prod_name" href="/?pid=139975276">【ギフト】<span>Free as a Bird (Mini)</span></a>
+          <span class="price">750円(税抜)</span>
+        </div>
+        <a class="arrow_link" href="/?pid=139975276"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
+      </div><!-- txt_wrap -->
+    </div><!-- pickup_item -->
+  </div><!-- comp-pickup-item -->
+</div><!-- section_inner -->
 </section>
 <div id="product_wrap">
 <div class="section_ttl">
   <h2><span>Products</span><font>Komonsの商品</font></h2>
 </div>
 <section id="product01" class="product_section">
-  <div id="bgHand" class="productBg">
-    <a class="product_caret" href="https://www.komons-japan.com/?pid=132301791"><span class="caret"></span></a>
-    <div class="txt_wrapper">
-      <div class="txt_block">
-        <h4><span>Hand Soap</span>- ハンドソープ</h4>
-        <h3>I can hear music</h3>
-        <p>
-          <span>家に帰り、いちばん最初にする「手を洗う」という行為は、心も体もONからOFFへと切替えるスイッチ。</span>
-          <span>手を洗うたびに気持ちの良いメロディが流れるかような香りと手触りのハンドソープを作りました</span></p>
-        <div class="link_button">
-          <a href="https://www.komons-japan.com/?pid=132301791">詳しく見る<span></span></a>
-        </div>
-      </div>
-      <div class="height_adjuster"></div>
-    </div>
-    <!-- txt_wrapper -->
-  </div>
-</section>
-<!-- product06 -->
-<section id="product02" class="product_section">
   <div id="bgMist" class="productBg">
     <a class="product_caret" href="https://www.komons-japan.com/?pid=132298880
 "><span class="caret"></span></a>
@@ -114,7 +129,7 @@
   </div>
 </section>
 <!-- product02 -->
-<section id="product03" class="product_section">
+<section id="product02" class="product_section">
   <div id="bgMulti" class="productBg">
     <a class="product_caret" href="https://www.komons-japan.com/?pid=132301713"><span class="caret"></span></a>
     <div class="txt_wrapper reverse">
@@ -135,10 +150,9 @@
     </div>
     <!-- txt_wrapper -->
   </div>
-
 </section>
 <!-- product04 -->
-<section id="product04" class="product_section">
+<section id="product03" class="product_section">
   <div id="bgDish" class="productBg">
     <a class="product_caret" href="https://www.komons-japan.com/?pid=132268831
 "><span class="caret"></span></a>
@@ -162,6 +176,26 @@
   </div>
 </section>
 <!-- product01 -->
+<section id="product04" class="product_section">
+  <div id="bgHand" class="productBg">
+    <a class="product_caret" href="https://www.komons-japan.com/?pid=132301791"><span class="caret"></span></a>
+    <div class="txt_wrapper">
+      <div class="txt_block">
+        <h4><span>Hand Soap</span>- ハンドソープ</h4>
+        <h3>I can hear music</h3>
+        <p>
+          <span>家に帰り、いちばん最初にする「手を洗う」という行為は、心も体もONからOFFへと切替えるスイッチ。</span>
+          <span>手を洗うたびに気持ちの良いメロディが流れるかような香りと手触りのハンドソープを作りました</span></p>
+        <div class="link_button">
+          <a href="https://www.komons-japan.com/?pid=132301791">詳しく見る<span></span></a>
+        </div>
+      </div>
+      <div class="height_adjuster"></div>
+    </div>
+    <!-- txt_wrapper -->
+  </div>
+</section>
+<!-- product06 -->
 <section id="product05" class="product_section">
   <div id="bgBath" class="productBg">
     <a class="product_caret" href="https://www.komons-japan.com/?pid=132301743"><span class="caret"></span></a>
@@ -206,7 +240,6 @@
   </div>
 </section>
 <!-- product03 -->
-
 <div class="product_link">
   <a href="/?mode=cate&csid=0&cbid=2421809"><span class="txt_wrap">商品をもっとみる<span class="caret"></span></span></a>
 </div>
@@ -226,41 +259,6 @@
       <h4>大切な人への贈り物に。</h4>
     </div>
   </div>
-</section>
-<section class="section-pickup">
-  <div class="inner">
-  <div class="section_ttl">
-    <h2><span>Pickup</span><font>ピックアップ商品</font></h2>
-  </div>
-  <div class="comp-pickup-items">
-    <div class="pickup_item">
-      <div class="img_wrap">
-        <a href="/?pid=151138500"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/pickup_img01_xu8bmw.jpg"></a>
-      </div>
-      <div class="txt_wrap">
-        <div class="prod_detail">
-          <h3 class="cat_ttl"><span>Hand Wash</span>ハンドソープ</h3>
-          <a class="prod_name" href="/?pid=151138500">I can hear music ボトル + レフィルセット</a>
-          <span class="price">5,200円(税抜)</span>
-        </div>
-        <a class="arrow_link" href="/?pid=151138500"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
-      </div><!-- txt_wrap -->
-    </div><!-- pickup_item -->
-    <div class="pickup_item">
-      <div class="img_wrap">
-        <a href="/?pid=144106203"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1594359474/index/pickup_img02_zsiuz2.jpg"></a>
-      </div>
-      <div class="txt_wrap">
-        <div class="prod_detail">
-          <h3 class="cat_ttl"><span>Fabric Mist</span>除菌消臭ミスト</h3>
-					<a class="prod_name" href="/?pid=144106203"><span>2020 Summer "山椒"/ Free as a Bird (Mini)</span></a>
-          <span class="price">680円(税抜)</span>
-        </div>
-        <a class="arrow_link" href="/?pid=144106203"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
-      </div><!-- txt_wrap -->
-    </div><!-- pickup_item -->
-  </div>
-</div><!-- section_inner -->
 </section>
 <section id="topJournal">
 <div class="section_ttl">
