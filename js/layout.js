@@ -145,7 +145,18 @@ $(function() {
                 $(this).addClass(animateType);
               };
             });
-
+          }
+          if (document.getElementById('itemDetail')) {
+            $("section").each(function() {
+              var sectionimgPos = $(this).offset().top;
+              var sectionscroll = $(window).scrollTop();
+              var windowHeight = $(window).height();
+              if (sectionscroll + 100 > sectionimgPos - windowHeight + windowHeight) {
+                var setClass = $(this).attr('id');
+                $('#fixedCartWrap').removeClass('main wrap01 features scent detail relation journal sectionBack');
+                $('#fixedCartWrap').addClass(setClass);
+              };
+            });
           }
         },
       });
@@ -299,6 +310,45 @@ $(function() {
 
   if (document.getElementById('itemDetail')) {
     readTxtMove($('#leadTxt'));
+  }
+
+  // 商品詳細情報の開閉部分
+  function detailToggleControll(target) {
+    var controllButton = target.find('button');
+    var buttonHeight = controllButton.outerHeight();
+    var toggleContent = target.find('.toggle_content');
+    var toggleState = 0;
+
+    function toggleMove(){
+      var buttonHeight = controllButton.outerHeight();
+      var toggleHeight = toggleContent.outerHeight();
+      if(toggleState == 0){
+        var contentHeight = buttonHeight + toggleHeight + 30;
+        controllButton.addClass('open');
+        toggleState = 1;
+      }else{
+        var contentHeight = buttonHeight;
+        controllButton.removeClass('open');
+        toggleState = 0;
+      }
+      target.css({height: contentHeight + 'px'});
+    }
+
+    function init(){
+      target.css({height: buttonHeight + 'px'});
+      controllButton.on({
+        'click': function() {
+          toggleMove();
+        }
+      });
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('itemDetail')) {
+    detailToggleControll($('#detailToggle'));
   }
 
   //商品詳細のバリエーション選択欄

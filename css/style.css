@@ -3296,7 +3296,7 @@ body.loaded #loading {
         margin-bottom: 10px !important; }
 
 #itemDetail #scent {
-  padding: 0px 0 120px; }
+  padding: 0px 0 60px; }
   #itemDetail #scent .flex_wrap {
     max-width: 1080px;
     margin-left: auto;
@@ -3414,13 +3414,15 @@ body.loaded #loading {
     #itemDetail #detail {
       width: 84vw; } }
   #itemDetail #detail .detail_item {
-    margin-bottom: 30px; }
+    margin-bottom: 15px; }
     #itemDetail #detail .detail_item h5 {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 500;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       line-height: 1;
-      letter-spacing: 2px; }
+      letter-spacing: 2px;
+      background: #f4f4f4;
+      padding: 10px; }
     #itemDetail #detail .detail_item h6 {
       font-size: 16px;
       letter-spacing: 0.8px;
@@ -3430,6 +3432,7 @@ body.loaded #loading {
       padding: 10px;
       /*border-bottom: 1px dotted #d8d8d8;*/ }
     #itemDetail #detail .detail_item p {
+      padding: 0 10px;
       font-size: 13px;
       line-height: 2.29;
       letter-spacing: 3px; }
@@ -10485,3 +10488,163 @@ body.loaded #loading {
             padding-right: 22px; }
             .comp-gift-product-list .list_item .comp-list-cart-button .gift_detail_button span::before {
               width: 16px; } }
+
+.comp-fixed-cart-wrap {
+  position: fixed;
+  z-index: 100;
+  right: 20px;
+  bottom: 20px;
+  background: #00381f;
+  width: 540px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity .1s;
+  -o-transition: opacity .1s;
+  transition: opacity .1s; }
+  .comp-fixed-cart-wrap.features, .comp-fixed-cart-wrap.scent, .comp-fixed-cart-wrap.detail, .comp-fixed-cart-wrap.relation {
+    opacity: 1;
+    pointer-events: all; }
+  .comp-fixed-cart-wrap .img_thumb {
+    width: 100px;
+    margin-right: 20px; }
+  .comp-fixed-cart-wrap .cart_inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 12.5px; }
+    .comp-fixed-cart-wrap .cart_inner .product_detail {
+      width: calc(100% - 300px);
+      color: #fff;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
+      .comp-fixed-cart-wrap .cart_inner .product_detail .category {
+        display: block;
+        color: #d8d8d8;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px; }
+        .comp-fixed-cart-wrap .cart_inner .product_detail .category span {
+          position: relative;
+          display: inline-block;
+          padding-right: 20px; }
+          .comp-fixed-cart-wrap .cart_inner .product_detail .category span::after {
+            display: block;
+            content: "";
+            width: 5px;
+            height: 1px;
+            background: #d8d8d8;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 7px;
+            margin: auto; }
+      .comp-fixed-cart-wrap .cart_inner .product_detail .item_name {
+        display: block;
+        font-size: 16px;
+        color: #fff;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px; }
+      .comp-fixed-cart-wrap .cart_inner .product_detail .price {
+        display: block;
+        color: #d8d8d8;
+        font-size: 12px;
+        letter-spacing: 0.5px; }
+    .comp-fixed-cart-wrap .cart_inner .product_cart_button {
+      width: 160px;
+      margin-left: 20px; }
+      .comp-fixed-cart-wrap .cart_inner .product_cart_button .fixed_cart_button {
+        border-radius: 100px;
+        background: transparent;
+        color: #fff;
+        width: 100%;
+        padding: 7px 0;
+        font-size: 14px;
+        letter-spacing: 1px;
+        border: 1px solid #fff;
+        font-family: inherit;
+        cursor: pointer;
+        -webkit-transition: background .2s, color .2s, border .2s;
+        -o-transition: background .2s, color .2s, border .2s;
+        transition: background .2s, color .2s, border .2s; }
+        .comp-fixed-cart-wrap .cart_inner .product_cart_button .fixed_cart_button:hover {
+          background: #fff;
+          color: #00381f;
+          border: 1px solid #00381f; }
+
+.comp-detail-toggle {
+  border: 1px solid #00381f;
+  height: 77px;
+  padding: 0px 25px 25px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: height .3s;
+  -o-transition: height .3s;
+  transition: height .3s; }
+  .comp-detail-toggle .toggle_button {
+    background: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 25px 0;
+    position: relative; }
+    .comp-detail-toggle .toggle_button::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      margin: auto;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url(../img/faq/plus.png);
+      background-size: 15px;
+      background-position: center center; }
+    .comp-detail-toggle .toggle_button.open::after {
+      background-image: url(../img/faq/minus.png); }
+    .comp-detail-toggle .toggle_button:focus {
+      outline: none; }
+    .comp-detail-toggle .toggle_button .jp_ttl {
+      display: block;
+      font-size: 20px;
+      font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+      letter-spacing: 1px;
+      color: #00381f;
+      margin-right: 0.8em; }
+    .comp-detail-toggle .toggle_button .en_ttl {
+      display: block;
+      font-size: 16px;
+      letter-spacing: 1px;
+      font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #00381f; }

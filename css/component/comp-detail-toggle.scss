@@ -1,0 +1,62 @@
+.comp-detail-toggle{
+  border: 1px solid $basicGreen;
+  height: 77px;
+  padding: 0px 25px 25px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: height .3s;
+  .toggle_button{
+    background: transparent;
+    @include flexSet;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 25px 0;
+    position: relative;
+    &::after{
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      margin: auto;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url(../img/faq/plus.png);
+      background-size: 15px;
+      background-position: center center;
+    }
+    &.open{
+      &::after{
+        background-image: url(../img/faq/minus.png);
+      }
+    }
+    &:focus{
+      outline: none;
+    }
+    .jp_ttl{
+      display: block;
+      font-size: 20px;
+      font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+      letter-spacing: 1px;
+      color: $basicGreen;
+      margin-right: 0.8em;
+    }
+    .en_ttl{
+      display: block;
+      font-size: 16px;
+      letter-spacing: 1px;
+      @include libre-r;
+      color: $basicGreen;
+    }
+  }
+  .toggle_content{
+  }
+}
