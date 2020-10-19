@@ -2915,18 +2915,32 @@ body.loaded #loading {
     margin-bottom: 50px; }
     #itemDetail .cart_wrap01 .product_ex .product_cat {
       font-size: 22px;
+      font-weight: normal;
       line-height: 1;
       letter-spacing: 1.6px;
       margin-bottom: 15px; }
-      #itemDetail .cart_wrap01 .product_ex .product_cat span {
+      #itemDetail .cart_wrap01 .product_ex .product_cat .en {
         font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
         font-weight: 400;
         letter-spacing: 1px;
-        padding-right: 0.3em; }
-        #itemDetail .cart_wrap01 .product_ex .product_cat span::after {
+        padding-right: 1em;
+        position: relative; }
+        #itemDetail .cart_wrap01 .product_ex .product_cat .en::after {
           display: inline-block;
-          content: "-";
-          padding-left: 0.3em; }
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 7px;
+          margin: auto;
+          width: 7px;
+          height: 1px;
+          background: #00381f; }
+      #itemDetail .cart_wrap01 .product_ex .product_cat .ja {
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 1;
+        letter-spacing: 1.2px; }
     #itemDetail .cart_wrap01 .product_ex .prodcut_name {
       font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
       font-weight: 500;
@@ -3935,8 +3949,19 @@ body.loaded #loading {
       text-align: left;
       margin-bottom: 30px; }
       #itemDetail .cart_wrap01 .product_ex .product_cat {
-        font-size: 4vw;
-        margin-bottom: 10px; }
+        margin-bottom: 5px; }
+        #itemDetail .cart_wrap01 .product_ex .product_cat .en {
+          font-size: 4vw;
+          padding-right: 1.5em; }
+          #itemDetail .cart_wrap01 .product_ex .product_cat .en::after {
+            right: 0.6em;
+            width: 0.4em;
+            background: #00381f; }
+        #itemDetail .cart_wrap01 .product_ex .product_cat .ja {
+          font-size: 3.8vw;
+          font-weight: normal;
+          line-height: 1;
+          letter-spacing: 0.7px; }
       #itemDetail .cart_wrap01 .product_ex .prodcut_name {
         font-size: 6vw;
         letter-spacing: 0.05em;
@@ -4069,7 +4094,7 @@ body.loaded #loading {
           width: 100%;
           margin-left: 0; }
   #itemDetail #scent {
-    padding: 30px 0 60px; }
+    padding: 30px 0; }
     #itemDetail #scent .flex_wrap {
       display: block;
       margin-bottom: 35px; }
@@ -10579,6 +10604,85 @@ body.loaded #loading {
           color: #00381f;
           border: 1px solid #00381f; }
 
+@media screen and (max-width: 760px) {
+  .comp-fixed-cart-wrap {
+    right: 0px;
+    bottom: 0px;
+    width: 100%; }
+    .comp-fixed-cart-wrap .img_thumb {
+      display: none;
+      width: 100px;
+      margin-right: 20px; }
+    .comp-fixed-cart-wrap .cart_inner {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 15px; }
+      .comp-fixed-cart-wrap .cart_inner .product_detail {
+        width: calc(100% - 140px);
+        color: #fff;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; }
+        .comp-fixed-cart-wrap .cart_inner .product_detail .category {
+          display: block;
+          color: #d8d8d8;
+          font-size: 11px;
+          letter-spacing: 0.5px;
+          margin-bottom: 10px; }
+          .comp-fixed-cart-wrap .cart_inner .product_detail .category span {
+            position: relative;
+            display: inline-block;
+            padding-right: 20px; }
+            .comp-fixed-cart-wrap .cart_inner .product_detail .category span::after {
+              display: block;
+              content: "";
+              width: 5px;
+              height: 1px;
+              background: #d8d8d8;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 7px;
+              margin: auto; }
+        .comp-fixed-cart-wrap .cart_inner .product_detail .item_name {
+          display: block;
+          font-size: 14px;
+          color: #fff;
+          letter-spacing: 0.5px;
+          margin-bottom: 10px; }
+        .comp-fixed-cart-wrap .cart_inner .product_detail .price {
+          display: block;
+          color: #d8d8d8;
+          font-size: 11px;
+          letter-spacing: 0.5px; }
+      .comp-fixed-cart-wrap .cart_inner .product_cart_button {
+        width: 120px;
+        margin-left: 20px; }
+        .comp-fixed-cart-wrap .cart_inner .product_cart_button .fixed_cart_button {
+          border-radius: 100px;
+          width: 100%;
+          padding: 7px 0;
+          font-size: 14px;
+          letter-spacing: 1px;
+          border: 1px solid #fff;
+          font-family: inherit;
+          cursor: pointer;
+          background: #fff;
+          color: #00381f;
+          border: 1px solid #00381f; }
+          .comp-fixed-cart-wrap .cart_inner .product_cart_button .fixed_cart_button:hover {
+            background: #fff;
+            color: #00381f;
+            border: 1px solid #00381f; } }
+
 .comp-detail-toggle {
   border: 1px solid #00381f;
   height: 77px;
@@ -10648,3 +10752,23 @@ body.loaded #loading {
       font-weight: 400;
       letter-spacing: 1px;
       color: #00381f; }
+
+@media screen and (max-width: 760px) {
+  .comp-detail-toggle {
+    height: 57px;
+    padding: 0px 15px 15px; }
+    .comp-detail-toggle .toggle_button {
+      padding: 15px 0;
+      position: relative; }
+      .comp-detail-toggle .toggle_button::after {
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        background-size: 15px; }
+      .comp-detail-toggle .toggle_button .jp_ttl {
+        display: block;
+        font-size: 18px; }
+      .comp-detail-toggle .toggle_button .en_ttl {
+        display: block;
+        font-size: 16px;
+        letter-spacing: 1px; } }

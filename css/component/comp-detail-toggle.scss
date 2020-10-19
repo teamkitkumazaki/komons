@@ -57,6 +57,33 @@
       color: $basicGreen;
     }
   }
-  .toggle_content{
+}
+
+@media screen and (max-width: 760px){
+  .comp-detail-toggle{
+    height: 57px;
+    padding: 0px 15px 15px;
+    .toggle_button{
+      padding: 15px 0;
+      position: relative;
+      &::after{
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        background-size: 15px;
+      }
+      .jp_ttl{
+        display: block;
+        font-size: 18px;
+      }
+      .en_ttl{
+        display: block;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+    }
+    .toggle_content{
+    }
   }
+
 }
