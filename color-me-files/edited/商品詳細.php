@@ -385,7 +385,7 @@ $(function() {
         </div><!-- option_select -->
         <div class="mizuhiki">
           <div class="mizuhiki_inner">
-            <p class="pop_subtitle">水引の表書き</p>
+            <p class="pop_subtitle">熨斗の表書き</p>
             <div class="mizuhiki_option">
               <div class="option_item">
                 <input id="mizu01" type="radio" name="mizuhiki_option" tesageAri="#0-0" tesageNashi="#0-1" value="表書き無し">

@@ -9770,6 +9770,11 @@ body.loaded #loading {
                     line-height: 1;
                     letter-spacing: 1px;
                     color: #797979; }
+            .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .option_item .mizuhiki_desc {
+              margin-top: 10px;
+              font-size: 13px;
+              line-height: 1.6;
+              letter-spacing: 0.4px; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki {
           /*overflow: hidden;
           height: 0;*/
