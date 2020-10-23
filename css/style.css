@@ -9770,6 +9770,11 @@ body.loaded #loading {
                     line-height: 1;
                     letter-spacing: 1px;
                     color: #797979; }
+            .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .option_item .mizuhiki_desc {
+              margin-top: 10px;
+              font-size: 13px;
+              line-height: 1.6;
+              letter-spacing: 0.4px; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki {
           /*overflow: hidden;
           height: 0;*/
@@ -9920,7 +9925,7 @@ body.loaded #loading {
         height: 20px; }
       .comp-gift-option-pop .pop_flex .pop_contents .contents_inner {
         max-height: 65vh;
-        padding: 20px 20px 50px; }
+        padding: 20px 20px 40px; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb {
           width: 100%; }
           .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb .pc_thumb {
@@ -9977,33 +9982,35 @@ body.loaded #loading {
                     letter-spacing: 0.51px;
                     margin-right: 0px;
                     margin-bottom: 5px; }
-        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .pop_subtitle {
-          font-size: 16px;
-          letter-spacing: 1px;
-          margin-bottom: 15px; }
-        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .mizuhiki_option {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
-          justify-content: center;
-          -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-          justify-content: space-between; }
-          .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .mizuhiki_option .option_item {
-            width: 49%;
-            margin-bottom: 5px; }
-            .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .mizuhiki_option .option_item label {
-              font-size: 13px;
-              padding: 12px 0; }
-        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .mizuhiki_desc {
-          font-size: 13px;
-          line-height: 1.6;
-          letter-spacing: 0.4px;
-          margin-top: 5px; }
+        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki {
+          padding-bottom: 40px; }
+          .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .pop_subtitle {
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-bottom: 15px; }
+          .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .mizuhiki_option {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between; }
+            .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .mizuhiki_option .option_item {
+              width: 49%;
+              margin-bottom: 5px; }
+              .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .mizuhiki_option .option_item label {
+                font-size: 13px;
+                padding: 12px 0; }
+          .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki .mizuhiki_desc {
+            font-size: 13px;
+            line-height: 1.6;
+            letter-spacing: 0.4px;
+            margin-top: 5px; }
       .comp-gift-option-pop .pop_flex .pop_contents .fix_wrapper {
         background: #fff;
         width: 100vw;
