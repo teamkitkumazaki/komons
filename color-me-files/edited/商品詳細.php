@@ -381,6 +381,7 @@ $(function() {
                 </div>
               </div>
             </label>
+            <p class="mizuhiki_desc">※水引の種類は、どのシーンのお祝い事にもお使いいただける「紅白梅結び」になります。</p>
           </div>
         </div><!-- option_select -->
         <div class="mizuhiki">
