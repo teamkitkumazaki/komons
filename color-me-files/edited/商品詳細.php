@@ -31,8 +31,8 @@ $(function() {
     <{if $sid_name == "upcoming"}>
     <div class="comp-waiting-button upcoming_button">
       <a href="https://journal.komons-japan.com/waiting-list/<{$product.model}>">
-        <span class="title">再入荷リクエスト</span>
-        <span class="desc">販売再開をメールでお知らせいたします</span>
+        <span class="title">Waiting Listに登録</span>
+        <span class="desc">発売時にメールにてお知らせいたします</span>
       </a>
     </div>
     <{/if}>
