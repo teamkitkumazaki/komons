@@ -10526,7 +10526,7 @@ body.loaded #loading {
   -webkit-transition: opacity .1s;
   -o-transition: opacity .1s;
   transition: opacity .1s; }
-  .comp-fixed-cart-wrap.features, .comp-fixed-cart-wrap.scent {
+  .comp-fixed-cart-wrap.features, .comp-fixed-cart-wrap.scent, .comp-fixed-cart-wrap.detail, .comp-fixed-cart-wrap.wrap02, .comp-fixed-cart-wrap.relation, .comp-fixed-cart-wrap.journal {
     opacity: 1;
     pointer-events: all; }
   .comp-fixed-cart-wrap .img_thumb {
@@ -10685,7 +10685,7 @@ body.loaded #loading {
 
 .comp-detail-toggle {
   border: 1px solid #00381f;
-  height: 77px;
+  height: 66px;
   padding: 0px 25px 25px;
   overflow: hidden;
   -webkit-box-sizing: border-box;
@@ -10724,7 +10724,7 @@ body.loaded #loading {
       position: absolute;
       top: 0;
       bottom: 0;
-      right: 10px;
+      right: 0px;
       margin: auto;
       width: 20px;
       height: 20px;
@@ -10755,12 +10755,11 @@ body.loaded #loading {
       line-height: 1;
       letter-spacing: 1.5px;
       position: relative;
-      color: #00381f;
-      margin-top: 4px; }
+      color: #00381f; }
 
 @media screen and (max-width: 760px) {
   .comp-detail-toggle {
-    height: 57px;
+    height: 43px;
     padding: 0px 15px 15px; }
     .comp-detail-toggle .toggle_button {
       padding: 15px 0;

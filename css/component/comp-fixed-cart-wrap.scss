@@ -8,7 +8,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity .1s;
-  &.features, &.scent{
+  &.features, &.scent, &.detail, &.wrap02, &.relation, &.journal{
     opacity: 1;
     pointer-events: all;
   }

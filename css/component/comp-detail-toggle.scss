@@ -1,6 +1,6 @@
 .comp-detail-toggle{
   border: 1px solid $basicGreen;
-  height: 77px;
+  height: 66px;
   padding: 0px 25px 25px;
   overflow: hidden;
   box-sizing: border-box;
@@ -23,7 +23,7 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      right: 10px;
+      right: 0px;
       margin: auto;
       width: 20px;
       height: 20px;
@@ -59,14 +59,13 @@
       letter-spacing: 1.5px;
       position: relative;
       color: $basicGreen;
-      margin-top: 4px;
     }
   }
 }
 
 @media screen and (max-width: 760px){
   .comp-detail-toggle{
-    height: 57px;
+    height: 43px;
     padding: 0px 15px 15px;
     .toggle_button{
       padding: 15px 0;
