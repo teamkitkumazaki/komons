@@ -51,13 +51,13 @@
 
 	</header>
 	<article id="itemDetail" class="dishwash">
-		<section class="main" style="background-image: url(https://img21.shop-pro.jp/PA01416/697/product/132268831_o1.jpg?cmsp_timestamp=20180614001233);">
+		<section id="main" class="main" style="background-image: url(https://img21.shop-pro.jp/PA01416/697/product/132268831_o1.jpg?cmsp_timestamp=20180614001233);">
 			<div class="fil"></div>
 		</section>
-		<section class="cart_wrap01">
-			<form id="cartIn" name="product_form" method="post" action="https://komons-japan.shop-pro.jp/cart/proxy/basket/items/add">
+		<section id="wrap01" class="cart_wrap01">
+			<form id="cartIn" name="product_form" method="post" action="https://komons-japan.shop-pro.jp/cart/proxy/basket/items/add?a8=ZWCanWszH98Uo..UML83mvbPs.RVkzk1TLkqsoheBqwzH9CWQ9Czl9C3dvR-I-6kQq5v4pCbQWCaDs00000020287001">
 				<div class="product_ex">
-					<h2 class="product_cat"><span>Dish Wash</span>食器用洗剤</h2>
+					<h2 class="product_cat"><span class="en">Dish Wash</span><span class="ja">食器用洗剤</span></h2>
 					<h1 class="prodcut_name">Don't Look Back in Anger</h1>
 					<div id="excerpt" class="excerpt">
 						<p><span>ちょっと面倒な、食事のあとの食器洗い。</span>夫婦のどちらがやるかでおしつけあったりもするこの時間を、<span class="sp_inline">もっと「プラスの時間」に変えられたら。</span></p>
@@ -115,25 +115,20 @@
 									<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
 									</span>
 									<input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
-									<input type="hidden" name="user_hash" value="84064695acdc8dfba6b5a0a4831a38f3"><input type="hidden" name="regi_hash" value="03b4ac757f786196fa9adc9f80c385"><input type="hidden" name="members_hash" value="84064695acdc8dfba6b5a0a4831a38f3">
+									<input type="hidden" name="user_hash" value="90a253c95cd7d7ec09d61d646590d02a"><input type="hidden" name="regi_hash" value="d803c5ca05b25a78da5a7e9f7ed9fc"><input type="hidden" name="members_hash" value="90a253c95cd7d7ec09d61d646590d02a">
+									<input type="hidden" name="shop_id" value="PA01416697"><input type="hidden" name="product_id" value="132268831"><input type="hidden" name="members_id" value=""><input type="hidden" name="back_url" value="https://www.komons-japan.com/?pid=132268831">
 									<input
-									  type="hidden" name="shop_id" value="PA01416697"><input type="hidden" name="product_id" value="132268831"><input type="hidden" name="members_id" value=""><input type="hidden" name="back_url" value="https://www.komons-japan.com/?pid=132268831"><input type="hidden" name="reference_token" value="26ea6d150a944508a3da7fc0bff1cc7a">
-										<input
-										  type="hidden" name="shop_domain" value="komons-japan.com">
+									  type="hidden" name="reference_token" value="26ea6d150a944508a3da7fc0bff1cc7a">
+										<input type="hidden" name="shop_domain" value="komons-japan.com">
 								</div>
 							</div>
-							<div class="amazon_pay">
-								<span class="logo"></span>
-								<span class="text">Amazonアカウントでのお支払いが可能です</span>
-							</div>
+
 						</div>
 					</div>
 
 				</div>
 			</form>
 		</section>
-
-
 
 		<section id="features" class="item_detail">
 			<div class="detail_ttl">
@@ -215,31 +210,37 @@
 			<div class="detail_ttl">
 				<h3><span class="en_ttl">Detail</span><span class="jp_ttl">商品情報</span></h3>
 			</div>
-			<!-- detail_ttl -->
-			<div class="detail_item">
-				<h5>商品区分</h5>
-				<p>台所用合成洗剤（中性、食器・調理用具用）</p>
+			<div id="detailToggle" class="comp-detail-toggle">
+				<button class="toggle_button">
+					<span class="jp_ttl">用途・全成分・備考</span>
+				</button>
+				<!-- detail_ttl -->
+				<div class="toggle_content">
+					<div class="detail_item">
+						<h5>商品区分</h5>
+						<p>台所用合成洗剤（中性、食器・調理用具用）</p>
+					</div>
+					<!-- detail_item -->
+					<div class="detail_item">
+						<h5>全成分</h5>
+						<p><span>界面活性剤（21% アルキルエーテル硫酸エステルナトリウム、脂肪酸アルカノールアミド、アルキルアミドプロピルベタイン）</span><span>安定化剤、粘度調整剤、香料</span><span>*香料は100%天然精油ブレンド</span><span>*国産無農薬栽培のティーシードオイルを保湿剤として配合</span></p>
+					</div>
+					<!-- detail_item -->
+					<div class="detail_item">
+						<h5>備考</h5>
+						<p><span>天然成分を多く含むため濁りや沈殿物が生じる可能性がありますが、品質には問題はありません。開封後は6か月以内にご使用ください。</span><span>天然精油を使用しているため香りや色に差が生じる場合がございますが、ご使用上支障はありません。</span><span>※商品のデザイン、香り、仕様などは予告なく変更になる場合がございます。予めご了承ください。</span></p>
+					</div>
+					<!-- detail_item -->
+				</div>
 			</div>
-			<!-- detail_item -->
-			<div class="detail_item">
-				<h5>全成分</h5>
-				<p><span>界面活性剤（21% アルキルエーテル硫酸エステルナトリウム、脂肪酸アルカノールアミド、アルキルアミドプロピルベタイン）</span><span>安定化剤、粘度調整剤、香料</span><span>*香料は100%天然精油ブレンド</span><span>*国産無農薬栽培のティーシードオイルを保湿剤として配合</span></p>
-			</div>
-			<!-- detail_item -->
-			<div class="detail_item">
-				<h5>備考</h5>
-				<p><span>天然成分を多く含むため濁りや沈殿物が生じる可能性がありますが、品質には問題はありません。開封後は6か月以内にご使用ください。</span><span>天然精油を使用しているため香りや色に差が生じる場合がございますが、ご使用上支障はありません。</span><span>※商品のデザイン、香り、仕様などは予告なく変更になる場合がございます。予めご了承ください。</span></p>
-			</div>
-			<!-- detail_item -->
 		</section>
 		<!-- detail -->
-
-		<section class="cart_wrap02">
+		<section id="wrap02" class="cart_wrap02">
 			<div class="img_wrap">
 				<img src="https://img21.shop-pro.jp/PA01416/697/product/132268831_o2.jpg?cmsp_timestamp=20180614001233">
 			</div>
 			<div class="txt_wrap">
-				<form name="product_form" method="post" action="https://komons-japan.shop-pro.jp/cart/proxy/basket/items/add">
+				<form name="product_form" method="post" action="https://komons-japan.shop-pro.jp/cart/proxy/basket/items/add?a8=ZWCanWszH98Uo..UML83mvbPs.RVkzk1TLkqsoheBqwzH9CWQ9Czl9C3dvR-I-6kQq5v4pCbQWCaDs00000020287001">
 					<h3><span>Dish Wash</span>食器用洗剤</h3>
 					<h2>Don't Look Back in Anger</h2>
 					<div class="product_detail">
@@ -265,80 +266,78 @@
 										<input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
 									</div>
 								</div>
-								<div class="amazon_pay">
-									<span class="logo"></span>
-									<span class="text">Amazonアカウントでのお支払いが可能です</span>
-								</div>
-							</div><!-- comp-flex-cart -->
+
+							</div>
 
 						</div>
 					</div>
 				</form>
 			</div>
 		</section>
-		<section class="related_item item_detail">
-   <div class="detail_ttl">
-     <h3><span class="en_ttl">Related Items</span><span class="jp_ttl">よく一緒に購入されている商品</span></h3>
-   </div>
-   <div id="productList" class="comp-related-product comp-product-list">
-     <div id="relatedSlider" class="item_wrapper">
-              <div class="item_box slick-slide">
-         <div class="img_wrap">
-           <a href="?pid=132301713" style="background-image: url(https://img21.shop-pro.jp/PA01416/697/product/132301713_th.jpg?cmsp_timestamp=20181018181524)"></a>
-         </div>
-         <div class="txt_wrap">
-           <div class="product_info">
-                          <span class="cat_ttl related"><span>Multi Cleaner</span>キッチン＆マルチクリーナー</span>
-                          <h3 class="prod_name">
-                              <a class="normal"  href="?pid=132301713">In a silent way</a>
-                            </h3>
-           </div>
-           <span class="product_detail">1,800円(税抜)</span>
-         </div>
-                  <div class="comp-list-cart-button related">
-           <script type='text/javascript' src='https://komons-japan.shop-pro.jp/?mode=cartjs&pid=132301713&style=normal_gray&name=n&img=n&expl=n&stock=n&price=n&inq=n&sk=n' charset='euc-jp'></script>
-         </div>
-                </div>
-              <div class="item_box slick-slide">
-         <div class="img_wrap">
-           <a href="?pid=144279357" style="background-image: url(https://img21.shop-pro.jp/PA01416/697/product/144279357_th.jpg?cmsp_timestamp=20190708163010)"></a>
-         </div>
-         <div class="txt_wrap">
-           <div class="product_info">
-                          <span class="cat_ttl related"><span>Hand Wash</span>ハンドソープ</span>
-                          <h3 class="prod_name">
-                              <a class="normal"  href="?pid=144279357">【Refill】I can hear music</a>
-                            </h3>
-           </div>
-           <span class="product_detail">3,000円(税抜)</span>
-         </div>
-                  <div class="comp-list-cart-button related">
-           <script type='text/javascript' src='https://komons-japan.shop-pro.jp/?mode=cartjs&pid=144279357&style=normal_gray&name=n&img=n&expl=n&stock=n&price=n&inq=n&sk=n' charset='euc-jp'></script>
-         </div>
-                </div>
-              <div class="item_box slick-slide">
-         <div class="img_wrap">
-           <a href="?pid=134416035" style="background-image: url(https://img21.shop-pro.jp/PA01416/697/product/134416035_th.jpg?cmsp_timestamp=20180821093703)"></a>
-         </div>
-         <div class="txt_wrap">
-           <div class="product_info">
-                          <span class="cat_ttl related"><span>Gift Set</span>ギフトセット</span>
-                          <h3 class="prod_name">
-                              <a class="normal"  href="?pid=134416035">ハンドケアコンビ</a>
-                            </h3>
-           </div>
-           <span class="product_detail">4,600円(税抜)</span>
-         </div>
-                  <div class="comp-list-cart-button related wide">
-           <a class="gift_detail_button" href="?pid=134416035">
+
+		<section id="relation" class="related_item item_detail">
+			<div class="detail_ttl">
+				<h3><span class="en_ttl">Related Items</span><span class="jp_ttl">よく一緒に購入されている商品</span></h3>
+			</div>
+			<div id="productList" class="comp-related-product comp-product-list">
+				<div id="relatedSlider" class="item_wrapper">
+					<div class="item_box slick-slide">
+						<div class="img_wrap">
+							<a href="?pid=134416035" style="background-image: url(https://img21.shop-pro.jp/PA01416/697/product/134416035_th.jpg?cmsp_timestamp=20180821093703)"></a>
+						</div>
+						<div class="txt_wrap">
+							<div class="product_info">
+								<span class="cat_ttl related"><span>Gift Set</span>ギフトセット</span>
+								<h3 class="prod_name">
+									<a class="normal"  href="?pid=134416035">ハンドケアコンビ</a>
+								</h3>
+							</div>
+							<span class="product_detail">4,600円(税抜)</span>
+						</div>
+						<div class="comp-list-cart-button related wide">
+							<a class="gift_detail_button" href="?pid=134416035">
             <span>詳細を見る</span>
             </a>
-          </div>
-                </div>
-            </div>
-   </div>
- </section>
-		<section class="journal_wrap item_detail">
+						</div>
+					</div>
+					<div class="item_box slick-slide">
+						<div class="img_wrap">
+							<a href="?pid=144279730" style="background-image: url(https://img21.shop-pro.jp/PA01416/697/product/144279730_th.jpg?cmsp_timestamp=20191209223121)"></a>
+						</div>
+						<div class="txt_wrap">
+							<div class="product_info">
+								<span class="cat_ttl related"><span>Dish Wash</span>食器用洗剤</span>
+								<h3 class="prod_name">
+                              <a class="small" href="?pid=144279730">【Refill】Don't Look Back in Anger</a>
+                            </h3>
+							</div>
+							<span class="product_detail">2,300円(税抜)</span>
+						</div>
+						<div class="comp-list-cart-button related">
+							<script type='text/javascript' src='https://komons-japan.shop-pro.jp/?mode=cartjs&pid=144279730&style=normal_gray&name=n&img=n&expl=n&stock=n&price=n&inq=n&sk=n' charset='euc-jp'></script>
+						</div>
+					</div>
+					<div class="item_box slick-slide">
+						<div class="img_wrap">
+							<a href="?pid=132301713" style="background-image: url(https://img21.shop-pro.jp/PA01416/697/product/132301713_th.jpg?cmsp_timestamp=20181018181524)"></a>
+						</div>
+						<div class="txt_wrap">
+							<div class="product_info">
+								<span class="cat_ttl related"><span>Multi Cleaner</span>キッチン＆マルチクリーナー</span>
+								<h3 class="prod_name">
+                              <a class="normal"  href="?pid=132301713">In a silent way</a>
+                            </h3>
+							</div>
+							<span class="product_detail">1,800円(税抜)</span>
+						</div>
+						<div class="comp-list-cart-button related">
+							<script type='text/javascript' src='https://komons-japan.shop-pro.jp/?mode=cartjs&pid=132301713&style=normal_gray&name=n&img=n&expl=n&stock=n&price=n&inq=n&sk=n' charset='euc-jp'></script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="journal" class="journal_wrap item_detail">
 			<div class="section_ttl">
 				<h2><span>Journal</span><font>Komonsについてもっと知る。</font></h2>
 			</div>
@@ -347,7 +346,7 @@
 			</div>
 		</section>
 
-		<section class="section-back">
+		<section id="sectionBack" class="section-back">
 			<div class="section_back">
 				<div class="comp-back-to-list">
 					<div class="item_wrap">
@@ -370,6 +369,21 @@
 			</div>
 		</section>
 	</article>
+	<div id="fixedCartWrap" class="comp-fixed-cart-wrap">
+		<div class="cart_inner">
+			<div class="img_thumb">
+				<img src="https://img21.shop-pro.jp/PA01416/697/product/132268831_o2.jpg?cmsp_timestamp=20180614001233">
+			</div>
+			<div class="product_detail">
+				<span class="category"><span>Dish Wash</span>食器用洗剤</span>
+				<span class="item_name">Don't Look Back in Anger</span>
+				<span class="price">1,900円(税抜)</span>
+			</div>
+			<div class="product_cart_button">
+				<button id="fixedCartButton" class="fixed_cart_button"><span>購入する</span></button>
+			</div>
+		</div>
+	</div>
 	<footer>
 		<div class="footer_wrap">
 			<div class="footer_menu">
