@@ -151,9 +151,9 @@ $(function() {
               var sectionimgPos = $(this).offset().top;
               var sectionscroll = $(window).scrollTop();
               var windowHeight = $(window).height();
-              if (sectionscroll + 100 > sectionimgPos - windowHeight + windowHeight) {
+              if (sectionscroll + 300 > sectionimgPos - windowHeight + windowHeight) {
                 var setClass = $(this).attr('id');
-                $('#fixedCartWrap').removeClass('main wrap01 features scent detail relation journal sectionBack');
+                $('#fixedCartWrap').removeClass('main wrap01 features scent wrap02 detail relation journal sectionBack');
                 $('#fixedCartWrap').addClass(setClass);
               };
             });

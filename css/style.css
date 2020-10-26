@@ -3310,7 +3310,7 @@ body.loaded #loading {
         margin-bottom: 10px !important; }
 
 #itemDetail #scent {
-  padding: 0px 0 60px; }
+  padding: 0px 0 120px; }
   #itemDetail #scent .flex_wrap {
     max-width: 1080px;
     margin-left: auto;
@@ -3469,7 +3469,7 @@ body.loaded #loading {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-bottom: 140px; }
+  margin-bottom: 50px; }
   @media screen and (max-width: 1150px) {
     #itemDetail .cart_wrap02 {
       max-width: 750px; } }
@@ -4094,7 +4094,7 @@ body.loaded #loading {
           width: 100%;
           margin-left: 0; }
   #itemDetail #scent {
-    padding: 30px 0; }
+    padding: 0 0 50px; }
     #itemDetail #scent .flex_wrap {
       display: block;
       margin-bottom: 35px; }
@@ -4165,7 +4165,7 @@ body.loaded #loading {
           margin-bottom: 7px; }
   #itemDetail .cart_wrap02 {
     display: block;
-    margin-bottom: 45px; }
+    margin-bottom: 25px; }
     #itemDetail .cart_wrap02 .img_wrap {
       width: 100%;
       margin-right: 0; }
@@ -10526,7 +10526,7 @@ body.loaded #loading {
   -webkit-transition: opacity .1s;
   -o-transition: opacity .1s;
   transition: opacity .1s; }
-  .comp-fixed-cart-wrap.features, .comp-fixed-cart-wrap.scent, .comp-fixed-cart-wrap.detail, .comp-fixed-cart-wrap.relation {
+  .comp-fixed-cart-wrap.features, .comp-fixed-cart-wrap.scent {
     opacity: 1;
     pointer-events: all; }
   .comp-fixed-cart-wrap .img_thumb {
@@ -10737,21 +10737,26 @@ body.loaded #loading {
       background-image: url(../img/faq/minus.png); }
     .comp-detail-toggle .toggle_button:focus {
       outline: none; }
+    .comp-detail-toggle .toggle_button .en_ttl {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: 1.5px;
+      font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #00381f;
+      margin-right: 0.4em; }
     .comp-detail-toggle .toggle_button .jp_ttl {
       display: block;
       font-size: 20px;
       font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
-      letter-spacing: 1px;
-      color: #00381f;
-      margin-right: 0.8em; }
-    .comp-detail-toggle .toggle_button .en_ttl {
-      display: block;
       font-size: 16px;
-      letter-spacing: 1px;
-      font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
-      font-weight: 400;
-      letter-spacing: 1px;
-      color: #00381f; }
+      line-height: 1;
+      letter-spacing: 1.5px;
+      position: relative;
+      color: #00381f;
+      margin-top: 4px; }
 
 @media screen and (max-width: 760px) {
   .comp-detail-toggle {
@@ -10765,10 +10770,10 @@ body.loaded #loading {
         width: 20px;
         height: 20px;
         background-size: 15px; }
-      .comp-detail-toggle .toggle_button .jp_ttl {
-        display: block;
-        font-size: 18px; }
       .comp-detail-toggle .toggle_button .en_ttl {
         display: block;
-        font-size: 16px;
-        letter-spacing: 1px; } }
+        font-size: 6vw;
+        letter-spacing: 0.02em; }
+      .comp-detail-toggle .toggle_button .jp_ttl {
+        display: block;
+        font-size: 3.6vw; } }

@@ -41,20 +41,25 @@
     &:focus{
       outline: none;
     }
+    .en_ttl{
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: 1.5px;
+      @include libre-r;
+      color: $basicGreen;
+      margin-right: 0.4em;
+    }
     .jp_ttl{
       display: block;
       font-size: 20px;
       font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
-      letter-spacing: 1px;
-      color: $basicGreen;
-      margin-right: 0.8em;
-    }
-    .en_ttl{
-      display: block;
       font-size: 16px;
-      letter-spacing: 1px;
-      @include libre-r;
+      line-height: 1;
+      letter-spacing: 1.5px;
+      position: relative;
       color: $basicGreen;
+      margin-top: 4px;
     }
   }
 }
@@ -72,14 +77,14 @@
         height: 20px;
         background-size: 15px;
       }
-      .jp_ttl{
-        display: block;
-        font-size: 18px;
-      }
       .en_ttl{
         display: block;
-        font-size: 16px;
-        letter-spacing: 1px;
+        font-size: 6vw;
+        letter-spacing: 0.02em;
+      }
+      .jp_ttl{
+        display: block;
+        font-size: 3.6vw;
       }
     }
     .toggle_content{
