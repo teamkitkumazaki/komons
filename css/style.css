@@ -6844,7 +6844,7 @@ body.loaded #loading {
 .page-gift-list .section-filter {
   margin-bottom: 40px; }
   .page-gift-list .section-filter .filter_wrap {
-    margin-top: -35px; }
+    margin-top: -25px; }
     .page-gift-list .section-filter .filter_wrap .filter_ttl {
       font-size: 18px;
       font-weight: normal;
@@ -10064,15 +10064,15 @@ body.loaded #loading {
       width: 320px;
       margin-right: 20px; }
     .comp-filter-wrap .filter_item.filter02 {
-      width: calc(100% - 340px); }
+      width: 100%; }
     .comp-filter-wrap .filter_item .fil_ttl {
       display: block;
-      width: 100px;
+      width: 200px;
       font-size: 16px;
       line-height: normal;
       letter-spacing: normal; }
     .comp-filter-wrap .filter_item .input_wrap {
-      width: calc(100% - 100px); }
+      width: calc(100% - 200px); }
       .comp-filter-wrap .filter_item .input_wrap.flex {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -10088,7 +10088,7 @@ body.loaded #loading {
       .comp-filter-wrap .filter_item .input_wrap .radio_wrap input[type="checkbox"] {
         display: none; }
       .comp-filter-wrap .filter_item .input_wrap .radio_wrap label {
-        width: 145px;
+        width: 203px;
         display: block;
         cursor: pointer;
         background: #fff;
@@ -10134,8 +10134,10 @@ body.loaded #loading {
       margin-bottom: 10px; }
     .comp-filter-wrap .filter_item.filter02 {
       width: 100%; }
+    .comp-filter-wrap .filter_item .fil_ttl {
+      width: 150px; }
     .comp-filter-wrap .filter_item .input_wrap {
-      width: calc(100% - 100px); }
+      width: calc(100% - 150px); }
       .comp-filter-wrap .filter_item .input_wrap .radio_wrap {
         width: 24%; }
         .comp-filter-wrap .filter_item .input_wrap .radio_wrap input[type="checkbox"] {
@@ -10201,9 +10203,12 @@ body.loaded #loading {
     .comp-filter-wrap .filter_item.filter02 {
       display: block;
       width: 100%;
-      padding: 10px 10px 0; }
+      padding: 12px 10px 0;
+      margin-top: 55px; }
       .comp-filter-wrap .filter_item.filter02 .fil_ttl {
         width: 100%;
+        font-size: 14px;
+        padding-left: 5px;
         margin-bottom: 10px; }
       .comp-filter-wrap .filter_item.filter02 .input_wrap {
         width: 100%; } }

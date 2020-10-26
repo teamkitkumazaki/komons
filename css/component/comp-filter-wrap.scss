@@ -14,17 +14,17 @@
       margin-right: 20px;
     }
     &.filter02{
-      width: calc(100% - 340px);
+      width: 100%;
     }
     .fil_ttl{
       display: block;
-      width: 100px;
+      width: 200px;
       font-size: 16px;
       line-height: normal;
       letter-spacing: normal;
     }
     .input_wrap{
-      width: calc(100% - 100px);
+      width: calc(100% - 200px);
       &.flex{
         @include flexSet;
         justify-content: space-between;
@@ -34,7 +34,7 @@
           display: none;
         }
         label{
-          width: 145px;
+          width: 203px;
           display: block;
           cursor: pointer;
           background: #fff;
@@ -88,8 +88,11 @@
       &.filter02{
         width: 100%;
       }
+      .fil_ttl{
+        width: 150px;
+      }
       .input_wrap{
-        width: calc(100% - 100px);
+        width: calc(100% - 150px);
         .radio_wrap{
           width: 24%;
           input[type="checkbox"]{
@@ -151,9 +154,12 @@
       &.filter02{
         display: block;
         width: 100%;
-        padding: 10px 10px 0;
+        padding: 12px 10px 0;
+        margin-top: 55px;
         .fil_ttl{
           width: 100%;
+          font-size: 14px;
+          padding-left: 5px;
           margin-bottom: 10px;
         }
         .input_wrap{
