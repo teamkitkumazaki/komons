@@ -85,21 +85,9 @@
       <h2><span>Product List</span><font>ギフト商品一覧</font></h2>
     </div>
     <div class="filter_wrap">
-      <h3 class="filter_ttl">商品を絞り込む</h3>
       <div class="comp-filter-wrap">
-        <div class="filter_item filter01">
-          <span class="fil_ttl">並び順</span>
-          <div class="input_wrap">
-            <select name="filter_array" id="arrayFilter" class="postform">
-              <option class="option-1" value="popular">新着順</option>
-              <option class="option-1" value="recommend">人気順</option>
-              <option class="option-1" value="priceDesc">価格の安い順</option>
-              <option class="option-1" value="priceAsc">価格の高い順</option>
-            </select>
-          </div>
-        </div><!-- filter_item -->
         <div class="filter_item filter02">
-          <span class="fil_ttl">ご予算</span>
+          <span class="fil_ttl">商品を絞り込む</span>
           <div id="priceRangeFilter" class="input_wrap flex">
             <div class="radio_wrap">
               <input id="price01" type="checkbox" name="price_filter" minPrice="0" maxPrice="3000" val="0">
@@ -147,21 +135,6 @@
         </div>
       </div><!-- list_item -->
       <{/section}>
-      <div class="list_item" price="750" recommend="2">
-        <a class="item_thumb" href="/?pid=139975276">
-          <span class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/gift_product07_nlahmc.jpg);">
-        </a>
-        <div class="txt_wrap">
-          <a class="name" href="/?pid=139975276">Free as a Bird (Mini)<span>750円（税抜）</span></a>
-        </div>
-        <p class="product_desc"><span class="product_type" prop="fabric_mini" recommend="2">「ファブリックミスト」の30mlミニボトル版。</span></p>
-        <div class="content_icon"></div>
-        <div class="comp-list-cart-button related wide">
-         <a class="gift_detail_button" href="/?pid=139975276">
-          <span>詳細を見る</span>
-          </a>
-        </div>
-      </div><!-- list_item -->
     </div><!-- comp-gift-product-list -->
   </div>
 </section>
