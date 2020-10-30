@@ -9,7 +9,7 @@ $(function() {
 });
 </script>
 <article id="itemDetail" class="dishwash">
-  <section class="main" style="background-image: url(<{$product.ot1_url}>);">
+  <section id="main" class="main" style="background-image: url(<{$product.ot1_url}>);">
     <div class="fil"></div>
     <{if $product.ot3_url != null }>
       <div class="sp_img">
@@ -17,11 +17,11 @@ $(function() {
       </div>
     <{/if}>
   </section>
-  <section class="cart_wrap01">
+  <section id="wrap01" class="cart_wrap01">
       <form id="cartIn" name="product_form" method="post" action="<{$cart_url}>">
     <div class="product_ex">
       <{if $sid_name == "gift"}>
-        <h2 class="product_cat"><span>Gift Set</span>ギフトセット</h2>
+        <h2 class="product_cat"><span class="en">Gift Set</span><span class="ja">ギフトセット</span></h2>
       <{else}>
         <h2 class="product_cat"><{$product.simple_explain}></h2>
       <{/if}>
@@ -31,8 +31,8 @@ $(function() {
     <{if $sid_name == "upcoming"}>
     <div class="comp-waiting-button upcoming_button">
       <a href="https://journal.komons-japan.com/waiting-list/<{$product.model}>">
-        <span class="title">再入荷リクエスト</span>
-        <span class="desc">販売再開をメールでお知らせいたします</span>
+        <span class="title">Waiting Listに登録</span>
+        <span class="desc">発売時にメールにてお知らせいたします</span>
       </a>
     </div>
     <{/if}>
@@ -56,7 +56,7 @@ $(function() {
         <span class="right_txt">合計：<{$product.price}></span>
       </div>
     </div>
-    <{if $sid_name == "gift"}>
+    <{if $sid_name == "gift" && $product.model != "K0026"}>
     <div class="product_option_table">
       <{$option_table}>
     </div>
@@ -99,7 +99,7 @@ $(function() {
       <div class="cart_wrap">
         <div class="comp-flex-cart no_flex">
           <div class="cart_box">
-            <{if $sid_name != "gift"}>
+            <{if $sid_name != "gift" || $product.model == "K0026"}>
             <div class="cart_item">
               <span class="button_wrap">
                 <span class="title cart_in">購入する</span>
@@ -151,7 +151,7 @@ $(function() {
   <!-- cart_wrap01 -->
 <{$product.explain}>
 <{if $sid_name != "upcoming"}>
-<section class="cart_wrap02">
+<section id="wrap02" class="cart_wrap02">
   <div class="img_wrap">
     <img src="<{$product.ot2_url}>">
   </div>
@@ -215,7 +215,7 @@ $(function() {
       <div class="cart_wrap">
         <div class="comp-flex-cart no_flex">
           <div class="cart_box">
-            <{if $sid_name != "gift"}>
+            <{if $sid_name != "gift" || $product.model == "K0026"}>
             <div class="cart_item">
               <span class="button_wrap">
                 <span class="title cart_in">購入する</span>
@@ -264,7 +264,7 @@ $(function() {
 <{/if}>
 <!-- cart_wrap02 -->
  <{if $together_product_num != 0}>
- <section class="related_item item_detail">
+ <section id="relation" class="related_item item_detail">
    <div class="detail_ttl">
      <h3><span class="en_ttl">Related Items</span><span class="jp_ttl">よく一緒に購入されている商品</span></h3>
    </div>
@@ -309,7 +309,7 @@ $(function() {
    </div>
  </section><!-- related_item -->
  <{/if}>
- <section class="journal_wrap item_detail">
+ <section id="journal" class="journal_wrap item_detail">
    <div class="section_ttl">
      <h2><span>Journal</span><font>Komonsについてもっと知る。</font></h2>
    </div>
@@ -318,7 +318,7 @@ $(function() {
     </div>
   </section>
   <!-- journal_wrap -->
- <section class="section-back">
+ <section id="sectionBack" class="section-back">
    <div class="section_back">
      <div class="comp-back-to-list">
        <div class="item_wrap">
@@ -341,7 +341,39 @@ $(function() {
    </div><!-- section_back -->
  </section>
 </article>
-<{if $sid_name == "gift"}>
+<{if $sid_name == "onsale" || $sid_name == "refill" || $sid_name == "bottle-refill"}>
+<div id="fixedCartWrap" class="comp-fixed-cart-wrap">
+  <div class="cart_inner">
+    <div class="img_thumb">
+      <img src="<{$product.ot2_url}>">
+    </div>
+    <div class="product_detail">
+      <span class="category"><{$product.simple_explain}></span>
+      <span class="item_name"><{$product_name}></span>
+      <span class="price"><{$product.price}></span>
+    </div>
+    <div class="product_cart_button">
+      <button id="fixedCartButton" class="fixed_cart_button" onclick="gtag_report_conversion(); return false;"><span>購入する</span></button>
+    </div>
+  </div>
+</div>
+<{/if}>
+<{if $sid_name == "gift" && $product.model != "K0026"}>
+<div id="fixedCartWrap" class="comp-fixed-cart-wrap">
+  <div class="cart_inner">
+    <div class="img_thumb">
+      <img src="<{$product.ot2_url}>">
+    </div>
+    <div class="product_detail">
+      <span class="category"><span class="en">Gift Set</span>ギフトセット</span>
+      <span class="item_name"><{$product_name}></span>
+      <span class="price"><{$product.price}></span>
+    </div>
+    <div class="product_cart_button">
+      <button id="fixedPopButton" class="fixed_cart_button"><span>オプションを選択</span></button>
+    </div>
+  </div>
+</div>
 <div id="optionPop" class="comp-gift-option-pop">
   <div id="popBg" class="pop_bg"></div>
   <form name="product_form" method="post" action="<{$cart_url}>">
@@ -381,11 +413,12 @@ $(function() {
                 </div>
               </div>
             </label>
+            <p class="mizuhiki_desc">※水引の種類は、どのシーンのお祝い事にもお使いいただける「紅白梅結び」になります。</p>
           </div>
         </div><!-- option_select -->
         <div class="mizuhiki">
           <div class="mizuhiki_inner">
-            <p class="pop_subtitle">水引の表書き</p>
+            <p class="pop_subtitle">熨斗の表書き</p>
             <div class="mizuhiki_option">
               <div class="option_item">
                 <input id="mizu01" type="radio" name="mizuhiki_option" tesageAri="#0-0" tesageNashi="#0-1" value="表書き無し">

@@ -123,7 +123,11 @@
           <{if $productlist[num].name|count_characters < 28}>
           <a class="name" href="<{$productlist[num].link_url}>"><{$productlist[num].name}><span><{$productlist[num].price}></span></a>
           <{else}>
-          <a class="name small" href="<{$productlist[num].link_url}>"><{$productlist[num].name}><span><{$productlist[num].price}></span></a>
+            <{if $productlist[num].link_url != "?pid=155106601"}>
+            <a class="name small" href="<{$productlist[num].link_url}>"><{$productlist[num].name}><span><{$productlist[num].price}></span></a>
+            <{else}>
+            <a class="name small" href="<{$productlist[num].link_url}>">【ギフト】2020 AW "クロモジ"/ Free...<span><{$productlist[num].price}></span></a>
+            <{/if}>
           <{/if}>
         </div>
         <p class="product_desc"><{$productlist[num].s_expl}></p>

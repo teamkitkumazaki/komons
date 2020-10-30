@@ -807,6 +807,7 @@ $(function() {
     var optionPop = $('#optionPop');
     var optionSelect = $('#optionSelect');
     var optionSelect02 = $('#optionSelect02');
+    var fixedPopButton = $('#fixedPopButton');
     var popBg = $('#popBg');
     var mizuhiki = $('.mizuhiki');
     var popClose = $('#popClose');
@@ -871,6 +872,12 @@ $(function() {
           optionPopOpen();
         }
       });
+      
+      fixedPopButton.on({
+        'click': function(){
+          optionPopOpen();
+        }
+      })
 
       optionSelect02.on({
         'click': function(){

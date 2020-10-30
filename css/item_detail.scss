@@ -661,7 +661,7 @@
 	.cart_wrap02 {
 		@include waku;
 		@include flexSet;
-		margin-bottom: 50px;
+		margin-bottom: 100px;
 
 		.img_wrap {
 			width: 540px;
@@ -682,7 +682,7 @@
 				letter-spacing: 1.2px;
 				margin-bottom: 15px;
 
-				span {
+				.en {
 					padding-right: 0.3em;
 
 					&::after {
@@ -1191,6 +1191,11 @@
 }
 @media screen and (max-width: 750px) {
 	#itemDetail {
+		.main{
+			.sp_img{
+				display: block;
+			}
+		}
 		.detail_ttl {
 			@include waku;
 
