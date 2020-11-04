@@ -73,7 +73,7 @@
           a {
               color: #007a44;
               font-size: 14px;
-              line-height: 20px; 
+              line-height: 20px;
               font-weight: bold;
           }
         }
@@ -86,11 +86,11 @@
       border-bottom: 1px solid #F0F0F0;
       padding-bottom: 80px;
       margin-bottom: 60px;
-      
+
       h1,h2 {
         font-size: 30px;
         line-height: 38px;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
         color: #333;
       }
 
@@ -108,6 +108,43 @@
         margin-top: -12px;
       }
 
+      a{
+        color: #068acc;
+        line-height: 1.6;
+        @include hover;
+        &.block{
+          display: block;
+          margin-bottom: 10px;
+        }
+        @media screen and (max-width: 760px){
+          &.block{
+            display: block;
+            margin-bottom: 15px;
+          }
+        }
+        img{
+          @include hover;
+        }
+      }
+
+      .flavor_chart{
+        margin-bottom: 10px;
+      }
+
+      .deocrate{
+        background: #f8f8f8;
+        padding: 10px;
+        line-height: 1;
+        margin-bottom: 5px;
+      }
+
+      hr{
+        border: none;
+        margin:0;
+        padding: 0;
+        height: 15px;
+      }
+
       img {
         max-width: 100%;
         height: auto;
@@ -119,6 +156,17 @@
         padding-left: 25px;
         border-left: 4px solid #e0e0e0;
         color: #666;
+      }
+
+      .article_section{
+        margin-bottom: 40px;
+      }
+
+      .item_wrap{
+        margin-bottom: 30px;
+        img {
+          margin: 20px 0 10px;
+        }
       }
     }
     .post_share {
@@ -143,7 +191,7 @@
             img {
               display: block;
               width: 66px;
-              height: 66px;              
+              height: 66px;
             }
           }
         }
@@ -194,7 +242,7 @@
       max-width: 1080px;
       margin-left: auto;
       margin-right: auto;
-      
+
       .products {
         display: block;
         ul {
@@ -219,7 +267,7 @@
                 color: #00381F;
                 font-size: 17px;
                 font-weight: bold;
-                
+
                 line-height: 1;
               }
             }
@@ -231,7 +279,7 @@
               margin-bottom: 20px;
               color: #333;
             }
-  
+
             .item_img {
               height: 190px;
               line-height: 190px;
@@ -243,7 +291,7 @@
               a {
                 display: block;
               }
-  
+
               img {
                 display: inline-block;
                 width: 100%;
@@ -426,4 +474,3 @@
     }
   }
 }
-

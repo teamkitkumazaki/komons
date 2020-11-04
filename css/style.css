@@ -4548,7 +4548,7 @@ body.loaded #loading {
       #journalDetail .journal_detail .post_body h1, #journalDetail .journal_detail .post_body h2 {
         font-size: 30px;
         line-height: 38px;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
         color: #333; }
       #journalDetail .journal_detail .post_body h3, #journalDetail .journal_detail .post_body h4 {
         font-size: 20px;
@@ -4560,6 +4560,39 @@ body.loaded #loading {
       #journalDetail .journal_detail .post_body h5, #journalDetail .journal_detail .post_body h6 {
         font-size: 13px;
         margin-top: -12px; }
+      #journalDetail .journal_detail .post_body a {
+        color: #068acc;
+        line-height: 1.6;
+        -webkit-transition: opacity .3s;
+        -o-transition: opacity .3s;
+        transition: opacity .3s; }
+        #journalDetail .journal_detail .post_body a:hover {
+          opacity: 0.75; }
+        #journalDetail .journal_detail .post_body a.block {
+          display: block;
+          margin-bottom: 10px; }
+        @media screen and (max-width: 760px) {
+          #journalDetail .journal_detail .post_body a.block {
+            display: block;
+            margin-bottom: 15px; } }
+        #journalDetail .journal_detail .post_body a img {
+          -webkit-transition: opacity .3s;
+          -o-transition: opacity .3s;
+          transition: opacity .3s; }
+          #journalDetail .journal_detail .post_body a img:hover {
+            opacity: 0.75; }
+      #journalDetail .journal_detail .post_body .flavor_chart {
+        margin-bottom: 10px; }
+      #journalDetail .journal_detail .post_body .deocrate {
+        background: #f8f8f8;
+        padding: 10px;
+        line-height: 1;
+        margin-bottom: 5px; }
+      #journalDetail .journal_detail .post_body hr {
+        border: none;
+        margin: 0;
+        padding: 0;
+        height: 15px; }
       #journalDetail .journal_detail .post_body img {
         max-width: 100%;
         height: auto;
@@ -4569,6 +4602,12 @@ body.loaded #loading {
         padding-left: 25px;
         border-left: 4px solid #e0e0e0;
         color: #666; }
+      #journalDetail .journal_detail .post_body .article_section {
+        margin-bottom: 40px; }
+      #journalDetail .journal_detail .post_body .item_wrap {
+        margin-bottom: 30px; }
+        #journalDetail .journal_detail .post_body .item_wrap img {
+          margin: 20px 0 10px; }
     #journalDetail .journal_detail .post_share p {
       text-align: center;
       font-size: 14px;
