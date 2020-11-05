@@ -66,9 +66,9 @@
 	<meta name="twitter:title" content="<?php echo $site_title; ?>">
 	<meta name="twitter:image" content="<?php echo $site_image; ?>">
 	<link rel="dns-prefetch" href="https://www.komons-japan.com">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/style.css?200727">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/style.css?<?php echo date('Ymd-Hi');?>">
 	<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/layout.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/layout.js?<?php echo date('Ymd-Hi');?>"></script>
 	<meta name="google-site-verification" content="1_P1Xhv4k9Dr-1gcr7NUMd_dsqVRuE3w-AcSwmrMEj8">
 	<script src="//statics.a8.net/a8sales/a8sales.js"></script>
     <script src="//statics.a8.net/a8sales/a8crossDomain.js "></script>

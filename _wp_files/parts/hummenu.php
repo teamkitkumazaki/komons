@@ -17,8 +17,7 @@
 				<!-- hum_navi -->
 				<div class="menu_sns">
 					<ul>
-						<li><a href="#"><img src="<?php echo get_template_directory_uri();?>/img/tw_icon.png"></a></li>
-						<li><a href="https://business.facebook.com/komons.japan/" target="_blank"><img src="<?php echo get_template_directory_uri();?>/img/fb_icon.png"></a></li>
+						<li><a href="https://www.facebook.com/komons.japan" target="_blank"><img src="<?php echo get_template_directory_uri();?>/img/fb_icon.png"></a></li>
 						<li><a href="https://www.instagram.com/komons.jp/" target="_blank"><img src="<?php echo get_template_directory_uri();?>/img/ig_icon.png"></a></li>
 					</ul>
 				</div>

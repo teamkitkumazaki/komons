@@ -66,8 +66,7 @@
         <a href="<{$home_url}>"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/footer_logo_v4o9g8.png" alt="komons"></a>
       </div>
       <ul>
-        <li><a href="https://business.facebook.com/komons.japan/" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/tw_icon_t4kisb.png"></a></li>
-        <li><a href="https://business.facebook.com/komons.japan/" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/fb_icon_baav5a.png"></a></li>
+        <li><a href="https://www.facebook.com/komons.japan" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/fb_icon_baav5a.png"></a></li>
         <li><a href="https://www.instagram.com/komons.jp/" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/ig_icon_lbrgzr.png"></a></li>
       </ul>
       <p class="copy_right">&#169; 2018 Komons.</p>
@@ -93,8 +92,7 @@
       <!-- hum_navi -->
       <div class="menu_sns">
         <ul>
-          <li><a href="https://business.facebook.com/komons.japan/" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/tw_icon_t4kisb.png"></a></li>
-          <li><a href="https://business.facebook.com/komons.japan/" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/fb_icon_baav5a.png"></a></li>
+          <li><a href="https://www.facebook.com/komons.japan" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/fb_icon_baav5a.png"></a></li>
           <li><a href="https://www.instagram.com/komons.jp/" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/ig_icon_lbrgzr.png"></a></li>
         </ul>
       </div>
