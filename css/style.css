@@ -2964,9 +2964,13 @@ body.loaded #loading {
     #itemDetail .cart_wrap01 .product_ex p {
       font-size: 16px;
       line-height: 2;
-      letter-spacing: 0.2em; }
+      letter-spacing: 0.1em; }
       #itemDetail .cart_wrap01 .product_ex p span {
         display: block; }
+        #itemDetail .cart_wrap01 .product_ex p span.small {
+          font-size: 14px;
+          color: #464646;
+          margin-top: 10px; }
     #itemDetail .cart_wrap01 .product_ex .link_in_lead {
       display: block;
       font-size: 14px;
@@ -3980,6 +3984,11 @@ body.loaded #loading {
         margin-bottom: 10px; }
         #itemDetail .cart_wrap01 .product_ex p span {
           display: inline; }
+          #itemDetail .cart_wrap01 .product_ex p span.small {
+            display: block;
+            font-size: 3.2vw;
+            color: #464646;
+            margin-top: 10px; }
           #itemDetail .cart_wrap01 .product_ex p span.sp_inline {
             display: inline !important; }
       #itemDetail .cart_wrap01 .product_ex .link_in_lead {
@@ -9725,13 +9734,13 @@ body.loaded #loading {
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
-            background-position: center top -25px; }
-          .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb .prod_name {
-            text-align: center;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            margin-top: -10px;
-            margin-bottom: 20px; }
+            background-position: center top -35px; }
+        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .prod_name {
+          text-align: center;
+          font-size: 14px;
+          letter-spacing: 0.5px;
+          margin-top: 15px;
+          margin-bottom: 20px; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .pop_title {
           font-size: 18px;
           font-weight: normal;
@@ -9739,6 +9748,18 @@ body.loaded #loading {
           letter-spacing: 0.8px;
           text-align: center;
           margin-bottom: 20px; }
+        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .tesage_kami {
+          text-align: center;
+          font-size: 13px;
+          margin-top: 10px;
+          margin-bottom: 20px;
+          font-size: 13px;
+          line-height: 1.6;
+          letter-spacing: 0.4px; }
+          .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .tesage_kami span {
+            display: block; }
+            .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .tesage_kami span.sp_block {
+              display: inline; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select {
           margin-bottom: 20px; }
           .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .option_item {
@@ -9998,15 +10019,24 @@ body.loaded #loading {
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb {
           width: 100%; }
           .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb .pc_thumb {
-            height: 50vw; }
+            height: 50vw;
+            background-position: center top -4vw; }
+        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .prod_name {
+          margin-top: 5px;
+          margin-bottom: 20px; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .pop_title {
           font-size: 16px;
           font-weight: normal;
           line-height: 1.4;
           letter-spacing: 0.8px;
           text-align: center;
+          margin-top: 0;
           margin-bottom: 15px; }
           .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .pop_title span {
+            display: block; }
+        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .tesage_kami span {
+          display: block; }
+          .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .tesage_kami span.sp_block {
             display: block; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select {
           margin-bottom: 15px; }
