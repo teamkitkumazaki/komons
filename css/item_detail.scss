@@ -126,10 +126,14 @@
 			p {
 				font-size: 16px;
 				line-height: 2;
-				letter-spacing: 0.2em;
-
+				letter-spacing: 0.1em;
 				span {
 					display: block;
+					&.small{
+						font-size: 14px;
+						color: #464646;
+						margin-top: 10px;
+					}
 				}
 			}
 			.link_in_lead{
@@ -1272,6 +1276,12 @@
 
 					span {
 						display: inline;
+						&.small{
+							display: block;
+							font-size:3.2vw;
+							color: #464646;
+							margin-top: 10px;
+						}
 
 						&.sp_inline {
 							display: inline !important;

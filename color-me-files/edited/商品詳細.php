@@ -384,9 +384,12 @@ $(function() {
       <div class="contents_inner">
         <div class="item_thumb">
           <span class="pc_thumb" style="background-image: url(<{$product.ot1_url}>);"></span>
-            <p class="prod_name"><{$product_name}></p>
         </div>
+          <p class="prod_name"><{$product_name}></p>
         <p class="pop_title">下記より有料オプションを<span>お選びいただけます</span></p>
+        <{if $product.model == "K0027" || $product.model == "K0018"}>
+        <p class="tesage_kami"><span>本商品は無償で手提げ紙袋をお付け可能です。</span><span>ご希望の方は購入手続きページの備考欄に<span class="sp_block">その旨ご記載ください。</span></span></p>
+        <{/if}>
         <div class="option_select">
           <div class="option_item tesage">
             <label>

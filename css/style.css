@@ -2964,9 +2964,13 @@ body.loaded #loading {
     #itemDetail .cart_wrap01 .product_ex p {
       font-size: 16px;
       line-height: 2;
-      letter-spacing: 0.2em; }
+      letter-spacing: 0.1em; }
       #itemDetail .cart_wrap01 .product_ex p span {
         display: block; }
+        #itemDetail .cart_wrap01 .product_ex p span.small {
+          font-size: 14px;
+          color: #464646;
+          margin-top: 10px; }
     #itemDetail .cart_wrap01 .product_ex .link_in_lead {
       display: block;
       font-size: 14px;
@@ -3980,6 +3984,11 @@ body.loaded #loading {
         margin-bottom: 10px; }
         #itemDetail .cart_wrap01 .product_ex p span {
           display: inline; }
+          #itemDetail .cart_wrap01 .product_ex p span.small {
+            display: block;
+            font-size: 3.2vw;
+            color: #464646;
+            margin-top: 10px; }
           #itemDetail .cart_wrap01 .product_ex p span.sp_inline {
             display: inline !important; }
       #itemDetail .cart_wrap01 .product_ex .link_in_lead {
@@ -4548,7 +4557,7 @@ body.loaded #loading {
       #journalDetail .journal_detail .post_body h1, #journalDetail .journal_detail .post_body h2 {
         font-size: 30px;
         line-height: 38px;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
         color: #333; }
       #journalDetail .journal_detail .post_body h3, #journalDetail .journal_detail .post_body h4 {
         font-size: 20px;
@@ -4560,6 +4569,39 @@ body.loaded #loading {
       #journalDetail .journal_detail .post_body h5, #journalDetail .journal_detail .post_body h6 {
         font-size: 13px;
         margin-top: -12px; }
+      #journalDetail .journal_detail .post_body a {
+        color: #068acc;
+        line-height: 1.6;
+        -webkit-transition: opacity .3s;
+        -o-transition: opacity .3s;
+        transition: opacity .3s; }
+        #journalDetail .journal_detail .post_body a:hover {
+          opacity: 0.75; }
+        #journalDetail .journal_detail .post_body a.block {
+          display: block;
+          margin-bottom: 10px; }
+        @media screen and (max-width: 760px) {
+          #journalDetail .journal_detail .post_body a.block {
+            display: block;
+            margin-bottom: 15px; } }
+        #journalDetail .journal_detail .post_body a img {
+          -webkit-transition: opacity .3s;
+          -o-transition: opacity .3s;
+          transition: opacity .3s; }
+          #journalDetail .journal_detail .post_body a img:hover {
+            opacity: 0.75; }
+      #journalDetail .journal_detail .post_body .flavor_chart {
+        margin-bottom: 10px; }
+      #journalDetail .journal_detail .post_body .deocrate {
+        background: #f8f8f8;
+        padding: 10px;
+        line-height: 1;
+        margin-bottom: 5px; }
+      #journalDetail .journal_detail .post_body hr {
+        border: none;
+        margin: 0;
+        padding: 0;
+        height: 15px; }
       #journalDetail .journal_detail .post_body img {
         max-width: 100%;
         height: auto;
@@ -4569,6 +4611,12 @@ body.loaded #loading {
         padding-left: 25px;
         border-left: 4px solid #e0e0e0;
         color: #666; }
+      #journalDetail .journal_detail .post_body .article_section {
+        margin-bottom: 40px; }
+      #journalDetail .journal_detail .post_body .item_wrap {
+        margin-bottom: 30px; }
+        #journalDetail .journal_detail .post_body .item_wrap img {
+          margin: 20px 0 10px; }
     #journalDetail .journal_detail .post_share p {
       text-align: center;
       font-size: 14px;
@@ -9686,13 +9734,13 @@ body.loaded #loading {
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
-            background-position: center top -25px; }
-          .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb .prod_name {
-            text-align: center;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            margin-top: -10px;
-            margin-bottom: 20px; }
+            background-position: center top -35px; }
+        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .prod_name {
+          text-align: center;
+          font-size: 14px;
+          letter-spacing: 0.5px;
+          margin-top: 15px;
+          margin-bottom: 20px; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .pop_title {
           font-size: 18px;
           font-weight: normal;
@@ -9700,6 +9748,18 @@ body.loaded #loading {
           letter-spacing: 0.8px;
           text-align: center;
           margin-bottom: 20px; }
+        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .tesage_kami {
+          text-align: center;
+          font-size: 13px;
+          margin-top: 10px;
+          margin-bottom: 20px;
+          font-size: 13px;
+          line-height: 1.6;
+          letter-spacing: 0.4px; }
+          .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .tesage_kami span {
+            display: block; }
+            .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .tesage_kami span.sp_block {
+              display: inline; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select {
           margin-bottom: 20px; }
           .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .option_item {
@@ -9959,15 +10019,24 @@ body.loaded #loading {
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb {
           width: 100%; }
           .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb .pc_thumb {
-            height: 50vw; }
+            height: 50vw;
+            background-position: center top -4vw; }
+        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .prod_name {
+          margin-top: 5px;
+          margin-bottom: 20px; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .pop_title {
           font-size: 16px;
           font-weight: normal;
           line-height: 1.4;
           letter-spacing: 0.8px;
           text-align: center;
+          margin-top: 0;
           margin-bottom: 15px; }
           .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .pop_title span {
+            display: block; }
+        .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .tesage_kami span {
+          display: block; }
+          .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .tesage_kami span.sp_block {
             display: block; }
         .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select {
           margin-bottom: 15px; }
