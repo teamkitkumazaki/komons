@@ -1,0 +1,244 @@
+.comp-article-form{
+  .form_item{
+    margin-bottom: 30px;
+    .ttl{
+      @include flexSet;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 10px;
+      .num{
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+        @include libre-r;
+        font-size: 18px;
+        text-align: center;
+        line-height: 35px;
+        background: $basicGreen;
+        color: #fff;
+        border-radius: 50%;
+      }
+      .question{
+        width: calc(100% - 45px);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+    }
+    .form_wrap{
+      @include flexSet;
+      align-items: center;
+      justify-content: flex-start;
+      .radio_wrap{
+        margin-right: 15px;
+        input{
+          display: none;
+        }
+        label{
+          position: relative;
+          padding-left: 20px;
+          &::before{
+            display: block;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            bottom: 0;
+            margin: auto;
+            width: 11px;
+            height: 11px;
+            border: 1px solid #979797;
+            background: #fff;
+            border-radius: 50%;
+            margin-right: 7px;
+          }
+          &::after{
+            display: block;
+            content: "";
+            position: absolute;
+            top: 1px;
+            bottom: -1px;
+            left: 3px;
+            margin: auto;
+            width: 7px;
+            height: 7px;
+            background-color: $basicGreen;
+            border-radius: 50%;
+            opacity: 0;
+          }
+        }
+        input:checked + label{
+          &::after{
+            opacity: 1;
+          }
+        }
+      }
+      input[type="email"],input[type="text"]{
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        border: solid 1px #c0c0c0;
+        border-radius: 5px;
+        margin-top: 10px;
+        &:focus{
+          outline: none;
+          border: 1px solid $basicGreen;
+        }
+      }
+      textarea{
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        line-height: 1.6;
+        letter-spacing: 0.5px;
+        border: solid 1px #c0c0c0;
+        border-radius: 5px;
+        height: 120px;
+        margin-top: 10px;
+        &:focus{
+          outline: none;
+          border: 1px solid $basicGreen;
+        }
+      }
+      select{
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        border: solid 1px #c0c0c0;
+        border-radius: 5px;
+        margin-top: 10px;
+        appearance: none;
+        background-image: url(../img/contact/selector_caret.png);
+        background-size: 10px;
+        background-repeat: no-repeat;
+        background-position: center right 15px;
+        &:focus{
+          outline: none;
+          border: 1px solid $basicGreen;
+        }
+      }
+      .example{
+        display: block;
+        margin-top: 5px;
+        font-size: 14px;
+        letter-spacing: 0.4px;
+        color: #666;
+      }
+    }
+  }
+  .submit_wrap{
+    max-width: 500px;
+    margin: 0 auto;
+    @include hover;
+    position: relative;
+    input{
+      position: absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      cursor: pointer;
+      opacity: 0;
+    }
+    button{
+      width: 100%;
+      display: block;
+      padding: 15px 0;
+      margin: 0 auto;
+      display: block;
+      color: #fff;
+      background-color: $basicGreen;
+      border: none;
+      position: relative;
+      transition: all .5s;
+      font-family: inherit;
+      font-size: 18px;
+      pointer-events: none;
+      span{
+        display: inline-block;
+        position: relative;
+        padding-right: 30px;
+        &::after{
+          position: absolute;
+          content: "";
+          width: 20px;
+          height: 10px;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          transition: right 0.5s;
+          margin: auto;
+          @include bgSet;
+          background-size: contain;
+          background-image: url(../img/gift_service/arrow_white.png);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px){
+  .comp-article-form{
+    .form_item{
+      border-bottom: 1px solid #d8d8d8;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      &:nth-last-of-type(2){
+        border-bottom: 0px solid #d8d8d8;
+        padding-bottom: 0;
+      }
+      .ttl{
+        margin-bottom: 10px;
+        .num{
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+          font-size: 14px;
+          line-height: 30px;
+        }
+        .question{
+          width: calc(100% - 40px);
+          font-size: 16px;
+          line-height: 1.6;
+        }
+      }
+      .form_wrap{
+        .radio_wrap{
+          margin-right: 15px;
+          label{
+            position: relative;
+            padding-left: 20px;
+            font-size: 16px;
+          }
+        }
+        input[type="email"],input[type="text"]{
+          display: block;
+          font-size: 16px;
+          margin-top: 5px;
+        }
+        textarea{
+          font-size: 16px;
+          height: 150px;
+          margin-top: 5px;
+        }
+        select{
+          font-size: 16px;
+          margin-top: 5px;
+        }
+        .example{
+          margin-top: 10px;
+          font-size: 14px;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
