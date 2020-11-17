@@ -1,0 +1,154 @@
+.comp-campaign-pop{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s;
+  margin: auto;
+  z-index: 1000;
+  &.open{
+    opacity: 1;
+    pointer-events: all;
+  }
+  .pop_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(34, 34, 34, 0.8);
+    cursor: pointer;
+  }
+  .pop_contents{
+    position: relative;
+    z-index: 10;
+    @include flexSet;
+    align-items: center;
+    justify-content: center;
+    .height_adjust{
+      width: 1px;
+      height: 100vh;
+    }
+    .content_inner{
+      width: 340px;
+      margin-left: 1px;
+      position: relative;
+      .pop_close{
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        width: 18px;
+        height: 18px;
+        padding: 10px;
+        border: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        pointer-events: none;
+        background-size: 15px;
+        background-image: url(../img/common/pop_close.svg);
+      }
+      .img_wrap{
+        background: #fff;
+        a{
+          display: block;
+          @include hover;
+        }
+      }
+      .txt_wrap{
+        background: #f1f1f1;
+        color: $basicGreen;
+        padding: 20px;
+        .pop_ttl{
+          font-size: 18px;
+          letter-spacing: 0.5px;
+          margin-bottom: 10px;
+          color: $basicGreen;
+        }
+        .pop_desc{
+          font-size: 14px;
+          line-height: 1.6;
+          color: $basicGreen;
+        }
+        .link_wrap{
+          margin-top: 15px;
+          a{
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            background: $basicGreen;
+            @include hover;
+            span{
+              position: relative;
+              padding-right: 30px;
+              &::after{
+                display: block;
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                width: 20px;
+                height: 9px;
+                @include bgSet;
+                background-size: contain;
+                background-image: url(../img/gift_service/arrow_white.png);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px){
+  .comp-campaign-pop{
+    .pop_contents{
+      .content_inner{
+        width: 80%;
+        @media screen and (max-width: 340px){
+          width: 90%;
+        }
+        .pop_close{
+          position: absolute;
+          top: -10vw;
+          right: -10px;
+          width: 4vw;
+          height: 4vw;
+          padding: 10px;
+          background-size: 4vw;
+        }
+        .txt_wrap{
+          padding: 20px;
+          .pop_ttl{
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+          }
+          .pop_desc{
+            font-size: 13px;
+            line-height: 1.6;
+          }
+          .link_wrap{
+            margin-top: 15px;
+            a{
+              display: block;
+              padding: 15px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

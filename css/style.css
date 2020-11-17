@@ -775,6 +775,13 @@ body {
         #iframe .article_wrap ul li .img_wrap a:hover,
         .journal_wrap .article_wrap ul li .img_wrap a:hover {
           opacity: 0.7; }
+        #journalDetail .article_wrap ul li .img_wrap a.fit img,
+        #topJournal .article_wrap ul li .img_wrap a.fit img,
+        #iframe .article_wrap ul li .img_wrap a.fit img,
+        .journal_wrap .article_wrap ul li .img_wrap a.fit img {
+          width: 100%;
+          left: 0%;
+          right: 0%; }
     #journalDetail .article_wrap ul li .txt_wrap,
     #topJournal .article_wrap ul li .txt_wrap,
     #iframe .article_wrap ul li .txt_wrap,
@@ -4310,6 +4317,10 @@ body.loaded #loading {
             right: -10%;
             margin: auto;
             max-width: inherit; }
+            #journal .posts .post_item_wrap .post_item .item_img a img.fit {
+              width: 100%;
+              left: 0%;
+              right: 0%; }
           #journal .posts .post_item_wrap .post_item .item_img a:hover {
             -webkit-transform: scale(1.07, 1.07);
             -ms-transform: scale(1.07, 1.07);
@@ -10912,9 +10923,11 @@ body.loaded #loading {
 
 @media screen and (max-width: 760px) {
   .comp-article-quote {
+    width: 100vw;
+    margin: 0 -8vw;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 25px 20px 30px;
+    padding: 25px 8vw 30px;
     margin-bottom: 40px; }
     .comp-article-quote .quote_ttl {
       text-align: center;
@@ -10926,7 +10939,7 @@ body.loaded #loading {
       border-bottom: 0px dotted #acacac; }
       .comp-article-quote .quote_item .ttl {
         display: block;
-        background: #00381f;
+        background: rgba(0, 56, 31, 0.8);
         padding: 5px 10px;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
@@ -10944,8 +10957,36 @@ body.loaded #loading {
         font-size: 14px;
         line-height: 1.6; } }
 
+.comp-article-form .hidden_area {
+  opacity: 0; }
+
+.comp-article-form .ajax_loader {
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: height .2s;
+  -o-transition: height .2s;
+  transition: height .2s; }
+  .comp-article-form .ajax_loader.loading {
+    height: 100px; }
+  .comp-article-form .ajax_loader .loading {
+    display: block;
+    width: 100%;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 30px;
+    background-image: url(../img/common/loading.svg); }
+
 .comp-article-form .form_item {
   margin-bottom: 30px; }
+  .comp-article-form .form_item .attention {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    line-height: 1.6;
+    margin-top: 5px;
+    color: #E02525; }
   .comp-article-form .form_item .ttl {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -11035,6 +11076,8 @@ body.loaded #loading {
       width: 100%;
       padding: 10px;
       font-size: 14px;
+      font-family: inherit;
+      color: #00381f;
       letter-spacing: 0.5px;
       border: solid 1px #c0c0c0;
       border-radius: 5px;
@@ -11047,6 +11090,8 @@ body.loaded #loading {
       width: 100%;
       padding: 10px;
       font-size: 14px;
+      font-family: inherit;
+      color: #00381f;
       line-height: 1.6;
       letter-spacing: 0.5px;
       border: solid 1px #c0c0c0;
@@ -11061,6 +11106,8 @@ body.loaded #loading {
       width: 100%;
       padding: 10px;
       font-size: 14px;
+      font-family: inherit;
+      color: #00381f;
       letter-spacing: 0.5px;
       border: solid 1px #c0c0c0;
       border-radius: 5px;
@@ -11077,18 +11124,22 @@ body.loaded #loading {
         border: 1px solid #00381f; }
     .comp-article-form .form_item .form_wrap .example {
       display: block;
-      margin-top: 5px;
+      margin-top: 15px;
       font-size: 14px;
+      line-height: 1.5;
       letter-spacing: 0.4px;
       color: #666; }
 
 .comp-article-form .submit_wrap {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 50px auto 0;
   -webkit-transition: opacity .3s;
   -o-transition: opacity .3s;
   transition: opacity .3s;
-  position: relative; }
+  position: relative;
+  -webkit-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s; }
   .comp-article-form .submit_wrap:hover {
     opacity: 0.75; }
   .comp-article-form .submit_wrap input {
@@ -11118,7 +11169,10 @@ body.loaded #loading {
     transition: all .5s;
     font-family: inherit;
     font-size: 18px;
-    pointer-events: none; }
+    pointer-events: none;
+    -webkit-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    transition: background-color .2s; }
     .comp-article-form .submit_wrap button span {
       display: inline-block;
       position: relative;
@@ -11139,6 +11193,94 @@ body.loaded #loading {
         background-position: center center;
         background-size: contain;
         background-image: url(../img/gift_service/arrow_white.png); }
+  .comp-article-form .submit_wrap.complete {
+    pointer-events: none;
+    opacity: 0.6; }
+    .comp-article-form .submit_wrap.complete button {
+      background-color: #666;
+      pointer-events: none; }
+      .comp-article-form .submit_wrap.complete button span {
+        padding-right: 0px; }
+        .comp-article-form .submit_wrap.complete button span::after {
+          display: none; }
+
+.comp-article-form .coupon_code {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 40px;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .3s;
+  -o-transition: height .3s;
+  transition: height .3s; }
+  .comp-article-form .coupon_code .coupon_inner {
+    background: #f4f4f4;
+    padding: 25px; }
+    .comp-article-form .coupon_code .coupon_inner .head {
+      display: block;
+      font-size: 20px;
+      font-weight: normal;
+      letter-spacing: 0.8px;
+      text-align: center; }
+    .comp-article-form .coupon_code .coupon_inner .desc {
+      text-align: center;
+      margin-bottom: 10px; }
+    .comp-article-form .coupon_code .coupon_inner .coupon_wrap {
+      padding: 20px;
+      background: #fff; }
+      .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_ttl {
+        text-align: center;
+        margin-bottom: 10px; }
+        .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_ttl .number {
+          display: inline-block;
+          padding: 0 0.1em;
+          font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+          font-weight: 400;
+          letter-spacing: 1px;
+          font-size: 32px; }
+      .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_flex {
+        border: 1px solid #d8d8d8;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        max-width: 500px;
+        margin: 0 auto; }
+        .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_flex .code_number {
+          width: calc(100% - 150px);
+          padding: 0px 20px;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+          font-weight: 400;
+          letter-spacing: 1px;
+          font-size: 22px;
+          letter-spacing: 1px; }
+        .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_flex .copy_paste {
+          width: 150px;
+          background: #d8d8d8;
+          padding: 10px 0;
+          text-align: center;
+          background: #00381f !important;
+          color: #fff !important;
+          font-size: 14px; }
+      .comp-article-form .coupon_code .coupon_inner .coupon_wrap textarea {
+        opacity: 0; }
+    .comp-article-form .coupon_code .coupon_inner .desc_wrap {
+      margin-top: 20px; }
+      .comp-article-form .coupon_code .coupon_inner .desc_wrap .coupon_desc {
+        line-height: 1.6;
+        font-size: 14px;
+        letter-spacing: 0.5px; }
+        .comp-article-form .coupon_code .coupon_inner .desc_wrap .coupon_desc:nth-of-type(1) {
+          margin-bottom: 10px; }
 
 @media screen and (max-width: 760px) {
   .comp-article-form .form_item {
@@ -11180,4 +11322,205 @@ body.loaded #loading {
     .comp-article-form .form_item .form_wrap .example {
       margin-top: 10px;
       font-size: 14px;
-      line-height: 1.5; } }
+      line-height: 1.5; }
+  .comp-article-form .coupon_code {
+    width: 100vw;
+    margin: 40px -8vw 0; }
+    .comp-article-form .coupon_code .coupon_inner {
+      padding: 25px 8vw; }
+      .comp-article-form .coupon_code .coupon_inner .head {
+        display: block;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 15px; }
+        .comp-article-form .coupon_code .coupon_inner .head span {
+          display: block; }
+      .comp-article-form .coupon_code .coupon_inner .desc {
+        line-height: 1.6;
+        margin-bottom: 30px; }
+        .comp-article-form .coupon_code .coupon_inner .desc span {
+          display: block; }
+      .comp-article-form .coupon_code .coupon_inner .coupon_wrap {
+        padding: 15px; }
+        .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_ttl {
+          font-size: 14px;
+          margin-bottom: 10px; }
+          .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_ttl .number {
+            font-size: 28px; }
+        .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_flex {
+          border: 1px solid #d8d8d8;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          max-width: 500px;
+          margin: 0 auto; }
+          .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_flex .code_number {
+            width: 100%;
+            padding: 10px 20px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-align: center; }
+          .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_flex .copy_paste {
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 16px; }
+          .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_flex textarea {
+            opacity: 0; } }
+
+.comp-campaign-pop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+  margin: auto;
+  z-index: 1000; }
+  .comp-campaign-pop.open {
+    opacity: 1;
+    pointer-events: all; }
+  .comp-campaign-pop .pop_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(34, 34, 34, 0.8);
+    cursor: pointer; }
+  .comp-campaign-pop .pop_contents {
+    position: relative;
+    z-index: 10;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center; }
+    .comp-campaign-pop .pop_contents .height_adjust {
+      width: 1px;
+      height: 100vh; }
+    .comp-campaign-pop .pop_contents .content_inner {
+      width: 340px;
+      margin-left: 1px;
+      position: relative; }
+      .comp-campaign-pop .pop_contents .content_inner .pop_close {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        width: 18px;
+        height: 18px;
+        padding: 10px;
+        border: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        pointer-events: none;
+        background-size: 15px;
+        background-image: url(../img/common/pop_close.svg); }
+      .comp-campaign-pop .pop_contents .content_inner .img_wrap {
+        background: #fff; }
+        .comp-campaign-pop .pop_contents .content_inner .img_wrap a {
+          display: block;
+          -webkit-transition: opacity .3s;
+          -o-transition: opacity .3s;
+          transition: opacity .3s; }
+          .comp-campaign-pop .pop_contents .content_inner .img_wrap a:hover {
+            opacity: 0.75; }
+      .comp-campaign-pop .pop_contents .content_inner .txt_wrap {
+        background: #f1f1f1;
+        color: #00381f;
+        padding: 20px; }
+        .comp-campaign-pop .pop_contents .content_inner .txt_wrap .pop_ttl {
+          font-size: 18px;
+          letter-spacing: 0.5px;
+          margin-bottom: 10px;
+          color: #00381f; }
+        .comp-campaign-pop .pop_contents .content_inner .txt_wrap .pop_desc {
+          font-size: 14px;
+          line-height: 1.6;
+          color: #00381f; }
+        .comp-campaign-pop .pop_contents .content_inner .txt_wrap .link_wrap {
+          margin-top: 15px; }
+          .comp-campaign-pop .pop_contents .content_inner .txt_wrap .link_wrap a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            background: #00381f;
+            -webkit-transition: opacity .3s;
+            -o-transition: opacity .3s;
+            transition: opacity .3s; }
+            .comp-campaign-pop .pop_contents .content_inner .txt_wrap .link_wrap a:hover {
+              opacity: 0.75; }
+            .comp-campaign-pop .pop_contents .content_inner .txt_wrap .link_wrap a span {
+              position: relative;
+              padding-right: 30px; }
+              .comp-campaign-pop .pop_contents .content_inner .txt_wrap .link_wrap a span::after {
+                display: block;
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                width: 20px;
+                height: 9px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                background-image: url(../img/gift_service/arrow_white.png); }
+
+@media screen and (max-width: 760px) {
+  .comp-campaign-pop .pop_contents .content_inner {
+    width: 80%; } }
+  @media screen and (max-width: 760px) and (max-width: 340px) {
+    .comp-campaign-pop .pop_contents .content_inner {
+      width: 90%; } }
+
+@media screen and (max-width: 760px) {
+    .comp-campaign-pop .pop_contents .content_inner .pop_close {
+      position: absolute;
+      top: -10vw;
+      right: -10px;
+      width: 4vw;
+      height: 4vw;
+      padding: 10px;
+      background-size: 4vw; }
+    .comp-campaign-pop .pop_contents .content_inner .txt_wrap {
+      padding: 20px; }
+      .comp-campaign-pop .pop_contents .content_inner .txt_wrap .pop_ttl {
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px; }
+      .comp-campaign-pop .pop_contents .content_inner .txt_wrap .pop_desc {
+        font-size: 13px;
+        line-height: 1.6; }
+      .comp-campaign-pop .pop_contents .content_inner .txt_wrap .link_wrap {
+        margin-top: 15px; }
+        .comp-campaign-pop .pop_contents .content_inner .txt_wrap .link_wrap a {
+          display: block;
+          padding: 15px 0; } }

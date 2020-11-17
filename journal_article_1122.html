@@ -49,7 +49,7 @@
 		<!-- header_inner -->
 	</header>
 	<article id="journalDetail">
-  <section class="main" style="background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_piirph.jpg);"></section>
+  <section class="main" style="background-image: url(img/journal/1122/main.jpg);"></section>
   <section class="journal_detail">
           <div class="post_head">
       <div class="post_date"><span>2020.11.11</span></div>
@@ -61,15 +61,14 @@
     <div class="post_body">
       <div class="page-wife-husband">
 				<div class="article_section">
-					<h2 class="article_ttl">11月22日は皆様もご存じ「いい夫婦の日」です。</h2>
-					<p>Komonsは毎日の手洗いや食器洗い、トイレ・バス掃除など日々の生活を少しでも豊に感じてもらうためのホームケアブランド。</p><hr><p>そんなKomonsならではの方法で「いい夫婦の日」をお祝いすることができないかと考え、特別なキャンペーンを実施することにいたしました！</p>
-				</div>
-				<div class="article_section">
-					<h2 class="article_ttl">Komonsいい夫婦割</h2>
-					<p>コモンズの公式HPで掲載中の全商品を対象に、おふたりの結婚年数に応じて割引させていただくキャンペーンを実施します！</p><hr><p class="large">例えば結婚年数5年なら全品5%OFFとさせていただきます。</p><hr><p>アンケートの必須項目に答えていただければ、クーポンを発行いたしますので、是非ご利用ください。</p><hr><p class="notice">(良ければお知り合いのご夫婦にも教えてくださると嬉しいです。特に、結婚年数が長い方々だと喜ばれるかも。)</p><hr><p class="large">開催は11/16~11/22まで。</p><hr><p>取得したクーポンは11/24の0時までご利用可能です。また、今年は新型コロナウイルスの影響で家族との毎日の過ごし方や家族の家事の分担を改めて考えたご家庭が多いのではないかと思っています。</p><hr><p>もし良かったら皆さんの“いい夫婦”の家事の分担方法や“いい夫婦”の秘訣も教えてもらえませんでしょうか？</p>
+					<p>11月22日は皆様もご存じ「いい夫婦の日」です。</p><hr><p>Komonsは毎日の手洗いや食器洗い、トイレ・バス掃除など日々の生活を少しでも豊に感じてもらうためのホームケアブランド。</p><hr><p>そんなKomonsならではの方法で「いい夫婦の日」をお祝いすることができないかと考え、特別なキャンペーンを実施することにいたしました！</p>
 				</div>
 					<div class="comp-article-quote">
 						<p class="quote_ttl">キャンペーン概要</p>
+						<div class="quote_item">
+							<span class="ttl">キャンペーン内容</span>
+							<span class="content">コモンズの公式HPで掲載中の全商品を対象に、おふたりの結婚年数に応じて割引させていただきます。</span>
+						</div>
 						<div class="quote_item">
 							<span class="ttl">キャンペーン期間</span>
 							<span class="content">2020年11月16日(月)~2020年11月22日(火)</span>
@@ -80,7 +79,7 @@
 						</div>
 						<div class="quote_item">
 							<span class="ttl">割引率</span>
-							<span class="content">お客様の結婚年数に応じて1~10%を商品の総購入金額より割引致します。</span>
+							<span class="content">お客様の結婚年数×1％を商品代金より割引致します。<br>(例：結婚5年なら5％)<br>※上限割引率は50％になります。</span>
 						</div>
 						<div class="quote_item">
 							<span class="ttl">クーポン取得方法</span>
@@ -90,10 +89,18 @@
 							<span class="ttl">クーポン使用方法</span>
 							<span class="content">当サイトの各商品ページより商品をカートに入れて頂き、決済画面の「ショップクーポンを利用する」欄に発行されたクーポンコードを入力頂くと、割引が適用されます。</span>
 						</div>
+						<div class="quote_item">
+							<span class="ttl">クーポン使用回数</span>
+							<span class="content">お一人様につき1回限りとなります。</span>
+						</div>
+						<div class="quote_item">
+							<span class="ttl">注意事項</span>
+							<span class="content">いただいたメッセージはKomonsのSNS、Web サイトにて一部または全部を掲載する可能性がございます。<br>お名前は掲載いたしませんので、夫婦の関係に響かない限り(ぜひストレス解消や日頃言えない感謝の気持ちも！)ご自由にお書きください。</span>
+						</div>
 					</div><!-- comp-article-quote -->
 					<div class="article_section">
 						<h2 class="article_ttl">クーポンの取得はこちらから</h2>
-						<form>
+						<form id="form1122">
 						<div class="comp-article-form">
 							<div class="form_item">
 								<div class="ttl">
@@ -101,7 +108,7 @@
 									<span class="question">連絡用メールアドレスを記入してください。</span>
 								</div>
 								<div class="form_wrap">
-									<input type="email" placeholder="example@komons-japan.com">
+									<input type="email" name="userAddress" placeholder="example@komons-japan.com">
 								</div>
 							</div><!-- form_item -->
 							<div class="form_item">
@@ -128,62 +135,102 @@
 								<div class="form_wrap">
 									<select name="duration" aria-required="true" aria-invalid="false">
 										<option value="">選択してください</option>
-										<option value="1">1年目</option>
-										<option value="2">2年目</option>
-										<option value="3">3年目</option>
-										<option value="4">4年目</option>
-										<option value="5">5年目</option>
-										<option value="6">6年目</option>
-										<option value="7">7年目</option>
-										<option value="8">8年目</option>
-										<option value="9">9年目</option>
-										<option value="10">10年目以上</option>
+										<option value="1" role="skjbcsd">1年目</option>
+										<option value="2" role="iugfajh">2年目</option>
+										<option value="3" role="oouydga">3年目</option>
+										<option value="4" role="iigakdh">4年目</option>
+										<option value="5" role="iidgakq">5年目</option>
+										<option value="6" role="ooairyj">6年目</option>
+										<option value="7" role="ppaoduk">7年目</option>
+										<option value="8" role="uuaiqow">8年目</option>
+										<option value="9" role="qqlagak">9年目</option>
+										<option value="10" role="eeiwyhs">10年目</option>
+										<option value="11" role="ubgwtip">11年目</option>
+										<option value="12" role="jxyhspi">12年目</option>
+										<option value="13" role="iibgrbp">13年目</option>
+										<option value="14" role="jrjkayh">14年目</option>
+										<option value="15" role="mrcfedc">15年目</option>
+										<option value="16" role="jrpjnru">16年目</option>
+										<option value="17" role="uhdatfw">17年目</option>
+										<option value="18" role="euyzgif">18年目</option>
+										<option value="19" role="ihafgnm">19年目</option>
+										<option value="20" role="yyhfrda">20年目</option>
+										<option value="21" role="zmxxyfd">21年目</option>
+										<option value="22" role="znkbbpj">22年目</option>
+										<option value="23" role="unbccyc">23年目</option>
+										<option value="24" role="gkekamp">24年目</option>
+										<option value="25" role="ysfjesr">25年目</option>
+										<option value="26" role="skhttmg">26年目</option>
+										<option value="27" role="zirzaii">27年目</option>
+										<option value="28" role="skhttmg">28年目</option>
+										<option value="29" role="ysuygms">29年目</option>
+										<option value="30" role="icdepna">30年目</option>
+										<option value="31" role="yhzhzce">31年目</option>
+										<option value="32" role="bfibamx">32年目</option>
+										<option value="33" role="prjjbup">33年目</option>
+										<option value="34" role="ssxkwcz">34年目</option>
+										<option value="35" role="irszpsk">35年目</option>
+										<option value="36" role="mwduyyh">36年目</option>
+										<option value="37" role="bthkujs">37年目</option>
+										<option value="38" role="zfbtkkr">38年目</option>
+										<option value="39" role="ramgibx">39年目</option>
+										<option value="40" role="cwggaiy">40年目</option>
+										<option value="41" role="bncefes">41年目</option>
+										<option value="42" role="dmcafdy">42年目</option>
+										<option value="43" role="rmukpcy">43年目</option>
+										<option value="44" role="nsubwbe">44年目</option>
+										<option value="45" role="yjcfjyi">45年目</option>
+										<option value="46" role="fjxdtki">46年目</option>
+										<option value="47" role="xyzmjfy">47年目</option>
+										<option value="48" role="uzmgekm">48年目</option>
+										<option value="49" role="ifffbxu">49年目</option>
+										<option value="50" role="senmubr">50年目</option>
 									</select>
 								</div>
 							</div><!-- form_item -->
 							<div class="form_item">
 								<div class="ttl">
 									<span class="num">04</span>
-									<span class="question">家事に関する、パートナーへの感謝のメッセージを教えてください。(必須)</span>
+									<span class="question">家事に関する、パートナーへの不満のメッセージを教えてください。(必須)</span>
 								</div>
 								<div class="form_wrap">
-									<textarea></textarea>
-									<span class="example">例)お皿を洗うのが丁寧で良い。</span>
+									<textarea name="complain"></textarea>
+									<span class="example">実際に聞いた実例）水を流しっぱなしで皿を洗うところが気になります…。後、皿を洗ったあとはシンクも洗ってほしいです…。でも結婚当初より、食事後に率先して洗ってくれているので、結婚して10年立ちますがこの不満は口に出せてないです。。</span>
 								</div>
 							</div><!-- form_item -->
 							<div class="form_item">
 								<div class="ttl">
 									<span class="num">05</span>
-									<span class="question">家事に関する、パートナーへの不満のメッセージを教えてください。(必須)</span>
+									<span class="question">家事に関する、パートナーへの感謝のメッセージを教えてください。(必須)</span>
 								</div>
 								<div class="form_wrap">
-									<textarea></textarea>
-									<span class="example">例)洗濯物の畳み方が何回言っても治らない。</span>
+									<textarea name="praise"></textarea>
+									<span class="example">実際に聞いた実例）夫はうちの洗濯番長。表に返し、色を分けるは超徹底していて、生後３カ月の娘の洋服は手洗いです。もちろん干すときは速く乾くように風の通りが良いようにしているそう…笑。洗濯にとりつかれているんじゃないかって思うときもありますが、ベランダできれいに干されている洗濯ものを見ると誇らしい気持ちになります。いつもありがと！</span>
 								</div>
 							</div><!-- form_item -->
-							<div class="form_item">
-								<div class="ttl">
-									<span class="num">06</span>
-									<span class="question">もしかしたら、他とは違うおふたりの家事分担ルールがあれば教えてください。(必須)</span>
+							<div id="submitWrap" class="submit_wrap">
+								<button><span id="submitText">内容を送信</span></button>
+								<input id="sendContent" type="button" value="送信">
+							</div>
+							<div id="ajaxLoader" class="ajax_loader">
+								<span class="loading"></span>
+							</div>
+							<div id="couponCode" class="coupon_code">
+								<div id="couponInner" class="coupon_inner">
+									<span class="head">アンケートへのご協力<span>ありがとうございます！</span></span>
+									<p class="desc">下記よりクーポンコードを<span>お受け取りください。</span></p>
+									<div class="coupon_wrap">
+										<p class="coupon_ttl">いい夫婦の日<span id="couponNum" class="number">7%</span>OFFクーポン</p>
+										<div class="coupon_flex">
+											<span id="codeNum" class="code_number">skjbcsd</span>
+											<a href="javascript:void(0)" id="copyPaste" class="copy_paste">コピーする</a>
+										</div>
+									</div>
+									<div class="desc_wrap">
+										<p class="coupon_desc">※クーポンコードはご入力頂いたメールアドレス宛てにも送信させて頂いております。</p>
+										<p class="coupon_desc">※当サイトの各商品ページより商品をカートに入れて頂き、決済画面の「ショップクーポンを利用する」欄に発行されたクーポンコードを入力頂くと、割引が適用されます。</p>
+									</div>
 								</div>
-								<div class="form_wrap">
-									<textarea></textarea>
-									<span class="example">例)曜日で夕飯を作る担当を振り分けている。</span>
-								</div>
-							</div><!-- form_item -->
-							<div class="form_item">
-								<div class="ttl">
-									<span class="num">07</span>
-									<span class="question">家事にかかわらず、パートナーとの円満の秘訣を教えてください。(任意)</span>
-								</div>
-								<div class="form_wrap">
-									<textarea></textarea>
-									<span class="example">例)月に一回ちょっといいお店に外食に行くようにしている。</span>
-								</div>
-							</div><!-- form_item -->
-							<div class="submit_wrap">
-								<button><span>内容を送信</span></button>
-								<input type="submit" value="送信">
 							</div>
 						</div><!-- comp-article-form -->
 					</form>
@@ -327,5 +374,24 @@
 	</div>
 	<!-- slideMenu -->
 </body>
-
+<style>
+#journalDetail .main{
+	margin-top: 75px;
+	height: 400px;
+	background-size: 380px;
+	background-repeat: no-repeat;
+	background-color: #fbfbfb;
+}
+@media screen and (max-width: 760px){
+	#journalDetail .main{
+		margin-top: 65px;
+		height: 100vw;
+		background-size: 95vw;
+	}
+}
+</style>
+<script>
+$('body').addClass('fixed');
+</script>
+<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/1122.js"></script>
 </html>

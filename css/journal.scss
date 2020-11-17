@@ -78,6 +78,11 @@
               right: -10%;
               margin: auto;
               max-width: inherit;
+              &.fit{
+                width: 100%;
+                left: 0%;
+                right: 0%;
+              }
             }
 
             &:hover {
