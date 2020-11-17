@@ -4,6 +4,30 @@ $(function() {
   function loadingAnimation() {
     var sliderImg = "https://journal.komons-japan.com/wp-content/themes/komons-theme/img/main_slide01.jpg";
 
+    function popUpBanner(target){
+     var urlParam = location.search.substring(1);
+
+     var popBg = $('#popBg');
+     var closeBanner = target.find('#closeBanner');
+     var popClose = target.find('#popCloseButton');
+     console.log(urlParam);
+
+     function init(){
+       target.addClass('open');
+       popBg.on({
+         'click': function() {
+           target.removeClass('open');
+         }
+       });
+     }
+
+     if ( urlParam.match(/returntop/)) {
+
+     }else{
+       init();
+     }
+   }
+
     var imgPreloader = new Image();
     var img = $('.first_view');
     var originSrc = img.attr('src');
@@ -22,14 +46,18 @@ $(function() {
               $('.main_img').addClass('loaded');
               $('.main_logo').addClass('loaded');
               backGroundSlider($('#sliderBtn'));
+              setTimeout(function() {
+                if (document.getElementById('camPop')) {
+                  popUpBanner($('#camPop'));
+                }
+              }, 1500);
             }, 100);
           }, 1200);
 
         }, 1700);
-
       }
     })
-
+    
     img.attr('src', originSrc);
 
   }
@@ -872,7 +900,7 @@ $(function() {
           optionPopOpen();
         }
       });
-      
+
       fixedPopButton.on({
         'click': function(){
           optionPopOpen();

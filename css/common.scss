@@ -157,6 +157,13 @@ body {
 						&:hover{
 							opacity: 0.7;
 						}
+						&.fit{
+							img{
+								width: 100%;
+								left: 0%;
+								right: 0%;
+							}
+						}
 					}
 				}
 

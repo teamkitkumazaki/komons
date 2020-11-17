@@ -3,7 +3,7 @@
   $title = get_the_title($post_id);
   $permalink = get_permalink($post_id);
   $thumbnail_id = get_post_thumbnail_id($post_id);
-  $image = wp_get_attachment_image_src( $thumbnail_id, 'medium' );
+  $image = wp_get_attachment_image_src( $thumbnail_id, 'large' );
   $src = $image[0];
   $content = $post->post_content;
   if(mb_strlen($content) > 90){
@@ -17,7 +17,13 @@
         <li class="post_item_wrap">
           <div class="post_item">
             <div class="item_img">
-              <a href="<?php echo $permalink; ?>"><?php if(!empty($src)): ?><img src="<?php echo $src; ?>"><?php else: ?><img src="<?php echo get_template_directory_uri();?>/img/post_dummy.png"><?php endif; ?></a>
+              <a href="<?php echo $permalink; ?>">
+                <?php if(!empty($src)): ?>
+                  <img class="<?php echo get_field('thumb_type');?>" src="<?php echo $src; ?>">
+                  <?php else: ?>
+                    <img src="<?php echo get_template_directory_uri();?>/img/post_dummy.png">
+                  <?php endif; ?>
+                </a>
             </div>
             <div class="item_content">
               <h2 class="item_title"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h2>

@@ -16,9 +16,13 @@
 			<li>
 				<div class="img_wrap">
 					<?php if (has_post_thumbnail()) : ?>
-						 <a href="<?php the_permalink(); ?>" target="_top"><?php the_post_thumbnail('medium'); ?></a>
+						 <a class="<?php echo get_field('thumb_type');?>" href="<?php the_permalink(); ?>" target="_top">
+							 <?php the_post_thumbnail('medium'); ?>
+						 </a>
     				<?php else : ?>
-        				 <a href="<?php the_permalink(); ?>" target="_top"><img src="<?php bloginfo('template_url'); ?>/img/journal_img01.jpg"></a>
+        			<a href="<?php the_permalink(); ?>" target="_top">
+								<img src="<?php bloginfo('template_url'); ?>/img/journal_img01.jpg">
+							</a>
     				<?php endif ; ?>
 				</div>
 				<div class="txt_wrap">
