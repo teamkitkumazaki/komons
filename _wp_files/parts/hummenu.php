@@ -17,8 +17,9 @@
 				<!-- hum_navi -->
 				<div class="menu_sns">
 					<ul>
-						<li><a href="https://www.facebook.com/komons.japan" target="_blank"><img src="<?php echo get_template_directory_uri();?>/img/fb_icon.png"></a></li>
-						<li><a href="https://www.instagram.com/komons.jp/" target="_blank"><img src="<?php echo get_template_directory_uri();?>/img/ig_icon.png"></a></li>
+						<li><a href="https://www.facebook.com/komons.japan"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/fb_icon_baav5a.png"></a></li>
+						<li><a href="https://www.instagram.com/komons.jp/"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/ig_icon_lbrgzr.png"></a></li>
+						<li><a href="https://twitter.com/komons_jp" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/tw_icon_t4kisb.png"></a></li>
 					</ul>
 				</div>
 				<!-- menu_sns -->

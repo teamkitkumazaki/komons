@@ -35,8 +35,9 @@
 				<a href="https://www.komons-japan.com/"><img src="<?php echo get_template_directory_uri();?>/img/footer_logo.png" alt="komons"></a>
 			</div>
 			<ul>
-				<li><a href="https://www.facebook.com/komons.japan"><img src="<?php echo get_template_directory_uri();?>/img/fb_icon.png"></a></li>
-				<li><a href="https://www.instagram.com/komons.jp/"><img src="<?php echo get_template_directory_uri();?>/img/ig_icon.png"></a></li>
+				<li><a href="https://www.facebook.com/komons.japan"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/fb_icon_baav5a.png"></a></li>
+				<li><a href="https://www.instagram.com/komons.jp/"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/ig_icon_lbrgzr.png"></a></li>
+				<li><a href="https://twitter.com/komons_jp" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/tw_icon_t4kisb.png"></a></li>
 			</ul>
 			<p class="copy_right">© 2018 Komons.</p>
 		</div><!-- footer_sns -->

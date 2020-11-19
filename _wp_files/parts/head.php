@@ -64,7 +64,7 @@
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:description" content="<?php echo $description; ?>">
 	<meta name="twitter:title" content="<?php echo $site_title; ?>">
-	<meta name="twitter:image" content="<?php echo $site_image; ?>">
+	<meta name="twitter:image" content="<?php echo $thumnail_img ?>">
 	<link rel="dns-prefetch" href="https://www.komons-japan.com">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/style.css?<?php echo date('Ymd-Hi');?>">
 	<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/jquery-3.3.1.min.js"></script>
