@@ -11,13 +11,18 @@
     $thumnail_img = get_template_directory_uri().'/img/ogp/ogp.jpg';
     $description = "「毎日使うからこそ、こだわりたい。」Komons（コモンズ）はそんな思いから生まれた洗剤/日用品のブランドです。日用品を楽しいものに「再定義」することで、家事の体験を変えていきます。";
   } elseif(is_single()){
-    $site_title =  wp_title('', false, '').'| ホームケアブランド「Komons（コモンズ）」';
+    $site_title =  wp_title('', false, '').' | ホームケアブランド「Komons（コモンズ）」';
     $site_permalink = get_the_permalink();
-    $thumnail_img = get_the_post_thumbnail_url($post_id, 'full');
+		if (!empty(get_field('ogp_img', $post_id))) {
+			$thumnail_img = get_field('ogp_img', $post_id);
+		} else {
+			$thumnail_img = get_the_post_thumbnail_url($post_id, 'full');
+		}
+
     $post_id = get_the_id();
     $description = get_field('description', $post_id);
   } elseif(is_tag()){
-    $site_title =  wp_title('', false, '').'| ホームケアブランド「Komons（コモンズ）」';
+    $site_title =  wp_title('', false, '').' | ホームケアブランド「Komons（コモンズ）」';
     $thumnail_img = get_template_directory_uri().'/img/ogp/ogp.jpg';
 	} else {
   	$site_permalink = get_the_permalink();
@@ -61,7 +66,7 @@
 	<meta property="og:description" content="<?php echo $description; ?>">
 	<meta property="og:url" content="<?php echo $site_permalink; ?>">
 	<meta property="og:site_name" content="Komons-Japan">
-	<meta name="twitter:card" content="summary">
+	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:description" content="<?php echo $description; ?>">
 	<meta name="twitter:title" content="<?php echo $site_title; ?>">
 	<meta name="twitter:image" content="<?php echo $thumnail_img ?>">
