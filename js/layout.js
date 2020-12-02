@@ -46,11 +46,11 @@ $(function() {
               $('.main_img').addClass('loaded');
               $('.main_logo').addClass('loaded');
               backGroundSlider($('#sliderBtn'));
-              setTimeout(function() {
+              /*setTimeout(function() {
                 if (document.getElementById('camPop')) {
                   popUpBanner($('#camPop'));
                 }
-              }, 1500);
+              }, 1500);*/
             }, 100);
           }, 1200);
 

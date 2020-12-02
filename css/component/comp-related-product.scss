@@ -17,6 +17,9 @@
 					}
 					.txt_wrap{
 						min-height: 100px;
+						&.upcoming{
+							min-height: unset;
+						}
 						.prod_name{
 							display: block;
 							margin-top: 5px;
@@ -57,6 +60,9 @@
 				.item_box{
 					.txt_wrap{
 						min-height: 100px;
+						&.upcoming{
+							min-height: unset;
+						}
 					}
 					.img_wrap{
 						a{

@@ -89,7 +89,10 @@
 				.prod_name {
 					line-height: 1.5;
 					margin-bottom: 10px;
-
+					.ttl_ja{
+						display: block;
+						font-size: 14px;
+					}
 					a {
 						@include libre-r;
 						letter-spacing: 1px;
@@ -257,7 +260,11 @@
 					.prod_name {
 						line-height: 1.2;
 						margin-bottom: 10px;
-
+						.ttl_ja{
+							display: block;
+							font-size: 10px;
+							margin-bottom: 5px;
+						}
 						a {
 							@include libre-b;
 							letter-spacing: 1px;
@@ -266,13 +273,16 @@
 								font-size: 3.2vw;
 								line-height: 1.2;
 							}
+							&.upcoming{
+								font-size: 4.5vw;
+							}
 						}
 					}
 				}
 
 				.product_detail {
 					display: block;
-					font-weight: bold;
+					font-weight: normal;
 					line-height: 1;
 					font-size: 3vw;
 					padding-bottom: 0;

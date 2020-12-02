@@ -267,22 +267,22 @@ header {
       header .header_inner #hLogo a {
         background-size: 120px; } }
 
-body.rolled header, body.fixed header {
+body.rolled header, body.fixed header, body.fixed2 header {
   border-top: 2px solid #00381f;
   background: #fff;
   -webkit-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.06);
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.06); }
-  body.rolled header .header_inner #humMenu a, body.fixed header .header_inner #humMenu a {
+  body.rolled header .header_inner #humMenu a, body.fixed header .header_inner #humMenu a, body.fixed2 header .header_inner #humMenu a {
     background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_rolled_ddjxzw.png); }
-  body.rolled header .header_inner #hNavi .nav_item a, body.fixed header .header_inner #hNavi .nav_item a {
+  body.rolled header .header_inner #hNavi .nav_item a, body.fixed header .header_inner #hNavi .nav_item a, body.fixed2 header .header_inner #hNavi .nav_item a {
     color: #00381f; }
-  body.rolled header .header_inner #hNavi .nav_item#hLogin a::before, body.fixed header .header_inner #hNavi .nav_item#hLogin a::before {
+  body.rolled header .header_inner #hNavi .nav_item#hLogin a::before, body.fixed header .header_inner #hNavi .nav_item#hLogin a::before, body.fixed2 header .header_inner #hNavi .nav_item#hLogin a::before {
     background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/login_icon_rolled_oy80ng.png); }
-  body.rolled header .header_inner #hNavi .nav_item#hCart a::before, body.fixed header .header_inner #hNavi .nav_item#hCart a::before {
+  body.rolled header .header_inner #hNavi .nav_item#hCart a::before, body.fixed header .header_inner #hNavi .nav_item#hCart a::before, body.fixed2 header .header_inner #hNavi .nav_item#hCart a::before {
     background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_rolled_tnklrf.png); }
-  body.rolled header .header_inner #hLogo, body.fixed header .header_inner #hLogo {
+  body.rolled header .header_inner #hLogo, body.fixed header .header_inner #hLogo, body.fixed2 header .header_inner #hLogo {
     opacity: 1 !important; }
-    body.rolled header .header_inner #hLogo a, body.fixed header .header_inner #hLogo a {
+    body.rolled header .header_inner #hLogo a, body.fixed header .header_inner #hLogo a, body.fixed2 header .header_inner #hLogo a {
       pointer-events: all !important;
       background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/h_logo_nwjm8r.png); }
 
@@ -589,6 +589,9 @@ body {
   margin: auto; }
   body.noScroll {
     overflow: hidden; }
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal; }
 
 .article_page,
 .article_post {
@@ -2905,6 +2908,14 @@ body.loaded #loading {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%); }
   #itemDetail .main .sp_img {
     display: none; }
+  #itemDetail .main.upcoimng {
+    background-color: #fbfbfb;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    max-height: 400px;
+    margin-top: 75px; }
+    #itemDetail .main.upcoimng .fil {
+      display: none; }
 
 #itemDetail .cart_wrap01 {
   max-width: 1080px;
@@ -2968,6 +2979,16 @@ body.loaded #loading {
         left: 0;
         right: 0;
         margin: auto; }
+    #itemDetail .cart_wrap01 .product_ex .upcoming_tag {
+      width: 200px;
+      display: inline-block;
+      background: #f1f1f1;
+      color: #00381f;
+      padding: 10px;
+      border-radius: 5px;
+      margin: -10px auto 20px;
+      text-align: center;
+      font-size: 14px; }
     #itemDetail .cart_wrap01 .product_ex p {
       font-size: 16px;
       line-height: 2;
@@ -3929,6 +3950,13 @@ body.loaded #loading {
 @media screen and (max-width: 750px) {
   #itemDetail .main .sp_img {
     display: block; }
+  #itemDetail .main.upcoimng {
+    background-size: 120vw;
+    max-height: 85vw;
+    margin-top: 60px;
+    margin-bottom: -10px; }
+    #itemDetail .main.upcoimng .fil {
+      display: none; }
   #itemDetail .detail_ttl {
     max-width: 1080px;
     margin-left: auto;
@@ -3950,8 +3978,9 @@ body.loaded #loading {
         margin-bottom: 10px; }
       #itemDetail .detail_ttl h3 .jp_ttl {
         font-size: 3.6vw;
-        padding-left: 20px; }
+        padding-left: 4px; }
         #itemDetail .detail_ttl h3 .jp_ttl::before {
+          display: none;
           width: 10px;
           height: 1px; }
   #itemDetail .main {
@@ -3984,6 +4013,14 @@ body.loaded #loading {
         #itemDetail .cart_wrap01 .product_ex .prodcut_name::after {
           width: 100%;
           height: 1px; }
+      #itemDetail .cart_wrap01 .product_ex .upcoming_tag {
+        width: auto;
+        display: inline-block;
+        background: transparent;
+        color: #00381f;
+        padding: 0;
+        margin: -10px auto 15px;
+        font-size: 16px; }
       #itemDetail .cart_wrap01 .product_ex p {
         font-size: 3.8vw;
         line-height: 1.8;
@@ -8121,7 +8158,7 @@ body.loaded #loading {
     margin: 0 auto; }
     .comp-waiting-button.upcoming_button {
       margin-top: 0px;
-      margin-bottom: 80px; }
+      margin-bottom: 0px; }
     .comp-waiting-button a {
       display: block;
       padding: 15px 0 20px !important;
@@ -8384,6 +8421,9 @@ body.loaded #loading {
     .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name {
       line-height: 1.5;
       margin-bottom: 10px; }
+      .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name .ttl_ja {
+        display: block;
+        font-size: 14px; }
       .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name a {
         font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
         font-weight: 400;
@@ -8505,6 +8545,10 @@ body.loaded #loading {
         .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name {
           line-height: 1.2;
           margin-bottom: 10px; }
+          .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name .ttl_ja {
+            display: block;
+            font-size: 10px;
+            margin-bottom: 5px; }
           .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name a {
             font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
             font-weight: 500;
@@ -8514,9 +8558,11 @@ body.loaded #loading {
             .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name a.small {
               font-size: 3.2vw;
               line-height: 1.2; }
+            .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name a.upcoming {
+              font-size: 4.5vw; }
       .comp-product-list .item_wrapper .item_box .product_detail {
         display: block;
-        font-weight: bold;
+        font-weight: normal;
         line-height: 1;
         font-size: 3vw;
         padding-bottom: 0;
@@ -8787,6 +8833,8 @@ body.loaded #loading {
 @media screen and (min-width: 760px) {
         .comp-related-product .slick-list .slick-track .slick-slide .txt_wrap {
           min-height: 100px; }
+          .comp-related-product .slick-list .slick-track .slick-slide .txt_wrap.upcoming {
+            min-height: unset; }
           .comp-related-product .slick-list .slick-track .slick-slide .txt_wrap .prod_name {
             display: block;
             margin-top: 5px; }
@@ -8813,6 +8861,8 @@ body.loaded #loading {
       padding-top: 0; }
       .comp-related-product.comp-product-list .item_wrapper .item_box .txt_wrap {
         min-height: 100px; }
+        .comp-related-product.comp-product-list .item_wrapper .item_box .txt_wrap.upcoming {
+          min-height: unset; }
       .comp-related-product.comp-product-list .item_wrapper .item_box .img_wrap a {
         height: 55vw; }
       .comp-related-product.comp-product-list .item_wrapper .item_box .comp-list-cart-button {
