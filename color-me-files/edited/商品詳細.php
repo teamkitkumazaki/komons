@@ -444,6 +444,10 @@ $(function() {
                 <label for="mizu05">御礼</label>
               </div>
               <div class="option_item">
+                <input id="mizu07" type="radio" checked name="mizuhiki_option" tesageAri="#7-14" tesageNashi="#7-15" value="御歳暮">
+                <label for="mizu07">御歳暮</label>
+              </div>
+              <div class="option_item">
                 <input id="mizu06" type="radio" name="mizuhiki_option" tesageAri="#5-10" tesageNashi="#5-11" value="その他">
                 <label for="mizu06">その他</label>
               </div>
