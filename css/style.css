@@ -582,7 +582,7 @@ body {
   font-size: 14px;
   color: #00381f;
   line-height: 1;
-  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   width: 100%;
   left: 0;
   right: 0;
@@ -11568,3 +11568,565 @@ body.loaded #loading {
         .comp-campaign-pop .pop_contents .content_inner .txt_wrap .link_wrap a {
           display: block;
           padding: 15px 0; } }
+
+.comp-slide-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+  -webkit-transition: opacity .3s;
+  -o-transition: opacity .3s;
+  transition: opacity .3s;
+  background-color: #00381f; }
+  .comp-slide-menu.open {
+    opacity: 1;
+    pointer-events: all; }
+  .comp-slide-menu .hum_close {
+    cursor: pointer;
+    -webkit-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    transition: opacity .3s;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 4px;
+    left: 22px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    z-index: 100;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-size: 20px;
+    background-image: url(../img/hummenu/pop_close.svg); }
+    .comp-slide-menu .hum_close:focus {
+      outline: none; }
+  .comp-slide-menu .search_inner {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: calc(100vh - 100px);
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-top: 80px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; }
+    @media screen and (max-width: 1150px) {
+      .comp-slide-menu .search_inner {
+        max-width: 750px; } }
+    @media screen and (max-width: 750px) {
+      .comp-slide-menu .search_inner {
+        width: 84vw; } }
+    .comp-slide-menu .search_inner::-webkit-scrollbar {
+      display: none; }
+    .comp-slide-menu .search_inner .content {
+      width: calc(100% - 2px);
+      margin-left: 1px;
+      color: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      .comp-slide-menu .search_inner .content .pop_ttl {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #acacac; }
+        .comp-slide-menu .search_inner .content .pop_ttl .ttl_ja {
+          font-size: 24px;
+          font-weight: normal;
+          line-height: normal;
+          letter-spacing: 1px;
+          margin-right: 15px; }
+        .comp-slide-menu .search_inner .content .pop_ttl .ttl_en {
+          font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+          font-weight: 400;
+          letter-spacing: 1px;
+          font-size: 16px;
+          font-weight: normal;
+          line-height: normal;
+          letter-spacing: normal; }
+      .comp-slide-menu .search_inner .content .pop_subttl {
+        display: block;
+        font-size: 18px;
+        font-weight: normal;
+        letter-spacing: 1px;
+        margin-bottom: 15px; }
+      .comp-slide-menu .search_inner .content .pop_section {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px dotted #acacac; }
+        .comp-slide-menu .search_inner .content .pop_section.b_none {
+          border-bottom: 0px; }
+        .comp-slide-menu .search_inner .content .pop_section:nth-last-of-type(1) {
+          border-bottom: 0px;
+          padding-bottom: 0;
+          margin-bottom: 0; }
+        .comp-slide-menu .search_inner .content .pop_section .menu_item {
+          margin-bottom: 20px; }
+          .comp-slide-menu .search_inner .content .pop_section .menu_item:nth-last-of-type(1) {
+            margin-bottom: 0; }
+          .comp-slide-menu .search_inner .content .pop_section .menu_item .parent {
+            display: block;
+            color: #fff;
+            -webkit-transition: opacity .3s;
+            -o-transition: opacity .3s;
+            transition: opacity .3s; }
+            .comp-slide-menu .search_inner .content .pop_section .menu_item .parent:hover {
+              opacity: 0.75; }
+            .comp-slide-menu .search_inner .content .pop_section .menu_item .parent .en {
+              display: block;
+              font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+              font-weight: 400;
+              letter-spacing: 1px;
+              font-size: 14px;
+              font-weight: normal;
+              line-height: normal;
+              letter-spacing: normal;
+              margin-bottom: 5px; }
+            .comp-slide-menu .search_inner .content .pop_section .menu_item .parent .ja {
+              display: block;
+              font-size: 20px;
+              line-height: normal;
+              letter-spacing: 1px; }
+          .comp-slide-menu .search_inner .content .pop_section .menu_item .child {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            margin-top: 5px; }
+            .comp-slide-menu .search_inner .content .pop_section .menu_item .child a {
+              display: block;
+              color: #fff;
+              font-size: 14px;
+              letter-spacing: 0.7px;
+              line-height: 2;
+              position: relative;
+              padding-right: 0.7em;
+              margin-right: 0.7em;
+              -webkit-transition: opacity .3s;
+              -o-transition: opacity .3s;
+              transition: opacity .3s; }
+              .comp-slide-menu .search_inner .content .pop_section .menu_item .child a:hover {
+                opacity: 0.75; }
+              .comp-slide-menu .search_inner .content .pop_section .menu_item .child a::after {
+                display: block;
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                width: 1px;
+                height: 10px;
+                background: #fff; }
+              .comp-slide-menu .search_inner .content .pop_section .menu_item .child a:nth-last-of-type(1)::after {
+                display: none; }
+        .comp-slide-menu .search_inner .content .pop_section .category {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
+          justify-content: flex-start; }
+          .comp-slide-menu .search_inner .content .pop_section .category a {
+            display: block;
+            padding-left: 35px;
+            color: #fff;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            -webkit-transition: opacity .3s;
+            -o-transition: opacity .3s;
+            transition: opacity .3s; }
+            .comp-slide-menu .search_inner .content .pop_section .category a:hover {
+              opacity: 0.75; }
+            .comp-slide-menu .search_inner .content .pop_section .category a:nth-of-type(3n) {
+              margin-right: 0; }
+            .comp-slide-menu .search_inner .content .pop_section .category a:nth-of-type(n+4) {
+              margin-bottom: 0; }
+            .comp-slide-menu .search_inner .content .pop_section .category a::before {
+              display: block;
+              content: "";
+              width: 25px;
+              height: 40px;
+              background-repeat: no-repeat;
+              background-position: center center;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto; }
+            .comp-slide-menu .search_inner .content .pop_section .category a .en {
+              display: block;
+              font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+              font-weight: 400;
+              letter-spacing: 1px;
+              font-size: 12px;
+              font-weight: normal;
+              line-height: normal;
+              letter-spacing: normal; }
+            .comp-slide-menu .search_inner .content .pop_section .category a .ja {
+              display: block;
+              font-size: 17px;
+              line-height: normal;
+              letter-spacing: 1px; }
+            .comp-slide-menu .search_inner .content .pop_section .category a.dish::before {
+              background-size: 22px;
+              background-image: url(../img/hummenu/icon_dish.svg); }
+            .comp-slide-menu .search_inner .content .pop_section .category a.fabric::before {
+              background-size: 22px;
+              background-image: url(../img/hummenu/icon_fabric.svg); }
+            .comp-slide-menu .search_inner .content .pop_section .category a.hand::before {
+              background-size: 24px;
+              background-image: url(../img/hummenu/icon_hand.svg); }
+            .comp-slide-menu .search_inner .content .pop_section .category a.multi::before {
+              background-size: 19px;
+              background-image: url(../img/hummenu/icon_multi.svg); }
+            .comp-slide-menu .search_inner .content .pop_section .category a.bath::before {
+              background-size: 23px;
+              background-image: url(../img/hummenu/icon_bath.svg); }
+            .comp-slide-menu .search_inner .content .pop_section .category a.toilet::before {
+              background-size: 23px;
+              background-image: url(../img/hummenu/icon_toilet.svg); }
+        .comp-slide-menu .search_inner .content .pop_section .key_input {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center; }
+          .comp-slide-menu .search_inner .content .pop_section .key_input input[type=text] {
+            display: block;
+            width: calc(100% - 85px);
+            font-size: 16px;
+            font-family: inherit;
+            letter-spacing: 0.32px;
+            padding: 10px 5px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            color: #fff;
+            border: none;
+            border-bottom: 1px solid #acacac;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: none;
+            margin-right: 15px;
+            border-radius: 0 !important; }
+            .comp-slide-menu .search_inner .content .pop_section .key_input input[type=text]:focus {
+              outline: none; }
+            .comp-slide-menu .search_inner .content .pop_section .key_input input[type=text]::-webkit-input-placeholder {
+              color: #d8d8d8; }
+            .comp-slide-menu .search_inner .content .pop_section .key_input input[type=text]:-ms-input-placeholder {
+              color: #d8d8d8; }
+            .comp-slide-menu .search_inner .content .pop_section .key_input input[type=text]::-ms-input-placeholder {
+              color: #d8d8d8; }
+            .comp-slide-menu .search_inner .content .pop_section .key_input input[type=text]::placeholder {
+              color: #d8d8d8; }
+          .comp-slide-menu .search_inner .content .pop_section .key_input .search_submit {
+            line-height: 1;
+            text-align: left;
+            font-style: normal;
+            text-indent: -9999px;
+            color: #111;
+            width: 70px;
+            text-align: center;
+            padding: 15px 0;
+            -webkit-transition: opacity .3s;
+            -o-transition: opacity .3s;
+            transition: opacity .3s;
+            cursor: pointer;
+            background: #fff;
+            margin-bottom: 2px;
+            border: none;
+            transition: opacity .3s;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url(../img/hummenu/icon_search.svg);
+            background-size: 20px; }
+            .comp-slide-menu .search_inner .content .pop_section .key_input .search_submit:hover {
+              opacity: 0.75; }
+            .comp-slide-menu .search_inner .content .pop_section .key_input .search_submit:focus {
+              outline: none; }
+      .comp-slide-menu .search_inner .content .content_left {
+        width: 580px; }
+      .comp-slide-menu .search_inner .content .content_right {
+        width: 440px;
+        margin-bottom: 60px; }
+        .comp-slide-menu .search_inner .content .content_right .sns_wrap {
+          width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-pack: end;
+          -ms-flex-pack: end;
+          justify-content: flex-end; }
+          .comp-slide-menu .search_inner .content .content_right .sns_wrap a {
+            display: block;
+            width: 45px;
+            height: 45px;
+            margin-right: 10px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            -webkit-transition: opacity .3s;
+            -o-transition: opacity .3s;
+            transition: opacity .3s;
+            background-repeat: no-repeat;
+            background-position: center center; }
+            .comp-slide-menu .search_inner .content .content_right .sns_wrap a:hover {
+              opacity: 0.75; }
+            .comp-slide-menu .search_inner .content .content_right .sns_wrap a.tw {
+              background-size: 18px;
+              background-image: url(../img/hummenu/icon_tw.svg); }
+            .comp-slide-menu .search_inner .content .content_right .sns_wrap a.fb {
+              background-size: 9px;
+              background-image: url(../img/hummenu/icon_fb.svg); }
+            .comp-slide-menu .search_inner .content .content_right .sns_wrap a.ig {
+              background-size: 18px;
+              background-image: url(../img/hummenu/icon_ig.svg); }
+
+@media screen and (max-width: 1100px) {
+  .comp-slide-menu .hum_close {
+    width: 70px;
+    height: 70px;
+    top: 5px;
+    left: 5px;
+    background-size: 20px; }
+  .comp-slide-menu .search_inner {
+    max-width: 80%;
+    width: 80%;
+    display: block;
+    height: calc(100vh - 100px);
+    padding-top: 80px; }
+    .comp-slide-menu .search_inner .content {
+      margin-left: auto;
+      margin-right: auto; }
+      .comp-slide-menu .search_inner .content .pop_ttl {
+        padding: 10px;
+        margin-bottom: 20px;
+        background: #fff;
+        color: #00381f;
+        border-bottom: 0px solid #acacac; }
+      .comp-slide-menu .search_inner .content .pop_section {
+        padding: 0 10px; }
+        .comp-slide-menu .search_inner .content .pop_section .menu_item {
+          margin-bottom: 20px; }
+          .comp-slide-menu .search_inner .content .pop_section .menu_item:nth-last-of-type(1) {
+            margin-bottom: 0; }
+      .comp-slide-menu .search_inner .content .content_left {
+        width: 100%;
+        margin-bottom: 50px; }
+      .comp-slide-menu .search_inner .content .content_right {
+        width: 100%;
+        margin-bottom: 40px; } }
+
+@media screen and (max-width: 740px) {
+  .comp-slide-menu .hum_close {
+    width: 60px;
+    height: 60px;
+    top: 0px;
+    left: 0px;
+    background-size: 15px; }
+  .comp-slide-menu .search_inner {
+    max-width: 90vw;
+    width: 90vw;
+    eight: calc(100vh - 60px);
+    padding-top: 60px; }
+    .comp-slide-menu .search_inner .content {
+      width: 100%;
+      margin-left: 0px;
+      display: block; }
+      .comp-slide-menu .search_inner .content .pop_ttl {
+        padding: 10px;
+        margin-bottom: 25px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+        .comp-slide-menu .search_inner .content .pop_ttl .ttl_ja {
+          font-size: 18px;
+          letter-spacing: 0.9px;
+          margin-right: 10px; }
+        .comp-slide-menu .search_inner .content .pop_ttl .ttl_en {
+          font-size: 12px; }
+      .comp-slide-menu .search_inner .content .pop_subttl {
+        margin-bottom: 25px; }
+      .comp-slide-menu .search_inner .content .pop_section {
+        margin-bottom: 30px;
+        padding-bottom: 30px; }
+        .comp-slide-menu .search_inner .content .pop_section .menu_item {
+          margin-bottom: 20px; }
+          .comp-slide-menu .search_inner .content .pop_section .menu_item:nth-last-of-type(1) {
+            margin-bottom: 0; }
+          .comp-slide-menu .search_inner .content .pop_section .menu_item .parent .en {
+            font-size: 14px;
+            margin-bottom: 3px; }
+          .comp-slide-menu .search_inner .content .pop_section .menu_item .parent .ja {
+            font-size: 20px;
+            letter-spacing: 1px;
+            margin-right: 10px; }
+          .comp-slide-menu .search_inner .content .pop_section .menu_item .child {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            margin-top: 5px; }
+            .comp-slide-menu .search_inner .content .pop_section .menu_item .child a {
+              display: block;
+              color: #fff;
+              font-size: 12px;
+              letter-spacing: 0.5px;
+              line-height: 2;
+              position: relative;
+              /*padding-right: 1.2em;
+                margin-right: 1.2em;*/
+              -webkit-transition: opacity .3s;
+              -o-transition: opacity .3s;
+              transition: opacity .3s; }
+              .comp-slide-menu .search_inner .content .pop_section .menu_item .child a:hover {
+                opacity: 0.75; }
+              .comp-slide-menu .search_inner .content .pop_section .menu_item .child a:nth-last-of-type(1) {
+                padding-right: 0em;
+                margin-right: 0em; }
+                .comp-slide-menu .search_inner .content .pop_section .menu_item .child a:nth-last-of-type(1)::after {
+                  display: none; }
+        .comp-slide-menu .search_inner .content .pop_section .category {
+          display: block; }
+          .comp-slide-menu .search_inner .content .pop_section .category a {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+            margin-right: 0px;
+            margin-bottom: 20px;
+            -webkit-transition: opacity .3s;
+            -o-transition: opacity .3s;
+            transition: opacity .3s; }
+            .comp-slide-menu .search_inner .content .pop_section .category a:hover {
+              opacity: 0.75; }
+            .comp-slide-menu .search_inner .content .pop_section .category a:nth-of-type(3n) {
+              margin-right: 0; }
+            .comp-slide-menu .search_inner .content .pop_section .category a:nth-of-type(n+4) {
+              margin-bottom: 20px; }
+            .comp-slide-menu .search_inner .content .pop_section .category a:nth-last-of-type(1) {
+              margin-bottom: 0; }
+            .comp-slide-menu .search_inner .content .pop_section .category a .en {
+              font-size: 12px;
+              margin-left: 10px; }
+            .comp-slide-menu .search_inner .content .pop_section .category a .ja {
+              font-size: 16px; }
+        .comp-slide-menu .search_inner .content .pop_section .key_input input[type=text] {
+          width: calc(100% - 80px);
+          font-size: 16px;
+          padding: 5px 5px;
+          margin-right: 10px; }
+          .comp-slide-menu .search_inner .content .pop_section .key_input input[type=text]::-webkit-input-placeholder {
+            font-size: 14px;
+            color: #d8d8d8; }
+          .comp-slide-menu .search_inner .content .pop_section .key_input input[type=text]:-ms-input-placeholder {
+            font-size: 14px;
+            color: #d8d8d8; }
+          .comp-slide-menu .search_inner .content .pop_section .key_input input[type=text]::-ms-input-placeholder {
+            font-size: 14px;
+            color: #d8d8d8; }
+          .comp-slide-menu .search_inner .content .pop_section .key_input input[type=text]::placeholder {
+            font-size: 14px;
+            color: #d8d8d8; }
+        .comp-slide-menu .search_inner .content .pop_section .key_input .search_submit {
+          line-height: 1;
+          width: 70px;
+          padding: 10px 0;
+          margin-bottom: 0;
+          background-size: 15px; }
+      .comp-slide-menu .search_inner .content .content_left {
+        width: 100%; }
+      .comp-slide-menu .search_inner .content .content_right {
+        width: 100%;
+        margin-bottom: 60px; }
+        .comp-slide-menu .search_inner .content .content_right .sns_wrap {
+          width: 100%;
+          margin-top: -15px;
+          padding: 0 10px;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+          .comp-slide-menu .search_inner .content .content_right .sns_wrap a {
+            width: 35px;
+            height: 35px;
+            margin-right: 10px; }
+            .comp-slide-menu .search_inner .content .content_right .sns_wrap a.tw {
+              background-size: 16px; }
+            .comp-slide-menu .search_inner .content .content_right .sns_wrap a.fb {
+              background-size: 8px; }
+            .comp-slide-menu .search_inner .content .content_right .sns_wrap a.ig {
+              background-size: 16px; } }
