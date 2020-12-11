@@ -1,0 +1,47 @@
+.comp-store-list{
+  .store_item{
+    margin-bottom: 40px;
+    .area_title{
+      border: 0px !important;
+      background: #f7f7f7;
+      padding: 5px 10px;
+      font-size: 16px !important;
+    }
+    a{
+      display: block;
+      color: #1B4E37 !important;
+      padding: 5px 0 5px 30px;
+      @include hover;
+      margin-bottom: 10px;
+      position: relative;
+      &::before{
+        display: block;
+        content: "";
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        margin: auto;
+        @include bgSet;
+        background-image: url(../img/common/icon_house.svg);
+        background-size: 15px;
+        width: 20px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 740px){
+  .comp-store-list{
+    .store_item{
+      margin-bottom: 30px;
+      a{
+        padding: 5px 0 5px 30px;
+        @include hover;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    }
+  }
+}

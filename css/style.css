@@ -4645,6 +4645,33 @@ body.loaded #loading {
           transition: opacity .3s; }
           #journalDetail .journal_detail .post_body a img:hover {
             opacity: 0.75; }
+      #journalDetail .journal_detail .post_body .sns_wrap a {
+        display: block;
+        color: #1B4E37 !important;
+        padding: 5px 0 5px 30px;
+        margin-bottom: 5px;
+        position: relative; }
+        #journalDetail .journal_detail .post_body .sns_wrap a::after {
+          display: block;
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+          width: 20px;
+          height: 30px;
+          background-repeat: no-repeat;
+          background-position: center center; }
+        #journalDetail .journal_detail .post_body .sns_wrap a.ig::after {
+          background-size: 17px;
+          background-image: url(../img/journal/icon_ig.svg); }
+        #journalDetail .journal_detail .post_body .sns_wrap a.fb::after {
+          background-size: 10px;
+          background-image: url(../img/journal/icon_fb.svg); }
+        #journalDetail .journal_detail .post_body .sns_wrap a.tw::after {
+          background-size: 18px;
+          background-image: url(../img/journal/icon_tw.svg); }
       #journalDetail .journal_detail .post_body .flavor_chart {
         margin-bottom: 10px; }
       #journalDetail .journal_detail .post_body .deocrate {
@@ -12130,3 +12157,49 @@ body.loaded #loading {
               background-size: 8px; }
             .comp-slide-menu .search_inner .content .content_right .sns_wrap a.ig {
               background-size: 16px; } }
+
+.comp-store-list .store_item {
+  margin-bottom: 40px; }
+  .comp-store-list .store_item .area_title {
+    border: 0px !important;
+    background: #f7f7f7;
+    padding: 5px 10px;
+    font-size: 16px !important; }
+  .comp-store-list .store_item a {
+    display: block;
+    color: #1B4E37 !important;
+    padding: 5px 0 5px 30px;
+    -webkit-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    transition: opacity .3s;
+    margin-bottom: 10px;
+    position: relative; }
+    .comp-store-list .store_item a:hover {
+      opacity: 0.75; }
+    .comp-store-list .store_item a::before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url(../img/common/icon_house.svg);
+      background-size: 15px;
+      width: 20px;
+      height: 30px; }
+
+@media screen and (max-width: 740px) {
+  .comp-store-list .store_item {
+    margin-bottom: 30px; }
+    .comp-store-list .store_item a {
+      padding: 5px 0 5px 30px;
+      -webkit-transition: opacity .3s;
+      -o-transition: opacity .3s;
+      transition: opacity .3s;
+      font-size: 14px;
+      line-height: 1.5; }
+      .comp-store-list .store_item a:hover {
+        opacity: 0.75; } }

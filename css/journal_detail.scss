@@ -138,6 +138,45 @@
           @include hover;
         }
       }
+      .sns_wrap{
+        a{
+          display: block;
+          color: #1B4E37 !important;
+          padding: 5px 0 5px 30px;
+          margin-bottom: 5px;
+          position: relative;
+          &::after{
+            display: block;
+            content: "";
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            margin: auto;
+            width: 20px;
+            height: 30px;
+            @include bgSet;
+          }
+          &.ig{
+            &::after{
+              background-size: 17px;
+              background-image: url(../img/journal/icon_ig.svg);
+            }
+          }
+          &.fb{
+            &::after{
+              background-size: 10px;
+              background-image: url(../img/journal/icon_fb.svg);
+            }
+          }
+          &.tw{
+            &::after{
+              background-size: 18px;
+              background-image: url(../img/journal/icon_tw.svg);
+            }
+          }
+        }
+      }
 
       .flavor_chart{
         margin-bottom: 10px;
