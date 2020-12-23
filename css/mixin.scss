@@ -1,62 +1,54 @@
+$basicGray: #f9f9f9;
+$basicBlack: #0B1A17;
+$basicGreen: #00381f;
 /* ----- Google Fonts ----- */
-/*
 @font-face {
-    font-family: 'opensans';
+    font-family: 'libre-regular';
+		font-weight: 400;
+    src: url('../fonts/LibreBaskerville-Regular.eot'),url('../fonts/LibreBaskerville-Regular.woff') format('woff'),
+    url('../fonts/LibreBaskerville-Regular.ttf') format('truetype'),
+}
+@font-face {
+    font-family: 'libre-bold';
 		font-weight: 700;
-    src: url('../fonts/opensans-light.eot'),url('../fonts/opensans-light.woff') format('woff'),
-    url('../fonts/opensans-light.ttf') format('truetype'),
+    src: url('../fonts/librebaskerville-bold-webfont.eot'),url('../fonts/librebaskerville-bold-webfont.woff') format('woff'),
+    url('../fonts/LibreBaskerville-Bold.ttf') format('truetype'),
 }
-*/
-@mixin opensans{
-  font-family: 'opensans', 'Open Sans', 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  font-weight: 300;
+@mixin libre-r {
+  font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
-
-@mixin basicP {
-	font-size: 14px;
-	line-height: 2;
-	letter-spacing: 0.1em;
+@mixin libre-b {
+  font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
-@mixin smallP{
-  font-size: 13px;
-  line-height: 1.8;
-  letter-spacing: 0.1em;
-}
-@mixin waku {
-	max-width: 1080px;
-	margin-left: auto;
-	margin-right: auto;
-  @media screen and (max-width: 1100px){
-    max-width: 720px;
+@mixin waku{
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 1150px){
+    max-width: 750px;
   }
-  @media screen and (max-width: 740px){
-    max-width: 90vw;
+  @media screen and (max-width: 750px){
+    width: 84vw;
   }
 }
 @mixin flexSet {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 @mixin bgSet{
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background:{
+    repeat: no-repeat;
+    position: center center;
+  }
 }
 @mixin hover{
   transition: opacity .3s;
   &:hover{
     opacity: 0.75;
   }
-}
-@function get-vw($target) {
-  $vw-context: (1280*.01) * 1px;
-  @return ($target/$vw-context) * 1vw;
-}
-@function responsive-vw($target) {
-  $vw-context: (375*.01) * 1px;
-  @return ($target/$vw-context) * 1vw;
-}
-@function responsive-vh($target) {
-  $vw-context: (671*.01) * 1px;
-  @return ($target/$vw-context) * 1vh;
 }

@@ -1,98 +1,17 @@
 @charset "UTF-8";
-$basicGray: #f9f9f9;
-$basicBlack: #0B1A17;
-$basicGreen: #00381f;
-/* ----- Google Fonts ----- */
-@font-face {
-    font-family: 'libre-regular';
-		font-weight: 400;
-    src: url('../fonts/LibreBaskerville-Regular.eot'),url('../fonts/LibreBaskerville-Regular.woff') format('woff'),
-    url('../fonts/LibreBaskerville-Regular.ttf') format('truetype'),
-}
-@font-face {
-    font-family: 'libre-bold';
-		font-weight: 700;
-    src: url('../fonts/librebaskerville-bold-webfont.eot'),url('../fonts/librebaskerville-bold-webfont.woff') format('woff'),
-    url('../fonts/LibreBaskerville-Bold.ttf') format('truetype'),
-}
-@mixin libre-r {
-  font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
-  font-weight: 400;
-  letter-spacing: 1px;
-}
-@mixin libre-b {
-  font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-@mixin waku{
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-  @media screen and (max-width: 1150px){
-    max-width: 750px;
-  }
-  @media screen and (max-width: 750px){
-    width: 84vw;
-  }
-}
-@mixin flexSet {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-@mixin bgSet{
-  background:{
-    repeat: no-repeat;
-    position: center center;
-  }
-}
-@mixin hover{
-  transition: opacity .3s;
-  &:hover{
-    opacity: 0.75;
-  }
-}
-/*デフォルトCSSのリセット*/
-@import 'reset.scss';
-/*ヘッダーのレイアウト*/
-@import 'header.scss';
-/*フッターのレイアウト*/
-@import 'footer.scss';
-/*ハンバーガーメニューのレイアウト*/
-@import 'hummenu.scss';
-/*共通レイアウト*/
-@import 'common.scss';
-/*トップページのレイアウト*/
-@import 'index.scss';
-/*ローディング部分のレイアウト*/
-@import 'loading.scss';
-/*商品一覧のレイアウト*/
-@import 'item_list.scss';
-/*商品詳細のレイアウト*/
-@import 'item_detail.scss';
-/*ジャーナルのレイアウト*/
-@import 'journal.scss';
-@import 'journal_detail.scss';
-/*コンセプトのレイアウト*/
-@import 'concept.scss';
-/*下層ページのレイアウト*/
-@import 'underpage.scss';
-/*コンタクトフォームのレイアウト*/
-@import 'contact.scss';
-/*よくある質問のレイアウト*/
-@import 'faq.scss';
-/*ギフトページのレイアウト*/
-@import 'gift.scss'; /* ⇦temp */
-@import 'giftList.scss';
-/* ギフトサービスページのレイアウト*/
-@import 'giftService.scss';
 
-/*ギフトページのレイアウト*/
-@import 'waitingList.scss';
+@import 'mixin.scss'; //ミックスイン
 
+/* ########## 共通セクション ########## */
+
+@import 'common/reset.scss'; //デフォルトCSSのリセット
+@import 'common/header.scss'; //ヘッダー
+@import 'common/footer.scss'; //フッター
+@import 'common/hummenu.scss'; //ハンバーガーメニュー
+@import 'common/common.scss'; //共通レイアウト
 
 /*########## コンポーネント ##########*/
+@import 'component/loading.scss'; //ローディング部分
 @import 'component/comp-title.scss';
 @import 'component/comp-linkbutton.scss';
 @import 'component/comp-variation.scss';
@@ -120,3 +39,20 @@ $basicGreen: #00381f;
 @import 'component/comp-campaign-pop.scss';
 @import 'component/comp-slide-menu.scss';
 @import 'component/comp-store-list.scss';
+@import 'component/comp-item-group.scss';
+
+
+/* ########## ページ別レイアウト ########## */
+@import 'page/index.scss'; //トップページ
+@import 'page/item_list.scss'; //商品一覧
+@import 'page/item_detail.scss'; //商品詳細
+@import 'page/group.scss'; //商品グループ一覧・検索結果
+@import 'page/journal.scss'; /*ジャーナル一覧*/
+@import 'page/journal_detail.scss'; /*ジャーナル詳細*/
+@import 'page/concept.scss'; /*コンセプト*/
+@import 'page/underpage.scss'; /*下層ページ共通*/
+@import 'page/contact.scss'; /*コンタクトフォーム*/
+@import 'page/faq.scss'; /*よくある質問*/
+@import 'page/giftList.scss'; /*ギフトページ*/
+@import 'page/giftService.scss'; /* ギフトサービスページ*/
+@import 'page/waitingList.scss'; /*ウェイティングリスト*/
