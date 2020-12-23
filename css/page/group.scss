@@ -3,6 +3,65 @@
     padding-top: 100px;
     .section_ttl{
       padding-top: 60px;
+      &.search_ttl{
+        @include flexSet;
+        align-items: center;
+        justify-content: space-between;
+        .key_input{
+          width: 500px;
+          @media screen and (max-width: 1150px){
+            width: 400px;
+          }
+          @include flexSet;
+          input[type=text]{
+            display: block;
+            width: calc(100% - 85px);
+            font-size: 16px;
+            font-family: inherit;
+            letter-spacing: 0.32px;
+            padding: 10px 5px 10px 25px;
+            box-sizing: border-box;
+            color: $basicGreen;
+            border: none;
+            border-bottom: 1px solid #acacac;
+            appearance: none;
+            background: none;
+            margin-right: 15px;
+            border-radius: 0 !important;
+            @include bgSet;
+            background-image: url(../img/hummenu/icon_search.svg);
+            background-position: center left;
+            background-size: 15px;
+            &:focus{
+              outline: none;
+            }
+            &::placeholder{
+              color: #797979;
+            }
+          }
+          .search_submit{
+            line-height: 1;
+            text-align: left;
+            font-family: inherit;
+            color: #111;
+            width: 70px;
+            text-align: center;
+            padding: 15px 0;
+            transition: opacity .3s;
+            cursor: pointer;
+            background: $basicGreen;
+            color: #fff;
+            margin-bottom: 2px;
+            border: none;
+            @include hover;
+            letter-spacing: 0.4em;
+            text-indent: 0.5em;
+            &:focus{
+              outline: none;
+            }
+          }
+        }
+      }
     }
   }
   .section-set-product{
@@ -37,6 +96,14 @@
       padding-bottom: 60px;
       .section_ttl{
         padding-top: 60px;
+        &.search_ttl{
+          display: block;
+          .key_input{
+            width: 100%;
+            @include flexSet;
+            margin-top: 20px;
+          }
+        }
       }
     }
     .section-set-product{
@@ -64,6 +131,19 @@
       padding-bottom: 60px;
       .section_ttl{
         padding-top: 60px;
+        &.search_ttl{
+          display: block;
+          .key_input{
+            width: 100%;
+            align-items: flex-end;
+            input[type=text]{
+              padding: 7px 5px 7px 25px;
+            }
+            .search_submit{
+              padding: 12.5px 0;
+            }
+          }
+        }
       }
     }
     .section-set-product{
