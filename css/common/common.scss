@@ -589,3 +589,13 @@ h1,h2,h3,h4,h5{
 		}
 	}
 }
+
+.upcoming_margin{
+	border: 0px;
+	margin:0;
+	padding:0;
+	height: 0px;
+	@media screen and (max-width: 740px){
+		height: 80px;
+	}
+}

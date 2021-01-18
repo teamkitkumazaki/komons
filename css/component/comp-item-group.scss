@@ -1,5 +1,16 @@
 .comp-item-group{
   @include flexSet;
+  justify-content: flex-start;
+  .no_entry{
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    margin: 60px 0 100px;
+    @media screen and (max-width: 730px){
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      margin: 30px 0 100px;
+    }
+  }
   .item_list{
     width: 500px;
     margin-right: 80px;
@@ -25,22 +36,29 @@
           font-size: 14px;
           line-height: normal;
           letter-spacing: normal;
+          .en{
+            display: none;
+          }
         }
         .en{
           @include libre-r;
-          font-weight: 500;
           font-size: 32px;
           line-height: 1.5;
           letter-spacing: 1.5px;
-          @include flexSet;
-          justify-content: flex-start;
-          align-items: baseline;
-          .genre{
+          display: block;
+          .ja{
             display: inline-block;
-            margin-right: 0.3em;
+            font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho",serif;
+            font-size: 26px;
+            letter-spacing: 2px;
+            margin-right: 0.4em;
+          }
+          .genre{
+            display: block;
+            margin-right: 0;
           }
           .added{
-            display: inline-block;
+            display: block;
             font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
             font-size: 18px;
             letter-spacing: 0.2px;
@@ -99,6 +117,13 @@
               }
             }
           }
+          &.full{
+            width: 100%;
+            margin: 15px 0 20px;
+            @media screen and (max-width: 730px){
+              margin-bottom: 15px;
+            }
+          }
         }
         .comp-list-cart-button{
           width: 48%;
@@ -110,6 +135,12 @@
         line-height: 2;
         letter-spacing: 0.8px;
       }
+    }
+    &:nth-of-type(2n){
+      margin-right: 0;
+    }
+    &.left{
+      margin-right: 80px;
     }
     &.right{
       margin-right: 0;
@@ -157,6 +188,9 @@
             }
           }
         }
+      }
+      &.left{
+        margin-right: 4%;
       }
       &.right{
         margin-right: 0;
@@ -230,9 +264,6 @@
           }
         }
       }
-      &.right{
-        margin-right: 0;
-      }
       &.large{
         display: block;
         width: 100%;
@@ -287,10 +318,23 @@
             font-size: 14px;
           }
           .en{
-            font-size: 32px;
-            letter-spacing: 1.5px;
+            display: block;
+            font-size: 26px;
+            letter-spacing: 1.2px;
+            line-height: 1.4;
+            margin: 10px 0 0;
+            .ja{
+              display: block;
+              font-size: 20px;
+              letter-spacing: 1.5px;
+              margin-right: 0em;
+            }
+            .genre{
+              display: block;
+              margin-right: 0em;
+            }
             .added{
-              font-size: 14px;
+              font-size: 16px;
             }
           }
         }
@@ -307,6 +351,8 @@
             padding: 13px 0;
             font-size: 14px;
             margin-bottom: 5px;
+            border: 1px solid #979797;
+            color: #979797;
           }
           .comp-list-cart-button{
             width: 100%;
@@ -314,7 +360,12 @@
           }
         }
       }
+      &.left{
+        width: 100%;
+        margin-right: 0%;
+      }
       &.right{
+        width: 100%;
         margin-right: 0;
       }
       &.large{

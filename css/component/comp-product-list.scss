@@ -90,7 +90,7 @@
 					line-height: 1.5;
 					margin-bottom: 10px;
 					.ttl_ja{
-						display: block;
+						display: none;
 						font-size: 14px;
 					}
 					a {
@@ -168,6 +168,21 @@
 					.link_wrap {
 						.arrow {
 							right: -10px;
+						}
+					}
+				}
+			}
+			&.upcoming{
+				.cat_ttl{
+					display: none;
+				}
+				.txt_wrap {
+					.prod_name {
+						line-height: 1.5;
+						margin-bottom: 10px;
+						.ttl_ja{
+							display: none;
+							font-size: 14px;
 						}
 					}
 				}

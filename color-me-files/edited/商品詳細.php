@@ -9,12 +9,16 @@ $(function() {
 });
 </script>
 <article id="itemDetail" class="dishwash">
+  <{if $sid_name != "upcoming"}>
   <section id="main" class="main" style="background-image: url(<{$product.ot1_url}>);">
     <div class="fil"></div>
     <{if $product.ot3_url != null }>
       <div class="sp_img">
         <img src="<{$product.ot3_url}>">
       </div>
+    <{/if}>
+    <{else}>
+    <section class="main upcoimng" style="background-image: url(<{$product.img_url}>);"></section>
     <{/if}>
   </section>
   <section id="wrap01" class="cart_wrap01">
@@ -26,6 +30,9 @@ $(function() {
         <h2 class="product_cat"><{$product.simple_explain}></h2>
       <{/if}>
       <h1 class="prodcut_name"><{$product_name}></h1>
+      <{if $sid_name == "upcoming"}>
+      <span class="upcoming_tag">構想中</span>
+      <{/if}>
       <div id="excerpt" class="excerpt"></div>
     </div>
     <{if $sid_name == "upcoming"}>
@@ -37,6 +44,9 @@ $(function() {
     </div>
     <{/if}>
     <!-- product_ex -->
+    <{if $sid_name == "upcoming"}>
+    <hr class="upcoming_margin">
+    <{/if}>
     <{if $sid_name != "upcoming"}>
     <div class="product_detail">
       <div class="detail_block detail01">
@@ -443,10 +453,10 @@ $(function() {
                 <input id="mizu05" type="radio" name="mizuhiki_option" tesageAri="#4-8" tesageNashi="#4-9" value="御礼">
                 <label for="mizu05">御礼</label>
               </div>
-              <div class="option_item">
+              <!--<div class="option_item">
                 <input id="mizu07" type="radio" checked name="mizuhiki_option" tesageAri="#7-14" tesageNashi="#7-15" value="御歳暮">
                 <label for="mizu07">御歳暮</label>
-              </div>
+              </div> -->
               <div class="option_item">
                 <input id="mizu06" type="radio" name="mizuhiki_option" tesageAri="#5-10" tesageNashi="#5-11" value="その他">
                 <label for="mizu06">その他</label>
@@ -475,6 +485,11 @@ $(function() {
 <link rel="stylesheet" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/slick/slick.css">
 <script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/conversion.js"></script>
 <script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/slick/slick.min.js" charset="UTF-8"></script>
+<{if $sid_name == "upcoming"}>
+<script>
+$('body').addClass('fixed2');
+</script>
+<{/if}>
 <script>
 $('#relatedSlider').slick({
   accessibility: false,
