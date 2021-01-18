@@ -132,9 +132,9 @@
         </div><!-- pop_section -->
         <div class="pop_section">
           <div class="pop_subttl">キーワードから探す</div>
-          <div class="key_input">
+          <div id="searchSubmit" class="key_input">
             <input type="text" name="keyword" placeholder="キーワードを入れて検索">
-            <button id="searchSubmit" class="search_submit">検索</button>
+            <button class="search_submit">検索</button>
           </div>
         </div><!-- pop_section -->
       </div><!-- content_left -->

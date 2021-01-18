@@ -37,20 +37,19 @@
 					outline: 0;
 				}
 				@media screen and (max-width: 750px){
-					top:0px;
-					bottom:0;
-					right:5%;
-					width: 150px;
-    			height: 6vw;
-    			font-size: 14px;
-					background:{
-						size: 14px;
-					}
+					position: static;
+    			width: 100%;
+    			font-size: 16px;
+    			background-size: 14px;
+    			border: 0px solid #ddd;
+    			background-color: #f4f4f4;
+    			padding: 12px 10px;
+    			height: auto;
+    			background-position: center right 10px;
+    			margin-top: 15px;
 				}
 			}
 		}
-
-
 	}
 
 	.gift_section {
@@ -243,9 +242,8 @@
 			margin-bottom: 40px;
 			.section_ttl {
 				width: 100%;
-				padding: 20px 0;
+				padding: 20px 0 30px;
 				border-bottom: 1px solid #f2f2f2;
-				font{display: none;}
 				h2{
 					width: 84%;
 					margin: 0 auto;

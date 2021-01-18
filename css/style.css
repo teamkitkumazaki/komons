@@ -6410,7 +6410,7 @@ body.loaded #loading {
         font-size: 26px;
         letter-spacing: 1.2px;
         line-height: 1.4;
-        margin: 10px 0 0; }
+        margin: 4px 0 0; }
         .comp-item-group .item_list .txt_wrap .prod_name .en .ja {
           display: block;
           font-size: 20px;
@@ -6461,8 +6461,9 @@ body.loaded #loading {
           margin-bottom: 10px; }
           .comp-item-group .item_list.large .txt_wrap .prod_name .en {
             display: block;
-            font-size: 32px;
-            letter-spacing: 1.5px; }
+            font-size: 26px;
+            margin-top: 5px;
+            letter-spacing: 1.2px; }
         .comp-item-group .item_list.large .txt_wrap .price {
           display: block;
           text-align: center;
@@ -7793,13 +7794,16 @@ body.loaded #loading {
         outline: 0; }
       @media screen and (max-width: 750px) {
         #itemList .list_section .section_ttl #cat {
-          top: 0px;
-          bottom: 0;
-          right: 5%;
-          width: 150px;
-          height: 6vw;
-          font-size: 14px;
-          background-size: 14px; } }
+          position: static;
+          width: 100%;
+          font-size: 16px;
+          background-size: 14px;
+          border: 0px solid #ddd;
+          background-color: #f4f4f4;
+          padding: 12px 10px;
+          height: auto;
+          background-position: center right 10px;
+          margin-top: 15px; } }
 
 #itemList .gift_section {
   background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), color-stop(70%, #f6f6f6), color-stop(70%, #fff), to(#fff));
@@ -7959,10 +7963,8 @@ body.loaded #loading {
     margin-bottom: 40px; }
     #itemList .list_section .section_ttl {
       width: 100%;
-      padding: 20px 0;
+      padding: 20px 0 30px;
       border-bottom: 1px solid #f2f2f2; }
-      #itemList .list_section .section_ttl font {
-        display: none; }
       #itemList .list_section .section_ttl h2 {
         width: 84%;
         margin: 0 auto; }
@@ -8056,11 +8058,11 @@ body.loaded #loading {
   #itemDetail .main .sp_img {
     display: none; }
   #itemDetail .main.upcoimng {
-    /*background-color: #fbfbfb;*/
-    background-size: 500px;
+    background-color: #fbfbfb;
+    background-size: 550px;
     background-repeat: no-repeat;
     max-height: 400px;
-    margin-top: 120px; }
+    margin-top: 78px; }
     #itemDetail .main.upcoimng .fil {
       display: none; }
 

@@ -323,6 +323,26 @@ $(function() {
   if (document.getElementById('index')) {
 
   }
+  
+  // キーワード検索 ヘッダー
+  function keywordSearchControll2(target){
+    var wordInput = target.find('input[type="text"]');
+    var submitButton = target.find('button');
+    function init(){
+      submitButton.on({
+        'click': function() {
+          var searchWord = wordInput.val();
+          if(searchWord.length > 1 && searchWord != null){
+            location.href = 'https://www.komons-japan.com/?mode=srh&keyword=' + searchWord;
+          }
+        }
+      });
+    };
+
+    init();
+  }
+
+  keywordSearchControll2($('#searchSubmit'));
 
   // リード文の出力
   function readTxtMove(target) {
