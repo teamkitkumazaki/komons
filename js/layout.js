@@ -46,18 +46,18 @@ $(function() {
               $('.main_img').addClass('loaded');
               $('.main_logo').addClass('loaded');
               backGroundSlider($('#sliderBtn'));
-              setTimeout(function() {
+              /*setTimeout(function() {
                 if (document.getElementById('camPop')) {
                   popUpBanner($('#camPop'));
                 }
-              }, 1500);
+              }, 1500);*/
             }, 100);
           }, 1200);
 
         }, 1700);
       }
     })
-    
+
     img.attr('src', originSrc);
 
   }
@@ -198,7 +198,7 @@ $(function() {
 
   function humMenuToggle(target) {
     var humButton = target.find('a');
-    var closeBtn = $('#closeBtn');
+    var closeBtn = $('#humClose');
     var menuBg = $('#menuBg');
     var menuState = 0;
     var current_scrollY;
@@ -206,18 +206,18 @@ $(function() {
     function humMenuShift() {
       if (menuState == 0) {
         current_scrollY = $(window).scrollTop();
-        $('body').addClass('menu_open').css({
-          /*  position: 'fixed',*/
-          width: '100%',
-          /*top: -1 * current_scrollY*/
+        $('body').css({
+          position: 'fixed',
+          top: -1 * current_scrollY
         });
+        $('body').addClass('fixed');
+        $('#slideMenuNew').addClass('open');
         menuState = 1;
       } else {
-        $('body').removeClass('menu_open').attr({
-          style: ''
-        }).prop({
-          scrollTop: current_scrollY
-        });;
+        $('body').removeClass('fixed');
+        $('body').attr('style', '');
+        $('html, body').prop({scrollTop: current_scrollY});
+        $('#slideMenuNew').removeClass('open');
         menuState = 0;
       }
     }
@@ -323,6 +323,26 @@ $(function() {
   if (document.getElementById('index')) {
 
   }
+  
+  // キーワード検索 ヘッダー
+  function keywordSearchControll2(target){
+    var wordInput = target.find('input[type="text"]');
+    var submitButton = target.find('button');
+    function init(){
+      submitButton.on({
+        'click': function() {
+          var searchWord = wordInput.val();
+          if(searchWord.length > 1 && searchWord != null){
+            location.href = 'https://www.komons-japan.com/?mode=srh&keyword=' + searchWord;
+          }
+        }
+      });
+    };
+
+    init();
+  }
+
+  keywordSearchControll2($('#searchSubmit'));
 
   // リード文の出力
   function readTxtMove(target) {

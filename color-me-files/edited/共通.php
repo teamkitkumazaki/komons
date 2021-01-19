@@ -74,37 +74,128 @@
     </div>
   </div>
 </footer>
-<div id="slideMenu">
-  <div id="menuBg"></div>
-  <div class="menu_wrap">
-    <div id="closeBtn"><a href="javascript:void(0);"></a></div>
-    <div class="menu_inner">
-      <div class="hum_navi">
-        <ul>
-          <li><a href="<{$home_url}>"><span>Top</span>トップ</a></li>
-          <li><a href="/?tid=1&mode=f1"><span>Concept</span>Komonsについて</a></li>
-          <li><a href="/?mode=cate&csid=0&cbid=2421809"><span>Products</span>商品一覧</a></li>
-          <li><a href="/?mode=cate&cbid=2448903&csid=2"><span>Gift</span>ギフトセット</a></li>
-          <li><a href="https://journal.komons-japan.com/"><span>Journal</span>記事一覧</a></li>
-          <li><a href="https://journal.komons-japan.com/contact"><span>Contact</span>お問い合わせ</a></li>
-          <li><a href="/?mode=f2"><span>FAQ</span>よくある質問</a></li>
-        </ul>
-      </div>
-      <!-- hum_navi -->
-      <div class="menu_sns">
-        <ul>
-          <li><a href="https://www.facebook.com/komons.japan" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/fb_icon_baav5a.png"></a></li>
-          <li><a href="https://www.instagram.com/komons.jp/" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/ig_icon_lbrgzr.png"></a></li>
-          <li><a href="https://twitter.com/komons_jp" target="_blank"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/tw_icon_t4kisb.png"></a></li>
-        </ul>
-      </div>
-      <!-- menu_sns -->
-    </div>
-    <!-- menu_inner -->
-  </div>
-  <!-- menu_wrap -->
-</div>
-<!-- slideMenu -->
+<div id="slideMenuNew" class="comp-slide-menu">
+  <button id="humClose" class="hum_close"></button>
+  <div class="search_inner">
+    <div class="content">
+      <div class="content_left">
+        <div class="pop_ttl">
+          <span class="ttl_ja">商品を探す</span>
+          <span class="ttl_en">Search Items</span>
+        </div>
+        <div class="pop_section">
+          <div class="menu_item">
+            <a class="parent" href="https://www.komons-japan.com/?mode=cate&csid=0&cbid=2421809">
+              <span class="ja">商品一覧</span>
+            </a>
+            <div class="child">
+              <a href="https://www.komons-japan.com/?mode=cate&cbid=2421809&csid=10">ボトル商品</a>
+              <a href="https://www.komons-japan.com/?mode=cate&cbid=2421809&csid=11">レフィル商品</a>
+              <a href="https://www.komons-japan.com/?mode=cate&cbid=2421809&csid=12">レフィル&amp;ボトルセット</a>
+              <a href="https://www.komons-japan.com/?mode=cate&cbid=2421809&csid=9">UPCOMING商品</a>
+            </div>
+          </div>
+          <div class="menu_item">
+            <a class="parent" href="https://www.komons-japan.com/?mode=cate&cbid=2448903&csid=2">
+              <span class="ja">ギフト商品一覧</span>
+            </a>
+          </div>
+        </div><!-- pop_section -->
+        <div class="pop_section">
+          <div class="pop_subttl">カテゴリから探す</div>
+          <div class="category">
+            <a class="dish" href="https://www.komons-japan.com/?mode=grp&gid=2463431">
+              <span class="en">Dish Wash</span>
+              <span class="ja">食器用洗剤</span>
+            </a>
+            <a class="fabric" href="https://www.komons-japan.com/?mode=grp&gid=2463439">
+              <span class="en">Fabric Mist</span>
+              <span class="ja">除菌用消臭ミスト</span>
+            </a>
+            <a class="hand" href="https://www.komons-japan.com/?mode=grp&gid=2463435">
+              <span class="en">Hand Wash</span>
+              <span class="ja">ハンドソープ</span>
+            </a>
+            <a class="multi" href="https://www.komons-japan.com/?mode=grp&gid=2463438">
+              <span class="en">Multi Clener</span>
+              <span class="ja">マルチクリーナー</span>
+            </a>
+            <a class="bath" href="https://www.komons-japan.com/?mode=grp&gid=2463441">
+              <span class="en">Bath Cleaner</span>
+              <span class="ja">バスクリーナー</span>
+            </a>
+            <a class="toilet" href="https://www.komons-japan.com/?mode=grp&gid=2463440">
+              <span class="en">Toilet Cleaner</span>
+              <span class="ja">トイレクリーナー</span>
+            </a>
+          </div>
+        </div><!-- pop_section -->
+        <div class="pop_section">
+          <div class="pop_subttl">キーワードから探す</div>
+          <div id="searchSubmit" class="key_input">
+            <input type="text" name="keyword" placeholder="キーワードを入れて検索">
+            <button class="search_submit">検索</button>
+          </div>
+        </div><!-- pop_section -->
+      </div><!-- content_left -->
+      <div class="content_right">
+        <div class="pop_ttl">
+          <span class="ttl_ja">Komonsについて知る</span>
+          <span class="ttl_en">About Komons</span>
+        </div>
+        <div class="pop_section b_none">
+          <div class="menu_item">
+            <a class="parent" href="https://www.komons-japan.com/?tid=1&mode=f1">
+              <span class="ja">Komonsをつくるにあたって</span>
+            </a>
+          </div>
+          <div class="menu_item">
+            <a class="parent" href="https://www.komons-japan.com/?mode=f6">
+              <span class="ja">ギフトサービスについて</span>
+            </a>
+          </div>
+          <div class="menu_item">
+            <a class="parent" href="https://journal.komons-japan.com/">
+              <span class="ja">ジャーナル記事一覧</span>
+            </a>
+            <div class="child">
+              <a href="https://journal.komons-japan.com/?tag=7">#Fans &amp; Users</a>
+              <a href="https://journal.komons-japan.com/?tag=13">#イベント</a>
+              <a href="https://journal.komons-japan.com/?tag=14">#キャンペーン</a>
+              <a href="https://journal.komons-japan.com/?tag=9">#デザイン</a>
+              <a href="https://journal.komons-japan.com/?tag=10">#モノづくり</a>
+              <a href="https://journal.komons-japan.com/?tag=12">#原料</a>
+              <a href="https://journal.komons-japan.com/?tag=8">#成分</a>
+              <a href="https://journal.komons-japan.com/?tag=11">#香り</a>
+            </div>
+          </div>
+          <div class="menu_item">
+            <a class="parent" href="https://www.komons-japan.com/?mode=f2">
+              <span class="ja">お買い物ガイド</span>
+            </a>
+            <div class="child">
+              <a href="https://www.komons-japan.com/?tid=1&mode=f2#fqProduct">製品について</a>
+              <a href="https://www.komons-japan.com/?tid=1&mode=f2#fqPurchase">ご購入に際して</a>
+              <a href="https://www.komons-japan.com/?tid=1&mode=f2#fqGift">ギフトについて</a>
+              <a href="https://www.komons-japan.com/?tid=1&mode=f2#fqDelivery">配送について</a>
+              <a href="https://www.komons-japan.com/?mode=f2#fqCancel">キャンセルポリシー</a>
+            </div>
+          </div>
+          <div class="menu_item">
+            <a class="parent" href="https://journal.komons-japan.com/contact">
+              <span class="ja">お問い合わせ</span>
+            </a>
+          </div>
+        </div><!-- pop_section -->
+        <div class="sns_wrap">
+          <a class="tw" href="https://twitter.com/komons_jp" target="_blank"></a>
+          <a class="fb" href="https://www.facebook.com/komons.japan" target="_blank"></a>
+          <a class="ig" href="https://www.instagram.com/komons.jp/" target="_blank"></a>
+        </div>
+      </div><!-- content_right -->
+    </div><!-- content -->
+  </div><!-- search_inner -->
+</div><!-- slideMenu comp-slide-menu -->
 <!-- Twitter universal website tag code -->
 <script>
 !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);

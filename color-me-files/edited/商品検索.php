@@ -1,57 +1,94 @@
-<article id="itemList">
-  <section class="main"></section>
-  <section id="products" class="list_section">
-    <div class="section_ttl">
-      <h2><span>Products</span><font>Komonsの商品</font></h2>
-      <select name="cat" id="cat" class="postform">
-        <option class="option-1" value="?mode=srh">全ての商品</option>
-        <option class="option-1" value="?mode=cate&csid=0&cbid=2421809">通常商品</option>
-        <option class="option-1" value="?mode=cate&csid=0&cbid=2542796">詰め替え用商品</option>
-        <option class="option-1" value="?mode=cate&cbid=2421809&csid=9">Upcoming商品</option>
-      </select>
-    </div>
-    <div class="products">
-      <ul class="">
-        <{if $productlist_num !=0 }>
-          <{section name=num loop=$productlist}>
-            <li>
-              <span><{productlist[num].model}></span>
-              <h4 class="cat_ttl"><{$productlist[num].s_expl}></h4>
-              <div class="img_wrap">
-                <a href="<{$productlist[num].link_url}>"><img src="<{$productlist[num].img_url}>"></a>
+<article id="itemGroupList" class="page-item-group-list">
+  <section class="section-basic-item">
+    <div class="section_inner">
+      <div class="section_ttl search_ttl">
+        <h1><span>Item List</span><font>“<{$search_keyword}>”の検索結果</font></h1>
+        <div id="searchSubmit2" class="key_input">
+          <input type="text" name="keyword" placeholder="キーワードを入れて検索" value="<{$search_keyword}>">
+          <button class="search_submit">検索</button>
+        </div>
+      </div>
+      <div class="comp-item-group">
+        <{if $productlist_num != 0}>
+        <{section name=num loop=$productlist}>
+        <div class="item_list">
+          <div class="img_wrap">
+            <a href="<{$productlist[num].link_url}>" style="background-image: url(<{$productlist[num].img_url}>)"></a>
+          </div>
+          <div class="txt_wrap">
+            <a class="prod_name" href="<{$productlist[num].link_url}>">
+              <{if $productlist[num].option_price != null || $productlist[num].model == "K0026" || $productlist[num].model == 'K0050'}>
+              <span class="ja">ギフトセット</span>
+              <{else}>
+              <span class="ja"><{$productlist[num].s_expl}></span>
+              <{/if}>
+              <span class="en"><{$productlist[num].name}></span>
+            </a>
+            <span class="price"><{$productlist[num].regular_price}></span>
+            <div class="button_wrap">
+              <{if $productlist[num].option_price != null}>
+              <a class="full" href="<{$productlist[num].link_url}>"><span>詳細を見る</span></a>
+              <{else}>
+              <a href="<{$productlist[num].link_url}>"><span>詳細を見る</span></a>
+              <div class="comp-list-cart-button">
+                <script type="text/javascript" src="https://komons-japan.shop-pro.jp/?mode=cartjs&amp;pid=<{$productlist[num].id}>&amp;style=normal_gray&amp;name=n&amp;img=n&amp;expl=n&amp;stock=n&amp;price=n&amp;inq=n&amp;sk=n" charset="euc-jp"></script>
               </div>
-              <div class="txt_wrap">
-                <h3><a href="<{$productlist[num].link_url}>"><{$productlist[num].name}></a></h3>
-                <span class="product_detail">
-                  <span class="price"><{$productlist[num].price}></span>
-                <{if $productlist[num].soldout_flg == false}>
-                <span class="price">在庫切れ</span>
-                <{else}>
-                <{/if}>
-						</span>
-
-                <a class="arrow_link" href="<{$productlist[num].link_url}>"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
-              </div>
-            </li>
-            <{/section}>
-      </ul>
-      <{/if}>
-    </div>
+              <{/if}>
+            </div>
+            <p class="description">Free as a Birdの300mlボトルと500ml詰め替えパウチ（ボトル約1.7本分）の2点セット</p>
+          </div>
+        </div><!-- item_list -->
+        <{/section}>
+        <{else}>
+        <p class="no_entry">該当する商品がありません。</p>
+        <{/if}>
+      </div><!-- comp-item-group -->
+    </div><!-- section_inner -->
   </section>
-  <!-- list_section -->
-		  <section class="gift_section">
-				<div class="section_ttl">
-					<h2><span>Gift</span><font>贈り物セット一覧</font></h2>
-				</div>
-	    <div class="img_wrap">
-				 <a class="cover_link" href="https://www.komons-japan.com/?mode=f5">
-					 <span class="caret"></span>
-				 </a>
-	      <img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/gift_img.png">
-	      <div class="txt_block">
-	        <h3><span>Komons</span>のギフトセット</h3>
-	        <h4>大切な人への贈り物に。</h4>
-	      </div>
-	    </div>
-		</section>
+  <section id="sectionBack" class="section-back">
+  <div class="section_back">
+   <div class="comp-back-to-list">
+     <div class="item_wrap">
+       <a class="items" href="/?mode=cate&amp;csid=0&amp;cbid=2421809">
+         <span class="txt_wrap">
+           <span class="txt_en">Product List</span>
+           <span class="txt_ja">通常商品一覧</span>
+         </span>
+       </a>
+     </div>
+     <div class="item_wrap">
+       <a class="gifts" href="/?mode=f5">
+         <span class="txt_wrap">
+           <span class="txt_en">Gift Set</span>
+           <span class="txt_ja">ギフト商品一覧</span>
+         </span>
+       </a>
+     </div>
+   </div>
+ </div>
 </article>
+<script>
+$(function() {
+  $('body').addClass('fixed2');
+
+  function keywordSearchControll(target){
+    var wordInput = target.find('input[type="text"]');
+    var submitButton = target.find('button');
+    function init(){
+      submitButton.on({
+        'click': function() {
+          var searchWord = wordInput.val();
+          if(searchWord.length > 1 && searchWord != null){
+            location.href = 'https://www.komons-japan.com/?mode=srh&keyword=' + searchWord;
+          }
+        }
+      });
+    };
+
+    init();
+  }
+
+  keywordSearchControll($('#searchSubmit2'));
+
+});
+</script>

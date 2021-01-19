@@ -1,10 +1,12 @@
 <{if $sid_name != "gift"}>
-<!-- ############# 通常商品一覧 ############# -->
+<!-- ############# 通常商品一覧(カテゴリ別) ############# -->
+<{if $smarty.get.mode != "grp"}>
 <article id="itemList" class="page-item-list">
   <section class="main"></section>
   <section id="products" class="list_section">
     <div class="section_ttl">
-      <h2><span>Products</span><font>Komonsの商品</font></h2>
+      <{$category_desc_1}>
+      <{$subcategory_desc_1}>
 			<select name="cat" id="cat" class="postform">
 				<option class="option-1" value="?mode=cate&csid=0&cbid=2421809">全ての商品</option>
 				<option class="option-1" value="?mode=cate&cbid=2421809&csid=10">ボトル商品</option>
@@ -23,6 +25,9 @@
           </div>
           <div class="txt_wrap">
             <h3 class="prod_name">
+              <{if $productlist[num].teika_disp != true}>
+              <span class="ttl_ja"><{$productlist[num].s_expl}></span>
+              <{/if}>
               <{if $productlist[num].name|count_characters < 28}>
                 <a href="<{$productlist[num].link_url}>"><{$productlist[num].name}></a>
               <{else}>
@@ -41,7 +46,13 @@
             <{if $productlist[num].soldout_flg == false}>
             <script type='text/javascript' src='https://komons-japan.shop-pro.jp/?mode=cartjs&pid=<{$productlist[num].id}>&style=normal_gray&name=n&img=n&expl=n&stock=n&price=n&inq=n&sk=n' charset='euc-jp'></script>
             <{else}>
+            <{if $productlist[num].teika_disp == true}>
             <span class="soldout">在庫切れ</span>
+            <{else}>
+            <div class="comp-arrow-link">
+              <a href="<{$productlist[num].link_url}>"><span>詳細を見る</span></a>
+            </div>
+            <{/if}>
             <{/if}>
         </li>
         <{/section}>
@@ -64,6 +75,112 @@
 	    </div>
 		</section>
 </article>
+<{if $sid_name == "upcoming"}>
+<script>
+$(".comp-product-list").find('li').each(function() {
+  $(this).addClass('upcoming');
+});
+</script>
+<{/if}>
+<{else}>
+<!-- ############# 通常商品一覧(グループ別) ############# -->
+<article id="itemGroupList" class="page-item-group-list">
+  <section class="section-basic-item">
+    <div class="section_inner">
+      <{$group_desc_1}>
+    </div><!-- section_inner -->
+  </section>
+  <section class="section-set-product">
+    <div class="section_inner">
+      <div class="section_ttl">
+        <h2><span>Gift Set</span><font><{$group_desc_2}>を含むギフトセット</font></h2>
+      </div>
+      <div id="giftProductList" class="comp-gift-product-list">
+        <{if $productlist_num != 0}>
+        <{section name=num loop=$productlist}>
+        <{if $productlist[num].option_price != null}>
+        <div class="list_item" price="<{$productlist[num].teika|replace:'円(税抜)':''}>" recommend="2">
+          <a class="item_thumb" href="<{$productlist[num].link_url}>">
+            <span class="img_wrap" style="background-image:url(<{$productlist[num].img_url}>);">
+          </a>
+          <div class="txt_wrap">
+            <{if $productlist[num].name|count_characters < 28}>
+            <a class="name" href="<{$productlist[num].link_url}>"><{$productlist[num].name}><span><{$productlist[num].price}></span></a>
+            <{else}>
+              <{if $productlist[num].link_url != "?pid=155106601"}>
+              <a class="name small" href="<{$productlist[num].link_url}>"><{$productlist[num].name}><span><{$productlist[num].price}></span></a>
+              <{else}>
+              <a class="name small" href="<{$productlist[num].link_url}>">【ギフト】2020 AW "クロモジ"/ Free...<span><{$productlist[num].price}></span></a>
+              <{/if}>
+            <{/if}>
+          </div>
+          <p class="product_desc"><{$productlist[num].s_expl}></p>
+          <div class="content_icon"></div>
+          <div class="comp-list-cart-button related wide">
+           <a class="gift_detail_button" href="<{$productlist[num].link_url}>">
+            <span>詳細を見る</span>
+            </a>
+          </div>
+        </div><!-- list_item -->
+        <{/if}>
+        <{/section}>
+        <{else}>
+        <p class="no_entry">該当する商品がありません。</p>
+        <{/if}>
+      </div><!-- comp-gift-product-list -->
+    </div><!-- section_inner -->
+  </section>
+  <section id="sectionBack" class="section-back">
+  <div class="section_back">
+   <div class="comp-back-to-list">
+     <div class="item_wrap">
+       <a class="items" href="/?mode=cate&amp;csid=0&amp;cbid=2421809">
+         <span class="txt_wrap">
+           <span class="txt_en">Product List</span>
+           <span class="txt_ja">通常商品一覧</span>
+         </span>
+       </a>
+     </div>
+     <div class="item_wrap">
+       <a class="gifts" href="/?mode=f5">
+         <span class="txt_wrap">
+           <span class="txt_en">Gift Set</span>
+           <span class="txt_ja">ギフト商品一覧</span>
+         </span>
+       </a>
+     </div>
+   </div>
+ </div>
+</section>
+</article>
+ <script>
+ $(function() {
+   $('body').addClass('fixed2');
+
+   function giftCategoryDisplay(target){
+
+     function init(){
+       target.find(".list_item").each(function(index) {
+         $(this).attr('number', index);
+         var propBox = $(this).find('.product_type');
+         var contentIcon = $(this).find('.content_icon');
+         var propRecommend = propBox.attr('recommend');
+         $(this).attr('recommend', propRecommend);
+         var propType = propBox.attr('prop').split(',');
+         for (var i=0; i<propType.length; i++) {
+           contentIcon.append('<div class="icon"><span class="' + propType[i] + '"></span></div>');
+         }
+       });
+
+     }
+     init();
+   }
+
+   giftCategoryDisplay($('#giftProductList'));
+
+ });
+ </script>
+<{/if}>
 <script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/conversion.js"></script>
 <{else}>
 <!-- ############# ギフト商品一覧 ############# -->
