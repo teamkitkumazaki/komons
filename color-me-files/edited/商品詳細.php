@@ -24,7 +24,7 @@ $(function() {
   <section id="wrap01" class="cart_wrap01">
       <form id="cartIn" name="product_form" method="post" action="<{$cart_url}>">
     <div class="product_ex">
-      <{if $sid_name == "gift"}>
+      <{if $sid_name == "gift" || $sid_name == "preview"}>
         <h2 class="product_cat"><span class="en">Gift Set</span><span class="ja">ギフトセット</span></h2>
       <{else}>
         <h2 class="product_cat"><{$product.simple_explain}></h2>
@@ -66,7 +66,7 @@ $(function() {
         <span class="right_txt">合計：<{$product.price}></span>
       </div>
     </div>
-    <{if $sid_name == "gift" && $product.model != "K0026"}>
+    <{if $sid_name == "gift" || $sid_name == "preview"}>
     <div class="product_option_table">
       <{$option_table}>
     </div>
@@ -109,20 +109,7 @@ $(function() {
       <div class="cart_wrap">
         <div class="comp-flex-cart no_flex">
           <div class="cart_box">
-            <{if $sid_name != "gift" || $product.model == "K0026"}>
-            <div class="cart_item">
-              <span class="button_wrap">
-                <span class="title cart_in">購入する</span>
-                <{if $product.price|replace:',':'' < 5000}>
-                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
-                <{else}>
-                <span class="sub_text">送料無料で配送致します</span>
-                <{/if}>
-                </span>
-              <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
-              <{$product.info}>
-            </div>
-            <{else}>
+            <{if $sid_name == "gift" || $sid_name == "preview" || $product.model == "K0026" || $product.model == "K0050"}>
             <div class="cart_item">
               <a id="optionSelect" href="javascript:void(0);" class="button_wrap option_select">
                 <span class="title cart_in">オプションを選択して購入</span>
@@ -135,6 +122,19 @@ $(function() {
               </a>
               <p class="cart_desc">※ギフトオプションに関する詳細は<a href="/?tid=1&mode=f6">こちら</a></p>
             </div>
+            <{else}>
+            <div class="cart_item">
+              <span class="button_wrap">
+                <span class="title cart_in">購入する</span>
+                <{if $product.price|replace:',':'' < 5000}>
+                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+                <{else}>
+                <span class="sub_text">送料無料で配送致します</span>
+                <{/if}>
+                </span>
+              <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
+              <{$product.info}>
+            </div>
               <{/if}>
           </div>
           <!-- cart_box -->
@@ -142,7 +142,7 @@ $(function() {
       <{/if}>
       <{else}>
       <div class="cart_wrap">
-        <{if $product.model == 'K0038' || $product.model == 'K0037' || $product.model == 'K0026' || $product.model == 'K0009'}>
+        <{if $product.model == 'K0038' || $product.model == 'K0037' || $product.model == 'K0026' || $product.model == 'K0050'}>
         <div class="comp-waiting-button">
           <a href="https://journal.komons-japan.com/waiting-list/<{$product.model}>">
             <span class="title">再入荷リクエスト</span>
@@ -167,7 +167,7 @@ $(function() {
   </div>
   <div class="txt_wrap">
       <form name="product_form" method="post" action="<{$cart_url}>">
-        <{if $sid_name == "gift"}>
+        <{if $sid_name == "gift" || $sid_name == "preview" || $product.model == "K0026" || $product.model == "K0050"}>
           <h3><span>Gift Set</span>ギフトセット</h3>
         <{else}>
           <h3><{$product.simple_explain}></h3>
@@ -225,19 +225,7 @@ $(function() {
       <div class="cart_wrap">
         <div class="comp-flex-cart no_flex">
           <div class="cart_box">
-            <{if $sid_name != "gift" || $product.model == "K0026"}>
-            <div class="cart_item">
-              <span class="button_wrap">
-                <span class="title cart_in">購入する</span>
-                <{if $product.price|replace:',':'' < 5000}>
-                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
-                <{else}>
-                <span class="sub_text">送料無料で配送致します</span>
-                <{/if}>
-              </span>
-              <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
-            </div><!-- cart_item -->
-            <{else}>
+            <{if $sid_name == "gift" || $sid_name == "preview" || $product.model == "K0026" || $product.model == "K0050"}>
             <div class="cart_item">
               <a id="optionSelect02" href="javascript:void(0);" class="button_wrap option_select">
                 <span class="title cart_in">オプションを選択して購入</span>
@@ -249,6 +237,18 @@ $(function() {
               </a>
               <p class="cart_desc">※ギフトオプションに関する詳細は<a href="/?tid=1&mode=f6">こちら</a></p>
             </div>
+            <{else}>
+            <div class="cart_item">
+              <span class="button_wrap">
+                <span class="title cart_in">購入する</span>
+                <{if $product.price|replace:',':'' < 5000}>
+                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+                <{else}>
+                <span class="sub_text">送料無料で配送致します</span>
+                <{/if}>
+              </span>
+              <input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
+            </div><!-- cart_item -->
             <{/if}>
           </div>
           <!-- cart_box -->
@@ -351,7 +351,7 @@ $(function() {
    </div><!-- section_back -->
  </section>
 </article>
-<{if $sid_name == "onsale" || $sid_name == "refill" || $sid_name == "bottle-refill" || $sid_name == "preview" || $product.model == "K0026" || $product.model == "K0049"}>
+<{if $sid_name == "bottle" || $sid_name == "refill" || $sid_name == "bottle-refill" || $product.model == "K0026" || $product.model == "K0049"}>
 <div id="fixedCartWrap" class="comp-fixed-cart-wrap">
   <div class="cart_inner">
     <div class="img_thumb">
@@ -368,7 +368,7 @@ $(function() {
   </div>
 </div>
 <{/if}>
-<{if $sid_name == "gift" && $product.model != "K0026" && $product.model != "K0049"}>
+<{if $sid_name == "gift" || $sid_name == "preview" || $product.model == "K0026" || $product.model == "K0050"}>
 <div id="fixedCartWrap" class="comp-fixed-cart-wrap">
   <div class="cart_inner">
     <div class="img_thumb">
@@ -427,48 +427,9 @@ $(function() {
               </div>
             </label>
             <p class="mizuhiki_desc">※水引の種類は、どのシーンのお祝い事にもお使いいただける「紅白梅結び」になります。</p>
+            <p class="mizuhiki_desc">※熨斗に「表書き（御祝/内祝/御結婚祝など）」「お名前」の印字をご希望のお客様は、購入手続き画面最下部の「備考欄」にその内容をご記入ください。ご記入のない場合は、「無地熨斗」にて対応させていただきます。</p>
           </div>
         </div><!-- option_select -->
-        <div class="mizuhiki">
-          <div class="mizuhiki_inner">
-            <p class="pop_subtitle">熨斗の表書き</p>
-            <div class="mizuhiki_option">
-              <div class="option_item">
-                <input id="mizu01" type="radio" name="mizuhiki_option" tesageAri="#0-0" tesageNashi="#0-1" value="表書き無し">
-                <label for="mizu01">無地(表書きなし)</label>
-              </div>
-              <div class="option_item">
-                <input id="mizu02" type="radio" name="mizuhiki_option" tesageAri="#1-2" tesageNashi="#1-3" value="御祝">
-                <label for="mizu02">御祝</label>
-              </div>
-              <div class="option_item">
-                <input id="mizu03" type="radio" name="mizuhiki_option" tesageAri="#2-4" tesageNashi="#2-5" value="内祝">
-                <label for="mizu03">内祝</label>
-              </div>
-              <div class="option_item">
-                <input id="mizu04" type="radio" name="mizuhiki_option" tesageAri="#3-6" tesageNashi="#3-7" value="御結婚祝">
-                <label for="mizu04">御結婚祝</label>
-              </div>
-              <div class="option_item">
-                <input id="mizu05" type="radio" name="mizuhiki_option" tesageAri="#4-8" tesageNashi="#4-9" value="御礼">
-                <label for="mizu05">御礼</label>
-              </div>
-              <!--<div class="option_item">
-                <input id="mizu07" type="radio" checked name="mizuhiki_option" tesageAri="#7-14" tesageNashi="#7-15" value="御歳暮">
-                <label for="mizu07">御歳暮</label>
-              </div> -->
-              <div class="option_item">
-                <input id="mizu06" type="radio" name="mizuhiki_option" tesageAri="#5-10" tesageNashi="#5-11" value="その他">
-                <label for="mizu06">その他</label>
-              </div>
-              <div class="option_item" style="display: none;">
-                <input id="mizu00" type="radio" checked name="mizuhiki_option" tesageAri="#6-12" tesageNashi="#6-13" value="無し">
-                <label for="mizu00">無し</label>
-              </div>
-            </div><!-- mizuhiki_option -->
-            <p class="mizuhiki_desc">※「その他」を選択した方は、表書きの内容を購入手続き画面の記入欄にご記入ください。ご記入のない場合は無地熨斗にて対応させていただきます。</p>
-          </div>
-        </div><!-- mizuhiki -->
       </div>
       <div class="fix_wrapper">
         <div class="option_fix">

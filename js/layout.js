@@ -862,20 +862,21 @@ $(function() {
     var optionFix = $('#optionFix');
     var tesageState = $("input[name='tesage']");
     var muzihikiState = $('input[name="mizuhiki"]');
-    var mizuhikiOptionState = $("input[name='mizuhiki_option']");
     var tesageDisplay = $('#tesageDisplay');
     var mizuhikiDisplay = $('#mizuhikiDisplay');
 
     function optionShifter(){
       var tesageCheck = $("input[name='tesage']:checked").val();
-      var mizuhikiCheck = $("input[name='mizuhiki_option']:checked");
-      if(tesageCheck == 'tesage'){
-        var checkedValue = mizuhikiCheck.attr('tesageAri');
-      }else{
-        var checkedValue = mizuhikiCheck.attr('tesageNashi');
+      var mizuhikiCheck = $("input[name='mizuhiki']:checked").val();
+      if(tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki'){
+        $('#0-3').click();
+      }else if(tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki'){
+        $('#0-1').click();
+      }else if(tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        $('#0-2').click();
+      }else if(tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        $('#0-0').click();
       }
-      $(checkedValue).click();
-      mizuhikiDisplay.text(mizuhikiCheck.val());
     }
 
     function optionPopOpen(){
@@ -896,22 +897,18 @@ $(function() {
     }
 
     function displayMizuhikiOption(){
-      var state = $('input[name="mizuhiki"]:checked').val();
+      var state = $('input[name="tesage"]:checked').val();
       var contentsHeight = mizuhiki.find('.mizuhiki_inner').outerHeight();
-      if(state == 'mizuhiki'){
-        mizuhiki.addClass('active');
-        /*mizuhiki.css({'height': contentsHeight});*/
-        $("input[name='mizuhiki_option']").val(["表書き無し"]);
+      if(state == 'tesage'){
+        $('#0-3').click();
       }else{
-        mizuhiki.removeClass('active');
-        /*mizuhiki.css({'height': 0 + 'px'});*/
-        $("input[name='mizuhiki_option']").val(["無し"]);
+        $('#0-2').click();
       }
     }
 
     function init(){
 
-      $('#6-13').click();
+      $('#0-0').click();
 
       optionPopClose();
 
@@ -953,12 +950,11 @@ $(function() {
 
       muzihikiState.on({
         'click': function(){
-          displayMizuhikiOption();
           optionShifter();
         }
       });
 
-      mizuhikiOptionState.on({
+      tesageState.on({
         'click': function(){
           optionShifter();
         }
