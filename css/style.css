@@ -8003,6 +8003,9 @@ body.loaded #loading {
         #itemList .gift_section .img_wrap .txt_block h4 {
           font-size: 3.2vw; } }
 
+#itemDetail #leadTxt {
+  display: none; }
+
 #itemDetail .detail_ttl {
   max-width: 1080px;
   margin-left: auto;
@@ -8117,6 +8120,11 @@ body.loaded #loading {
       line-height: 1;
       margin-bottom: 30px;
       position: relative; }
+      #itemDetail .cart_wrap01 .product_ex .prodcut_name .added {
+        font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+        display: block;
+        font-size: 20px;
+        margin-top: 20px; }
       #itemDetail .cart_wrap01 .product_ex .prodcut_name::after {
         display: block;
         content: "";
@@ -8684,6 +8692,10 @@ body.loaded #loading {
       line-height: 1.5;
       letter-spacing: 2px;
       margin-bottom: 25px; }
+      #itemDetail .cart_wrap02 .txt_wrap h2 .added {
+        font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+        display: block;
+        font-size: 18px; }
     #itemDetail .cart_wrap02 .txt_wrap .product_detail {
       margin: 0 auto 20px; }
       #itemDetail .cart_wrap02 .txt_wrap .product_detail .detail_block {
@@ -8911,6 +8923,10 @@ body.loaded #loading {
         font-size: 22px; }
       #itemDetail .cart_wrap01 .product_ex .prodcut_name {
         font-size: 35px; }
+        #itemDetail .cart_wrap01 .product_ex .prodcut_name .added {
+          display: block;
+          font-size: 16px;
+          margin-top: 20px; }
       #itemDetail .cart_wrap01 .product_ex p {
         font-size: 15px; }
     #itemDetail .cart_wrap01 .product_detail {
@@ -9157,11 +9173,15 @@ body.loaded #loading {
         font-size: 6vw;
         letter-spacing: 0.05em;
         line-height: 1.5;
-        padding-bottom: 5px;
-        margin-bottom: 20px; }
+        padding-bottom: 30px;
+        margin-bottom: 30px; }
+        #itemDetail .cart_wrap01 .product_ex .prodcut_name .added {
+          font-size: 3.5vw;
+          margin-top: 5px; }
         #itemDetail .cart_wrap01 .product_ex .prodcut_name::after {
           width: 100%;
-          height: 1px; }
+          height: 1px;
+          background: #ddd; }
       #itemDetail .cart_wrap01 .product_ex .upcoming_tag {
         width: auto;
         display: inline-block;
@@ -9377,15 +9397,18 @@ body.loaded #loading {
       width: 100%;
       margin-top: 20px; }
       #itemDetail .cart_wrap02 .txt_wrap h3 {
-        font-size: 4vw;
-        margin-bottom: 15px; }
+        font-size: 3.5vw;
+        margin-bottom: 10px; }
       #itemDetail .cart_wrap02 .txt_wrap h2 {
-        font-size: 5.5vw;
+        font-size: 6vw;
         line-height: 1.5;
         letter-spacing: 0.02em;
         margin-bottom: 10px; }
+        #itemDetail .cart_wrap02 .txt_wrap h2 .added {
+          font-size: 3.5vw;
+          margin-top: 5px; }
       #itemDetail .cart_wrap02 .txt_wrap .product_detail {
-        margin: 0 auto 20px; }
+        margin: 30px auto 20px; }
         #itemDetail .cart_wrap02 .txt_wrap .product_detail .detail_block {
           position: relative; }
           #itemDetail .cart_wrap02 .txt_wrap .product_detail .detail_block .right_txt {

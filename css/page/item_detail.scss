@@ -1,6 +1,7 @@
-@charset "UTF-8";
-
 #itemDetail {
+	#leadTxt{
+		display: none;
+	}
 	.detail_ttl {
 		@include waku;
 
@@ -117,6 +118,13 @@
 				line-height: 1;
 				margin-bottom: 30px;
 				position: relative;
+
+				.added{
+					font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+					display: block;
+					font-size: 20px;
+					margin-top: 20px;
+				}
 
 				&::after {
 					display: block;
@@ -724,6 +732,11 @@
 				line-height: 1.5;
 				letter-spacing: 2px;
 				margin-bottom: 25px;
+				.added{
+					font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+					display: block;
+					font-size: 18px;
+				}
 			}
 
 			.product_detail {
@@ -976,6 +989,11 @@
 
 				.prodcut_name {
 					font-size: 35px;
+					.added{
+						display: block;
+						font-size: 16px;
+						margin-top: 20px;
+					}
 				}
 
 				p {
@@ -1290,12 +1308,16 @@
 					font-size: 6vw;
 					letter-spacing: 0.05em;
 					line-height: 1.5;
-					padding-bottom: 5px;
-					margin-bottom: 20px;
-
+					padding-bottom: 30px;
+					margin-bottom: 30px;
+					.added{
+						font-size: 3.5vw;
+						margin-top: 5px;
+					}
 					&::after {
 						width: 100%;
 						height: 1px;
+						background: #ddd;
 					}
 				}
 
@@ -1619,19 +1641,23 @@
 				margin-top: 20px;
 
 				h3 {
-					font-size: 4vw;
-					margin-bottom: 15px;
-				}
-
-				h2 {
-					font-size: 5.5vw;
-					line-height: 1.5;
-					letter-spacing: 0.02em;
+					font-size: 3.5vw;
 					margin-bottom: 10px;
 				}
 
+				h2 {
+					font-size: 6vw;
+					line-height: 1.5;
+					letter-spacing: 0.02em;
+					margin-bottom: 10px;
+					.added{
+						font-size: 3.5vw;
+						margin-top: 5px;
+					}
+				}
+
 				.product_detail {
-					margin: 0 auto 20px;
+					margin: 30px auto 20px;
 
 					.detail_block {
 						position: relative;
