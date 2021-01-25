@@ -66,7 +66,7 @@ $(function() {
         <span class="right_txt">合計：<{$product.price}></span>
       </div>
     </div>
-    <{if $sid_name == "gift" || $sid_name == "preview"}>
+    <{if $sid_name == "gift"}>
     <div class="product_option_table">
       <{$option_table}>
     </div>
