@@ -92,6 +92,7 @@ $(function() {
             </div>
           </div><!-- cart_box -->
           <div class="cart_box">
+            <{if $productlist[num].soldout_flg == false}>
             <div id="subscriptionButton" class="cart_item">
               <span class="button_wrap">
                 <span class="title subscription">定期購入する</span>
@@ -102,6 +103,15 @@ $(function() {
             <div class="about_subscription">
               <a href="/?mode=f2#fqSubscription"><span>定期購入に関するFAQはこちら</span></a>
             </div>
+            <{else}>
+            <div class="comp-waiting-button">
+              <a href="https://journal.komons-japan.com/waiting-list/register">
+                <span class="title">再入荷リクエスト</span>
+                <span class="desc">販売再開をメールでお知らせいたします</span>
+              </a>
+              <span class="notice_txt" style="font-size: 14px; letter-spacing: 0.5px; margin-top: 10px; display: block;">※2月中～下旬に販売再開予定</span>
+            </div>
+            <{/if}>
           </div><!-- cart_box -->
         </div><!-- comp-flex-cart -->
       </div>
@@ -150,7 +160,13 @@ $(function() {
           </a>
         </div>
         <{else}>
-          <span class="sold_out">在庫切れ</span>
+        <div class="comp-waiting-button">
+          <a href="https://journal.komons-japan.com/waiting-list/register">
+            <span class="title">再入荷リクエスト</span>
+            <span class="desc">販売再開をメールでお知らせいたします</span>
+          </a>
+          <span class="notice_txt" style="font-size: 14px; letter-spacing: 0.5px; margin-top: 10px; display: block;">※2月中～下旬に販売再開予定</span>
+        </div>
         <{/if}>
       </div>
       <{/if}>

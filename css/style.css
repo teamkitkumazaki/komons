@@ -5250,8 +5250,7 @@ body.loaded #loading {
   margin-bottom: 40px;
 }
 .comp-article-quote .quote_ttl {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 22px;
   letter-spacing: 0.7px;
   margin-bottom: 10px;
 }
@@ -5265,7 +5264,6 @@ body.loaded #loading {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px dotted #acacac;
@@ -5276,15 +5274,33 @@ body.loaded #loading {
   border-bottom: 0px;
 }
 .comp-article-quote .quote_item .ttl {
-  width: 160px;
+  width: 120px;
   font-size: 14px;
   letter-spacing: 0.5px;
 }
 .comp-article-quote .quote_item .content {
-  width: calc(100% - 160px);
+  width: calc(100% - 120px);
   font-size: 14px;
   letter-spacing: 0.5px;
   line-height: 1.6;
+}
+.comp-article-quote .quote_item .content .list {
+  display: block;
+  position: relative;
+  padding-left: 12px;
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+.comp-article-quote .quote_item .content .list::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #00381f;
 }
 
 @media screen and (max-width: 760px) {
@@ -5292,7 +5308,7 @@ body.loaded #loading {
     width: 100vw;
     margin: 0 -8vw;
     box-sizing: border-box;
-    padding: 25px 8vw 30px;
+    padding: 40px 8vw 30px;
     margin-bottom: 40px;
   }
   .comp-article-quote .quote_ttl {
@@ -5813,9 +5829,17 @@ body.loaded #loading {
   letter-spacing: 0.5px;
 }
 .comp-article-related-item .related_item .txt_wrap .price {
-  font-size: 14px;
+  margin-top: 10px;
+  display: block;
+  line-height: 1.6;
+  font-size: 12px;
   letter-spacing: 0, 5px;
   color: #646464;
+}
+.comp-article-related-item .related_item .txt_wrap .price .title {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
 }
 .comp-article-related-item .related_item .txt_wrap .button_wrap {
   margin-top: 10px;

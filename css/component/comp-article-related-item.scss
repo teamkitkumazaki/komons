@@ -45,9 +45,17 @@
         }
       }
       .price{
-        font-size: 14px;
+        margin-top: 10px;
+        display: block;
+        line-height: 1.6;
+        font-size: 12px;
         letter-spacing: 0,5px;
         color: #646464;
+        .title{
+          font-size: 14px;
+          display: block;
+          margin-bottom: 5px;
+        }
       }
       .button_wrap{
         margin-top: 10px;

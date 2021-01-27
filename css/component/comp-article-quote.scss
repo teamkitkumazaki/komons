@@ -4,8 +4,7 @@
   background: #f4f4f4;
   margin-bottom: 40px;
   .quote_ttl{
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 22px;
     letter-spacing: 0.7px;
     margin-bottom: 10px;
   }
@@ -17,7 +16,6 @@
   }
   .quote_item{
     @include flexSet;
-    align-items: center;
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px dotted #acacac;
@@ -27,15 +25,33 @@
       border-bottom: 0px;
     }
     .ttl{
-      width: 160px;
+      width: 120px;
       font-size: 14px;
       letter-spacing: 0.5px;
     }
     .content{
-      width: calc(100% - 160px);
+      width: calc(100% - 120px);
       font-size: 14px;
       letter-spacing: 0.5px;
       line-height: 1.6;
+      .list{
+        display: block;
+        position: relative;
+        padding-left: 12px;
+        line-height: 1.6;
+        margin-bottom: 5px;
+        &::before{
+          display: block;
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 0;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: #00381f;
+        }
+      }
     }
   }
 }
@@ -45,7 +61,7 @@
     width: 100vw;
     margin: 0 -8vw;
     box-sizing: border-box;
-    padding: 25px 8vw 30px;
+    padding: 40px 8vw 30px;
     margin-bottom: 40px;
     .quote_ttl{
       text-align: center;

@@ -233,9 +233,17 @@ $(".comp-product-list").find('li').each(function() {
     <div id="giftProductList" class="comp-gift-product-list">
       <{section name=num loop=$productlist}>
       <div class="list_item" price="<{$productlist[num].teika|replace:'円(税抜)':''}>" recommend="2">
+        <{if $productlist[num].soldout_flg == false}>
+        <!-- 販売中の場合 -->
         <a class="item_thumb" href="<{$productlist[num].link_url}>">
           <span class="img_wrap" style="background-image:url(<{$productlist[num].img_url}>);">
         </a>
+        <{else}>
+        <!-- 売り切れの場合 -->
+        <a class="item_thumb soldout" href="<{$productlist[num].link_url}>">
+          <span class="img_wrap" style="background-image:url(<{$productlist[num].img_url}>);">
+        </a>
+        <{/if}>
         <div class="txt_wrap">
           <{if $productlist[num].name|count_characters < 28}>
           <a class="name" href="<{$productlist[num].link_url}>"><{$productlist[num].name}><span><{$productlist[num].price}></span></a>
