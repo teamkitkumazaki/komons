@@ -13737,6 +13737,9 @@ body.loaded #loading {
 #waitingList {
   padding-bottom: 120px;
 }
+#waitingList input[type=submit] {
+  padding: 15px 0 !important;
+}
 #waitingList .inner {
   max-width: 1080px;
   margin-left: auto;
