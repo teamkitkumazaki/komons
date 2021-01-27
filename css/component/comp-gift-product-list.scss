@@ -42,6 +42,22 @@
           opacity: 1;
         }
       }
+      &.soldout{
+        &::after{
+          content: "SOLD OUT";
+          color: #fff;
+          @include libre-r;
+          text-align: center;
+          line-height: 220px;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          font-size: 20px;
+          letter-spacing: 2px;
+          background-image: none;
+          opacity: 1;
+        }
+      }
     }
     .txt_wrap{
       .name{
@@ -219,6 +235,11 @@
           @include bgSet;
           background-size: cover;
         }
+        &.soldout{
+          &::after{
+            line-height: 27vw;
+          }
+        }
       }
     }
   }
@@ -255,6 +276,14 @@
         &:hover{
           &::after{
             opacity: 1;
+          }
+        }
+        &.soldout{
+          &::after{
+            display: block;
+            line-height: 28vw;
+            font-size: 14px;
+            letter-spacing: 1.5px;
           }
         }
       }

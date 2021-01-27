@@ -1,0 +1,84 @@
+.cam-lead{
+  display: block;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  padding: 20px 0;
+  text-align: center;
+  background: #f8f8f8;
+}
+.cam-note{
+  max-width: 700px;
+  margin: 30px auto 0;
+  background: #f8f8f8;
+  padding: 25px;
+  box-sizing: border-box;
+  .cam-note-title{
+    display: block;
+    font-size: 18px;
+    letter-spacing: 0.7px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .cam-note-item{
+    display: block;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    line-height: 2;
+    padding-left: 12px;
+    &::before{
+      display: block;
+      content: "";
+      position: absolute;
+      top: 12px;
+      left:0;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #00381f;
+    }
+  }
+  &.lower{
+    max-width: 100%;
+    width: 100%;
+    .cam-note-title{
+      text-align: left;
+    }
+  }
+}
+
+@media screen and (max-width: 740px){
+  .cam-lead{
+    padding: 15px 0;
+    .cam-name{
+      display: block;
+      margin-bottom: 10px;
+    }
+    .cam-term{
+      font-size: 14px;
+    }
+  }
+  .cam-note{
+    margin: 20px auto 0;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    .cam-note-title{
+      font-size: 16px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .cam-note-item{
+      font-size: 13px;
+      padding-left: 12px;
+      &::before{
+        top: 12px;
+      }
+    }
+    &.lower{
+      margin-bottom: 120px;
+      .cam-note-title{
+        text-align: center;
+      }
+    }
+  }
+}

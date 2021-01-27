@@ -9,6 +9,12 @@
     letter-spacing: 0.7px;
     margin-bottom: 10px;
   }
+  .quote_desc{
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+  }
   .quote_item{
     @include flexSet;
     align-items: center;
