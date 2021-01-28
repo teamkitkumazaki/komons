@@ -38,7 +38,11 @@
               <{if $productlist[num].teika_disp == true}>
 							<span class="price"><{$productlist[num].price}></span>
               <{else}>
+              <{if $sid_name != "upcoming"}>
               <span class="price">未定</span>
+              <{else}>
+              <span class="price"><{$productlist[num].s_expl}></span>
+              <{/if}>
               <{/if}>
 						</span>
           </div>
