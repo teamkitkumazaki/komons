@@ -13785,6 +13785,9 @@ body.loaded #loading {
   letter-spacing: 1px;
   line-height: 1.6;
 }
+#waitingList .description p span {
+  display: block;
+}
 #waitingList .comp-linkbutton {
   margin: 40px auto 0;
 }
@@ -13812,6 +13815,9 @@ body.loaded #loading {
   }
   #waitingList .description p {
     text-align: left;
+  }
+  #waitingList .description p span {
+    display: inline;
   }
   #waitingList .comp-linkbutton {
     margin: 25px auto 0;

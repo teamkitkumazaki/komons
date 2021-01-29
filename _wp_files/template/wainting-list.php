@@ -28,7 +28,7 @@
 		</div>
 		<div class="description">
 			<h2 class="title">販売開始情報を受け取る</h2>
-			<p>下記よりメールアドレスをご登録頂くと、<?php the_title();?>の商品リリース・再販開始に関する情報をお受け取り頂けます。</p>
+			<p>下記よりメールアドレスをご登録頂くと、<span><?php the_title();?>の商品リリース・再販開始に関する情報をお受け取り頂けます。</span></p>
 		</div>
 		<?php the_content(); ?>
 	</div>
