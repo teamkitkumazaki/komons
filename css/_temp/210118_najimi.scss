@@ -4,7 +4,8 @@
   letter-spacing: 0.5px;
   padding: 20px 0;
   text-align: center;
-  background: #f8f8f8;
+  background: #00381f;
+  color: #fff;
 }
 .cam-note{
   max-width: 700px;
@@ -38,11 +39,29 @@
       background: #00381f;
     }
   }
+  .cam-comment-method{
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    .method_ttl{
+      display: block;
+      font-size: 16px;
+      letter-spacing: 0.7px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
   &.lower{
-    max-width: 100%;
     width: 100%;
+    max-width: 800px;
+    padding: 25px;
     .cam-note-title{
-      text-align: left;
+      text-align: center;
+    }
+    .cam-comment-method{
+      .method_ttl{
+        text-align: center;
+      }
     }
   }
 }
@@ -73,6 +92,9 @@
       &::before{
         top: 12px;
       }
+    }
+    .cam-comment-method{
+        padding: 20px 15px;
     }
     &.lower{
       margin-bottom: 120px;

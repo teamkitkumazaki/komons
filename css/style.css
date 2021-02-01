@@ -5783,6 +5783,20 @@ body.loaded #loading {
   margin: 50px 0 !important;
   font-size: 24px !important;
 }
+.comp-article-related-item .ttl_link_button {
+  display: block;
+  text-align: center;
+  margin: 50px 0 !important;
+  font-size: 18px !important;
+  color: #111111 !important;
+  border: 1px solid #ddd;
+  padding: 12px 0;
+  background-color: #fff;
+  transition: background-color 0.3s !important;
+}
+.comp-article-related-item .ttl_link_button:hover {
+  background-color: #ddd;
+}
 .comp-article-related-item .related_item {
   display: flex;
   flex-wrap: wrap;
@@ -5901,6 +5915,9 @@ body.loaded #loading {
   .comp-article-related-item .related_ttl {
     margin: 50px 0 !important;
     font-size: 20px !important;
+  }
+  .comp-article-related-item .ttl_link_button {
+    margin: 50px 0 30px !important;
   }
   .comp-article-related-item .related_item {
     display: block;
