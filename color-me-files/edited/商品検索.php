@@ -11,6 +11,7 @@
       <div class="comp-item-group">
         <{if $productlist_num != 0}>
         <{section name=num loop=$productlist}>
+        <{if $productlist[num].model != "K0053-01"}>
         <div class="item_list">
           <div class="img_wrap">
             <a href="<{$productlist[num].link_url}>" style="background-image: url(<{$productlist[num].img_url}>)"></a>
@@ -38,6 +39,7 @@
             <p class="description">Free as a Birdの300mlボトルと500ml詰め替えパウチ（ボトル約1.7本分）の2点セット</p>
           </div>
         </div><!-- item_list -->
+        <{/if}>
         <{/section}>
         <{else}>
         <p class="no_entry">該当する商品がありません。</p>

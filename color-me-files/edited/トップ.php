@@ -75,20 +75,20 @@
   <div class="comp-pickup-items">
     <div class="pickup_item">
       <div class="img_wrap">
-        <a href="/?pid=134416035"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1601276406/index/200928_pickup_img01_xriarx.jpg"></a>
+        <a href="/?pid=134416250"><img src="https://img07.shop-pro.jp/PA01416/697/product/134416250_o2.jpg?cmsp_timestamp=20200710154136"></a>
       </div>
       <div class="txt_wrap">
         <div class="prod_detail">
           <h3 class="cat_ttl"><span>Gift Set</span>ギフトセット</h3>
-          <a class="prod_name" href="/?pid=134416035">ハンドケアコンビ</a>
-          <span class="price">4,600円(税抜)</span>
+          <a class="prod_name" href="/?pid=134416250">エントリーコンビ</a>
+          <span class="price">5,000円(税抜)</span>
         </div>
-        <a class="arrow_link" href="/?pid=134416035"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
+        <a class="arrow_link" href="/?pid=134416250"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
       </div><!-- txt_wrap -->
     </div><!-- pickup_item -->
     <div class="pickup_item">
       <div class="img_wrap">
-        <a href="/?pid=139975276"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1601276406/index/200928_pickup_img02_x2njzs.jpg"></a>
+        <a href="/?pid=139975276"><img src="https://img07.shop-pro.jp/PA01416/697/product/139975276_o2.jpg?cmsp_timestamp=20190212131113"></a>
       </div>
       <div class="txt_wrap">
         <div class="prod_detail">
