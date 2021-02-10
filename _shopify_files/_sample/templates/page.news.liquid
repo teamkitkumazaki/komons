@@ -1,0 +1,45 @@
+<article id="blogArchive" class="page-blog-archive">
+  <section class="section-transaction comp-underpage-section">
+    <div class="section_inner">
+      <div class="comp-section-title no_line">
+        <span class="title_en"><ls-static-34411>BLOG&NEWS</ls-static-34411></span>
+        <h1 class="title_ja"><ls-static-107941>ブログ&amp;ニュース</ls-static-107941></h1>
+      </div>
+      <div class="comp-category-filter news">
+        <div class="filter_ttl"><ls-static-87113>カテゴリーで絞り込む</ls-static-87113></div>
+        <div class="category_list">
+          <a class="education" href="#aaaa"><ls-static-530511>教育</ls-static-530511></a>
+          <a class="sports" href="#aaaa"><ls-static-421196>スポーツ</ls-static-421196></a>
+          <a class="golf" href="#aaaa"><ls-static-228512>ゴルフ</ls-static-228512></a>
+          <a class="healthcare" href="#aaaa"><ls-static-203862>ヘルスケア</ls-static-203862></a>
+          <a class="news" href="#aaaa"><ls-static-630159>お知らせ</ls-static-630159></a>
+        </div>
+      </div><!-- comp-category-filter -->
+      <div class="news_list_wrap">
+        <div class="comp-news-list">
+        {% for article in blog.articles %}
+        <div class="list_item">
+          <div class="img_wrap">
+          {% if article.image.src %}
+            <a href="{{ article.url }}" style="background-image: url({{ article.image.src }})">
+          {% else %}
+            <a href="{{ article.url }}" style="background-image: url(https://res.cloudinary.com/halsports/image/upload/f_auto,q_auto/v1596432101/ogp/ogp_rlvdwy.jpg)">
+          {% endif %}
+            <span class="category golf"><ls-static-71159>ゴルフ</ls-static-71159></span>
+            </a>
+          </div>
+          <div class="txt_wrap">
+            <div class="news_info">
+              <span class="category golf"><ls-static-702828>ゴルフ</ls-static-702828></span>
+              <span class="date">2019.10.04</span>
+            </div>
+            <a class="news_title" href="{{ article.url }}">{{ article.title }}</a>
+          </div>
+        </div>
+        <!-- list_item -->
+        {% endfor %}
+      </div><!-- comp-news-list -->
+    </div><!-- news_list_wrap -->
+    </div><!-- section_inner -->
+  </section>
+</article>

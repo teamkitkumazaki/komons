@@ -1,0 +1,59 @@
+<article id="account" class="page-account page-mypage">
+  <section class="section-account comp-underpage-section account-register">
+  <div class="section_inner">
+  <div class="comp-section-title center no_line">
+    <span class="title_en"><ls-static-164268>MY PAGE</ls-static-164268></span>
+    <h1 class="title_ja"><ls-static-599442>マイページ</ls-static-599442></h1>
+  </div>
+    <div class="mypage_flex">
+      <div class="mypage_left">
+        <h2 class="mypage_title"><ls-static-83533>ご注文履歴</ls-static-83533></h2>
+        <div class="comp-return-button">
+          <a href="/account/logout" id="customer_logout_link"><span><ls-static-551278>ログアウト</ls-static-551278></span></a>
+        </div>
+        <div class="comp-mypage-table">
+          <div class="table_wrap">
+          {% paginate customer.orders by 20 %}
+            {% if customer.orders.size != 0 %}
+            <table class="responsive-table">
+            <tbody>
+              <tr>
+                <th scope="col">{{ 'customer.orders.order_number' | t }}</th>
+                <th scope="col">{{ 'customer.orders.date' | t }}</th>
+                <th scope="col">{{ 'customer.orders.payment_status' | t }}</th>
+                <th scope="col">{{ 'customer.orders.fulfillment_status' | t }}</th>
+                <th scope="col">{{ 'customer.orders.total' | t }}</th>
+              </tr>
+              {% for order in customer.orders %}
+                <tr>
+                  <td data-label="{{ 'customer.orders.order_number' | t }}" scope="row">
+                    <a href="{{ order.customer_url }}" class="btn btn--secondary btn--small" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">{{ order.name }}</a>
+                  </td>
+                  <td data-label="{{ 'customer.orders.date' | t }}">{{ order.created_at | time_tag: format: 'date' }}</td>
+                  <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
+                  <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
+                  <td data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <p>{{ 'customer.orders.none' | t }}</p>
+          {% endif %}
+          {%- if paginate.pages > 1 -%}
+            {% include 'pagination', paginate: paginate %}
+            {%- endif -%}
+        {% endpaginate %}
+          </div>
+        </div>
+      </div>
+      <div class="order_right">
+        <h2 class="mypage_title"><ls-static-287511>アカウント情報</ls-static-287511></h2>
+        {{ customer.default_address | format_address }}
+        <p><a href="{{ routes.account_addresses_url }}" class="btn btn--small">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
+      </div>
+    </div>
+  </div><!-- section_inner -->
+
+  </section><!-- section-account -->
+</article>

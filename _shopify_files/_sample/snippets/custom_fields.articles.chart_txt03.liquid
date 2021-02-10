@@ -1,0 +1,13 @@
+{% comment %}
+  DO NOT MODIFY THIS FILE DIRECTLY. THIS FILE WILL BE OVERWRITTEN.
+  YOU CAN MODIFY THE LIQUID CODE FOR THIS CUSTOM FIELD HERE:
+  https://customfields.bonify.io/dashboard/halsports.myshopify.com/articles/configure/214658/edit
+{% endcomment %}
+{% if article.metafields.custom_fields["chart_txt03"] != blank %}
+  <div class="custom-field custom-field__chart-txt03 custom-field__type--text">
+    <h3 class="custom-field--title"><ls-static-762424>チャート表テキスト03</ls-static-762424></h3>
+    <div class="custom-field--value">
+      {{ article.metafields.custom_fields["chart_txt03"] }}
+    </div>
+  </div>
+{% endif %}

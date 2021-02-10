@@ -1,0 +1,13 @@
+{% comment %}
+  DO NOT MODIFY THIS FILE DIRECTLY. THIS FILE WILL BE OVERWRITTEN.
+  YOU CAN MODIFY THE LIQUID CODE FOR THIS CUSTOM FIELD HERE:
+  https://customfields.bonify.io/dashboard/halsports.myshopify.com/products/configure/222113/edit
+{% endcomment %}
+{% if product.metafields.custom_fields["option_display"] != blank %}
+  <div class="custom-field custom-field__option-display custom-field__type--text-list">
+    <h3 class="custom-field--title"><ls-static-398132>オプション選択欄のレイアウト(管理用)</ls-static-398132></h3>
+    <div class="custom-field--value">  
+      {{ product.metafields.custom_fields["option_display"] }}
+    </div>
+  </div>
+{% endif %}

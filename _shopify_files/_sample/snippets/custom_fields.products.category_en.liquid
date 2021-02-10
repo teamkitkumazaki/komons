@@ -1,0 +1,13 @@
+{% comment %}
+  DO NOT MODIFY THIS FILE DIRECTLY. THIS FILE WILL BE OVERWRITTEN.
+  YOU CAN MODIFY THE LIQUID CODE FOR THIS CUSTOM FIELD HERE:
+  https://customfields.bonify.io/dashboard/halsports.myshopify.com/products/configure/195317/edit
+{% endcomment %}
+{% if product.metafields.custom_fields["category_en"] != blank %}
+  <div class="custom-field custom-field__category-en custom-field__type--text">
+    <h3 class="custom-field--title"><ls-static-23719>英語カテゴリ名</ls-static-23719></h3>
+    <div class="custom-field--value">
+      {{ product.metafields.custom_fields["category_en"] }}
+    </div>
+  </div>
+{% endif %}
