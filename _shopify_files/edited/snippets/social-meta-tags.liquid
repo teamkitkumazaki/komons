@@ -22,10 +22,12 @@
 <meta property="og:url" content="{{ og_url }}">
 <meta property="og:title" content="{{ og_title }}">
 <meta property="og:type" content="{{ og_type }}">
-<meta property="og:description" content="{{ og_description }}">
+<meta property="og:description" content="{{ og_description | escape }}">
+<meta property="og:locale" content="ja_JP">
 
 {%- if page_image -%}
   <meta property="og:image" content="http:{{ page_image | img_url: 'master' }}">
+  <meta name="twitter:image" content="{{ page_image | img_url }}">
   <meta property="og:image:secure_url" content="https:{{ page_image | img_url: 'master' }}">
   <meta property="og:image:width" content="{{ page_image.width }}">
   <meta property="og:image:height" content="{{ page_image.height }}">
@@ -40,5 +42,5 @@
   <meta name="twitter:site" content="{{ settings.social_twitter_link | split: 'twitter.com/' | last | prepend: '@' }}">
 {% endunless %}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ og_title }}">
-<meta name="twitter:description" content="{{ og_description }}">
+<meta name="twitter:title" content="{{ og_title | strip }}">
+<meta name="twitter:description" content="{{ og_description | escape }}">
