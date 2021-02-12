@@ -7,8 +7,8 @@
 	<link rel="shortcut icon" type="image/x-icon" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg">
 	<link rel="apple-touch-icon" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg" sizes="200x200">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500">
-  <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
-  <link rel="stylesheet" href="{{ 'slink.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
+  <link rel="stylesheet" href="//cdn.shopify.com/s/files/1/0536/9544/7234/t/1/assets/style.css?ver{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}">
+  <link rel="stylesheet" href="//cdn.shopify.com/s/files/1/0536/9544/7234/t/1/assets/slick.css?ver{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}">
 
   {%- capture seo_title -%}
     {%- if request.page_type == 'search' and search.performed == true -%}
@@ -27,35 +27,14 @@
       &ndash; {{ shop.name }}
     {%- endunless -%}
   {%- endcapture -%}
-
   <title>{{ seo_title | strip }}</title>
-  <meta name="description" content="{{ page_description | escape }}">
-  <meta property="og:title" content="{{ seo_title | strip }}">
 
-  {%- assign og_type = 'website' -%}
-  {% if request.page_type == 'product' %}
-    {%- assign og_type = 'product' -%}
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
 
-  {% elsif request.page_type == 'article' %}
-    {%- assign og_type = 'article' -%}
+  {% include 'social-meta-tags' %}
 
-  {% elsif request.page_type == 'collection' %}
-    {%- assign og_type = 'product.group' -%}
-
-  {% elsif request.page_type == 'password' %}
-    {%- assign og_url = shop.url -%}
-  {% endif %}
-
-	<meta property="og:type" content="{{ og_type }}">
-	<meta property="og:url" content="{{ canonical_url }}">
-	<meta property="og:locale" content="ja_JP">
-	<meta property="og:description" content="{{ page_description | escape }}">
-	<meta property="og:site_name" content="{{ shop.name }}">
-  <meta property="og:image" content="{{ page_image | img_url }}" />
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:description" content="{{ page_description | escape }}">
-	<meta name="twitter:title" content="{{ seo_title | strip }}">
-	<meta name="twitter:image" content="{{ page_image | img_url }}">
   <meta name="robots" content="noindex">
   <meta name="robots" content="nofollow">
 	<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/layout.min.js?ver210126" charset="UTF-8"></script>
