@@ -35,7 +35,6 @@ $(function() {
 
     img.on({
       'load': function() {
-        console.log('loaded');
         setTimeout(function() {
           $('.load_inner').addClass('delete');
           $('body').addClass('loaded');
@@ -324,7 +323,7 @@ $(function() {
   if (document.getElementById('index')) {
 
   }
-
+  
   // キーワード検索 ヘッダー
   function keywordSearchControll2(target){
     var wordInput = target.find('input[type="text"]');

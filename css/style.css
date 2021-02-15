@@ -7295,7 +7295,7 @@ body.loaded #loading {
   height: 146px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url("../img/index/logo_main.svg");
+  background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/v1613355442/index/logo_main_llan2f.svg");
   opacity: 0;
   transform: translateX(50px);
   transition: opacity 1s, transform 1s;
