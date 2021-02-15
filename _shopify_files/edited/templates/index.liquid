@@ -6,23 +6,18 @@
     function removeScriptTags() {
       var srcs = [];
       var entry = document.getElementsByTagName('script')[0];
-  
       srcs.forEach(function(src) {
         var script = document.createElement('script');
-  
         script.type = 'text/javascript';
         script.src = src;
         script.async = false;
-  
         entry.parentNode.insertBefore(script, entry);
       })
     }
-  
     window.addEventListener('load', removeScriptTags, false);
-  
   })();
 </script>
-<!-- <div id="loading">
+<div id="loading">
   <div class="load_inner">
     <div class="main_txt">
       <div class="main_img"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/h_logo_nwjm8r.png"></div>
@@ -30,27 +25,26 @@
       <p id="loadingBar"><span></span></p>
     </div>
   </div>
-</div> -->
+</div>
 <article id="index">
-  <section id="main">
-    <div class="main_inner">
-      <div class="slide_fil"></div>
-      <div class="main_logo"></div>
-      <div id="slideShow">
-        <ul>
-          <li class="slide0"></li>
-          <li class="slide1"><img class="first_view" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_piirph.jpg"></li>
-        </ul>
-      </div>
-      
-      <div id="sliderBtn">
-        <ul>
-          <li value="slide1" number="0"><a href="javascript:void(0)"></a></li>
-          <li class="active" value="slide2" number="1" class=""><a href="javascript:void(0)"></a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+<section id="main">
+<div class="main_inner">
+  <div class="slide_fil"></div>
+  <div class="main_logo"></div>
+  <div id="slideShow">
+    <ul>
+      <li class="slide0"></li>
+      <li class="slide1"><img class="first_view" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_piirph.jpg"></li>
+    </ul>
+  </div>
+  <div id="sliderBtn">
+    <ul>
+      <li value="slide1" number="0"><a href="javascript:void(0)"></a></li>
+      <li class="active" value="slide2" number="1" class=""><a href="javascript:void(0)"></a></li>
+    </ul>
+  </div>
+</div>
+</section>
   <section id="topConcept">
     <div class="concept_wrap">
         <div class="txt_wrap">
@@ -124,7 +118,6 @@
           </div>
           <div class="height_adjuster"></div>
         </div>
-        
       </div>
     </section>
     <section id="product02" class="product_section">
@@ -146,7 +139,6 @@
           </div>
           <div class="height_adjuster"></div>
         </div>
-        
       </div>
     </section>
     <section id="product03" class="product_section">
@@ -167,7 +159,6 @@
           </div>
           <div class="height_adjuster"></div>
         </div>
-        
       </div>
     </section>
     <section id="product04" class="product_section">
@@ -186,7 +177,6 @@
           </div>
           <div class="height_adjuster"></div>
         </div>
-        
       </div>
     </section>
     <section id="product05" class="product_section">
@@ -206,7 +196,6 @@
           </div>
           <div class="height_adjuster"></div>
         </div>
-        
       </div>
     </section>
     <section id="product06" class="product_section">
@@ -226,7 +215,6 @@
           </div>
           <div class="height_adjuster"></div>
         </div>
-        
       </div>
     </section>
     <div class="product_link">

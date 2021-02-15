@@ -7,9 +7,8 @@
 	<link rel="shortcut icon" type="image/x-icon" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg">
 	<link rel="apple-touch-icon" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg" sizes="200x200">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500">
-  <link rel="stylesheet" href="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/style.css?ver{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}">
+  <link rel="stylesheet" href="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/style.css?ver2_{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}">
   <link rel="stylesheet" href="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/slick.css">
-
   {%- capture seo_title -%}
     {%- if request.page_type == 'search' and search.performed == true -%}
       {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
@@ -28,16 +27,14 @@
     {%- endunless -%}
   {%- endcapture -%}
   <title>{{ seo_title | strip }}</title>
-
   {%- if page_description -%}
     <meta name="description" content="{{ page_description | escape }}">
   {%- endif -%}
-
   {% include 'social-meta-tags' %}
-
   <meta name="robots" content="noindex">
   <meta name="robots" content="nofollow">
-	<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/layout.min.js?ver{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}" charset="UTF-8"></script>
+	<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/layout.js?ver{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}" charset="UTF-8"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   {% include 'google-analytics' %}
   <!-- Facebook Pixel Code -->
@@ -48,8 +45,9 @@
   <!-- End Mieruca Embed Code -->
 	{{ content_for_header }}
 </head>
-<body class="loaded main">
+<body class="">
   {% section 'header' %}
   {{content_for_layout}}
+	{% section 'footer' %}
 </body>
 </html>
