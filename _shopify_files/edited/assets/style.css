@@ -6147,7 +6147,7 @@ body.loaded #loading {
   background-position: center center;
   background-size: cover;
   background-size: 20px;
-  background-image: url(../img/hummenu/pop_close.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/pop_close.svg");
 }
 .comp-slide-menu .hum_close:focus {
   outline: none;
@@ -6233,7 +6233,7 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  background-image: url(../img/hummenu/sankaku.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/sankaku.svg");
 }
 .comp-slide-menu .search_inner .content .pop_section {
   margin-bottom: 30px;
@@ -6284,7 +6284,7 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  background-image: url(../img/hummenu/menu_caret.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/menu_caret.svg");
 }
 .comp-slide-menu .search_inner .content .pop_section .menu_item .child {
   display: flex;
@@ -6391,31 +6391,31 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  background-image: url(../img/hummenu/menu_caret.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/menu_caret.svg");
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.dish::before {
   background-size: 22px;
-  background-image: url(../img/hummenu/icon_dish.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_dish.svg");
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.fabric::before {
   background-size: 22px;
-  background-image: url(../img/hummenu/icon_fabric.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_fabric.svg");
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.hand::before {
   background-size: 24px;
-  background-image: url(../img/hummenu/icon_hand.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_hand.svg");
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.multi::before {
   background-size: 19px;
-  background-image: url(../img/hummenu/icon_multi.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_multi.svg");
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.bath::before {
   background-size: 23px;
-  background-image: url(../img/hummenu/icon_bath.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_bath.svg");
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.toilet::before {
   background-size: 23px;
-  background-image: url(../img/hummenu/icon_toilet.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_toilet.svg");
 }
 .comp-slide-menu .search_inner .content .pop_section .key_input {
   display: flex;
@@ -6462,7 +6462,7 @@ body.loaded #loading {
   transition: opacity 0.3s;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../img/hummenu/icon_search.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_search.svg");
   background-size: 20px;
 }
 .comp-slide-menu .search_inner .content .pop_section .key_input .search_submit:hover {
@@ -6501,15 +6501,15 @@ body.loaded #loading {
 }
 .comp-slide-menu .search_inner .content .content_right .sns_wrap a.tw {
   background-size: 18px;
-  background-image: url(../img/hummenu/icon_tw.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_tw.svg");
 }
 .comp-slide-menu .search_inner .content .content_right .sns_wrap a.fb {
   background-size: 9px;
-  background-image: url(../img/hummenu/icon_fb.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_fb.svg");
 }
 .comp-slide-menu .search_inner .content .content_right .sns_wrap a.ig {
   background-size: 18px;
-  background-image: url(../img/hummenu/icon_ig.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_ig.svg");
 }
 
 @media screen and (max-width: 1100px) {
@@ -6684,7 +6684,7 @@ body.loaded #loading {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    background-image: url(../img/hummenu/menu_caret.svg);
+		background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/menu_caret.svg");
   }
   .comp-slide-menu .search_inner .content .pop_section .category a .ja {
     font-size: 16px;
