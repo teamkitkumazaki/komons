@@ -1,0 +1,15 @@
+<div id="fixedCartWrap" class="comp-fixed-cart-wrap wrap02">
+  <div class="cart_inner">
+    <div class="img_thumb">
+			<img src="{{ product.media[2] | img_url: 'master' }}">
+    </div>
+    <div class="product_detail">
+      <span class="category">{{ product.metafields.custom_fields["category_name"] }}</span>
+      <span class="item_name">{{ product.metafields.custom_fields["product_name"] }}</span>
+      <span class="price">{{ product.price | money_without_currency }}円(税抜)</span>
+    </div>
+    <div class="product_cart_button">
+      <button id="fixedCartButton" class="fixed_cart_button" onclick="gtag_report_conversion(); return false;"><span>購入する</span></button>
+    </div>
+  </div>
+</div>

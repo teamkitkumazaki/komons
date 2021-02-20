@@ -1,0 +1,11 @@
+<section id="topJournal">
+	<div class="section_ttl">
+		<h2><span>Journal</span><font>Komonsについてもっと知る。</font></h2>
+	</div>
+	<div class="article_wrap">
+		<iframe class="autoHeight" src="https://journal.komons-japan.com/iframe-all" scrolling="no" frameborder="0"></iframe>
+		{% if template.name == 'index' %}
+			{% render 'journal-btn' %}
+		{% endif %}
+	</div>
+</section>
