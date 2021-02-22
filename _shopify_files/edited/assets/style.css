@@ -1682,10 +1682,10 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 12px;
-  background-image: url(../img/common/icon_plus.png);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_plus.png");
 }
 .comp-variation .variation_wrap .display_wrap.open::after {
-  background-image: url(../img/faq/minus.png);
+  background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/minus.png");
 }
 .comp-variation .variation_wrap .display_toggle {
   width: calc(100% - 20px);
@@ -1730,7 +1730,7 @@ body.loaded #loading {
   margin: auto;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../img/arrow.png);
+  background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/arrow.png");
   background-size: 20px;
   background-position: center center;
 }
@@ -5186,12 +5186,12 @@ body.loaded #loading {
   height: 20px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../img/faq/plus.png);
+  background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/plus.png");
   background-size: 15px;
   background-position: center center;
 }
 .comp-detail-toggle .toggle_button.open::after {
-  background-image: url(../img/faq/minus.png);
+  background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/minus.png");
 }
 .comp-detail-toggle .toggle_button:focus {
   outline: none;

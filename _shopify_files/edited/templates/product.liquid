@@ -2,8 +2,14 @@
   The contents of the product.liquid template can be found in /sections/product-template.liquid
 {% endcomment %}
 
+<article id="itemDetail" class="dishwash">
 {% section 'product-template' %}
+{% section 'related-items' %}
+{% section 'journal-list' %}
+{% section 'section-back' %}
 {% section 'product-recommendations' %}
+</article>
+{% section 'fixed-cart-wrap' %}
 
 {% if collection %}
   <div class="text-center return-link-wrapper page-width">
