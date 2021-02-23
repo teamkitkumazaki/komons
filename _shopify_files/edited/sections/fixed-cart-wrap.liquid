@@ -1,4 +1,5 @@
 <div id="fixedCartWrap" class="comp-fixed-cart-wrap wrap02">
+	{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
   <div class="cart_inner">
     <div class="img_thumb">
 			<img src="{{ product.media[2] | img_url: 'master' }}">
@@ -9,7 +10,17 @@
       <span class="price">{{ product.price | money_without_currency }}円(税抜)</span>
     </div>
     <div class="product_cart_button">
-      <button id="fixedCartButton" class="fixed_cart_button" onclick="gtag_report_conversion(); return false;"><span>購入する</span></button>
+			<select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
+				{% for variant in product.variants %}
+					<option value="{{ variant.id }}"
+						{%- if variant == current_variant %} selected="selected" {%- endif -%}
+					>
+						{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+					</option>
+				{% endfor %}
+			</select>
+			<button id="fixedCartButton" class="fixed_cart_button"><span>購入する</span></button>
     </div>
   </div>
+	{% endform %}
 </div>
