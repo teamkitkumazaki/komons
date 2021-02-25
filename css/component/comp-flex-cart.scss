@@ -35,12 +35,12 @@
           }
           &.cart_in{
             &::before{
-              background-image: url(../img/cart_icon.png);
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750805/common/cart_icon_r3jbwu.png);
             }
           }
           &.subscription{
             &::before{
-              background-image: url(../img/common/icon_subscription.svg);
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1583750795/common/icon_subscription_nlc1vq.svg);
               top: 2px;
               background-size: 22px;
             }

@@ -1682,10 +1682,10 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 12px;
-  background-image: url(../img/common/icon_plus.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
 }
 .comp-variation .variation_wrap .display_wrap.open::after {
-  background-image: url(../img/faq/minus.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
 }
 .comp-variation .variation_wrap .display_toggle {
   width: calc(100% - 20px);
@@ -1822,10 +1822,10 @@ body.loaded #loading {
   background-size: 25px;
 }
 .comp-flex-cart .cart_box .cart_item .button_wrap .title.cart_in::before {
-  background-image: url(../img/cart_icon.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750805/common/cart_icon_r3jbwu.png);
 }
 .comp-flex-cart .cart_box .cart_item .button_wrap .title.subscription::before {
-  background-image: url(../img/common/icon_subscription.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1583750795/common/icon_subscription_nlc1vq.svg);
   top: 2px;
   background-size: 22px;
 }

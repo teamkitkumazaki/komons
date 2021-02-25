@@ -32,11 +32,11 @@
         height: 12px;
         @include bgSet;
         background-size: 12px;
-        background-image: url(../img/common/icon_plus.png);
+        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
       }
       &.open{
         &::after{
-          background-image: url(../img/faq/minus.png);
+          background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
         }
       }
     }
