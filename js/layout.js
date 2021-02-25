@@ -384,6 +384,31 @@ $(function() {
     detailToggleControll($('#detailToggle'));
   }
 
+  //関連商品プラグインをslick用いて表示させる
+  function relatedProductArrange(target){
+    var relatedInfo = [];
+    var relatedSlider = $('#relatedSlider');
+
+    function init(){
+      $.each(target.find('li'), function(index) {
+        console.log('relatedWrap:' + index)
+        relatedInfo[index] = $(this).html();
+        $(this).remove();
+      });
+      $.each(relatedSlider.find('.item_box'), function(index) {
+        console.log('item_box:' + index)
+        $(this).append(relatedInfo[index]);
+      });
+    }
+
+    init();
+
+  }
+  if (document.getElementById('itemDetail')) {
+    relatedProductArrange($('.relatedWrap'));
+  }
+
+
 
   //商品詳細のバリエーション選択欄
   function variationToggle(target){
@@ -996,10 +1021,6 @@ $(function() {
         var contentIcon = $(this).find('.content_icon');
         var propRecommend = propBox.attr('recommend');
         $(this).attr('recommend', propRecommend);
-        var propType = propBox.attr('prop').split(',');
-        for (var i=0; i<propType.length; i++) {
-          contentIcon.append('<div class="icon"><span class="' + propType[i] + '"></span></div>');
-        }
         giftListArray[index] = {
           html : $(this),
           price : Number($(this).attr('price').replace(/,/g, '')),
