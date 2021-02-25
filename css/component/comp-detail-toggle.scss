@@ -29,13 +29,13 @@
       height: 20px;
       background-repeat: no-repeat;
       background-position: center center;
-      background-image: url(../img/faq/plus.png);
+      background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
       background-size: 15px;
       background-position: center center;
     }
     &.open{
       &::after{
-        background-image: url(../img/faq/minus.png);
+        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
       }
     }
     &:focus{

@@ -345,22 +345,6 @@ $(function() {
 
   keywordSearchControll2($('#searchSubmit'));
 
-  // リード文の出力
-  function readTxtMove(target) {
-    var strInnerHTML = target.html();
-    $('#excerpt').prepend(strInnerHTML);
-    target.remove();
-    if (document.getElementById('cartNotice')) {
-      var strCartNotice = $('#cartNotice').html();
-      $('.cart_button').append(strCartNotice);
-      $('#cartNotice').remove();
-    }
-  }
-
-  if (document.getElementById('itemDetail')) {
-    readTxtMove($('#leadTxt'));
-  }
-
   // 商品詳細情報の開閉部分
   function detailToggleControll(target) {
     var controllButton = target.find('button');
@@ -399,6 +383,7 @@ $(function() {
   if (document.getElementById('itemDetail')) {
     detailToggleControll($('#detailToggle'));
   }
+
 
   //商品詳細のバリエーション選択欄
   function variationToggle(target){
@@ -454,65 +439,6 @@ $(function() {
     variationToggle($('#variationToggle'));
   }
 
-  // 商品一覧ページのソート機能実装
-
-  function filterProduct(target) {
-    var dropdown = document.getElementById("cat");
-    var optionVal = [];
-
-    function onCatChange() {
-      var u = dropdown.value;
-      if (document.getElementById('itemList')) {
-        var url = 'https://www.komons-japan.com' + u + '#products';
-      }else if(document.getElementById('itemDetail')) {
-        var url = 'https://www.komons-japan.com' + u;
-      }
-
-      if (u !== 'undefined') {
-        location.href = url;
-      }
-    }
-
-    function init() {
-      var urlHash = location.hash;
-      if (0 < urlHash.length) {
-        var scroll = $(urlHash).offset().top;
-        var h = $(window).width();
-
-        if (h > 1100) {
-          var adScroll = scroll - 100;
-        } else {
-          var adScroll = scroll - 100;
-        }
-
-        $("html, body").animate({
-          scrollTop: adScroll
-        }, 0);
-      }
-
-      var search = location.search;
-      $.each(target.find('.option-1'), function(index) {
-        optionVal[index] = $(this).attr('links');
-        if (optionVal[index] = search) {
-          target.val(optionVal[index]);
-        }
-      });
-
-      target.change(function() {
-        onCatChange();
-      });
-    }
-
-    init();
-
-  }
-
-  if (document.getElementById('itemList')) {
-    filterProduct($('#cat'));
-  }
-  if (document.getElementById('itemDetail')) {
-    filterProduct($('#cat'));
-  }
 
   //アンカーリンクで追従ヘッダーの分オフセットする
   window.onload = function() {

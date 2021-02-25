@@ -2497,7 +2497,7 @@ body.loaded #loading {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 160px;
-  background-image: url("../img/common/viewmore.png");
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1614236875/common/viewmore_iorulq.png);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
@@ -2568,7 +2568,7 @@ body.loaded #loading {
   width: 24px;
   height: 10px;
   transition: all 0.3s;
-  background-image: url("../img/product_list/arrow.png");
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750746/product_list/arrow_hnk35p.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 24px;
@@ -5186,12 +5186,12 @@ body.loaded #loading {
   height: 20px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../img/faq/plus.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
   background-size: 15px;
   background-position: center center;
 }
 .comp-detail-toggle .toggle_button.open::after {
-  background-image: url(../img/faq/minus.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
 }
 .comp-detail-toggle .toggle_button:focus {
   outline: none;
