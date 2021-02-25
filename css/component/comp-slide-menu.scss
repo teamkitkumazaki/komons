@@ -32,7 +32,7 @@
     background-position: center center;
     background-size: cover;
     background-size: 20px;
-    background-image: url(../img/hummenu/pop_close.svg);
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235429/hummenu/pop_close_cnrhfh.svg);
     &:focus{
       outline: none;
     }
@@ -97,7 +97,7 @@
           height: 15px;
           @include bgSet;
           background-size: contain;
-          background-image:url(../img/hummenu/sankaku.svg);
+          background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235430/hummenu/sankaku_ex7aix.svg);
         }
       }
       .pop_section{
@@ -141,7 +141,7 @@
                 height: 16px;
                 @include bgSet;
                 background-size: contain;
-                background-image: url(../img/hummenu/menu_caret.svg);
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235429/hummenu/menu_caret_xcknsj.svg);
               }
             }
           }
@@ -236,43 +236,43 @@
                 height: 16px;
                 @include bgSet;
                 background-size: contain;
-                background-image: url(../img/hummenu/menu_caret.svg);
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235429/hummenu/menu_caret_xcknsj.svg);
               }
             }
             &.dish{
               &::before{
                 background-size: 22px;
-                background-image: url(../img/hummenu/icon_dish.svg);
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_dish_cgywoa.svg);
               }
             }
             &.fabric{
               &::before{
                 background-size: 22px;
-                background-image: url(../img/hummenu/icon_fabric.svg);
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_fabric_au0o1s.svg);
               }
             }
             &.hand{
               &::before{
                 background-size: 24px;
-                background-image: url(../img/hummenu/icon_hand.svg);
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_hand_oeunae.svg);
               }
             }
             &.multi{
               &::before{
                 background-size: 19px;
-                background-image: url(../img/hummenu/icon_multi.svg);
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235428/hummenu/icon_multi_v4awl2.svg);
               }
             }
             &.bath{
               &::before{
                 background-size: 23px;
-                background-image: url(../img/hummenu/icon_bath.svg);
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_bath_lnehkt.svg);
               }
             }
             &.toilet{
               &::before{
                 background-size: 23px;
-                background-image: url(../img/hummenu/icon_toilet.svg);
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235134/hummenu/icon_toilet_un2oev.svg);
               }
             }
           }
@@ -317,7 +317,7 @@
             border: none;
             @include hover;
             @include bgSet;
-            background-image: url(../img/hummenu/icon_search.svg);
+            background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235428/hummenu/icon_search_onxeta.svg);
             background-size: 20px;
             &:focus{
               outline: none;
@@ -346,15 +346,15 @@
             @include bgSet;
             &.tw{
               background-size: 18px;
-              background-image: url(../img/hummenu/icon_tw.svg);
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235428/hummenu/icon_tw_d9iwsv.svg);
             }
             &.fb{
               background-size: 9px;
-              background-image: url(../img/hummenu/icon_fb.svg);
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_fb_sqcex2.svg);
             }
             &.ig{
               background-size: 18px;
-              background-image: url(../img/hummenu/icon_ig.svg);
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_ig_ukbdvy.svg);
             }
           }
         }
@@ -524,7 +524,7 @@
                   height: 18px;
                   @include bgSet;
                   background-size: contain;
-                  background-image: url(../img/hummenu/menu_caret.svg);
+                  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235429/hummenu/menu_caret_xcknsj.svg);
                 }
               }
               .ja{

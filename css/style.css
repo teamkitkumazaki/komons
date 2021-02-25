@@ -1682,10 +1682,10 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 12px;
-  background-image: url(../img/common/icon_plus.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
 }
 .comp-variation .variation_wrap .display_wrap.open::after {
-  background-image: url(../img/faq/minus.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
 }
 .comp-variation .variation_wrap .display_toggle {
   width: calc(100% - 20px);
@@ -1730,7 +1730,7 @@ body.loaded #loading {
   margin: auto;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../img/arrow.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750805/common/arrow_vuojtf.png);
   background-size: 20px;
   background-position: center center;
 }
@@ -1822,10 +1822,10 @@ body.loaded #loading {
   background-size: 25px;
 }
 .comp-flex-cart .cart_box .cart_item .button_wrap .title.cart_in::before {
-  background-image: url(../img/cart_icon.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750805/common/cart_icon_r3jbwu.png);
 }
 .comp-flex-cart .cart_box .cart_item .button_wrap .title.subscription::before {
-  background-image: url(../img/common/icon_subscription.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1583750795/common/icon_subscription_nlc1vq.svg);
   top: 2px;
   background-size: 22px;
 }
@@ -2497,7 +2497,7 @@ body.loaded #loading {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 160px;
-  background-image: url("../img/common/viewmore.png");
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1614236875/common/viewmore_iorulq.png);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
@@ -2568,7 +2568,7 @@ body.loaded #loading {
   width: 24px;
   height: 10px;
   transition: all 0.3s;
-  background-image: url("../img/product_list/arrow.png");
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750746/product_list/arrow_hnk35p.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 24px;
@@ -5186,12 +5186,12 @@ body.loaded #loading {
   height: 20px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../img/faq/plus.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
   background-size: 15px;
   background-position: center center;
 }
 .comp-detail-toggle .toggle_button.open::after {
-  background-image: url(../img/faq/minus.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
 }
 .comp-detail-toggle .toggle_button:focus {
   outline: none;
@@ -6147,7 +6147,7 @@ body.loaded #loading {
   background-position: center center;
   background-size: cover;
   background-size: 20px;
-  background-image: url(../img/hummenu/pop_close.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235429/hummenu/pop_close_cnrhfh.svg);
 }
 .comp-slide-menu .hum_close:focus {
   outline: none;
@@ -6233,7 +6233,7 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  background-image: url(../img/hummenu/sankaku.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235430/hummenu/sankaku_ex7aix.svg);
 }
 .comp-slide-menu .search_inner .content .pop_section {
   margin-bottom: 30px;
@@ -6284,7 +6284,7 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  background-image: url(../img/hummenu/menu_caret.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235429/hummenu/menu_caret_xcknsj.svg);
 }
 .comp-slide-menu .search_inner .content .pop_section .menu_item .child {
   display: flex;
@@ -6391,31 +6391,31 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  background-image: url(../img/hummenu/menu_caret.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235429/hummenu/menu_caret_xcknsj.svg);
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.dish::before {
   background-size: 22px;
-  background-image: url(../img/hummenu/icon_dish.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_dish_cgywoa.svg);
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.fabric::before {
   background-size: 22px;
-  background-image: url(../img/hummenu/icon_fabric.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_fabric_au0o1s.svg);
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.hand::before {
   background-size: 24px;
-  background-image: url(../img/hummenu/icon_hand.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_hand_oeunae.svg);
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.multi::before {
   background-size: 19px;
-  background-image: url(../img/hummenu/icon_multi.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235428/hummenu/icon_multi_v4awl2.svg);
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.bath::before {
   background-size: 23px;
-  background-image: url(../img/hummenu/icon_bath.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_bath_lnehkt.svg);
 }
 .comp-slide-menu .search_inner .content .pop_section .category a.toilet::before {
   background-size: 23px;
-  background-image: url(../img/hummenu/icon_toilet.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235134/hummenu/icon_toilet_un2oev.svg);
 }
 .comp-slide-menu .search_inner .content .pop_section .key_input {
   display: flex;
@@ -6462,7 +6462,7 @@ body.loaded #loading {
   transition: opacity 0.3s;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../img/hummenu/icon_search.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235428/hummenu/icon_search_onxeta.svg);
   background-size: 20px;
 }
 .comp-slide-menu .search_inner .content .pop_section .key_input .search_submit:hover {
@@ -6501,15 +6501,15 @@ body.loaded #loading {
 }
 .comp-slide-menu .search_inner .content .content_right .sns_wrap a.tw {
   background-size: 18px;
-  background-image: url(../img/hummenu/icon_tw.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235428/hummenu/icon_tw_d9iwsv.svg);
 }
 .comp-slide-menu .search_inner .content .content_right .sns_wrap a.fb {
   background-size: 9px;
-  background-image: url(../img/hummenu/icon_fb.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_fb_sqcex2.svg);
 }
 .comp-slide-menu .search_inner .content .content_right .sns_wrap a.ig {
   background-size: 18px;
-  background-image: url(../img/hummenu/icon_ig.svg);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_ig_ukbdvy.svg);
 }
 
 @media screen and (max-width: 1100px) {
@@ -6684,7 +6684,7 @@ body.loaded #loading {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    background-image: url(../img/hummenu/menu_caret.svg);
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235429/hummenu/menu_caret_xcknsj.svg);
   }
   .comp-slide-menu .search_inner .content .pop_section .category a .ja {
     font-size: 16px;

@@ -1,4 +1,4 @@
-<section id="main" class="main">
+<section id="main" class="main";>
 	<div class="fil"></div>
 </section>
 <style>
@@ -44,41 +44,49 @@
   {% endcase %}
 
 	<section id="wrap01" class="cart_wrap01">
-		<form id="cartIn" name="product_form" method="post" action="https://komons-japan.shop-pro.jp/cart/proxy/basket/items/add">
+		{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
 			<div class="product_ex">
-					<h2 class="product_cat">{{ product.metafields.custom_fields["category_name"] }}</h2>
-					<h1 class="prodcut_name">{{ product.metafields.custom_fields["product_name"] }}</h1>
-					<div id="excerpt" class="excerpt">
-						<p>{{ product.metafields.custom_fields["product_outline"] }}</p>
-						<div id="variationToggle" class="comp-variation">
-							<div class="variation_wrap" style="height: 44px;">
-								<a href="javascript:void(0)" class="display_wrap">
-									<span class="title">サイズ:</span>
-									<span class="current_page">ボトル(300ml)</span>
+				<h2 class="product_cat">{{ product.metafields.custom_fields["category_name"] }}</h2>
+				<h1 class="prodcut_name">{{ product.metafields.custom_fields["product_name"] }}</h1>
+				<div id="excerpt" class="excerpt">
+					<p>{{ product.metafields.custom_fields["product_outline"] }}</p>
+					{% if product.metafields.custom_fields["variation_refill"] != blank %}
+					<div id="variationToggle" class="comp-variation">
+						<div class="variation_wrap">
+							<a href="javascript:void(0)" class="display_wrap">
+								<span class="title">サイズ:</span>
+								<span id="selectedVar" class="current_page"></span>
+							</a>
+							{%- endif -%}
+							<div class="display_toggle">
+							{% if product.metafields.custom_fields["variation_bottle"] != blank %}
+							<a href="/products/{{ product.metafields.custom_fields["variation_bottle"] }}">
+								<span class="wrap">
+									<span class="title">ボトル</span>
+									<span class="desc">¥1,900</span>
+								</span>
+							</a>
+							{% if product.metafields.custom_fields["variation_refill"] != blank %}
+								<a href="/products/{{ product.metafields.custom_fields["variation_refill"] }}">
+									<span class="wrap">
+										<span class="title">レフィル(詰め替え用)</span>
+										<span>¥2,300</span>
+									</span>
 								</a>
-								<div class="display_toggle">
-									<a href="/products/{{ product.metafields.custom_fields["variation_refill"] }}">
-										<span class="wrap">
-											<span class="title">レフィル(500ml)</span>
-											<span>¥2,300</span>
-										</span>
-									</a>
-									<a href="/products/{{ product.metafields.custom_fields["variation_bottle_refill"] }}">
-										<span class="wrap">
-											<span class="title">ボトル&amp;レフィル</span>
-											<span class="desc">¥3,980</span>
-										</span>
-									</a>
-									<a class="current" href="/products/{{ product.metafields.custom_fields["variation_bottle"] }}">
-										<span class="wrap">
-											<span class="title">ボトル(300ml)</span>
-											<span class="desc">¥1,900</span>
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
+							 {%- endif -%}
+							 {% if product.metafields.custom_fields["variation_bottle_refill"] != blank %}
+								<a href="/products/{{ product.metafields.custom_fields["variation_bottle_refill"] }}">
+									<span class="wrap">
+										<span class="title">ボトル&amp;レフィル</span>
+										<span class="desc">¥3,980</span>
+									</span>
+								</a>
+								{%- endif -%}
+							</div><!-- display_toggle -->
+						</div><!-- variation_wrap -->
+					</div><!-- comp-variation -->
+					{%- endif -%}
+				</div>
 			</div>
 			<div class="product_detail">
 				<div class="detail_block detail01">
@@ -86,36 +94,35 @@
 					<span class="right_txt stock">販売中</span>
 				</div>
 				<div class="detail_block detail02">
-					<span class="left_txt"><span>数量</span>：<input type="text" name="product_num" value="1" class="product_init_num" /><span>個</span></span>
+					<span class="left_txt"><span>数量</span>：<input type="text" name="quantity" value="1" class="product_init_num" /><span>個</span></span>
 					<span class="right_txt">合計：{{ product.price | money_without_currency }}円(税抜)</span>
 				</div>
 			</div>
+			<select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
+				{% for variant in product.variants %}
+					<option value="{{ variant.id }}"
+						{%- if variant == current_variant %} selected="selected" {%- endif -%}
+					>
+						{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+					</option>
+				{% endfor %}
+			</select>
 			<div class="cart_button">
 				<div class="cart_wrap">
 					<div class="comp-flex-cart no_flex">
-						<!-- {{ form | payment_button }} -->
 						<div class="cart_box">
 							<div class="cart_item">
 								<span class="button_wrap">
 									<span class="title cart_in">購入する</span>
 									<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
 								</span>
-								<input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
-								<!-- <input type="hidden" name="user_hash" value="5a9776c9465e1962c62a0dac4d19f539">
-								<input type="hidden" name="regi_hash" value="99054606d8ddbf1ffb55df26a0cc97">
-								<input type="hidden" name="members_hash" value="5a9776c9465e1962c62a0dac4d19f539">
-								<input type="hidden" name="shop_id" value="PA01416697">
-								<input type="hidden" name="product_id" value="132268831">
-								<input type="hidden" name="members_id" value="">
-								<input type="hidden" name="back_url" value="https://www.komons-japan.com/?pid=132268831">
-								<input type="hidden" name="reference_token" value="0b83475f2eec40c8bbf5a38511c6cb14">
-								<input type="hidden" name="shop_domain" value="komons-japan.com"> -->
+								<input id="cartSubmit" class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</form>
+		{% endform %}
 	</section>
 	<section class="product-single__description rte">
 		{{ product.description }}
@@ -125,7 +132,6 @@
 			<img class="product-single__thumbnail-image" src="{{ product.media[2] | img_url: 'master' }}" alt="{{ thumbnailAlt }}" >
 		</div>
 		<div class="txt_wrap">
-			<form name="product_form" method="post" action="https://komons-japan.shop-pro.jp/cart/proxy/basket/items/add">
 				<h3>{{ product.metafields.custom_fields["category_name"] }}</h3>
 				<h2>{{ product.metafields.custom_fields["product_name"] }}</h2>
 				<div class="product_detail">
@@ -147,13 +153,12 @@
 										<span class="title cart_in">購入する</span>
 										<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
 									</span>
-									<input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="gtag_report_conversion(); return false;">
+									<input id="submitButtonLower" class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる" onclick="send_conversion(); console.log('click!'); return false;">
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</form>
 		</div>
 	</section>
 </div>
