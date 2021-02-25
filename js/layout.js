@@ -408,6 +408,9 @@ $(function() {
     var buttonHeight = button.outerHeight();
     var toggle = target.find('.display_toggle');
     var toggleHeight = toggle.outerHeight();
+    var currentURL = location.href;
+    var itemNumber = currentURL.split("products/");
+    var kataban = itemNumber.slice(-1)[0];
 
     function toggleMove(){
       var buttonHeight = button.outerHeight();
@@ -425,6 +428,17 @@ $(function() {
     }
 
     function init(){
+      $.each(target.find('a'), function(index) {
+        var linkHref = $(this).attr('href');
+        var linkText = $(this).find('.title').html();
+        var variationKataban = linkHref.split("products/");
+        console.log('current:' + variationKataban.slice(-1)[0]);
+        if (kataban == variationKataban.slice(-1)[0]) {
+          $(this).addClass('current');
+          $('#selectedVar').html(linkText);
+        }
+      });
+      target.find()
       wrap.css({height: buttonHeight + 'px'});
       button.on({
         'click': function() {

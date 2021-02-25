@@ -1,4 +1,4 @@
-<section id="main" class="main">
+<section id="main" class="main";>
 	<div class="fil"></div>
 </section>
 <style>
@@ -48,37 +48,44 @@
 			<div class="product_ex">
 				<h2 class="product_cat">{{ product.metafields.custom_fields["category_name"] }}</h2>
 				<h1 class="prodcut_name">{{ product.metafields.custom_fields["product_name"] }}</h1>
-				<h1 class="prodcut_name">{{ product.tags }}</h1>
 				<div id="excerpt" class="excerpt">
 					<p>{{ product.metafields.custom_fields["product_outline"] }}</p>
+					{% if product.metafields.custom_fields["variation_refill"] != blank %}
 					<div id="variationToggle" class="comp-variation">
-						<div class="variation_wrap" style="height: 44px;">
+						<div class="variation_wrap">
 							<a href="javascript:void(0)" class="display_wrap">
 								<span class="title">サイズ:</span>
-								<span class="current_page">ボトル(300ml)</span>
+								<span id="selectedVar" class="current_page"></span>
 							</a>
+							{%- endif -%}
 							<div class="display_toggle">
+							{% if product.metafields.custom_fields["variation_bottle"] != blank %}
+							<a href="/products/{{ product.metafields.custom_fields["variation_bottle"] }}">
+								<span class="wrap">
+									<span class="title">ボトル</span>
+									<span class="desc">¥1,900</span>
+								</span>
+							</a>
+							{% if product.metafields.custom_fields["variation_refill"] != blank %}
 								<a href="/products/{{ product.metafields.custom_fields["variation_refill"] }}">
 									<span class="wrap">
-										<span class="title">レフィル(500ml)</span>
+										<span class="title">レフィル(詰め替え用)</span>
 										<span>¥2,300</span>
 									</span>
 								</a>
+							 {%- endif -%}
+							 {% if product.metafields.custom_fields["variation_bottle_refill"] != blank %}
 								<a href="/products/{{ product.metafields.custom_fields["variation_bottle_refill"] }}">
 									<span class="wrap">
 										<span class="title">ボトル&amp;レフィル</span>
 										<span class="desc">¥3,980</span>
 									</span>
 								</a>
-								<a class="current" href="/products/{{ product.metafields.custom_fields["variation_bottle"] }}">
-									<span class="wrap">
-										<span class="title">ボトル(300ml)</span>
-										<span class="desc">¥1,900</span>
-									</span>
-								</a>
-							</div>
-						</div>
-					</div>
+								{%- endif -%}
+							</div><!-- display_toggle -->
+						</div><!-- variation_wrap -->
+					</div><!-- comp-variation -->
+					{%- endif -%}
 				</div>
 			</div>
 			<div class="product_detail">
