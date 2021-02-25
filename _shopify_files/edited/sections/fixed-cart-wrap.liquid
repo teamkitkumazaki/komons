@@ -1,5 +1,4 @@
 <div id="fixedCartWrap" class="comp-fixed-cart-wrap">
-	{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
   <div class="cart_inner">
     <div class="img_thumb">
 			<img src="{{ product.media[2] | img_url: 'master' }}">
@@ -19,8 +18,7 @@
 					</option>
 				{% endfor %}
 			</select>
-			<button id="fixedCartButton" class="fixed_cart_button"><span>購入する</span></button>
+			<button id="fixedCartButton" class="fixed_cart_button" onclick="send_conversion(); return false;"><span>購入する</span></button>
     </div>
   </div>
-	{% endform %}
 </div>

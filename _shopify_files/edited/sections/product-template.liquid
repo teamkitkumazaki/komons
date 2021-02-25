@@ -132,7 +132,6 @@
 			<img class="product-single__thumbnail-image" src="{{ product.media[2] | img_url: 'master' }}" alt="{{ thumbnailAlt }}" >
 		</div>
 		<div class="txt_wrap">
-			{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
 				<h3>{{ product.metafields.custom_fields["category_name"] }}</h3>
 				<h2>{{ product.metafields.custom_fields["product_name"] }}</h2>
 				<div class="product_detail">
@@ -145,15 +144,6 @@
 						<span class="right_txt">合計：{{ product.price | money_without_currency }}円(税抜)</span>
 					</div>
 				</div>
-				<select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
-					{% for variant in product.variants %}
-						<option value="{{ variant.id }}"
-							{%- if variant == current_variant %} selected="selected" {%- endif -%}
-						>
-							{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
-						</option>
-					{% endfor %}
-				</select>
 				<div class="cart_button">
 					<div class="cart_wrap">
 						<div class="comp-flex-cart no_flex">
@@ -163,13 +153,12 @@
 										<span class="title cart_in">購入する</span>
 										<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
 									</span>
-									<input class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる">
+									<input id="submitButtonLower" class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる" onclick="send_conversion(); return false;">
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			{% endform %}
 		</div>
 	</section>
 </div>
