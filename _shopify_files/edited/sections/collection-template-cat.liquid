@@ -85,7 +85,7 @@
       <div class="button_wrap">
         <a href="{{ product.url }}"><span>詳細を見る</span></a>
         <div class="comp-list-cart-button">
-          <div class="cartjs_box" style="margin: 0;padding: 20px 0;">
+          <div class="cartjs_box">
             {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
             <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
               {% for variant in product.variants %}

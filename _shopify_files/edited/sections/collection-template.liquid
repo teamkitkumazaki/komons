@@ -60,7 +60,7 @@
 				</div>
 				<div class="comp-list-cart-button">
 					<div style="width: 100%; margin: 0 auto; padding: 0">
-            <div class="cartjs_box" style="margin: 0; padding: 20px 0">
+            <div class="cartjs_box">
 						{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
 							<select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
 							{% for variant in product.variants %}
@@ -71,9 +71,10 @@
 								</option>
 							{% endfor %}
 							</select>
-							<div class="cartjs_cart_in" style="width: 100%;text-align: center;margin: 0 auto;">
-								<input type="submit" value="カートに入れる">
-							</div>
+							<div class="cartin_button">
+              	<button><span>カートに入れる</span></button>
+              	<input id="cartSubmit" type="submit" value="カートに入れる">
+            	</div>
 						{% endform %}
 						</div>
 					</div>

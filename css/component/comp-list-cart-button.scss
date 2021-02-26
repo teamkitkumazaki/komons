@@ -122,81 +122,14 @@
         }
       }
     }
-    .cartjs_box {
-      padding: 0 !important;
-
-      .cartjs_cart_in {
-        position: relative;
-        width: 100%;
-        height: 40px;
-        margin-top: -10px !important;
-        text-align: center;
-        cursor: pointer;
-
-        &::before {
-          position: relative;
-          pointer-events: none;
-          margin-top: 0px;
-          z-index: 10;
-          display: inline-block;
-          content: "カートに入れる";
-          font-size: 12px;
-          padding-left: 20px;
-          @include bgSet;
+    .cartin_button{
+      margin-bottom: 15px;
+      button{
+        padding: 14px 0;
+        font-size: 12px;
+        letter-spacing: 0.3px;
+        span{
           background-size: 15px;
-          background-position: center left;
-          line-height: 20px;
-        }
-
-        input[type="submit"] {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-          text-indent: -9999px;
-          width: 100% !important;
-          border-radius: 0 !important;
-          display: block !important;
-          height: 40px !important;
-          line-height: 38px !important;
-          text-align: center !important;
-          font-size: 15px !important;
-          transition: opacity 0.5s !important;
-          color: #fff !important;
-          margin-bottom: 10px !important;
-          -webkit-appearance: none;
-          appearance: none;
-          border-radius: 0;
-
-          &:hover {
-            opacity: 0.8;
-          }
-        }
-      }
-    }
-    &.related{
-      .cartjs_box {
-        padding: 0 !important;
-
-        .cartjs_cart_in {
-          position: relative;
-          width: 100%;
-          height: 40px;
-          margin-top: -10px !important;
-          text-align: center;
-          cursor: pointer;
-
-          &::before {
-            content: "カートに入れる";
-            color: $basicGreen;
-            font-size: 16px;
-            padding-left: 30px;
-            background-size: 20px;
-            background-position: center left;
-            line-height: 17px;
-          }
         }
       }
     }
