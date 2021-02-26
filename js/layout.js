@@ -978,69 +978,15 @@ $(function() {
       });
     }
 
-    function priceDescSort(){
-      giftListArray.sort(function(a,b){
-        if(a.price< b.price) return -1;
-        if(a.price > b.price) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
-    function priceAscSort(){
-      giftListArray.sort(function(a,b){
-        if(a.price > b.price) return -1;
-        if(a.price < b.price) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
-    function popularSort(){
-      giftListArray.sort(function(a,b){
-        if(a.number < b.number) return -1;
-        if(a.number > b.number) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
-    function recommendSort(){
-      giftListArray.sort(function(a,b){
-        if(a.recommend < b.recommend) return -1;
-        if(a.recommend > b.recommend) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
     function init(){
       target.find(".list_item").each(function(index) {
         $(this).attr('number', index);
-        var propBox = $(this).find('.product_type');
-        var contentIcon = $(this).find('.content_icon');
-        var propRecommend = propBox.attr('recommend');
-        $(this).attr('recommend', propRecommend);
         giftListArray[index] = {
           html : $(this),
           price : Number($(this).attr('price').replace(/,/g, '')),
-          recommend : Number($(this).attr('recommend')),
-          number : Number($(this).attr('number'))
         };
       });
 
-      $('#arrayFilter').on({
-        'change': function() {
-          const expr = $(this).val();
-          switch (expr) {
-            case 'recommend': recommendSort();break;
-            case 'popular': popularSort();break;
-            case 'priceDesc': priceDescSort();break;
-            case 'priceAsc': priceAscSort();break;
-            default: console.log('error');
-          }
-        }
-      });
       $('input[name="price_filter"]').on({
         'click': function() {
           var clickId = $(this).attr('id');
