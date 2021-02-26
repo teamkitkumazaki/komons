@@ -127,7 +127,6 @@
         }
         .comp-list-cart-button{
           width: 48%;
-          margin-bottom: 8px;
         }
       }
       .description{
@@ -157,6 +156,9 @@
       }
       .txt_wrap{
         width: 530px;
+        .button_wrap{
+          margin: 25px auto;
+        }
       }
     }
   }
