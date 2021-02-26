@@ -2,4 +2,23 @@
   The contents of the collection.liquid template can be found in /sections/collection-template.liquid
 {% endcomment %}
 
-{% section 'collection-template' %}
+{%- if collection.handle == "gift" -%}
+<article id="giftList" class="page-gift-list">
+	{% section 'collection-template-gift' %}
+</article>
+{%- elsif collection.handle == "dish"
+	or collection.handle == "fabric"
+	or collection.handle == "hand"
+	or collection.handle == "bath"
+	or collection.handle == "multi"
+	or collection.handle == "toilet"
+	-%}
+<article id="itemGroupList" class="page-item-group-list">
+	{% section 'collection-template-cat' %}
+	{% section 'section-back' %}
+</article>
+{%- else -%}
+<article id="itemList" class="page-item-list">
+	{% section 'collection-template' %}
+</article>
+{%- endif -%}
