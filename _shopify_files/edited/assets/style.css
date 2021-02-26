@@ -4756,7 +4756,7 @@ body.loaded #loading {
 }
 .comp-gift-product-list .list_item .content_icon .icon span.dish::before {
   width: 21px;
-  background-image: url(../img/giftList/icon_dish.svg);
+  background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_dish_gift.svg");
 }
 .comp-gift-product-list .list_item .content_icon .icon span.dish::after {
   content: "食器用洗剤";
@@ -4766,7 +4766,7 @@ body.loaded #loading {
 }
 .comp-gift-product-list .list_item .content_icon .icon span.multi::before {
   width: 19px;
-  background-image: url(../img/giftList/icon_multi.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_multi_gift.svg");
 }
 .comp-gift-product-list .list_item .content_icon .icon span.multi::after {
   content: "マルチクリーナー";
@@ -4776,7 +4776,7 @@ body.loaded #loading {
 }
 .comp-gift-product-list .list_item .content_icon .icon span.hand::before {
   width: 22px;
-  background-image: url(../img/giftList/icon_hand.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_hand_gift.svg");
 }
 .comp-gift-product-list .list_item .content_icon .icon span.hand::after {
   content: "ハンドソープ";
@@ -4786,7 +4786,7 @@ body.loaded #loading {
 }
 .comp-gift-product-list .list_item .content_icon .icon span.fabric::before {
   width: 20px;
-  background-image: url(../img/giftList/icon_fabric.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_fabric_gift.svg");
 }
 .comp-gift-product-list .list_item .content_icon .icon span.fabric::after {
   content: "除菌消臭ミスト";
@@ -4796,7 +4796,7 @@ body.loaded #loading {
 }
 .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini::before {
   width: 20px;
-  background-image: url(../img/giftList/icon_fabric.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_fabric_gift.svg");
 }
 .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini::after {
   font-size: 12px;
@@ -4807,7 +4807,7 @@ body.loaded #loading {
 }
 .comp-gift-product-list .list_item .content_icon .icon span.toilet::before {
   width: 20px;
-  background-image: url(../img/giftList/icon_toilet.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_toilet_gift.svg");
 }
 .comp-gift-product-list .list_item .content_icon .icon span.toilet::after {
   content: "トイレクリーナー";
@@ -4817,7 +4817,7 @@ body.loaded #loading {
 }
 .comp-gift-product-list .list_item .content_icon .icon span.towel::before {
   width: 18px;
-  background-image: url(../img/giftList/icon_towel.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_towel_gift.svg");
 }
 .comp-gift-product-list .list_item .content_icon .icon span.towel::after {
   content: "ウォッシュタオル";
@@ -4828,7 +4828,7 @@ body.loaded #loading {
 .comp-gift-product-list .list_item .content_icon .icon span.bath::before {
   bottom: 1px;
   width: 20px;
-  background-image: url(../img/giftList/icon_bath.svg);
+	background-image: url("https:////cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/icon_bath_gift.svg");
 }
 .comp-gift-product-list .list_item .content_icon .icon span.bath::after {
   content: "バスクリーナー";
@@ -8735,7 +8735,7 @@ body.loaded #loading {
   padding: 80px 0 60px;
   position: relative;
 }
-#itemList .list_section .section_ttl #cat {
+#itemList .list_section .section_ttl #cat-shopify {
   font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   position: absolute;
   top: 20px;
@@ -8754,11 +8754,11 @@ body.loaded #loading {
   background-size: 14px;
   background-position: center right;
 }
-#itemList .list_section .section_ttl #cat:focus {
+#itemList .list_section .section_ttl #cat-shopify:focus {
   outline: 0;
 }
 @media screen and (max-width: 750px) {
-  #itemList .list_section .section_ttl #cat {
+  #itemList .list_section .section_ttl #cat-shopify {
     position: static;
     width: 100%;
     font-size: 16px;

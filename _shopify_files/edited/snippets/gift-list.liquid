@@ -1,0 +1,30 @@
+<div class="list_item" price="{{ product.price | money_without_currency }}" recommend="2">
+	<a class="item_thumb" href="{{ product.url }}">
+		<span class="img_wrap img_warp-{{ product.id }}">
+	</a>
+	<style>
+		.img_warp-{{ product.id }} {
+			background-image: url({{ product.featured_image | img_url: 'master' }})
+		}
+	</style>
+	{%- assign product_title = product.title -%}
+	{%- if product_title == '【ギフト】2020 AW "クロモジ"/ Free as a Bird(Mini)' -%}
+		{%- assign product_title = '【ギフト】2020 AW "クロモジ"/ Free...' -%}
+	{%- endif -%}
+	<div class="txt_wrap">
+		<a class="name small" href="{{ product.url }}">{{ product_title }}<span>{{ product.price | money_without_currency }}円(税抜)</span></a>
+	</div>
+	<p class="product_desc"><span class="product_type" recommend="9">・マルチクリーナー<br>・除菌消臭ミスト(Mini)</span></p>
+	<div class="content_icon">
+		{% for tag in product.tags %}
+		<div class="icon">
+			<span class="{{ tag }}"></span>
+		</div>
+		{% endfor %}
+	</div>
+	<div class="comp-list-cart-button related wide">
+		<a class="gift_detail_button" href="{{ product.url }}">
+			<span>詳細を見る</span>
+		</a>
+	</div>
+</div>

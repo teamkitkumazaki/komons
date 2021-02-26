@@ -77,7 +77,7 @@
         @include flexSet;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 5px;
+        margin: 25px auto;
         a{
           display: block;
           width: 48%;
@@ -127,7 +127,6 @@
         }
         .comp-list-cart-button{
           width: 48%;
-          margin-bottom: 8px;
         }
       }
       .description{
@@ -157,6 +156,8 @@
       }
       .txt_wrap{
         width: 530px;
+        .button_wrap{
+        }
       }
     }
   }

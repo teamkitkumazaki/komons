@@ -1,104 +1,110 @@
-{%- assign limit = 50 -%}
+{% case section.settings.grid %}
+  {% when 2 %}
+    {%- assign max_height = 530 -%}
+  {% when 3 %}
+    {%- assign max_height = 345 -%}
+  {% when 4 %}
+    {%- assign max_height = 250 -%}
+  {% when 5 %}
+    {%- assign max_height = 195 -%}
+{% endcase %}
+
+{% if section.settings.layout == 'grid' %}
+  {%- assign limit = section.settings.grid | times: section.settings.rows -%}
+{% else %}
+  {%- assign limit = 16 -%}
+{% endif %}
 
 {% paginate collection.products by limit %}
 
-<section class="main"></section>
-<section id="products" class="list_section">
-	<div class="section_ttl">
-		<h1><span>{{ collection.title }}</span><font>{{ collection.metafields.custom_fields["collection_title_ja"] }}</font></h1>
-		{%- assign selected1 = "" -%}
-		{%- assign selected2 = "" -%}
-		{%- assign selected3 = "" -%}
-		{%- assign selected4 = "" -%}
-		{%- assign selected5 = "" -%}
-		{%- if collection.handle == "all-products" -%}
-			{%- assign selected1 = "selected" -%}
-		{%- elsif collection.handle == "bottle" -%}
-			{%- assign selected2 = "selected" -%}
-		{%- elsif collection.handle == "refill" -%}
-			{%- assign selected3 = "selected" -%}
-		{%- elsif collection.handle == "bottle-and-refill" -%}
-			{%- assign selected4 = "selected" -%}
-		{%- elsif collection.handle == "upcoming" -%}
-			{%- assign selected5 = "selected" -%}
-		{%- endif -%}
-		<select name="cat" id="cat-shopify" class="postform" onChange="location.href=value;">
-			<option class="option-1" value="/collections/all-products" {{ selected1 }}>全ての商品</option>
-			<option class="option-1" value="/collections/bottle" {{ selected2 }} >ボトル商品</option>
-			<option class="option-1" value="/collections/refill" {{ selected3 }}>レフィル商品</option>
-			<option class="option-1" value="/collections/bottle-and-refill" {{ selected4 }} >ボトル＆レフィル</option>
-			<option class="option-1" value="/collections/upcoming" {{ selected5 }} >Upcoming商品</option>
-		</select>
+<section class="section-main">
+	<div class="main_img">
 	</div>
-	<div id="productList" class="comp-product-list">
-		<ul class="item_wrapper">
-			{% paginate collection.products by 20 %}
-			{% for product in collection.products %}
-			{% assign product_image = product.featured_image %}
-			<li class="item_box">
-				<span class="cat_ttl">{{ product.metafields.custom_fields["category_name"] }}</span>
-				<div class="img_wrap">
-					<a href="{{ product.url }}" class="collection-img-link-{{ product.id }}"></a>
-					<style>
-						.collection-img-link-{{ product.id }} {
-							background-image: url({{ product_image | img_url: 'master' }});
-						}
-					</style>
-				</div>
-				<div class="txt_wrap">
-					<h3 class="prod_name">
-						{%- assign small_or_not = "" -%}
-						{%- assign sku = product.metafields.custom_fields["variation_bottle"] -%}
-						{%- if sku == "k0048" or sku == "k0049" or sku == "k0053" -%}
-							{%- assign small_or_not = "small" -%}
-						{%- endif -%}
-						<a href="{{ product.url }}" class="{{ small_or_not }}">{{ product.title }}</a>
-					</h3>
-					<span class="product_detail">
-						<span class="price">{{ product.price | money_without_currency }}円(税抜)</span>
-					</span>
-				</div>
-				<div class="comp-list-cart-button">
-					<div style="width: 100%; margin: 0 auto; padding: 0">
-            <div class="cartjs_box">
-						{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
-							<select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
-							{% for variant in product.variants %}
-								<option value="{{ variant.id }}"
-									{%- if variant == current_variant %} selected="selected" {%- endif -%}
-								>
-									{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
-								</option>
-							{% endfor %}
-							</select>
-							<div class="cartin_button">
-              	<button><span>カートに入れる</span></button>
-              	<input id="cartSubmit" type="submit" value="カートに入れる">
-            	</div>
-						{% endform %}
+	<div class="lead_txt">
+		<div class="title_wrap">
+			<span class="title_en">Gift Set</span>
+			<h1 class="main_ttl">Komonsのギフトセット</h1>
+		</div>
+		<p class="main_desc"><span>毎日の家事を「プラスな時間」に変えるKomonsのギフトセットを、<font>大切な人への贈り物に。</font></span><span class="pc_only">新築祝い、引っ越し祝い、結婚祝い、日頃のお礼などにおすすめです。</span><span>すべてのセットはギフトボックス付き。熨斗やメッセージカードなどの<font>ギフトサービスも承ります。</font></span></p>
+	</div>
+</section>
+<section class="section-filter">
+	<div class="section_inner">
+		<div class="section_ttl">
+			<h2><span>Product List</span><font>ギフト商品一覧</font></h2>
+		</div>
+		<div class="filter_wrap">
+			<div class="comp-filter-wrap">
+				<div class="filter_item filter02">
+					<span class="fil_ttl">商品を絞り込む</span>
+					<div id="priceRangeFilter" class="input_wrap flex">
+						<div class="radio_wrap">
+							<input id="price01" type="checkbox" name="price_filter" minPrice="0" maxPrice="3000" val="0">
+							<label for="price01">3,000円以下</label>
+						</div>
+						<div class="radio_wrap">
+							<input id="price02" type="checkbox" name="price_filter" minPrice="3001" maxPrice="5000" val="1">
+							<label for="price02">3,001円~5,000円</label>
+						</div>
+						<div class="radio_wrap">
+							<input id="price03" type="checkbox" name="price_filter" minPrice="5001" maxPrice="10000" val="2">
+							<label for="price03">5,001円~10,000円</label>
+						</div>
+						<div class="radio_wrap">
+							<input id="price04" type="checkbox" name="price_filter" minPrice="10001" maxPrice="100000" val="3">
+							<label for="price04">10,001円以上</label>
 						</div>
 					</div>
 				</div>
-			</li>
-			{% endfor %}
-			{% endpaginate %}
-		</ul>
-	</div>
-</section>
-<section class="gift_section">
-	<div class="section_ttl">
-		<h2><span>Gift</span><font>贈り物セット一覧</font></h2>
-	</div>
-	<div class="img_wrap">
-		<a class="cover_link" href="https://www.komons-japan.com/?mode=f5">
-			<span class="caret"></span>
-		</a>
-		<img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620//index/gift_img_lim2gn.png">
-		<div class="txt_block">
-			<h3><span>Komons</span>のギフトセット</h3>
-			<h4>大切な人への贈り物に。</h4>
+			</div>
 		</div>
 	</div>
+</section>
+<section class="section-gift-products">
+	<div class="section_inner">
+		<div id="giftProductList" class="comp-gift-product-list">
+			{%- paginate collection.products by 20 -%}
+			{%- for product in collection.products -%}
+			<div class="list_item" price="{{ product.price | money_without_currency }}" recommend="2">
+				<a class="item_thumb" href="{{ product.url }}">
+					<span class="img_wrap img_warp-{{ product.id }}">
+				</a>
+				<style>
+					.img_warp-{{ product.id }} {
+						background-image: url({{ product.featured_image | img_url: 'master' }})
+					}
+				</style>
+				{%- assign product_title = product.title -%}
+				{%- if product_title == '【ギフト】2020 AW "クロモジ"/ Free as a Bird(Mini)' -%}
+					{%- assign product_title = '【ギフト】2020 AW "クロモジ"/ Free...' -%}
+				{%- endif -%}
+				<div class="txt_wrap">
+					<a class="name small" href="{{ product.url }}">{{ product_title }}<span>{{ product.price | money_without_currency }}円(税抜)</span></a>
+				</div>
+				<p class="product_desc"><span class="product_type" recommend="9">・マルチクリーナー<br>・除菌消臭ミスト(Mini)</span></p>
+				<div class="content_icon">
+					{% for tag in product.tags %}
+					<div class="icon">
+						<span class="{{ tag }}"></span>
+					</div>
+					{% endfor %}
+				</div>
+				<div class="comp-list-cart-button related wide">
+					<a class="gift_detail_button" href="{{ product.url }}">
+						<span>詳細を見る</span>
+					</a>
+				</div>
+			</div>
+			{%- endfor -%}
+			{%- endpaginate -%}
+		</div>
+	</div>
+</section>
+<section class="section-gift-service">
+	{%- render 'gift-service' -%}
+</section>
+<section class="comp-qa">
+	{%- render 'gift-faq' -%}
 </section>
 
 {% endpaginate %}
