@@ -345,22 +345,6 @@ $(function() {
 
   keywordSearchControll2($('#searchSubmit'));
 
-  // リード文の出力
-  function readTxtMove(target) {
-    var strInnerHTML = target.html();
-    $('#excerpt').prepend(strInnerHTML);
-    target.remove();
-    if (document.getElementById('cartNotice')) {
-      var strCartNotice = $('#cartNotice').html();
-      $('.cart_button').append(strCartNotice);
-      $('#cartNotice').remove();
-    }
-  }
-
-  if (document.getElementById('itemDetail')) {
-    readTxtMove($('#leadTxt'));
-  }
-
   // 商品詳細情報の開閉部分
   function detailToggleControll(target) {
     var controllButton = target.find('button');
@@ -400,6 +384,32 @@ $(function() {
     detailToggleControll($('#detailToggle'));
   }
 
+  //関連商品プラグインをslick用いて表示させる
+  function relatedProductArrange(target){
+    var relatedInfo = [];
+    var relatedSlider = $('#relatedSlider');
+
+    function init(){
+      $.each(target.find('li'), function(index) {
+        console.log('relatedWrap:' + index)
+        relatedInfo[index] = $(this).html();
+        $(this).remove();
+      });
+      $.each(relatedSlider.find('.item_box'), function(index) {
+        console.log('item_box:' + index)
+        $(this).append(relatedInfo[index]);
+      });
+    }
+
+    init();
+
+  }
+  if (document.getElementById('itemDetail')) {
+    relatedProductArrange($('.relatedWrap'));
+  }
+
+
+
   //商品詳細のバリエーション選択欄
   function variationToggle(target){
     var toggleState = 0;
@@ -408,6 +418,9 @@ $(function() {
     var buttonHeight = button.outerHeight();
     var toggle = target.find('.display_toggle');
     var toggleHeight = toggle.outerHeight();
+    var currentURL = location.href;
+    var itemNumber = currentURL.split("products/");
+    var kataban = itemNumber.slice(-1)[0];
 
     function toggleMove(){
       var buttonHeight = button.outerHeight();
@@ -425,6 +438,17 @@ $(function() {
     }
 
     function init(){
+      $.each(target.find('a'), function(index) {
+        var linkHref = $(this).attr('href');
+        var linkText = $(this).find('.title').html();
+        var variationKataban = linkHref.split("products/");
+        console.log('current:' + variationKataban.slice(-1)[0]);
+        if (kataban == variationKataban.slice(-1)[0]) {
+          $(this).addClass('current');
+          $('#selectedVar').html(linkText);
+        }
+      });
+      target.find()
       wrap.css({height: buttonHeight + 'px'});
       button.on({
         'click': function() {
@@ -440,65 +464,6 @@ $(function() {
     variationToggle($('#variationToggle'));
   }
 
-  // 商品一覧ページのソート機能実装
-
-  function filterProduct(target) {
-    var dropdown = document.getElementById("cat");
-    var optionVal = [];
-
-    function onCatChange() {
-      var u = dropdown.value;
-      if (document.getElementById('itemList')) {
-        var url = 'https://www.komons-japan.com' + u + '#products';
-      }else if(document.getElementById('itemDetail')) {
-        var url = 'https://www.komons-japan.com' + u;
-      }
-
-      if (u !== 'undefined') {
-        location.href = url;
-      }
-    }
-
-    function init() {
-      var urlHash = location.hash;
-      if (0 < urlHash.length) {
-        var scroll = $(urlHash).offset().top;
-        var h = $(window).width();
-
-        if (h > 1100) {
-          var adScroll = scroll - 100;
-        } else {
-          var adScroll = scroll - 100;
-        }
-
-        $("html, body").animate({
-          scrollTop: adScroll
-        }, 0);
-      }
-
-      var search = location.search;
-      $.each(target.find('.option-1'), function(index) {
-        optionVal[index] = $(this).attr('links');
-        if (optionVal[index] = search) {
-          target.val(optionVal[index]);
-        }
-      });
-
-      target.change(function() {
-        onCatChange();
-      });
-    }
-
-    init();
-
-  }
-
-  if (document.getElementById('itemList')) {
-    filterProduct($('#cat'));
-  }
-  if (document.getElementById('itemDetail')) {
-    filterProduct($('#cat'));
-  }
 
   //アンカーリンクで追従ヘッダーの分オフセットする
   window.onload = function() {
@@ -1013,73 +978,15 @@ $(function() {
       });
     }
 
-    function priceDescSort(){
-      giftListArray.sort(function(a,b){
-        if(a.price< b.price) return -1;
-        if(a.price > b.price) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
-    function priceAscSort(){
-      giftListArray.sort(function(a,b){
-        if(a.price > b.price) return -1;
-        if(a.price < b.price) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
-    function popularSort(){
-      giftListArray.sort(function(a,b){
-        if(a.number < b.number) return -1;
-        if(a.number > b.number) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
-    function recommendSort(){
-      giftListArray.sort(function(a,b){
-        if(a.recommend < b.recommend) return -1;
-        if(a.recommend > b.recommend) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
     function init(){
       target.find(".list_item").each(function(index) {
         $(this).attr('number', index);
-        var propBox = $(this).find('.product_type');
-        var contentIcon = $(this).find('.content_icon');
-        var propRecommend = propBox.attr('recommend');
-        $(this).attr('recommend', propRecommend);
-        var propType = propBox.attr('prop').split(',');
-        for (var i=0; i<propType.length; i++) {
-          contentIcon.append('<div class="icon"><span class="' + propType[i] + '"></span></div>');
-        }
         giftListArray[index] = {
           html : $(this),
           price : Number($(this).attr('price').replace(/,/g, '')),
-          recommend : Number($(this).attr('recommend')),
-          number : Number($(this).attr('number'))
         };
       });
 
-      $('#arrayFilter').on({
-        'change': function() {
-          const expr = $(this).val();
-          switch (expr) {
-            case 'recommend': recommendSort();break;
-            case 'popular': popularSort();break;
-            case 'priceDesc': priceDescSort();break;
-            case 'priceAsc': priceAscSort();break;
-            default: console.log('error');
-          }
-        }
-      });
       $('input[name="price_filter"]').on({
         'click': function() {
           var clickId = $(this).attr('id');

@@ -56,10 +56,17 @@
         </div>
         <div class="pop_section">
           <div class="pop_subttl">キーワードから探す</div>
-          <div id="searchSubmit" class="key_input">
-            <input type="text" name="keyword" placeholder="キーワードを入れて検索">
-            <button class="search_submit">検索</button>
-          </div>
+						<form action="/search">
+							<div class="key_input">
+								<input
+									type="text"
+									placeholder="キーワードを入れて検索"
+									name="q"
+									value="{{ search.terms | escape }}"
+								/>
+								<button class="search_submit">検索</button>
+							</div>
+						</form>
         </div>
       </div>
       <div class="content_right">
