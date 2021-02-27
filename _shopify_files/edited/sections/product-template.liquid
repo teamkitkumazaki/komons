@@ -109,17 +109,7 @@
 			</select>
 			<div class="cart_button">
 				<div class="cart_wrap">
-					<div class="comp-flex-cart no_flex">
-						<div class="cart_box">
-							<div class="cart_item">
-								<span class="button_wrap">
-									<span class="title cart_in">購入する</span>
-									<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
-								</span>
-								<input id="cartSubmit" class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる">
-							</div>
-						</div>
-					</div>
+					{%- include 'comp-flex-cart-1st' -%}
 				</div>
 			</div>
 		{% endform %}
@@ -146,17 +136,7 @@
 				</div>
 				<div class="cart_button">
 					<div class="cart_wrap">
-						<div class="comp-flex-cart no_flex">
-							<div class="cart_box">
-								<div class="cart_item">
-									<span class="button_wrap">
-										<span class="title cart_in">購入する</span>
-										<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
-									</span>
-									<input id="submitButtonLower" class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる" onclick="send_conversion(); console.log('click!'); return false;">
-								</div>
-							</div>
-						</div>
+						{%- include 'comp-flex-cart-2nd' -%}
 					</div>
 				</div>
 		</div>
