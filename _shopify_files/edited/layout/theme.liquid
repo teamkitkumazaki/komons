@@ -14,7 +14,17 @@
   <link rel="stylesheet" href="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/slick.css">
   {%- capture seo_title -%}
     {%- if request.page_type == 'search' and search.performed == true -%}
-      {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+			{%- comment -%}
+			{{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+			{%- endcomment -%}
+			{%- comment -%}
+			{{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+			{%- endcomment -%}
+			{%- comment -%}
+			{{ 'general.search.results' | t: terms: search.terms }}
+			{%- endcomment -%}
+			{%- assign search_message = 'の検索結果 | komons-japan' -%}
+			{{ search.terms }}{{ search_message  }}
     {%- else -%}
       {{ page_title }}
     {%- endif -%}

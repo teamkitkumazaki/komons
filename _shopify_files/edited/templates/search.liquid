@@ -30,12 +30,17 @@
 					</div>
 					<div class="txt_wrap">
 						<a class="prod_name" href="{{ product.url }}">
-							<span class="ja">{{ product.collections.metafields.custom_fields["collection_title_ja"] }}</span>
+							<span class="ja">{{ product.metafields.custom_fields["category_name"] }}</span>
 							<span class="en">
 								{{ product.title }}
 							</span>
 						</a>
 						<span class="price">{{ product.price | money_without_currency }}円(税抜)</span>
+						{%- if product.type == "gift" -%}
+						<div class="button_wrap">
+							<a class="full" href="{{ product.url }}"><span>詳細を見る</span></a>
+						</div>
+						{%- else -%}
 						<div class="button_wrap">
 							<a href="{{ product.url }}"><span>詳細を見る</span></a>
 							<div class="comp-list-cart-button">
@@ -58,6 +63,7 @@
 								</div>
 							</div>
 						</div>
+						{%- endif -%}
 					</div>
 				</div>
 				{%- endif -%}
