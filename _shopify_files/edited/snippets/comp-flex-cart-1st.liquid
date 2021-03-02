@@ -1,17 +1,5 @@
 
-{%- unless product.type == "refill" or product.type == "bottle-refill" -%}
-<div class="comp-flex-cart no_flex">
-	<div class="cart_box">
-		<div class="cart_item">
-			<span class="button_wrap">
-				<span class="title cart_in">購入する</span>
-				<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
-			</span>
-			<input id="cartSubmit" class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる">
-		</div>
-	</div>
-</div>
-{%- else -%}
+{%- if product.type == "refill" or product.type == "bottle-refill" -%}
 <div class="comp-flex-cart">
 	<div class="cart_box">
 		<div class="cart_item">
@@ -35,4 +23,29 @@
 		</div>
 	</div>
 </div>
-{%- endunless -%}
+{%- elsif product.type == "gift" -%}
+<div class="comp-flex-cart no_flex">
+	<div class="cart_box">
+		<div class="cart_item">
+			<a id="optionSelect" href="#" class="button_wrap option_select">
+				<span class="title cart_in">オプションを選択して購入</span>
+				<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+				<!-- <input type="hidden" name="user_hash" value="5a9776c9465e1962c62a0dac4d19f539"><input type="hidden" name="regi_hash" value="6516699ffeee7c16211875768426ff"><input type="hidden" name="members_hash" value="5a9776c9465e1962c62a0dac4d19f539"><input type="hidden" name="shop_id" value="PA01416697"><input type="hidden" name="product_id" value="153836410"><input type="hidden" name="members_id" value=""><input type="hidden" name="back_url" value="https://www.komons-japan.com/?pid=153836410"><input type="hidden" name="reference_token" value="0b83475f2eec40c8bbf5a38511c6cb14"><input type="hidden" name="shop_domain" value="komons-japan.com"> -->
+			</a>
+			<p class="cart_desc">※ギフトオプションに関する詳細は<a href="/pages/gift-service">こちら</a></p>
+		</div>
+	</div>
+</div>
+{%- else -%}
+<div class="comp-flex-cart no_flex">
+	<div class="cart_box">
+		<div class="cart_item">
+			<span class="button_wrap">
+				<span class="title cart_in">購入する</span>
+				<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+			</span>
+			<input id="cartSubmit" class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる">
+		</div>
+	</div>
+</div>
+{%- endif -%}

@@ -9,6 +9,9 @@
       <span class="price">{{ product.price | money_without_currency }}円(税抜)</span>
     </div>
     <div class="product_cart_button">
+			{%- if product.type == "gift" -%}
+			<button id="fixedPopButton" class="fixed_cart_button"><span>オプションを選択</span></button>
+			{%- else -%}
 			<select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
 				{% for variant in product.variants %}
 					<option value="{{ variant.id }}"
@@ -19,6 +22,7 @@
 				{% endfor %}
 			</select>
 			<button id="fixedCartButton" class="fixed_cart_button" onclick="send_conversion(); return false;"><span>購入する</span></button>
+			{%- endif -%}
     </div>
   </div>
 </div>

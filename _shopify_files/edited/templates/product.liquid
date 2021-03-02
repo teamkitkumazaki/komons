@@ -3,12 +3,21 @@
 {% endcomment %}
 
 <article id="itemDetail" class="dishwash">
+{%- if product.type == "upcoming" -%}
+{% section 'product-template-upcoming' %}
+{%- else -%}
 {% section 'product-template' %}
 {% section 'product-recommendations' %}
+{%- endif -%}
 {% section 'journal-list' %}
 {% section 'section-back' %}
 </article>
 {% section 'fixed-cart-wrap' %}
+
+{%- if product.type == "gift" -%}
+{% section 'gift-option-field' %}
+{%- endif -%}
+
 
 {% if collection %}
   <div class="text-center return-link-wrapper page-width">

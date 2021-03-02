@@ -1,147 +1,43 @@
-<section id="main" class="main item-main-thumb";>
-	<div class="fil"></div>
-</section>
+<section class="main upcoimng"></section>
 <style>
-.item-main-thumb {
-	background-image: url({{ product.media[1] | img_url: 'master' }});
-}
+	.upcoimng {
+		background-image: url({{ product.featured_image | img_url: 'master' }});
+	}
 </style>
-<div class="product-template__container page-width"
-  id="ProductSection-{{ section.id }}"
-  data-section-id="{{ section.id }}"
-  data-section-type="product"
-  data-enable-history-state="true"
-  data-ajax-enabled="{{ settings.enable_ajax }}"
->
-  {% comment %}
-    Get first variant, or deep linked one
-  {% endcomment %}
-  {%- assign current_variant = product.selected_or_first_available_variant -%}
-  {%- assign product_image_zoom_size = '1024x1024' -%}
-  {%- assign product_image_scale = '2' -%}
-  {%- assign enable_image_zoom = section.settings.enable_image_zoom -%}
-  {%- assign compare_at_price = current_variant.compare_at_price -%}
-  {%- assign price = current_variant.price -%}
-
-  {% case section.settings.media_size %}
-    {% when 'small' %}
-      {%- assign product_media_width = 'medium-up--one-third' -%}
-      {%- assign product_description_width = 'medium-up--two-thirds' -%}
-      {%- assign height = 345 -%}
-    {% when 'medium' %}
-      {%- assign product_media_width = 'medium-up--one-half' -%}
-      {%- assign product_description_width = 'medium-up--one-half' -%}
-      {%- assign height = 530 -%}
-    {% when 'large' %}
-      {%- assign product_media_width = 'medium-up--two-thirds' -%}
-      {%- assign product_description_width = 'medium-up--one-third' -%}
-      {%- assign height = 720 -%}
-    {% when 'full' %}
-      {%- assign product_media_width = '' -%}
-      {%- assign product_description_width = '' -%}
-      {%- assign height = 1090 -%}
-      {%- assign enable_image_zoom = false -%}
-  {% endcase %}
-
-	<section id="wrap01" class="cart_wrap01">
-		{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
-			<div class="product_ex">
-				<h2 class="product_cat">{{ product.metafields.custom_fields["category_name"] }}</h2>
-				<h1 class="prodcut_name">{{ product.metafields.custom_fields["product_name"] }}</h1>
-				<div id="excerpt" class="excerpt">
-					<p>{{ product.metafields.custom_fields["product_outline"] }}</p>
-					{% if product.metafields.custom_fields["variation_refill"] != blank %}
-					<div id="variationToggle" class="comp-variation">
-						<div class="variation_wrap">
-							<a href="javascript:void(0)" class="display_wrap">
-								<span class="title">サイズ:</span>
-								<span id="selectedVar" class="current_page"></span>
-							</a>
-							{%- endif -%}
-							<div class="display_toggle">
-							{% if product.metafields.custom_fields["variation_bottle"] != blank %}
-							<a href="/products/{{ product.metafields.custom_fields["variation_bottle"] }}">
-								<span class="wrap">
-									<span class="title">ボトル</span>
-									<span class="desc">¥1,900</span>
-								</span>
-							</a>
-							{% if product.metafields.custom_fields["variation_refill"] != blank %}
-								<a href="/products/{{ product.metafields.custom_fields["variation_refill"] }}">
-									<span class="wrap">
-										<span class="title">レフィル(詰め替え用)</span>
-										<span>¥2,300</span>
-									</span>
-								</a>
-							 {%- endif -%}
-							 {% if product.metafields.custom_fields["variation_bottle_refill"] != blank %}
-								<a href="/products/{{ product.metafields.custom_fields["variation_bottle_refill"] }}">
-									<span class="wrap">
-										<span class="title">ボトル&amp;レフィル</span>
-										<span class="desc">¥3,980</span>
-									</span>
-								</a>
-								{%- endif -%}
-							</div><!-- display_toggle -->
-						</div><!-- variation_wrap -->
-					</div><!-- comp-variation -->
-					{%- endif -%}
-				</div>
+<section id="wrap01" class="cart_wrap01">
+	<form id="cartIn" name="product_form" method="post" action="https://komons-japan.shop-pro.jp/cart/proxy/basket/items/add">
+		<div class="product_ex">
+			<h2 class="product_cat"><span class="ja">{{ product.metafields.custom_fields["category_name"] }}</span></h2>
+			<h1 class="prodcut_name">{{ product.metafields.custom_fields["product_name"] }}</h1>
+			<span class="upcoming_tag">構想中</span>
+			<div id="excerpt" class="excerpt">
+				{{ product.metafields.custom_fields["product_outline"] }}
 			</div>
-			<div class="product_detail">
-				<div class="detail_block detail01">
-					<span class="left_txt">内容量：<span class="weight">{{ product.metafields.custom_fields["weight"] }}</span></span>
-					<span class="right_txt stock">販売中</span>
-				</div>
-				<div class="detail_block detail02">
-					<span class="left_txt"><span>数量</span>：<input type="text" name="quantity" value="1" class="product_init_num" /><span>個</span></span>
-					<span class="right_txt">合計：{{ product.price | money_without_currency }}円(税抜)</span>
-				</div>
-			</div>
-			<select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
-				{% for variant in product.variants %}
-					<option value="{{ variant.id }}"
-						{%- if variant == current_variant %} selected="selected" {%- endif -%}
-					>
-						{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
-					</option>
-				{% endfor %}
-			</select>
-			<div class="cart_button">
-				<div class="cart_wrap">
-					{%- include 'comp-flex-cart-1st' -%}
-				</div>
-			</div>
-		{% endform %}
-	</section>
-	<section class="product-single__description rte">
-		{{ product.description }}
-	</section>
-	<section id="wrap02" class="cart_wrap02">
-		<div class="img_wrap">
-			<img class="product-single__thumbnail-image" src="{{ product.media[2] | img_url: 'master' }}" alt="{{ thumbnailAlt }}" >
 		</div>
-		<div class="txt_wrap">
-				<h3>{{ product.metafields.custom_fields["category_name"] }}</h3>
-				<h2>{{ product.metafields.custom_fields["product_name"] }}</h2>
-				<div class="product_detail">
-					<div class="detail_block detail01">
-						<span class="left_txt">内容量：<span class="weight">{{ product.metafields.custom_fields["weight"] }}</span></span>
-						<span class="right_txt stock">販売中</span>
-					</div>
-					<div class="detail_block detail02">
-						<span class="left_txt"><span>数量</span>：<input type="text" name="product_num" value="1" class="product_init_num" /><span>個</span></span>
-						<span class="right_txt">合計：{{ product.price | money_without_currency }}円(税抜)</span>
-					</div>
-				</div>
-				<div class="cart_button">
-					<div class="cart_wrap">
-						{%- include 'comp-flex-cart-2nd' -%}
-					</div>
-				</div>
+		<div class="comp-waiting-button upcoming_button">
+		{%- if product.title == "Laundry Detergent" -%}
+			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0001" -%}
+		{%- elsif product.title == "Apron" -%}
+			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0002" -%}
+		{%- elsif product.title == "Hand Cream" -%}
+			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0003" -%}
+		{%- elsif product.title == "Hand Milk" -%}
+			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0004" -%}
+		{%- elsif product.title == "Aroma Potpourri" -%}
+			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0005" -%}
+		{%- elsif product.title == "Laundry Bag" -%}
+			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0006" -%}
+		{%- elsif product.title == "Room Mist" -%}
+			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0007" -%}
+		{%- endif -%}
+		<a href="{{ waiting_list_url }}">
+			<span class="title">Waiting Listに登録</span>
+			<span class="desc">発売時にメールにてお知らせいたします</span>
+		</a>
 		</div>
-	</section>
-</div>
+		<hr class="upcoming_margin">
+	</form>
+</section>
 
 {% unless product == empty %}
   <script type="application/json" id="ProductJson-{{ section.id }}">
@@ -151,6 +47,10 @@
     {{ product.media | where: 'media_type', 'model' | json }}
   </script>
 {% endunless %}
+
+<script>
+	$('body').addClass('fixed2');
+</script>
 
 {% schema %}
 {
