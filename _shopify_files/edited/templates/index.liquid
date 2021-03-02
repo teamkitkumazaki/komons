@@ -68,7 +68,28 @@
         <h2><span>Pickup</span><font>ピックアップ商品</font></h2>
       </div>
       <div class="comp-pickup-items">
-        <div class="pickup_item">
+				{% for collection in collections %}
+				{%- if collection.title == "pickup" -%}
+				{% paginate collection.products by 2 %}
+				{% for product in collection.products %}
+				<div class="pickup_item">
+          <div class="img_wrap">
+            <a href="{{ product.url }}"><img src="{{ product.featured_image | | img_url: 'master' }}"></a>
+          </div>
+          <div class="txt_wrap">
+            <div class="prod_detail">
+              <h3 class="cat_ttl">{{ product.metafields.custom_fields["category_name"] }}</h3>
+              <a class="prod_name" href="{{ product.url }}">{{ product.metafields.custom_fields["product_name"] }}</a>
+              <span class="price">{{ product.price | money_without_currency }}円(税抜)</span>
+            </div>
+            <a class="arrow_link" href="{{ product.url }}"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
+          </div>
+        </div>
+				{% endfor %}
+				{% endpaginate %}
+				{%- endif -%}
+				{% endfor %}
+        <!-- <div class="pickup_item">
           <div class="img_wrap">
             <a href="/?pid=134416250"><img src="https://img07.shop-pro.jp/PA01416/697/product/134416250_o2.jpg?cmsp_timestamp=20200710154136"></a>
           </div>
@@ -93,7 +114,7 @@
             </div>
             <a class="arrow_link" href="/?pid=139975276"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -226,7 +247,7 @@
       <h2><span>Gift</span><font>贈り物セット一覧</font></h2>
     </div>
     <div class="img_wrap">
-      <a class="cover_link" href="https://www.komons-japan.com/?mode=f5">
+      <a class="cover_link" href="/collections/gift">
         <span class="caret"></span>
       </a>
       <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/gift_img_lim2gn.png">

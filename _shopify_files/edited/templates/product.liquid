@@ -3,8 +3,12 @@
 {% endcomment %}
 
 <article id="itemDetail" class="dishwash">
+{%- if product.type == "upcoming" -%}
+{% section 'product-template-upcoming' %}
+{%- else -%}
 {% section 'product-template' %}
 {% section 'product-recommendations' %}
+{%- endif -%}
 {% section 'journal-list' %}
 {% section 'section-back' %}
 </article>
