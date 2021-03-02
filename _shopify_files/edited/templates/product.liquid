@@ -14,6 +14,11 @@
 </article>
 {% section 'fixed-cart-wrap' %}
 
+{%- if product.type == "gift" -%}
+{% section 'gift-option-field' %}
+{%- endif -%}
+
+
 {% if collection %}
   <div class="text-center return-link-wrapper page-width">
     <a href="{{ collection.url }}" class="btn btn--secondary btn--has-icon-before return-link">

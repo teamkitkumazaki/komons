@@ -55,7 +55,7 @@
         @include hover;
         cursor: pointer;
         @include bgSet;
-        background-image: url(../img/common/pop_close.svg);
+        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614663746/common/pop_close_uwy2uu.svg);
         z-index: 20;
         pointer-events: none;
         @media screen and (max-width: 1110px){
@@ -312,7 +312,7 @@
               background-repeat: no-repeat;
               background-position: center center;
               background-size: 25px;
-              background-image: url(../img/cart_icon.png);
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750805/common/cart_icon_r3jbwu.png);
             }
           }
         }
