@@ -1,5 +1,6 @@
 <div id="optionPop" class="comp-gift-option-pop">
   <div id="popBg" class="pop_bg"></div>
+	{% form 'product', product, class:form_classes, id:hoge, novalidate: 'novalidate', data-product-form: '' %}
   <div class="pop_flex">
     <div class="height_adjust"></div>
     <div class="pop_contents">
@@ -41,6 +42,15 @@
           </div>
         </div>
       </div>
+			<select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
+				{% for variant in product.variants %}
+					<option value="{{ variant.id }}" id ="0-{{ forloop.index }}"
+						{%- if variant == current_variant %} selected="selected" {%- endif -%}
+					>
+						{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+					</option>
+				{% endfor %}
+			</select>
       <div class="fix_wrapper">
         <div class="option_fix">
           <button id="optionFix" class="option_fix_button" href="javascript:void(0);"><span>購入する</span></button>
@@ -49,4 +59,5 @@
       </div>
     </div>
   </div><!-- pop_flex -->
+	{% endform %}
 </div><!-- comp-gift-option-pop -->
