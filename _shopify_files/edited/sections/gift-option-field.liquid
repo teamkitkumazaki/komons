@@ -42,7 +42,7 @@
           </div>
         </div>
       </div>
-			<select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
+			<select name="id" id="ProductSelect-{{ section.id }}" class="giftOptionFields" style="display: none;">
 				{% for variant in product.variants %}
 					<option value="{{ variant.id }}" id ="0-{{ forloop.index }}"
 						{%- if variant == current_variant %} selected="selected" {%- endif -%}
