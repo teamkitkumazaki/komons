@@ -75,15 +75,15 @@
   <div class="comp-pickup-items">
     <div class="pickup_item">
       <div class="img_wrap">
-        <a href="/?pid=134416250"><img src="https://img07.shop-pro.jp/PA01416/697/product/134416250_o2.jpg?cmsp_timestamp=20200710154136"></a>
+        <a href="/?pid=134415561"><img src="https://img07.shop-pro.jp/PA01416/697/product/134415561_o2.jpg?cmsp_timestamp=20200710153702"></a>
       </div>
       <div class="txt_wrap">
         <div class="prod_detail">
           <h3 class="cat_ttl"><span>Gift Set</span>ギフトセット</h3>
-          <a class="prod_name" href="/?pid=134416250">エントリーコンビ</a>
-          <span class="price">5,000円(税抜)</span>
+          <a class="prod_name" href="/?pid=134415561">キッチンコンビ</a>
+          <span class="price">3,900円(税抜)</span>
         </div>
-        <a class="arrow_link" href="/?pid=134416250"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
+        <a class="arrow_link" href="/?pid=134415561"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
       </div><!-- txt_wrap -->
     </div><!-- pickup_item -->
     <div class="pickup_item">
