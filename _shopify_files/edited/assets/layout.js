@@ -823,6 +823,8 @@ $(function() {
     var optionSelect02 = $('#optionSelect02');
     var fixedPopButton = $('#fixedPopButton');
     var popBg = $('#popBg');
+    var giftOptionFields = $('.giftOptionFields');
+    var optionValue = [];
     var mizuhiki = $('.mizuhiki');
     var popClose = $('#popClose');
     var optionFix = $('#optionFix');
@@ -835,13 +837,13 @@ $(function() {
       var tesageCheck = $("input[name='tesage']:checked").val();
       var mizuhikiCheck = $("input[name='mizuhiki']:checked").val();
       if(tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki'){
-        $('#0-3').click();
+        giftOptionFields.val(optionValue[3]);
       }else if(tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki'){
-        $('#0-1').click();
+        giftOptionFields.val(optionValue[1]);
       }else if(tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki'){
-        $('#0-2').click();
+        giftOptionFields.val(optionValue[2]);
       }else if(tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki'){
-        $('#0-0').click();
+        giftOptionFields.val(optionValue[0]);
       }
     }
 
@@ -874,7 +876,10 @@ $(function() {
 
     function init(){
 
-      $('#0-0').click();
+      giftOptionFields.find("option").each(function(index) {
+        optionValue[index] = $(this).attr('value');
+        console.log(optionValue[index])
+      });
 
       optionPopClose();
 

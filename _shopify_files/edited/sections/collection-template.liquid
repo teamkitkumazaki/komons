@@ -32,7 +32,7 @@
 	</div>
 	<div id="productList" class="comp-product-list">
 		<ul class="item_wrapper">
-			{% paginate collection.products by 20 %}
+			{% paginate collection.products by 50 %}
 			{% for product in collection.products %}
 			{% assign product_image = product.featured_image %}
 			<li class="item_box">
@@ -65,30 +65,34 @@
 					</span>
 				</div>
 				<div class="comp-list-cart-button">
-					{%- if collection.handle == "upcoming" -%}
+					{%- if product.type == "upcoming" -%}
 					<div class="comp-arrow-link">
 						<a href={{ product.url }}><span>詳細を見る</span></a>
 					</div>
 					{%- else -%}
-					<div style="width: 100%; margin: 0 auto; padding: 0">
-            <div class="cartjs_box">
-						{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
-							<select name="id" id="ProductSelect-{{ product.id }}" class="product-form__variants no-js" style="display: none;">
-							{% for variant in product.variants %}
-								<option value="{{ variant.id }}"
-									{%- if variant == current_variant %} selected="selected" {%- endif -%}
-								>
-									{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
-								</option>
-							{% endfor %}
-							</select>
-							<div class="cartin_button">
-								<button><span>カートに入れる</span></button>
-								<input id="cartSubmit-{{ product.id }}" type="submit" value="カートに入れる">
+						{%- if product.variants.first.inventory_quantity == 0 -%}
+						<span class="soldout">在庫切れ</span>
+						{%- else -%}
+						<div style="width: 100%; margin: 0 auto; padding: 0">
+							<div class="cartjs_box">
+							{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+								<select name="id" id="ProductSelect-{{ product.id }}" class="product-form__variants no-js" style="display: none;">
+								{% for variant in product.variants %}
+									<option value="{{ variant.id }}"
+										{%- if variant == current_variant %} selected="selected" {%- endif -%}
+									>
+										{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+									</option>
+								{% endfor %}
+								</select>
+								<div class="cartin_button">
+									<button><span>カートに入れる</span></button>
+									<input id="cartSubmit-{{ product.id }}" type="submit" value="カートに入れる">
+								</div>
+							{% endform %}
 							</div>
-						{% endform %}
 						</div>
-					</div>
+						{%- endif -%}
 					{%- endif -%}
 				</div>
 			</li>

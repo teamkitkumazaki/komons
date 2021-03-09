@@ -1,46 +1,50 @@
-{%- if product.type == "refill" or product.type == "bottle-refill" -%}
-<div class="comp-flex-cart no_flex">
-	<div class="cart_box">
-		<div class="cart_item">
-			<span class="button_wrap">
-				<span class="title cart_in">通常購入する</span>
-				<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
-			</span>
-			<input id="submitButtonLower" class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる" onclick="send_conversion(); console.log('click!'); return false;">
-		</div>
-	</div>
-	<div class="cart_box">
-		<div id="subscriptionButton02" class="cart_item">
-			<span class="button_wrap">
-				<span class="title subscription">定期購入する</span>
-				<span class="sub_text">定価より15％OFF&amp;送料無料</span>
-			</span>
-			<a class="product_cart_btn colorme-repeat-checkout" href="https://colorme-repeat.jp/redirect/6d6f9f03/2734" data-user-slug="6d6f9f03" data-course-id="2734">購入する</a>
-		</div>
-	</div>
-</div>
-{%- elsif product.type == "gift" -%}
-<div class="comp-flex-cart no_flex">
-	<div class="cart_box">
-		<div class="cart_item">
-			<a id="optionSelect02" href="#" class="button_wrap option_select">
-				<span class="title cart_in">オプションを選択して購入</span>
-				<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
-			</a>
-			<p class="cart_desc">※ギフトオプションに関する詳細は<a href="/pages/gift-service">こちら</a></p>
-		</div>
-	</div>
-</div>
+{%- if product.variants.first.inventory_quantity == 0 -%}
+	<span class="sold_out">在庫切れ</span>
 {%- else -%}
-<div class="comp-flex-cart no_flex">
-	<div class="cart_box">
-		<div class="cart_item">
-			<span class="button_wrap">
-				<span class="title cart_in">購入する</span>
-				<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
-			</span>
-			<input id="submitButtonLower" class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる" onclick="send_conversion(); console.log('click!'); return false;">
+	{%- if product.type == "refill" or product.type == "bottle-refill" -%}
+	<div class="comp-flex-cart no_flex">
+		<div class="cart_box">
+			<div class="cart_item">
+				<span class="button_wrap">
+					<span class="title cart_in">通常購入する</span>
+					<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+				</span>
+				<input id="submitButtonLower" class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる" onclick="send_conversion(); console.log('click!'); return false;">
+			</div>
+		</div>
+		<div class="cart_box">
+			<div id="subscriptionButton02" class="cart_item">
+				<span class="button_wrap">
+					<span class="title subscription">定期購入する</span>
+					<span class="sub_text">定価より15％OFF&amp;送料無料</span>
+				</span>
+				<a class="product_cart_btn colorme-repeat-checkout" href="https://colorme-repeat.jp/redirect/6d6f9f03/2734" data-user-slug="6d6f9f03" data-course-id="2734">購入する</a>
+			</div>
 		</div>
 	</div>
-</div>
+	{%- elsif product.type == "gift" -%}
+	<div class="comp-flex-cart no_flex">
+		<div class="cart_box">
+			<div class="cart_item">
+				<a id="optionSelect02" href="#" class="button_wrap option_select">
+					<span class="title cart_in">オプションを選択して購入</span>
+					<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+				</a>
+				<p class="cart_desc">※ギフトオプションに関する詳細は<a href="/pages/gift-service">こちら</a></p>
+			</div>
+		</div>
+	</div>
+	{%- else -%}
+	<div class="comp-flex-cart no_flex">
+		<div class="cart_box">
+			<div class="cart_item">
+				<span class="button_wrap">
+					<span class="title cart_in">購入する</span>
+					<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+				</span>
+				<input id="submitButtonLower" class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる" onclick="send_conversion(); console.log('click!'); return false;">
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
 {%- endif -%}
