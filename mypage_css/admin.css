@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/* ----- Google Fonts ----- */
+@font-face {
+  font-family: "libre-regular";
+  font-weight: 400;
+  src: url("../fonts/LibreBaskerville-Regular.eot"), url("../fonts/LibreBaskerville-Regular.woff") format("woff"), url("../fonts/LibreBaskerville-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "libre-bold";
+  font-weight: 700;
+  src: url("../fonts/librebaskerville-bold-webfont.eot"), url("../fonts/librebaskerville-bold-webfont.woff") format("woff"), url("../fonts/LibreBaskerville-Bold.ttf") format("truetype");
+}
+article {
+  min-height: 100vh;
+  padding-top: 160px;
+}
+
+/*########## コンポーネント ##########*/
+.comp-admin-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #00381f;
+}
+.comp-admin-title .title_ja {
+  font-size: 34px;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-right: 0.5em;
+}
+.comp-admin-title .title_en {
+  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.comp-form-wrap {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 50px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+}
+.comp-form-wrap .form_item {
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.comp-form-wrap .form_item:nth-last-of-type(1) {
+  margin-bottom: 0px;
+  border-bottom: 0px solid #d8d8d8;
+}
+.comp-form-wrap .form_item label {
+  display: block;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 20px;
+  color: #00381f;
+}
+.comp-form-wrap .form_item .input_wrap input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  transition: border 0.2s;
+}
+.comp-form-wrap .form_item .input_wrap input:focus {
+  outline: none;
+  border: 1px solid #d8d8d8;
+}
+
+.comp-submit-button {
+  position: relative;
+  transition: opacity 0.3s;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.comp-submit-button:hover {
+  opacity: 0.75;
+}
+.comp-submit-button button {
+  pointer-events: none;
+  display: block;
+  width: 100%;
+  background: #00381f;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0.89px;
+  text-align: center;
+  -webkit-appearance: none;
+          appearance: none;
+  padding: 15px 0;
+  color: #fff;
+  font-family: inherit;
+  border: 0px;
+  box-shadow: none;
+}
+.comp-submit-button button span {
+  display: inline-block;
+  padding-right: 30px;
+  position: relative;
+}
+.comp-submit-button button span::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 20px;
+  height: 7px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/gift_service/arrow_white.png);
+  transition: right 0.2s;
+  will-change: right;
+}
+.comp-submit-button input[type=submit] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+.comp-submit-button:hover button span::after {
+  right: -10px;
+}
+
+/* ########## ページ別レイアウト ########## */

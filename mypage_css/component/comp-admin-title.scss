@@ -1,0 +1,17 @@
+.comp-admin-title{
+  @include flexSet;
+  align-items: center;
+  color: $basicGreen;
+  .title_ja{
+    font-size: 34px;
+    line-height: normal;
+    letter-spacing: normal;
+    margin-right: 0.5em;
+  }
+  .title_en{
+    @include libre-r;
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+}
