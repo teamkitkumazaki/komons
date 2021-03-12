@@ -24,7 +24,7 @@ $(function() {
   <section id="wrap01" class="cart_wrap01">
       <form id="cartIn" name="product_form" method="post" action="<{$cart_url}>">
     <div class="product_ex">
-      <{if $sid_name == "gift" || $sid_name == "preview"}>
+      <{if $sid_name == "gift"}>
         <h2 class="product_cat"><span class="en">Gift Set</span><span class="ja">ギフトセット</span></h2>
       <{else}>
         <h2 class="product_cat"><{$product.simple_explain}></h2>
@@ -109,7 +109,7 @@ $(function() {
                 <span class="title">再入荷リクエスト</span>
                 <span class="desc">販売再開をメールでお知らせいたします</span>
               </a>
-              <span class="notice_txt" style="font-size: 14px; letter-spacing: 0.5px; margin-top: 10px; display: block;">※2月中～下旬に販売再開予定</span>
+              <span class="notice_txt" style="font-size: 14px; letter-spacing: 0.5px; margin-top: 10px; display: block;">※3月中～下旬に販売再開予定</span>
             </div>
             <{/if}>
           </div><!-- cart_box -->
@@ -119,7 +119,7 @@ $(function() {
       <div class="cart_wrap">
         <div class="comp-flex-cart no_flex">
           <div class="cart_box">
-            <{if $sid_name == "gift" || $sid_name == "preview" || $product.model == "K0026" || $product.model == "K0050"}>
+            <{if $sid_name == "gift" && $product.model != "K0026" && $product.model != "K0050"}>
             <div class="cart_item">
               <a id="optionSelect" href="javascript:void(0);" class="button_wrap option_select">
                 <span class="title cart_in">オプションを選択して購入</span>
@@ -152,7 +152,7 @@ $(function() {
       <{/if}>
       <{else}>
       <div class="cart_wrap">
-        <{if $product.model == 'K0038' || $product.model == 'K0037' || $product.model == 'K0026' || $product.model == 'K0050'}>
+        <{if $product.model == 'K0038' || $product.model == 'K0037'}>
         <div class="comp-waiting-button">
           <a href="https://journal.komons-japan.com/waiting-list/<{$product.model}>">
             <span class="title">再入荷リクエスト</span>
@@ -165,7 +165,7 @@ $(function() {
             <span class="title">再入荷リクエスト</span>
             <span class="desc">販売再開をメールでお知らせいたします</span>
           </a>
-          <span class="notice_txt" style="font-size: 14px; letter-spacing: 0.5px; margin-top: 10px; display: block;">※2月中～下旬に販売再開予定</span>
+          <span class="notice_txt" style="font-size: 14px; letter-spacing: 0.5px; margin-top: 10px; display: block;">※3月中～下旬に販売再開予定</span>
         </div>
         <{/if}>
       </div>
@@ -183,7 +183,7 @@ $(function() {
   </div>
   <div class="txt_wrap">
       <form name="product_form" method="post" action="<{$cart_url}>">
-        <{if $sid_name == "gift" || $sid_name == "preview" || $product.model == "K0026" || $product.model == "K0050"}>
+        <{if $sid_name == "gift" && $product.model != "K0026" && $product.model != "K0050"}>
           <h3><span>Gift Set</span>ギフトセット</h3>
         <{else}>
           <h3><{$product.simple_explain}></h3>
@@ -241,7 +241,7 @@ $(function() {
       <div class="cart_wrap">
         <div class="comp-flex-cart no_flex">
           <div class="cart_box">
-            <{if $sid_name == "gift" || $sid_name == "preview" || $product.model == "K0026" || $product.model == "K0050"}>
+            <{if $sid_name == "gift" && $product.model != "K0026" && $product.model != "K0050"}>
             <div class="cart_item">
               <a id="optionSelect02" href="javascript:void(0);" class="button_wrap option_select">
                 <span class="title cart_in">オプションを選択して購入</span>
@@ -384,7 +384,7 @@ $(function() {
   </div>
 </div>
 <{/if}>
-<{if $sid_name == "gift" || $sid_name == "preview" || $product.model == "K0026" || $product.model == "K0050"}>
+<{if $sid_name == "gift" && $product.model != "K0026" && $product.model != "K0050"}>
 <div id="fixedCartWrap" class="comp-fixed-cart-wrap">
   <div class="cart_inner">
     <div class="img_thumb">
