@@ -1,3 +1,25 @@
 .page-login{
-
+	.hide {
+		display: none !important;
+	}
+	.section_inner {
+		p {
+			text-align: center;
+			font-size: 14px;
+			text-decoration: underline;
+			margin-top: 60px;
+			a {
+				color: #00381f;
+			}
+		}
+		.recover-link {
+			margin-top: 46px;
+		}
+		.register-link {
+			margin-top: 26px;
+		}
+		.subscription-link {
+			margin-top: 53px;
+		}
+	}
 }

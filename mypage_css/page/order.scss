@@ -1,3 +1,220 @@
 .page-order{
-
+  .section_inner {
+		max-width: 1200px;
+		margin: 0 auto;
+    display: flex;
+		flex-wrap: wrap;
+    .comp-admin-title {
+      align-items: baseline;
+      justify-content: start;
+      width: 100%;
+			padding-bottom: 65px;
+			border-bottom: 1px solid #dddddd;
+    }
+		.order_detail {
+			width: 850px;
+			margin: 68px 50px 0 0;
+			h2 {
+				font-size: 24px;
+				span {
+					font-size: 14px;
+					margin-left: 20px;
+				}
+			}
+			.order_detail_list {
+				width: 100%;
+				height: fit-content;
+				margin-top: 9px;
+				.order_detail_item {
+					margin: 25px 0;
+					border-bottom: solid 1px #dddddd;
+					.item_wrap1 {
+						display: flex;
+						img {
+							width: 120px;
+							height: 80px;
+						}
+						.item_title {
+							position: relative;
+							width: 709px;
+							padding: 12px 0 0 21px;
+							p {
+								font-size: 14px;
+								letter-spacing: 0.12px;
+								.en {
+									padding-right: 20px;
+									position: relative;
+									&::after {
+										display: inline-block;
+										content: '';
+										position: absolute;
+										top: 50%;
+										right: 7px;
+										margin: auto;
+										width: 7px;
+										height: 1px;
+										background-color: #00381f;
+									}
+								}
+							}
+							h3 {
+								margin-top: 14px;
+								font-size: 20px;
+								letter-spacing: 0.17px;
+							}
+							.circle {
+								position: absolute;
+								top: 7px;
+								right: 11px;
+								width: 35px;
+								height: 35px;
+								border-radius: 24px;
+								background-color: #d8d8d8;;
+								.circle-inner {
+									width: 7px;
+									height: 7px;
+									margin: 14px 16px 14px 12px;
+									transform: rotate(-45deg);
+									border-bottom: solid 1px #ffffff;
+									border-right: solid 1px #ffffff;
+								}
+							}
+						}
+					}
+					.item_wrap2 {
+						height: 36px;
+						margin-top: 19px;
+						margin: 19px 0 29px 0;
+						p {
+							font-size: 14px;
+							line-height: 36px;
+							color: #464646;
+							span {
+								padding: 11px 27px 10px 17px;
+							}
+							.status {
+								padding: 11px 17px;
+								border-radius: 5px;
+								background-color: #f4f4f4;
+								color: #00381f;
+							}
+							.sku {
+								color: #068acc;
+							}
+						}
+					}
+				}
+			}
+			.subtotal_container {
+				width: 809px;
+				margin-top: 37px;
+				padding: 0 22px 0 19px;
+				background-color: #f4f4f4;
+				table {
+					width: 100%;
+					tr {
+						&:first-of-type {
+							height: 53px;
+							line-height: 53px;
+							border-bottom: solid 1px #dddddd;
+						}
+						&:last-of-type {
+							height: 60px;
+							line-height: 60px;
+						}
+						td {
+							&:first-of-type {
+								font-size: 18px;
+								text-align: left;
+							}
+							&:last-of-type {
+								font-size: 14px;
+								text-align: right;
+							}
+						}
+					}
+				}
+			}
+			.total {
+				margin-top: 32px;
+				padding-right: 18px;
+				font-size: 24px;
+				text-align: right;
+				span {
+					font-size: 18px;
+					margin-left: 12px;
+				}
+			}
+		}
+		.place {
+			width: 249px;
+			height: fit-content;
+			padding: 39px 26px 0 25px;
+			margin-top: 44px;
+			border-radius: 10px;
+			background-color: #f4f4f4;
+			.payment {
+				width: 250px;
+				height: fit-content;
+				border-bottom: solid 1px #d8d8d8;
+				h3 {
+					font-size: 24px;
+				}
+				p {
+					color: #363636;
+					font-size: 16px;
+					line-height: 26px;
+					letter-spacing: 1px;
+					margin: 19px 0 48px 0;
+					span {
+						font-size: 20px;
+						line-height: 30px;
+						letter-spacing: 1.25px;
+					}
+				}
+			}
+			.shipping {
+				width: 239px;
+				height: fit-content;
+				margin-top: 36px;
+				h3 {
+					font-size: 24px;
+				}
+				p {
+					color: #363636;
+					font-size: 16px;
+					line-height: 26px;
+					letter-spacing: 1px;
+					margin: 19px 0 26px 0;
+					span {
+						font-size: 20px;
+						line-height: 30px;
+						letter-spacing: 1.25px;
+					}
+				}
+				.btn-wrap {
+					width: 100%;
+					display: flex;
+					margin-bottom: 43px;
+					button {
+						width: 120px;
+						height: 35px;
+						margin: 0;
+						padding: 0;
+						border-radius: 5px;
+						border: none;
+						font-family: HiraMinPro-W3;
+						background-color: #ffffff;
+						&:first-of-type {
+							margin-right: 8px;
+							background-color: #00381f;
+							span {
+								color: #ffffff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

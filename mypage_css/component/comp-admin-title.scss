@@ -1,6 +1,6 @@
 .comp-admin-title{
   @include flexSet;
-  align-items: center;
+  align-items: baseline;
   color: $basicGreen;
   .title_ja{
     font-size: 34px;

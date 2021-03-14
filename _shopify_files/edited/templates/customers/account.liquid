@@ -1,57 +1,52 @@
-<div class="page-width">
-  <div class="section-header text-center">
-    <h1>{{ 'customer.account.title' | t }}</h1>
-    {{ 'layout.customer.log_out' | t | customer_logout_link }}
-  </div>
+<article id="mypage" class="page-mypage">
+	<div class="section_inner">
+		<div class="comp-admin-title">
+			<h1 class="title_ja">マイページ</h1>
+			<span class="title_en">My Page</span>
+			<p>
+				{{ 'layout.customer.log_out' | t | customer_logout_link }}
+			</p>
+		</div>
+		<div class="order">
+			<h2>ご注文履歴</h2>
+			<div class="order-list">
+				{% paginate customer.orders by 20 %}
+				{%- if customer.orders.size != 0 -%}
+				{%- for order in customer.orders -%}
+				<div class="order-item">
+					<div class="order-bar">
+						<p>
+							ご注文番号<span>{{ order.name }}</span><span>お会計金額：{{ order.total_price | money_without_currency }}円(税込)</span>
+						</p>
+						<a href="{{ order.customer_url }}" class="circle">
+							<div class="circle-inner"></div>
+						</a>
+					</div>
+					<table class="order-condition">
+						<tr>
+							<td>ご注文日時： {{ order.created_at | time_tag: format: 'basic' }}</td>
+							<td>お支払い状況：{{ order.financial_status_label }}</td>
+							<td>配送状況：{{ order.fulfillment_status_label }}</td>
+						</tr>
+					</table>
+				</div>
+				{%- endfor -%}
+				{%- else -%}
+				<p>{{ 'customer.orders.none' | t }}</p>
+				{%- endif -%}
+				{% endpaginate %}
+			</div>
+		</div>
+		<div class="account-info">
+			<h2>アカウント情報</h2>
+			<p>
+				<span>{{ customer.first_name }} {{ customer.last_name }}</span><br>
+				〒{{ customer.default_address.zip }}<br>
+				{{ customer.default_address.province }} {{ customer.default_address.city }}<br>
+				{{ customer.default_address.street }}
+			</p>
+			<a href="/account/addresses">配送先情報の追加・変更</a>
+		</div>
+	</div>
+</article>
 
-  <div class="grid myaccount">
-    <div class="grid__item myaccount__order-history">
-      <h2>{{ 'customer.orders.title' | t }}</h2>
-
-      {% paginate customer.orders by 20 %}
-        {% if customer.orders.size != 0 %}
-
-          <table class="responsive-table">
-            <thead>
-              <tr>
-                <th scope="col">{{ 'customer.orders.order_number' | t }}</th>
-                <th scope="col">{{ 'customer.orders.date' | t }}</th>
-                <th scope="col">{{ 'customer.orders.payment_status' | t }}</th>
-                <th scope="col">{{ 'customer.orders.fulfillment_status' | t }}</th>
-                <th scope="col">{{ 'customer.orders.total' | t }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for order in customer.orders %}
-                <tr>
-                  <th data-label="{{ 'customer.orders.order_number' | t }}" scope="row">
-                    <a href="{{ order.customer_url }}" class="btn btn--secondary btn--small" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">{{ order.name }}</a>
-                  </th>
-                  <td data-label="{{ 'customer.orders.date' | t }}">{{ order.created_at | time_tag: format: 'date' }}</td>
-                  <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
-                  <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
-                  <td data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-
-        {% else %}
-
-          <p>{{ 'customer.orders.none' | t }}</p>
-
-        {% endif %}
-        {%- if paginate.pages > 1 -%}
-          {% include 'pagination', paginate: paginate %}
-        {%- endif -%}
-      {% endpaginate %}
-    </div>
-    <div class="grid__item myaccount__account-details">
-      <h2>{{ 'customer.account.details' | t }}</h2>
-
-      {{ customer.default_address | format_address }}
-
-      <p><a href="{{ routes.account_addresses_url }}" class="btn btn--small">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
-    </div>
-  </div>
-</div>
