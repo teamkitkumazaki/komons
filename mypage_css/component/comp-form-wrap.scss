@@ -42,8 +42,9 @@
 			@include flexSet;
 			flex-direction: row;
 			justify-content: space-between;
+			width: 100%;
 			.input_wrap {
-				width: 335px;
+				width: 48%;
 			}
 		}
   }

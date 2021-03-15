@@ -1,3 +1,16 @@
 .page-reset{
-  
+	.hide {
+		display: none !important;
+	}
+	.section_inner {
+		p {
+			text-align: center;
+			font-size: 14px;
+			text-decoration: underline;
+			margin-top: 60px;
+			a {
+				color: #00381f;
+			}
+		}
+	}
 }

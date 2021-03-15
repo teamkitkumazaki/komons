@@ -20,16 +20,14 @@
 						</div>
 					</div>
 					<div class="item_wrap2">
-						<p>
-							<span class="status">商品番号</span>
-							<span class="sku">{{ line_item.sku }}</span>
-							<span class="status">商品価格</span>
-							<span>{{ line_item.original_price | money_without_currency }}円（税込）</span>
-							<span class="status">数量</span>
-							<span>{{ line_item.quantity }}</span>
-							<span class="status">合計金額</span>
-							<span>{{ line_item.final_line_price | money_without_currency }}円（税込）</span>
-						</p>
+						<p class="item">商品番号</p>
+						<p class="data sku">{{ line_item.sku }}</p>
+						<p class="item">商品価格</p>
+						<p class="data">{{ line_item.original_price | money_without_currency }}円(税込)</span></p>
+						<p class="item">数量</p>
+						<p class="data">{{ line_item.quantity }}</p>
+						<p class="item">合計金額</p>
+						<p class="data">{{ line_item.final_line_price | money_without_currency }}円(税込)</p>
 					</div>
 				</div>
 				{%- endfor -%}
@@ -38,15 +36,15 @@
 				<table>
 					<tr>
 						<td>小計</td>
-						<td>&yen;{{ order.line_items_subtotal_price | money_without_currency }}円（税込）</td>
+						<td>&yen;{{ order.line_items_subtotal_price | money_without_currency }}円(税込)</td>
 					</tr>
 					<tr>
 						<td>送料</td>
-						<td>&yen;{{ order.shipping_price | money_without_currency }}円（税込）</td>
+						<td>&yen;{{ order.shipping_price | money_without_currency }}円(税込)</td>
 					</tr>
 				</table>
 			</div>
-			<p class="total">合計金額<span>&yen;{{ order.total_price | money_without_currency }}円（税込）</span></p>
+			<p class="total">合計金額<span>&yen;{{ order.total_price | money_without_currency }}円(税込)</span></p>
 		</div>
 		<div class="place">
 			<div class="payment">
@@ -70,3 +68,6 @@
 		</div>
 	</div>
 </article>
+<script>
+	$('body').addClass('fixed');
+</script>
