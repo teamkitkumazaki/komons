@@ -71,9 +71,9 @@
         padding: 30px 30px 20px;
         .item_thumb{
           width: 100%;
+          margin-bottom: 20px;
           .pc_thumb{
             width: 100%;
-            height: 230px;
             display: block;
             @include bgSet;
             background-size: cover;
@@ -354,7 +354,7 @@
           .item_thumb{
             width: 100%;
             .pc_thumb{
-              height: 50vw;
+              height: auto;
               background-position: center top -4vw;
             }
           }

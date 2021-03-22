@@ -946,6 +946,79 @@ $(function() {
     optionPopup($('#optionPop'));
   }
 
+  //定期購入 サイクル選択ポップアップ
+  function subscriptionSelect(target){
+    var optionSelecter = target.find('select');
+    var purchaseWaySelect = [];
+    var cycleSelectOption = [];
+    var cycleSelect = [];
+    var optionSelect = $('#optionSelect');
+    var optionSelect02 = $('#optionSelect02');
+    var popBg = $('#popBg');
+    var optionState = 0;
+    var cycleList = $('#cycleList');
+
+    function purchaseWayShifter(){
+      if(optionState == 0){
+        purchaseWaySelect[1].click();
+        optionSelecter.val(cycleSelectOption[0]);
+        optionState = 1;
+      }else{
+        purchaseWaySelect[0].click();
+        optionSelecter.val(cycleSelectOption[0]);
+        optionState = 0;
+      }
+    }
+
+    function init(){
+      target.find("input[name=paywhirl-plan-selector-group]").each(function(index) {
+        purchaseWaySelect[index] = $(this);
+      });
+      target.find("option").each(function(index) {
+        cycleSelectOption[index] = $(this).val();
+        console.log('option:' + cycleSelectOption[index]);
+      });
+      cycleList.find("input[name=sub_cycle]").each(function(index) {
+        cycleSelect[index] = $(this);
+        console.log('input:' + cycleSelect[index].val());
+        cycleSelect[index].on({
+          'click': function(){
+            optionSelecter.val(cycleSelectOption[index]);
+          }
+        });
+      });
+      purchaseWaySelect[0].click();
+
+      optionSelect.on({
+        'click': function(){
+          purchaseWayShifter()
+        }
+      });
+
+      optionSelect02.on({
+        'click': function(){
+          purchaseWayShifter()
+        }
+      });
+
+      popBg.on({
+        'click': function(){
+          purchaseWayShifter()
+        }
+      });
+    }
+
+
+    init();
+
+  }
+
+  if (document.getElementById('subscriptionTable')) {
+    subscriptionSelect($('#subscriptionTable'));
+  }
+
+
+
   //ギフト商品一覧ページ 商品フィルター
   function giftProductFilter(target){
     var time = 300;

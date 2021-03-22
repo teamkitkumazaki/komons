@@ -1,0 +1,128 @@
+.comp-subscription-plans{
+  .price_wrap{
+    margin-top: 25px;
+    text-align: center;
+    @include flexSet;
+    justify-content: center;
+    align-items: center;
+    .price{
+      display: block;
+      font-size: 20px;
+      letter-spacing: 1.5px;
+      margin-right: 0.3em;
+      margin-bottom: 0px;
+    }
+    .added{
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      color: #464646;
+    }
+  }
+  .input_wrap{
+    margin-top: 35px;
+    @include flexSet;
+    justify-content: flex-start;
+    .plan_item{
+      width: 32%;
+      margin-right: 2%;
+      margin-bottom: 10px;
+      background: #f4f4f4;
+      padding: 15px;
+      box-sizing: border-box;
+      @include flexSet;
+      justify-content: center;
+      align-items: center;
+      &:nth-of-type(3n){
+        margin-right: 0;
+      }
+      input[type="radio"]{
+        display: none;
+      }
+      .radio_checker{
+        width: 13px;
+        height: 13px;
+        border: 1px solid #979797;
+        background: #fff;
+        background: #fff;
+        border-radius: 50%;
+        margin-right: 7px;
+        position: relative;
+      }
+      input[type="radio"]:checked + .radio_checker{
+        &::before{
+          display: block;
+          content: "";
+          position: absolute;
+          top: -1px;
+          bottom: -1px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 7px;
+          height: 7px;
+          background: #333;
+          border-radius: 50%;
+        }
+      }
+      .option_name{
+        @include flexSet;
+        justify-content: flex-start;
+        align-items: center;
+        .name{
+          font-size: 16px;
+          line-height: 1;
+          letter-spacing: 0.51px;
+          margin-right: 5px;
+        }
+        .price{
+          font-size: 14px;
+          line-height: 1;
+          letter-spacing: 1px;
+          color: #797979;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 740px){
+  .comp-subscription-plans{
+    .price_wrap{
+      margin-top: 15px;
+      text-align: center;
+      .price{
+        display: block;
+        font-size: 20px;
+        letter-spacing: 1.5px;
+        margin-right: 0.5em;
+        margin-bottom: 10px;
+        .added{
+          font-size: 14px;
+          letter-spacing: 0.5px;
+          color: #464646;
+        }
+      }
+      .delivery{
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        color: #464646;
+      }
+    }
+    .input_wrap{
+      margin-top: 30px;
+      .plan_item{
+        width: 48%;
+        margin-right: 4%;
+        margin-bottom: 10px;
+        padding: 15px 10px;
+        box-sizing: border-box;
+        &:nth-of-type(3n){
+          margin-right:4%;
+        }
+        &:nth-of-type(2n){
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

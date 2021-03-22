@@ -125,7 +125,6 @@
   {%- endif -%}
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-
 	{{ content_for_header }}
 </head>
 <body class="">
@@ -133,5 +132,6 @@
 	{{content_for_layout}}
 	{% section 'footer' %}
 	{% section 'slide-menu' %}
+	{% render 'paywhirl-main' %}
 </body>
 </html>

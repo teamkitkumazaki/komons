@@ -3932,10 +3932,10 @@ body.loaded #loading {
 }
 .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb {
   width: 100%;
+  margin-bottom: 20px;
 }
 .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb .pc_thumb {
   width: 100%;
-  height: 230px;
   display: block;
   background-repeat: no-repeat;
   background-position: center center;
@@ -4227,7 +4227,7 @@ body.loaded #loading {
     width: 100%;
   }
   .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb .pc_thumb {
-    height: 50vw;
+    height: auto;
     background-position: center top -4vw;
   }
   .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .prod_name {
@@ -7152,6 +7152,136 @@ body.loaded #loading {
     position: absolute;
     width: 15px;
     height: 12px;
+  }
+}
+.comp-subscription-plans .price_wrap {
+  margin-top: 25px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.comp-subscription-plans .price_wrap .price {
+  display: block;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  margin-right: 0.3em;
+  margin-bottom: 0px;
+}
+.comp-subscription-plans .price_wrap .added {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: #464646;
+}
+.comp-subscription-plans .input_wrap {
+  margin-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: flex-start;
+}
+.comp-subscription-plans .input_wrap .plan_item {
+  width: 32%;
+  margin-right: 2%;
+  margin-bottom: 10px;
+  background: #f4f4f4;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.comp-subscription-plans .input_wrap .plan_item:nth-of-type(3n) {
+  margin-right: 0;
+}
+.comp-subscription-plans .input_wrap .plan_item input[type=radio] {
+  display: none;
+}
+.comp-subscription-plans .input_wrap .plan_item .radio_checker {
+  width: 13px;
+  height: 13px;
+  border: 1px solid #979797;
+  background: #fff;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: 7px;
+  position: relative;
+}
+.comp-subscription-plans .input_wrap .plan_item input[type=radio]:checked + .radio_checker::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 7px;
+  height: 7px;
+  background: #333;
+  border-radius: 50%;
+}
+.comp-subscription-plans .input_wrap .plan_item .option_name {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+.comp-subscription-plans .input_wrap .plan_item .option_name .name {
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.51px;
+  margin-right: 5px;
+}
+.comp-subscription-plans .input_wrap .plan_item .option_name .price {
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: #797979;
+}
+
+@media screen and (max-width: 740px) {
+  .comp-subscription-plans .price_wrap {
+    margin-top: 15px;
+    text-align: center;
+  }
+  .comp-subscription-plans .price_wrap .price {
+    display: block;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    margin-right: 0.5em;
+    margin-bottom: 10px;
+  }
+  .comp-subscription-plans .price_wrap .price .added {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #464646;
+  }
+  .comp-subscription-plans .price_wrap .delivery {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #464646;
+  }
+  .comp-subscription-plans .input_wrap {
+    margin-top: 30px;
+  }
+  .comp-subscription-plans .input_wrap .plan_item {
+    width: 48%;
+    margin-right: 4%;
+    margin-bottom: 10px;
+    padding: 15px 10px;
+    box-sizing: border-box;
+  }
+  .comp-subscription-plans .input_wrap .plan_item:nth-of-type(3n) {
+    margin-right: 4%;
+  }
+  .comp-subscription-plans .input_wrap .plan_item:nth-of-type(2n) {
+    margin-right: 0;
   }
 }
 /* ########## ページ別レイアウト ########## */
