@@ -74,6 +74,12 @@
 		@include waku;
 		padding: 40px 0 100px;
 
+		&.margin{
+			@media screen and (max-width: 740px){
+				margin-bottom: 60px;
+			}
+		}
+
 		.product_ex {
 			text-align: center;
 			margin-bottom: 50px;
@@ -101,6 +107,12 @@
 						width: 7px;
 						height: 1px;
 						background: $basicGreen;
+					}
+					&.no_line{
+						padding-right: 0;
+						&::after{
+							display: none;
+						}
 					}
 				}
 				.ja{
@@ -1286,7 +1298,7 @@
 				margin-bottom: 30px;
 
 				.product_cat {
-					margin-bottom: 5px;
+					margin-bottom: 10px;
 					.en{
 						font-size: 4vw;
 						padding-right: 1.5em;

@@ -1896,6 +1896,22 @@ body.loaded #loading {
 .comp-flex-cart .cart_box .cart_desc a:hover {
   opacity: 0.75;
 }
+.comp-flex-cart .wrapping_text {
+  display: block;
+  font-size: 16px;
+  padding-bottom: 4px;
+  margin-top: 15px;
+}
+.comp-flex-cart .wrapping_text a {
+  line-height: 1.6 !important;
+  letter-spacing: 0.5px !important;
+  transition: opacity 0.3s;
+  color: #00381f !important;
+  text-decoration: underline !important;
+}
+.comp-flex-cart .wrapping_text a:hover {
+  opacity: 0.75;
+}
 .comp-flex-cart .amazon_pay {
   margin-top: 20px;
   display: flex;
@@ -1986,6 +2002,9 @@ body.loaded #loading {
   }
   .comp-flex-cart .cart_box .cart_desc a:hover {
     opacity: 0.75;
+  }
+  .comp-flex-cart .wrapping_text {
+    margin-top: 15px;
   }
   .comp-flex-cart .amazon_pay {
     margin-top: 20px;
@@ -3472,11 +3491,11 @@ body.loaded #loading {
   font-weight: normal;
   line-height: normal;
   letter-spacing: 0.8px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 .comp-gift-service-wrap .service_item .service_txt .txt_wrap {
   font-size: 14px;
-  line-height: 1.57;
+  line-height: 1.7;
   letter-spacing: 0.78px;
 }
 .comp-gift-service-wrap .service_item .service_txt .txt_wrap a {
@@ -3487,7 +3506,7 @@ body.loaded #loading {
   opacity: 0.75;
 }
 .comp-gift-service-wrap .service_item .service_txt .txt_wrap .desc {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .comp-gift-service-wrap .service_item .service_txt .txt_wrap .sub_ttl {
   font-size: 18px;
@@ -3589,7 +3608,7 @@ body.loaded #loading {
   .comp-gift-service-wrap .service_item .service_img {
     width: 100%;
     margin-right: 0px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   .comp-gift-service-wrap .service_item .service_txt {
     width: 100%;
@@ -3597,7 +3616,7 @@ body.loaded #loading {
   .comp-gift-service-wrap .service_item .service_txt .service_name {
     font-size: 20px;
     letter-spacing: 0.8px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   .comp-gift-service-wrap .service_item .service_txt .txt_wrap {
     font-size: 14px;
@@ -9071,6 +9090,11 @@ body.loaded #loading {
     width: 84vw;
   }
 }
+@media screen and (max-width: 740px) {
+  #itemDetail .cart_wrap01.margin {
+    margin-bottom: 60px;
+  }
+}
 #itemDetail .cart_wrap01 .product_ex {
   text-align: center;
   margin-bottom: 50px;
@@ -9100,6 +9124,12 @@ body.loaded #loading {
   width: 7px;
   height: 1px;
   background: #00381f;
+}
+#itemDetail .cart_wrap01 .product_ex .product_cat .en.no_line {
+  padding-right: 0;
+}
+#itemDetail .cart_wrap01 .product_ex .product_cat .en.no_line::after {
+  display: none;
 }
 #itemDetail .cart_wrap01 .product_ex .product_cat .ja {
   font-size: 20px;
@@ -10324,7 +10354,7 @@ body.loaded #loading {
     margin-bottom: 30px;
   }
   #itemDetail .cart_wrap01 .product_ex .product_cat {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   #itemDetail .cart_wrap01 .product_ex .product_cat .en {
     font-size: 4vw;
@@ -13563,7 +13593,7 @@ body.loaded #loading {
 /*ギフトページ*/
 .gift-service .section_ttl {
   padding: 0;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 .gift-service .section-main {
   height: 500px;
@@ -13629,8 +13659,13 @@ body.loaded #loading {
   width: 1px;
   height: 500px;
 }
+.gift-service .section-service00 {
+  margin-bottom: 80px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid #ddd;
+}
 .gift-service .section-service01 {
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 }
 .gift-service .section-service02 {
   padding: 80px 0;
@@ -13683,7 +13718,7 @@ body.loaded #loading {
   .gift-service .section_ttl {
     padding: 0;
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 45px;
   }
   .gift-service .section_ttl h2 span {
     display: block;
@@ -13695,7 +13730,7 @@ body.loaded #loading {
     font-size: 16px;
   }
   .gift-service .section-main {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     background: #4d0010;
   }
   .gift-service .section-main .main_visual {
@@ -13741,6 +13776,11 @@ body.loaded #loading {
     line-height: 1.6;
     letter-spacing: 0.46px;
     text-align: justify;
+  }
+  .gift-service .section-service00 {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ddd;
   }
   .gift-service .section-service01 {
     padding: 0;
