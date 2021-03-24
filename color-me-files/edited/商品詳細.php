@@ -82,7 +82,7 @@ $(function() {
               <span class="button_wrap">
                 <span class="title cart_in">通常購入する</span>
                 <{if $product.price|replace:',':'' < 5000}>
-                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+                <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
                 <{else}>
                 <span class="sub_text">送料無料で配送致します</span>
                 <{/if}>
@@ -124,7 +124,7 @@ $(function() {
               <a id="optionSelect" href="javascript:void(0);" class="button_wrap option_select">
                 <span class="title cart_in">オプションを選択して購入</span>
                 <{if $product.price|replace:',':'' < 5000}>
-                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+                <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
                 <{else}>
                 <span class="sub_text">送料無料で配送致します</span>
                 <{/if}>
@@ -137,7 +137,7 @@ $(function() {
               <span class="button_wrap">
                 <span class="title cart_in">購入する</span>
                 <{if $product.price|replace:',':'' < 5000}>
-                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+                <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
                 <{else}>
                 <span class="sub_text">送料無料で配送致します</span>
                 <{/if}>
@@ -218,7 +218,7 @@ $(function() {
             <span class="button_wrap">
               <span class="title cart_in">通常購入する</span>
               <{if $product.price|replace:',':'' < 5000}>
-              <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+              <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
               <{else}>
               <span class="sub_text">送料無料で配送致します</span>
               <{/if}>
@@ -246,7 +246,7 @@ $(function() {
               <a id="optionSelect02" href="javascript:void(0);" class="button_wrap option_select">
                 <span class="title cart_in">オプションを選択して購入</span>
                 <{if $product.price|replace:',':'' < 5000}>
-                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+                <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
                 <{else}>
                 <span class="sub_text">送料無料で配送致します</span>
                 <{/if}>
@@ -258,7 +258,7 @@ $(function() {
               <span class="button_wrap">
                 <span class="title cart_in">購入する</span>
                 <{if $product.price|replace:',':'' < 5000}>
-                <span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
+                <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
                 <{else}>
                 <span class="sub_text">送料無料で配送致します</span>
                 <{/if}>
@@ -425,7 +425,7 @@ $(function() {
                 <span class="radio_checker"></span>
                 <div class="option_name">
                   <span class="name">手提げ布バッグ</span>
-                  <span class="price">+300円(税抜)</span>
+                  <span class="price">+330円(税込)</span>
                 </div>
               </div>
             </label>
@@ -438,7 +438,7 @@ $(function() {
                 <span class="radio_checker"></span>
                 <div class="option_name">
                   <span class="name">熨斗(のし)</span>
-                  <span class="price">+100円(税抜)</span>
+                  <span class="price">+110円(税込)</span>
                 </div>
               </div>
             </label>

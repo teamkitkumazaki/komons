@@ -103,7 +103,7 @@ $(".comp-product-list").find('li').each(function() {
         <{if $productlist_num != 0}>
         <{section name=num loop=$productlist}>
         <{if $productlist[num].option_price != null}>
-        <div class="list_item" price="<{$productlist[num].teika|replace:'円(税抜)':''}>" recommend="2">
+        <div class="list_item" price="<{$productlist[num].teika|replace:'円(税込)':''}>" recommend="2">
           <a class="item_thumb" href="<{$productlist[num].link_url}>">
             <span class="img_wrap" style="background-image:url(<{$productlist[num].img_url}>);">
           </a>
@@ -236,7 +236,7 @@ $(".comp-product-list").find('li').each(function() {
   <div class="section_inner">
     <div id="giftProductList" class="comp-gift-product-list">
       <{section name=num loop=$productlist}>
-      <div class="list_item" price="<{$productlist[num].teika|replace:'円(税抜)':''}>" recommend="2">
+      <div class="list_item" price="<{$productlist[num].teika|replace:'円(税込)':''}>" recommend="2">
         <{if $productlist[num].soldout_flg == false}>
         <!-- 販売中の場合 -->
         <a class="item_thumb" href="<{$productlist[num].link_url}>">
@@ -293,7 +293,7 @@ $(".comp-product-list").find('li').each(function() {
         </div>
         <div class="title_wrap">
           <h3 class="service_name">熨斗/水引</h3>
-          <p class="service_desc">ギフトセット商品については、＋100円（税別）にて熨斗対応が可能です。水引の種類は、どのシーンのお祝い事にもお使いいただける「紅白梅結び」になります。<span>※ご結婚祝い、出産祝い、内祝、新築祝い、快気祝いなど様々なシーンにご利用ください。</span></p>
+          <p class="service_desc">ギフトセット商品については、＋110円（税込）にて熨斗対応が可能です。水引の種類は、どのシーンのお祝い事にもお使いいただける「紅白梅結び」になります。<span>※ご結婚祝い、出産祝い、内祝、新築祝い、快気祝いなど様々なシーンにご利用ください。</span></p>
         </div>
       </div><!-- service_item -->
       <div class="service_item">
@@ -302,7 +302,7 @@ $(".comp-product-list").find('li').each(function() {
         </div>
         <div class="title_wrap">
           <h3 class="service_name">オリジナル手提げバッグ</h3>
-          <p class="service_desc">ギフトセットの商品については、＋300円（税別）にてオリジナル手提げバッグをお付けすることが可能です。ギフトのお渡しの際にぜひご使用ください。<span>※なお、<a href="/?pid=154063293">オリジナル手提げバッグ</a>については単品でも購入可能です。</span></p>
+          <p class="service_desc">ギフトセットの商品については、＋330円（税込）にてオリジナル手提げバッグをお付けすることが可能です。ギフトのお渡しの際にぜひご使用ください。<span>※なお、<a href="/?pid=154063293">オリジナル手提げバッグ</a>については単品でも購入可能です。</span></p>
         </div>
       </div><!-- service_item -->
       <div class="service_item">
@@ -343,7 +343,7 @@ $(".comp-product-list").find('li').each(function() {
     <div class="toggle_item">
       <a href="javascript:void(0);" class="toggle_button">ギフトボックスの購入は可能ですか？</a>
       <div class="toggle_contents">
-        <p>GIFTページに掲載のすべてのギフトセットには予めギフトボックスが含まれております。また、ギフトセット以外の商品をご注文のお客様も別途有料でギフトボックス(税別200円)をご購入いただけます。ご希望の方はお問い合わせよりご連絡ください。</p>
+        <p>GIFTページに掲載のすべてのギフトセットには予めギフトボックスが含まれております。また、ギフトセット以外の商品をご注文のお客様も別途有料でギフトボックス(税込220円)をご購入いただけます。ご希望の方はお問い合わせよりご連絡ください。</p>
       </div>
     </div>
 
@@ -357,14 +357,14 @@ $(".comp-product-list").find('li').each(function() {
     <div class="toggle_item row2">
       <a href="javascript:void(0);" class="toggle_button">熨斗(のし)対応は可能ですか？</a>
       <div class="toggle_contents">
-        <p>ギフトセット商品については、＋100円（税別）にて熨斗対応が可能です。水引の種類は、どのシーンのお祝い事にもお使いいただける「紅白梅結び」になります。（ご結婚祝い、出産祝い、内祝、新築祝い、快気祝いなど様々なシーンにご利用ください。）ご希望の方はギフトセットご購入画面のギフトオプションよりご選択ください。</p>
+        <p>ギフトセット商品については、＋110円(税込)にて熨斗対応が可能です。水引の種類は、どのシーンのお祝い事にもお使いいただける「紅白梅結び」になります。（ご結婚祝い、出産祝い、内祝、新築祝い、快気祝いなど様々なシーンにご利用ください。）ご希望の方はギフトセットご購入画面のギフトオプションよりご選択ください。</p>
       </div>
     </div>
 
     <div class="toggle_item">
       <a href="javascript:void(0);" class="toggle_button">お渡し用手提げ袋</a>
       <div class="toggle_contents">
-        <p>ギフトセットの商品については、＋300円（税別）にてオリジナル手提げ布バッグをお付けすることが可能です。ギフトのお渡しの際にぜひご使用ください。ご希望の方はギフトセットご購入画面のギフトオプションよりご選択ください。(オリジナル手提げバッグについては単品でも購入可能です。)<br>なお、ベーシックカルテットおよぼフルセットについては、箱のサイズの関係でオリジナル手提げ布バッグに入らないため、別途無償にて紙の手提げ袋をお付けさせていただきます。ご希望の方は購入時に備考欄にその旨ご記載ください。</p>
+        <p>ギフトセットの商品については、＋330円(税込)にてオリジナル手提げ布バッグをお付けすることが可能です。ギフトのお渡しの際にぜひご使用ください。ご希望の方はギフトセットご購入画面のギフトオプションよりご選択ください。(オリジナル手提げバッグについては単品でも購入可能です。)<br>なお、ベーシックカルテットおよぼフルセットについては、箱のサイズの関係でオリジナル手提げ布バッグに入らないため、別途無償にて紙の手提げ袋をお付けさせていただきます。ご希望の方は購入時に備考欄にその旨ご記載ください。</p>
       </div>
     </div>
 
