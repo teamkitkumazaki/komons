@@ -63,14 +63,14 @@
 							<a href="/products/{{ product.metafields.custom_fields["variation_bottle"] }}">
 								<span class="wrap">
 									<span class="title">ボトル</span>
-									<span class="desc">¥1,900</span>
+									<span id="bottlePrice" class="desc"></span>
 								</span>
 							</a>
 							{% if product.metafields.custom_fields["variation_refill"] != blank %}
 								<a href="/products/{{ product.metafields.custom_fields["variation_refill"] }}">
 									<span class="wrap">
 										<span class="title">レフィル(詰め替え用)</span>
-										<span>¥2,300</span>
+										<span id="refillPrice"></span>
 									</span>
 								</a>
 							 {%- endif -%}
@@ -78,7 +78,7 @@
 								<a href="/products/{{ product.metafields.custom_fields["variation_bottle_refill"] }}">
 									<span class="wrap">
 										<span class="title">ボトル&amp;レフィル</span>
-										<span class="desc">¥3,980</span>
+										<span id="bottleRefillPrice" class="desc"></span>
 									</span>
 								</a>
 								{%- endif -%}
@@ -131,7 +131,7 @@
 					</div>
 					<div class="detail_block detail02">
 						<span class="left_txt"><span>数量</span>：<input type="text" name="product_num" value="1" class="product_init_num" /><span>個</span></span>
-						<span class="right_txt">合計：{{ product.price | money_without_currency }}円(税抜)</span>
+						<span class="right_txt">合計：{{ product.price | money_without_currency }}円(税込)</span>
 					</div>
 				</div>
 				<div class="cart_button">
@@ -151,6 +151,76 @@
     {{ product.media | where: 'media_type', 'model' | json }}
   </script>
 {% endunless %}
+
+<script>
+	var domain = 'https://' + location.host;
+	console.log(domain + '/collections/ajax');
+	if (document.getElementById('variationToggle')) {
+		var varitationItem = [
+			'{{ product.metafields.custom_fields["variation_bottle"] }}', '{{product.metafields.custom_fields["variation_refill"]}}', '{{ product.metafields.custom_fields["variation_bottle_refill"] }}'
+		]
+	}
+
+	var relatedItem = [
+		'{{product.metafields.custom_fields["related_item01"] }}',
+		'{{ product.metafields.custom_fields["related_item02"] }}',
+		'{{ product.metafields.custom_fields["related_item03"] }}'
+	];
+
+	function relatedSlider(){
+		$('#relatedSlider').slick({
+		accessibility: false,
+		infinite: false,
+		dots: true,
+		slidesToShow: 3,
+		centerMode: true,
+		autoplay: false,
+		responsive: [{
+			breakpoint: 750,
+			settings: {
+				slidesToShow: 1,
+				centerPadding: '5%',
+				centerMode: false,
+				}
+			}]
+		});
+	}
+	$.ajax({
+		url: domain + '/collections/ajax',
+		cache: false,
+		dataType: 'html',
+		success: function(html) {
+				console.log('success!');
+				var product_num = 40; //抜き出したい商品の数
+				var prop = [];
+				var content = [];
+				var priceDisplay = [];
+				var relatedContents;
+				$.each($(html).find('.item_box'), function(index) {
+					prop[index] = $(this).attr('id');
+					content[index] = $(this);
+					priceDisplay[index] = $(this).find('.product_detail').html();
+					if(prop[index] == varitationItem[0] ){
+						$('#bottlePrice').html(priceDisplay[index])
+					}
+					if(prop[index] == varitationItem[1] ){
+						$('#refillPrice').html(priceDisplay[index])
+					}
+					if(prop[index] == varitationItem[2] ){
+						$('#bottleRefillPrice').html(priceDisplay[index])
+					}
+					if (prop[index] == relatedItem[0] || prop[index] == relatedItem[1] || prop[index] == relatedItem[2]) {
+					console.log('content:' + content[index].html());
+					$('#relatedSlider .slick-list .slick-track').append(content[index]);
+					};
+				});
+				if (document.getElementById('relatedSlider')) {
+					console.log('slick!')
+					relatedSlider();
+				}
+		}
+	});
+</script>
 
 {% schema %}
 {

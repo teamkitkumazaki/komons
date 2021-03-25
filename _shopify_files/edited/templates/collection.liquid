@@ -17,6 +17,10 @@
 	{% section 'collection-template-cat' %}
 	{% section 'section-back' %}
 </article>
+{%- elsif collection.handle == "ajax" -%}
+<article id="itemAjax" class="page-item-ajax">
+  {% section 'collection-template-ajax' %}
+</article>
 {%- else -%}
 <article id="itemList" class="page-item-list">
 	{% section 'collection-template' %}
