@@ -54,9 +54,14 @@ article {
 }
 
 @media screen and (max-width: 730px) {
+  .comp-admin-title {
+    display: block;
+    text-align: center;
+  }
   .comp-admin-title .title_ja {
     font-size: 28px;
-    margin-right: 0.5em;
+    margin-right: 0em;
+    margin-bottom: 10px;
   }
 }
 .comp-form-wrap {
@@ -214,6 +219,14 @@ article {
   right: -10px;
 }
 
+@media screen and (max-width: 720px) {
+  .comp-submit-button button {
+    font-size: 16px;
+  }
+  .comp-submit-button button.small {
+    font-size: 3.4vw;
+  }
+}
 /* ########## ページ別レイアウト ########## */
 .page-login .hide {
   display: none !important;

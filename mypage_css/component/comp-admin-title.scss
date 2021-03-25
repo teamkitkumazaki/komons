@@ -18,9 +18,12 @@
 
 @media screen and (max-width: 730px){
   .comp-admin-title{
+    display: block;
+    text-align: center;
     .title_ja{
       font-size: 28px;
-      margin-right: 0.5em;
+      margin-right: 0em;
+      margin-bottom: 10px;
     }
   }
 }
