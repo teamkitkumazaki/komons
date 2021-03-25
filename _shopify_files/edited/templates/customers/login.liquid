@@ -1,8 +1,10 @@
 <article id="login" class="page-login">
 	<div class="section_inner" id="CustomerLoginForm">
 		<div class="comp-admin-title center">
-			<h1 class="title_ja">ログイン</h1>
-			<span class="title_en">Log in</span>
+			<div class="text_inner">
+				<h1 class="title_ja">ログイン</h1>
+				<span class="title_en">Log in</span>
+			</div>
 		</div>
 		<div class="comp-form-wrap">
 		{% form 'customer_login', novalidate: 'novalidate' %}
@@ -63,8 +65,10 @@
 	</div>
 	<div class="section_inner hide" id="RecoverPasswordForm">
 		<div class="comp-admin-title center">
-			<h1 class="title_ja">パスワードの再設定</h1>
-			<span class="title_en">Reset Password</span>
+			<div class="text_inner">
+				<h1 class="title_ja">パスワードの再設定</h1>
+				<span class="title_en">Reset Password</span>
+			</div>
 		</div>
 		<div class="comp-form-wrap">
 			{% form 'recover_customer_password' %}

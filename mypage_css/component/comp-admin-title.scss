@@ -23,10 +23,12 @@
     justify-content: space-between;
     align-items: center;
     .logout_button{
-      color: inherit;
-      text-decoration: underline;
-      font-size: 16px;
-      letter-spacing: 0.5px;
+      a{
+        color: inherit;
+        text-decoration: underline;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+      }
     }
   }
 }
@@ -50,7 +52,9 @@
         margin-bottom: 40px;
       }
       .logout_button{
-        font-size: 14px;
+        a{
+          font-size: 14px;
+        }
       }
     }
   }
