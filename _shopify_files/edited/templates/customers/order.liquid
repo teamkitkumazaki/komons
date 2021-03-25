@@ -48,6 +48,19 @@
 					</div><!-- order_item -->
 					{%- endfor -%}
 					</div><!-- order_detail_list -->
+					<div class="subtotal_container">
+						<div class="subtotal_inner">
+							<div class="subtotal_flex">
+								<span class="title">小計</span>
+								<span class="price">{{ order.line_items_subtotal_price | money_without_currency }}円(税込)</span>
+							</div>
+							<div class="subtotal_flex">
+								<span class="title">送料</span>
+								<span class="price">{{ order.shipping_price | money_without_currency }}円(税込)</span>
+							</div>
+						</div><!-- subtotal_inner -->
+						<p class="amount_total">合計金額<span>{{ order.total_price | money_without_currency }}円(税込)</span></p>
+					</div><!-- subtotal_container -->
 				</div><!-- comp-order-detail -->
 			</div><!-- flex_left -->
 			<div class="flex_right">
