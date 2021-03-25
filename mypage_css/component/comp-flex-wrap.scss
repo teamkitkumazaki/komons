@@ -2,6 +2,9 @@
   @include flexSet;
   justify-content: space-between;
   margin-top: 80px;
+  &.reverse{
+    flex-direction: row-reverse;
+  }
   .flex_left{
     width: 67%;
     .sub_ttl{
@@ -41,6 +44,15 @@
         line-height: 1.6;
         letter-spacing: 1.25px;
         text-align: center;
+      }
+    }
+    &.reverse{
+      flex-direction: row-reverse;
+      .flex_left{
+        margin-bottom: 0;
+      }
+      .flex_right{
+        margin-bottom: 60px;
       }
     }
   }

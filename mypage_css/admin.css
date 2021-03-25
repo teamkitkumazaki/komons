@@ -188,17 +188,18 @@ article {
 }
 .comp-form-wrap .form_default_address {
   text-align: center;
-  margin-bottom: 51px;
+  margin-bottom: 50px;
 }
-@media (max-width: 520px) {
+@media screen and (max-width: 720px) {
   .comp-form-wrap .form_default_address {
-    margin-left: 35px;
+    margin-top: 10px;
+    margin-bottom: 40px;
   }
 }
 .comp-form-wrap .form_default_address input {
   width: 25px;
   height: 25px;
-  margin: 0 12px 0 0;
+  margin: 0 10px 0 0;
   padding: 6px;
   border: solid 1px #acacac;
   background-color: #ffffff;
@@ -211,28 +212,37 @@ article {
 }
 .comp-form-wrap .form_default_address label {
   font-size: 18px;
-  line-height: 25px;
   position: relative;
+  padding-left: 30px;
+}
+@media screen and (max-width: 720px) {
+  .comp-form-wrap .form_default_address label {
+    font-size: 14px;
+  }
 }
 .comp-form-wrap .form_default_address label::before {
   position: absolute;
   top: -3px;
-  left: -40px;
+  left: 0;
+  bottom: 0;
+  margin: auto;
   content: "";
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border: solid 1px #acacac;
-  border-radius: 12.5px;
+  border-radius: 60px;
   background-color: #ffffff;
 }
 .comp-form-wrap .form_default_address label::after {
   position: absolute;
-  top: 3px;
-  left: -33.5px;
+  top: 0;
+  bottom: 3px;
+  margin: auto;
+  left: 6px;
   content: "";
-  width: 13px;
-  height: 13px;
-  border-radius: 7.5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 60px;
   background-color: #ffffff;
 }
 
@@ -507,6 +517,9 @@ article {
   justify-content: space-between;
   margin-top: 80px;
 }
+.comp-flex-wrap.reverse {
+  flex-direction: row-reverse;
+}
 .comp-flex-wrap .flex_left {
   width: 67%;
 }
@@ -548,6 +561,15 @@ article {
     line-height: 1.6;
     letter-spacing: 1.25px;
     text-align: center;
+  }
+  .comp-flex-wrap.reverse {
+    flex-direction: row-reverse;
+  }
+  .comp-flex-wrap.reverse .flex_left {
+    margin-bottom: 0;
+  }
+  .comp-flex-wrap.reverse .flex_right {
+    margin-bottom: 60px;
   }
 }
 .comp-account-info {
@@ -617,6 +639,17 @@ article {
   text-align: center;
   padding: 15px 0;
   border-radius: 10px;
+  font-family: inherit;
+  border: none;
+  box-shadow: none;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+.comp-account-info .edit_button:hover {
+  opacity: 0.75;
+}
+.comp-account-info .edit_button:focus {
+  outline: none;
 }
 
 @media screen and (max-width: 720px) {

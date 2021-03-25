@@ -58,7 +58,26 @@
 				<span class="title_en">Your Address</span>
 			</div>
 		</div>
-		<div class="comp-flex-wrap">
+		<div class="comp-flex-wrap reverse">
+			<div class="flex_right">
+				<div class="comp-account-info">
+					<button class="edit_button" href="/account/addresses">配送先情報を登録</button>
+					<div class="account_item default">
+						<h2 class="account_ttl">アカウント情報</h2>
+						<div class="description"><span>熊崎 慎之介</span>〒158-0082<br>東京都 世田谷区<br>等々力4-6-12, グリーンコート等々力201</div>
+					</div>
+					<div class="others">
+						<h2 class="account_ttl">その他の連絡先</h2>
+						<div class="account_item">
+							<div class="description"><span>板垣 亮太</span>〒2520805<br>藤沢市円行 1-12-3</div>
+							<div class="btn_wrap">
+								<button id="EditFormButton_6223579349186" type="button" class="btn btn_edit" data-form-id="6223579349186" aria-owns="EditAddress_6223579349186" aria-expanded="false"><span>修正</span></button>
+								<button type="button" class="btn btn_delete" data-target="/account/addresses/6223579349186" data-confirm-message="この住所を削除してもよろしいですか？"><span>削除</span></button>
+							</div>
+						</div>
+					</div>
+				</div><!-- comp-account-info -->
+			</div><!-- flex_right -->
 			<div class="flex_left">
 				<div id="AddressNewForm" class="comp-form-wrap" style="display: block;">
 				<form method="post" action="/account/addresses" id="address_form_new" accept-charset="UTF-8"><input type="hidden" name="form_type" value="customer_address"><input type="hidden" name="utf8" value="✓">
@@ -123,25 +142,6 @@
 				</form>
 				</div>
 			</div><!-- flex_left -->
-			<div class="flex_right">
-				<div class="comp-account-info">
-					<a class="edit_button" href="/account/addresses">配送先情報を登録</a>
-					<div class="account_item default">
-						<h2 class="account_ttl">アカウント情報</h2>
-						<div class="description"><span>熊崎 慎之介</span>〒158-0082<br>東京都 世田谷区<br>等々力4-6-12, グリーンコート等々力201</div>
-					</div>
-					<div class="others">
-						<h2 class="account_ttl">その他の連絡先</h2>
-						<div class="account_item">
-							<div class="description"><span>板垣 亮太</span>〒2520805<br>藤沢市円行 1-12-3</div>
-							<div class="btn_wrap">
-								<button id="EditFormButton_6223579349186" type="button" class="btn btn_edit" data-form-id="6223579349186" aria-owns="EditAddress_6223579349186" aria-expanded="false"><span>修正</span></button>
-								<button type="button" class="btn btn_delete" data-target="/account/addresses/6223579349186" data-confirm-message="この住所を削除してもよろしいですか？"><span>削除</span></button>
-							</div>
-						</div>
-					</div>
-				</div><!-- comp-account-info -->
-			</div><!-- flex_right -->
 		</div><!-- comp-flex-wrap -->
 	</div><!-- section_inner -->
 </article>
