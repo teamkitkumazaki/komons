@@ -1,71 +1,68 @@
 <article id="order" class="page-order">
 	<div class="section_inner">
-		<div class="comp-admin-title">
-			<h1 class="title_ja">ご注文の詳細</h1>
-			<span class="title_en">Order Detail</span>
+		<div class="comp-admin-title inMypage">
+			<div class="text_inner left">
+				<h1 class="title_ja">ご注文の詳細</h1>
+				<span class="title_en">Order Detail</span>
+			</div>
 		</div>
-		<div class="order_detail">
-			<h2>ご注文詳細<span>注文番号：{{ order.name }}</span></h2>
-			<div class="order_detail_list">
-				{%- for line_item in order.line_items -%}
-				<div class="order_detail_item">
-					<div class="item_wrap1">
-						<img src="{{ line_item.product.media[2] | img_url: 'master' }}" alt="">
+		<div class="comp-flex-wrap">
+			<div class="flex_left">
+				<div class="comp-order-detail">
+					<h2 class="order_ttl">ご注文詳細<span>注文番号：#1003</span></h2>
+					<div class="order_detail_list">
+					{%- for line_item in order.line_items -%}
+					<div class="order_item">
+						<div class="item_wrap_upper">
+						<div class="img_wrap">
+							<a href="{{ line_item.product.url }}">
+								<img src="{{ line_item.product.media[2] | img_url: 'master' }}" alt="">
+							</a>
+						</div>
 						<div class="item_title">
-							<p>{{ line_item.product.metafields.custom_fields["category_name"] }}</p>
-							<h3>{{ line_item.title }}</h3>
+							<div class="category">{{ line_item.product.metafields.custom_fields["category_name"] }}</div>
+							<h3><a href="{{ line_item.product.url }}">{{ line_item.title }}</a></h3>
 							<a href="{{ line_item.product.url }}" class="circle">
 								<div class="circle-inner"></div>
 							</a>
 						</div>
-					</div>
-					<div class="item_wrap2">
-						<p class="item">商品番号</p>
-						<p class="data sku">{{ line_item.sku }}</p>
-						<p class="item">商品価格</p>
-						<p class="data">{{ line_item.original_price | money_without_currency }}円(税込)</span></p>
-						<p class="item">数量</p>
-						<p class="data">{{ line_item.quantity }}</p>
-						<p class="item">合計金額</p>
-						<p class="data">{{ line_item.final_line_price | money_without_currency }}円(税込)</p>
-					</div>
+						</div>
+						<div class="item_wrap_lower">
+							<div class="info_box">
+								<span class="item">商品番号</span>
+								<span class="data sku">{{ line_item.sku }}</span>
+							</div>
+							<div class="info_box">
+								<span class="item">商品価格</span>
+								<span class="data">{{ line_item.original_price | money_without_currency }}円(税込)</span>
+							</div>
+							<div class="info_box">
+								<span class="item">数量</span>
+								<span class="data">{{ line_item.quantity }}</span>
+							</div>
+							<div class="info_box">
+								<span class="item">合計金額</span>
+								<span class="data">{{ line_item.final_line_price | money_without_currency }}円(税込)</span>
+							</div>
+						</div>
+					</div><!-- order_item -->
+					{%- endfor -%}
+					</div><!-- order_detail_list -->
+				</div><!-- comp-order-detail -->
+			</div><!-- flex_left -->
+			<div class="flex_right">
+				<div class="comp-account-info">
+				<div class="account_item">
+					<h2 class="account_ttl">決済者情報</h2>
+					<div class="description"><span>{{ order.billing_address.first_name }} {{ order.billing_address.last_name }}</span>〒{{ order.billing_address.zip }}<br>{{ order.billing_address.province }}{{ order.billing_address.city }}{{ order.billing_address.street }}</div>
+				</div><!-- account_item -->
+				<div class="account_item default">
+					<h2 class="account_ttl">配送先情報</h2>
+					<div class="description"><span>{{ order.shipping_address.first_name }} {{ order.shipping_address.last_name }}</span>〒{{ order.shipping_address.zip }}<br>{{ order.shipping_address.province }} {{ order.shipping_address.city }}{{ order.shipping_address.street }}</div>
 				</div>
-				{%- endfor -%}
-			</div>
-			<div class="subtotal_container">
-				<table>
-					<tr>
-						<td>小計</td>
-						<td>&yen;{{ order.line_items_subtotal_price | money_without_currency }}円(税込)</td>
-					</tr>
-					<tr>
-						<td>送料</td>
-						<td>&yen;{{ order.shipping_price | money_without_currency }}円(税込)</td>
-					</tr>
-				</table>
-			</div>
-			<p class="total">合計金額<span>&yen;{{ order.total_price | money_without_currency }}円(税込)</span></p>
-		</div>
-		<div class="place">
-			<div class="payment">
-				<h3>決済者情報</h3>
-				<p>
-					<span>{{ order.billing_address.first_name }} {{ order.billing_address.last_name }}</span><br>
-					〒{{ order.billing_address.zip }}<br>
-					{{ order.billing_address.province }} {{ order.billing_address.city }}<br>
-					{{ order.billing_address.street }}
-				</p>
-			</div>
-			<div class="shipping">
-				<h3>配送先情報</h3>
-				<p>
-					<span>{{ order.shipping_address.first_name }} {{ order.shipping_address.last_name }}</span><br>
-					〒{{ order.shipping_address.zip }}<br>
-					{{ order.shipping_address.province }} {{ order.shipping_address.city }}<br>
-					{{ order.shipping_address.street }}
-				</p>
-			</div>
-		</div>
+				</div><!-- comp-account-info -->
+			</div><!-- flex_right -->
+		</div><!-- comp-flex-wrap -->
 	</div>
 </article>
 <script>

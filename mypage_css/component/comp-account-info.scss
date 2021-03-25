@@ -9,6 +9,14 @@
     margin-bottom: 20px;
   }
   .account_item{
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    &:nth-last-of-type(1){
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+      border-bottom: 0px solid #ddd;
+    }
     .description{
       font-size: 14px;
       line-height: 1.63;
