@@ -1,0 +1,55 @@
+.comp-account-info{
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  .account_item{
+    .account_ttl{
+      font-size: 20px;
+      line-height: 1.6;
+      letter-spacing: 1.25px;
+      margin-bottom: 20px;
+    }
+    .description{
+      font-size: 14px;
+      line-height: 1.63;
+      letter-spacing: 1px;
+      span{
+        display: block;
+        font-size: 20px;
+        line-height: 1.5;
+        letter-spacing: 1.25px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .edit_button{
+    margin-top: 35px;
+    display: block;
+    background: #fff;
+    color: #00381f;
+    font-size: 16px;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 720px){
+  .comp-account-info{
+    padding: 20px;
+    border-radius: 10px;
+    .account_item{
+      .account_ttl{
+        text-align: center;
+      }
+    }
+    .edit_button{
+      margin-top: 35px;
+      font-size: 14px;
+      width: 100%;
+      padding: 15px 0;
+    }
+  }
+}

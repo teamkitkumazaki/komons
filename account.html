@@ -50,65 +50,81 @@
 			</div>
 		</div>
 	</header>
-	<article id="login" class="page-login">
-	<div class="section_inner hide" id="CustomerLoginForm">
-		<div class="comp-admin-title center">
-			<h1 class="title_ja">ログイン</h1>
-			<span class="title_en">Log in</span>
-		</div>
-		<div class="comp-form-wrap">
-		<form method="post" action="/account/login" id="customer_login" accept-charset="UTF-8" novalidate="novalidate"><input type="hidden" name="form_type" value="customer_login"><input type="hidden" name="utf8" value="✓">
-			<div class="form_input">
-				<div class="form_item">
-					<label>メールアドレス</label>
-					<div class="input_wrap">
-						<input type="email" name="customer[email]" id="CustomerEmail" placeholder="example@komons-japan.com" autocomplete="email" autocorrect="off" autocapitalize="off">
-					</div>
-				</div>
-				<div class="form_item">
-					<label>パスワード</label>
-					<div class="input_wrap">
-						<input type="password" value="" name="customer[password]" id="CustomerPassword">
-					</div>
-				</div>
-			</div>
-			<div class="comp-submit-button">
-				<button><span>ログイン</span></button>
-				<input type="submit" class="btn" value="ログイン">
-			</div>
-		<input type="hidden" name="return_url" value="/account"></form>
-		<p class="recover-link">
-			<a href="#recover" id="RecoverPassword">パスワードをお忘れの方はこちら</a>
-		</p>
-		<p class="register-link">
-			<a href="/account/register">アカウントをお持ちでない方はこちら</a>
-		</p>
-		</div>
-		<p class="subscription-link">
-			<a href="#">2021年3月以前よりの定期購入情報についてはこちら</a>
-		</p>
-	</div>
-	<div class="section_inner" id="RecoverPasswordForm">
-		<div class="comp-admin-title center">
+	<article id="mypage" class="page-mypage">
+	<div class="section_inner">
+		<div class="comp-admin-title inMypage">
 			<div class="text_inner">
-				<h1 class="title_ja">パスワードの再設定</h1>
-				<span class="title_en">Reset Password</span>
+				<h1 class="title_ja">マイページ</h1>
+				<span class="title_en">My Page</span>
 			</div>
+			<a class="logout_button" href="/account/logout" id="customer_logout_link">ログアウト</a>
 		</div>
-		<div class="comp-form-wrap">
-			<form method="post" action="/account/recover" accept-charset="UTF-8"><input type="hidden" name="form_type" value="recover_customer_password"><input type="hidden" name="utf8" value="✓">
-				<div class="form_input">
-					<div class="form_item">
-						<label>メールアドレス</label>
-						<div class="input_wrap">
-							<input type="email" value="" name="email" id="RecoverEmail" placeholder="example@komons-japan.com" autocorrect="off" autocapitalize="off"></div>
+		<div class="comp-flex-wrap">
+			<div class="flex_left">
+				<h2 class="sub_ttl">ご注文履歴</h2>
+				<div class="comp-order-list">
+					<div class="order_item">
+						<div class="order_bar">
+							<div class="bar_text">
+								<span class="title">ご注文番号</span>
+								<a href="https://komons-japan.myshopify.com/account/orders/32a3d0e2a83fda61928850ebe578407b">#1003</a>
+								<span class="price">お会計金額：3,300円(税込)</span>
+							</div>
+							<a href="https://komons-japan.myshopify.com/account/orders/32a3d0e2a83fda61928850ebe578407b" class="circle">
+								<span class="circle-inner"></span>
+							</a>
+						</div>
+						<div class="order_condition">
+							<span class="time">ご注文日時： <time datetime="2021-03-11T05:36:41Z">2021/3/11</time></span>
+							<span class="payment">お支払い状況：返金済</span>
+							<span class="condition">配送状況：未発送</span>
+						</div>
+					</div>
+					<div class="order_item">
+						<div class="order_bar">
+							<div class="bar_text">
+								<span class="title">ご注文番号</span>
+								<a href="https://komons-japan.myshopify.com/account/orders/32a3d0e2a83fda61928850ebe578407b">#1003</a>
+								<span class="price">お会計金額：3,300円(税込)</span>
+							</div>
+							<a href="https://komons-japan.myshopify.com/account/orders/32a3d0e2a83fda61928850ebe578407b" class="circle">
+								<span class="circle-inner"></span>
+							</a>
+						</div>
+						<div class="order_condition">
+							<span class="time">ご注文日時： <time datetime="2021-03-11T05:36:41Z">2021/3/11</time></span>
+							<span class="payment">お支払い状況：返金済</span>
+							<span class="condition">配送状況：未発送</span>
+						</div>
+					</div>
+					<div class="order_item">
+						<div class="order_bar">
+							<div class="bar_text">
+								<span class="title">ご注文番号</span>
+								<a href="https://komons-japan.myshopify.com/account/orders/32a3d0e2a83fda61928850ebe578407b">#1003</a>
+								<span class="price">お会計金額：3,300円(税込)</span>
+							</div>
+							<a href="https://komons-japan.myshopify.com/account/orders/32a3d0e2a83fda61928850ebe578407b" class="circle">
+								<span class="circle-inner"></span>
+							</a>
+						</div>
+						<div class="order_condition">
+							<span class="time">ご注文日時： <time datetime="2021-03-11T05:36:41Z">2021/3/11</time></span>
+							<span class="payment">お支払い状況：返金済</span>
+							<span class="condition">配送状況：未発送</span>
+						</div>
 					</div>
 				</div>
-				<div class="comp-submit-button">
-					<button class="small"><span>パスワード再設定用メールを送信</span></button>
-					<input type="submit" class="btn" value="送信する">
+			</div>
+			<div class="flex_right">
+				<div class="comp-account-info">
+					<div class="account_item">
+						<h2 class="account_ttl">アカウント情報</h2>
+						<div class="description"><span>熊崎 慎之介</span>〒158-0082<br>東京都 世田谷区<br>等々力4-6-12, グリーンコート等々力201</div>
+					</div>
+					<a class="edit_button" href="/account/addresses">配送先情報の追加・変更</a>
 				</div>
-			</form>
+			</div>
 		</div>
 	</div>
 </article>

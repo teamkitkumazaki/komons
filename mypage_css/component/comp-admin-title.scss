@@ -1,29 +1,57 @@
 .comp-admin-title{
-  @include flexSet;
-  align-items: center;
-  color: $basicGreen;
-  .title_ja{
-    font-size: 34px;
-    line-height: normal;
-    letter-spacing: normal;
-    margin-right: 0.5em;
+  .text_inner{
+    @include flexSet;
+    align-items: center;
+    color: $basicGreen;
+    .title_ja{
+      font-size: 34px;
+      line-height: normal;
+      letter-spacing: normal;
+      margin-right: 0.5em;
+    }
+    .title_en{
+      @include libre-r;
+      font-size: 14px;
+      line-height: normal;
+      letter-spacing: normal;
+    }
   }
-  .title_en{
-    @include libre-r;
-    font-size: 14px;
-    line-height: normal;
-    letter-spacing: normal;
+  &.inMypage{
+    padding-bottom: 65px;
+    border-bottom: 1px solid #dddddd;
+    @include flexSet;
+    justify-content: space-between;
+    align-items: center;
+    .logout_button{
+      color: inherit;
+      text-decoration: underline;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+    }
   }
 }
 
 @media screen and (max-width: 730px){
   .comp-admin-title{
-    display: block;
-    text-align: center;
-    .title_ja{
-      font-size: 28px;
-      margin-right: 0em;
-      margin-bottom: 10px;
+    .text_inner{
+      display: block;
+      text-align: center;
+      .title_ja{
+        font-size: 28px;
+        margin-right: 0em;
+        margin-bottom: 10px;
+      }
+    }
+    &.inMypage{
+      display: block;
+      text-align: center;
+      padding-bottom: 60px;
+      .text_inner{
+        margin-bottom: 40px;
+      }
+      .logout_button{
+        font-size: 14px;
+      }
     }
   }
 }

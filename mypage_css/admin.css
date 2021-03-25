@@ -31,20 +31,20 @@ article {
 }
 
 /*########## コンポーネント ##########*/
-.comp-admin-title {
+.comp-admin-title .text_inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   color: #00381f;
 }
-.comp-admin-title .title_ja {
+.comp-admin-title .text_inner .title_ja {
   font-size: 34px;
   line-height: normal;
   letter-spacing: normal;
   margin-right: 0.5em;
 }
-.comp-admin-title .title_en {
+.comp-admin-title .text_inner .title_en {
   font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
@@ -52,16 +52,42 @@ article {
   line-height: normal;
   letter-spacing: normal;
 }
+.comp-admin-title.inMypage {
+  padding-bottom: 65px;
+  border-bottom: 1px solid #dddddd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.comp-admin-title.inMypage .logout_button {
+  color: inherit;
+  text-decoration: underline;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
 
 @media screen and (max-width: 730px) {
-  .comp-admin-title {
+  .comp-admin-title .text_inner {
     display: block;
     text-align: center;
   }
-  .comp-admin-title .title_ja {
+  .comp-admin-title .text_inner .title_ja {
     font-size: 28px;
     margin-right: 0em;
     margin-bottom: 10px;
+  }
+  .comp-admin-title.inMypage {
+    display: block;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+  .comp-admin-title.inMypage .text_inner {
+    margin-bottom: 40px;
+  }
+  .comp-admin-title.inMypage .logout_button {
+    font-size: 14px;
   }
 }
 .comp-form-wrap {
@@ -223,6 +249,267 @@ article {
     font-size: 3.4vw;
   }
 }
+.comp-order-list {
+  width: 100%;
+  margin-top: 36px;
+}
+.comp-order-list .order_item {
+  margin-bottom: 33px;
+}
+.comp-order-list .order_item .order_bar {
+  position: relative;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  padding: 15px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.comp-order-list .order_item .order_bar .bar_text {
+  width: calc(100% - 50px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.comp-order-list .order_item .order_bar .bar_text .title {
+  display: block;
+  letter-spacing: 0.05em;
+  margin-right: 0.75em;
+}
+.comp-order-list .order_item .order_bar .bar_text a {
+  display: block;
+  color: #068acc;
+  transition: opacity 0.3s;
+  margin-right: 0.75em;
+}
+.comp-order-list .order_item .order_bar .bar_text a:hover {
+  opacity: 0.75;
+}
+.comp-order-list .order_item .order_bar .bar_text .price {
+  display: block;
+  font-size: 14px;
+}
+.comp-order-list .order_item .order_bar .circle {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 24px;
+  background-color: #ffffff;
+}
+.comp-order-list .order_item .order_bar .circle .circle-inner {
+  position: absolute;
+  display: block;
+  width: 7px;
+  height: 7px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 4px;
+  margin: auto;
+  transform: rotate(-45deg);
+  border-bottom: solid 1px #979797;
+  border-right: solid 1px #979797;
+}
+.comp-order-list .order_item .order_condition {
+  margin: 25px 0 0;
+  padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: flex-start;
+}
+.comp-order-list .order_item .order_condition span {
+  display: block;
+  position: relative;
+  margin-right: 1em;
+  padding-right: 1em;
+}
+.comp-order-list .order_item .order_condition span::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 1px;
+  height: 15px;
+  background: #979797;
+}
+.comp-order-list .order_item .order_condition span:nth-last-of-type(1) {
+  margin-right: 0em;
+  padding-right: 0em;
+}
+.comp-order-list .order_item .order_condition span:nth-last-of-type(1)::after {
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .comp-order-list {
+    width: 100%;
+    margin-top: 36px;
+  }
+  .comp-order-list .order_item {
+    margin-bottom: 33px;
+  }
+  .comp-order-list .order_item .order_bar {
+    padding: 12px 15px;
+  }
+  .comp-order-list .order_item .order_bar .bar_text {
+    line-height: 2;
+    font-size: 16px;
+  }
+  .comp-order-list .order_item .order_bar .bar_text .title {
+    display: block;
+    letter-spacing: 0.05em;
+    margin-right: 0.75em;
+  }
+  .comp-order-list .order_item .order_bar .bar_text .price {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+  }
+  .comp-order-list .order_item .order_bar .circle {
+    width: 30px;
+    height: 30px;
+  }
+  .comp-order-list .order_item .order_bar .circle .circle-inner {
+    display: block;
+    width: 7px;
+    height: 7px;
+    transform: rotate(-45deg);
+  }
+  .comp-order-list .order_item .order_condition {
+    margin: 20px 0 0;
+    padding: 0 10px;
+    display: block;
+    line-height: 1.8;
+  }
+  .comp-order-list .order_item .order_condition span {
+    display: block;
+    margin-right: 0em;
+    padding-right: 0em;
+  }
+  .comp-order-list .order_item .order_condition span::after {
+    display: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 1px;
+    height: 15px;
+    background: #979797;
+  }
+}
+.comp-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+.comp-flex-wrap .flex_left {
+  width: 67%;
+}
+.comp-flex-wrap .flex_left .sub_ttl {
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 1.25px;
+}
+.comp-flex-wrap .flex_right {
+  width: 27%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+@media screen and (max-width: 980px) {
+  .comp-flex-wrap {
+    display: block;
+    margin-top: 60px;
+  }
+  .comp-flex-wrap .flex_left {
+    width: 100%;
+    margin-bottom: 80px;
+  }
+  .comp-flex-wrap .flex_right {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 740px) {
+  .comp-flex-wrap {
+    margin-top: 40px;
+  }
+  .comp-flex-wrap .flex_left {
+    margin-bottom: 60px;
+  }
+  .comp-flex-wrap .flex_left .sub_ttl {
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 1.25px;
+    text-align: center;
+  }
+}
+.comp-account-info {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+}
+.comp-account-info .account_item .account_ttl {
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 1.25px;
+  margin-bottom: 20px;
+}
+.comp-account-info .account_item .description {
+  font-size: 14px;
+  line-height: 1.63;
+  letter-spacing: 1px;
+}
+.comp-account-info .account_item .description span {
+  display: block;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 1.25px;
+  margin-bottom: 5px;
+}
+.comp-account-info .edit_button {
+  margin-top: 35px;
+  display: block;
+  background: #fff;
+  color: #00381f;
+  font-size: 16px;
+  letter-spacing: 1px;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 720px) {
+  .comp-account-info {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .comp-account-info .account_item .account_ttl {
+    text-align: center;
+  }
+  .comp-account-info .edit_button {
+    margin-top: 35px;
+    font-size: 14px;
+    width: 100%;
+    padding: 15px 0;
+  }
+}
 /* ########## ページ別レイアウト ########## */
 .page-login .hide {
   display: none !important;
@@ -299,12 +586,8 @@ article {
 }
 .page-mypage .section_inner {
   max-width: 1200px;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
 }
 @media screen and (max-width: 1280px) {
   .page-mypage .section_inner {
@@ -313,181 +596,12 @@ article {
 }
 @media screen and (max-width: 960px) {
   .page-mypage .section_inner {
-    max-width: 750px;
+    max-width: 88vw;
   }
 }
 @media screen and (max-width: 520px) {
   .page-mypage .section_inner {
     width: 84vw;
-  }
-}
-.page-mypage .section_inner .comp-admin-title {
-  align-items: baseline;
-  justify-content: start;
-  width: 100%;
-  padding-bottom: 65px;
-  border-bottom: 1px solid #dddddd;
-}
-.page-mypage .section_inner .comp-admin-title p {
-  flex: 1;
-  text-align: right;
-}
-.page-mypage .section_inner .comp-admin-title p a {
-  color: #00381f;
-  text-decoration: underline;
-}
-.page-mypage .section_inner .order {
-  width: 66.67%;
-  margin: 70px 0 0 0;
-}
-@media (max-width: 520px) {
-  .page-mypage .section_inner .order {
-    width: 100%;
-    margin: 35px 0 0 0;
-  }
-}
-.page-mypage .section_inner .order h2 {
-  font-size: 20px;
-}
-.page-mypage .section_inner .order .order-list {
-  width: 100%;
-  margin-top: 36px;
-}
-.page-mypage .section_inner .order .order-list .order-item {
-  margin-bottom: 33px;
-}
-.page-mypage .section_inner .order .order-list .order-item .order-bar {
-  position: relative;
-  width: 98.13%;
-  border-radius: 10px;
-  background-color: #f4f4f4;
-  padding: 18px 0 16px 15px;
-}
-.page-mypage .section_inner .order .order-list .order-item .order-bar p {
-  display: block;
-  font-size: 16px;
-  width: 94.14%;
-}
-@media (max-width: 520px) {
-  .page-mypage .section_inner .order .order-list .order-item .order-bar p {
-    font-size: 13px;
-  }
-}
-.page-mypage .section_inner .order .order-list .order-item .order-bar p span:first-of-type {
-  color: #068acc;
-  margin: 0 21px 0 15px;
-}
-@media (max-width: 520px) {
-  .page-mypage .section_inner .order .order-list .order-item .order-bar p span:first-of-type {
-    margin: 0 11px 0 9px;
-  }
-}
-.page-mypage .section_inner .order .order-list .order-item .order-bar p span:last-of-type {
-  font-size: 11px;
-}
-.page-mypage .section_inner .order .order-list .order-item .order-bar .circle {
-  position: absolute;
-  top: 7px;
-  right: 11px;
-  width: 35px;
-  height: 35px;
-  border-radius: 24px;
-  background-color: #ffffff;
-}
-.page-mypage .section_inner .order .order-list .order-item .order-bar .circle .circle-inner {
-  width: 7px;
-  height: 7px;
-  margin: 14px 16px 14px 12px;
-  transform: rotate(-45deg);
-  border-bottom: solid 1px #979797;
-  border-right: solid 1px #979797;
-}
-.page-mypage .section_inner .order .order-list .order-item .order-condition {
-  margin: 26px 0 0 12px;
-  border-collapse: separate;
-  border-spacing: 18px 0px;
-}
-@media (max-width: 960px) {
-  .page-mypage .section_inner .order .order-list .order-item .order-condition {
-    margin: 26px 0 0 0;
-  }
-}
-.page-mypage .section_inner .order .order-list .order-item .order-condition tr td {
-  padding-right: 15px;
-}
-@media (max-width: 960px) {
-  .page-mypage .section_inner .order .order-list .order-item .order-condition tr td {
-    padding: 0;
-  }
-}
-.page-mypage .section_inner .order .order-list .order-item .order-condition tr td:first-of-type {
-  border-right: solid 1px #acacac;
-}
-.page-mypage .section_inner .order .order-list .order-item .order-condition tr td:nth-of-type(2) {
-  border-right: solid 1px #acacac;
-}
-.page-mypage .section_inner .account-info {
-  width: 21.08%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin: 61px 0 0 8.17%;
-  padding: 32px 1.92% 17px 2%;
-  border-radius: 10px;
-  background-color: #f4f4f4;
-}
-@media (max-width: 960px) {
-  .page-mypage .section_inner .account-info {
-    width: 25.08%;
-    margin: 61px 0 0 4.17%;
-  }
-}
-@media (max-width: 520px) {
-  .page-mypage .section_inner .account-info {
-    width: 100%;
-    margin: 10px auto 30px auto;
-    padding: 22px;
-  }
-}
-.page-mypage .section_inner .account-info h2 {
-  font-size: 24px;
-}
-.page-mypage .section_inner .account-info p {
-  color: #363636;
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 1px;
-  margin-top: 19px;
-}
-.page-mypage .section_inner .account-info p span {
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: 1.25px;
-}
-.page-mypage .section_inner .account-info a {
-  color: #00381f;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  margin-top: 38px;
-  padding: 22px 0 22px 0;
-  border-radius: 10px;
-  background-color: #ffffff;
-}
-@media (max-width: 1280px) {
-  .page-mypage .section_inner .account-info a {
-    padding: 22px 0 22px 0;
-    width: 100%;
-    font-size: 13px;
-  }
-}
-@media (max-width: 960px) {
-  .page-mypage .section_inner .account-info a {
-    padding: 20px 7% 20px 7%;
-    width: 86%;
-    font-size: 13px;
   }
 }
 
@@ -507,7 +621,7 @@ article {
 }
 @media screen and (max-width: 960px) {
   .page-address .section_inner {
-    max-width: 750px;
+    max-width: 88vw;
   }
 }
 @media screen and (max-width: 520px) {
@@ -785,7 +899,7 @@ article {
 }
 @media screen and (max-width: 960px) {
   .page-order .section_inner {
-    max-width: 750px;
+    max-width: 88vw;
   }
 }
 @media screen and (max-width: 520px) {
