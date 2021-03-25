@@ -97,7 +97,7 @@ article {
   border: none;
   box-sizing: border-box;
   border-radius: 5px;
-  border: 1px solid #fff;
+  border: 1px solid #f4f4f4;
   transition: border 0.2s;
 }
 .comp-form-wrap .form_item .input_wrap input:focus {
@@ -142,13 +142,9 @@ article {
   .comp-form-wrap .form_item .input_wrap input {
     font-size: 16px;
     border-radius: 5px;
+    padding: 12px 15px;
   }
   .comp-form-wrap .form_item .input_wrap_name {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    justify-content: space-between;
     width: 100%;
   }
   .comp-form-wrap .form_item .input_wrap_name .input_wrap {
@@ -280,16 +276,27 @@ article {
   color: #00381f;
 }
 
-.page-signup p {
+.page-signup .privacy_text {
   text-align: center;
   font-size: 14px;
-  margin-top: 52px;
+  margin-top: 50px;
 }
-.page-signup p a {
+.page-signup .privacy_text a {
   text-decoration: underline;
-  color: #00381f;
+  color: #068acc;
 }
 
+@media screen and (max-width: 720px) {
+  .page-signup .privacy_text {
+    line-height: 1.8;
+    font-size: 3.4vw;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .page-signup .privacy_text span {
+    display: block;
+  }
+}
 .page-mypage .section_inner {
   max-width: 1200px;
   max-width: 1200px;
