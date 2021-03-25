@@ -1,6 +1,13 @@
 article{
-  min-height: 100vh;
   padding-top: 160px;
+  margin-bottom: 120px;
+  @media screen and (max-width: 980px){
+    margin-bottom: 80px;
+  }
+  @media screen and (max-width: 730px){
+    padding-top: 100px;
+    margin-bottom: 60px;
+  }
 }
 
 .hide {

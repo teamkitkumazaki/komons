@@ -19,8 +19,29 @@
 			margin-top: 26px;
 		}
 		.subscription-link {
-			margin-top: 53px;
+			margin-top: 50px;
 			margin-bottom: 50px;
+		}
+	}
+}
+
+@media screen and (max-width: 720px){
+	.page-login{
+		.section_inner {
+			p {
+				font-size: 12px;
+				margin-top: 60px;
+				a {
+					color: #00381f;
+				}
+			}
+			.recover-link {
+				margin-top: 40px;
+			}
+			.register-link {
+				margin-top: 25px;
+				margin-bottom: 10px;
+			}
 		}
 	}
 }

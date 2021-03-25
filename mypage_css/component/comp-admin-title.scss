@@ -1,6 +1,6 @@
 .comp-admin-title{
   @include flexSet;
-  align-items: baseline;
+  align-items: center;
   color: $basicGreen;
   .title_ja{
     font-size: 34px;
@@ -13,5 +13,14 @@
     font-size: 14px;
     line-height: normal;
     letter-spacing: normal;
+  }
+}
+
+@media screen and (max-width: 730px){
+  .comp-admin-title{
+    .title_ja{
+      font-size: 28px;
+      margin-right: 0.5em;
+    }
   }
 }
