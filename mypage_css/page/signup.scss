@@ -1,0 +1,26 @@
+.page-signup{
+	.privacy_text {
+		text-align: center;
+		font-size: 14px;
+		margin-top: 50px;
+		a {
+			text-decoration: underline;
+			color: #068acc;
+		}
+	}
+}
+
+@media screen and (max-width: 720px){
+	.page-signup{
+		.privacy_text {
+			line-height: 1.8;
+			font-size: 3.4vw;
+			margin-top: 40px;
+			margin-bottom: 20px;
+			span{
+				display: block;
+			}
+		}
+	}
+
+}

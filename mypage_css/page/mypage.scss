@@ -1,0 +1,5 @@
+.page-mypage {
+  .section_inner {
+		@include responsive-waku;
+  }
+}

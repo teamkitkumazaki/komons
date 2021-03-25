@@ -1,0 +1,182 @@
+.comp-form-wrap{
+  max-width: 700px;
+  margin: 60px auto;
+  box-sizing: border-box;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  .form_item{
+    padding-bottom:40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d8d8d8;
+    &:nth-last-of-type(1){
+      margin-bottom: 0px;
+      border-bottom: 0px solid #d8d8d8;
+    }
+    .must {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "必須";
+        top: 0;
+        bottom:0;
+        margin: auto;
+        right: 0;
+        display: block;
+        color: #ffffff;
+        font-size: 14px;
+        width: 28px;
+        height: 14px;
+        line-height: 14px;
+        padding: 7px 21px;
+        border-radius: 5px;
+        background-color: #00381f;
+      }
+    }
+    .non-must {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "任意";
+        top: 0;
+        right: 0;
+        display: block;
+        color: #ffffff;
+        font-size: 14px;
+        width: 28px;
+        height: 14px;
+        line-height: 14px;
+        padding: 7px 20px;
+        border-radius: 5px;
+        background-color: #467d65;
+      }
+    }
+    label{
+      display: block;
+      font-size: 18px;
+      line-height: normal;
+      letter-spacing: normal;
+      margin-bottom: 20px;
+      color: $basicGreen;
+    }
+    .input_wrap{
+      input{
+        display: block;
+        width: 100%;
+				font-size: 14px;
+				padding: 15px 20px;
+        border: none;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid #f4f4f4;
+        transition: border .2s;
+        &:focus{
+          outline: none;
+          border: 1px solid #d8d8d8;
+        }
+      }
+    }
+		.input_wrap_name {
+			@include flexSet;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+			.input_wrap {
+				width: 48%;
+			}
+		}
+  }
+	::placeholder {
+		font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+	}
+  .form_default_address {
+    text-align: center;
+    margin-bottom: 50px;
+    @media screen and (max-width: 720px){
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+    input {
+      width: 25px;
+      height: 25px;
+      margin: 0 10px 0 0;
+      padding: 6px;
+      border: solid 1px #acacac;
+      background-color: #ffffff;
+      &[type=checkbox] {
+        display: none;
+      }
+      &[type=checkbox]:checked + label::after {
+        background-color: #00381f;
+      }
+    }
+    label {
+      font-size: 18px;
+      position: relative;
+      padding-left: 30px;
+      @media screen and (max-width: 720px){
+        font-size: 14px;
+      }
+      &::before {
+        position: absolute;
+        top: -3px;
+        left: 0;
+        bottom:0;
+        margin: auto;
+        content: '';
+        width: 20px;
+        height: 20px;
+        border: solid 1px #acacac;
+        border-radius: 60px;
+        background-color: #ffffff;
+      }
+      &::after {
+        position: absolute;
+        top: 0;
+        bottom:3px;
+        margin: auto;
+        left: 6px;
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 60px;
+        background-color: #ffffff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px){
+  .comp-form-wrap{
+    max-width: 86%;
+    margin: 60px auto;
+  }
+}
+@media screen and (max-width: 720px){
+  .comp-form-wrap{
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 25px 20px;
+    .form_item{
+      padding-bottom:30px;
+      margin-bottom: 25px;
+      label{
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      .input_wrap{
+        input{
+  				font-size: 16px;
+          border-radius: 5px;
+          padding: 12px 15px;
+        }
+      }
+  		.input_wrap_name {
+  			width: 100%;
+  			.input_wrap {
+  				width: 48%;
+  			}
+  		}
+    }
+  }
+}

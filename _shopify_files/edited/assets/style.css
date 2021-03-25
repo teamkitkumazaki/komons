@@ -130,8 +130,12 @@ img {
   border: none;
 }
 
+#shopify-section-header {
+	width: 100vw;
+}
+
 header {
-  width: 100%;
+  width: 100vw;
   height: 73px;
   border-top: 2px solid transparent;
   position: fixed;
@@ -13738,3 +13742,17 @@ body.loaded #loading {
   }
 }
 /*ウェイティングリスト*/
+.shopify-challenge__container {
+	margin: 20vh auto 50vh auto !important;
+	height: 30vh !important;
+}
+
+.shopify-challenge__button {
+	width: 88%;
+	line-height: 40px;
+	background: #00381f;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+}
+/* チャレンジページ */

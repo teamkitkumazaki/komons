@@ -18,6 +18,11 @@
 {% section 'gift-option-field' %}
 {%- endif -%}
 
+{%- if product.type == "refill" or product.type == "bottle-refill" -%}
+{% section 'subscription-option-field' %}
+{%- endif -%}
+
+
 
 {% if collection %}
   <div class="text-center return-link-wrapper page-width">
