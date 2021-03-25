@@ -2,13 +2,13 @@
   padding: 20px;
   border-radius: 10px;
   background-color: #f4f4f4;
+  .account_ttl{
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 1.25px;
+    margin-bottom: 20px;
+  }
   .account_item{
-    .account_ttl{
-      font-size: 20px;
-      line-height: 1.6;
-      letter-spacing: 1.25px;
-      margin-bottom: 20px;
-    }
     .description{
       font-size: 14px;
       line-height: 1.63;
@@ -19,6 +19,33 @@
         line-height: 1.5;
         letter-spacing: 1.25px;
         margin-bottom: 5px;
+      }
+    }
+    .btn_wrap{
+      @include flexSet;
+      justify-content: space-between;
+      margin-top: 15px;
+      .btn{
+        width: 48%;
+        font-family: inherit;
+        font-size: 14px;
+        line-height: normal;
+        letter-spacing: 1px;
+        padding: 7px 0;
+        border-radius: 5px;
+        cursor: pointer;
+        appearance: none;
+        border: none;
+        box-shadow: none;
+        @include hover;
+        &.btn_edit{
+          background: $basicGreen;
+          color: #fff;
+        }
+        &.btn_delete{
+          background: #fff;
+          color: $basicGreen;
+        }
       }
     }
   }
@@ -40,10 +67,8 @@
   .comp-account-info{
     padding: 20px;
     border-radius: 10px;
-    .account_item{
-      .account_ttl{
-        text-align: center;
-      }
+    .account_ttl{
+      text-align: center;
     }
     .edit_button{
       margin-top: 35px;

@@ -5,6 +5,7 @@
     color: $basicGreen;
     .title_ja{
       font-size: 34px;
+      font-weight: normal;
       line-height: normal;
       letter-spacing: normal;
       margin-right: 0.5em;
@@ -14,6 +15,9 @@
       font-size: 14px;
       line-height: normal;
       letter-spacing: normal;
+    }
+    &.left{
+      justify-content: flex-start;
     }
   }
   &.inMypage{
