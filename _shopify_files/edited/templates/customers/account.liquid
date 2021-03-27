@@ -38,6 +38,9 @@
 				{%- endif -%}
 				{% endpaginate %}
 				</div><!-- comp-order-list -->
+				<div class="temp">
+					{% render 'paywhirl-customer-portal-link' %}
+				</div>
 			</div><!-- flex_left -->
 			<div class="flex_right">
 			<div class="comp-account-info">
@@ -53,3 +56,4 @@
 <script>
 	$('body').addClass('fixed');
 </script>
+{% render 'paywhirl-customer-portal-frame' %}

@@ -1,0 +1,453 @@
+@charset "UTF-8";
+/* ----- Google Fonts ----- */
+@font-face {
+  font-family: "libre-regular";
+  font-weight: 400;
+  src: url("../fonts/LibreBaskerville-Regular.eot"), url("../fonts/LibreBaskerville-Regular.woff") format("woff"), url("../fonts/LibreBaskerville-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "libre-bold";
+  font-weight: 700;
+  src: url("../fonts/librebaskerville-bold-webfont.eot"), url("../fonts/librebaskerville-bold-webfont.woff") format("woff"), url("../fonts/LibreBaskerville-Bold.ttf") format("truetype");
+}
+article {
+  padding-top: 160px;
+  margin-bottom: 120px;
+}
+@media screen and (max-width: 980px) {
+  article {
+    margin-bottom: 80px;
+  }
+}
+@media screen and (max-width: 730px) {
+  article {
+    padding-top: 120px;
+    margin-bottom: 60px;
+  }
+}
+
+.hide {
+  display: none !important;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+svg.icon:not(.icon--full-color) circle,
+svg.icon:not(.icon--full-color) ellipse,
+svg.icon:not(.icon--full-color) g,
+svg.icon:not(.icon--full-color) line,
+svg.icon:not(.icon--full-color) path,
+svg.icon:not(.icon--full-color) polygon,
+svg.icon:not(.icon--full-color) polyline,
+svg.icon:not(.icon--full-color) rect,
+symbol.icon:not(.icon--full-color) circle,
+symbol.icon:not(.icon--full-color) ellipse,
+symbol.icon:not(.icon--full-color) g,
+symbol.icon:not(.icon--full-color) line,
+symbol.icon:not(.icon--full-color) path,
+symbol.icon:not(.icon--full-color) polygon,
+symbol.icon:not(.icon--full-color) polyline,
+symbol.icon:not(.icon--full-color) rect {
+  fill: inherit;
+  stroke: inherit;
+}
+svg.icon:not(.icon--full-color) .icon-error__symbol,
+symbol.icon:not(.icon--full-color) .icon-error__symbol {
+  fill: #ffffff;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.icon-spinner {
+  animation: spin 500ms infinite linear;
+}
+
+.page-width {
+  margin-top: 100px;
+  font-size: 14px;
+  color: #00381f;
+  line-height: 1;
+  font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  width: 100%;
+}
+.page-width h2, .page-width h3, .page-width h4, .page-width h5 {
+  font-weight: normal !important;
+}
+.page-width a {
+  text-decoration: none !important;
+}
+.page-width .pw-message-wrap p {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  padding: 15px;
+  border-radius: 5px;
+  background: #f4f4f4;
+  margin-bottom: 50px;
+}
+.page-width .pw-message-wrap p.form-message--success {
+  border: 1px solid #1f873d;
+  background-color: #f8fff9;
+  color: #1f873d;
+}
+.page-width .pw-message-wrap p.form-message--error {
+  border: 1px solid #651818;
+  background-color: #fff8f8;
+  color: #651818;
+}
+.page-width .grid .grid__item h2 {
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 1.25px;
+  margin-bottom: 30px;
+}
+.page-width .grid .grid__item.pw-address-form {
+  max-width: 720px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: #f4f4f4;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.page-width .grid .grid__item.pw-address-form .grid__item {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+}
+.page-width .grid .grid__item.pw-address-form label {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+}
+.page-width .grid .grid__item.pw-address-form input {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  font-size: 14px;
+  padding: 15px 20px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #f4f4f4;
+  transition: border 0.2s;
+  margin-bottom: 30px;
+  font-family: inherit;
+}
+.page-width .grid .grid__item.pw-address-form input:focus {
+  outline: none;
+  border: 1px solid #d8d8d8;
+}
+.page-width .grid .grid__item.pw-address-form select {
+  position: relative;
+  -webkit-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 45px;
+  border: solid 1px #f4f4f4;
+  border-radius: 5px;
+  font-size: 15px;
+  text-indent: 20px;
+  background-color: #fff;
+  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/contact/selector_caret.png);
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center right 15px;
+  margin-bottom: 30px;
+  font-family: inherit;
+}
+.page-width .grid .grid__item.pw-address-form select:focus {
+  outline: none;
+  border: 1px solid #d8d8d8;
+}
+.page-width .grid .grid__item .text-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-between;
+}
+.page-width .grid .grid__item .text-center div {
+  width: 48%;
+  text-align: center;
+}
+.page-width .grid .grid__item .text-center div a {
+  display: block;
+  padding: 15px 0;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  background: #d8d8d8;
+  margin-bottom: 10px;
+  transition: opacity 0.3s;
+  color: #00381f;
+}
+.page-width .grid .grid__item .text-center div a:hover {
+  opacity: 0.75;
+}
+.page-width .grid .grid__item .text-center div a.btn {
+  background: #00381f;
+  color: #fff;
+}
+.page-width .grid .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 40px;
+}
+.page-width .grid .responsive-table thead tr {
+  background: #f8f8f8;
+}
+.page-width .grid .responsive-table thead tr th, .page-width .grid .responsive-table thead tr td {
+  text-align: left;
+  border: 1px solid #dddddd;
+  padding: 15px 10px;
+}
+.page-width .grid .responsive-table thead tr th {
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+.page-width .grid .responsive-table tbody th, .page-width .grid .responsive-table tbody td {
+  text-align: left;
+  border: 1px solid #dddddd;
+  padding: 15px 10px;
+}
+.page-width .grid .responsive-table tbody th a, .page-width .grid .responsive-table tbody td a {
+  color: #068acc;
+}
+.page-width .grid .responsive-table tbody th {
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.page-width .grid .responsive-table tbody th .btn {
+  display: inline-block;
+  border: none;
+  background: #00381f;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  transition: opacity 0.3s;
+}
+.page-width .grid .responsive-table tbody th .btn:hover {
+  opacity: 0.75;
+}
+.page-width .grid .responsive-table tbody td {
+  font-size: 14px;
+}
+.page-width .grid.myaccount {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-between;
+}
+.page-width .grid.myaccount .myaccount__order-history {
+  width: 67%;
+}
+.page-width .grid.myaccount .myaccount__account-details {
+  width: 27%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+}
+.page-width .grid.myaccount .myaccount__account-details h3 {
+  margin: 20px auto 15px;
+  font-size: 20px;
+  letter-spacing: 0.7px;
+}
+.page-width .grid.myaccount .myaccount__account-details p {
+  font-size: 14px;
+  line-height: 2.2;
+  letter-spacing: 0.5px;
+}
+.page-width .grid.myaccount .myaccount__account-details p:nth-of-type(1), .page-width .grid.myaccount .myaccount__account-details p:nth-of-type(4), .page-width .grid.myaccount .myaccount__account-details p:nth-of-type(6), .page-width .grid.myaccount .myaccount__account-details p:nth-last-of-type(2) {
+  margin-bottom: 30px;
+}
+.page-width .grid.myaccount .myaccount__account-details p b {
+  display: inline-block;
+  padding-left: 0.3em;
+  font-size: 16px;
+  font-weight: normal;
+}
+.page-width .grid.myaccount .myaccount__account-details p .btn {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  background: #fff;
+  margin-bottom: 10px;
+  transition: opacity 0.3s;
+  color: #00381f;
+}
+.page-width .grid.myaccount .myaccount__account-details p .btn:hover {
+  opacity: 0.75;
+}
+.page-width .grid.myaccount .myaccount__account-details p .btn .icon-spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: -5px 0 -3px 5px;
+}
+.page-width .grid.myaccount .myaccount__account-details p .btn:not([disabled]) .icon-spinner {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+  .page-width .grid.myaccount {
+    display: block;
+  }
+  .page-width .grid.myaccount .myaccount__order-history {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .page-width .grid.myaccount .myaccount__account-details {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 720px) {
+  .page-width {
+    margin-top: 50px;
+    font-size: 14px;
+    color: #00381f;
+    line-height: 1;
+    font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    width: 100%;
+  }
+  .page-width .pw-message-wrap p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+  .page-width .grid .grid__item h2 {
+    font-size: 18px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .page-width .grid .grid__item.pw-address-form {
+    max-width: 100%;
+    margin: 0 auto;
+    background: #f4f4f4;
+    padding: 25px 20px;
+    box-sizing: border-box;
+  }
+  .page-width .grid .grid__item.pw-address-form .grid__item {
+    margin-bottom: 0px;
+    border-bottom: 0px solid #ddd;
+  }
+  .page-width .grid .grid__item.pw-address-form label {
+    display: block;
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+  .page-width .grid .grid__item.pw-address-form input {
+    display: block;
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 30px;
+  }
+  .page-width .grid .grid__item.pw-address-form select {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-indent: 0px;
+  }
+  .page-width .grid .grid__item .text-center {
+    display: block;
+  }
+  .page-width .grid .grid__item .text-center div {
+    width: 100%;
+    text-align: center;
+  }
+  .page-width .grid .grid__item .text-center div a {
+    padding: 15px 0;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .page-width .grid .grid__item .text-center div a.btn {
+    margin-bottom: 0px;
+  }
+  .page-width .grid .responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 40px;
+  }
+  .page-width .grid .responsive-table thead {
+    display: none;
+  }
+  .page-width .grid .responsive-table tbody th, .page-width .grid .responsive-table tbody td {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: 0px solid #dddddd;
+    box-sizing: border-box;
+    line-height: 1.6;
+  }
+  .page-width .grid .responsive-table tbody th::before, .page-width .grid .responsive-table tbody td::before {
+    display: block;
+    content: attr(data-label);
+    text-align: left;
+    padding-right: 0px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    background: #f4f4f4;
+    padding: 15px;
+    font-weight: normal;
+    font-family: inherit;
+    margin-bottom: 20px;
+  }
+  .page-width .grid .responsive-table tbody th a, .page-width .grid .responsive-table tbody td a {
+    margin: 0 10px;
+    color: #068acc;
+  }
+  .page-width .grid .responsive-table tbody th span, .page-width .grid .responsive-table tbody td span {
+    display: block;
+    margin: 0 10px;
+  }
+  .page-width .grid .responsive-table tbody th {
+    padding: 15px 0px;
+    font-weight: normal;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  .page-width .grid .responsive-table tbody td {
+    padding: 15px 0px;
+    font-size: 12px;
+  }
+  .page-width .grid.myaccount {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+  .page-width .grid.myaccount .myaccount__order-history {
+    margin-bottom: 0;
+  }
+  .page-width .grid.myaccount .myaccount__account-details {
+    margin-bottom: 60px;
+  }
+  .page-width .grid.myaccount .myaccount__account-details h3 {
+    margin: 20px auto 15px;
+    font-size: 18px;
+  }
+  .page-width .grid.myaccount .myaccount__account-details p .btn {
+    display: block;
+    padding: 7px 0;
+    text-align: center;
+    font-size: 16px;
+  }
+}
