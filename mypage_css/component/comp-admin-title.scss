@@ -21,7 +21,7 @@
     }
   }
   &.inMypage{
-    padding-bottom: 65px;
+    padding-bottom: 25px;
     border-bottom: 1px solid #dddddd;
     @include flexSet;
     justify-content: space-between;
@@ -51,7 +51,7 @@
     &.inMypage{
       display: block;
       text-align: center;
-      padding-bottom: 60px;
+      padding-bottom: 0px;
       .text_inner{
         margin-bottom: 40px;
       }

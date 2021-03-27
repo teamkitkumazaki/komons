@@ -25,18 +25,19 @@
   <article id="subscription" class="page-subscription">
   <section class="section-admin">
     <div class="section_inner">
-    <div class="comp-admin-title center">
+    <div class="comp-admin-title inMypage">
       <div class="text_inner">
         <h1 class="title_ja">定期購入プラン管理</h1>
         <span class="title_en">Subscription</span>
       </div>
-      <div class="comp-admin-bread">
-        <a href="#aaaa"><span>ログアウト</span></a>
-        <a href="{{ routes.account_url }}" data-paywhirl-i18n="{{ 'customer.account.return' | t }}">マイページトップ</a>
-      </div>
-
-      </div>  section-header -->
     </div>
+    <div class="comp-admin-bread">
+      <div class="bread_wrap">
+        <a class="bread_item" href="/account">マイページトップ</a>
+        <a class="bread_item" href="/account?pw-page=/">定期購入トップ</a>
+        <span class="current">ご注文の詳細</span>
+      </div><!-- bread_wrap -->
+    </div><!-- comp-admin-bread -->
     <div
          id="paywhirl-customer-portal-loader"
          style="text-align: center"

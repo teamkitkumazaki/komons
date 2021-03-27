@@ -6,10 +6,17 @@
 				<span class="title_en">Order Detail</span>
 			</div>
 		</div>
+		<div class="comp-admin-bread">
+			<div class="bread_wrap">
+				{{ 'layout.customer.log_out' | t | customer_logout_link }}
+				<a class="bread_item" href="/account">マイページトップ</a>
+				<span class="current">ご注文の詳細</span>
+			</div><!-- bread_wrap -->
+		</div><!-- comp-admin-bread -->
 		<div class="comp-flex-wrap">
 			<div class="flex_left">
 				<div class="comp-order-detail">
-					<h2 class="order_ttl">ご注文詳細<span>注文番号：#1003</span></h2>
+					<h2 class="order_ttl">ご注文詳細</h2>
 					<div class="order_detail_list">
 					{%- for line_item in order.line_items -%}
 					<div class="order_item">
