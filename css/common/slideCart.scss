@@ -3,6 +3,12 @@
 }
 #slidecarthq{
 	font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
+	.discount-box{
+		display: none !important;
+	}
+	input[name="gift-checkout"]{
+		display: none !important;
+	}
 	.slidecarthq{
 		max-width: 900px !important;
 		font-family: inherit;

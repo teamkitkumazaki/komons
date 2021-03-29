@@ -1,7 +1,13 @@
 <div class="list_item" price="{{ product_child.price | money_without_currency }}" recommend="2">
+	{%- if product.variants.first.inventory_quantity == 0 -%}
+	<a class="item_thumb soldout" href="{{ product_child.url }}">
+		<span class="img_wrap img_warp-{{ product_child.id }}">
+	</a>
+	{%- else -%}
 	<a class="item_thumb" href="{{ product_child.url }}">
 		<span class="img_wrap img_warp-{{ product_child.id }}">
 	</a>
+	{%- endif -%}
 	<style>
 		.img_warp-{{ product_child.id }} {
 			background-image: url({{ product_child.featured_image | img_url: 'master' }})
