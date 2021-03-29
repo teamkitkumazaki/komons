@@ -57,7 +57,7 @@ article {
   justify-content: flex-start;
 }
 .comp-admin-title.inMypage {
-  padding-bottom: 65px;
+  padding-bottom: 25px;
   border-bottom: 1px solid #dddddd;
   display: flex;
   flex-wrap: wrap;
@@ -85,7 +85,7 @@ article {
   .comp-admin-title.inMypage {
     display: block;
     text-align: center;
-    padding-bottom: 60px;
+    padding-bottom: 0px;
   }
   .comp-admin-title.inMypage .text_inner {
     margin-bottom: 40px;
@@ -999,6 +999,59 @@ article {
     margin-left: 1em;
   }
 }
+.comp-admin-bread {
+  margin-top: 30px;
+}
+.comp-admin-bread .bread_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.comp-admin-bread .bread_wrap a {
+  position: relative;
+  display: block;
+  padding-right: 15px;
+  color: #666;
+  border-radius: 5px;
+  margin-right: 5px;
+  transition: opacity 0.3s;
+}
+.comp-admin-bread .bread_wrap a#customer_logout_link {
+  text-decoration: underline;
+}
+.comp-admin-bread .bread_wrap a::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+  transform: rotate(45deg);
+  line-height: 1;
+}
+.comp-admin-bread .bread_wrap span {
+  color: #979797;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 720px) {
+  .comp-admin-bread {
+    margin-top: 15px;
+  }
+  .comp-admin-bread .bread_wrap {
+    font-size: 3.2vw;
+  }
+}
 /* ########## ページ別レイアウト ########## */
 .page-login .hide {
   display: none !important;
@@ -1093,6 +1146,50 @@ article {
     width: 84vw;
   }
 }
+.page-mypage .section_inner .subscription_wrap {
+  margin-top: 60px;
+}
+.page-mypage .section_inner .subscription_wrap a {
+  display: block;
+  border: 1px solid #d8d8d8;
+  color: #00381f;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  padding: 15px 15px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  position: relative;
+  transition: opacity 0.3s;
+}
+.page-mypage .section_inner .subscription_wrap a:hover {
+  opacity: 0.75;
+}
+.page-mypage .section_inner .subscription_wrap a::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+  margin: auto;
+  width: 24px;
+  height: 9px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/arrow_vuojtf.png);
+}
+@media screen and (max-width: 720px) {
+  .page-mypage .section_inner .subscription_wrap {
+    margin-top: 30px;
+  }
+  .page-mypage .section_inner .subscription_wrap a {
+    font-size: 14px;
+  }
+  .page-mypage .section_inner .subscription_wrap a::after {
+    width: 18px;
+  }
+}
 
 .page-address .section_inner {
   max-width: 1200px;
@@ -1170,5 +1267,26 @@ article {
 @media screen and (max-width: 720px) {
   .page-order .section_inner .comp-admin-title {
     padding-bottom: 10px;
+  }
+}
+
+.page-subscription .section_inner {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 1280px) {
+  .page-subscription .section_inner {
+    max-width: 900px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .page-subscription .section_inner {
+    max-width: 88vw;
+  }
+}
+@media screen and (max-width: 520px) {
+  .page-subscription .section_inner {
+    width: 84vw;
   }
 }

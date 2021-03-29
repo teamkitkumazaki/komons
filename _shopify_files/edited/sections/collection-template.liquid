@@ -59,7 +59,7 @@
 							{%- if collection.handle == "upcoming" -%}
 							{{ product.metafields.custom_fields["category_name"] }}
 							{%- else -%}
-							{{ product.price | money_without_currency }}円(税抜)
+							{{ product.price | money_without_currency }}円(税込)
 							{%- endif -%}
 						</span>
 					</span>

@@ -14,7 +14,7 @@
 </article>
 {% section 'fixed-cart-wrap' %}
 
-{%- if product.type == "gift" -%}
+{%- elsif product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" -%}
 {% section 'gift-option-field' %}
 {%- endif -%}
 

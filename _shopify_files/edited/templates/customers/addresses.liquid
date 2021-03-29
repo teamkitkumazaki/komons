@@ -1,11 +1,18 @@
 <article id="address" class="page-address">
 	<div class="section_inner">
-		<div class="comp-admin-title">
-			<div class="text_inner left">
+		<div class="comp-admin-title inMypage">
+			<div class="text_inner">
 				<h1 class="title_ja">住所・配送先の情報</h1>
 				<span class="title_en">Your Address</span>
 			</div>
 		</div>
+		<div class="comp-admin-bread">
+			<div class="bread_wrap">
+				{{ 'layout.customer.log_out' | t | customer_logout_link }}
+				<a class="bread_item" href="/account">マイページトップ</a>
+				<span class="current">住所・配送先情報</span>
+			</div><!-- bread_wrap -->
+		</div><!-- comp-admin-bread -->
 		<div class="comp-flex-wrap reverse">
 		<div class="flex_right">
 			<div class="comp-account-info">

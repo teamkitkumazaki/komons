@@ -24,7 +24,7 @@
         <span class="ja">{{ collection.metafields.custom_fields["collection_title_ja"] }}</span>
         <span class="en">{{ product_1st.title }}</span>
       </a>
-      <span class="price">{{ product_1st.metafields.custom_fields["weight"] }} / {{ product_1st.price | money_without_currency }}円(税抜)</span>
+      <span class="price">{{ product_1st.metafields.custom_fields["weight"] }} / {{ product_1st.price | money_without_currency }}円(税込)</span>
       <div class="button_wrap">
         <a href="{{ product_1st.url }}"><span>詳細を見る</span></a>
         <div class="comp-list-cart-button">
@@ -78,7 +78,7 @@
           {{ product.metafields.custom_fields["product_name"] }}
         </span>
       </a>
-      <span class="price">{{ product.metafields.custom_fields["weight"] }} / {{ product.price | money_without_currency }}円(税抜)</span>
+      <span class="price">{{ product.metafields.custom_fields["weight"] }} / {{ product.price | money_without_currency }}円(税込)</span>
       <div class="button_wrap">
         <a href="{{ product.url }}"><span>詳細を見る</span></a>
         <div class="comp-list-cart-button">

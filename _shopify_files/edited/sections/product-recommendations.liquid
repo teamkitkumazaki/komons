@@ -5,57 +5,8 @@
       ><span class="jp_ttl">よく一緒に購入されている商品</span>
     </h3>
   </div>
+  <div id="productList" class="comp-related-product comp-product-list">
+    <div id="relatedSlider" class="item_wrapper">
+    </div><!-- component-related-product -->
+  </div>
 </section>
-
-<script type="text/javascript">
-var currentURL =  'https://' + location.host + '/collections/ajax';
-console.log('currentURL:' + currentURL);
-var relatedItem = [
-  {% if product.metafields.custom_fields["related_item01"] != blank %}'{{ product.metafields.custom_fields["related_item01"] }}',{% endif %}
-  {% if product.metafields.custom_fields["related_item02"] != blank %}'{{ product.metafields.custom_fields["related_item02"] }}',{% endif %}
-  /*{% if product.metafields.custom_fields["related_item03"] != blank %}'{{ product.metafields.custom_fields["related_item03"] }}'{% endif %}*/
-];
-
-  function relatedSlider(){
-  $('#relatedSlider').slick({
-    accessibility: false,
-    infinite: false,
-    dots: true,
-    slidesToShow: 3,
-    centerMode: true,
-    autoplay: false,
-    responsive: [{
-      breakpoint: 750,
-      settings: {
-        slidesToShow: 1,
-        centerPadding: '5%',
-        centerMode: false,
-      }
-    }]
-  });
-  }
-  $.ajax({
-      url: currentURL,
-      cache: false,
-      dataType: 'html',
-      success: function(html) {
-        if (document.getElementById('relatedSlider')) {
-          console.log('success!');
-          var product_num = 80; //抜き出したい商品の数
-          var prop = [];
-          var content = [];
-          var urlText = '/products/';
-          var relatedContents;
-          $.each($(html).find('.item_box'), function(index) {
-            prop[index] = $(this).attr('model');
-            content[index] = $(this);
-            /*if (prop[index] == urlText + relatedItem[0] || prop[index] == urlText + relatedItem[1] || prop[index] == urlText + relatedItem[2]) {
-            relatedContents = relatedContents + content[index];
-            $('#relatedSlider .slick-list .slick-track').append(content[index]);
-            };*/
-          });
-        }
-        relatedSlider();
-      }
-    });
-</script>

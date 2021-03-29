@@ -10,7 +10,6 @@ $(function() {
      var popBg = $('#popBg');
      var closeBanner = target.find('#closeBanner');
      var popClose = target.find('#popCloseButton');
-     console.log(urlParam);
 
      function init(){
        target.addClass('open');
@@ -35,7 +34,6 @@ $(function() {
 
     img.on({
       'load': function() {
-        console.log('loaded');
         setTimeout(function() {
           $('.load_inner').addClass('delete');
           $('body').addClass('loaded');
@@ -391,12 +389,10 @@ $(function() {
 
     function init(){
       $.each(target.find('li'), function(index) {
-        console.log('relatedWrap:' + index)
         relatedInfo[index] = $(this).html();
         $(this).remove();
       });
       $.each(relatedSlider.find('.item_box'), function(index) {
-        console.log('item_box:' + index)
         $(this).append(relatedInfo[index]);
       });
     }
@@ -442,7 +438,6 @@ $(function() {
         var linkHref = $(this).attr('href');
         var linkText = $(this).find('.title').html();
         var variationKataban = linkHref.split("products/");
-        console.log('current:' + variationKataban.slice(-1)[0]);
         if (kataban == variationKataban.slice(-1)[0]) {
           $(this).addClass('current');
           $('#selectedVar').html(linkText);
@@ -878,7 +873,6 @@ $(function() {
 
       giftOptionFields.find("option").each(function(index) {
         optionValue[index] = $(this).attr('value');
-        console.log(optionValue[index])
       });
 
       optionPopClose();
@@ -961,11 +955,13 @@ $(function() {
     function purchaseWayShifter(){
       if(optionState == 0){
         purchaseWaySelect[1].click();
-        optionSelecter.val(cycleSelectOption[0]);
+        optionSelecter.val(cycleSelectOption[1]);
+        $('input[name=sub_cycle]').val(["monthly1"]);
         optionState = 1;
       }else{
         purchaseWaySelect[0].click();
-        optionSelecter.val(cycleSelectOption[0]);
+        optionSelecter.val(cycleSelectOption[1]);
+        $('input[name=sub_cycle]').val(["monthly1"]);
         optionState = 0;
       }
     }
@@ -976,14 +972,14 @@ $(function() {
       });
       target.find("option").each(function(index) {
         cycleSelectOption[index] = $(this).val();
-        console.log('option:' + cycleSelectOption[index]);
       });
       cycleList.find("input[name=sub_cycle]").each(function(index) {
+        var indexNum = Number(index);
+        var num = indexNum + 1;
         cycleSelect[index] = $(this);
-        console.log('input:' + cycleSelect[index].val());
         cycleSelect[index].on({
           'click': function(){
-            optionSelecter.val(cycleSelectOption[index]);
+            optionSelecter.val(cycleSelectOption[num]);
           }
         });
       });
@@ -1036,7 +1032,6 @@ $(function() {
         target.html('');
         for (var i=0; i<itemLength; i++) {
           if(priceMin < giftListArray[i].price && giftListArray[i].price < priceMax){
-            console.log('index:' + i);
             target.append(giftListArray[i].html);
           }
         }

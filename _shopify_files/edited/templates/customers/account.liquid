@@ -5,10 +5,13 @@
 			<h1 class="title_ja">マイページ</h1>
 			<span class="title_en">My Page</span>
 		</div>
-		<div class="logout_button">
-		{{ 'layout.customer.log_out' | t | customer_logout_link }}
 		</div>
-		</div>
+		<div class="comp-admin-bread">
+			<div class="bread_wrap">
+				{{ 'layout.customer.log_out' | t | customer_logout_link }}
+				<span class="current">マイページトップ</span>
+			</div><!-- bread_wrap -->
+		</div><!-- comp-admin-bread -->
 		<div class="comp-flex-wrap">
 			<div class="flex_left">
 				<h2 class="sub_ttl">ご注文履歴</h2>
@@ -38,6 +41,9 @@
 				{%- endif -%}
 				{% endpaginate %}
 				</div><!-- comp-order-list -->
+				<div class="temp">
+					{% render 'paywhirl-customer-portal-link' %}
+				</div>
 			</div><!-- flex_left -->
 			<div class="flex_right">
 			<div class="comp-account-info">
@@ -53,3 +59,4 @@
 <script>
 	$('body').addClass('fixed');
 </script>
+{% render 'paywhirl-customer-portal-frame' %}
