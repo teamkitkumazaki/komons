@@ -946,8 +946,10 @@ $(function() {
     var purchaseWaySelect = [];
     var cycleSelectOption = [];
     var cycleSelect = [];
+    var variationFields = [];
     var optionSelect = $('#optionSelect');
     var optionSelect02 = $('#optionSelect02');
+    var giftOptionFields = $('.giftOptionFields');
     var popBg = $('#popBg');
     var optionState = 0;
     var cycleList = $('#cycleList');
@@ -955,12 +957,16 @@ $(function() {
     function purchaseWayShifter(){
       if(optionState == 0){
         purchaseWaySelect[1].click();
+        giftOptionFields.val(variationFields[1]);
         optionSelecter.val(cycleSelectOption[1]);
+        optionSelecter.click();
         $('input[name=sub_cycle]').val(["monthly1"]);
         optionState = 1;
       }else{
         purchaseWaySelect[0].click();
+        giftOptionFields.val(variationFields[0]);
         optionSelecter.val(cycleSelectOption[1]);
+        optionSelecter.click();
         $('input[name=sub_cycle]').val(["monthly1"]);
         optionState = 0;
       }
@@ -973,6 +979,11 @@ $(function() {
       target.find("option").each(function(index) {
         cycleSelectOption[index] = $(this).val();
       });
+      giftOptionFields.find("option").each(function(index) {
+        variationFields[index] = $(this).val();
+        console.log('optionVal:' + variationFields[index]);
+      });
+
       cycleList.find("input[name=sub_cycle]").each(function(index) {
         var indexNum = Number(index);
         var num = indexNum + 1;

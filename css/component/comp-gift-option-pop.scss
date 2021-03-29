@@ -71,7 +71,7 @@
         padding: 30px 30px 20px;
         .item_thumb{
           width: 100%;
-          margin-bottom: 20px;
+          margin-bottom: 30px;
           .pc_thumb{
             width: 100%;
             display: block;
@@ -85,7 +85,15 @@
           font-size: 14px;
           letter-spacing: 0.5px;
           margin-top: 15px;
-          margin-bottom: 20px;
+          .name{
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+          }
+          .genre{
+            font-size: 12px;
+            color: #646464;
+          }
         }
         .pop_title{
           font-size: 18px;
@@ -365,7 +373,7 @@
           .pop_title{
             font-size: 16px;
             font-weight: normal;
-            line-height: 1.4;
+            line-height: 1.6;
             letter-spacing: 0.8px;
             text-align: center;
             margin-top: 0;

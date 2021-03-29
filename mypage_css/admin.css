@@ -1147,12 +1147,16 @@ article {
   }
 }
 .page-mypage .section_inner .subscription_wrap {
-  margin-top: 60px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ddd;
 }
 .page-mypage .section_inner .subscription_wrap a {
   display: block;
-  border: 1px solid #d8d8d8;
-  color: #00381f;
+  border: 1px solid #00381f;
+  background: #00381f;
+  color: #fff;
   font-size: 16px;
   letter-spacing: 0.5px;
   padding: 15px 15px;
@@ -1177,14 +1181,14 @@ article {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/arrow_vuojtf.png);
+  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/gift_service/arrow_white.png);
 }
 @media screen and (max-width: 720px) {
   .page-mypage .section_inner .subscription_wrap {
     margin-top: 30px;
   }
   .page-mypage .section_inner .subscription_wrap a {
-    font-size: 14px;
+    font-size: 3.6vw;
   }
   .page-mypage .section_inner .subscription_wrap a::after {
     width: 18px;

@@ -2,11 +2,15 @@
   .section_inner {
 		@include responsive-waku;
     .subscription_wrap{
-      margin-top: 60px;
+      margin-top: 0px;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #ddd;
       a{
         display: block;
-        border: 1px solid #d8d8d8;
-        color: $basicGreen;
+        border: 1px solid $basicGreen;
+        background: $basicGreen;
+        color: #fff;
         font-size: 16px;
         letter-spacing: 0.5px;
         padding: 15px 15px;
@@ -26,13 +30,13 @@
           height: 9px;
           @include bgSet;
           background-size: contain;
-          background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/arrow_vuojtf.png);
+          background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/gift_service/arrow_white.png);
         }
       }
       @media screen and (max-width: 720px){
         margin-top: 30px;
         a{
-          font-size: 14px;
+          font-size: 3.6vw;
           &::after{
             width: 18px;
           }

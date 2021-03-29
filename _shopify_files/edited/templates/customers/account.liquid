@@ -14,7 +14,10 @@
 		</div><!-- comp-admin-bread -->
 		<div class="comp-flex-wrap">
 			<div class="flex_left">
-				<h2 class="sub_ttl">ご注文履歴</h2>
+				<div class="subscription">
+					{% render 'paywhirl-customer-portal-link' %}
+				</div>
+				<h2 class="sub_ttl">ご注文/定期購入履歴</h2>
 				<div class="comp-order-list">
 				{% paginate customer.orders by 20 %}
 				{%- if customer.orders.size != 0 -%}
@@ -41,9 +44,6 @@
 				{%- endif -%}
 				{% endpaginate %}
 				</div><!-- comp-order-list -->
-				<div class="temp">
-					{% render 'paywhirl-customer-portal-link' %}
-				</div>
 			</div><!-- flex_left -->
 			<div class="flex_right">
 			<div class="comp-account-info">
