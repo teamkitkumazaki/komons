@@ -1546,7 +1546,7 @@ h1, h2, h3, h4, h5 {
 }
 #slidecarthq .slidecarthq .upsells::before {
   display: block;
-  content: "こちらも合わせて購入されています";
+  content: "よく一緒に購入されている商品";
   text-align: center;
   margin-bottom: 25px;
   font-size: 16px;
@@ -4505,7 +4505,7 @@ body.loaded #loading {
 }
 .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb .pc_thumb {
   width: 100%;
@@ -4554,6 +4554,7 @@ body.loaded #loading {
   display: inline;
 }
 .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select {
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .option_item {

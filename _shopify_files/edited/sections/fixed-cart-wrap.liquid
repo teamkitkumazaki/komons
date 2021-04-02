@@ -6,10 +6,10 @@
     <div class="product_detail">
       <span class="category">{{ product.metafields.custom_fields["category_name"] }}</span>
       <span class="item_name">{{ product.metafields.custom_fields["product_name"] }}</span>
-      <span class="price">{{ product.price | money_without_currency }}円(税抜)</span>
+      <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
     </div>
     <div class="product_cart_button">
-			{%- if product.type == "gift" -%}
+			{%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" -%}
 			<button id="fixedPopButton" class="fixed_cart_button"><span>オプションを選択</span></button>
 			{%- else -%}
 			<select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
