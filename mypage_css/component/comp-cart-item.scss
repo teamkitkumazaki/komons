@@ -1,0 +1,150 @@
+.comp-cart-item{
+  .bag_item{
+    @include flexSet;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #d8d8d8;
+    &:nth-last-of-type(1){
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+      border-bottom: 0px solid #d8d8d8;
+    }
+    .item_img{
+      width: 150px;
+      margin-right: 25px;
+      a{
+        display: block;
+        width: 100%;
+        height: 120px;
+        position: relative;
+        @include hover;
+        overflow: hidden;
+        img{
+          position: absolute;
+          max-width: unset;
+          width: auto;
+          height: 120px;
+          top: 0px;
+          bottom: 0px;
+          left: -15px;
+          right: -15px;
+          margin: auto;
+        }
+      }
+    }
+    .item_txt{
+      width: calc(100% - 175px);
+      position: relative;
+      .remove{
+        position: absolute;
+        top: 0;
+        right: 0;
+        a{
+          display: block;
+          z-index: 40;
+          width: 16px;
+          height: 16px;
+          background: $basicGreen;
+          border-radius: 50%;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 6px;
+          background-image: url(https://corporate.kume.jp/wp-content/themes/kumeseni/assets/img/common/pop_close.svg);
+          transition: opacity 0.3s;
+          cursor: pointer;
+        }
+      }
+      .category{
+        display: block;
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+        .en{
+          font-size: 14px;
+          @include libre-r;
+          padding-right: 0.7em;
+          margin-right: 0.7em;
+          position: relative;
+          &::after{
+            display: inline-block;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: -3px;
+            margin: auto;
+            width: 7px;
+            height: 1px;
+            background: #00381f;
+          }
+        }
+        .ja{
+          font-size: 12px;
+        }
+      }
+      .prod_name{
+        display: block;
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 1.4;
+        letter-spacing: 0.7px;
+        color: inherit;
+        margin-bottom: 15px;
+        .name{
+          display: block;
+        }
+        .genre{
+          font-size: 14px;
+          letter-spacing: 0.5px;
+          color: #646464;
+        }
+      }
+      .lower_wrap{
+        @include flexSet;
+        align-items: center;
+        justify-content: space-between;
+        .order_lot{
+          @include flexSet;
+          justify-content: flex-start;
+          align-items: center;
+          input{
+            width: 60px;
+            border: solid 1px #d8d8d8;
+            appearance: none;
+            padding: 7px 0px 7px 1.5em;
+            margin: 0 0.5em;
+            box-sizing: border-box;
+            font-size: 16px;
+            letter-spacing: 1.37px;
+            color: $basicGreen;
+            pointer-events: none;
+          }
+          .order_button{
+            width: 20px;
+            height: 20px;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.5s;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-size: 12px;
+            background-color: transparent;
+            &.minus{
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
+            }
+            &.plus{
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
+            }
+          }
+        }
+        .price{
+          font-size: 16px;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}

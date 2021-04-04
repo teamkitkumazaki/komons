@@ -12,9 +12,13 @@
 @import 'component/comp-account-info.scss'; //アカウント情報(住所情報)
 @import 'component/comp-order-detail.scss'; //アカウント情報(住所情報)
 @import 'component/comp-admin-bread.scss'; // パンくず
+@import 'component/comp-cart-item.scss'; // カート内の商品
+@import 'component/comp-cart-option.scss'; // カート内 配送・購入オプション
+
 
 
 /* ########## ページ別レイアウト ########## */
+@import 'page/cart.scss'; //カート画面
 @import 'page/login.scss'; //ログイン画面
 @import 'page/reset.scss'; //パスワードリセット画面
 @import 'page/signup.scss'; //アカウント新規作成画面

@@ -1052,7 +1052,374 @@ article {
     font-size: 3.2vw;
   }
 }
+.comp-cart-item .bag_item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.comp-cart-item .bag_item:nth-last-of-type(1) {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  border-bottom: 0px solid #d8d8d8;
+}
+.comp-cart-item .bag_item .item_img {
+  width: 150px;
+  margin-right: 25px;
+}
+.comp-cart-item .bag_item .item_img a {
+  display: block;
+  width: 100%;
+  height: 120px;
+  position: relative;
+  transition: opacity 0.3s;
+  overflow: hidden;
+}
+.comp-cart-item .bag_item .item_img a:hover {
+  opacity: 0.75;
+}
+.comp-cart-item .bag_item .item_img a img {
+  position: absolute;
+  max-width: unset;
+  width: auto;
+  height: 120px;
+  top: 0px;
+  bottom: 0px;
+  left: -15px;
+  right: -15px;
+  margin: auto;
+}
+.comp-cart-item .bag_item .item_txt {
+  width: calc(100% - 175px);
+  position: relative;
+}
+.comp-cart-item .bag_item .item_txt .remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.comp-cart-item .bag_item .item_txt .remove a {
+  display: block;
+  z-index: 40;
+  width: 16px;
+  height: 16px;
+  background: #00381f;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 6px;
+  background-image: url(https://corporate.kume.jp/wp-content/themes/kumeseni/assets/img/common/pop_close.svg);
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+.comp-cart-item .bag_item .item_txt .category {
+  display: block;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.comp-cart-item .bag_item .item_txt .category .en {
+  font-size: 14px;
+  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding-right: 0.7em;
+  margin-right: 0.7em;
+  position: relative;
+}
+.comp-cart-item .bag_item .item_txt .category .en::after {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -3px;
+  margin: auto;
+  width: 7px;
+  height: 1px;
+  background: #00381f;
+}
+.comp-cart-item .bag_item .item_txt .category .ja {
+  font-size: 12px;
+}
+.comp-cart-item .bag_item .item_txt .prod_name {
+  display: block;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.4;
+  letter-spacing: 0.7px;
+  color: inherit;
+  margin-bottom: 15px;
+}
+.comp-cart-item .bag_item .item_txt .prod_name .name {
+  display: block;
+}
+.comp-cart-item .bag_item .item_txt .prod_name .genre {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: #646464;
+}
+.comp-cart-item .bag_item .item_txt .lower_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.comp-cart-item .bag_item .item_txt .lower_wrap .order_lot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+.comp-cart-item .bag_item .item_txt .lower_wrap .order_lot input {
+  width: 60px;
+  border: solid 1px #d8d8d8;
+  -webkit-appearance: none;
+          appearance: none;
+  padding: 7px 0px 7px 1.5em;
+  margin: 0 0.5em;
+  box-sizing: border-box;
+  font-size: 16px;
+  letter-spacing: 1.37px;
+  color: #00381f;
+  pointer-events: none;
+}
+.comp-cart-item .bag_item .item_txt .lower_wrap .order_lot .order_button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.5s;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-size: 12px;
+  background-color: transparent;
+}
+.comp-cart-item .bag_item .item_txt .lower_wrap .order_lot .order_button.minus {
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
+}
+.comp-cart-item .bag_item .item_txt .lower_wrap .order_lot .order_button.plus {
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
+}
+.comp-cart-item .bag_item .item_txt .lower_wrap .price {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.comp-cart-option .option_item {
+  margin-bottom: 20px;
+}
+.comp-cart-option .option_item label {
+  display: block;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.comp-cart-option .option_item label input[type=checkbox] {
+  display: none;
+}
+.comp-cart-option .option_item label .radio_checker {
+  width: 13px;
+  height: 13px;
+  border: 1px solid #979797;
+  background: #fff;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: 7px;
+  position: relative;
+}
+.comp-cart-option .option_item label input[type=checkbox]:checked + .radio_checker::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 7px;
+  height: 7px;
+  background: #333;
+  border-radius: 50%;
+}
+.comp-cart-option .option_item label .label_ttl {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+.comp-cart-option .option_item .input_wrap ::placeholder {
+  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+}
+.comp-cart-option .option_item .input_wrap input {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  padding: 15px 20px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #f4f4f4;
+  transition: border 0.2s;
+}
+.comp-cart-option .option_item .input_wrap input:focus {
+  outline: none;
+  border: 1px solid #d8d8d8;
+}
+.comp-cart-option .option_item .input_wrap select {
+  position: relative;
+  -webkit-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 45px;
+  border: solid 1px #f4f4f4;
+  border-radius: 5px;
+  font-size: 15px;
+  text-indent: 20px;
+  background-color: #fff;
+  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/contact/selector_caret.png);
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center right 15px;
+  font-family: inherit;
+}
+.comp-cart-option .option_item .input_wrap select:focus {
+  outline: none;
+  border: 1px solid #d8d8d8;
+}
+.comp-cart-option .option_item .input_wrap textarea {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  height: 100px;
+  line-height: 1.6;
+  padding: 15px 20px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #f4f4f4;
+  transition: border 0.2s;
+}
+.comp-cart-option .option_item .input_wrap textarea:focus {
+  outline: none;
+  border: 1px solid #d8d8d8;
+}
+.comp-cart-option .option_item .input_wrap .example {
+  color: #646464;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+}
+
 /* ########## ページ別レイアウト ########## */
+.page-cart .section_inner {
+  max-width: 1200px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1280px) {
+  .page-cart .section_inner {
+    max-width: 900px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .page-cart .section_inner {
+    max-width: 88vw;
+  }
+}
+@media screen and (max-width: 520px) {
+  .page-cart .section_inner {
+    width: 84vw;
+  }
+}
+.page-cart .section_inner .cart_flex {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-between;
+}
+.page-cart .section_inner .cart_flex .cart_left {
+  width: 50%;
+}
+.page-cart .section_inner .cart_flex .cart_left .sub_ttl {
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 1.25px;
+  margin-bottom: 40px;
+}
+.page-cart .section_inner .cart_flex .cart_left .amount_section {
+  margin-top: 60px;
+}
+.page-cart .section_inner .cart_flex .cart_left .amount_section .amount_wrap {
+  margin-top: -15px;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 0px;
+  background-color: #f4f4f4;
+}
+.page-cart .section_inner .cart_flex .cart_left .amount_section .amount_wrap .amount_item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-between;
+}
+.page-cart .section_inner .cart_flex .cart_left .amount_section .amount_wrap .amount_item:nth-of-type(1) {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+.page-cart .section_inner .cart_flex .cart_left .amount_section .amount_wrap .amount_item .title {
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0.12px;
+}
+.page-cart .section_inner .cart_flex .cart_left .amount_section .amount_wrap .amount_item .content {
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0.12px;
+}
+.page-cart .section_inner .cart_flex .cart_left .amount_section .amount_wrap .amount_item .content .amount_price {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.page-cart .section_inner .cart_flex .cart_left .amount_section .comp-submit-button {
+  max-width: 100%;
+}
+.page-cart .section_inner .cart_flex .cart_right {
+  width: 45%;
+}
+.page-cart .section_inner .cart_flex .cart_right .sub_ttl {
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 1.25px;
+  margin-bottom: 20px;
+}
+.page-cart .section_inner .cart_flex .cart_right .option_field_wrap {
+  padding: 30px 25px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+}
+.page-cart .section_inner .cart_flex .cart_right .delivery_option, .page-cart .section_inner .cart_flex .cart_right .gift_option {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
 .page-login .hide {
   display: none !important;
 }

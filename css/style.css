@@ -4515,6 +4515,37 @@ body.loaded #loading {
   background-size: cover;
   background-position: center top -35px;
 }
+.comp-gift-option-pop .pop_flex .pop_contents .contents_inner .category {
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.comp-gift-option-pop .pop_flex .pop_contents .contents_inner .category .en {
+  font-size: 16px;
+  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding-right: 0.7em;
+  margin-right: 0.7em;
+  position: relative;
+}
+.comp-gift-option-pop .pop_flex .pop_contents .contents_inner .category .en::after {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -3px;
+  margin: auto;
+  width: 7px;
+  height: 1px;
+  background: #00381f;
+}
+.comp-gift-option-pop .pop_flex .pop_contents .contents_inner .category .ja {
+  font-size: 14px;
+}
 .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .prod_name {
   text-align: center;
   font-size: 14px;
@@ -4522,7 +4553,7 @@ body.loaded #loading {
   margin-top: 15px;
 }
 .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .prod_name .name {
-  font-size: 18px;
+  font-size: 22px;
   display: block;
   margin-bottom: 10px;
 }
@@ -4807,6 +4838,7 @@ body.loaded #loading {
   }
   .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb {
     width: 100%;
+    margin-bottom: 25px;
   }
   .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb .pc_thumb {
     height: auto;
@@ -7921,6 +7953,36 @@ body.loaded #loading {
   background-position: center right 15px;
   font-family: inherit;
 }
+.comp-subscription-table .subscription_note {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+.comp-subscription-table .subscription_note .faq_link {
+  margin-top: 15px;
+}
+.comp-subscription-table .subscription_note .faq_link a {
+  font-size: 16px;
+  color: #068acc;
+}
+.comp-subscription-table .subscription_note .faq_link a span {
+  display: inline-block;
+  position: relative;
+  padding-right: 25px;
+}
+.comp-subscription-table .subscription_note .faq_link a span::after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 15px;
+  margin: auto;
+  border-top: 1px solid #068acc;
+  border-right: 1px solid #068acc;
+  transform: rotate(45deg);
+}
 
 @media screen and (max-width: 720px) {
   .comp-subscription-table .paywhirl-plan-selector-group .paywhirl-plan-selector-plan {
@@ -7941,6 +8003,15 @@ body.loaded #loading {
     font-size: 16px;
     text-indent: 20px;
     background-size: 10px;
+  }
+  .comp-subscription-table .subscription_note {
+    margin-top: 25px;
+  }
+  .comp-subscription-table .subscription_note .faq_link {
+    margin-top: 15px;
+  }
+  .comp-subscription-table .subscription_note .faq_link a {
+    font-size: 14px;
   }
 }
 /* ########## ページ別レイアウト ########## */

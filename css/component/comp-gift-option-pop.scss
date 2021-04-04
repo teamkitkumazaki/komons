@@ -80,13 +80,42 @@
             background-position: center top -35px;
           }
         }
+        .category{
+          font-size: 12px;
+          line-height: 1;
+          letter-spacing: 0.5px;
+          margin-bottom: 15px;
+          text-align: center;
+          .en{
+            font-size: 16px;
+            @include libre-r;
+            padding-right: 0.7em;
+            margin-right: 0.7em;
+            position: relative;
+            &::after{
+              display: inline-block;
+              content: "";
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: -3px;
+              margin: auto;
+              width: 7px;
+              height: 1px;
+              background: #00381f;
+            }
+          }
+          .ja{
+            font-size: 14px;
+          }
+        }
         .prod_name{
           text-align: center;
           font-size: 14px;
           letter-spacing: 0.5px;
           margin-top: 15px;
           .name{
-            font-size: 18px;
+            font-size: 22px;
             display: block;
             margin-bottom: 10px;
           }
@@ -362,6 +391,7 @@
           padding: 20px 20px 40px;
           .item_thumb{
             width: 100%;
+            margin-bottom: 25px;
             .pc_thumb{
               height: auto;
               background-position: center top -4vw;
