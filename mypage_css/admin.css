@@ -1215,15 +1215,20 @@ article {
 
 .comp-cart-option .option_item {
   margin-bottom: 20px;
+  height: 16px;
+  overflow: hidden;
+  transition: height 0.2s;
+  will-change: height;
 }
 .comp-cart-option .option_item label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   justify-content: flex-start;
+  cursor: pointer;
 }
 .comp-cart-option .option_item label input[type=checkbox] {
   display: none;
