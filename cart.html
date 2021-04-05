@@ -123,10 +123,6 @@
 									<div class="content shipping">送料無料</div>
 								</div>
 							</div>
-							<div class="comp-submit-button">
-								<button><span>決済に進む</span></button>
-								<input type="submit" class="btn" value="ログイン">
-							</div>
 						</div><!-- amount_section -->
 					</div><!-- cart_left -->
 					<div class="cart_right">
@@ -141,13 +137,8 @@
 											<span class="label_ttl">配送希望日を指定</span>
 										</label>
 										<div class="input_wrap">
-											<select id="delivery-time" name="attributes[配送時間帯]">
+											<select id="deliveryDate" name="delivery_date">
 												<option value="指定なし">指定なし</option>
-												<option value="" selected="">指定なし</option>
-												<option value="20210407">4月7日(水)</option>
-												<option value="20210408">4月8日(木)</option>
-												<option value="20210409">4月9日(金)</option>
-												<option value="20210410">4月10日(土)</option>
 											</select>
 										</div>
 									</div><!-- option_item -->
@@ -158,7 +149,7 @@
 											<span class="label_ttl">配送時間帯を指定</span>
 										</label>
 										<div class="input_wrap">
-											<select id="delivery-time" name="attributes[配送時間帯]">
+											<select id="deliveryTime" name="delivery_time">
 												<option value="指定なし">指定なし</option>
 												<option value="午前中（12時まで）" selected="">午前中（12時まで）</option>
 												<option value="14時から16時">14時から16時</option>
@@ -227,6 +218,14 @@
 					</div><!-- cart_right -->
 				</div><!-- cart_flex -->
 			</div><!-- section_inner -->
+		</section>
+		<section class="section-fixed-button">
+			<div class="fix_wrapper">
+				<div class="comp-submit-button">
+					<button><span>決済に進む</span></button>
+					<input type="submit" class="btn" value="ログイン">
+				</div>
+      </div>
 		</section>
 	</article>
 	<footer>
