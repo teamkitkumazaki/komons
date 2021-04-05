@@ -6,6 +6,8 @@ $(function() {
     var optionItemLabel = [];
     var optionItemWrap = [];
     var deliveryDate = $('#deliveryDate');
+    var finalPrice = $('#finalPrice').html();
+    var priceCulc = finalPrice.replace(/,/g, '');
     var today = new Date();
     var y;
     var m;
@@ -39,6 +41,13 @@ $(function() {
     }
 
     function init(){
+      if(priceCulc > 5499){
+        $('#shippingPrice').html('送料無料');
+      }else{
+        var shippingTerm = Number(5500) - Number(priceCulc);
+        $('#shippingPrice').html('<span class="amount_price">660円</span>(税込)');
+        $('#shippingFree').html('※あと' + shippingTerm.toLocaleString() + '円で送料無料')
+      }
       $.each(target.find('.option_item'), function(index) {
         optionItem[index] = $(this);
         optionItemHeight[index] = $(this).outerHeight();
@@ -54,6 +63,7 @@ $(function() {
           }
         });
       });
+
       setDayDisplay();
     }
 
@@ -64,4 +74,53 @@ $(function() {
   if (document.getElementById('cart')) {
     cartOptionController($('article'));
   }
+
+  function controllProductQuantity(target){
+  var minusButton = [];
+  var plusButton = [];
+  var quantityInput = [];
+  var reloadButton = [];
+  var quantityNum;
+
+  function controllQuantity(num, vector){
+    quantityNum = quantityInput[num].val();
+    console.log(vector);
+    if(vector == 1){
+      quantityInput[num].attr('value', Number(quantityNum) + 1);
+      reloadButton[num].click();
+    }else{
+      if(quantityNum != 1){
+        quantityInput[num].attr('value', Number(quantityNum) - 1);
+        reloadButton[num].click();
+      }
+    }
+  }
+
+  function init(){
+    $.each(target.find('.bag_item'), function(index) {
+      minusButton[index] = $(this).find('.minus');
+      plusButton[index] = $(this).find('.plus');
+      quantityInput[index] = $(this).find('input[type="number"]');
+      reloadButton[index] = $(this).find('.reload_button');
+      minusButton[index].on({
+        'click': function() {
+          event.preventDefault();
+          controllQuantity(index, -1);
+        }
+      });
+      plusButton[index].on({
+        'click': function() {
+          event.preventDefault();
+          controllQuantity(index, 1);
+        }
+      });
+    });
+  }
+
+  init();
+}
+
+if (document.getElementById('cart')) {
+  controllProductQuantity($('#cartItem'));
+}
 });

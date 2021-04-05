@@ -101,6 +101,11 @@
           color: #646464;
         }
       }
+      .product_variants{
+        font-size: 12px;
+        letter-spacing: 0.3px;
+        margin-bottom: 15px;
+      }
       .lower_wrap{
         @include flexSet;
         align-items: center;
@@ -120,6 +125,9 @@
             letter-spacing: 1.37px;
             color: $basicGreen;
             pointer-events: none;
+          }
+          .reload_button{
+            display: none;
           }
           .order_button{
             width: 20px;
@@ -210,6 +218,11 @@
             font-size: 12px;
             letter-spacing: 0.4px;
           }
+        }
+        .product_variants{
+          font-size: 14px;
+          letter-spacing: 0.5px;
+          margin-bottom: 15px;
         }
         .lower_wrap{
           .order_lot{

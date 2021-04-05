@@ -1163,6 +1163,11 @@ article {
   letter-spacing: 0.5px;
   color: #646464;
 }
+.comp-cart-item .bag_item .item_txt .product_variants {
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  margin-bottom: 15px;
+}
 .comp-cart-item .bag_item .item_txt .lower_wrap {
   display: flex;
   flex-wrap: wrap;
@@ -1189,6 +1194,9 @@ article {
   letter-spacing: 1.37px;
   color: #00381f;
   pointer-events: none;
+}
+.comp-cart-item .bag_item .item_txt .lower_wrap .order_lot .reload_button {
+  display: none;
 }
 .comp-cart-item .bag_item .item_txt .lower_wrap .order_lot .order_button {
   width: 20px;
@@ -1275,6 +1283,11 @@ article {
   .comp-cart-item .bag_item .item_txt .prod_name .genre {
     font-size: 12px;
     letter-spacing: 0.4px;
+  }
+  .comp-cart-item .bag_item .item_txt .product_variants {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
   }
   .comp-cart-item .bag_item .item_txt .lower_wrap .order_lot input {
     width: 42px;
