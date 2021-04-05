@@ -71,7 +71,8 @@
         <div class="cart_left">
           <h2 class="sub_ttl">カートに入っている商品</h2>
 
-          <div id="cartItem" class="comp-cart-item"><div class="bag_item" data-cart-item="" data-cart-item-key="38243134996674:f596b0ec8f05ea3aa429094ce86f4f2f" data-cart-item-url="/products/k0043?variant=38243134996674" data-cart-item-title="ホワイトボックス(マルチ＆ミスト) - 熨斗/手提げバッグ" data-cart-item-index="1" data-cart-item-quantity="1">
+          <div id="cartItem" class="comp-cart-item">
+						<div class="bag_item" data-cart-item="" data-cart-item-key="38243134996674:f596b0ec8f05ea3aa429094ce86f4f2f" data-cart-item-url="/products/k0043?variant=38243134996674" data-cart-item-title="ホワイトボックス(マルチ＆ミスト) - 熨斗/手提げバッグ" data-cart-item-index="1" data-cart-item-quantity="1">
               <div class="item_img">
                 <a href="/products/k0043?variant=38243134996674"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/153836410.jpg?v=1613377111" alt="ホワイトボックス(マルチ＆ミスト)"></a>
               </div>
@@ -79,7 +80,7 @@
                 <span class="category"></span>
                 <a href="/products/k0043?variant=38243134996674" class="prod_name"><span class="name">ホワイトボックス(マルチ＆ミスト)</span></a>
 
-								<div class="product-details" data-cart-item-details="" aria-label="商品の詳細"><p class="product_variants product-details__item product-details__item--variant-option" data-cart-item-option="">ギフトオプション: 熨斗/手提げバッグ</p></div>
+								<div class="product-details" data-cart-item-details="" aria-label="商品の詳細"><p class="product_variants product-details__item product-details__item--variant-option" data-cart-item-option="">熨斗/手提げバッグ</p></div>
 
                 <div class="lower_wrap">
                   <div class="order_lot">
@@ -146,10 +147,10 @@
                 </div><!-- option_item -->
               </div><!-- comp-cart-option -->
             </div>
-            <div class="gift_option">
+            <div id="giftOptionSection" class="gift_option">
               <h2 class="sub_ttl">ギフトオプション</h2>
               <div class="comp-cart-option">
-                <div class="option_item">
+                <div id="noshi1" class="option_item" style="display: none;">
                   <label>
                     <input type="checkbox" name="dateInput" value="true">
                     <span class="radio_checker"></span>
@@ -160,7 +161,7 @@
                     <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
                   </div>
                 </div><!-- option_item -->
-                <div class="option_item">
+                <div id="noshi2" class="option_item" style="display: none;">
                   <label>
                     <input type="checkbox" name="dateInput" value="true">
                     <span class="radio_checker"></span>
@@ -171,7 +172,7 @@
                     <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
                   </div>
                 </div><!-- option_item -->
-                <div class="option_item">
+                <div id="message1" class="option_item" style="display: none;">
                   <label>
                     <input id="dateInput" type="checkbox" name="dateInput" value="true">
                     <span class="radio_checker"></span>

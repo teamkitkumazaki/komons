@@ -10,7 +10,7 @@
       </div>
       <div class="comp-admin-bread">
         <div class="bread_wrap">
-          <a id="customer_logout_link" href="{{ routes.all_products_collection_url }}" class="text-link text-link--accent">{{ 'cart.general.continue_shopping' | t }}</a>
+          <a id="customer_logout_link" href="/collections/all-products" class="text-link text-link--accent">{{ 'cart.general.continue_shopping' | t }}</a>
           <span class="current">ショッピングカート</span>
         </div><!-- bread_wrap -->
       </div>
@@ -36,7 +36,7 @@
 
                 <div class="product-details{% if item.product.has_only_default_variant and property_size == 0 and item.selling_plan_allocation == nil %} hide{% endif %}" data-cart-item-details aria-label="{{ 'cart.label.product_details' | t }}">
                   {%- for option in variant_options -%}
-                    <p class="product_variants product-details__item product-details__item--variant-option{% if item.product.has_only_default_variant %} hide{% endif %}" data-cart-item-option>{{ option.name }}: {{ option.value }}</p>
+                    <p class="product_variants product-details__item product-details__item--variant-option{% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</p>
                   {%- endfor -%}
                 </div>
                 {% endif %}
@@ -112,10 +112,10 @@
                 </div><!-- option_item -->
               </div><!-- comp-cart-option -->
             </div>
-            <div class="gift_option">
+            <div id="giftOptionSection" class="gift_option">
               <h2 class="sub_ttl">ギフトオプション</h2>
               <div class="comp-cart-option">
-                <div class="option_item">
+                <div id="noshi1" class="option_item" style="display: none;">
                   <label>
                     <input id="dateInput" type="checkbox" name="dateInput" value="true">
                     <span class="radio_checker"></span>
@@ -126,7 +126,7 @@
                     <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
                   </div>
                 </div><!-- option_item -->
-                <div class="option_item">
+                <div id="noshi2" class="option_item" style="display: none;">
                   <label>
                     <input id="dateInput" type="checkbox" name="dateInput" value="true">
                     <span class="radio_checker"></span>
@@ -137,7 +137,7 @@
                     <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
                   </div>
                 </div><!-- option_item -->
-                <div class="option_item">
+                <div id="message1" class="option_item" style="display: none;">
                   <label>
                     <input id="dateInput" type="checkbox" name="dateInput" value="true">
                     <span class="radio_checker"></span>

@@ -1,4 +1,74 @@
 $(function() {
+  var optionState = '';
+  function controllProductQuantity(target){
+  var minusButton = [];
+  var plusButton = [];
+  var quantityInput = [];
+  var reloadButton = [];
+  var quantityNum;
+
+  function controllQuantity(num, vector){
+    quantityNum = quantityInput[num].val();
+    console.log(vector);
+    if(vector == 1){
+      quantityInput[num].attr('value', Number(quantityNum) + 1);
+      reloadButton[num].click();
+    }else{
+      if(quantityNum != 1){
+        quantityInput[num].attr('value', Number(quantityNum) - 1);
+        reloadButton[num].click();
+      }
+    }
+  }
+
+  function init(){
+    $.each(target.find('.bag_item'), function(index) {
+      minusButton[index] = $(this).find('.minus');
+      plusButton[index] = $(this).find('.plus');
+      quantityInput[index] = $(this).find('input[type="number"]');
+      reloadButton[index] = $(this).find('.reload_button');
+      var optionItemTxt =  $(this).find('.product_variants').html();
+      optionState = optionState + optionItemTxt + ',';
+      minusButton[index].on({
+        'click': function() {
+          event.preventDefault();
+          controllQuantity(index, -1);
+        }
+      });
+      plusButton[index].on({
+        'click': function() {
+          event.preventDefault();
+          controllQuantity(index, 1);
+        }
+      });
+    });
+
+    console.log('optionState:' + optionState);
+    if(optionState.indexOf('熨斗') !=  -1){
+      $('#noshi1').css({'display': 'block'});
+      $('#noshi2').css({'display': 'block'});
+    }else{
+      $('#noshi1').css({'display': 'none'});
+      $('#noshi2').css({'display': 'none'});
+    }
+    if(optionState.indexOf('メッセージ') !=  -1){
+      $('#message1').css({'display': 'block'});
+    }else{
+      $('#message1').css({'display': 'none'});
+    }
+    if(optionState.indexOf('熨斗') ==  -1 && optionState.indexOf('メッセージ') ==  -1){
+      $('#giftOptionSection').css({'display': 'none'});
+    }else{
+      $('#giftOptionSection').css({'display': 'block'});
+    }
+  }
+
+  init();
+}
+
+if (document.getElementById('cart')) {
+  controllProductQuantity($('#cartItem'));
+}
 
   function cartOptionController(target){
     var optionItem = [];
@@ -62,7 +132,7 @@ $(function() {
     }
 
     function setDayDisplay(){
-      for (var i=0; i<14; i++) {
+      for (var i=3; i<14; i++) {
         getDayDisplay(i);
       }
       deliveryDate.on({
@@ -81,7 +151,7 @@ $(function() {
     }
 
     function init(){
-      if(priceCulc > 5499){
+      if(priceCulc > 5499 || optionState.indexOf('定期') !=  -1){
         $('#shippingPrice').html('送料無料');
       }else{
         var shippingTerm = Number(5500) - Number(priceCulc);
@@ -141,53 +211,4 @@ $(function() {
   if (document.getElementById('cart')) {
     cartOptionController($('article'));
   }
-
-  function controllProductQuantity(target){
-  var minusButton = [];
-  var plusButton = [];
-  var quantityInput = [];
-  var reloadButton = [];
-  var quantityNum;
-
-  function controllQuantity(num, vector){
-    quantityNum = quantityInput[num].val();
-    console.log(vector);
-    if(vector == 1){
-      quantityInput[num].attr('value', Number(quantityNum) + 1);
-      reloadButton[num].click();
-    }else{
-      if(quantityNum != 1){
-        quantityInput[num].attr('value', Number(quantityNum) - 1);
-        reloadButton[num].click();
-      }
-    }
-  }
-
-  function init(){
-    $.each(target.find('.bag_item'), function(index) {
-      minusButton[index] = $(this).find('.minus');
-      plusButton[index] = $(this).find('.plus');
-      quantityInput[index] = $(this).find('input[type="number"]');
-      reloadButton[index] = $(this).find('.reload_button');
-      minusButton[index].on({
-        'click': function() {
-          event.preventDefault();
-          controllQuantity(index, -1);
-        }
-      });
-      plusButton[index].on({
-        'click': function() {
-          event.preventDefault();
-          controllQuantity(index, 1);
-        }
-      });
-    });
-  }
-
-  init();
-}
-
-if (document.getElementById('cart')) {
-  controllProductQuantity($('#cartItem'));
-}
 });
