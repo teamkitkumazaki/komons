@@ -1463,6 +1463,11 @@ article {
 .page-cart .section-cart .section_inner .cart_flex .cart_left .amount_section {
   margin-top: 60px;
 }
+.page-cart .section-cart .section_inner .cart_flex .cart_left .amount_section .shipping_free {
+  text-align: right;
+  display: block;
+  padding: 5px 10px;
+}
 .page-cart .section-cart .section_inner .cart_flex .cart_left .amount_section .amount_wrap {
   margin-top: -15px;
   margin-bottom: 10px;

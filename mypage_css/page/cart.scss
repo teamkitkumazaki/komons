@@ -22,7 +22,11 @@
 
           .amount_section {
             margin-top: 60px;
-
+            .shipping_free{
+              text-align: right;
+              display: block;
+              padding: 5px 10px;
+            }
             .amount_wrap {
               margin-top: -15px;
               margin-bottom: 10px;

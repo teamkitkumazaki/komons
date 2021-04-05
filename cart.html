@@ -52,182 +52,430 @@
 		</div>
 	</header>
 	<article id="cart" class="page-cart">
-		<section class="section-cart">
-			<div class="section_inner">
-				<div class="comp-admin-title inMypage">
-					<div class="text_inner">
-						<h1 class="title_ja">ショッピングカート</h1>
-						<span class="title_en">Shopping Cart</span>
-					</div>
-				</div>
-				<div class="comp-admin-bread">
-					<div class="bread_wrap">
-						<a href="/account/logout" id="customer_logout_link">お買い物を続ける</a>
-						<span class="current">ショッピングカート</span>
-					</div><!-- bread_wrap -->
-				</div>
-				<div class="cart_flex">
-					<div class="cart_left">
-						<h2 class="sub_ttl">カートに入っている商品</h2>
-						<div class="comp-cart-item">
-							<div class="bag_item">
-          			<div class="item_img">
-									<a href="#aaaa"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/139975276.jpg?v=1614191984" alt="SHINE MUSCAT  GRAPES"></a>
-          			</div>
-          			<div class="item_txt">
-									<span class="category">ギフトセット</span>
-            			<a href="#aaaa" class="prod_name"><span class="name">【ギフト】Free as a Bird (Mini)</span></a>
-									<div class="lower_wrap">
-										<div class="order_lot">
-											<button class="order_button minus"></button>
-												<input type="number" name="updates[]" id="updates_31950610792511:8b8c1f0b30db2c49e1b4d2cd43dd5707" data-id="31950610792511:8b8c1f0b30db2c49e1b4d2cd43dd5707" value="1" min="0">
-											<button class="order_button plus"></button>
-										</div>
-										<div class="price">¥2,800円(税込)</div>
-									</div>
-            			<div class="remove">
-            				<a href="/cart/change?line=1&amp;quantity=0" class="text-link text-link--accent" aria-label="Remove SHINE MUSCAT  GRAPES" data-cart-remove=""></a>
-            			</div>
-          			</div>
-        			</div>
-							<div class="bag_item">
-          			<div class="item_img">
-            			<a href="#aaaa"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/139975276.jpg?v=1614191984" alt="SHINE MUSCAT  GRAPES"></a>
-          			</div>
-          			<div class="item_txt">
-									<div class="category"><span class="en">Dish Wash</span><span class="ja">食器用洗剤</span></div>
-									<a href="#aaaa" class="prod_name"><span class="name">Don't Look Back in Anger</span><span class="genre added">Refill - 詰め替え用</span></a>
-									<div class="lower_wrap">
-										<div class="order_lot">
-											<button class="order_button minus"></button>
-												<input type="number" name="updates[]" id="updates_31950610792511:8b8c1f0b30db2c49e1b4d2cd43dd5707" data-id="31950610792511:8b8c1f0b30db2c49e1b4d2cd43dd5707" value="1" min="0">
-											<button class="order_button plus"></button>
-										</div>
-										<div class="price">¥2,800円(税込)</div>
-									</div>
-            			<div class="remove">
-            				<a href="/cart/change?line=1&amp;quantity=0" class="text-link text-link--accent" aria-label="Remove SHINE MUSCAT  GRAPES" data-cart-remove=""></a>
-            			</div>
-          			</div>
-        			</div>
-						</div><!-- comp-cart-item -->
-						<div class="amount_section">
-							<h2 class="sub_ttl">合計金額</h2>
-							<div class="amount_wrap">
-								<div class="amount_item">
-									<span class="title">小計</span>
-									<div class="content"><span class="amount_price">6,000円</span>(税込)</div>
-								</div>
-								<div class="amount_item">
-									<span class="title">送料</span>
-									<div class="content shipping">送料無料</div>
-								</div>
-							</div>
-						</div><!-- amount_section -->
-					</div><!-- cart_left -->
-					<div class="cart_right">
-						<div class="option_field_wrap">
-							<div class="delivery_option">
-								<h2 class="sub_ttl">配送オプション</h2>
-								<div class="comp-cart-option">
-									<div class="option_item">
-										<label>
-											<input type="checkbox" name="dateInput" value="true">
-											<span class="radio_checker"></span>
-											<span class="label_ttl">配送希望日を指定</span>
-										</label>
-										<div class="input_wrap">
-											<select id="deliveryDate" name="delivery_date">
-												<option value="指定なし">指定なし</option>
-											</select>
-										</div>
-									</div><!-- option_item -->
-									<div class="option_item">
-										<label>
-											<input id="timeInput" type="checkbox" name="timeInput" value="true">
-											<span class="radio_checker"></span>
-											<span class="label_ttl">配送時間帯を指定</span>
-										</label>
-										<div class="input_wrap">
-											<select id="deliveryTime" name="delivery_time">
-												<option value="指定なし">指定なし</option>
-												<option value="午前中（12時まで）" selected="">午前中（12時まで）</option>
-												<option value="14時から16時">14時から16時</option>
-												<option value="16時から18時">16時から18時</option>
-												<option value="18時から20時">18時から20時</option>
-												<option value="19時から21時">19時から21時</option>
-											</select>
-										</div>
-									</div><!-- option_item -->
-								</div><!-- comp-cart-option -->
-							</div>
-							<div class="gift_option">
-								<h2 class="sub_ttl">ギフトオプション</h2>
-								<div class="comp-cart-option">
-									<div class="option_item">
-										<label>
-											<input id="dateInput" type="checkbox" name="dateInput" value="true">
-											<span class="radio_checker"></span>
-											<span class="label_ttl">熨斗の表書きを設定</span>
-										</label>
-										<div class="input_wrap">
-											<input type="text" name="noshiType">
-											<p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
-										</div>
-									</div><!-- option_item -->
-									<div class="option_item">
-										<label>
-											<input id="dateInput" type="checkbox" name="dateInput" value="true">
-											<span class="radio_checker"></span>
-											<span class="label_ttl">熨斗の名入れを設定</span>
-										</label>
-										<div class="input_wrap">
-											<input type="text" name="noshiName">
-											<p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
-										</div>
-									</div><!-- option_item -->
-									<div class="option_item">
-										<label>
-											<input id="dateInput" type="checkbox" name="dateInput" value="true">
-											<span class="radio_checker"></span>
-											<span class="label_ttl">メッセージカードを設定</span>
-										</label>
-										<div class="input_wrap">
-											<textarea type="text" name="messeageCard"></textarea>
-											<p class="example">入力例) 入力例のテキストが入ります。入力例のテキストが入ります。入力例のテキストが入ります。入力例のテキストが入ります。</p>
-										</div>
-									</div><!-- option_item -->
-								</div><!-- comp-cart-option -->
-							</div><!-- gift_option -->
-							<div class="comment_option">
-								<h2 class="sub_ttl">備考欄</h2>
-								<div class="comp-cart-option">
-									<div class="option_item">
-										<label class="untouchable">
-											<input type="checkbox" name="dateInput" value="true">
-											<span class="radio_checker"></span>
-											<span class="label_ttl">購入時メモを書く</span>
-										</label>
-										<div class="input_wrap">
-											<textarea type="text" name="note"></textarea>
-										</div>
-									</div><!-- option_item -->
-								</div>
-							</div>
-						</div><!-- option_field_wrap -->
-					</div><!-- cart_right -->
-				</div><!-- cart_flex -->
-			</div><!-- section_inner -->
-		</section>
-		<section class="section-fixed-button">
-			<div class="fix_wrapper">
-				<div class="comp-submit-button">
-					<button><span>決済に進む</span></button>
-					<input type="submit" class="btn" value="ログイン">
-				</div>
+  <form action="/cart" method="post" novalidate="" class="cart">
+  <section class="section-cart">
+    <div class="section_inner">
+      <div class="comp-admin-title inMypage">
+        <div class="text_inner">
+          <h1 class="title_ja">ショッピングカート</h1>
+          <span class="title_en">Shopping Cart</span>
+        </div>
       </div>
-		</section>
-	</article>
+      <div class="comp-admin-bread">
+        <div class="bread_wrap">
+          <a id="customer_logout_link" href="/collections/all" class="text-link text-link--accent">買い物を続ける</a>
+          <span class="current">ショッピングカート</span>
+        </div><!-- bread_wrap -->
+      </div>
+      <div class="cart_flex">
+        <div class="cart_left">
+          <h2 class="sub_ttl">カートに入っている商品</h2>
+
+          <div id="cartItem" class="comp-cart-item"><div class="bag_item" data-cart-item="" data-cart-item-key="38243134996674:f596b0ec8f05ea3aa429094ce86f4f2f" data-cart-item-url="/products/k0043?variant=38243134996674" data-cart-item-title="ホワイトボックス(マルチ＆ミスト) - 熨斗/手提げバッグ" data-cart-item-index="1" data-cart-item-quantity="1">
+              <div class="item_img">
+                <a href="/products/k0043?variant=38243134996674"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/153836410.jpg?v=1613377111" alt="ホワイトボックス(マルチ＆ミスト)"></a>
+              </div>
+              <div class="item_txt">
+                <span class="category"></span>
+                <a href="/products/k0043?variant=38243134996674" class="prod_name"><span class="name">ホワイトボックス(マルチ＆ミスト)</span></a>
+
+								<div class="product-details" data-cart-item-details="" aria-label="商品の詳細"><p class="product_variants product-details__item product-details__item--variant-option" data-cart-item-option="">ギフトオプション: 熨斗/手提げバッグ</p></div>
+
+                <div class="lower_wrap">
+                  <div class="order_lot">
+                    <button class="order_button minus"></button>
+                      <input type="number" name="updates[]" id="updates_38243134996674:f596b0ec8f05ea3aa429094ce86f4f2f" data-id="38243134996674:f596b0ec8f05ea3aa429094ce86f4f2f" value="1" min="0">
+                    <button class="order_button plus"></button>
+                    <button class="reload_button"></button>
+                  </div>
+                  <div class="price">2,948円(税込)</div>
+                </div>
+                <div class="remove">
+                  <a href="/cart/change?line=1&amp;quantity=0" class="text-link text-link--accent" aria-label="ホワイトボックス(マルチ＆ミスト) - 熨斗/手提げバッグ を削除する" data-cart-remove="" data-role="product-remove"></a>
+                </div>
+              </div>
+            </div></div><!-- comp-cart-item -->
+          <div class="amount_section">
+            <h2 class="sub_ttl">合計金額</h2>
+            <div class="amount_wrap">
+              <div class="amount_item">
+                <span class="title">小計</span>
+                <div class="content"><span class="amount_price"><span id="finalPrice">2,948</span>円</span>(税込)</div>
+              </div>
+              <div class="amount_item">
+                <span class="title">送料</span>
+                <div id="shippingPrice" class="content shipping"><span class="amount_price">660円</span>(税込)</div>
+              </div>
+            </div>
+            <span id="shippingFree" class="shipping_free">※あと2,552円で送料無料</span>
+          </div><!-- amount_section -->
+        </div><!-- cart_left -->
+        <div class="cart_right">
+          <div class="option_field_wrap">
+            <div class="delivery_option">
+              <h2 class="sub_ttl">配送オプション</h2>
+              <div class="comp-cart-option">
+                <div class="option_item">
+                  <label>
+                    <input type="checkbox" name="dateInput" value="true">
+                    <span class="radio_checker"></span>
+                    <span class="label_ttl">配送希望日を指定</span>
+                  </label>
+                  <div class="input_wrap">
+                    <select id="deliveryDate" name="delivery_date">
+                      <option value="" selected="">指定なし</option>
+                    </select>
+                  </div>
+                </div><!-- option_item -->
+                <div class="option_item">
+                  <label>
+                    <input id="timeInput" type="checkbox" name="timeInput" value="true">
+                    <span class="radio_checker"></span>
+                    <span class="label_ttl">配送時間帯を指定</span>
+                  </label>
+                  <div class="input_wrap">
+                    <select id="deliveryTime" name="delivery_time">
+                      <option value="指定なし" selected="">指定なし</option>
+                      <option value="午前中（12時まで）" >午前中（12時まで）</option>
+                      <option value="14時から16時">14時から16時</option>
+                      <option value="16時から18時">16時から18時</option>
+                      <option value="18時から20時">18時から20時</option>
+                      <option value="19時から21時">19時から21時</option>
+                    </select>
+                  </div>
+                </div><!-- option_item -->
+              </div><!-- comp-cart-option -->
+            </div>
+            <div class="gift_option">
+              <h2 class="sub_ttl">ギフトオプション</h2>
+              <div class="comp-cart-option">
+                <div class="option_item">
+                  <label>
+                    <input type="checkbox" name="dateInput" value="true">
+                    <span class="radio_checker"></span>
+                    <span class="label_ttl">熨斗の表書きを設定</span>
+                  </label>
+                  <div class="input_wrap">
+                    <input id="noshiType" type="text" name="noshi_type">
+                    <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
+                  </div>
+                </div><!-- option_item -->
+                <div class="option_item">
+                  <label>
+                    <input type="checkbox" name="dateInput" value="true">
+                    <span class="radio_checker"></span>
+                    <span class="label_ttl">熨斗の名入れを設定</span>
+                  </label>
+                  <div class="input_wrap">
+                    <input id="noshiName" type="text" name="noshi_name">
+                    <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
+                  </div>
+                </div><!-- option_item -->
+                <div class="option_item">
+                  <label>
+                    <input id="dateInput" type="checkbox" name="dateInput" value="true">
+                    <span class="radio_checker"></span>
+                    <span class="label_ttl">メッセージカードを設定</span>
+                  </label>
+                  <div class="input_wrap">
+                    <textarea id="messeageCard" type="text" name="messeage_card"></textarea>
+                    <p class="example">入力例) 入力例のテキストが入ります。入力例のテキストが入ります。入力例のテキストが入ります。入力例のテキストが入ります。</p>
+                  </div>
+                </div><!-- option_item -->
+              </div><!-- comp-cart-option -->
+            </div><!-- gift_option -->
+            <div class="comment_option">
+              <h2 class="sub_ttl">備考欄</h2>
+              <div class="comp-cart-option">
+                <div class="option_item">
+                  <label class="untouchable">
+                    <input type="checkbox" name="dateInput" value="true">
+                    <span class="radio_checker"></span>
+                    <span class="label_ttl">購入時メモを書く</span>
+                  </label>
+                  <div class="input_wrap">
+                    <textarea id="memoWrap" type="text" name="memo_wrap"></textarea>
+                  </div>
+                </div><!-- option_item -->
+              </div>
+            </div>
+          </div><!-- option_field_wrap -->
+        </div><!-- cart_right -->
+      </div><!-- cart_flex -->
+    </div><!-- section_inner -->
+  </section>
+  <section class="section-fixed-button">
+  <div id="cartAttribute" style="display:none">
+    <link href="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/cart-attributes.scss.css?v=13161345458049623175" rel="stylesheet" type="text/css" media="all">
+		<div class="cart-attribute__field cart-attributes-delivery-datetime cart-attribute-delivery-date" style="">
+    	<label for="delivery-date">配送希望日</label>
+    	<input type="radio" class="delivery-date-boolean" name="attributes[配送日の指定]" value="なし" onchange="changeDeliveryDateBoolean()" id="delivery-date-boolean-false" checked="">
+    	<label for="delivery-date-boolean-false" class="delivery-date-boolean-label">指定しない</label>
+    	<input type="radio" class="delivery-date-boolean" name="attributes[配送日の指定]" value="指定する" onchange="changeDeliveryDateBoolean()" id="delivery-date-boolean-true">
+    	<label for="delivery-date-boolean-true" class="delivery-date-boolean-label">指定する</label>
+    	<input id="delivery-date" type="date" name="attributes[配送希望日]" value="" min="2021-04-08" max="2021-04-23" disabled="">
+		</div>
+
+		<div class="cart-attribute__field cart-attributes-delivery-datetime cart-attribute-delivery-time" style="">
+    	<label for="delivery-time">配送時間帯</label>
+    	<select id="delivery-time" name="attributes[配送時間帯]">
+        <option value="指定なし" selected="">指定なし</option>
+        <option value="午前中（12時まで）">午前中（12時まで）</option>
+        <option value="14時から16時">14時から16時</option>
+        <option value="16時から18時">16時から18時</option>
+        <option value="18時から20時">18時から20時</option>
+        <option value="19時から21時">19時から21時</option>
+    	</select>
+		</div>
+		<script>
+    window.onload = function() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        var is_chrome = ua.indexOf('chrome') > -1;
+        var is_pc_safari = !is_chrome && ua.indexOf('safari') > -1 && ua.indexOf('mobile') == -1;
+        var is_ie = ua.indexOf('trident') > -1 || ua.indexOf('msie') > -1;
+        if (is_ie || is_pc_safari) {
+            // カレンダー機能を使えない
+            $('#delivery-date').remove();
+            var select_tag = "<select id=\"delivery-date\" name=\"attributes[配送希望日]\">\n";
+
+            select_tag += "<option value=\"\">指定なし</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-05'>2021-04-05 (Mon)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-06'>2021-04-06 (Tue)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-07'>2021-04-07 (Wed)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-08'>2021-04-08 (Thu)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-09'>2021-04-09 (Fri)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-10'>2021-04-10 (Sat)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-11'>2021-04-11 (Sun)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-12'>2021-04-12 (Mon)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-13'>2021-04-13 (Tue)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-14'>2021-04-14 (Wed)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-15'>2021-04-15 (Thu)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-16'>2021-04-16 (Fri)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-17'>2021-04-17 (Sat)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-18'>2021-04-18 (Sun)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-19'>2021-04-19 (Mon)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-20'>2021-04-20 (Tue)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-21'>2021-04-21 (Wed)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-22'>2021-04-22 (Thu)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-23'>2021-04-23 (Fri)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-24'>2021-04-24 (Sat)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-25'>2021-04-25 (Sun)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-26'>2021-04-26 (Mon)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-27'>2021-04-27 (Tue)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-28'>2021-04-28 (Wed)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-29'>2021-04-29 (Thu)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-04-30'>2021-04-30 (Fri)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-05-01'>2021-05-01 (Sat)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-05-02'>2021-05-02 (Sun)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-05-03'>2021-05-03 (Mon)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-05-04'>2021-05-04 (Tue)</option>"
+
+
+
+
+
+
+            select_tag += "<option value='2021-05-05'>2021-05-05 (Wed)</option>"
+
+
+            select_tag += "</select>";
+            $('.cart-attribute-delivery-date').append(select_tag)
+        }
+    }
+</script>
+		<div class="grid__item medium-up--one-half cart-note">
+        <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" data-cart-notes=""></textarea>
+    </div>
+		</div>
+    <div class="fix_wrapper">
+      <div class="comp-submit-button">
+        <button><span>決済に進む</span></button>
+				<input type="submit" name="gift-checkout" class="checkout_button gc__theme bg-primary button-gift-checkout cursor-pointer" value="This is a gift" style=""><input type="submit" name="checkout" class="checkout_button" value="CONTINUE TO CHECKOUT" data-omnisend-checked="true">
+      </div>
+    </div><!-- fix_wrapper -->
+  </section>
+  </form>
+</article>
 	<footer>
 		<div class="footer_wrap">
 			<div class="footer_menu">

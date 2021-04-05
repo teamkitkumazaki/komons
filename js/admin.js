@@ -5,7 +5,6 @@ $(function() {
     var optionItemHeight = [];
     var optionItemLabel = [];
     var optionItemWrap = [];
-    var deliveryDate = $('#deliveryDate');
     var finalPrice = $('#finalPrice').html();
     var priceCulc = finalPrice.replace(/,/g, '');
     var today = new Date();
@@ -16,8 +15,37 @@ $(function() {
     var paramD;
     var w;
     var paramW;
-    console.log('getDay:' + w);
     var wd = ['日', '月', '火', '水', '木', '金', '土'];
+    var deliveryDate = $('#deliveryDate');
+    var deliveryTime = $('#deliveryTime');
+    var messageCard = $('textarea[name="messeage_card"]');
+    var memoWrap = $('textarea[name="memo_wrap"]');
+    var noshiType = $('input[name="noshi_type"]');
+    var noshiName = $('input[name="noshi_name"]');
+    var setValue;
+
+    function getSpecialInstruction(){
+      setValue = '';
+      if(noshiType.val().length > 1) {
+        setValue = setValue + '【熨斗の種類】' + noshiType.val();
+      }
+      if(noshiName.val().length > 1) {
+        setValue = setValue + '【熨斗の名入れ】' + noshiName.val();
+      }
+      if(messageCard.val().length > 1) {
+        setValue = setValue + '【メッセージカードの内容】' + messageCard.val();
+      }
+      if(memoWrap.val().length > 1) {
+        setValue = setValue + '【備考】' + memoWrap.val();
+      }
+
+      console.log(setValue);
+    }
+
+    function setSpecialInstruction(){
+      getSpecialInstruction();
+      $('textarea[name="note"]').val(setValue);
+    }
 
     function getDayDisplay(day){
       var date = new Date();
@@ -26,10 +54,9 @@ $(function() {
       m = date.getMonth() + 1;
       d = date.getDate();
       w = date.getDay() % 7;
-      console.log(m + '月' + d + '日' + '(' + wd[w] + ')');
       if(m < 10){ paramM = '0' + m }else{ paramM = m }
       if(d < 10){ paramD = '0' + d }else{ paramD = d }
-      var dayParam = y + '/' + paramM + '/' + paramD;
+      var dayParam = y + '-' + paramM + '-' + paramD;
       var dayDisplay = m + '月' + d + '日' + '(' + wd[w] + ')';
       deliveryDate.append('<option value="' + dayParam + '">' + dayDisplay + '</option>');
     }
@@ -38,6 +65,19 @@ $(function() {
       for (var i=0; i<14; i++) {
         getDayDisplay(i);
       }
+      deliveryDate.on({
+        'change': function() {
+          var dateValue =  $(this).val();
+          if(dateValue.length > 1){
+            $('input:radio[name="attributes[配送日の指定]"]').val(["指定する"]);
+            $('input:radio[name="attributes[配送日の指定]"]:checked').val(dateValue);
+            $('#delivery-date').val(dateValue);
+          }else{
+            $('input:radio[name="attributes[配送日の指定]"]').val(["なし"]);
+            $('input:radio[name="attributes[配送日の指定]"]:checked').click();
+          }
+        }
+      });
     }
 
     function init(){
@@ -48,6 +88,33 @@ $(function() {
         $('#shippingPrice').html('<span class="amount_price">660円</span>(税込)');
         $('#shippingFree').html('※あと' + shippingTerm.toLocaleString() + '円で送料無料')
       }
+      deliveryTime.on({
+        'change': function() {
+          var timeValue =  $(this).val();
+          $('#delivery-time').val(timeValue);
+        }
+      });
+      memoWrap.on({
+        'keyup': function() {
+          setSpecialInstruction();
+        }
+      });
+      messageCard.on({
+        'keyup': function() {
+          setSpecialInstruction();
+        }
+      });
+      noshiType.on({
+        'keyup': function() {
+          setSpecialInstruction();
+        }
+      });
+      noshiName.on({
+        'keyup': function() {
+          setSpecialInstruction();
+        }
+      });
+
       $.each(target.find('.option_item'), function(index) {
         optionItem[index] = $(this);
         optionItemHeight[index] = $(this).outerHeight();

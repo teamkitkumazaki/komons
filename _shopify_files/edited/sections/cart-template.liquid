@@ -89,7 +89,7 @@
                   </label>
                   <div class="input_wrap">
                     <select id="deliveryDate" name="delivery_date">
-                      <option value="指定なし">指定なし</option>
+                      <option value="指定なし" selected="">指定なし</option>
                     </select>
                   </div>
                 </div><!-- option_item -->
@@ -101,7 +101,7 @@
                   </label>
                   <div class="input_wrap">
                     <select id="deliveryTime" name="delivery_time">
-                      <option value="指定なし">指定なし</option>
+                      <option value="指定なし" selected="">指定なし</option>
                       <option value="午前中（12時まで）" selected="">午前中（12時まで）</option>
                       <option value="14時から16時">14時から16時</option>
                       <option value="16時から18時">16時から18時</option>
@@ -122,7 +122,7 @@
                     <span class="label_ttl">熨斗の表書きを設定</span>
                   </label>
                   <div class="input_wrap">
-                    <input type="text" name="noshiType">
+                    <input id="noshiType" type="text" name="noshi_type">
                     <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
                   </div>
                 </div><!-- option_item -->
@@ -133,7 +133,7 @@
                     <span class="label_ttl">熨斗の名入れを設定</span>
                   </label>
                   <div class="input_wrap">
-                    <input type="text" name="noshiName">
+                    <input id="noshiName" type="text" name="noshi_name">
                     <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
                   </div>
                 </div><!-- option_item -->
@@ -144,7 +144,7 @@
                     <span class="label_ttl">メッセージカードを設定</span>
                   </label>
                   <div class="input_wrap">
-                    <textarea type="text" name="messeageCard"></textarea>
+                    <textarea id="messeageCard" type="text" name="messeage_card"></textarea>
                     <p class="example">入力例) 入力例のテキストが入ります。入力例のテキストが入ります。入力例のテキストが入ります。入力例のテキストが入ります。</p>
                   </div>
                 </div><!-- option_item -->
@@ -160,7 +160,7 @@
                     <span class="label_ttl">購入時メモを書く</span>
                   </label>
                   <div class="input_wrap">
-                    <textarea type="text" name="note"></textarea>
+                    <textarea id="memoWrap" type="text" name="memo_wrap"></textarea>
                   </div>
                 </div><!-- option_item -->
               </div>
