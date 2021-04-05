@@ -824,13 +824,27 @@ $(function() {
     var popClose = $('#popClose');
     var optionFix = $('#optionFix');
     var tesageState = $("input[name='tesage']");
+    var messageState = $('input[name="message"]');
     var muzihikiState = $('input[name="mizuhiki"]');
     var tesageDisplay = $('#tesageDisplay');
     var mizuhikiDisplay = $('#mizuhikiDisplay');
+    var tesageCheck;
+    var mizuhikiCheck;
+    var messageCheck;
 
-    function optionShifter(){
-      var tesageCheck = $("input[name='tesage']:checked").val();
-      var mizuhikiCheck = $("input[name='mizuhiki']:checked").val();
+    function withMessage(){
+      if(tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki'){
+        giftOptionFields.val(optionValue[7]);
+      }else if(tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki'){
+        giftOptionFields.val(optionValue[5]);
+      }else if(tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        giftOptionFields.val(optionValue[6]);
+      }else if(tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        giftOptionFields.val(optionValue[4]);
+      }
+    }
+
+    function withoutMessage(){
       if(tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki'){
         giftOptionFields.val(optionValue[3]);
       }else if(tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki'){
@@ -839,6 +853,17 @@ $(function() {
         giftOptionFields.val(optionValue[2]);
       }else if(tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki'){
         giftOptionFields.val(optionValue[0]);
+      }
+    }
+
+    function optionShifter(){
+      tesageCheck = $("input[name='tesage']:checked").val();
+      mizuhikiCheck = $("input[name='mizuhiki']:checked").val();
+      messageCheck = $("input[name='message']:checked").val();
+      if(messageCheck == 'message'){
+        withMessage();
+      }else{
+        withoutMessage();
       }
     }
 
@@ -925,7 +950,7 @@ $(function() {
         }
       });
 
-      tesageState.on({
+      messageState.on({
         'click': function(){
           optionShifter();
         }
