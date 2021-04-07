@@ -31,9 +31,7 @@
 					<div class="txt_wrap">
 						<a class="prod_name" href="{{ product.url }}">
 							<span class="ja">{{ product.metafields.custom_fields["category_name"] }}</span>
-							<span class="en">
-								{{ product.title }}
-							</span>
+							<span class="en">{{ product.metafields.custom_fields["product_name"] }}</span>
 						</a>
 						<span class="price">{{ product.price | money_without_currency }}円(税抜)</span>
 						{%- if product.type == "gift" -%}

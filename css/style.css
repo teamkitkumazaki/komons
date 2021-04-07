@@ -2469,6 +2469,19 @@ body.loaded #loading {
 .comp-flex-cart .cart_box .cart_desc a:hover {
   opacity: 0.75;
 }
+.comp-flex-cart .wrapping_text {
+  display: block;
+  font-size: 16px;
+  padding-bottom: 4px;
+  margin-top: 15px;
+}
+.comp-flex-cart .wrapping_text a {
+  line-height: 1.6 !important;
+  letter-spacing: 0.5px !important;
+  transition: opacity 0.3s;
+  color: #00381f !important;
+  text-decoration: underline !important;
+}
 .comp-flex-cart .amazon_pay {
   margin-top: 20px;
   display: flex;
@@ -2559,6 +2572,17 @@ body.loaded #loading {
   }
   .comp-flex-cart .cart_box .cart_desc a:hover {
     opacity: 0.75;
+  }
+  .comp-flex-cart .wrapping_text {
+    margin-top: 15px;
+  }
+  .comp-flex-cart .wrapping_text a {
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 3.4vw;
+    letter-spacing: 2px;
+    line-height: 1.5;
   }
   .comp-flex-cart .amazon_pay {
     margin-top: 20px;
@@ -4843,6 +4867,14 @@ body.loaded #loading {
   .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb .pc_thumb {
     height: auto;
     background-position: center top -4vw;
+  }
+  .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .category .en {
+    font-size: 14px;
+    padding-right: 0.7em;
+    margin-right: 0.7em;
+  }
+  .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .category .ja {
+    font-size: 12px;
   }
   .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .prod_name {
     margin-top: 5px;
@@ -7868,7 +7900,7 @@ body.loaded #loading {
 
 @media screen and (max-width: 740px) {
   .comp-subscription-plans .price_wrap {
-    margin-top: 15px;
+    margin-top: 25px;
     text-align: center;
     margin-bottom: 30px;
     padding-bottom: 30px;
@@ -7876,10 +7908,10 @@ body.loaded #loading {
   }
   .comp-subscription-plans .price_wrap .price {
     display: block;
-    font-size: 20px;
+    font-size: 25px;
     letter-spacing: 1.5px;
-    margin-right: 0.5em;
-    margin-bottom: 0px;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
   .comp-subscription-plans .price_wrap .price .added {
     font-size: 14px;
@@ -7988,6 +8020,7 @@ body.loaded #loading {
   .comp-subscription-table .paywhirl-plan-selector-group .paywhirl-plan-selector-plan {
     margin-top: 30px;
     margin-bottom: 0px;
+    margin-left: 0;
     display: block;
     align-items: center;
   }
@@ -7998,14 +8031,21 @@ body.loaded #loading {
   }
   .comp-subscription-table .paywhirl-plan-selector-group .paywhirl-plan-selector-plan select {
     width: 100%;
-    height: 40px;
+    height: 45px;
     border-radius: 5px;
     font-size: 16px;
-    text-indent: 20px;
+    text-indent: 15px;
     background-size: 10px;
+    transition: border 0.2s;
+    will-chiange: border;
+  }
+  .comp-subscription-table .paywhirl-plan-selector-group .paywhirl-plan-selector-plan select:focus {
+    outline: none;
+    border: 1px solid #d8d8d8;
   }
   .comp-subscription-table .subscription_note {
     margin-top: 25px;
+    margin-bottom: 30px;
   }
   .comp-subscription-table .subscription_note .faq_link {
     margin-top: 15px;

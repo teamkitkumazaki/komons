@@ -107,6 +107,19 @@
       }
     }
   }
+  .wrapping_text{
+    display: block;
+    font-size: 16px;
+    padding-bottom: 4px;
+    margin-top: 15px;
+    a{
+      line-height: 1.6 !important;
+      letter-spacing: 0.5px !important;
+      transition: opacity 0.3s;
+      color: #00381f !important;
+      text-decoration: underline !important;
+    }
+  }
   .amazon_pay{
     margin-top: 20px;
     @include flexSet;
@@ -194,6 +207,17 @@
           line-height: 1.6;
           letter-spacing: 1.2px;
         }
+      }
+    }
+    .wrapping_text{
+      margin-top: 15px;
+      a{
+        display: block;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 3.4vw;
+        letter-spacing: 2px;
+        line-height: 1.5;
       }
     }
     .amazon_pay{

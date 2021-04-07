@@ -211,8 +211,9 @@
         }
         .prod_name{
           display: block;
-          font-size: 16px;
+          font-size: 15px;
           line-height: 1.5;
+          padding-right: 10px;
           margin-bottom: 15px;
           .genre{
             font-size: 12px;
@@ -220,8 +221,8 @@
           }
         }
         .product_variants{
-          font-size: 14px;
-          letter-spacing: 0.5px;
+          font-size: 11px;
+          letter-spacing: 0.3px;
           margin-bottom: 15px;
         }
         .lower_wrap{
