@@ -47,6 +47,17 @@
     font-size: 14px;
     letter-spacing: 0.5px;
     line-height: 1.6;
+    .large{
+      font-size: 14px;
+      margin: 20px 0 15px;
+      background: #f4f4f4;
+      padding: 10px;
+    }
+    .added{
+      display: block;
+      color: #646464;
+      font-size: 12px;
+    }
     .faq_link{
       margin-top: 15px;
       a{

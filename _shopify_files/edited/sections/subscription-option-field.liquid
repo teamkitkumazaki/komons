@@ -22,6 +22,8 @@
             <div class="subscription_note">
 				      <p>※定期便に設定した商品・個数を3回以上継続してお受け取りいただくことが必要です。4回目以降はいつでも解約できます。</p>
 				      <p>※長期不在の場合は必ず事前にご連絡ください</p>
+              <p class="large">※2回目以降のお届けについて</p>
+              <p>設定した配送サイクル+5日以内にお届け致します。<span class="added">例）1日に1ヶ月のサイクルで購入した場合、毎月5日までにお届け。</span></p>
 				       <div class="faq_link">
 					       <a href="/pages/faq#fqSubscription"><span>定期購入に関するFAQはこちら</span></a>
 				      </div>
@@ -42,6 +44,7 @@
         <div class="option_fix">
           <button id="optionFix" class="option_fix_button" href="javascript:void(0);"><span>購入する</span></button>
           <input class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる">
+          <input type="hidden" name="properties[カテゴリー]" value='{{ product.metafields.custom_fields["category_display_name"]}}'>
         </div>
       </div>
     </div>

@@ -25,7 +25,7 @@
                 <a href="{{ item.url }}"><img src="{{ item | img_url: 'master' }}" alt="{{ item.product.title }}"></a>
               </div>
               <div class="item_txt">
-                <span class="category">{{ item.metafields.custom_fields["category_name"] }}</span>
+                <span class="category">{{item.properties['カテゴリー']}}</span>
                 <a href="{{ item.url }}" class="prod_name"><span class="name">{{ item.product.title }}</span></a>
                 {% if item.selling_plan_allocation != empty %}
                 {%- assign variant_options = 'template ' | split: ' ' -%}
@@ -88,7 +88,7 @@
                     <span class="label_ttl">配送希望日を指定</span>
                   </label>
                   <div class="input_wrap">
-                    <select id="deliveryDate" name="delivery_date">
+                    <select id="deliveryDate" name="attributes[配送希望日:]">
                       <option value="指定なし" selected="">指定なし</option>
                     </select>
                   </div>
@@ -100,7 +100,7 @@
                     <span class="label_ttl">配送時間帯を指定</span>
                   </label>
                   <div class="input_wrap">
-                    <select id="deliveryTime" name="delivery_time">
+                    <select id="deliveryTime" name="attributes[配送時間帯:]">
                       <option value="指定なし" selected="">指定なし</option>
                       <option value="午前中（12時まで）" selected="">午前中（12時まで）</option>
                       <option value="14時から16時">14時から16時</option>
@@ -122,7 +122,7 @@
                     <span class="label_ttl">熨斗の表書きを設定</span>
                   </label>
                   <div class="input_wrap">
-                    <input id="noshiType" type="text" name="noshi_type">
+                    <input id="noshiType" type="text" name="attributes[熨斗の表書き:]">
                     <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
                   </div>
                 </div><!-- option_item -->
@@ -133,7 +133,7 @@
                     <span class="label_ttl">熨斗の名入れを設定</span>
                   </label>
                   <div class="input_wrap">
-                    <input id="noshiName" type="text" name="noshi_name">
+                    <input id="noshiName" type="text" name="attributes[熨斗の名入れ:]">
                     <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
                   </div>
                 </div><!-- option_item -->
@@ -145,11 +145,13 @@
                   </label>
                   <div class="input_wrap">
                     <textarea id="messeageCard" type="text" name="messeage_card"></textarea>
+                    <input id="messageCartContent" type="text" name="attributes[メッセージカードの内容:]" value="" style="display: none;">
                     <p class="example">入力例) 入力例のテキストが入ります。入力例のテキストが入ります。入力例のテキストが入ります。入力例のテキストが入ります。</p>
                   </div>
                 </div><!-- option_item -->
               </div><!-- comp-cart-option -->
             </div><!-- gift_option -->
+            {%- if section.settings.cart_notes_enable -%}
             <div class="comment_option">
               <h2 class="sub_ttl">備考欄</h2>
               <div class="comp-cart-option">
@@ -160,25 +162,18 @@
                     <span class="label_ttl">購入時メモを書く</span>
                   </label>
                   <div class="input_wrap">
-                    <textarea id="memoWrap" type="text" name="memo_wrap"></textarea>
+                    <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" data-cart-notes>{{ cart.note }}</textarea>
                   </div>
                 </div><!-- option_item -->
               </div>
             </div>
+            {%- endif -%}
           </div><!-- option_field_wrap -->
         </div><!-- cart_right -->
       </div><!-- cart_flex -->
     </div><!-- section_inner -->
   </section>
   <section class="section-fixed-button">
-  <div style="display:none">
-    {% render 'cart-attributes' %}
-    {%- if section.settings.cart_notes_enable -%}
-      <div class="grid__item medium-up--one-half cart-note">
-        <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" data-cart-notes>{{ cart.note }}</textarea>
-      </div>
-    {%- endif -%}
-  </div>
     <div class="fix_wrapper">
       <div class="comp-submit-button">
         <button><span>決済に進む</span></button>

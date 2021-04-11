@@ -7990,6 +7990,17 @@ body.loaded #loading {
   letter-spacing: 0.5px;
   line-height: 1.6;
 }
+.comp-subscription-table .subscription_note .large {
+  font-size: 14px;
+  margin: 20px 0 15px;
+  background: #f4f4f4;
+  padding: 10px;
+}
+.comp-subscription-table .subscription_note .added {
+  display: block;
+  color: #646464;
+  font-size: 12px;
+}
 .comp-subscription-table .subscription_note .faq_link {
   margin-top: 15px;
 }
