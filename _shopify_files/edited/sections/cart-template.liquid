@@ -25,7 +25,7 @@
                 <a href="{{ item.url }}"><img src="{{ item | img_url: 'master' }}" alt="{{ item.product.title }}"></a>
               </div>
               <div class="item_txt">
-                <span class="category">{{item.properties['カテゴリー']}}</span>
+                <span class="category"><span class="ja">{{item.properties['カテゴリー']}}</span></span>
                 <a href="{{ item.url }}" class="prod_name"><span class="name">{{ item.product.title }}</span></a>
                 {% if item.selling_plan_allocation != empty %}
                 {%- assign variant_options = 'template ' | split: ' ' -%}
@@ -173,6 +173,15 @@
       </div><!-- cart_flex -->
     </div><!-- section_inner -->
   </section>
+  <section class="section-recommendation">
+    <div class="section_inner">
+      <div id="upsellSection" class="comp-upsell">
+        <h2 class="upsell_ttl">よく一緒に購入されている商品</h2>
+        <div id='rk-widget-203037' class='rk-bought_together'></div>
+      </div>
+    </div><!-- section_inner -->
+  </section>
+
   <section class="section-fixed-button">
     <div class="fix_wrapper">
       <div class="comp-submit-button">

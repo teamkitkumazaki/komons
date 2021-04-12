@@ -1,5 +1,6 @@
 .page-cart {
   .section-cart {
+    margin-bottom: 120px;
     .section_inner {
       max-width: 1200px;
       @include responsive-waku;
@@ -96,6 +97,13 @@
       }
     }
   }
+  .section-recommendation{
+    .section_inner {
+      max-width: 1200px;
+      @include responsive-waku;
+      margin: 0 auto;
+    }
+  }
   .section-fixed-button{
     position: fixed;
     left:0;
@@ -115,6 +123,7 @@
 @media screen and (max-width: 980px) {
   .page-cart {
     .section-cart {
+      margin-bottom: 80px;
       .section_inner {
         max-width: 1200px;
         @include responsive-waku;
@@ -147,6 +156,7 @@
 @media screen and (max-width: 720px) {
   .page-cart {
     .section-cart {
+      margin-bottom: 60px;
       .section_inner {
         .cart_flex {
           margin-top: 60px;
