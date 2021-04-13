@@ -1308,12 +1308,21 @@ article {
     letter-spacing: 0.5px;
   }
 }
+.comp-cart-option {
+  padding: 25px 25px 30px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+}
 .comp-cart-option .option_item {
   margin-bottom: 20px;
   height: 16px;
   overflow: hidden;
   transition: height 0.2s;
   will-change: height;
+}
+.comp-cart-option .option_item:nth-last-of-type(1) {
+  margin-bottom: 0;
 }
 .comp-cart-option .option_item label {
   margin-bottom: 15px;
@@ -1356,6 +1365,24 @@ article {
   font-size: 16px;
   line-height: 1;
   letter-spacing: 0.5px;
+  position: relative;
+  padding-right: 20px;
+}
+.comp-cart-option .option_item label .label_ttl::after {
+  display: block;
+  content: "";
+  width: 12px;
+  height: 8px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/contact/selector_caret.png);
+  background-size: 8px;
+  opacity: 0.6;
 }
 .comp-cart-option .option_item .input_wrap ::placeholder {
   font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
@@ -1426,6 +1453,10 @@ article {
 }
 
 @media screen and (max-width: 980px) {
+  .comp-cart-option {
+    padding: 25px 20px 30px;
+    border-radius: 5px;
+  }
   .comp-cart-option .option_item {
     margin-bottom: 20px;
     height: 16px;
@@ -1778,17 +1809,9 @@ article {
   letter-spacing: 1.25px;
   margin-bottom: 20px;
 }
-.page-cart .section-cart .section_inner .cart_flex .cart_right .option_field_wrap {
-  padding: 30px 25px;
-  border-radius: 10px;
-  background-color: #f4f4f4;
-  box-sizing: border-box;
-}
 .page-cart .section-cart .section_inner .cart_flex .cart_right .delivery_option,
 .page-cart .section-cart .section_inner .cart_flex .cart_right .gift_option {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
 }
 .page-cart .section-recommendation .section_inner {
   max-width: 1200px;
@@ -1932,22 +1955,10 @@ article {
     width: 100%;
   }
   .page-cart .section-cart .section_inner .cart_flex .cart_right .sub_ttl {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.6;
     letter-spacing: 1.25px;
     margin-bottom: 20px;
-  }
-  .page-cart .section-cart .section_inner .cart_flex .cart_right .option_field_wrap {
-    padding: 30px 25px;
-    border-radius: 10px;
-    background-color: #f4f4f4;
-    box-sizing: border-box;
-  }
-  .page-cart .section-cart .section_inner .cart_flex .cart_right .delivery_option,
-.page-cart .section-cart .section_inner .cart_flex .cart_right .gift_option {
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
   }
   .page-cart .section-fixed-button .fix_wrapper {
     padding: 15px 0;

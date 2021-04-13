@@ -1,10 +1,17 @@
 .comp-cart-option{
+  padding: 25px 25px 30px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
   .option_item{
     margin-bottom: 20px;
     height: 16px;
     overflow: hidden;
     transition: height .2s;
     will-change: height;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
     label{
       margin-bottom: 15px;
       @include flexSet;
@@ -45,6 +52,23 @@
         font-size: 16px;
         line-height: 1;
         letter-spacing: 0.5px;
+        position: relative;
+        padding-right: 20px;
+        &::after{
+          display: block;
+          content: "";
+          width: 12px;
+          height: 8px;
+          position: absolute;
+          top:0;
+          bottom:0;
+          right:0;
+          margin: auto;
+          @include bgSet;
+          background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/contact/selector_caret.png);
+          background-size: 8px;
+          opacity: 0.6;
+        }
       }
     }
     .input_wrap{
@@ -118,6 +142,8 @@
 
 @media screen and (max-width: 980px){
   .comp-cart-option{
+    padding: 25px 20px 30px;
+    border-radius: 5px;
     .option_item{
       margin-bottom: 20px;
       height: 16px;
