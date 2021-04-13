@@ -7,9 +7,6 @@
 	<link rel="shortcut icon" type="image/x-icon" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg">
 	<link rel="apple-touch-icon" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg" sizes="200x200">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500">
-	<!-- 検討:cssの読み込み方法をどうするか -->
-  <!-- <link rel="stylesheet" href="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/style.css?ver2_{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}"> -->
-	<!-- <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" type="text/css" onload="this.media='all';onLoadStylesheet()"> -->
 	{{ 'style.css' | asset_url | stylesheet_tag }}
   <link rel="stylesheet" href="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/slick.css">
 	{%- if request.page_type contains 'customers/' or page.handle == 'challenge' or request.page_type contains 'cart' -%}
@@ -51,9 +48,9 @@
   <meta name="robots" content="nofollow">
 	<!-- <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script> -->
 	<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
-	<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/layout.js?ver2870{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}" charset="UTF-8"></script>
+    <script src="{{ 'layout.js' | asset_url }}" defer="defer"></script>
 	{%- if request.page_type contains 'cart' -%}
-	<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/admin.js?ver2870{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}" charset="UTF-8"></script>
+    <script src="{{ 'admin.js' | asset_url }}" defer="defer"></script>
 	{%- endif -%}
 
   <script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/slick.min.js?ver{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}" charset="UTF-8"></script>
@@ -136,6 +133,5 @@
 	{{content_for_layout}}
 	{% section 'footer' %}
 	{% section 'slide-menu' %}
-	{% render 'paywhirl-main' %}
 </body>
 </html>

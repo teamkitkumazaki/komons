@@ -14,13 +14,10 @@
 </article>
 {% section 'fixed-cart-wrap' %}
 
-{%- elsif product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" -%}
+{%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" -%}
 {% section 'gift-option-field' %}
 {%- endif -%}
 
-{%- if product.type == "refill" or product.type == "bottle-refill" -%}
-{% section 'subscription-option-field' %}
-{%- endif -%}
 
 
 

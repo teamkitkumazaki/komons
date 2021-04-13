@@ -57,9 +57,9 @@ $(function() {
       $('#message1').remove();
     }
     if(optionState.indexOf('熨斗') ==  -1 && optionState.indexOf('メッセージ') ==  -1){
-      $('#giftOptionSection').css({'display': 'none'});
-    }else{
       $('#giftOptionSection').remove();
+    }else{
+      $('#giftOptionSection').css({'display': 'block'});
     }
   }
 

@@ -1,0 +1,205 @@
+{% capture email_title %} カートに商品が残っています{% endcapture %}
+{% capture email_body %}
+{% if billing_address.last_name %}{{ billing_address.last_name }}様、{% endif %}
+Komonsにご興味をお持ちいただき、誠にありがとうございます。<br>ショッピングカートに購入手続き中の商品が残っています。ご購入をご希望の場合は、在庫のあるうちにお買い求めください。
+{% endcapture %}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  <title>{{ email_title }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
+  <style>
+    body{
+      font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+      color: #00381f;
+    }
+    td{
+      font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
+      color: #00381f !important;
+    }
+    .button__cell { background: {{ shop.email_accent_color }}; }
+    a, a:hover, a:active, a:visited { color: {{ shop.email_accent_color }}; }
+  </style>
+</head>
+
+  <body>
+    <table class="body">
+      <tr>
+        <td>
+        <table class="header row">
+          <tr>
+            <td class="header__cell">
+              <center>
+                <table class="container">
+                  <tr>
+                    <td>
+                      <div class="img_wrap" style="padding: 0;"><img class="logo" src="https://img07.shop-pro.jp/PA01416/697/etc/header_logo.png" width="100%" /></div>
+                      <span class="order-number__text" style="display: block;font-size: 16px;margin-top: 20px;"></span>
+                    </td>
+                  </tr>
+                </table>
+              </center>
+            </td>
+          </tr>
+
+          <table class="row content">
+          <tr>
+          <td class="content__cell">
+          <center>
+          <table class="container">
+          <tr>
+            <td>
+
+            <h2>{{ email_title }}</h2>
+            {% if custom_message != blank %}
+              <p>{{ custom_message }}</p>
+            {% else %}
+              <p>{{ email_body }}</p>
+            {% endif %}
+            <table class="row actions">
+  <tr>
+    <td class="empty-line"> </td>
+  </tr>
+  <tr>
+    <td class="actions__cell">
+      <table class="button main-action-cell">
+        <tr>
+          <td class="button__cell"><a href="{{ url }}" class="button__text">購入手続きを完了する</a></td>
+        </tr>
+      </table>
+      {% if shop.url %}
+    <table class="link secondary-action-cell">
+      <tr>
+        <td class="link__cell">または<a href="{{ shop.url }}">ショップにアクセスする</a></td>
+      </tr>
+    </table>
+{% endif %}
+
+    </td>
+  </tr>
+</table>
+
+
+            </td>
+          </tr>
+        </table>
+      </center>
+    </td>
+  </tr>
+</table>
+
+          <table class="row section">
+  <tr>
+    <td class="section__cell">
+      <center>
+        <table class="container">
+          <tr>
+            <td>
+              <h3>買い物かごの中のアイテム</h3>
+            </td>
+          </tr>
+        </table>
+        <table class="container">
+          <tr>
+            <td>
+
+
+<table class="row">
+  {% for line in subtotal_line_items %}
+  <tr class="order-list__item">
+    <td class="order-list__item__cell">
+      <table>
+        <td>
+          {% if line.image %}
+            <img src="{{ line | img_url: 'compact_cropped' }}" align="left" width="60" height="60" class="order-list__product-image"/>
+          {% endif %}
+        </td>
+        <td class="order-list__product-description-cell">
+          {% if line.product.title %}
+            {% assign line_title = line.product.title %}
+          {% else %}
+            {% assign line_title = line.title %}
+          {% endif %}
+
+          {% if line.quantity < line.quantity %}
+            {% capture line_display %} {{ line.quantity }} of {{ line.quantity }} {% endcapture %}
+          {% else %}
+            {% assign line_display = line.quantity  %}
+          {% endif %}
+
+          <span class="order-list__item-title" style="font-weight: normal;">{{ line_title }} × {{ line_display }}</span><br/>
+
+          {% if line.variant.title != 'Default Title' %}
+            <span class="order-list__item-variant">{{ line.variant.title }}</span>
+          {% endif %}
+        </td>
+      </table>
+    </td>
+  </tr>{% endfor %}
+</table>
+
+
+            </td>
+          </tr>
+        </table>
+      </center>
+    </td>
+  </tr>
+</table>
+
+<table class="row detail container">
+<tr>
+<td class="section__cell" style="padding: 0;">
+  <div class="detail_section" style="padding-bottom: 25px;">
+    <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;">ご質問・お問い合わせはこちらから</h3>
+    <div class="detail_content">
+      <div class="faq_item" style="margin-bottom: 10px;">
+        <p style="font-size: 14px; color: #00381f;">・Komonsの商品に関するご質問は<a style="font-size: 14px; color: #068acc;" href="{{ shop.url }}/pages/faq#fqProduct">こちら</a></p>
+      </div>
+      <div class="faq_item" style="margin-bottom: 10px;">
+        <p style="font-size: 14px; color: #00381f;">・ご購入方法に関するご質問は<a style="font-size: 14px; color: #068acc;" href="{{ shop.url }}/pages/faq#fqPurchase">こちら</a></p>
+      </div>
+      <div class="faq_item" style="margin-bottom: 10px;">
+        <p style="font-size: 14px; color: #00381f;">・ギフトサービスに関するご質問は<a style="font-size: 14px; color: #068acc;" href="{{ shop.url }}/pages/faq#fqGift">こちら</a></p>
+      </div>
+      <div class="faq_item" style="margin-bottom: 10px;">
+        <p style="font-size: 14px; color: #00381f;">・その他ご不明点に関しては<a style="font-size: 14px; color: #068acc;" href="https://journal.komons-japan.com/contact">お問い合わせフォーム</a>よりご質問ください。</p>
+      </div>
+    </div>
+    </div><!-- detail_section -->
+</td>
+</tr>
+</table>
+<table class="row footer container">
+  <tr>
+    <td class="section__cell" style="padding: 0;">
+    <div style="text-align:center; padding-top:30px; border-top: 1px solid #00381f"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/spacer.png" style="display:inline;" width="100%" /></div>
+
+    <div class="footer_flex" style="padding:20px;">
+    <div class="footer_logo"><a href="https://www.komons-japan.com/" style="display:block;text-align:center;margin-bottom:20px;"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/logo_footer.png?ver2" style="display:inline;" width="80%" /></a>
+
+    <div class="footer_txt" style="font-size:14px;letter-spacing:0.5px;  line-height: 1.57;letter-spacing: 1px;text-align: center;color: #00381f; margin-bottom:30px;">毎日の家事を「プラスな時間」に変える<br />
+    ホームケアブランド</div>
+    </div>
+
+    <div class="sns_wrap" style="text-align:center;"><a href="https://www.facebook.com/komons.japan"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_fb.png" style="width: 35px; margin-right: 10px; display: inline;" /></a> <a href="https://www.instagram.com/komons.jp/"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_ig.png" style="width: 35px; margin-right: 10px; display: inline;" /></a> <a href="https://twitter.com/komons_jp"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_tw.png" style="width: 35px; margin-right: 0px; display: inline;" /></a></div>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="section__cell" style="padding: 0;">
+    <div class="footer_nav" style="font-size: 14px;line-height: 1.57;letter-spacing: 1px; font-weight: normal; padding: 0 20px;"><a href="{{ shop.url }}/collections/all-products" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">商品一覧</a> <a href="{{ shop.url }}/collections/gift" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ギフト商品</a> <a href="{{ shop.url }}/pages/concept" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">Komonsについて</a> <a href="https://journal.komons-japan.com/" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ジャーナル</a><a href="{{ shop.url }}/pages/faq" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ご利用ガイド</a><a href="{{ shop.url }}/pages/privacy-policy" style="display: block;color:#003e1b;text-decoration:none;margin-bottom:10px;">プライバシー</a> <a href="{{ unsubscribe_url }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">メールの配信停止</a></div>
+
+    <p class="copyright" style="font-size: 12px;line-height: 1.57;letter-spacing: 1px; color: #003e1b; padding: 0 20px 40px;">2018-2020 Komons All Rights Reserved</p>
+    </td>
+  </tr>
+</table>
+          <img src="{{ 'notifications/spacer.png' | shopify_asset_url }}" class="spacer" height="1" />
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

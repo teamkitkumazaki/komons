@@ -14,9 +14,6 @@
 		</div><!-- comp-admin-bread -->
 		<div class="comp-flex-wrap">
 			<div class="flex_left">
-				<div class="subscription">
-					{% render 'paywhirl-customer-portal-link' %}
-				</div>
 				<h2 class="sub_ttl">ご注文/定期購入履歴</h2>
 				<div class="comp-order-list">
 				{% paginate customer.orders by 20 %}
@@ -59,4 +56,3 @@
 <script>
 	$('body').addClass('fixed');
 </script>
-{% render 'paywhirl-customer-portal-frame' %}

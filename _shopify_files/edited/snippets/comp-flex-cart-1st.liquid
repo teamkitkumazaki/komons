@@ -4,35 +4,10 @@
 		<span class="title">再入荷リクエスト</span>
 		<span class="desc">販売再開をメールでお知らせいたします</span>
 	</a>
-	<span class="notice_txt" style="font-size: 14px; letter-spacing: 0.5px; margin-top: 10px; display: block;">※2月中～下旬に販売再開予定</span>
+	<!--<span class="notice_txt" style="font-size: 14px; letter-spacing: 0.5px; margin-top: 10px; display: block;">※2月中～下旬に販売再開予定</span> -->
 </div>
 {%- else -%}
-	{%- if product.type == "refill" or product.type == "bottle-refill" -%}
-	<div class="comp-flex-cart">
-		<div class="cart_box">
-			<div class="cart_item">
-				<span class="button_wrap">
-					<span class="title cart_in">通常購入する</span>
-					<span class="sub_text">5,000円以上(税別)お買い上げで送料無料</span>
-				</span>
-				<input type="hidden" name="properties[カテゴリー]" value='{{ product.metafields.custom_fields["category_display_name"]}}'>
-				<input id="cartSubmit" class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる">
-			</div>
-		</div>
-		<div class="cart_box">
-			<div id="subscriptionButton" class="cart_item">
-				<span class="button_wrap">
-					<span class="title subscription">定期購入する</span>
-					<span class="sub_text">定価より15％OFF&amp;送料無料</span>
-				</span>
-				<a href="javascript:void(0);" id="optionSelect" class="product_cart_btn colorme-repeat-checkout">定期購入する</a>
-			</div>
-			<div class="about_subscription">
-				<a href="/pages/faq#fqSubscription"><span>定期購入に関するFAQはこちら</span></a>
-			</div>
-		</div>
-	</div>
-	{%- elsif product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" -%}
+	{%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" -%}
 	<div class="comp-flex-cart no_flex">
 		<div class="cart_box">
 			<div class="cart_item">
@@ -56,7 +31,7 @@
 				<input id="cartSubmit" class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる">
 			</div>
 		</div>
-		{%- if product.type != "option" -%}
+		{%- if product.type != "option" and product.type != "refill" and product.type != "bottle-refill" -%}
 		<span class="wrapping_text"><a href="/products/ks005">ギフトラッピングはこちら</a></span>
 		{%- endif -%}
 	</div>
