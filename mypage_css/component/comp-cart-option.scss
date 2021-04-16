@@ -1,8 +1,9 @@
 .comp-cart-option{
-  padding: 25px 25px 30px;
+  padding: 25px 25px 25px;
   border-radius: 5px;
-  background-color: #f4f4f4;
+  background-color: rgba(#9CD3BB, 0.3);
   box-sizing: border-box;
+  margin-bottom: 30px;
   .option_item{
     margin-bottom: 20px;
     height: 16px;
@@ -137,12 +138,18 @@
         margin-top: 10px;
       }
     }
+    &.open{
+      height: auto;
+      label{
+        pointer-events: none;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 980px){
   .comp-cart-option{
-    padding: 25px 20px 30px;
+    padding: 25px 20px 25px;
     border-radius: 5px;
     .option_item{
       margin-bottom: 20px;

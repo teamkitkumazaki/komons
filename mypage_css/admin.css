@@ -1309,10 +1309,11 @@ article {
   }
 }
 .comp-cart-option {
-  padding: 25px 25px 30px;
+  padding: 25px 25px 25px;
   border-radius: 5px;
-  background-color: #f4f4f4;
+  background-color: rgba(156, 211, 187, 0.3);
   box-sizing: border-box;
+  margin-bottom: 30px;
 }
 .comp-cart-option .option_item {
   margin-bottom: 20px;
@@ -1451,10 +1452,16 @@ article {
   letter-spacing: 0.5px;
   margin-top: 10px;
 }
+.comp-cart-option .option_item.open {
+  height: auto;
+}
+.comp-cart-option .option_item.open label {
+  pointer-events: none;
+}
 
 @media screen and (max-width: 980px) {
   .comp-cart-option {
-    padding: 25px 20px 30px;
+    padding: 25px 20px 25px;
     border-radius: 5px;
   }
   .comp-cart-option .option_item {
@@ -1716,6 +1723,10 @@ article {
   }
 }
 /* ########## ページ別レイアウト ########## */
+.page-cart {
+  width: 100vw;
+  overflow: hidden;
+}
 .page-cart .section-cart {
   margin-bottom: 120px;
 }
@@ -1756,6 +1767,10 @@ article {
   line-height: 1.6;
   letter-spacing: 1.25px;
   margin-bottom: 40px;
+}
+.page-cart .section-cart .section_inner .cart_flex .cart_left .comp-submit-button {
+  margin-top: 30px;
+  max-width: unset;
 }
 .page-cart .section-cart .section_inner .cart_flex .cart_left .amount_section {
   margin-top: 60px;
@@ -1809,6 +1824,11 @@ article {
   letter-spacing: 1.25px;
   margin-bottom: 20px;
 }
+.page-cart .section-cart .section_inner .cart_flex .cart_right .comp-submit-button {
+  margin-top: 30px;
+  max-width: unset;
+  display: none;
+}
 .page-cart .section-cart .section_inner .cart_flex .cart_right .delivery_option,
 .page-cart .section-cart .section_inner .cart_flex .cart_right .gift_option {
   margin-bottom: 10px;
@@ -1834,6 +1854,12 @@ article {
   .page-cart .section-recommendation .section_inner {
     width: 84vw;
   }
+}
+.page-cart .section-cart-button {
+  margin-top: 100px;
+}
+.page-cart .section-cart-button .comp-submit-button {
+  max-width: 600px;
 }
 .page-cart .section-fixed-button {
   position: fixed;
@@ -1887,8 +1913,22 @@ article {
     width: 100%;
     margin-bottom: 60px;
   }
+  .page-cart .section-cart .section_inner .cart_flex .cart_left .comp-submit-button {
+    display: none;
+  }
   .page-cart .section-cart .section_inner .cart_flex .cart_right {
     width: 100%;
+  }
+  .page-cart .section-cart .section_inner .cart_flex .cart_right .comp-submit-button {
+    display: block;
+  }
+}
+@media screen and (max-width: 980px) {
+  .page-cart .section-cart-button {
+    margin-top: 60px;
+  }
+  .page-cart .section-cart-button .comp-submit-button {
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 980px) {
@@ -1959,6 +1999,13 @@ article {
     line-height: 1.6;
     letter-spacing: 1.25px;
     margin-bottom: 20px;
+    text-align: center;
+  }
+  .page-cart .section-cart-button {
+    margin-top: 40px;
+  }
+  .page-cart .section-cart-button .comp-submit-button {
+    max-width: 100%;
   }
   .page-cart .section-fixed-button .fix_wrapper {
     padding: 15px 0;

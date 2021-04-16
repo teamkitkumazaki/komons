@@ -1,4 +1,6 @@
 .page-cart {
+  width: 100vw;
+  overflow: hidden;
   .section-cart {
     margin-bottom: 120px;
     .section_inner {
@@ -19,6 +21,10 @@
             line-height: 1.6;
             letter-spacing: 1.25px;
             margin-bottom: 40px;
+          }
+          .comp-submit-button{
+            margin-top: 30px;
+            max-width: unset;
           }
 
           .amount_section {
@@ -79,7 +85,11 @@
             letter-spacing: 1.25px;
             margin-bottom: 20px;
           }
-
+          .comp-submit-button{
+            margin-top: 30px;
+            max-width: unset;
+            display: none;
+          }
           .option_field_wrap {
           }
 
@@ -96,6 +106,12 @@
       max-width: 1200px;
       @include responsive-waku;
       margin: 0 auto;
+    }
+  }
+  .section-cart-button{
+    margin-top: 100px;
+    .comp-submit-button{
+      max-width: 600px;
     }
   }
   .section-fixed-button{
@@ -130,12 +146,24 @@
           .cart_left {
             width: 100%;
             margin-bottom: 60px;
+            .comp-submit-button{
+              display: none;
+            }
           }
 
           .cart_right {
             width: 100%;
+            .comp-submit-button{
+              display: block;
+            }
           }
         }
+      }
+    }
+    .section-cart-button{
+      margin-top: 60px;
+      .comp-submit-button{
+        max-width: 100%;
       }
     }
     .section-fixed-button{
@@ -205,6 +233,7 @@
               line-height: 1.6;
               letter-spacing: 1.25px;
               margin-bottom: 20px;
+              text-align: center;
             }
 
             .option_field_wrap {
@@ -215,6 +244,12 @@
             }
           }
         }
+      }
+    }
+    .section-cart-button{
+      margin-top: 40px;
+      .comp-submit-button{
+        max-width: 100%;
       }
     }
     .section-fixed-button{

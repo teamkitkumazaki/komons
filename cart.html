@@ -115,12 +115,16 @@
 								</div>
 								<span id="shippingFree" class="shipping_free">※あと2,552円で送料無料</span>
 							</div><!-- amount_section -->
+							<div class="comp-submit-button button_pc">
+								<button><span>レジに進む</span></button>
+								<input type="submit" name="gift-checkout" class="checkout_button gc__theme bg-primary button-gift-checkout cursor-pointer" value="This is a gift" style=""><input type="submit" name="checkout" class="checkout_button" value="CONTINUE TO CHECKOUT" data-omnisend-checked="true">
+							</div>
 						</div><!-- cart_left -->
 						<div class="cart_right">
 							<div class="option_field_wrap">
 								<div class="delivery_option">
+									<h2 class="sub_ttl">配送オプション</h2>
 									<div class="comp-cart-option">
-										<h2 class="sub_ttl">配送オプション</h2>
 										<div class="option_item">
 											<label>
 												<input type="checkbox" name="dateInput" value="true">
@@ -153,8 +157,8 @@
 									</div><!-- comp-cart-option -->
 								</div>
 								<div id="giftOptionSection" class="gift_option">
+									<h2 class="sub_ttl">ギフトオプション</h2>
 									<div class="comp-cart-option">
-										<h2 class="sub_ttl">ギフトオプション</h2>
 										<div id="noshi11" class="option_item" style="display: block;">
 											<label>
 												<input type="checkbox" name="dateInput" value="true">
@@ -191,8 +195,8 @@
 									</div><!-- comp-cart-option -->
 								</div><!-- gift_option -->
 								<div class="comment_option">
+									<h2 class="sub_ttl">備考欄</h2>
 									<div class="comp-cart-option">
-										<h2 class="sub_ttl">備考欄</h2>
 										<div class="option_item">
 											<label class="untouchable">
 												<input type="checkbox" name="dateInput" value="true">
@@ -206,6 +210,10 @@
 									</div>
 								</div>
 							</div><!-- option_field_wrap -->
+							<div class="comp-submit-button button_sp">
+								<button><span>レジに進む</span></button>
+								<input type="submit" name="gift-checkout" class="checkout_button gc__theme bg-primary button-gift-checkout cursor-pointer" value="This is a gift" style=""><input type="submit" name="checkout" class="checkout_button" value="CONTINUE TO CHECKOUT" data-omnisend-checked="true">
+							</div>
 						</div><!-- cart_right -->
 					</div><!-- cart_flex -->
 				</div><!-- section_inner -->
@@ -423,7 +431,15 @@
 					</div>
 				</div><!-- section_inner -->
 			</section>
-			<section class="section-fixed-button">
+			<section class="section-cart-button">
+				<div class="section_inner">
+					<div class="comp-submit-button">
+						<button><span>レジに進む</span></button>
+						<input type="submit" name="checkout" class="checkout_button" value="CONTINUE TO CHECKOUT">
+					</div>
+				</div><!-- section_inner -->
+			</section>
+			<!-- <section class="section-fixed-button">
 				<div id="cartAttribute" style="display:none">
 					<link href="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/cart-attributes.scss.css?v=13161345458049623175" rel="stylesheet" type="text/css" media="all">
 					<div class="cart-attribute__field cart-attributes-delivery-datetime cart-attribute-delivery-date" style="">
@@ -693,7 +709,7 @@
 							value="CONTINUE TO CHECKOUT" data-omnisend-checked="true">
 					</div>
 				</div><!-- fix_wrapper -->
-			</section>
+			</section> 
 		</form>
 	</article>
 	<footer>

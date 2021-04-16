@@ -122,18 +122,17 @@ if (document.getElementById('cart')) {
 
     function init(){
       console.log('priceCulc:' + priceCulc);
-      console.log(optionState.indexOf('定期'));
       if(priceCulc > 5499){
         console.log('pattern1')
         $('#shippingPrice').html('送料無料');
       }else if(optionState.indexOf('定期') == 1){
+        console.log('pattern3')
+        $('#shippingPrice').html('送料無料');
+      }else{
         console.log('pattern2')
         var shippingTerm = Number(5500) - Number(priceCulc);
         $('#shippingPrice').html('<span class="amount_price">660円</span>(税込)');
         $('#shippingFree').html('※あと' + shippingTerm.toLocaleString() + '円で送料無料')
-      }else{
-        console.log('pattern3')
-        $('#shippingPrice').html('送料無料');
       }
       deliveryTime.on({
         'change': function() {
