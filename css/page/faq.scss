@@ -86,7 +86,7 @@
 				border: 1px solid $basicGreen;
 				display: block;
 				position: relative;
-
+				cursor: pointer;
 				&::before {
 					display: inline-block;
 					content: "Q.";
@@ -105,7 +105,7 @@
 					height: 25px;
 					@include bgSet;
 					background: {
-						image: url("../img/faq/plus.png");
+						image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/faq/plus.png);
 						size: 20px;
 						position: center center;
 					}
@@ -114,7 +114,7 @@
 				&.active {
 					&::after {
 						background: {
-							image: url("../img/faq/minus.png");
+							image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/faq/minus.png);
 							size: 20px;
 							position: center center;
 						}

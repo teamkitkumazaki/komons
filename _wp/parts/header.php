@@ -8,10 +8,10 @@
 			</div>
 			<div id="hNavi">
 				<div id="hLogin" class="nav_item">
-					<a href="https://www.komons-japan.com/?mode=members">ログイン</a>
+					<a href="https://komons-japan.com/account/login">ログイン</a>
 				</div>
 				<div id="hCart" class="nav_item">
-					<a href="https://cart.shop-pro.jp/proxy/basket?shop_id=PA01416697&shop_domain=komons-japan.com">カート</a>
+					<a href="https://komons-japan.com/cart">カート</a>
 				</div>
 			</div>
 		</div>

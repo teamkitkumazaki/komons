@@ -11,7 +11,12 @@
         <a href="{{ routes.account_url }}">ログイン</a>
       </div>
       <div id="hCart" class="nav_item">
-        <a href="/cart">カート</a>
+        <a href="/cart">
+          <span class="text">カート</span>
+          {%- if cart.item_count > 0 -%}
+          <span id="cartItemNum" class="cart_item_num">{{ cart.item_count }}</span>
+          {%- endif -%}
+        </a>
       </div>
     </div>
   </div>

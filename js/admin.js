@@ -241,4 +241,19 @@ if (document.getElementById('cart')) {
   }
 
   setCategoryName();
+
+  function setHistoryBackLink(){
+    var ref = document.referrer;
+    console.log('ref:' + ref);
+    if ( ref.match(/collections/)) {
+
+    }else if(ref.match(/products/)){
+
+    }else{
+      $('#customer_logout_link').attr('href', '/');
+    }
+  }
+
+  setHistoryBackLink();
+
 });

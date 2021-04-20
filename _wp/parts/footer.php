@@ -3,28 +3,28 @@
 		<div class="footer_menu">
 			<div class="fmenu01 fmenu">
 				<ul>
-					<li><a href="https://www.komons-japan.com/?tid=1&mode=f1"><span>Concept</span></a></li>
-					<li><a href="https://www.komons-japan.com/?mode=cate&csid=0&cbid=2421809"><span>Products</span></a></li>
-					<li><a href="https://www.komons-japan.com/?mode=f5"><span>Gift</span></a></li>
+					<li><a href="https://komons-japan.com/pages/concept"><span>Concept</span></a></li>
+					<li><a href="https://komons-japan.com/collections/all-products"><span>Products</span></a></li>
+					<li><a href="https://komons-japan.com/pages/gift-service"><span>Gift</span></a></li>
 					<li><a href="/"><span>Journal</span></a></li>
 				</ul>
 			</div><!-- fmenu -->
 			<div class="fmenu02 fmenu">
 				<ul>
-					<li><a href="https://www.komons-japan.com/?tid=1&mode=f2#fqProduct">注文方法について</a></li>
-					<li><a href="https://www.komons-japan.com/?tid=1&mode=f2#fqPurchase">お支払いについて</a></li>
+					<li><a href="https://www.komons-japan.com/pages/faq#fqProduct">注文方法について</a></li>
+					<li><a href="https://www.komons-japan.com/pages/faq#fqPurchase">お支払いについて</a></li>
 					<li><a href="https://www.komons-japan.com/?mode=f6">ギフトについて</a></li>
-					<li><a href="https://www.komons-japan.com/?tid=1&mode=f2#fqPurchase#fqDelivery">配送について</a></li>
-					<li><a href="https://www.komons-japan.com/?mode=f2#fqCancel">キャンセルポリシー</a></li>
+					<li><a href="https://www.komons-japan.com/pages/faq#fqDelivery">配送について</a></li>
+					<li><a href="https://www.komons-japan.com/pages/faq#fqCancel">キャンセルポリシー</a></li>
 
 				</ul>
 			</div><!-- fmenu -->
 			<div class="fmenu03 fmenu">
 				<ul>
-					<li><a href="https://www.komons-japan.com/?mode=members">マイページ</a></li>
-					<li><a href="https://cart.shop-pro.jp/proxy/basket?shop_id=PA01416697&shop_domain=komons-japan.com">カートを見る</a></li>
-					<li><a href="https://www.komons-japan.com/?mode=privacy">プライバシーポリシー</a></li>
-					<li><a href="https://www.komons-japan.com/?mode=sk">特定商取引法に基づく表記</a></li>
+					<li><a href="https://komons-japan.com/account/login">マイページ</a></li>
+					<li><a href="https://komons-japan.com/cart">カートを見る</a></li>
+					<li><a href="https://komons-japan.com/pages/privacy-policy">プライバシーポリシー</a></li>
+					<li><a href="https://www.komons-japan.com/pages/trade-law">特定商取引法に基づく表記</a></li>
 					<li><a target="_blank" href="https://unsungs-web.com/">運営会社</a></li>
 					<li><a href="https://journal.komons-japan.com/contact">お問い合わせ</a></li>
 				</ul>

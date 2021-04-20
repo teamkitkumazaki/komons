@@ -1,5 +1,23 @@
 $(function() {
 
+  //フロントリダイレクト
+  function redirectColorMeURL(){
+    var currentURL = location.href;
+    console.log(currentURL);
+    if(currentURL.indexOf('/?mode') !=  -1){
+      var redirectURL = currentURL.replace("/?mode", "/redirect?mode");
+      console.log(redirectURL);
+      location.href = redirectURL;
+    }
+    if(currentURL.indexOf('/?pid') !=  -1){
+      var redirectURL = currentURL.replace("/?pid", "/redirect?pid");
+      console.log(redirectURL);
+      location.href = redirectURL;
+    }
+  }
+
+  redirectColorMeURL();
+
   // ローディングアニメーション
   function loadingAnimation() {
     var sliderImg = "https://journal.komons-japan.com/wp-content/themes/komons-theme/img/main_slide01.jpg";

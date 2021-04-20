@@ -82,7 +82,46 @@
         </div><!-- cart_left -->
         <div class="cart_right">
           <div class="option_field_wrap">
-            <div class="delivery_option">
+          <div id="giftOptionSection" class="gift_option">
+            <h2 class="sub_ttl">ギフトオプション</h2>
+            <div class="comp-cart-option">
+              <div id="noshi1" class="option_item open" style="display: none;">
+                <label>
+                  <input id="dateInput" type="checkbox" name="dateInput" value="true">
+                  <span class="radio_checker"></span>
+                  <span class="label_ttl">熨斗の表書きをご希望</span>
+                </label>
+                <div class="input_wrap">
+                  <input id="noshiType" type="text" name="attributes[熨斗の表書き:]">
+                  <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
+                </div>
+              </div><!-- option_item -->
+              <div id="noshi2" class="option_item open" style="display: none;">
+                <label>
+                  <input id="dateInput" type="checkbox" name="dateInput" value="true">
+                  <span class="radio_checker"></span>
+                  <span class="label_ttl">熨斗の名入れをご希望</span>
+                </label>
+                <div class="input_wrap">
+                  <input id="noshiName" type="text" name="attributes[熨斗の名入れ:]">
+                  <p class="example">連名の場合は、その旨ご記載ください。</p>
+                </div>
+              </div><!-- option_item -->
+              <div id="message1" class="option_item open" style="display: none;">
+                <label>
+                  <input id="dateInput" type="checkbox" name="dateInput" value="true">
+                  <span class="radio_checker"></span>
+                  <span class="label_ttl">メッセージカードへの印字をご希望</span>
+                </label>
+                <div class="input_wrap">
+                  <textarea id="messeageCard" type="text" name="messeage_card"></textarea>
+                  <input id="messageCartContent" type="text" name="attributes[メッセージカードの内容:]" value="" style="display: none;">
+                  <p class="example">おおむね60文字以内に収まるようにご記入ください。</p>
+                </div>
+              </div><!-- option_item -->
+            </div><!-- comp-cart-option -->
+          </div><!-- gift_option -->
+          <div class="delivery_option">
               <h2 class="sub_ttl">配送日時指定</h2>
               <div class="comp-cart-option">
                 <div class="option_item open">
@@ -115,46 +154,7 @@
                   </div>
                 </div><!-- option_item -->
               </div><!-- comp-cart-option -->
-            </div>
-            <div id="giftOptionSection" class="gift_option">
-              <h2 class="sub_ttl">ギフトオプション</h2>
-              <div class="comp-cart-option">
-                <div id="noshi1" class="option_item" style="display: none;">
-                  <label>
-                    <input id="dateInput" type="checkbox" name="dateInput" value="true">
-                    <span class="radio_checker"></span>
-                    <span class="label_ttl">熨斗の表書きをご希望</span>
-                  </label>
-                  <div class="input_wrap">
-                    <input id="noshiType" type="text" name="attributes[熨斗の表書き:]">
-                    <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
-                  </div>
-                </div><!-- option_item -->
-                <div id="noshi2" class="option_item" style="display: none;">
-                  <label>
-                    <input id="dateInput" type="checkbox" name="dateInput" value="true">
-                    <span class="radio_checker"></span>
-                    <span class="label_ttl">熨斗の名入れをご希望</span>
-                  </label>
-                  <div class="input_wrap">
-                    <input id="noshiName" type="text" name="attributes[熨斗の名入れ:]">
-                    <p class="example">連名の場合は、その旨ご記載ください。</p>
-                  </div>
-                </div><!-- option_item -->
-                <div id="message1" class="option_item" style="display: none;">
-                  <label>
-                    <input id="dateInput" type="checkbox" name="dateInput" value="true">
-                    <span class="radio_checker"></span>
-                    <span class="label_ttl">メッセージカードへの印字をご希望</span>
-                  </label>
-                  <div class="input_wrap">
-                    <textarea id="messeageCard" type="text" name="messeage_card"></textarea>
-                    <input id="messageCartContent" type="text" name="attributes[メッセージカードの内容:]" value="" style="display: none;">
-                    <p class="example">おおむね60文字以内に収まるようにご記入ください。</p>
-                  </div>
-                </div><!-- option_item -->
-              </div><!-- comp-cart-option -->
-            </div><!-- gift_option -->
+          </div>
             {%- if section.settings.cart_notes_enable -%}
             <div class="comment_option">
               <h2 class="sub_ttl">備考欄</h2>
@@ -186,6 +186,14 @@
       <div id="upsellSection" class="comp-upsell">
         <h2 class="upsell_ttl">よく一緒に購入されている商品</h2>
         <div id='rk-widget-203037' class='rk-bought_together'></div>
+      </div>
+    </div><!-- section_inner -->
+  </section>
+  <section class="section-browse-history">
+    <div class="section_inner">
+      <div id="upsellSection" class="comp-browse-history">
+        <h2 class="upsell_ttl">最近見た商品</h2>
+        <div id='rk-widget-203191' class='rk-recently_viewed'></div>
       </div>
     </div><!-- section_inner -->
   </section>

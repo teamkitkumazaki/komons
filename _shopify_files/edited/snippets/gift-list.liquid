@@ -1,5 +1,5 @@
 <div class="list_item" price="{{ product_child.price | money_without_currency }}" recommend="2">
-	{%- if product.variants.first.inventory_quantity == 0 -%}
+	{%- if product_child.variants.first.inventory_quantity == 0 -%}
 	<a class="item_thumb soldout" href="{{ product_child.url }}">
 		<span class="img_wrap img_warp-{{ product_child.id }}">
 	</a>
