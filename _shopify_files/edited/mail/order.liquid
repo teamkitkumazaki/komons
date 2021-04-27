@@ -2,11 +2,11 @@
 {% if requires_shipping %}
 {% case delivery_method %}
 {% when 'pick-up' %}
-注文の受取の準備が整うと、メールが届きます。
+<p>注文の受取の準備が整うと、メールが届きます。</p>
 {% when 'local' %}
-{{customer.last_name}}{{ customer.first_name }}様、ご注文の品を配達する準備を行っております。
+<p>{{customer.last_name}}{{ customer.first_name }}様、ご注文の品を配達する準備を行っております。</p>
 {% else %}
-{{customer.last_name}}{{ customer.first_name }}様、このたびは、『Komons』オンラインストアをご利用いただき誠にありがとうございます。以下のご注文を承りましたので、ご確認をお願い申し上げます。商品到着まで、このメールは大切に保管しておいてくださいますようお願い申し上げます。<br>※このメールは、ご注文いただきますと自動的に送信されます。
+<p style="margin-bottom: 10px;">{{customer.last_name}}{{ customer.first_name }}様、<br>このたびは、『Komons』オンラインストアをご利用いただき誠にありがとうございます。</p><p>以下のご注文を承りましたので、ご確認をお願い申し上げます。商品到着まで、このメールは大切に保管しておいてくださいますようお願い申し上げます。<br>※このメールは、ご注文いただきますと自動的に送信されます。</p>
 {% endcase %}
 {% if delivery_instructions != blank  %}
 <p><b>配達情報:</b> {{ delivery_instructions }}</p>
@@ -99,7 +99,7 @@
                   <tr>
                     <td>
                       <h2>{{ email_title }}</h2>
-                      <p>{{ email_body }}</p>
+                      {{ email_body }}
                       {% if order_status_url %}
                       <table class="row actions">
                         <tr>
@@ -558,7 +558,7 @@
               {% endif %}
               {% if attributes["メッセージカードの内容:"] %}
                 <div class="detail_wrap" style="margin-bottom: 15px;">
-                  <h4>メッセージカードの内容</h4>
+                  <h4>熨斗の名入れ</h4>
                   <p>{{ attributes['メッセージカードの内容:']}}</p>
                 </div>
               {% endif %}
@@ -588,7 +588,7 @@
             <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
               <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼配送について</h3>
               <div class="detail_content">
-                <p>オンラインからのご注文は基本的に翌営業日、遅くとも3営業日以内の発送致します。発送後、配送には1~2日かかってのお届けとなります。なお、離島などの場合は3日以上かかる場合もございますのでご了承ください。</p>
+                <p style="font-size: 14px;">オンラインからのご注文は基本的に翌営業日、遅くとも3営業日以内の発送致します。発送後、配送には1~2日かかってのお届けとなります。なお、離島などの場合は3日以上かかる場合もございますのでご了承ください。</p>
                 <p>※営業日：月～金(祝日を除く)</p>
                 </div>
             </div><!-- detail_section -->
@@ -602,7 +602,7 @@
               <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼納品書・領収書について</h3>
               <div class="detail_content">
                 <p style="font-size: 14px;">特にご要望がない場合、商品のお届けに際して明細書/納品書などの同梱は致しませんので、予めご了承ください。（本メールをもって受注明細書と代えさせていただきます。）</p>
-                <p>明細書/納品書や領収書をご希望のお客様は、お手数ですが以下のお問い合わせ窓口までご連絡ください。</p>
+                <p style="font-size: 14px;">明細書/納品書や領収書をご希望のお客様は、お手数ですが以下のお問い合わせ窓口までご連絡ください。</p>
               </div>
             </div><!-- detail_section -->
             <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">

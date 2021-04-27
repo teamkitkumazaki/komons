@@ -115,7 +115,7 @@ if (document.getElementById('cart')) {
     }
 
     function setDayDisplay(){
-      for (var i=3; i<14; i++) {
+      for (var i=5; i<16; i++) {
         getDayDisplay(i);
       }
     }
@@ -255,5 +255,25 @@ if (document.getElementById('cart')) {
   }
 
   setHistoryBackLink();
+
+
+  function loadingSubmit(target){
+
+    function init(){
+      $.each(target.find('.comp-submit-button input'), function(index) {
+        $(this).on({
+          'click': function() {
+            $('#submitLoader').addClass('open');
+          }
+        });
+      });
+    }
+
+    init();
+
+  }
+
+  loadingSubmit($('article'));
+
 
 });

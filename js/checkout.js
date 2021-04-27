@@ -6,8 +6,6 @@
 <script type="text/javascript" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
 <script>
 $(function() {
-    /* checkout.attributes : {{ checkout.attributes }} */
-    /* checkout.note : {{ checkout.note }}*/
     function checkoutSet(){
       var i = 0;
       var attributeBox = [];
@@ -18,10 +16,7 @@ $(function() {
       var attributeLength = 0;
       var totelPrice = '{{ checkout.total_price | money_without_currency }}';
       var taxPrice = '{{ checkout.tax_price | money_without_currency }}'
-
-      console.log('決済方法:' + paymentMethod);
-      console.log('合計金額:' + totelPrice);
-      console.log('消費税:' + taxPrice);
+      $('#main-header').html('ご注文頂きありがとうございます。');
 
       function addCODPrice(){
         var plusCOD = Number(totelPrice.replace(/,/g, '')) + Number(330);

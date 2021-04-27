@@ -87,7 +87,7 @@
             <div class="comp-cart-option">
               <div id="noshi1" class="option_item open" style="display: none;">
                 <label>
-                  <input id="dateInput" type="checkbox" name="dateInput" value="true">
+                  <input id="omoteInput" type="checkbox" name="omoteInput" value="true" checked="checked">
                   <span class="radio_checker"></span>
                   <span class="label_ttl">熨斗の表書きをご希望</span>
                 </label>
@@ -98,7 +98,7 @@
               </div><!-- option_item -->
               <div id="noshi2" class="option_item open" style="display: none;">
                 <label>
-                  <input id="dateInput" type="checkbox" name="dateInput" value="true">
+                  <input id="naireInput" type="checkbox" name="naireInput" value="true" checked="checked">
                   <span class="radio_checker"></span>
                   <span class="label_ttl">熨斗の名入れをご希望</span>
                 </label>
@@ -109,7 +109,7 @@
               </div><!-- option_item -->
               <div id="message1" class="option_item open" style="display: none;">
                 <label>
-                  <input id="dateInput" type="checkbox" name="dateInput" value="true">
+                  <input id="messageInput" type="checkbox" name="messageInput" value="true" checked="checked">
                   <span class="radio_checker"></span>
                   <span class="label_ttl">メッセージカードへの印字をご希望</span>
                 </label>
@@ -218,9 +218,18 @@
   </form>
 </article>
 
+<section id="submitLoader" class="comp-submit-loader">
+	<div class="height_adjust"></div>
+	<div class="loader_inner">
+		<span class="loader"></span>
+		<p class="loader_txt">ご注文を処理中です。しばらくお待ちください。</p>
+	</div><!-- loader_inner -->
+</section>
+
 <script>
 $('body').addClass('fixed');
 </script>
+
 
 
 {% schema %}
