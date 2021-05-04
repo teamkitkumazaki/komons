@@ -1,0 +1,70 @@
+<article id="bag" class="page-bag">
+<form action="/cart" method="post">
+<section class="section-bag comp-underpage-section">
+  <div class="section_inner">
+  <div class="comp-section-title center no_line">
+    <span class="title_en"><ls-static-37671>SHOPPING CART</ls-static-37671></span>
+    <h1 class="title_ja"><ls-static-884448>ショッピングカート</ls-static-884448></h1>
+  </div>
+    <div class="bag_flex">
+      <div class="bag_items">
+      <div class="return comp-return-button">
+        <a href="/" id="customer_logout_link"><span><ls-static-489127>お買い物を続ける</ls-static-489127></span></a>
+      </div>
+        {% if cart.item_count == 0 %}
+        <p class="notice"><ls-static-47921>カート内に商品がありません。</ls-static-47921></p>
+        {%- else -%}
+        <div id="backItem" class="comp-bag-item">
+        {%- for item in cart.items -%}
+        <div class="bag_item">
+          <div class="item_img">
+            <img src="{% comment ls-rpl %}{{ item | img_url: 'full' , scale: 2 }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: item, img_url: 'full' , scale: 2 -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}" alt="{{ item.title | escape }}">
+          </div>
+          <div class="item_txt">
+            <p class="prod_name">{{ item.product.title }}</p>
+            <div class="order_lot">
+              <button class="order_button minus"></button>
+              <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0">
+              <button class="order_button plus"></button>
+              <button class="reload_button"></button>
+            </div>
+            <div class="price">{{ item.price | money_with_currency }}</div>
+            <div class="remove">
+            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="text-link text-link--accent" aria-label="{{ 'cart.label.remove' | t: product: item.title }}" data-cart-remove><span>{{ 'cart.general.remove' | t }}</span></a>
+            </div>
+          </div>
+        </div><!-- bag_item -->
+        {%- endfor -%}
+        </div><!-- component-bag-item -->
+        {%- endif -%}
+      </div>
+      <div class="bag_subtotal">
+        <div class="subtotal_inner">
+          <h2 class="title"><ls-static-264897>ご注文金額</ls-static-264897></h2>
+          <div class="comp-order-summary">
+            <div class="summary_item">
+              <span class="item_title"><ls-static-136021>小計</ls-static-136021></span>
+              <span class="price">{{ cart.total_price | money_with_currency }}</span>
+            </div>
+            <div class="summary_item">
+              <span class="item_title"><ls-static-571100>割引など</ls-static-571100></span>
+              <span class="price">{{ cart.total_discounts | money_with_currency }}</span>
+            </div>
+            <div class="summary_item">
+              <span class="item_title bold"><ls-static-374220>合計金額</ls-static-374220></span>
+              <span class="price bold">{{ cart.total_price | money_with_currency }}</span>
+            </div>
+          </div><!-- component-order-summary -->
+          <div class="comment_wrap">
+            <p class="comment"><ls-static-493881>※送料は決済画面にて計算されます。</ls-static-493881></p>
+          </div>
+        </div>
+        <div class="checkout_button">
+          <input type="submit" name="checkout" class="checkout_button" value="お支払い手続きに進む">
+        </div>
+      </div><!-- bag_subtotal -->
+    </div><!-- bag_flex -->
+  </div><!-- inner -->
+</section>
+</form>
+</article>

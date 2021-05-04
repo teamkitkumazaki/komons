@@ -1,0 +1,110 @@
+<article id="signup" class="page-signup">
+	<div class="section_inner">
+		<div class="comp-admin-title center">
+			<div class="text_inner">
+				<h1 class="title_ja">アカウントの新規作成</h1>
+				<span class="title_en">Create Account</span>
+			</div>
+		</div>
+		<div class="comp-form-wrap">
+		{%- assign formId = 'RegisterForm' -%}
+		{% form 'create_customer', id: formId, novalidate: 'novalidate' %}
+			{% include 'form-status', form: form, form_id: formId %}
+			<div class="form_input">
+				<div class="form_item">
+					<label>お名前</label>
+					<div class="input_wrap_name">
+						<div class="input_wrap">
+							<input
+								type="text"
+								name="customer[last_name]"
+								id="{{ formId }}-LastName"
+								{% if form.last_name %}
+									value="{{ form.last_name }}"
+								{% endif %}
+								autocomplete="family-name"
+								placeholder="姓"
+							>
+						</div>
+						<div class="input_wrap">
+							<input
+								type="text"
+								name="customer[first_name]"
+								id="{{ formId }}-FirstName"
+								{% if form.first_name %}
+									value="{{ form.first_name }}"
+								{% endif %}
+								autocomplete="given-name"
+								placeholder="名"
+							>
+						</div>
+					</div>
+				</div>
+				<div class="form_item">
+					<label>メールアドレス</label>
+					<div class="input_wrap">
+						<input
+							type="email"
+							name="customer[email]"
+							id="{{ formId }}-email"
+							class="{% if form.errors contains 'email' %} input--error{% endif %}"
+							{% if form.email %} value="{{ form.email }}"{% endif %}
+							autocorrect="off"
+							autocapitalize="off"
+							autocomplete="email"
+							aria-required="true"
+							{%- if form.errors contains 'email' -%}
+								class="input--error"
+								aria-invalid="true"
+								aria-describedby="{{ formId }}-email-error"
+							{%- endif -%}
+						>
+						{%- if form.errors contains 'email' -%}
+						<span id="{{ formId }}-email-error" class="input-error-message">
+							<span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+							{% include 'icon-error' %}
+							<span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+						</span>
+						{%- endif -%}
+					</div>
+				</div>
+				<div class="form_item">
+					<label>パスワード</label>
+					<div class="input_wrap">
+						<input
+							type="password"
+							name="customer[password]"
+							id="{{ formId }}-password"
+							class="{% if form.errors contains 'password' %} input--error{% endif %}"
+							aria-required="true"
+							{%- if form.errors contains 'password' -%}
+								class="input--error"
+								aria-invalid="true"
+								aria-describedby="{{ formId }}-password-error"
+							{%- endif -%}
+						>
+						{%- if form.errors contains 'password' -%}
+							<span id="{{ formId}}-password-error" class="input-error-message">
+								{% include 'icon-error' %}
+								<span>{{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.</span>
+							</span>
+						{%- endif -%}
+					</div>
+				</div>
+			</div>
+			<div class="comp-submit-button">
+				<button><span>アカウントを作成</span></button>
+				<input
+					type="submit"
+					value="{{ 'customer.register.submit' | t }}"
+					class="btn"
+				>
+			</div>
+			<p class="privacy_text">メールアドレスのご提供を以て、<span><a href="/pages/privacy-policy">プライバシーポリシー</a>に同意したとします。</span></p>
+		{% endform %}
+		</div><!-- comp-form-wrap -->
+	</div><!-- section_inner -->
+</article>
+<script>
+	$('body').addClass('fixed');
+</script>

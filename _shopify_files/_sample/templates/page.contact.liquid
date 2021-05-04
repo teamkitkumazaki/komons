@@ -1,0 +1,77 @@
+<article id="contact" class="under-page">
+{%- assign formId = 'ContactForm' -%}
+{% form 'contact', id: formId %}
+{% if form.posted_successfully? %}
+<script>
+window.location = "https://halsports.myshopify.com/pages/thankyou";
+</script>
+{%- else -%}
+  <section class="section-lead">
+    <div class="section_inner">
+    <div class="comp-section-title center">
+      <span class="title_en"><ls-static-291770>CONTACT</ls-static-291770></span>
+      <h1 class="title_ja"><ls-static-331391>お問い合わせはこちらから</ls-static-331391></h1>
+    </div>
+    </div>
+    <!-- section_inner -->
+  </section>
+  <section class="section-form">
+    <div class="section_inner">
+      <div id="form_wrap">
+        <div role="form" class="wpcf7" id="wpcf7-f8-o1" lang="ja" dir="ltr">
+            <div class="form_wrap">
+              <label><ls-static-308792>お問い合わせ項目</ls-static-308792></label>
+              <select id="ContactFormFlavor"
+              class="form01"  name="contact[Category]">
+                <option value="" number="0">---</option>
+                <option value="商品の購入について" number="1"><ls-static-104761>商品の購入について</ls-static-104761></option>
+                <option value="商品の取り扱いについて" number="2"><ls-static-933906>商品の取り扱いについて</ls-static-933906></option>
+                <option value="プログラム導入について" number="3"><ls-static-367305>プログラム導入について</ls-static-367305></option>
+                <option value="取材などに関するお問い合わせ" number="4"><ls-static-964359>取材などに関するお問い合わせ</ls-static-964359></option>
+                <option value="その他" number="5"><ls-static-722190>その他</ls-static-722190></option>
+              </select>
+            </div>
+            <div class="form_wrap">
+              <div class="flex_wrap">
+                <div class="form_left">
+                  <label><ls-static-316359>お名前</ls-static-316359></label>
+                  <input type="text" id="{{ formId }}-name" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+                </div>
+                <div class="form_right">
+                  <label><ls-static-346705>メールアドレス</ls-static-346705></label>
+                  <input
+                    type="email"
+                    id="{{ formId }}-email"
+                    name="contact[email]"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                    aria-required="true"
+                    {%- if form.errors contains 'email' -%}
+                      class="input--error"
+                      aria-invalid="true"
+                      aria-describedby="{{ formId }}-email-error"
+                    {%- endif -%}
+                    >
+                </div>
+              </div>
+              <!-- flex_wrap -->
+            </div>
+            <!-- form_wrap -->
+            <div class="form_wrap">
+              <label><ls-static-189918>お問い合わせ内容</ls-static-189918></label>
+              <textarea rows="10" id="{{ formId }}-message" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+            </div>
+            <div class="submit_wrap">
+              <div class="comp-submit-button size form">
+                <button><span id="formMessage"><ls-static-464586>未入力項目があります</ls-static-464586></span></button>
+                <input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- inner -->
+  </section>
+  {% endif %}
+  {% endform %}
+</article>

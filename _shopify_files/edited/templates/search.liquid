@@ -1,0 +1,79 @@
+{% paginate search.results by 10 %}
+
+<article id="itemGroupList" class="page-item-group-list">
+  <section class="section-basic-item">
+		<div class="section_inner">
+			<div class="section_ttl search_ttl">
+				<h1><span>Item List</span><font>“{{ search.terms }}”の検索結果</font></h1>
+				<form action="{{ routes.search_url }}" method="get" role="search" class="search-form search-page-form">
+					<div id="searchSubmit2" class="key_input">
+						<input type="text" name="q" placeholder="キーワードを入れて検索" value="{{ search.terms }}">
+						<button class="search_submit">検索</button>
+					</div>
+				</form>
+			</div>
+			<div class="comp-item-group">
+				{% if search.performed and search.results_count == 0 %}
+				<p class="no_entry">該当する商品がありません。</p>
+				{% endif %}
+				{% paginate search.results by 20 %}
+				{%- for product in search.results -%}
+				{%- if product.object_type == 'product' -%}
+				<div class="item_list">
+					<div class="img_wrap">
+						<a href="{{ product.url }}" class="img_link_{{ product.id }}"></a>
+						<style>
+							.img_link_{{ product.id }} {
+								background-image: url({{ product.featured_image | img_url: 'master'}});
+							}
+						</style>
+					</div>
+					<div class="txt_wrap">
+						<a class="prod_name" href="{{ product.url }}">
+							<span class="ja">{{ product.metafields.custom_fields["category_name"] }}</span>
+							<span class="en">{{ product.metafields.custom_fields["product_name"] }}</span>
+						</a>
+						<span class="price">{{ product.price | money_without_currency }}円(税抜)</span>
+						{%- if product.type == "gift" -%}
+						<div class="button_wrap">
+							<a class="full" href="{{ product.url }}"><span>詳細を見る</span></a>
+						</div>
+						{%- else -%}
+						<div class="button_wrap">
+							<a href="{{ product.url }}"><span>詳細を見る</span></a>
+							<div class="comp-list-cart-button">
+								<div class="cartjs_box">
+									{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+									<select name="id" id="ProductSelect-{{ product.id }}" class="product-form__variants no-js" style="display: none;">
+										{% for variant in product.variants %}
+											<option value="{{ variant.id }}"
+												{%- if variant == current_variant %} selected="selected" {%- endif -%}
+											>
+												{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+											</option>
+										{% endfor %}
+									</select>
+									<div class="cartin_button">
+										<button><span>カートに入れる</span></button>
+										<input id="cartSubmit" type="submit" value="カートに入れる">
+									</div>
+									{% endform %}
+								</div>
+							</div>
+						</div>
+						{%- endif -%}
+					</div>
+				</div>
+				{%- endif -%}
+				{%- endfor -%}
+				{% endpaginate %}
+			</div>
+		</div>
+	</section>
+	{% section 'section-back' %}
+</article>
+<script>
+$('body').addClass('fixed');
+</script>
+
+{% endpaginate %}

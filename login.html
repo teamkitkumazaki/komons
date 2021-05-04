@@ -25,6 +25,7 @@
 	<link rel="dns-prefetch" href="https://www.komons-japan.com">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="slick/slick.css">
+	<link rel="stylesheet" href="mypage_css/admin.css">
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="slick/slick.min.js"></script>
 	<script type="text/javascript" src="js/layout.js"></script>
@@ -50,33 +51,67 @@
 		</div>
 	</header>
 	<article id="login" class="page-login">
-		<div class="section_inner">
-			<div class="comp-admin-title center">
+	<div class="section_inner" id="CustomerLoginForm">
+		<div class="comp-admin-title center">
+			<div class="text_inner">
 				<h1 class="title_ja">ログイン</h1>
 				<span class="title_en">Log in</span>
 			</div>
-			<form class="comp-form-wrap">
+		</div>
+		<div class="comp-form-wrap">
+		<form method="post" action="/account/login" id="customer_login" accept-charset="UTF-8" novalidate="novalidate"><input type="hidden" name="form_type" value="customer_login"><input type="hidden" name="utf8" value="✓">
+			<div class="form_input">
+				<div class="form_item">
+					<label>メールアドレス</label>
+					<div class="input_wrap">
+						<input type="email" name="customer[email]" id="CustomerEmail" placeholder="example@komons-japan.com" autocomplete="email" autocorrect="off" autocapitalize="off">
+					</div>
+				</div>
+				<div class="form_item">
+					<label>パスワード</label>
+					<div class="input_wrap">
+						<input type="password" value="" name="customer[password]" id="CustomerPassword">
+					</div>
+				</div>
+			</div>
+			<div class="comp-submit-button">
+				<button><span>ログイン</span></button>
+				<input type="submit" class="btn" value="ログイン">
+			</div>
+		<input type="hidden" name="return_url" value="/account"></form>
+		<p class="recover-link">
+			<a href="#recover" id="RecoverPassword">パスワードをお忘れの方はこちら</a>
+		</p>
+		<p class="register-link">
+			<a href="/account/register">アカウントをお持ちでない方はこちら</a>
+		</p>
+		</div>
+		<p class="subscription-link">
+			<a href="#">2021年3月以前よりの定期購入情報についてはこちら</a>
+		</p>
+	</div>
+	<div class="section_inner hide" id="RecoverPasswordForm">
+		<div class="comp-admin-title center">
+			<h1 class="title_ja">パスワードの再設定</h1>
+			<span class="title_en">Reset Password</span>
+		</div>
+		<div class="comp-form-wrap">
+			<form method="post" action="/account/recover" accept-charset="UTF-8"><input type="hidden" name="form_type" value="recover_customer_password"><input type="hidden" name="utf8" value="✓">
 				<div class="form_input">
 					<div class="form_item">
 						<label>メールアドレス</label>
 						<div class="input_wrap">
-							<input type="email">
-						</div>
-					</div>
-					<div class="form_item">
-						<label>パスワード</label>
-						<div class="input_wrap">
-							<input type="password">
-						</div>
+							<input type="email" value="" name="email" id="RecoverEmail" placeholder="example@komons-japan.com" autocorrect="off" autocapitalize="off"></div>
 					</div>
 				</div>
 				<div class="comp-submit-button">
-					<button><span>ログイン</span></button>
-					<input type="submit" value="ログイン">
+					<button><span>パスワード再設定用メールを送信</span></button>
+					<input type="submit" class="btn" value="送信する">
 				</div>
-			</form><!-- comp-form-wrap -->
-		</div><!-- section_inner -->
-	</article>
+			</form>
+		</div>
+	</div>
+</article>
 	<footer>
 		<div class="footer_wrap">
 			<div class="footer_menu">

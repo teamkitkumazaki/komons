@@ -1,5 +1,23 @@
 $(function() {
 
+  //フロントリダイレクト
+  function redirectColorMeURL(){
+    var currentURL = location.href;
+    console.log(currentURL);
+    if(currentURL.indexOf('/?mode') !=  -1){
+      var redirectURL = currentURL.replace("/?mode", "/redirect?mode");
+      console.log(redirectURL);
+      location.href = redirectURL;
+    }
+    if(currentURL.indexOf('/?pid') !=  -1){
+      var redirectURL = currentURL.replace("/?pid", "/redirect?pid");
+      console.log(redirectURL);
+      location.href = redirectURL;
+    }
+  }
+
+  redirectColorMeURL();
+
   // ローディングアニメーション
   function loadingAnimation() {
     var sliderImg = "https://journal.komons-japan.com/wp-content/themes/komons-theme/img/main_slide01.jpg";
@@ -10,7 +28,6 @@ $(function() {
      var popBg = $('#popBg');
      var closeBanner = target.find('#closeBanner');
      var popClose = target.find('#popCloseButton');
-     console.log(urlParam);
 
      function init(){
        target.addClass('open');
@@ -323,7 +340,7 @@ $(function() {
   if (document.getElementById('index')) {
 
   }
-  
+
   // キーワード検索 ヘッダー
   function keywordSearchControll2(target){
     var wordInput = target.find('input[type="text"]');
@@ -343,22 +360,6 @@ $(function() {
   }
 
   keywordSearchControll2($('#searchSubmit'));
-
-  // リード文の出力
-  function readTxtMove(target) {
-    var strInnerHTML = target.html();
-    $('#excerpt').prepend(strInnerHTML);
-    target.remove();
-    if (document.getElementById('cartNotice')) {
-      var strCartNotice = $('#cartNotice').html();
-      $('.cart_button').append(strCartNotice);
-      $('#cartNotice').remove();
-    }
-  }
-
-  if (document.getElementById('itemDetail')) {
-    readTxtMove($('#leadTxt'));
-  }
 
   // 商品詳細情報の開閉部分
   function detailToggleControll(target) {
@@ -399,6 +400,30 @@ $(function() {
     detailToggleControll($('#detailToggle'));
   }
 
+  //関連商品プラグインをslick用いて表示させる
+  function relatedProductArrange(target){
+    var relatedInfo = [];
+    var relatedSlider = $('#relatedSlider');
+
+    function init(){
+      $.each(target.find('li'), function(index) {
+        relatedInfo[index] = $(this).html();
+        $(this).remove();
+      });
+      $.each(relatedSlider.find('.item_box'), function(index) {
+        $(this).append(relatedInfo[index]);
+      });
+    }
+
+    init();
+
+  }
+  if (document.getElementById('itemDetail')) {
+    relatedProductArrange($('.relatedWrap'));
+  }
+
+
+
   //商品詳細のバリエーション選択欄
   function variationToggle(target){
     var toggleState = 0;
@@ -407,6 +432,9 @@ $(function() {
     var buttonHeight = button.outerHeight();
     var toggle = target.find('.display_toggle');
     var toggleHeight = toggle.outerHeight();
+    var currentURL = location.href;
+    var itemNumber = currentURL.split("products/");
+    var kataban = itemNumber.slice(-1)[0];
 
     function toggleMove(){
       var buttonHeight = button.outerHeight();
@@ -424,6 +452,16 @@ $(function() {
     }
 
     function init(){
+      $.each(target.find('a'), function(index) {
+        var linkHref = $(this).attr('href');
+        var linkText = $(this).find('.title').html();
+        var variationKataban = linkHref.split("products/");
+        if (kataban == variationKataban.slice(-1)[0]) {
+          $(this).addClass('current');
+          $('#selectedVar').html(linkText);
+        }
+      });
+      target.find()
       wrap.css({height: buttonHeight + 'px'});
       button.on({
         'click': function() {
@@ -439,65 +477,6 @@ $(function() {
     variationToggle($('#variationToggle'));
   }
 
-  // 商品一覧ページのソート機能実装
-
-  function filterProduct(target) {
-    var dropdown = document.getElementById("cat");
-    var optionVal = [];
-
-    function onCatChange() {
-      var u = dropdown.value;
-      if (document.getElementById('itemList')) {
-        var url = 'https://www.komons-japan.com' + u + '#products';
-      }else if(document.getElementById('itemDetail')) {
-        var url = 'https://www.komons-japan.com' + u;
-      }
-
-      if (u !== 'undefined') {
-        location.href = url;
-      }
-    }
-
-    function init() {
-      var urlHash = location.hash;
-      if (0 < urlHash.length) {
-        var scroll = $(urlHash).offset().top;
-        var h = $(window).width();
-
-        if (h > 1100) {
-          var adScroll = scroll - 100;
-        } else {
-          var adScroll = scroll - 100;
-        }
-
-        $("html, body").animate({
-          scrollTop: adScroll
-        }, 0);
-      }
-
-      var search = location.search;
-      $.each(target.find('.option-1'), function(index) {
-        optionVal[index] = $(this).attr('links');
-        if (optionVal[index] = search) {
-          target.val(optionVal[index]);
-        }
-      });
-
-      target.change(function() {
-        onCatChange();
-      });
-    }
-
-    init();
-
-  }
-
-  if (document.getElementById('itemList')) {
-    filterProduct($('#cat'));
-  }
-  if (document.getElementById('itemDetail')) {
-    filterProduct($('#cat'));
-  }
 
   //アンカーリンクで追従ヘッダーの分オフセットする
   window.onload = function() {
@@ -857,25 +836,52 @@ $(function() {
     var optionSelect02 = $('#optionSelect02');
     var fixedPopButton = $('#fixedPopButton');
     var popBg = $('#popBg');
+    var giftOptionFields = $('.giftOptionFields');
+    var optionValue = [];
     var mizuhiki = $('.mizuhiki');
     var popClose = $('#popClose');
     var optionFix = $('#optionFix');
     var tesageState = $("input[name='tesage']");
+    var messageState = $('input[name="message"]');
     var muzihikiState = $('input[name="mizuhiki"]');
     var tesageDisplay = $('#tesageDisplay');
     var mizuhikiDisplay = $('#mizuhikiDisplay');
+    var tesageCheck;
+    var mizuhikiCheck;
+    var messageCheck;
+
+    function withMessage(){
+      if(tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki'){
+        giftOptionFields.val(optionValue[7]);
+      }else if(tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki'){
+        giftOptionFields.val(optionValue[5]);
+      }else if(tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        giftOptionFields.val(optionValue[6]);
+      }else if(tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        giftOptionFields.val(optionValue[4]);
+      }
+    }
+
+    function withoutMessage(){
+      if(tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki'){
+        giftOptionFields.val(optionValue[3]);
+      }else if(tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki'){
+        giftOptionFields.val(optionValue[1]);
+      }else if(tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        giftOptionFields.val(optionValue[2]);
+      }else if(tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        giftOptionFields.val(optionValue[0]);
+      }
+    }
 
     function optionShifter(){
-      var tesageCheck = $("input[name='tesage']:checked").val();
-      var mizuhikiCheck = $("input[name='mizuhiki']:checked").val();
-      if(tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki'){
-        $('#0-3').click();
-      }else if(tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki'){
-        $('#0-1').click();
-      }else if(tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki'){
-        $('#0-2').click();
-      }else if(tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki'){
-        $('#0-0').click();
+      tesageCheck = $("input[name='tesage']:checked").val();
+      mizuhikiCheck = $("input[name='mizuhiki']:checked").val();
+      messageCheck = $("input[name='message']:checked").val();
+      if(messageCheck == 'message'){
+        withMessage();
+      }else{
+        withoutMessage();
       }
     }
 
@@ -908,7 +914,9 @@ $(function() {
 
     function init(){
 
-      $('#0-0').click();
+      giftOptionFields.find("option").each(function(index) {
+        optionValue[index] = $(this).attr('value');
+      });
 
       optionPopClose();
 
@@ -960,7 +968,7 @@ $(function() {
         }
       });
 
-      tesageState.on({
+      messageState.on({
         'click': function(){
           optionShifter();
         }
@@ -974,6 +982,92 @@ $(function() {
   if (document.getElementById('itemDetail')) {
     optionPopup($('#optionPop'));
   }
+
+  //定期購入 サイクル選択ポップアップ
+  function subscriptionSelect(target){
+    var optionSelecter = target.find('select');
+    var purchaseWaySelect = [];
+    var cycleSelectOption = [];
+    var cycleSelect = [];
+    var variationFields = [];
+    var optionSelect = $('#optionSelect');
+    var optionSelect02 = $('#optionSelect02');
+    var giftOptionFields = $('.giftOptionFields');
+    var popBg = $('#popBg');
+    var optionState = 0;
+    var cycleList = $('#cycleList');
+
+    function purchaseWayShifter(){
+      if(optionState == 0){
+        purchaseWaySelect[1].click();
+        giftOptionFields.val(variationFields[1]);
+        optionSelecter.val(cycleSelectOption[1]);
+        optionSelecter.click();
+        $('input[name=sub_cycle]').val(["monthly1"]);
+        optionState = 1;
+      }else{
+        purchaseWaySelect[0].click();
+        giftOptionFields.val(variationFields[0]);
+        optionSelecter.val(cycleSelectOption[1]);
+        optionSelecter.click();
+        $('input[name=sub_cycle]').val(["monthly1"]);
+        optionState = 0;
+      }
+    }
+
+    function init(){
+      target.find("input[name=paywhirl-plan-selector-group]").each(function(index) {
+        purchaseWaySelect[index] = $(this);
+      });
+      target.find("option").each(function(index) {
+        cycleSelectOption[index] = $(this).val();
+      });
+      giftOptionFields.find("option").each(function(index) {
+        variationFields[index] = $(this).val();
+        console.log('optionVal:' + variationFields[index]);
+      });
+
+      cycleList.find("input[name=sub_cycle]").each(function(index) {
+        var indexNum = Number(index);
+        var num = indexNum + 1;
+        cycleSelect[index] = $(this);
+        cycleSelect[index].on({
+          'click': function(){
+            optionSelecter.val(cycleSelectOption[num]);
+          }
+        });
+      });
+      purchaseWaySelect[0].click();
+
+      optionSelect.on({
+        'click': function(){
+          purchaseWayShifter()
+        }
+      });
+
+      optionSelect02.on({
+        'click': function(){
+          purchaseWayShifter()
+        }
+      });
+
+      popBg.on({
+        'click': function(){
+          purchaseWayShifter()
+        }
+      });
+    }
+
+
+    init();
+
+  }
+
+  if (document.getElementById('subscriptionTable')) {
+    subscriptionSelect($('#subscriptionTable'));
+  }
+
+
 
   //ギフト商品一覧ページ 商品フィルター
   function giftProductFilter(target){
@@ -992,7 +1086,6 @@ $(function() {
         target.html('');
         for (var i=0; i<itemLength; i++) {
           if(priceMin < giftListArray[i].price && giftListArray[i].price < priceMax){
-            console.log('index:' + i);
             target.append(giftListArray[i].html);
           }
         }
@@ -1012,73 +1105,15 @@ $(function() {
       });
     }
 
-    function priceDescSort(){
-      giftListArray.sort(function(a,b){
-        if(a.price< b.price) return -1;
-        if(a.price > b.price) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
-    function priceAscSort(){
-      giftListArray.sort(function(a,b){
-        if(a.price > b.price) return -1;
-        if(a.price < b.price) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
-    function popularSort(){
-      giftListArray.sort(function(a,b){
-        if(a.number < b.number) return -1;
-        if(a.number > b.number) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
-    function recommendSort(){
-      giftListArray.sort(function(a,b){
-        if(a.recommend < b.recommend) return -1;
-        if(a.recommend > b.recommend) return 1;
-        return 0;
-      });
-      displaySortedList();
-    }
-
     function init(){
       target.find(".list_item").each(function(index) {
         $(this).attr('number', index);
-        var propBox = $(this).find('.product_type');
-        var contentIcon = $(this).find('.content_icon');
-        var propRecommend = propBox.attr('recommend');
-        $(this).attr('recommend', propRecommend);
-        var propType = propBox.attr('prop').split(',');
-        for (var i=0; i<propType.length; i++) {
-          contentIcon.append('<div class="icon"><span class="' + propType[i] + '"></span></div>');
-        }
         giftListArray[index] = {
           html : $(this),
           price : Number($(this).attr('price').replace(/,/g, '')),
-          recommend : Number($(this).attr('recommend')),
-          number : Number($(this).attr('number'))
         };
       });
 
-      $('#arrayFilter').on({
-        'change': function() {
-          const expr = $(this).val();
-          switch (expr) {
-            case 'recommend': recommendSort();break;
-            case 'popular': popularSort();break;
-            case 'priceDesc': priceDescSort();break;
-            case 'priceAsc': priceAscSort();break;
-            default: console.log('error');
-          }
-        }
-      });
       $('input[name="price_filter"]').on({
         'click': function() {
           var clickId = $(this).attr('id');

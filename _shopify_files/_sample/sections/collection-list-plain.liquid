@@ -1,0 +1,23 @@
+<section class="section-products plain">
+  <div class="section_inner">
+    <div class="comp-section-title center no_line">
+      <span class="title_en"><ls-static-114518>PRODUCT LIST</ls-static-114518></span>
+      <h2 class="title_ja"><ls-static-521067>商品一覧</ls-static-521067></h2>
+    </div>
+    <div id="productListWrap" class="comp-product-list-plain">
+    {% for product in collection.products %}
+    <div class="product_item_plain {{ collection.metafields.custom_fields["category_type"] }}">
+      <a class="img_wrap" href="{{ product.url }}" style="background-image: url({% comment ls-rpl %}{{ product.featured_image | img_url: 'full', scale: 2 }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: product.featured_image, img_url: 'full', scale: 2 -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %})"></a>
+      <div class="product_name">
+        <a class="name" href="{{ product.url }}">{{ product.title }}</a>
+        <span class="price">{{ product.price | money }}<ls-static-719614>(税抜)</ls-static-719614></span>
+        <p class="desc">{{ product.metafields.custom_fields["desc_ttl"] }}</p>
+        <div class="link_button">
+          <a href="{{ product.url }}"><span><ls-static-248834>詳細を見る</ls-static-248834></span></a>
+        </div>
+      </div>
+    </div>
+        {% endfor %}
+    </div><!-- comp-product-list -->
+  </div><!-- section_inner -->
+</section>

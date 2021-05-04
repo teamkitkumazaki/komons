@@ -1,0 +1,264 @@
+{% if fulfillment.item_count == item_count %}
+  {% capture shipment_name %}あなたのご注文{% endcapture %}
+{% else %}
+  {% capture shipment_name %}あなたのご注文されたアイテム{% endcapture %}
+{% endif %}
+
+{% capture email_title %}商品発送のお知らせ{% endcapture %}
+{% capture email_body %}ご注文頂いた商品の発送が完了いたしました。商品がお手元に届くまで、今しばらくお待ち下さい。<br><br>万が一、商品や梱包状態などについて至らない点などございましたら、本メール下部記載のお問い合わせ窓口までご連絡ください。<br>商品についてのご感想やご意見もお待ちしております！{% endcapture %}
+{% capture email_emphasis %}配達完了予定日 <strong>{{fulfillment.estimated_delivery_at | date: "%B %d, %Y"}}</strong>{% endcapture %}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  <title>{{ email_title }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
+  <style>
+  body{
+    font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    color: #00381f;
+  }
+  td{
+    font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
+    color: #00381f !important;
+  }
+  strong{
+    font-weight: normal !important;
+  }
+    .button__cell { background: {{ shop.email_accent_color }}; }
+    a, a:hover, a:active, a:visited { color: {{ shop.email_accent_color }}; }
+  </style>
+</head>
+
+  <body>
+
+    <table class="body">
+      <tr>
+        <td>
+        <table class="header row">
+          <tr>
+            <td class="header__cell">
+              <center>
+                <table class="container">
+                  <tr>
+                    <td>
+                      <div class="img_wrap" style="padding: 0;"><img class="logo" src="https://img07.shop-pro.jp/PA01416/697/etc/header_logo.png" width="100%" /></div>
+                      <span class="order-number__text" style="display: block;font-size: 16px;margin-top: 20px;"></span>
+                    </td>
+                  </tr>
+                </table>
+              </center>
+            </td>
+          </tr>
+        </table>
+  <tr>
+    <td class="header__cell">
+      <center>
+
+          <table class="row content">
+          <tr>
+          <td class="content__cell">
+          <center>
+          <table class="container">
+            <tr>
+              <td>
+            <h2>{{ email_title }}</h2>
+              <span class="order-number__text" style="display: block; margin-bottom: 20px;">ご注文番号 {{ order_name }}</span>
+              <p>{{ email_body }}</p>
+            {% if fulfillment.estimated_delivery_at %}
+              <p>{{ email_emphasis }}</p>
+            {% endif %}
+            {% if order_status_url %}
+              <table class="row actions">
+              <tr>
+              <td class="empty-line"> </td>
+              </tr>
+              <tr>
+              <td class="actions__cell">
+              <table class="button main-action-cell">
+              <tr>
+                <td class="button__cell">
+                  <a href="{{ order_status_url }}" class="button__text" style="background-color: #00381f; font-size:20px; letter-spacing: 0.66px; border-radius: 5px; text-align: center;">ご注文内容を確認する</a>
+                </td>
+              </tr>
+              </table>
+              </td>
+            </tr>
+          </table>
+
+            {% else %}
+              {% if shop.url %}
+    <table class="row actions">
+      <tr>
+        <td class="actions__cell">
+          <table class="button main-action-cell">
+            <tr>
+              <td class="button__cell"><a href="{{ shop.url }}" class="button__text">ショップにアクセスする</a></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+{% endif %}
+
+            {% endif %}
+            {% if fulfillment.tracking_numbers.size > 0 %}
+  <p class="disclaimer__subtext">
+    <br/>
+    {% if fulfillment.tracking_numbers.size == 1 and fulfillment.tracking_company and fulfillment.tracking_url %}
+      {{ fulfillment.tracking_company }} 追跡番号: <a href="{{ fulfillment.tracking_url }}">{{ fulfillment.tracking_numbers.first }}</a>
+    {% elsif fulfillment.tracking_numbers.size == 1 %}
+      追跡番号: {{ fulfillment.tracking_numbers.first }}
+    {% else %}
+      追跡番号:<br />
+      {% for tracking_number in fulfillment.tracking_numbers %}
+        {{ tracking_number }}<br />
+      {% endfor %}
+    {% endif %}
+  </p>
+{% endif %}
+
+
+            </td>
+          </tr>
+        </table>
+      </center>
+    </td>
+  </tr>
+</table>
+
+          <table class="row section">
+  <tr>
+    <td class="section__cell">
+      <center>
+        <table class="container">
+          <tr>
+            <td>
+              <h3>配送中のアイテム</h3>
+            </td>
+          </tr>
+        </table>
+        <table class="container">
+          <tr>
+            <td>
+
+
+<table class="row">
+  {% for line in fulfillment.fulfillment_line_items %}
+  <tr class="order-list__item">
+    <td class="order-list__item__cell">
+      <table>
+        <td>
+          {% if line.line_item.image %}
+            <img src="{{ line.line_item | img_url: 'compact_cropped' }}" align="left" width="60" height="60" class="order-list__product-image"/>
+          {% endif %}
+        </td>
+        <td class="order-list__product-description-cell">
+          {% if line.line_item.product.title %}
+            {% assign line_title = line.line_item.product.title %}
+          {% else %}
+            {% assign line_title = line.line_item.title %}
+          {% endif %}
+
+          {% if line.quantity < line.line_item.quantity %}
+            {% capture line_display %} {{ line.quantity }} of {{ line.line_item.quantity }} {% endcapture %}
+          {% else %}
+            {% assign line_display = line.line_item.quantity  %}
+          {% endif %}
+
+          <span class="order-list__item-title">{{ line_title }} × {{ line_display }}</span><br/>
+
+          {% if line.line_item.variant.title != 'Default Title' %}
+            <span class="order-list__item-variant">{{ line.line_item.variant.title }}</span>
+          {% endif %}
+        </td>
+      </table>
+    </td>
+  </tr>{% endfor %}
+</table>
+
+
+            </td>
+          </tr>
+        </table>
+      </center>
+    </td>
+  </tr>
+</table>
+
+<table class="row detail container">
+<tr>
+  <td class="section__cell" style="padding: 0;">
+    <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+      <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼配送について</h3>
+      <div class="detail_content">
+        <p style="font-size: 14px;">オンラインからのご注文は基本的に翌営業日、遅くとも3営業日以内の発送致します。発送後、配送には1~2日かかってのお届けとなります。なお、離島などの場合は3日以上かかる場合もございますのでご了承ください。</p>
+        <p style="font-size: 14px;">※営業日：月～金(祝日を除く)</p>
+        </div>
+    </div><!-- detail_section -->
+    <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+      <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼納品書・領収書について</h3>
+      <div class="detail_content">
+        <p style="font-size: 14px;">特にご要望がない場合、商品のお届けに際して明細書/納品書などの同梱は致しませんので、予めご了承ください。（本メールをもって受注明細書と代えさせていただきます。）</p>
+        <p style="font-size: 14px;">明細書/納品書や領収書をご希望のお客様は、お手数ですが以下のお問い合わせ窓口までご連絡ください。</p>
+      </div>
+    </div><!-- detail_section -->
+    <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+      <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼代引き決済について</h3>
+      <div class="detail_content">
+        <p style="font-size: 14px;">別途、代引き手数料が発生します。商品合計金額に代引き手数料（税込330円）を加算した金額を、お届けの際に配達員にお支払いください。</p>
+        </div>
+    </div><!-- detail_section -->
+    <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+      <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼FAQ</h3>
+      <div class="detail_content">
+        <p style="font-size: 14px;">その他のご質問については<a style="font-size: 14px;" href="{{shop.url}}/pages/faq" style="color: #068acc;">FAQページ</a>をご覧ください。</p>
+      </div>
+    </div><!-- detail_section -->
+    <div class="detail_section" style="padding-bottom: 30px;">
+      <h3 class="detail_ttl" style="font-weight:normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼お問い合わせ窓口</h3>
+      <div class="detail_content">
+        <p style="font-size: 14px;">ホームケアブランド『Komons』カスタマーサポート（運営元：㈱Unsungs&Web）<br>E_Mail：info@komons-japan.com<br>受付時間：月曜日～金曜日までのAM9:00～PM6:00（祝日除く）</p>
+      </div>
+    </div><!-- detail_section -->
+  </td>
+</table>
+
+<table class="row footer container">
+  <tr>
+    <td class="section__cell" style="padding: 0;">
+    <div style="text-align:center; padding-top:30px; border-top: 1px solid #00381f"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/spacer.png" style="display:inline;" width="100%" /></div>
+
+    <div class="footer_flex" style="padding:20px;">
+    <div class="footer_logo"><a href="https://www.komons-japan.com/" style="display:block;text-align:center;margin-bottom:20px;"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/logo_footer.png?ver2" style="display:inline;" width="80%" /></a>
+
+    <div class="footer_txt" style="font-size:14px;letter-spacing:0.5px;  line-height: 1.57;letter-spacing: 1px;text-align: center;color: #00381f; margin-bottom:30px;">毎日の家事を「プラスな時間」に変える<br />
+    ホームケアブランド</div>
+    </div>
+
+    <div class="sns_wrap" style="text-align:center;"><a href="https://www.facebook.com/komons.japan"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_fb.png" style="width: 35px; margin-right: 10px; display: inline;" /></a> <a href="https://www.instagram.com/komons.jp/"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_ig.png" style="width: 35px; margin-right: 10px; display: inline;" /></a> <a href="https://twitter.com/komons_jp"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_tw.png" style="width: 35px; margin-right: 0px; display: inline;" /></a></div>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="section__cell" style="padding: 0;">
+    <div class="footer_nav" style="font-size: 14px;line-height: 1.57;letter-spacing: 1px; font-weight: normal; padding: 0 20px;"><a href="{{ shop.url }}/collections/all-products" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">商品一覧</a> <a href="{{ shop.url }}/collections/gift" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ギフト商品</a> <a href="{{ shop.url }}/pages/concept" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">Komonsについて</a> <a href="https://journal.komons-japan.com/" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ジャーナル</a><a href="{{ shop.url }}/pages/faq" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ご利用ガイド</a><a href="{{ shop.url }}/pages/privacy-policy" style="display: block;color:#003e1b;text-decoration:none;margin-bottom:10px;">プライバシー</a> <a href="{{ unsubscribe_url }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">メールの配信停止</a></div>
+
+    <p class="copyright" style="font-size: 12px;line-height: 1.57;letter-spacing: 1px; color: #003e1b; padding: 0 20px 40px;">2018-2020 Komons All Rights Reserved</p>
+    </td>
+  </tr>
+</table>
+      </center>
+    </td>
+  </tr>
+</table>
+
+<img src="{{ 'notifications/spacer.png' | shopify_asset_url }}" class="spacer" height="1" />
+
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

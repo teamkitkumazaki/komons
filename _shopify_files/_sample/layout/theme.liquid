@@ -1,0 +1,111 @@
+{%- capture LS_INPUT -%}<!doctype html>
+{% comment ls-rpl %}<html class="no-js" lang="{{ shop.locale }}">{% endcomment %}<html class="no-js" lang="{%- render "ls-language" -%}" dir="{%- render "ls-language-direction" -%}">{% comment /ls-rpl %}{% endcomment %}
+<head>
+{%- render "ls-head" -%}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="shortcut icon" href="https://namaste-hk10p.ssl-lolipop.jp/halsports/assets/img/icon/icon.png">
+
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{% comment ls-rpl %}{{ settings.favicon | img_url: '32x32' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: settings.favicon, img_url: '32x32' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}" type="image/png">
+  {%- endif -%}
+
+  {%- capture seo_title -%}
+    {%- if request.page_type == 'search' and search.performed == true -%}
+      {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+    {%- else -%}
+      {{ page_title }}
+    {%- endif -%}
+    {%- if current_tags -%}
+      {% comment ls-rpl %}{%- assign meta_tags = current_tags | join: ', ' -%}{% endcomment %}{%- capture LS_TAGS -%}{%- render "ls-tags", resource: nil, tags: current_tags -%}{%- endcapture -%}{%- assign LS_TAGS = LS_TAGS | split: "," -%}{%- assign meta_tags = LS_TAGS | join: ', ' -%}{% comment /ls-rpl %}{% endcomment %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- assign escaped_page_title = page_title | escape -%}
+    {%- unless escaped_page_title contains shop.name -%}
+      &ndash; {{ shop.name }}
+    {%- endunless -%}
+  {%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
+
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {% include 'social-meta-tags' %}
+
+  <script>
+    var theme = {
+      strings: {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        regularPrice: {{ 'products.product.regular_price' | t | json }},
+        salePrice: {{
+          'products.product.sale_price' | t | json }},
+        sale: {{ 'products.product.on_sale' | t | json }},
+        showMore: {{ 'general.filters.show_more' | t | json }},
+        showLess: {{ 'general.filters.show_less' | t | json }},
+        addressError: {{ 'sections.map.address_error' | t | json }},
+        addressNoResults: {{ 'sections.map.address_no_results' | t | json }},
+        addressQueryLimit: {{ 'sections.map.address_query_limit_html' | t | json }},
+        authError: {{ 'sections.map.auth_error_html' | t | json }},
+        newWindow: {{ 'general.accessibility.link_messages.new_window' | t | json }},
+        external: {{ 'general.accessibility.link_messages.external' | t | json }},
+        newWindowExternal: {{ 'general.accessibility.link_messages.new_window_and_external' | t | json }},
+        removeLabel: {{ 'cart.label.remove' | t: product: '[product]' | json }},
+        update: {{ 'cart.label.update' | t | json }},
+        quantity: {{ 'cart.label.quantity' | t | json }},
+        discountedTotal: {{ 'cart.label.discounted_total' | t | json }},
+        regularTotal: {{ 'cart.label.regular_total' | t | json }},
+        priceColumn: {{ 'cart.label.price_column' | t | json }},
+        quantityMinimumMessage: {{ 'products.product.quantity_minimum_message' | t | json }},
+        cartError: {{ 'cart.general.cart_error' | t | json }},
+        removedItemMessage: {{ 'cart.general.removed_item_html' | t: quantity: '[quantity]', link: '[link]' | json }},
+        unitPrice: {{ 'products.product.unit_price_label' | t | json }},
+        unitPriceSeparator: {{ 'general.accessibility.unit_price_separator' | t | json }},
+        oneCartCount: {{ 'cart.popup.cart_count' | t: count: 1 | json }},
+        otherCartCount: {{ 'cart.popup.cart_count' | t: count: '[count]' | json }},
+        quantityLabel: {{ 'cart.popup.quantity_label' | t: quantity_count: '[count]' | json }}
+      },
+      moneyFormat: {{ shop.money_format | json }},
+      moneyFormatWithCurrency: {{ shop.money_with_currency_format | json }}
+    }
+
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+
+
+  {%- if request.page_type contains 'customers/' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+
+  <link rel="stylesheet" href="https://namaste-hk10p.ssl-lolipop.jp/halsports/assets/css/style.css?ver210116">
+  <link rel="stylesheet" href="https://namaste-hk10p.ssl-lolipop.jp/halsports/assets/slick/slick.css">
+  <script src="{{ 'jquery-3.3.1.min.js' | asset_url }}"></script>
+  <script src="https://namaste-hk10p.ssl-lolipop.jp/halsports/assets/slick/slick.min.js"></script>
+  <script src="https://namaste-hk10p.ssl-lolipop.jp/halsports/assets/js/layout.js?ver210116"></script>
+  <!--<script src="https://journal.fruitest.jp/shopify/js/instafeed.min.js"></script>
+  <script src="{{ 'instafeed.min.js' | asset_url }}" async="async"></script>-->
+  <!--<script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>-->
+  <!--<script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>-->
+  <script>!function(){window.SLIDECART=!0;window.SLIDECART_FORMAT='{{shop.money_format}}';var e="https://cdn.jsdelivr.net/gh/apphq/slidecart-dist@master/slidecarthq.js?"+(new Date).getTime(),t=document.createElement("script");t.type="text/javascript",t.src=e,document.querySelector("body").appendChild(t)}();</script>
+  {{ content_for_header }}
+</head>
+
+<body class="template-{{ request.page_type | handle }}">
+  {% section 'header' %}
+  {{ content_for_layout }}
+  {% section 'footer' %}
+
+  <ul hidden>
+    <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
+    <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
+  </ul>
+</body>
+</html>
+{%- endcapture -%}{%- render "ls-output", input: LS_INPUT -%}

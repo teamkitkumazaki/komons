@@ -1,0 +1,31 @@
+<section class="section-products">
+  <div class="section_inner">
+    <div class="comp-section-title center no_line">
+      <span class="title_en"><ls-static-747915>PRODUCT LIST</ls-static-747915></span>
+      <h2 class="title_ja"><ls-static-801216>商品一覧</ls-static-801216></h2>
+    </div>
+    <div id="productListWrap" class="comp-product-list-banner">
+    {% for product in collection.products %}
+    <div class="product_item_banner {{ collection.metafields.custom_fields["category_type"] }}">
+      {%- if product.available == false %}
+      <a class="img_wrap soldout" href="{{ product.url }}" style="background-image: url({% comment ls-rpl %}{{ product.featured_image | img_url: 'full', scale: 2 }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: product.featured_image, img_url: 'full', scale: 2 -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %})"></a>
+      {% else %}
+        <a class="img_wrap" href="{{ product.url }}" style="background-image: url({% comment ls-rpl %}{{ product.featured_image | img_url: 'full', scale: 2 }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: product.featured_image, img_url: 'full', scale: 2 -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %})"></a>
+      {% endif %}
+      <div class="txt_wrap">
+        <a class="prod_name" href="{{ product.url }}">{{ product.title }}</a>
+        <span class="price">{{ product.price | money }}<ls-static-389888>(税抜)</ls-static-389888></span>
+        <p class="product_desc">{{ product.metafields.custom_fields["desc_ttl"] }}</p>
+        <div class="link_button">
+          {%- if product.available == false %}
+          <span class="soldout"><ls-static-179268>在庫切れ</ls-static-179268></span>
+          {% else %}
+          <a href="{{ product.url }}"><span><ls-static-308001>詳細を見る</ls-static-308001></span></a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div><!-- comp-product-list -->
+  </div><!-- section_inner -->
+</section>

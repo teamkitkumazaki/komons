@@ -1,0 +1,13 @@
+{% comment %}
+  DO NOT MODIFY THIS FILE DIRECTLY. THIS FILE WILL BE OVERWRITTEN.
+  YOU CAN MODIFY THE LIQUID CODE FOR THIS CUSTOM FIELD HERE:
+  https://customfields.bonify.io/dashboard/halsports.myshopify.com/products/configure/195330/edit
+{% endcomment %}
+{% if product.metafields.custom_fields["featured_ttl02"] != blank %}
+  <div class="custom-field custom-field__featured-ttl02 custom-field__type--text">
+    <h3 class="custom-field--title"><ls-static-767773>商品チャート部分タイトル2</ls-static-767773></h3>
+    <div class="custom-field--value">
+      {{ product.metafields.custom_fields["featured_ttl02"] }}
+    </div>
+  </div>
+{% endif %}

@@ -35,12 +35,12 @@
           }
           &.cart_in{
             &::before{
-              background-image: url(../img/cart_icon.png);
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750805/common/cart_icon_r3jbwu.png);
             }
           }
           &.subscription{
             &::before{
-              background-image: url(../img/common/icon_subscription.svg);
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1583750795/common/icon_subscription_nlc1vq.svg);
               top: 2px;
               background-size: 22px;
             }
@@ -115,8 +115,8 @@
     a{
       line-height: 1.6 !important;
       letter-spacing: 0.5px !important;
-      @include hover;
-      color: $basicGreen !important;
+      transition: opacity 0.3s;
+      color: #00381f !important;
       text-decoration: underline !important;
     }
   }
@@ -211,6 +211,14 @@
     }
     .wrapping_text{
       margin-top: 15px;
+      a{
+        display: block;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 3.4vw;
+        letter-spacing: 2px;
+        line-height: 1.5;
+      }
     }
     .amazon_pay{
       margin-top: 20px;

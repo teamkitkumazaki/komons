@@ -1,0 +1,257 @@
+<section class="section-blog-content">
+  <div class="section_inner">
+    <div class="blog_content">
+      <div class="thumbnail">
+      {%- if article.image.src != blank %}
+        <span class="img_box" style="background-image: url({% comment ls-rpl %}{{ article.image.src | img_url: '750x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: article.image.src, img_url: '750x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %})"></span>
+      {% else %}
+        <span class="img_box" style="background-image: url(https://res.cloudinary.com/halsports/image/upload/f_auto,q_auto/v1597077182/ogp/ogp_rlvdwy.jpg)"></span>
+      {% endif %}
+      </div>
+        <div class="blog_title_wrap">
+          <span class="date">{{ article.published_at | time_tag: format: 'date' }}</span>
+          <h1 class="blog_ttl">{{ article.title }}</h1>
+        </div>
+        <div class="category_tag comp-category-button">
+          {% for tag in article.tags %}
+            <a class="{% comment ls-rpl %}{{ tag }}_en{% endcomment %}{%- capture LS_TAG -%}{%- render "ls-tag", tag: tag, resource: article -%}{%- endcapture -%}{{ LS_TAG }}{% comment /ls-rpl %}{% endcomment %}" href="/blogs/all/tagged/{% comment ls-rpl %}{{ tag }}{% endcomment %}{%- capture LS_TAG -%}{%- render "ls-tag", tag: tag, resource: article -%}{%- endcapture -%}{{ LS_TAG }}{% comment /ls-rpl %}{% endcomment %}"></a>
+          {% endfor %}
+        </div><!-- category_tag -->
+        <div class="article_wrap">
+        {{ article.content }}
+        {% if article.metafields.custom_fields["chart_title01"] != blank %}
+        <div class="comp-chart-layout">
+          <div class="chart_wrap display_chart">
+            <div class="chart_item">
+              <span class="title">{{ article.metafields.custom_fields["chart_title01"] }}</span>
+              <span class="content">{{ article.metafields.custom_fields["chart_txt01"] }}</span>
+            </div>
+            {% if article.metafields.custom_fields["chart_title02"] != blank %}
+            <div class="chart_item">
+              <span class="title">{{ article.metafields.custom_fields["chart_title02"] }}</span>
+              <span class="content">{{ article.metafields.custom_fields["chart_txt02"] }}</span>
+            </div>
+            {% endif %}
+            {% if article.metafields.custom_fields["chart_title03"] != blank %}
+            <div class="chart_item">
+              <span class="title">{{ article.metafields.custom_fields["chart_title03"] }}</span>
+              <span class="content">{{ article.metafields.custom_fields["chart_txt03"] }}</span>
+            </div>
+            {% endif %}
+            </div>
+          </div><!-- comp-chart-layout -->
+          {% if article.metafields.custom_fields["attached_pdf"] != blank %}
+          <div class="download_pdf">
+            <span class="pdf_ttl"><ls-static-129572>▼詳細資料を見る(PDF)</ls-static-129572></span>
+            <div class="button_wrap">
+              <a target="_blank" href="{{ article.metafields.custom_fields["attached_pdf"] }}"><span>{{ article.metafields.custom_fields["button_text"] }}</span></a>
+              {% if article.metafields.custom_fields["attached_pdf02"] != blank %}
+              <a target="_blank" href="{{ article.metafields.custom_fields["attached_pdf02"] }}"><span>{{ article.metafields.custom_fields["button_text_02"] }}</span></a>
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+        {% endif %}
+        </div><!-- article_wrap -->
+        <div class="share_wrap">
+          <span class="share_ttl"><ls-static-900300>この記事をシェアする</ls-static-900300></span>
+          <div class="sns_wrap">
+          {% if section.settings.show_share_buttons %}
+            {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+          {% endif %}
+          </div>
+        </div>
+      </div><!-- blog_content -->
+      <div class="blog_side_bar">
+        <div class="sidebar_wrap">
+          <div class="sidebar_ttl">
+            <span class="ttl_en"><ls-static-681392>NEW POSTS</ls-static-681392></span>
+            <span class="ttl_ja"><ls-static-297266>最新の記事</ls-static-297266></span>
+          </div>
+          <div id="newsListSide" class="comp-news-list sidebar">
+          </div><!-- comp-news-list -->
+        </div><!-- sidebar_wrap -->
+        <div class="sidebar_wrap">
+          <div class="sidebar_ttl">
+            <span class="ttl_en"><ls-static-746641>CATEGORY</ls-static-746641></span>
+            <span class="ttl_ja"><ls-static-619749>カテゴリ一覧</ls-static-619749></span>
+          </div>
+          <div class="news_category_list">
+            <div class="comp-category-button">
+            <a class="all no_txt" href="/blogs/all">すべて</a>
+            <a class="education no_txt" href="/blogs/all/tagged/education">教育</a>
+            <a class="sports no_txt" href="/blogs/all/tagged/sports">スポーツ</a>
+            <a class="golf no_txt" href="/blogs/all/tagged/golf">ゴルフ</a>
+            <a class="healthcare no_txt" href="/blogs/all/tagged/healthcare">ヘルスケア</a>
+            <a class="news no_txt" href="/blogs/all/tagged/news">お知らせ</a>
+            </div>
+          </div>
+          </div>
+          </div>
+        </div>
+    </div><!-- blog_side_bar -->
+    </div>
+  </section>
+  <section class="section-relation">
+    <div class="section_inner">
+      <div class="comp-section-title no_line">
+        <span class="title_en"><ls-static-64801>RELATED ARTICLE</ls-static-64801></span>
+        <h1 class="title_ja"><ls-static-277305>同じカテゴリの記事を見る</ls-static-277305></h1>
+      </div>
+      <div class="news_list_wrap">
+        <div id="newsListIndex" class="comp-news-list">
+        </div><!-- comp-news-list -->
+      </div><!-- news-list-wrap -->
+    </div><!-- section_inner -->
+  </section>
+
+  <script type="text/javascript">
+    $(function(){
+    var domain = window.location.protocol + '//' + window.location.host;
+    var url = location.href;
+    if(url.includes('/en', 0)){
+      var quoteURL = domain + '/en/blogs/all/tagged/';
+      var quoteURL2 = domain + '/en/blogs/all/';
+    }else{
+      var quoteURL = domain + '/blogs/all/tagged/';
+      var quoteURL2 = domain + '/blogs/all/';
+    }
+        $.ajax({
+        {% for tag in article.tags %}
+          url: quoteURL + '{% comment ls-rpl %}{{tag}}{% endcomment %}{%- capture LS_TAG -%}{%- render "ls-tag", tag: tag, resource: article -%}{%- endcapture -%}{{LS_TAG}}{% comment /ls-rpl %}{% endcomment %}',
+        {% endfor %}
+            cache: false,
+            dataType:'html',
+            success: function(html){
+              var product_num = 4; //抜き出したい商品の数
+              var list = $(html).find('.comp-news-list').find('.list_item'); // 抜き出す情報を商品一覧ページから指定
+              for (var i = 0; i < product_num; i++) {
+                if ( !list[i] ) break;
+                $('#newsListIndex').append(list[i]); // 抜き出した情報を埋め込みたい場所を指定
+              }
+            }
+        });
+        $.ajax({
+        {% for tag in article.tags %}
+          url: quoteURL2 + '/blogs/all/',
+        {% endfor %}
+            cache: false,
+            dataType:'html',
+            success: function(html){
+              var product_num = 4; //抜き出したい商品の数
+              var list = $(html).find('.comp-news-list').find('.list_item'); // 抜き出す情報を商品一覧ページから指定
+              for (var i = 0; i < product_num; i++) {
+                if ( !list[i] ) break;
+                $('#newsListSide').append(list[i]); // 抜き出した情報を埋め込みたい場所を指定
+              }
+            }
+        });
+    });
+  </script>
+
+
+{% schema %}
+{
+  "name": {
+    "da": "Opslag",
+    "de": "Posts",
+    "en": "Posts",
+    "es": "Publicaciones",
+    "fi": "Julkaisut",
+    "fr": "Articles",
+    "hi": "पोस्ट",
+    "it": "Articoli",
+    "ja": "投稿",
+    "ko": "게시물",
+    "ms": "Siaran",
+    "nb": "Innlegg",
+    "nl": "Berichten",
+    "pt-BR": "Posts",
+    "pt-PT": "Publicações",
+    "sv": "Inlägg",
+    "th": "โพสต์",
+    "zh-CN": "文章",
+    "zh-TW": "貼文"
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": {
+        "da": "Vis forfatter",
+        "de": "Autor anzeigen",
+        "en": "Show author",
+        "es": "Mostrar autor",
+        "fi": "Näytä tekijä",
+        "fr": "Afficher l'auteur",
+        "hi": "लेखक दिखाएं",
+        "it": "Mostra autore",
+        "ja": "執筆者を表示する",
+        "ko": "작성자 표시",
+        "ms": "Tunjukkan pengarang",
+        "nb": "Vis forfatter",
+        "nl": "Auteur weergeven",
+        "pt-BR": "Exibir autor",
+        "pt-PT": "Mostrar autor",
+        "sv": "Visa författare",
+        "th": "แสดงผู้เขียน",
+        "zh-CN": "显示作者",
+        "zh-TW": "顯示作者"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": {
+        "da": "Vis dato",
+        "de": "Datum anzeigen",
+        "en": "Show date",
+        "es": "Mostrar fecha",
+        "fi": "Näytä päivämäärä",
+        "fr": "Afficher la date",
+        "hi": "दिनांक दिखाएं",
+        "it": "Mostra data",
+        "ja": "日付を表示する",
+        "ko": "날짜 표시",
+        "ms": "Tunjukkan tarikh",
+        "nb": "Vis dato",
+        "nl": "Datum weergeven",
+        "pt-BR": "Exibir data",
+        "pt-PT": "Mostrar data",
+        "sv": "Visa datum",
+        "th": "แสดงวันที่",
+        "zh-CN": "显示日期",
+        "zh-TW": "顯示日期"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": {
+        "da": "Vis knapper til deling på sociale medier",
+        "de": "Buttons für Social Media anzeigen",
+        "en": "Show social sharing buttons",
+        "es": "Mostrar botones para compartir en redes sociales",
+        "fi": "Näytä sosiaalisen median jakamispainikkeet",
+        "fr": "Afficher les boutons de partage sur les médias sociaux",
+        "hi": "सोशल शेयरिंग बटन दिखाएं",
+        "it": "Mostra i pulsanti per la condivisione sui social",
+        "ja": "ソーシャル共有ボタンを表示する",
+        "ko": "소셜 공유 버튼 표시",
+        "ms": "Tunjukkan butang perkongsian sosial",
+        "nb": "Vis knapper for deling på sosiale medier",
+        "nl": "Knoppen voor sociaal delen weergeven",
+        "pt-BR": "Exibir botões de compartilhamento em redes sociais",
+        "pt-PT": "Mostrar botões de partilha nas redes sociais",
+        "sv": "Visa knappar för delning i sociala medier",
+        "th": "แสดงปุ่มสำหรับแชร์ลงโซเชียล",
+        "zh-CN": "显示社交分享按钮",
+        "zh-TW": "顯示社群分享按鈕"
+      },
+      "default": true
+    }
+  ]
+}
+{% endschema %}

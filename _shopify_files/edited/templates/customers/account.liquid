@@ -1,0 +1,58 @@
+<article id="mypage" class="page-mypage">
+	<div class="section_inner">
+		<div class="comp-admin-title inMypage">
+		<div class="text_inner">
+			<h1 class="title_ja">マイページ</h1>
+			<span class="title_en">My Page</span>
+		</div>
+		</div>
+		<div class="comp-admin-bread">
+			<div class="bread_wrap">
+				{{ 'layout.customer.log_out' | t | customer_logout_link }}
+				<span class="current">マイページトップ</span>
+			</div><!-- bread_wrap -->
+		</div><!-- comp-admin-bread -->
+		<div class="comp-flex-wrap">
+			<div class="flex_left">
+				<h2 class="sub_ttl">ご注文/定期購入履歴</h2>
+				<div class="comp-order-list">
+				{% paginate customer.orders by 20 %}
+				{%- if customer.orders.size != 0 -%}
+				{%- for order in customer.orders -%}
+				<div class="order_item">
+					<div class="order_bar">
+						<div class="bar_text">
+							<span class="title">ご注文番号</span>
+							<a href="{{ order.customer_url }}">{{ order.name }}</a>
+							<span class="price">お会計金額：{{ order.total_price | money_without_currency }}円(税込)</span>
+						</div>
+							<a href="{{ order.customer_url }}" class="circle">
+							<span class="circle-inner"></span></a>
+						</div>
+						<div class="order_condition">
+							<span class="time">ご注文日時：{{ order.created_at | time_tag: format: 'basic' }}</span>
+							<span class="payment">お支払い状況：{{ order.financial_status_label }}</span>
+							<span class="condition">配送状況：{{ order.fulfillment_status_label }}</span>
+						</div>
+				</div><!-- order_item -->
+				{%- endfor -%}
+				{%- else -%}
+				<p>{{ 'customer.orders.none' | t }}</p>
+				{%- endif -%}
+				{% endpaginate %}
+				</div><!-- comp-order-list -->
+			</div><!-- flex_left -->
+			<div class="flex_right">
+			<div class="comp-account-info">
+				<div class="account_item">
+					<h2 class="account_ttl">アカウント情報</h2>
+					<div class="description"><span>{{ customer.first_name }} {{ customer.last_name }}</span>〒{{ customer.default_address.zip }}<br>{{ customer.default_address.province }} {{ customer.default_address.city }}<br>{{ customer.default_address.street }}</div>
+				</div>
+				<a class="edit_button" href="/account/addresses">配送先情報の追加・変更</a>
+			</div><!-- comp-account-info -->
+		</div><!-- flex_right -->
+	</div><!-- comp-flex-wrap -->
+</article>
+<script>
+	$('body').addClass('fixed');
+</script>

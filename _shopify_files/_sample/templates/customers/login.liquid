@@ -1,0 +1,100 @@
+<article id="login" class="page-account page-login">
+	<section class="section-login comp-underpage-section loginSet">
+		<div class="section_inner login">
+		<div class="comp-section-title center">
+			<span class="title_en"><ls-static-36411>LOG IN</ls-static-36411></span>
+			<h1 class="title_ja"><ls-static-873689>ユーザーログイン</ls-static-873689></h1>
+		</div>
+			<div class="comp-account-form">
+				{% form 'customer_login', novalidate: 'novalidate' %} {%- if form.errors -%}
+				<div class="form-message form-message--error">
+					<h2 class="h3 form-message__title " tabindex="-1" data-form-status>{{ 'contact.form.error_heading' | t }}</h2> {{ form.errors | default_errors }}
+				</div>
+				{%- endif -%}
+				<div class="form_item">
+					<div class="label_wrap">
+						<label for="CustomerEmail"><ls-static-233928>メールアドレス</ls-static-233928></label>
+					</div>
+					<div class="input_wrap">
+						<input type="email" name="customer[email]" id="CustomerEmail" autocomplete="email" autocorrect="off" autocapitalize="off" {%- if form.errors contains 'form' -%} class="input--error" aria-invalid="true" {%- endif -%}>
+					</div>
+				</div>
+				<!-- form_item -->
+				{% if form.password_needed %}
+				<div class="form_item border_none">
+					<div class="label_wrap">
+						<label for="CustomerPassword"><ls-static-499623>パスワード</ls-static-499623></label>
+					</div>
+					<div class="input_wrap">
+						<input type="password" value="" name="customer[password]" id="CustomerPassword" {%- if form.errors contains 'form' -%} class="input--error" aria-invalid="true" {%- endif -%}>
+					</div>
+				</div>
+				{% endif %}
+				<div class="submit_wrap">
+					<div class="comp-submit-button size form able">
+						<button><span id="formMessage"><ls-static-993501>ログイン</ls-static-993501></span></button>
+						<input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}">
+					</div>
+				</div>
+				<div class="other_action">
+					{% if form.password_needed %}
+					<div class="link_wrap">
+						<a href="#recover" id="RecoverPassword"><ls-static-471064>パスワードをお忘れの方</ls-static-471064></a>
+					</div>
+					{% endif %}
+					<div class="link_wrap">
+						<a href="/account/register" id="customer_register_link"><ls-static-835517>アカウントを作成する</ls-static-835517></a>
+					</div>
+				</div>
+				{% endform %}
+			</div>
+		</div>
+		<!-- section_inner -->
+		<div id="reset" class="section_inner reset">
+			<div class="comp-section-title center">
+				<span class="title_en"><ls-static-217800>RESET PASSWORD</ls-static-217800></span>
+				<h1 class="title_ja"><ls-static-379865>パスワードの再発行</ls-static-379865></h1>
+			</div>
+			<div class="comp-account-form">
+				{% form 'recover_customer_password' %} {{ form.errors | default_errors}}
+				<div class="form_item">
+					<div class="label_wrap">
+						<label for="customer_email"><ls-static-894659>メールアドレス</ls-static-894659></label>
+					</div>
+					<div class="input_wrap">
+          <input
+            type="email"
+            value=""
+            name="email"
+            id="RecoverEmail"
+            class="input-full{% if form.errors %} input--error{% endif %}"
+            autocorrect="off"
+            autocapitalize="off"
+            {% if form.errors %}
+              aria-invalid="true"
+              aria-describedby="RecoverEmail-email-error"
+            {%- endif -%}
+            >
+					</div>
+				</div>
+				<!-- form_item -->
+				<div class="submit_wrap">
+					<div class="comp-submit-button size form able">
+						<button><span id="formMessage"><ls-static-690263>パスワード再発行</ls-static-690263></span></button>
+            <input type="submit" class="btn" value="{{ 'customer.recover_password.submit' | t }}">
+					</div>
+				</div>
+        <div class="other_action">
+          <div class="link_wrap">
+            <a href="#recover" id="loginBack"><ls-static-469541>ログイン</ls-static-469541></a>
+          </div>
+          <div class="link_wrap">
+            <a href="/account/register" id="customer_register_link"><ls-static-873071>アカウントの作成</ls-static-873071></a>
+          </div>
+        </div>
+				{% endform %}
+			</div>
+			<!-- comp-account-form -->
+		</div>
+		<!-- section_inner -->
+</article>

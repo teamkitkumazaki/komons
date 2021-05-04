@@ -1,0 +1,61 @@
+<section class="section-products">
+  <div class="section_inner">
+    <div class="comp-section-title center no_line">
+      <span class="title_en"><ls-static-566548>PRODUCT LIST</ls-static-566548></span>
+      <h2 class="title_ja"><ls-static-19623>商品一覧</ls-static-19623></h2>
+    </div>
+    <div id="productListWrap" class="comp-product-list">
+    {% for product in collection.products %}
+      <div class="product_item {{ collection.metafields.custom_fields["category_type"] }}">
+        <div class="product_left">
+        {%- if product.available == false %}
+        <a class="img_wrap soldout" href="{{ product.url }}" style="background-image: url({% comment ls-rpl %}{{ product.featured_image | img_url: 'full', scale: 2 }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: product.featured_image, img_url: 'full', scale: 2 -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %})"></a>
+        <div class="product_name soldout">
+          <a href="{{ product.url }}">{{ product.title }}</a>
+          <span class="price">{{ product.price | money }}<ls-static-645145>(税抜)</ls-static-645145></span>
+        </div>
+        {% else %}
+        <a class="img_wrap" href="{{ product.url }}" style="background-image: url({% comment ls-rpl %}{{ product.featured_image | img_url: 'full', scale: 2 }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: product.featured_image, img_url: 'full', scale: 2 -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %})"></a>
+        <div class="product_name">
+          <a href="{{ product.url }}">{{ product.title }}</a>
+          <span class="price">{{ product.price | money }}<ls-static-316001>(税抜)</ls-static-316001></span>
+        </div>
+        {% endif %}
+        </div>
+        <div class="product_right">
+          <div class="comp-suggest-list">
+          <h3 class="suggest_title"><ls-static-942867>下記に該当するかたにオススメです!</ls-static-942867></h3>
+          {% if product.metafields.custom_fields["recommend01"] != blank %}
+          <div class="suggest_item">
+            <span>{{ product.metafields.custom_fields["recommend01"] }}</span>
+          </div>
+          {% endif %}
+          {% if product.metafields.custom_fields["recommend02"] != blank %}
+          <div class="suggest_item">
+            <span>{{ product.metafields.custom_fields["recommend02"] }}</span>
+          </div>
+          {% endif %}
+          {% if product.metafields.custom_fields["recommend03"] != blank %}
+          <div class="suggest_item">
+            <span>{{ product.metafields.custom_fields["recommend03"] }}</span>
+          </div>
+          {% endif %}
+          {% if product.metafields.custom_fields["recommend04"] != blank %}
+          <div class="suggest_item">
+            <span>{{ product.metafields.custom_fields["recommend04"] }}</span>
+          </div>
+          {% endif %}
+          </div>
+          <div class="link_button">
+            {%- if product.available == false %}
+            <span class="soldout"><ls-static-129546>在庫切れ</ls-static-129546></span>
+            {% else %}
+            <a href="{{ product.url }}"><span><ls-static-362160>詳細を見る</ls-static-362160></span></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+        {% endfor %}
+    </div><!-- comp-product-list -->
+  </div><!-- section_inner -->
+</section>

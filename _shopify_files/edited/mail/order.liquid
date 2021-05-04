@@ -1,0 +1,661 @@
+{% capture email_body %}
+{% if requires_shipping %}
+{% case delivery_method %}
+{% when 'pick-up' %}
+<p>注文の受取の準備が整うと、メールが届きます。</p>
+{% when 'local' %}
+<p>{{customer.last_name}}{{ customer.first_name }}様、ご注文の品を配達する準備を行っております。</p>
+{% else %}
+<p style="margin-bottom: 10px;">{{customer.last_name}}{{ customer.first_name }}様、<br>このたびは、『Komons』オンラインストアをご利用いただき誠にありがとうございます。</p><p>以下のご注文を承りましたので、ご確認をお願い申し上げます。商品到着まで、このメールは大切に保管しておいてくださいますようお願い申し上げます。<br>※このメールは、ご注文いただきますと自動的に送信されます。</p>
+{% endcase %}
+{% if delivery_instructions != blank  %}
+<p><b>配達情報:</b> {{ delivery_instructions }}</p>
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture email_title %}
+{% if requires_shipping %}
+{% case delivery_method %}
+{% when 'pick-up' %}
+{% when 'local' %}
+{% else %}
+ご注文ありがとうございます。
+{% endcase %}
+{% endif %}
+{% endcapture %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <title>{{ email_title }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
+  <style>
+  body{
+    font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    color: #00381f;
+  }
+  td{
+    font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
+    color: #00381f !important;
+  }
+  strong{
+    font-weight: normal !important;
+  }
+    .button__cell {
+      background: {
+          {
+          shop.email_accent_color
+        }
+      }
+
+      ;
+    }
+
+    a,
+    a:hover,
+    a:active,
+    a:visited {
+      color: {
+          {
+          shop.email_accent_color
+        }
+      }
+
+      ;
+    }
+  </style>
+</head>
+
+<body>
+  <table class="body">
+    <tr>
+      <td>
+        <table class="header row">
+          <tr>
+            <td class="header__cell">
+              <center>
+                <table class="container">
+                  <tr>
+                    <td>
+                      <div class="img_wrap" style="padding: 0;"><img class="logo" src="https://img07.shop-pro.jp/PA01416/697/etc/header_logo.png" width="100%" /></div>
+                      <span class="order-number__text" style="display: block;font-size: 16px;margin-top: 20px;"></span>
+                    </td>
+                  </tr>
+                </table>
+              </center>
+            </td>
+          </tr>
+        </table>
+
+        <table class="row content">
+          <tr>
+            <td class="content__cell">
+              <center>
+                <table class="container">
+                  <tr>
+                    <td>
+                      <h2>{{ email_title }}</h2>
+                      {{ email_body }}
+                      {% if order_status_url %}
+                      <table class="row actions">
+                        <tr>
+                          <td class="empty-line"> </td>
+                        </tr>
+                        <tr>
+                          <td class="actions__cell">
+                          <a href="{{ order_status_url }}" class="button__text" style="background-color: #00381f; font-size:20px; letter-spacing: 0.66px; border-radius: 5px; text-align: center;">ご注文内容を確認する</a>
+                          </td>
+                        </tr>
+                      </table>
+                      {% else %}
+                      {% endif %}
+                    </td>
+                  </tr>
+                </table>
+              </center>
+            </td>
+          </tr>
+        </table>
+
+        {% assign gift_card_line_item = line_items | where: "gift_card" %}
+        {% if gift_card_line_item.first %}
+        <table class="row section">
+          <tr>
+            <td class="section__cell">
+              <center>
+                <table class="container">
+                  <tr>
+                    <td>
+                      <h3>ギフトカード</h3>
+                    </td>
+                  </tr>
+                </table>
+                <table class="container">
+                  <tr>
+                    <td>
+                      <p> ギフトカードの個別のメールが届きます。</p>
+                    </td>
+                  </tr>
+                </table>
+              </center>
+            </td>
+          </tr>
+        </table>
+        {% endif %}
+
+        <table class="row section">
+          <tr>
+            <td class="section__cell">
+              <center>
+                <table class="container">
+                  <tr>
+                    <td>
+                      <h3>注文概要 <span style="font-size: 12px;display:inline-block; padding-left:0.5em; color: #646464;">注文番号:{{ order_name }}</h3>
+                    </td>
+                  </tr>
+                </table>
+                <table class="container">
+                  <tr>
+                    <td>
+
+
+                      <table class="row">
+                        {% for line in subtotal_line_items %}
+                        <tr class="order-list__item">
+                          <td class="order-list__item__cell">
+                            <table>
+                              <td>
+                                {% if line.image %}
+                                <img src="{{ line | img_url: 'compact_cropped' }}" align="left" width="60" height="60" class="order-list__product-image" />
+                                {% endif %}
+                              </td>
+                              <td class="order-list__product-description-cell">
+                                {% if line.product.title %}
+                                {% assign line_title = line.product.title %}
+                                {% else %}
+                                {% assign line_title = line.title %}
+                                {% endif %}
+
+                                {% if line.quantity < line.quantity %}
+                                {% capture line_display %} {{ line.quantity }} of {{ line.quantity }} {% endcapture %}
+                                {% else %}
+                                {% assign line_display = line.quantity  %}
+                                {% endif %}
+
+                                <span class="order-list__item-title" style="font-weight: normal;">{{ line_title }} × {{ line_display }}</span><br />
+
+                                {% if line.variant.title != 'Default Title' %}
+                                <span class="order-list__item-variant" style="font-weight: normal;">{{ line.variant.title }}</span><br />
+                                {% endif %}
+
+                                {% if line.selling_plan_allocation %}
+                                <span class="order-list__item-variant" style="font-weight: normal;">{{ line.selling_plan_allocation.selling_plan.name }}</span><br />
+                                {% endif %}
+
+                                {% if line.refunded_quantity > 0 %}
+                                <span class="order-list__item-refunded" style="font-weight: normal;">返金済み</span>
+                                {% endif %}
+
+                                {% if line.discount_allocations %}
+                                {% for discount_allocation in line.discount_allocations %}
+                                {% if discount_allocation.discount_application.target_selection != 'all' %}
+                                <span class="order-list__item-discount-allocation">
+                                  <img src="{{ 'notifications/discounttag.png' | shopify_asset_url }}" width="18" height="18" class="discount-tag-icon" />
+                                  <span>
+                                    {{ discount_allocation.discount_application.title | upcase }}
+                                    (-{{ discount_allocation.amount | money }})
+                                  </span>
+                                </span>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                              </td>
+                              <td class="order-list__price-cell">
+                                {% if line.original_line_price != line.final_line_price %}
+                                <del class="order-list__item-original-price">{{ line.original_line_price | money }}</del>
+                                {% endif %}
+                                <p class="order-list__item-price" style="font-weight: normal;">
+                                  {% if line.final_line_price > 0 %}
+                                  {{ line.final_line_price | money }}
+                                  {% else %}
+                                  無料
+                                  {% endif %}
+                                </p>
+                              </td>
+                            </table>
+                          </td>
+                        </tr>{% endfor %}
+                      </table>
+
+                      <table class="row subtotal-lines">
+                        <tr>
+                          <td class="subtotal-spacer"></td>
+                          <td>
+                            <table class="row subtotal-table">
+                              {% for discount_application in discount_applications %}
+                              {% if discount_application.target_selection == 'all' %}
+                              {% capture discount_title %}
+                              {% if discount_application.title %}
+                              {{ discount_application.title | upcase }}
+                              {% else %}
+                              ディスカウント
+                              {% endif %}
+                              {% endcapture %}
+
+                              <tr class="subtotal-line">
+                                <td class="subtotal-line__title">
+                                  <p>
+                                    <span>ディスカウント</span>
+                                    <span class="subtotal-line__discount">
+                                      <img src="{{ 'notifications/discounttag.png' | shopify_asset_url }}" width="18" height="18" class="discount-tag-icon" />
+                                      <span class="subtotal-line__discount-title">{{ discount_title }}</span>
+                                    </span>
+                                  </p>
+                                </td>
+                                <td class="subtotal-line__value">
+                                  <strong>-{{ discount_application.total_allocated_amount | money }}</strong>
+                                </td>
+                              </tr>
+
+                              {% endif %}
+                              {% endfor %}
+
+
+                              <tr class="subtotal-line">
+                                <td class="subtotal-line__title">
+                                  <p>
+                                    <span>小計</span>
+                                  </p>
+                                </td>
+                                <td class="subtotal-line__value">
+                                  <strong>{{ subtotal_price | money }}</strong>
+                                </td>
+                              </tr>
+
+                              {% if delivery_method == 'pick-up' %}
+
+                              <tr class="subtotal-line">
+                                <td class="subtotal-line__title">
+                                  <p>
+                                    <span>受取</span>
+                                  </p>
+                                </td>
+                                <td class="subtotal-line__value">
+                                  <strong>{{ shipping_price | money }}</strong>
+                                </td>
+                              </tr>
+
+                              {% else %}
+
+                              <tr class="subtotal-line">
+                                <td class="subtotal-line__title">
+                                  <p>
+                                    <span>配送</span>
+                                  </p>
+                                </td>
+                                <td class="subtotal-line__value">
+                                  <strong>{{ shipping_price | money }}</strong>
+                                </td>
+                              </tr>
+
+                              {% endif %}
+
+                              {% if current_total_duties %}
+
+                              <tr class="subtotal-line">
+                                <td class="subtotal-line__title">
+                                  <p>
+                                    <span>関税</span>
+                                  </p>
+                                </td>
+                                <td class="subtotal-line__value">
+                                  <strong>{{ current_total_duties | money }}</strong>
+                                </td>
+                              </tr>
+
+                              {% endif %}
+
+
+                              <tr class="subtotal-line">
+                                <td class="subtotal-line__title">
+                                  <p>
+                                    <span>税金合計</span>
+                                  </p>
+                                </td>
+                                <td class="subtotal-line__value">
+                                  <strong>{{ tax_price | money }}</strong>
+                                </td>
+                              </tr>
+
+
+                              {% if total_tip and total_tip > 0 %}
+
+                              <tr class="subtotal-line">
+                                <td class="subtotal-line__title">
+                                  <p>
+                                    <span>Tip</span>
+                                  </p>
+                                </td>
+                                <td class="subtotal-line__value">
+                                  <strong>{{ total_tip | money }}</strong>
+                                </td>
+                              </tr>
+
+                              {% endif %}
+                            </table>
+                            <table class="row subtotal-table subtotal-table--total">
+
+                              <tr class="subtotal-line">
+                                <td class="subtotal-line__title">
+                                  <p>
+                                    <span>合計</span>
+                                  </p>
+                                </td>
+                                <td class="subtotal-line__value">
+                                  <strong>{{ total_price | money_with_currency }}</strong>
+                                </td>
+                              </tr>
+
+                            </table>
+
+                            {% if total_discounts > 0 %}
+                            <p class="total-discount">
+                              割引 <span class="total-discount--amount">{{ total_discounts | money }}</span>
+                            </p>
+                            <p style="text-align: right;"><span>※代引き決済の場合、別途手数料330円(税込)が発生します。</span></p>
+                            </p>
+                            {% endif %}
+
+                            {% assign transaction_size = 0 %}
+                            {% assign transaction_amount = 0 %}
+                            {% for transaction in transactions %}
+                            {% unless transaction.kind == "capture" or transaction.kind == "void" %}
+                            {% assign transaction_size = transaction_size | plus: 1 %}
+                            {% assign transaction_amount = transaction_amount | plus: transaction.amount %}
+                            {% endunless %}
+                            {% endfor %}
+
+                            {% if transaction_size > 1 or transaction_amount < total_price %}
+                            <table class="row subtotal-table">
+                              <tr>
+                                <td colspan="2" class="subtotal-table__line"></td>
+                              </tr>
+                              <tr>
+                                <td colspan="2" class="subtotal-table__small-space"></td>
+                              </tr>
+
+                              {% for transaction in transactions %}
+                              {% if transaction.status == "success" and transaction.kind == "authorization" or transaction.kind == "sale" %}
+                              {% if transaction.payment_details.credit_card_company %}
+                              {% capture transaction_name %}{{ transaction.payment_details.credit_card_company }} (カード番号下4桁: {{ transaction.payment_details.credit_card_last_four_digits }}){% endcapture %}
+                              {% else %}
+                              {% capture transaction_name %}{{ transaction.gateway_display_name }}{% endcapture %}
+                              {% endif %}
+
+
+                              <tr class="subtotal-line">
+                                <td class="subtotal-line__title">
+                                  <p>
+                                    <span>{{transaction_name}}</span>
+                                  </p>
+                                </td>
+                                <td class="subtotal-line__value">
+                                  <strong>{{ transaction.amount | money }}</strong>
+                                </td>
+                              </tr>
+
+                              {% endif %}
+                              {% if transaction.kind == 'refund' %}
+                              {% if transaction.payment_details.credit_card_company %}
+                              {% assign refund_method_title = transaction.payment_details.credit_card_company %}
+                              {% else %}
+                              {% assign refund_method_title = transaction.gateway %}
+                              {% endif %}
+
+
+                              <tr class="subtotal-line">
+                                <td class="subtotal-line__title">
+                                  <p>
+                                    <span>返金</span>
+                                    <br>
+                                    <small>{{ refund_method_title | capitalize }}</small>
+                                  </p>
+                                </td>
+                                <td class="subtotal-line__value">
+                                  <strong>- {{ transaction.amount | money }}</strong>
+                                </td>
+                              </tr>
+
+                              {% endif %}
+                              {% endfor %}
+                            </table>
+                            {% endif %}
+                          </td>
+                        </tr>
+                      </table>
+
+
+                    </td>
+                  </tr>
+                </table>
+              </center>
+            </td>
+          </tr>
+        </table>
+
+        <table class="row section">
+          <tr>
+            <td class="section__cell">
+              <center>
+                <table class="container">
+                  <tr>
+                    <td>
+                      <h3>お客様情報</h3>
+                    </td>
+                  </tr>
+                </table>
+                <table class="container">
+                  <tr>
+                    <td>
+
+                      <table class="row">
+                        <tr>
+                          {% if requires_shipping and shipping_address %}
+                          <td class="customer-info__item">
+                            <h4>配送先住所</h4>
+                            {{ shipping_address | format_address }}
+                          </td>
+                          {% endif %}
+                          {% if billing_address %}
+                          <td class="customer-info__item">
+                            <h4>請求先住所</h4>
+                            {{ billing_address | format_address }}
+                          </td>
+                          {% endif %}
+                        </tr>
+                      </table>
+                      <table class="row">
+                        <tr>
+                          {% if requires_shipping and shipping_address %}
+                          <td class="customer-info__item">
+                            <h4>配送方法</h4>
+                            <p>{{ shipping_method.title }}</p>
+                          </td>
+                          {% endif %}
+                          {% assign transaction_count = transactions | size %}
+                          {% if transaction_count > 0 %}
+                          <td class="customer-info__item">
+                            <h4>決済方法</h4>
+                            {% for transaction in transactions %}
+                            {% if transaction.status == "success" or transaction.status == "pending" %}
+                            {% if transaction.kind == "authorization" or transaction.kind == "sale" %}
+                            {% if transaction.payment_details.credit_card_company %}
+                            <p class="customer-info__item-content">
+                              <img src="{{ transaction.payment_details.credit_card_company | payment_icon_png_url  }}" class="customer-info__item-credit" height="24" alt="{{ transaction.payment_details.credit_card_company }}">
+                              <span>{{ transaction.payment_details.credit_card_last_four_digits }}で終わる — <strong>{{ transaction.amount | money }}</strong></span>
+                            </p>
+                            {% elsif transaction.gateway_display_name == "Gift card" %}
+                            <p class="customer-info__item-content">
+                              <img src="{{ transaction.gateway_display_name | downcase | replace: ' ', '-'  | payment_type_img_url }}" class="customer-info__item-credit" height="24">
+                              {{ transaction.payment_details.gift_card.last_four_characters | upcase }}で終わる — <strong>{{ transaction.amount | money }}</strong> <br />
+                                  ギフトカード残高: {{ transaction.payment_details.gift_card.balance |  money }}
+                            </p>
+                            {% else %}
+                            <p class="customer-info__item-content">
+                              {{ transaction.gateway_display_name }} — <strong>{{ transaction.amount | money }}</strong>
+                            </p>
+                            {% endif %}
+                            {% endif %}
+                            {% endif %}
+                            {% endfor %}
+                          </td>
+                          {% endif %}
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+              </center>
+            </td>
+          </tr>
+        </table>
+        <table class="row section container">
+          <tr>
+            <td class="section__cell">
+              <h3>配送情報</h3>
+                <div class="detail_wrap" style="margin-bottom: 15px;">
+                  <h4>配送希望日</h4>
+                  <p>{{ attributes['配送希望日:']}}</p>
+                </div>
+                <div class="detail_wrap" style="margin-bottom: 15px;">
+                  <h4>配送時間帯</h4>
+                  <p>{{ attributes['配送時間帯:']}}</p>
+                </div>
+            </td>
+          </tr>
+        </table>
+        {% if attributes["熨斗の表書き:"] or attributes["熨斗の名入れ:"] or attributes["メッセージカードの内容:"]  %}
+        <table class="row section container">
+          <tr>
+            <td class="section__cell">
+              <h3>ギフトオプション</h3>
+              {% if attributes["熨斗の表書き:"] %}
+                <div class="detail_wrap" style="margin-bottom: 15px;">
+                  <h4>熨斗の表書き</h4>
+                  <p>{{ attributes['熨斗の表書き:']}}</p>
+                </div>
+              {% endif %}
+              {% if attributes["熨斗の名入れ:"] %}
+                <div class="detail_wrap" style="margin-bottom: 15px;">
+                  <h4>熨斗の名入れ</h4>
+                  <p>{{ attributes['熨斗の名入れ:']}}</p>
+                </div>
+              {% endif %}
+              {% if attributes["メッセージカードの内容:"] %}
+                <div class="detail_wrap" style="margin-bottom: 15px;">
+                  <h4>熨斗の名入れ</h4>
+                  <p>{{ attributes['メッセージカードの内容:']}}</p>
+                </div>
+              {% endif %}
+            </td>
+          </tr>
+        </table>
+        {% endif %}
+
+        {% assign note_size = note | size %}
+        {% if note_size  > 1 %}
+        <table class="row section container">
+          <tr>
+            <td class="section__cell">
+              <h3>備考欄</h3>
+                <div class="detail_wrap" style="margin-bottom: 15px;">
+                  <h4>備考</h4>
+                  <p>{{ note }}</p>
+                </div>
+            </td>
+          </tr>
+        </table>
+        {% endif %}
+
+        <table class="row detail container">
+        <tr>
+          <td class="section__cell" style="padding: 0;">
+            <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+              <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼配送について</h3>
+              <div class="detail_content">
+                <p style="font-size: 14px;">オンラインからのご注文は基本的に翌営業日、遅くとも3営業日以内の発送致します。発送後、配送には1~2日かかってのお届けとなります。なお、離島などの場合は3日以上かかる場合もございますのでご了承ください。</p>
+                <p>※営業日：月～金(祝日を除く)</p>
+                </div>
+            </div><!-- detail_section -->
+            <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+              <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼変更・キャンセルについて</h3>
+              <div class="detail_content">
+                <p style="font-size: 14px;">出荷前までの変更・キャンセルは受け付けておりますので、以下のお問い合わせ窓口までご連絡ください。</p>
+              </div>
+            </div><!-- detail_section -->
+            <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+              <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼納品書・領収書について</h3>
+              <div class="detail_content">
+                <p style="font-size: 14px;">特にご要望がない場合、商品のお届けに際して明細書/納品書などの同梱は致しませんので、予めご了承ください。（本メールをもって受注明細書と代えさせていただきます。）</p>
+                <p style="font-size: 14px;">明細書/納品書や領収書をご希望のお客様は、お手数ですが以下のお問い合わせ窓口までご連絡ください。</p>
+              </div>
+            </div><!-- detail_section -->
+            <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+              <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼代引き決済について</h3>
+              <div class="detail_content">
+                <p style="font-size: 14px;">別途、代引き手数料が発生します。商品合計金額に代引き手数料（税込330円）を加算した金額を、お届けの際に配達員にお支払いください。</p>
+                </div>
+            </div><!-- detail_section -->
+            <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+              <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼FAQ</h3>
+              <div class="detail_content">
+                <p style="font-size: 14px;">その他のご質問については<a style="font-size: 14px;" href="{{shop.url}}/pages/faq" style="color: #068acc;">FAQページ</a>をご覧ください。</p>
+              </div>
+            </div><!-- detail_section -->
+            <div class="detail_section" style="padding-bottom: 30px;">
+              <h3 class="detail_ttl" style="font-weight:normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼お問い合わせ窓口</h3>
+              <div class="detail_content">
+                <p style="font-size: 14px;">ホームケアブランド『Komons』カスタマーサポート（運営元：㈱Unsungs&Web）<br>E_Mail：info@komons-japan.com<br>受付時間：月曜日～金曜日までのAM9:00～PM6:00（祝日除く）</p>
+              </div>
+            </div><!-- detail_section -->
+          </td>
+        </table>
+
+        <table class="row footer container">
+          <tr>
+            <td class="section__cell" style="padding: 0;">
+            <div style="text-align:center; padding-top:30px; border-top: 1px solid #00381f"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/spacer.png" style="display:inline;" width="100%" /></div>
+
+            <div class="footer_flex" style="padding:20px;">
+            <div class="footer_logo"><a href="https://www.komons-japan.com/" style="display:block;text-align:center;margin-bottom:20px;"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/logo_footer.png?ver2" style="display:inline;" width="80%" /></a>
+
+            <div class="footer_txt" style="font-size:14px;letter-spacing:0.5px;  line-height: 1.57;letter-spacing: 1px;text-align: center;color: #00381f; margin-bottom:30px;">毎日の家事を「プラスな時間」に変える<br />
+            ホームケアブランド</div>
+            </div>
+
+            <div class="sns_wrap" style="text-align:center;"><a href="https://www.facebook.com/komons.japan"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_fb.png" style="width: 35px; margin-right: 10px; display: inline;" /></a> <a href="https://www.instagram.com/komons.jp/"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_ig.png" style="width: 35px; margin-right: 10px; display: inline;" /></a> <a href="https://twitter.com/komons_jp"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_tw.png" style="width: 35px; margin-right: 0px; display: inline;" /></a></div>
+            </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="section__cell" style="padding: 0;">
+            <div class="footer_nav" style="font-size: 14px;line-height: 1.57;letter-spacing: 1px; font-weight: normal; padding: 0 20px;"><a href="{{ shop.url }}/collections/all-products" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">商品一覧</a> <a href="{{ shop.url }}/collections/gift" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ギフト商品</a> <a href="{{ shop.url }}/pages/concept" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">Komonsについて</a> <a href="https://journal.komons-japan.com/" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ジャーナル</a><a href="{{ shop.url }}/pages/faq" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ご利用ガイド</a><a href="{{ shop.url }}/pages/privacy-policy" style="display: block;color:#003e1b;text-decoration:none;margin-bottom:10px;">プライバシー</a> <a href="{{ unsubscribe_url }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">メールの配信停止</a></div>
+
+            <p class="copyright" style="font-size: 12px;line-height: 1.57;letter-spacing: 1px; color: #003e1b; padding: 0 20px 40px;">2018-2020 Komons All Rights Reserved</p>
+            </td>
+          </tr>
+        </table>
+
+        <img src="{{ 'notifications/spacer.png' | shopify_asset_url }}" class="spacer" height="1" />
+
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

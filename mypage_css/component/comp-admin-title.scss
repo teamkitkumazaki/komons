@@ -1,0 +1,65 @@
+.comp-admin-title{
+  .text_inner{
+    @include flexSet;
+    align-items: center;
+    color: $basicGreen;
+    .title_ja{
+      font-size: 34px;
+      font-weight: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      margin-right: 0.5em;
+    }
+    .title_en{
+      @include libre-r;
+      font-size: 14px;
+      line-height: normal;
+      letter-spacing: normal;
+    }
+    &.left{
+      justify-content: flex-start;
+    }
+  }
+  &.inMypage{
+    padding-bottom: 25px;
+    border-bottom: 1px solid #dddddd;
+    @include flexSet;
+    justify-content: space-between;
+    align-items: center;
+    .logout_button{
+      a{
+        color: inherit;
+        text-decoration: underline;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 730px){
+  .comp-admin-title{
+    .text_inner{
+      display: block;
+      text-align: center;
+      .title_ja{
+        font-size: 28px;
+        margin-right: 0em;
+        margin-bottom: 10px;
+      }
+    }
+    &.inMypage{
+      display: block;
+      text-align: center;
+      padding-bottom: 0px;
+      .text_inner{
+        margin-bottom: 40px;
+      }
+      .logout_button{
+        a{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

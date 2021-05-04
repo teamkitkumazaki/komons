@@ -1,0 +1,45 @@
+<article id="blogDetail" class="page-blog-detail">
+  {% section 'article-template' %}
+</article>
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "articleBody": {{ article.content | strip_html | json }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ shop.url | append: page.url | json }}
+  },
+  "headline": {{ article.title | json }},
+  {% if article.excerpt != blank %}
+    "description": {{ article.excerpt | strip_html | json }},
+  {% endif %}
+  {% if article.image %}
+    {% assign image_size = article.image.width | append: 'x' %}
+    "image": [
+      {% comment ls-rpl %}{{ article | img_url: image_size | prepend: "https:" | json }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: article, img_url: image_size -%}{%- endcapture -%}{{ LS_IMG_URL | prepend: "https:" | json }}{% comment /ls-rpl %}{% endcomment %}
+    ],
+  {% endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "author": {
+    "@type": "Person",
+    "name": {{ article.author | json }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    {% if settings.share_image %}
+      {% assign image_size = settings.share_image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": {{ settings.share_image.height | json }},
+        "url": {% comment ls-rpl %}{{ settings.share_image | img_url: image_size | prepend: "https:" | json }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: settings.share_image, img_url: image_size -%}{%- endcapture -%}{{ LS_IMG_URL | prepend: "https:" | json }}{% comment /ls-rpl %}{% endcomment %},
+        "width": {{ settings.share_image.width | json }}
+      },
+    {% endif %}
+    "name": {{ shop.name | json }}
+  }
+}
+</script>

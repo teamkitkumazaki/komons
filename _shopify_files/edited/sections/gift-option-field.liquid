@@ -1,0 +1,78 @@
+<div id="optionPop" class="comp-gift-option-pop">
+  <div id="popBg" class="pop_bg"></div>
+	{% form 'product', product, class:form_classes, id:hoge, novalidate: 'novalidate', data-product-form: '' %}
+  <div class="pop_flex">
+    <div class="height_adjust"></div>
+    <div class="pop_contents">
+      <div id="popClose" class="pop_close"></div>
+      <div class="contents_inner">
+        <div class="item_thumb">
+          <span class="pc_thumb item-main-thumb"><img src="{{ product.media[1] | img_url: 'master' }}"></span>
+        </div>
+        <p class="pop_title">下記よりギフトオプションを<span>お選びいただけます</span></span></p>
+        <div class="option_select">
+          <div class="option_item nosi">
+            <label>
+              <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_mizuhiki_nl5vi0.jpg)"></div>
+              <div class="input_wrap">
+                <input type="checkbox" name="mizuhiki" value="mizuhiki">
+                <span class="radio_checker"></span>
+                <div class="option_name">
+                  <span class="name">熨斗(のし)</span>
+                  <span class="price">+110円(税込)</span>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="option_item message">
+            <label>
+              <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1617607081/gift_service/option_message_f7iisa.jpg)"></div>
+              <div class="input_wrap">
+                <input type="checkbox" name="message" value="message">
+                <span class="radio_checker"></span>
+                <div class="option_name">
+                  <span class="name">メッセージカード</span>
+                  <span class="price">無料</span>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="option_item tesage">
+            <label>
+              <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_tesage_yv4i6v.jpg)"></div>
+              <div class="input_wrap">
+                <input type="checkbox" name="tesage" value="tesage">
+                <span class="radio_checker"></span>
+                <div class="option_name">
+                  <span class="name">手提げ布バッグ</span>
+                  <span class="price">+330円(税込)</span>
+                </div>
+              </div>
+            </label>
+            <div class="desc_wrap" style="margin-top: 20px">
+              <p class="mizuhiki_desc">※水引の種類は、どのシーンのお祝い事にもお使いいただける「紅白梅結び」になります。</p>
+              <p class="mizuhiki_desc">※熨斗に「表書き（御祝/内祝/御結婚祝など）」、「お名前」の印字をご希望のお客様は、カート画面の「ギフトオプション」欄にご記入ください。ご記入のない場合は、「無地熨斗」にて対応させていただきます。</p>
+              <p class="mizuhiki_desc">※メッセージカードへの印字をご希望の場合は、メッセージの内容をカート画面の「ギフトオプション」欄にご記入ください。ご記入のない場合は、「無地カード」にて対応させていただきます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+			<select name="id" id="ProductSelect-{{ section.id }}" class="giftOptionFields" style="display: none;">
+				{% for variant in product.variants %}
+					<option value="{{ variant.id }}" id ="0-{{ forloop.index }}"
+						{%- if variant == current_variant %} selected="selected" {%- endif -%}
+					>
+						{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+					</option>
+				{% endfor %}
+			</select>
+      <div class="fix_wrapper">
+        <div class="option_fix">
+          <button id="optionFix" class="option_fix_button" href="javascript:void(0);"><span>購入する</span></button>
+          <input class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる">
+        </div>
+      </div>
+    </div>
+  </div><!-- pop_flex -->
+	{% endform %}
+</div><!-- comp-gift-option-pop -->
