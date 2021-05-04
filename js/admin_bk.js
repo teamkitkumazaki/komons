@@ -72,56 +72,53 @@ if (document.getElementById('cart')) {
 
   function cartOptionController(target){
     var deliveryDateList = $('#deliveryDateList');
-    var deliveryDateListTxt = deliveryDateList.text().length;
-    console.log('length:' + deliveryDateListTxt);
     var optionItem = [];
     var optionItemHeight = [];
     var optionItemLabel = [];
     var optionItemWrap = [];
     var finalPrice = $('#finalPrice').html();
     var priceCulc = finalPrice.replace(/,/g, '');
+    var today = new Date();
+    var y;
+    var m;
+    var paramM;
+    var d;
+    var paramD;
+    var w;
+    var paramW;
     var wd = ['日', '月', '火', '水', '木', '金', '土'];
     var setDayStatus = 0;
     var deliveryDate = $('#deliveryDate');
     var deliveryTime = $('#deliveryTime');
     var messageCard = $('textarea[name="messeage_card"]');
-    var memoWrap = $('textarea[name="memo_wrap"]');
-    var noshiType = $('input[name="noshi_type"]');
-    var noshiName = $('input[name="noshi_name"]');
-    var setValue;
+    if (document.getElementById('cart')) {
+      $('#messageCartContent').attr('value', messageTxt);
+    }
+
+    function getDayDisplay(day){
+      var date = new Date();
+      date.setDate(date.getDate() + day);
+      y  = date.getFullYear();
+      m = date.getMonth() + 1;
+      d = date.getDate();
+      w = date.getDay() % 7;
+      if(m < 10){ paramM = '0' + m }else{ paramM = m }
+      if(d < 10){ paramD = '0' + d }else{ paramD = d }
+      var dayParam = y + '-' + paramM + '-' + paramD;
+      var dayDisplay = m + '月' + d + '日' + '(' + wd[w] + ')';
+      deliveryDate.append('<option value="' + dayParam + '">' + dayDisplay + '</option>');
+    }
+
+    function setDayDisplay(){
+      for (var i=5; i<16; i++) {
+        getDayDisplay(i);
+      }
+    }
 
     function setMessageCardVal(){
       var messageTxt = messageCard.val();
       console.log(messageTxt);
       $('#messageCartContent').attr('value', messageTxt);
-    }
-
-    function setDayDisplay(){
-      if(setDayStatus == 0){
-        $.each(deliveryDateList.find('.calendar_dateWrap'), function(index) {
-            $(this).find('div').addClass('date_item');
-            $(this).find('button').addClass('date_item');
-            $(this).find('.date_item').each(function(index) {
-              var weakSetNumber = index % 7;
-              $(this).attr('week', weakSetNumber);
-            });
-            $(this).find('.is-active').each(function(index) {
-              var dateTxt = $(this).attr('data-date');
-              var res = dateTxt.split('/');
-              var dateWeak = $(this).attr('week');
-              var dayTxtSet = res[1] + '月' +  res[2] + '日(' + wd[dateWeak] + ')';
-              if(res[1] < 10){
-                res[1] = '0' + res[1]
-              }
-              if(res[2] < 10){
-                res[2] = '0' + res[2]
-              }
-              var dayTxtValue = res[0] + '-' +  res[1] + '-' + res[2];
-              deliveryDate.append('<option value="' + dayTxtValue + '">' + dayTxtSet + '</option>');
-            });
-            setDayStatus = 1;
-          });
-      };
     }
 
     function init(){

@@ -124,8 +124,11 @@
           <div class="delivery_option">
               <h2 class="sub_ttl">配送日時指定</h2>
               <div class="comp-cart-option">
-                <div class="option_item open">
-                  <label>
+                <div id="deliveryDateList" style="display: none;">
+                  {% include 'delivery-date' %}
+                </div><!-- deliveryDateList -->
+                  <div class="option_item open">
+                    <label>
                     <input type="checkbox" name="dateInput" value="true" checked="checked">
                     <span class="radio_checker"></span>
                     <span class="label_ttl">配送希望日</span>
