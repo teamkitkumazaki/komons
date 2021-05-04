@@ -733,13 +733,15 @@
 			h2 {
 				@include libre-b;
 				font-size: 28px;
-				line-height: 1.5;
+				line-height: 1.8;
 				letter-spacing: 2px;
 				margin-bottom: 25px;
 				.added{
 					font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
 					display: block;
-					font-size: 18px;
+					font-size: 14px;
+					letter-spacing: 1px;
+					margin-top: 0px;
 				}
 			}
 

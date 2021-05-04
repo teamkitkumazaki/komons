@@ -10970,14 +10970,16 @@ body.loaded #loading {
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 28px;
-  line-height: 1.5;
+  line-height: 1.8;
   letter-spacing: 2px;
   margin-bottom: 25px;
 }
 #itemDetail .cart_wrap02 .txt_wrap h2 .added {
   font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   display: block;
-  font-size: 18px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 0px;
 }
 #itemDetail .cart_wrap02 .txt_wrap .product_detail {
   margin: 0 auto 20px;

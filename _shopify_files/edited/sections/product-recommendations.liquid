@@ -30,7 +30,7 @@
     });
     if (document.getElementById('variationToggle')) {
       var varitationItem = [
-        '{{ product.metafields.custom_fields["variation_bottle"] }}', '{{product.metafields.custom_fields["variation_refill"]}}', '{{ product.metafields.custom_fields["variation_bottle_refill"] }}'
+        '{{ product.metafields.custom_fields["variation_bottle"] }}', '{{product.metafields.custom_fields["variation_refill"]}}', '{{ product.metafields.custom_fields["variation_bottle_refill"] }}', '{{product.metafields.custom_fields["variation_mini"]}}', '{{product.metafields.custom_fields["variation_mini_gift"]}}'
       ]
     }
     $.ajax({
@@ -63,6 +63,16 @@
             {%- if product.metafields.custom_fields["variation_refill"] != blank %}
             if(prop[index] == varitationItem[2] ){
               $('#bottleRefillPrice').html(priceDisplay[index])
+            }
+            {%- endif -%}
+            {%- if product.metafields.custom_fields["variation_mini"] != blank %}
+            if(prop[index] == varitationItem[3] ){
+              $('#miniPrice').html(priceDisplay[index])
+            }
+            {%- endif -%}
+            {%- if product.metafields.custom_fields["variation_mini_gift"] != blank %}
+            if(prop[index] == varitationItem[4] ){
+              $('#miniGiftPrice').html(priceDisplay[index])
             }
             {%- endif -%}
             if (prop[index] == linkURL[0]){
