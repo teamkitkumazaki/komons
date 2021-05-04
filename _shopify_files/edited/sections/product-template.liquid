@@ -55,14 +55,13 @@
 				<h1 class="prodcut_name">{{ product.metafields.custom_fields["product_name"] }}</h1>
 				<div id="excerpt" class="excerpt">
 					<p>{{ product.metafields.custom_fields["product_outline"] }}</p>
-					{% if product.metafields.custom_fields["variation_refill"] != blank %}
+					{% if product.metafields.custom_fields["variation_bottle"] != blank %}
 					<div id="variationToggle" class="comp-variation">
 						<div class="variation_wrap">
 							<a href="javascript:void(0)" class="display_wrap">
 								<span class="title">サイズ:</span>
 								<span id="selectedVar" class="current_page"></span>
 							</a>
-							{%- endif -%}
 							<div class="display_toggle">
 							{% if product.metafields.custom_fields["variation_bottle"] != blank %}
 							<a href="/products/{{ product.metafields.custom_fields["variation_bottle"] }}">
@@ -71,6 +70,7 @@
 									<span id="bottlePrice" class="desc"></span>
 								</span>
 							</a>
+							{%- endif -%}
 							{% if product.metafields.custom_fields["variation_refill"] != blank %}
 								<a href="/products/{{ product.metafields.custom_fields["variation_refill"] }}">
 									<span class="wrap">
@@ -79,14 +79,22 @@
 									</span>
 								</a>
 							 {%- endif -%}
-							 {% if product.metafields.custom_fields["variation_bottle_refill"] != blank %}
-								<a href="/products/{{ product.metafields.custom_fields["variation_bottle_refill"] }}">
+							 {% if product.metafields.custom_fields["variation_mini"] != blank %}
+								<a href="/products/{{ product.metafields.custom_fields["variation_mini"] }}">
 									<span class="wrap">
-										<span class="title">ボトル&amp;レフィル</span>
-										<span id="bottleRefillPrice" class="desc"></span>
+										<span class="title">Mini(30ml)</span>
+										<span id="miniPrice" class="desc"></span>
 									</span>
 								</a>
 								{%- endif -%}
+								{% if product.metafields.custom_fields["variation_mini_gift"] != blank %}
+								 <a href="/products/{{ product.metafields.custom_fields["variation_mini_gift"] }}">
+									 <span class="wrap">
+										 <span class="title">Mini・ギフトラッピング版(30ml)</span>
+										 <span id="miniGiftPrice" class="desc"></span>
+									 </span>
+								 </a>
+								 {%- endif -%}
 							</div><!-- display_toggle -->
 						</div><!-- variation_wrap -->
 					</div><!-- comp-variation -->

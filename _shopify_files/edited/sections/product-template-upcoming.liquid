@@ -15,25 +15,10 @@
 			</div>
 		</div>
 		<div class="comp-waiting-button upcoming_button">
-		{%- if product.title == "Laundry Detergent" -%}
-			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0001" -%}
-		{%- elsif product.title == "Apron" -%}
-			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0002" -%}
-		{%- elsif product.title == "Hand Cream" -%}
-			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0003" -%}
-		{%- elsif product.title == "Hand Milk" -%}
-			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0004" -%}
-		{%- elsif product.title == "Aroma Potpourri" -%}
-			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0005" -%}
-		{%- elsif product.title == "Laundry Bag" -%}
-			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0006" -%}
-		{%- elsif product.title == "Room Mist" -%}
-			{%- assign waiting_list_url = "https://journal.komons-japan.com/waiting-list/UC0007" -%}
-		{%- endif -%}
-		<a href="{{ waiting_list_url }}">
-			<span class="title">Waiting Listに登録</span>
-			<span class="desc">発売時にメールにてお知らせいたします</span>
-		</a>
+			<a href="https://journal.komons-japan.com/waiting-list/{{ product.handle }}">
+				<span class="title">Waiting Listに登録</span>
+				<span class="desc">発売時にメールにてお知らせいたします</span>
+			</a>
 		</div>
 		<hr class="upcoming_margin">
 	</form>
