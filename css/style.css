@@ -4281,6 +4281,13 @@ body.loaded #loading {
 .comp-qa .qa_toggle .toggle_item .toggle_contents p {
   line-height: 1.6;
 }
+.comp-qa .qa_toggle .toggle_item .toggle_contents a {
+  color: #068acc;
+  transition: opacity 0.3s;
+}
+.comp-qa .qa_toggle .toggle_item .toggle_contents a:hover {
+  opacity: 0.75;
+}
 .comp-qa .qa_toggle .others {
   text-align: center;
   margin: 50px auto;
