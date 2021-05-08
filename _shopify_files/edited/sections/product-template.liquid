@@ -107,7 +107,7 @@
 					<span class="right_txt stock">販売中</span>
 				</div>
 				<div class="detail_block detail02">
-					<span class="left_txt"><span>数量</span>：<input type="text" name="quantity" value="1" class="product_init_num" /><span>個</span></span>
+					<span class="left_txt"><span>数量</span>：<input id="lot01" type="number" name="quantity" value="1" class="product_init_num" /><span>個</span></span>
 					<span class="right_txt">合計：{{ product.price | money_without_currency }}円(税込)</span>
 				</div>
 			</div>
@@ -155,7 +155,7 @@
 						<span class="right_txt stock">販売中</span>
 					</div>
 					<div class="detail_block detail02">
-						<span class="left_txt"><span>数量</span>：<input type="text" name="product_num" value="1" class="product_init_num" /><span>個</span></span>
+						<span class="left_txt"><span>数量</span>：<input id="lot02" type="number" name="product_num" value="1" class="product_init_num" /><span>個</span></span>
 						<span class="right_txt">合計：{{ product.price | money_without_currency }}円(税込)</span>
 					</div>
 				</div>

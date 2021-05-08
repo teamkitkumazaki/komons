@@ -9,7 +9,6 @@ $(function() {
 
   function controllQuantity(num, vector){
     quantityNum = quantityInput[num].val();
-    console.log(vector);
     if(vector == 1){
       quantityInput[num].attr('value', Number(quantityNum) + 1);
       reloadButton[num].click();
@@ -118,14 +117,12 @@ function cartOptionController(target){
 
   function setDayDisplay(num){
     var startSet = Number(num) + Number(2);
-    console.log('startSet:' + startSet);
     for (var i= startSet; i<30; i++) {
       getDayDisplay(i);
     }
   }
 
   function setShippingDay2(delay){
-    console.log('delay:' + delay);
     today.setDate(today.getDate() + delay);
     var todayY = today.getFullYear();
     var todayM = today.getMonth() + 1;
@@ -134,15 +131,10 @@ function cartOptionController(target){
     var dayTime = today.getHours();
     var todayDate = todayM + '/' + todayD;
     if(todayDate){
-      console.log($.inArray(todayDate,holiday));
-      console.log('todayDate:' + todayDate);
       if($.inArray(todayDate,holiday) != -1){
-        console.log('holiday');
         delay = delay + 1;
         setShippingDay2(delay);
       }else{
-        console.log('OK');
-        console.log('delay:' + delay);
         setDayDisplay(delay);
       }
     }
@@ -150,10 +142,8 @@ function cartOptionController(target){
 
   function setShippingDay(){
     today.setDate(today.getDate() + testFlg);
-    console.log(today);
     var dayTime = today.getHours();
     var todayW = today.getDay() % 7;
-    console.log('todayW:' + wd[todayW]);
     if(dayTime < 10){ /* 10時までの注文の場合 */
       if(todayW == 0){ /* 日曜日の場合 */
         setShippingDay2(1) /* 配送を月曜日にする*/
@@ -175,7 +165,6 @@ function cartOptionController(target){
 
   function setMessageCardVal(){
     var messageTxt = messageCard.val();
-    console.log(messageTxt);
     $('#messageCartContent').attr('value', messageTxt);
   }
 
@@ -248,7 +237,6 @@ if (document.getElementById('cart')) {
       });
       cartItem.find(".bag_item").each(function(index) {
         var linkHref = $(this).find('.item_img a').attr('href').split("products/").slice(-1)[0];
-        console.log(index + ':' + linkHref.split("?")[0]);
         linkURLCart[index] = linkHref.split("?")[0];
         cartItemCategory[index] = $(this).find('.category');
         cartItemLength = cartItemLength + 1;
@@ -258,7 +246,6 @@ if (document.getElementById('cart')) {
         cache: false,
         dataType: 'html',
         success: function(html) {
-            console.log('success!');
             var product_num = 40; //抜き出したい商品の数
             var prop = [];
             var category = [];
@@ -272,14 +259,12 @@ if (document.getElementById('cart')) {
               }
               for (var j=0; j< cartItemLength; j++) {
                 if(prop[index] == linkURLCart[j]){
-                  console.log('j:' + j);
                   cartItemCategory[j].text('');
                   cartItemCategory[j].prepend(category[index]);
                 }
               }
             });
             if (document.getElementById('relatedSlider')) {
-              console.log('slick!')
               relatedSlider();
             }
         }
@@ -289,7 +274,6 @@ if (document.getElementById('cart')) {
     setInterval(function(){
       var upSellStateNew = $('#upsellSection').text().length;
       if(upSellState != upSellStateNew && setCategory == 0){
-        console.log('update!');
         ajaxLoad();
         setCategory = 1;
       }
