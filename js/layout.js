@@ -399,6 +399,36 @@ $(function() {
   if (document.getElementById('itemDetail')) {
     detailToggleControll($('#detailToggle'));
   }
+  
+  function productInitNum(target){
+    var numberInput = [];
+    var lotNumer;
+    
+    function syncAllNumberInput(){
+      $.each(target.find('input[type=number]'), function(index) {
+        $(this).attr('value', lotNumer);
+      });
+    }
+    
+    function init(){
+      $.each(target.find('input[type=number]'), function(index) {
+        console.log('index:' + index);
+        $(this).on({
+          'change': function() {
+            lotNumer = $(this).val();
+            syncAllNumberInput();
+          }
+        });
+      });
+    }
+    
+    init();
+    
+  }
+  
+  if (document.getElementById('itemDetail')) {
+    productInitNum($('body'));
+  }
 
   //関連商品プラグインをslick用いて表示させる
   function relatedProductArrange(target){

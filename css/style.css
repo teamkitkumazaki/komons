@@ -1340,7 +1340,7 @@ h1, h2, h3, h4, h5 {
   width: 24px;
   height: 10px;
   transition: all 0.3s;
-  background-image: url("../img/product_list/arrow.png");
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750746/product_list/arrow_hnk35p.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 24px;
@@ -2247,7 +2247,7 @@ body.loaded #loading {
   width: 24px;
   height: 10px;
   transition: all 0.3s;
-  background-image: url(../img/product_list/arrow.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750746/product_list/arrow_hnk35p.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 24px;
@@ -2980,7 +2980,7 @@ body.loaded #loading {
   width: 24px;
   height: 10px;
   transition: all 0.3s;
-  background-image: url(../img/product_list/arrow.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750746/product_list/arrow_hnk35p.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 24px;
@@ -4280,6 +4280,13 @@ body.loaded #loading {
 }
 .comp-qa .qa_toggle .toggle_item .toggle_contents p {
   line-height: 1.6;
+}
+.comp-qa .qa_toggle .toggle_item .toggle_contents a {
+  color: #068acc;
+  transition: opacity 0.3s;
+}
+.comp-qa .qa_toggle .toggle_item .toggle_contents a:hover {
+  opacity: 0.75;
 }
 .comp-qa .qa_toggle .others {
   text-align: center;
@@ -5609,6 +5616,12 @@ body.loaded #loading {
   right: 7px;
   margin: auto;
 }
+.comp-fixed-cart-wrap .cart_inner .product_detail .category .en.no_line {
+  padding-right: 0;
+}
+.comp-fixed-cart-wrap .cart_inner .product_detail .category .en.no_line::after {
+  display: none;
+}
 .comp-fixed-cart-wrap .cart_inner .product_detail .item_name {
   display: block;
   font-size: 16px;
@@ -5616,6 +5629,9 @@ body.loaded #loading {
   color: #fff;
   letter-spacing: 0.5px;
   margin-bottom: 10px;
+}
+.comp-fixed-cart-wrap .cart_inner .product_detail .item_name.small {
+  font-size: 14px;
 }
 .comp-fixed-cart-wrap .cart_inner .product_detail .price {
   display: block;
@@ -5702,6 +5718,9 @@ body.loaded #loading {
     color: #fff;
     letter-spacing: 0.5px;
     margin-bottom: 10px;
+  }
+  .comp-fixed-cart-wrap .cart_inner .product_detail .item_name.small {
+    font-size: 12px;
   }
   .comp-fixed-cart-wrap .cart_inner .product_detail .price {
     display: block;
@@ -10335,6 +10354,12 @@ body.loaded #loading {
   height: 1px;
   background: #00381f;
 }
+#itemDetail .cart_wrap01 .product_ex .product_cat .en.no_line {
+  padding-right: 0;
+}
+#itemDetail .cart_wrap01 .product_ex .product_cat .en.no_line::after {
+  display: none;
+}
 #itemDetail .cart_wrap01 .product_ex .product_cat .ja {
   font-size: 20px;
   font-weight: normal;
@@ -10368,6 +10393,9 @@ body.loaded #loading {
   left: 0;
   right: 0;
   margin: auto;
+}
+#itemDetail .cart_wrap01 .product_ex .excerpt {
+  margin-bottom: 40px;
 }
 #itemDetail .cart_wrap01 .product_ex .upcoming_tag {
   width: 200px;
@@ -10967,14 +10995,16 @@ body.loaded #loading {
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 28px;
-  line-height: 1.5;
+  line-height: 1.8;
   letter-spacing: 2px;
   margin-bottom: 25px;
 }
 #itemDetail .cart_wrap02 .txt_wrap h2 .added {
   font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   display: block;
-  font-size: 18px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 0px;
 }
 #itemDetail .cart_wrap02 .txt_wrap .product_detail {
   margin: 0 auto 20px;
@@ -12753,7 +12783,7 @@ body.loaded #loading {
   width: 24px;
   height: 10px;
   transition: all 0.3s;
-  background-image: url(../img/product_list/arrow.png);
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750746/product_list/arrow_hnk35p.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 24px;

@@ -1473,7 +1473,7 @@ article {
   }
   .comp-cart-option .option_item label .label_ttl {
     display: inline-block;
-    font-size: 16px;
+    font-size: 3.8vw;
     line-height: 1;
     letter-spacing: 0.5px;
   }
@@ -1557,7 +1557,7 @@ article {
     width: 40px;
     height: 40px;
     margin: 0 auto 40px;
-    background-image: url(../img/common/loading.svg);
+    background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/common/loading.svg);
   }
   .comp-submit-loader .loader_inner .loader_txt {
     font-size: 3.6vw;
