@@ -46,6 +46,12 @@
             right: 7px;
             margin: auto;
           }
+          &.no_line{
+            padding-right: 0;
+            &::after{
+              display: none;
+            }
+          }
         }
       }
       .item_name{
@@ -55,6 +61,9 @@
         color: #fff;
         letter-spacing: 0.5px;
         margin-bottom: 10px;
+        &.small{
+          font-size: 14px;
+        }
       }
       .price{
         display: block;
@@ -139,6 +148,9 @@
           color: #fff;
           letter-spacing: 0.5px;
           margin-bottom: 10px;
+          &.small{
+            font-size: 12px;
+          }
         }
         .price{
           display: block;

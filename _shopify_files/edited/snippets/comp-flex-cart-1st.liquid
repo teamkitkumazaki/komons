@@ -31,7 +31,9 @@
 				<input id="cartSubmit" class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる">
 			</div>
 		</div>
-		{%- if product.type != "option" and product.type != "refill" and product.type != "bottle-refill" and product.type != "gift" -%}
+		{%- if product.handle == "k0009" or product.handle == "k0056" -%}
+			<span class="wrapping_text"><a href="/products/{{ product.metafields.custom_fields["variation_mini_gift"]}}">ギフトラッピング版はこちら</a></span>
+		{%- elsif  product.type != "option" and product.type != "refill" and product.type != "bottle-refill" and product.type != "gift" -%}
 		<span class="wrapping_text"><a href="/products/ks005">ギフトラッピングはこちら</a></span>
 		{%- endif -%}
 	</div>

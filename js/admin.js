@@ -182,10 +182,25 @@ function cartOptionController(target){
       'change': function() {
         var timeValue =  $(this).val();
         $('#delivery-time').val(timeValue);
+        setMessageCardVal();
       }
+    });
+    $.each(target.find('.comp-submit-button input'), function(index) {
+      $(this).on({
+        'click': function() {
+          setMessageCardVal();
+          $('#submitLoader').addClass('open');
+        }
+      });
     });
     messageCard.on({
       'keyup': function() {
+        setMessageCardVal();
+      },
+      'blur': function(){
+        setMessageCardVal();
+      },
+      'change': function(){
         setMessageCardVal();
       }
     });
@@ -294,25 +309,5 @@ if (document.getElementById('cart')) {
   }
 
   setHistoryBackLink();
-
-
-  function loadingSubmit(target){
-
-    function init(){
-      $.each(target.find('.comp-submit-button input'), function(index) {
-        $(this).on({
-          'click': function() {
-            $('#submitLoader').addClass('open');
-          }
-        });
-      });
-    }
-
-    init();
-
-  }
-
-  loadingSubmit($('article'));
-
 
 });

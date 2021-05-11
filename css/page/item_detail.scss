@@ -102,6 +102,12 @@
 						height: 1px;
 						background: $basicGreen;
 					}
+					&.no_line{
+						padding-right: 0;
+						&::after{
+							display: none;
+						}
+					}
 				}
 				.ja{
 					font-size: 20px;
