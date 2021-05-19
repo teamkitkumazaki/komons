@@ -1,7 +1,7 @@
 {%- if product.variants.first.inventory_quantity == 0 -%}
 	<span class="sold_out">在庫切れ</span>
 {%- else -%}
-	{%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" -%}
+	{%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
 	<div class="comp-flex-cart no_flex">
 		<div class="cart_box">
 			<div class="cart_item">

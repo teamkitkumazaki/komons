@@ -210,8 +210,9 @@ function cartOptionController(target){
 
     $.each(target.find('.option_item'), function(index) {
       optionItem[index] = $(this);
-      optionItemHeight[index] = $(this).outerHeight();
       optionItemLabel[index] = $(this).find('label');
+      optionItemHeight[index] = optionItemLabel[index].outerHeight();
+      $(this).css({'height': optionItemLabel[index].outerHeight() + 'px'});
       optionItemWrap[index] = $(this).find('.input_wrap').outerHeight();
       optionItemLabel[index].on({
         'click': function() {

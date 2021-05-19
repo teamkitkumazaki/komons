@@ -139,7 +139,7 @@
       }
     }
     &.open{
-      height: auto;
+      height: auto !important;
       label{
         pointer-events: none;
       }
@@ -153,12 +153,21 @@
     border-radius: 5px;
     .option_item{
       margin-bottom: 20px;
-      height: 16px;
+      height: 20px;
       label{
         margin-bottom: 15px;
+        .radio_checker{
+          margin-right: 10px;
+        }
         .label_ttl{
+          width: calc(100% - 35px);
+          box-sizing: border-box;
           display: inline-block;
-          font-size: 3.8vw;
+          font-size: 16px;
+          @media screen and (max-width: 740px){
+            line-height: 1.5;
+            font-size: 3.8vw;
+          }
           line-height: 1;
           letter-spacing: 0.5px;
         }

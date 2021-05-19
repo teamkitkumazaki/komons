@@ -64,8 +64,9 @@
           shop.email_accent_color
         }
       }
-
-      ;
+    }
+    p{
+    color: #00381f !important;
     }
   </style>
 </head>
@@ -472,8 +473,9 @@
                           {% endif %}
                           {% if billing_address %}
                           <td class="customer-info__item">
-                            <h4>請求先住所</h4>
+                            <h4>購入者情報</h4>
                             {{ billing_address | format_address }}
+                            <p style="font-size: 13px;">※配送時の送り状における「送り主氏名・住所」は、 こちらの情報が記載されます。</p>
                           </td>
                           {% endif %}
                         </tr>

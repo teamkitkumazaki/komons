@@ -1,7 +1,9 @@
-{% capture email_title %} カートに商品が残っています{% endcapture %}
+{% capture email_title %} お買い忘れの商品はありませんか？{% endcapture %}
 {% capture email_body %}
 {% if billing_address.last_name %}{{ billing_address.last_name }}様、{% endif %}
-Komonsにご興味をお持ちいただき、誠にありがとうございます。<br>ショッピングカートに購入手続き中の商品が残っています。ご購入をご希望の場合は、在庫のあるうちにお買い求めください。
+<br>
+この度はKomonsにご興味をお持ちいただき、誠にありがとうございます。
+<br>ショッピングカートに購入手続き中の商品が残っています。ご購入をご希望の場合は、在庫のあるうちにお買い求めください。
 {% endcapture %}
 
 <!DOCTYPE html>
@@ -22,6 +24,9 @@ Komonsにご興味をお持ちいただき、誠にありがとうございま�
     }
     .button__cell { background: {{ shop.email_accent_color }}; }
     a, a:hover, a:active, a:visited { color: {{ shop.email_accent_color }}; }
+    p{
+    color: #00381f !important;
+    }
   </style>
 </head>
 
