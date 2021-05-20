@@ -9,10 +9,23 @@ $(function() {
       console.log(redirectURL);
       location.href = redirectURL;
     }
+    if(currentURL.indexOf('/?gid') !=  -1){
+      var redirectURL = currentURL.replace("/?gid", "/redirect?gid");
+      var paramCut = redirectURL.split('&');
+      console.log(paramCut[0]);
+      location.href = paramCut[0] + paramCut[1];
+    }
+    if(currentURL.indexOf('/?cbid') !=  -1){
+      var redirectURL = currentURL.replace("/?cbid", "/redirect?cbid");
+      var paramCut = redirectURL.split('&');
+      console.log(paramCut[0]);
+      location.href = paramCut[0] + paramCut[1] + paramCut[2];
+    }
     if(currentURL.indexOf('/?pid') !=  -1){
       var redirectURL = currentURL.replace("/?pid", "/redirect?pid");
-      console.log(redirectURL);
-      location.href = redirectURL;
+      var paramCut = redirectURL.split('&');
+      console.log(paramCut[0]);
+      location.href = paramCut[0];
     }
   }
 
@@ -399,17 +412,17 @@ $(function() {
   if (document.getElementById('itemDetail')) {
     detailToggleControll($('#detailToggle'));
   }
-  
+
   function productInitNum(target){
     var numberInput = [];
     var lotNumer;
-    
+
     function syncAllNumberInput(){
       $.each(target.find('input[type=number]'), function(index) {
         $(this).attr('value', lotNumer);
       });
     }
-    
+
     function init(){
       $.each(target.find('input[type=number]'), function(index) {
         console.log('index:' + index);
@@ -421,11 +434,11 @@ $(function() {
         });
       });
     }
-    
+
     init();
-    
+
   }
-  
+
   if (document.getElementById('itemDetail')) {
     productInitNum($('body'));
   }
