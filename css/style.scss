@@ -46,7 +46,8 @@
 @import 'component/comp-subscription-plans.scss';
 @import 'component/comp-subscription-table.scss';
 @import 'component/comp-upsell.scss';
-@import 'component/comp-browse-history';
+@import 'component/comp-browse-history.scss';
+@import 'component/comp-review-question.scss';
 
 
 
@@ -64,3 +65,4 @@
 @import 'page/giftList.scss'; /*ギフトページ*/
 @import 'page/giftService.scss'; /* ギフトサービスページ*/
 @import 'page/waitingList.scss'; /*ウェイティングリスト*/
+@import 'page/review.scss'; /*レビューページ*/
