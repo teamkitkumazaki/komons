@@ -1,6 +1,13 @@
 .comp-review-question{
   .review_item{
     margin-bottom: 60px;
+    .attention{
+      width: 100%;
+      display: block;
+      font-size: 14px;
+      padding: 15px 0 0px;
+      color: red;
+    }
     .question_ttl{
       @include flexSet;
       align-items: center;
@@ -35,6 +42,11 @@
         border-radius: 5px;
         box-sizing: border-box;
         background-color: #f4f4f4;
+        appearance: none;
+        background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/select_caret.svg?v=1622036554);
+        background-size: 10px;
+        background-repeat: no-repeat;
+        background-position: center right 15px;
         &:focus{
           outline: none;
         }
@@ -141,7 +153,7 @@
       background-repeat: no-repeat;
       background-position: center center;
       background-size: 30px;
-      background-image: url(../img/common/loading.svg);
+      background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/loading.svg?v=1622036239);
     }
   }
   .status_message{
@@ -197,14 +209,14 @@
     .text_wrap{
       position: relative;
       z-index: 10;
-      @include flexSet;
-      justify-content: center;
-      align-items: center;
-      pointer-events: none;
+      display: block;
+      text-align: center;
+      cursor: pointer;
       .ja{
         font-size: 18px;
         line-height: normal;
         letter-spacing: 1.15px;
+        pointer-events: none;
       }
     }
     input{
@@ -215,6 +227,9 @@
       height: 100%;
       top:0;
       left:0;
+      bottom:0;
+      right:0;
+      margin: auto;
     }
     &:hover{
       &::before{

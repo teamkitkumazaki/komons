@@ -1,0 +1,158 @@
+<?php/*Template Name: アンケートページ */?>
+<!doctype html>
+<html>
+<head>
+<meta name=”robots” content=”noindex,nofollow”>
+<?php get_template_part("parts/head");?>
+</head>
+<body id="journal" class="fixed-header rolled">
+<?php get_template_part("parts/header");?>
+<article id="review" class="page-review">
+	<section class="section-review">
+		<div class="section_inner">
+			<div class="title_wrap">
+				<h1 class="title">ご意見をお聞かせください。</h1>
+				<h2 class="lead_txt"><span>この度はKomonsをご購入いただき、ありがとうございました。</span><span>今後の商品・サービス向上のため、以下にご協力ください。</span></h2>
+			</div><!-- title_wrap -->
+			<div id="formWrap" class="comp-review-question">
+				<input id="pointInput" type="text" name="point" style="display: none;" value="5">
+				<div class="review_item b_none">
+					<div class="question_ttl">
+						<span class="num">1</span>
+						<h3 class="text">お客様のプロフィールを教えてください</h3>
+					</div>
+					<div class="form_wrap">
+						<div class="radio_wrap">
+							<span class="title">▼性別</span>
+							<label class="radio_item">
+								<input type="radio" name="sex" value="男性" checked>
+								<span class="radio_checker"></span>
+								<span class="name">男性</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="sex" value="女性">
+								<span class="radio_checker"></span>
+								<span class="name">女性</span>
+							</label>
+						</div>
+						<div class="radio_wrap">
+							<span class="title">▼年齢</span>
+							<label class="radio_item">
+								<input type="radio" name="age" value="10代" checked>
+								<span class="radio_checker"></span>
+								<span class="name">10代</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="age" value="20代">
+								<span class="radio_checker"></span>
+								<span class="name">20代</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="age" value="30代">
+								<span class="radio_checker"></span>
+								<span class="name">30代</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="age" value="40代">
+								<span class="radio_checker"></span>
+								<span class="name">40代</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="age" value="50代">
+								<span class="radio_checker"></span>
+								<span class="name">50代</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="age" value="60代">
+								<span class="radio_checker"></span>
+								<span class="name">60代</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="age" value="70代以上">
+								<span class="radio_checker"></span>
+								<span class="name">70代以上</span>
+							</label>
+						</div>
+						<div class="radio_wrap">
+							<span class="title">▼家族構成</span>
+							<label class="radio_item">
+								<input type="radio" name="family" value="一人暮らし" checked>
+								<span class="radio_checker"></span>
+								<span class="name">一人暮らし</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="family" value="2人">
+								<span class="radio_checker"></span>
+								<span class="name">2人</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="family" value="3人">
+								<span class="radio_checker"></span>
+								<span class="name">3人</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="family" value="4人">
+								<span class="radio_checker"></span>
+								<span class="name">4人</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="family" value="5人">
+								<span class="radio_checker"></span>
+								<span class="name">5人</span>
+							</label>
+							<label class="radio_item">
+								<input type="radio" name="family" value="6人以上">
+								<span class="radio_checker"></span>
+								<span class="name">6人以上</span>
+							</label>
+						</div>
+					</div>
+				</div><!-- review_item -->
+				<div class="review_item">
+					<div class="question_ttl">
+						<span class="num">2</span>
+						<h3 class="text">Komonsを知った経緯を教えてください</h3>
+					</div>
+					<div class="form_wrap">
+						<select name="route">
+							<option value="">項目を選択してください</option>
+							<option value="Google/Yahooでの検索">Google/Yahooでの検索</option>
+							<option value="SNS">SNS</option>
+							<option value="知人からの紹介/口コミ">知人からの紹介/口コミ</option>
+							<option value="小売店">小売店</option>
+							<option value="WEBサイトでの紹介">WEBサイトでの紹介</option>
+							<option value="その他(自由記入)">その他(自由記入)</option>
+						</select>
+					</div>
+				</div><!-- review_item -->
+				<div class="review_item b_none">
+					<div class="question_ttl">
+						<span class="num">3</span>
+						<h3 class="text">コモンズの商品・サービスについて、良かった点/改善すべき点などあれば教えてください。(任意回答)</h3>
+					</div>
+					<div class="form_wrap">
+						<textarea name="content"></textarea>
+						<p class="example">例文) ここに例文が入ります。ここに例文が入ります。ここに例文が入ります。ここに例文が入ります。ここに例文が入ります。ここに例文が入ります。</p>
+					</div>
+				</div><!-- review_item -->
+				<div id="ajaxLoader" class="ajax_loader">
+					<span class="loading"></span>
+				</div>
+				<div id="statusMessage" class="status_message hidden"></div>
+				<div id="submitButton" class="submit_wrap">
+					<span class="text_wrap">
+						<span class="ja">内容を送信する</span>
+						<input type="button" value="内容を送信する">
+					</span>
+				</div>
+			</div><!-- comp-review-question -->
+		</div><!-- section_inner -->
+	</section>
+</article>
+<?php get_template_part("parts/footer");?>
+<?php get_template_part("parts/hummenu");?>
+</body>
+<script>
+$('header').addClass('loaded');
+</script>
+</html>

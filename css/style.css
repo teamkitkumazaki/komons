@@ -8513,6 +8513,13 @@ body.loaded #loading {
 .comp-review-question .review_item {
   margin-bottom: 60px;
 }
+.comp-review-question .review_item .attention {
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  padding: 15px 0 0px;
+  color: red;
+}
 .comp-review-question .review_item .question_ttl {
   display: flex;
   flex-wrap: wrap;
@@ -8548,6 +8555,12 @@ body.loaded #loading {
   border-radius: 5px;
   box-sizing: border-box;
   background-color: #f4f4f4;
+  -webkit-appearance: none;
+          appearance: none;
+  background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/select_caret.svg?v=1622036554);
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center right 15px;
 }
 .comp-review-question .review_item .form_wrap select:focus {
   outline: none;
@@ -8657,7 +8670,7 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 30px;
-  background-image: url(../img/common/loading.svg);
+  background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/loading.svg?v=1622036239);
 }
 .comp-review-question .status_message {
   height: 0;
@@ -8713,17 +8726,15 @@ body.loaded #loading {
 .comp-review-question .submit_wrap .text_wrap {
   position: relative;
   z-index: 10;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
 }
 .comp-review-question .submit_wrap .text_wrap .ja {
   font-size: 18px;
   line-height: normal;
   letter-spacing: 1.15px;
+  pointer-events: none;
 }
 .comp-review-question .submit_wrap input {
   position: absolute;
@@ -8733,6 +8744,9 @@ body.loaded #loading {
   height: 100%;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
 }
 .comp-review-question .submit_wrap:hover::before {
   width: 100%;

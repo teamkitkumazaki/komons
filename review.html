@@ -28,6 +28,7 @@
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="slick/slick.min.js"></script>
 	<script type="text/javascript" src="js/layout.js"></script>
+	<script type="text/javascript" src="js/review.js"></script>
 </head>
 
 <body class="fixed">
@@ -56,7 +57,8 @@
 					<h1 class="title">ご意見をお聞かせください。</h1>
 					<h2 class="lead_txt"><span>この度はKomonsをご購入いただき、ありがとうございました。</span><span>今後の商品・サービス向上のため、以下にご協力ください。</span></h2>
 				</div><!-- title_wrap -->
-				<div class="comp-review-question">
+				<div id="formWrap" class="comp-review-question">
+					<input id="pointInput" type="text" name="point" style="display: none;" value="5">
 					<div class="review_item b_none">
 						<div class="question_ttl">
 							<span class="num">1</span>
@@ -183,7 +185,7 @@
 					<div id="submitButton" class="submit_wrap">
 						<span class="text_wrap">
 							<span class="ja">内容を送信する</span>
-							<input type="button" value="送信">
+							<input type="button" value="内容を送信する">
 						</span>
 					</div>
 				</div><!-- comp-review-question -->

@@ -54,6 +54,9 @@
 	{%- if request.page_type contains 'cart' -%}
     <script src="{{ 'admin.js' | asset_url }}" defer="defer"></script>
 	{%- endif -%}
+	{%- if request.page_type contains 'review' -%}
+	<script src="{{ 'review.js' | asset_url }}" defer="defer"></script>
+	{%- endif -%}
   <script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/slick.min.js?ver{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}" charset="UTF-8"></script>
 	<script src="https://statics.a8.net/a8sales/a8sales.js"></script>
 	{% include 'facebook-pixel-code' %}
