@@ -1,7 +1,7 @@
 $(function() {
 
   //フロントリダイレクト
-  function redirectColorMeURL(){
+  /*function redirectColorMeURL(){
     var currentURL = location.href;
     console.log(currentURL);
     if(currentURL.indexOf('/?mode') !=  -1){
@@ -29,7 +29,7 @@ $(function() {
     }
   }
 
-  redirectColorMeURL();
+  redirectColorMeURL();*/
 
   // ローディングアニメーション
   function loadingAnimation() {
