@@ -2,7 +2,8 @@ $(function() {
   function pointSet(){
     var url = location.href;
     var pointNum = url.split('?pt=');
-    $('#pointInput').attr('value', pointNum[1])
+    var point = pointNum[1].split('&')
+    $('#pointInput').attr('value', point[0])
   }
 
   pointSet();

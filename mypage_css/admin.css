@@ -1923,6 +1923,10 @@ article {
 .page-login .section_inner .subscription-link {
   margin-top: 50px;
   margin-bottom: 50px;
+  line-height: 1.6;
+}
+.page-login .section_inner .subscription-link span {
+  display: block;
 }
 
 @media screen and (max-width: 720px) {

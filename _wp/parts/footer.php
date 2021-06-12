@@ -11,11 +11,11 @@
 			</div><!-- fmenu -->
 			<div class="fmenu02 fmenu">
 				<ul>
-					<li><a href="https://www.komons-japan.com/pages/faq#fqProduct">注文方法について</a></li>
-					<li><a href="https://www.komons-japan.com/pages/faq#fqPurchase">お支払いについて</a></li>
-					<li><a href="https://www.komons-japan.com/?mode=f6">ギフトについて</a></li>
-					<li><a href="https://www.komons-japan.com/pages/faq#fqDelivery">配送について</a></li>
-					<li><a href="https://www.komons-japan.com/pages/faq#fqCancel">キャンセルポリシー</a></li>
+					<li><a href="https://komons-japan.com/pages/faq#fqProduct">注文方法について</a></li>
+					<li><a href="https://komons-japan.com/pages/faq#fqPurchase">お支払いについて</a></li>
+					<li><a href="https://komons-japan.com/pages/faq#fqGift">ギフトについて</a></li>
+					<li><a href="https://komons-japan.com/pages/faq#fqDelivery">配送について</a></li>
+					<li><a href="https://komons-japan.com/pages/faq#fqCancel">キャンセルポリシー</a></li>
 
 				</ul>
 			</div><!-- fmenu -->
@@ -24,7 +24,7 @@
 					<li><a href="https://komons-japan.com/account/login">マイページ</a></li>
 					<li><a href="https://komons-japan.com/cart">カートを見る</a></li>
 					<li><a href="https://komons-japan.com/pages/privacy-policy">プライバシーポリシー</a></li>
-					<li><a href="https://www.komons-japan.com/pages/trade-law">特定商取引法に基づく表記</a></li>
+					<li><a href="https://komons-japan.com/pages/trade-law">特定商取引法に基づく表記</a></li>
 					<li><a target="_blank" href="https://unsungs-web.com/">運営会社</a></li>
 					<li><a href="https://journal.komons-japan.com/contact">お問い合わせ</a></li>
 				</ul>
@@ -32,7 +32,7 @@
 		</div><!-- footer_menu -->
 		<div class="footer_sns">
 			<div class="img_wrap">
-				<a href="https://www.komons-japan.com/"><img src="<?php echo get_template_directory_uri();?>/img/footer_logo.png" alt="komons"></a>
+				<a href="https://komons-japan.com/"><img src="<?php echo get_template_directory_uri();?>/img/footer_logo.png" alt="komons"></a>
 			</div>
 			<ul>
 				<li><a href="https://www.facebook.com/komons.japan"><img src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/fb_icon_baav5a.png"></a></li>

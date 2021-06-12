@@ -36,19 +36,19 @@
               <span class="en">Fabric Mist</span>
               <span class="ja">除菌用消臭ミスト</span>
             </a>
-            <a class="hand" href="https://www.komons-japan.com/collections/hand">
+            <a class="hand" href="https://komons-japan.com/collections/hand">
               <span class="en">Hand Wash</span>
               <span class="ja">ハンドソープ</span>
             </a>
-            <a class="multi" href="https://www.komons-japan.com/collections/multi">
+            <a class="multi" href="https://komons-japan.com/collections/multi">
               <span class="en">Multi Clener</span>
               <span class="ja">マルチクリーナー</span>
             </a>
-            <a class="bath" href="https://www.komons-japan.com/collections/bath">
+            <a class="bath" href="https://komons-japan.com/collections/bath">
               <span class="en">Bath Cleaner</span>
               <span class="ja">バスクリーナー</span>
             </a>
-            <a class="toilet" href="https://www.komons-japan.com/collections/toilet">
+            <a class="toilet" href="https://komons-japan.com/collections/toilet">
               <span class="en">Toilet Cleaner</span>
               <span class="ja">トイレクリーナー</span>
             </a>
@@ -69,12 +69,12 @@
         </div>
         <div class="pop_section b_none">
           <div class="menu_item">
-            <a class="parent" href="https://www.komons-japan.com/pages/concept">
+            <a class="parent" href="https://komons-japan.com/pages/concept">
               <span class="ja">Komonsをつくるにあたって</span>
             </a>
           </div>
           <div class="menu_item">
-            <a class="parent" href="https://www.komons-japan.com/pages/gift-service">
+            <a class="parent" href="https://komons-japan.com/pages/gift-service">
               <span class="ja">ギフトサービスについて</span>
             </a>
           </div>
@@ -94,15 +94,15 @@
             </div>
           </div>
           <div class="menu_item">
-            <a class="parent" href="https://www.komons-japan.com/pages/faq">
+            <a class="parent" href="https://komons-japan.com/pages/faq">
               <span class="ja">FAQ</span>
             </a>
             <div class="child">
-              <a href="https://www.komons-japan.com/pages/faq#fqProduct">製品について</a>
-              <a href="https://www.komons-japan.com/pages/faq#fqPurchase">ご購入に際して</a>
-              <a href="https://www.komons-japan.com/pages/faq#fqGift">ギフトについて</a>
-              <a href="https://www.komons-japan.com/pages/faq#fqDelivery">配送について</a>
-              <a href="https://www.komons-japan.com/pages/faq#fqCancel">キャンセルポリシー</a>
+              <a href="https://komons-japan.com/pages/faq#fqProduct">製品について</a>
+              <a href="https://komons-japan.com/pages/faq#fqPurchase">ご購入に際して</a>
+              <a href="https://komons-japan.com/pages/faq#fqGift">ギフトについて</a>
+              <a href="https://komons-japan.com/pages/faq#fqDelivery">配送について</a>
+              <a href="https://komons-japan.com/pages/faq#fqCancel">キャンセルポリシー</a>
             </div>
           </div>
           <div class="menu_item">

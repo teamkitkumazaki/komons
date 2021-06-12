@@ -4,7 +4,6 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="robots" content="noindex,nofollow">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/style.css">
 </head>
 

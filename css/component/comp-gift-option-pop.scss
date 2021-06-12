@@ -221,12 +221,12 @@
                 }
               }
             }
-            .mizuhiki_desc{
-              margin-top: 10px;
-              font-size: 13px;
-              line-height: 1.6;
-              letter-spacing: 0.4px;
-            }
+          }
+          .mizuhiki_desc{
+            margin-top: 10px;
+            font-size: 13px;
+            line-height: 1.6;
+            letter-spacing: 0.4px;
           }
         }
         .mizuhiki{
@@ -469,6 +469,12 @@
                 }
               }
             }
+            .mizuhiki_desc{
+              font-size: 13px;
+              line-height: 1.6;
+              letter-spacing: 0.4px;
+              margin-top: 5px;
+            }
           }
           .mizuhiki{
             padding-bottom: 40px;
@@ -490,12 +496,6 @@
                   padding: 12px 0;
                 }
               }
-            }
-            .mizuhiki_desc{
-              font-size: 13px;
-              line-height: 1.6;
-              letter-spacing: 0.4px;
-              margin-top: 5px;
             }
           }
         }

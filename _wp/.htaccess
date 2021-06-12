@@ -149,4 +149,11 @@ RewriteRule ^/?$ https://komons-japan.com/products/k0027 [L,R=301]
 RewriteCond %{QUERY_STRING} (^|&)pid=134416994($|&)
 RewriteRule ^/?$ https://komons-japan.com/products/k0018 [L,R=301]
 
+# 手提げバッグ
+RewriteCond %{QUERY_STRING} (^|&)pid=154063293($|&)
+RewriteRule ^/?$ https://komons-japan.com//products/k0041 [L,R=301]
+
+
+RewriteRule ^/?$ https://komons-japan.com/ [L,R=301]
+
 </IfModule>
