@@ -5,7 +5,12 @@ footer {
 		size: 1000px;
 		position: center center;
 	}
-
+	.fptOlf, .lnviXl{
+		position: static !important;
+		p{
+			line-height: 45px !important;
+		}
+	}
 	.footer_wrap {
 		@include waku;
 		@media screen and (max-width: 1150px){
@@ -78,15 +83,15 @@ footer {
 						overflow: hidden;
 						input[type="email"]{
 							width: calc(100% - 75px);
-							height: 100%;
+							height: 100% !important;
 							font-size: 14px;
 							font-family: inherit;
 							position: absolute;
 							line-height: 45px;
-							padding: 0 10px;
+							padding: 0 10px !important;
 							box-sizing: border-box;
 							border: none !important;
-	  					background-color: rgba(255, 255, 255, 0.4);
+	  					background-color: rgba(255, 255, 255, 0.4) !important;
 							top:0;
 							left:0;
 							bottom:0;
@@ -98,10 +103,10 @@ footer {
 						button[type="button"]{
 							appearance: none;
 							box-shadow: none;
-							position: absolute;
+							position: absolute !important;
 							color: #fff;
 							font-family: inherit;
-							width:75px;
+							width:75px !important;
 							height: 100%;
 							line-height: 45px;
 							border: none !important;

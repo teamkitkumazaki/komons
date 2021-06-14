@@ -432,6 +432,12 @@ footer {
   background-size: 1000px;
   background-position: center center;
 }
+footer .fptOlf, footer .lnviXl {
+  position: static !important;
+}
+footer .fptOlf p, footer .lnviXl p {
+  line-height: 45px !important;
+}
 footer .footer_wrap {
   max-width: 1080px;
   margin-left: auto;
@@ -516,15 +522,15 @@ footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap form > div {
 }
 footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap form > div input[type=email] {
   width: calc(100% - 75px);
-  height: 100%;
+  height: 100% !important;
   font-size: 14px;
   font-family: inherit;
   position: absolute;
   line-height: 45px;
-  padding: 0 10px;
+  padding: 0 10px !important;
   box-sizing: border-box;
   border: none !important;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.4) !important;
   top: 0;
   left: 0;
   bottom: 0;
@@ -537,10 +543,10 @@ footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap form > div button[type=
   -webkit-appearance: none;
           appearance: none;
   box-shadow: none;
-  position: absolute;
+  position: absolute !important;
   color: #fff;
   font-family: inherit;
-  width: 75px;
+  width: 75px !important;
   height: 100%;
   line-height: 45px;
   border: none !important;
@@ -15616,3 +15622,64 @@ body.loaded #loading {
   }
 }
 /*レビューページ*/
+.shopify-challenge__container {
+  text-align: center;
+  max-width: 600px !important;
+  margin: 160px auto 120px !important;
+}
+.shopify-challenge__container .shopify-challenge__message {
+  margin: 20px auto;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+.shopify-challenge__container input[type=submit] {
+  max-width: 600px;
+  margin: 30px auto 0;
+  width: 100%;
+  display: block;
+  background: #222;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 15px 0;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.shopify-challenge__container input[type=submit]:hover {
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 760px) {
+  .shopify-challenge__container {
+    max-width: 90vw !important;
+    margin: 120px auto 60px !important;
+  }
+  .shopify-challenge__container .shopify-challenge__message {
+    margin: 20px auto;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-align: left;
+  }
+  .shopify-challenge__container input[type=submit] {
+    max-width: 500px;
+    margin: 30px auto 0;
+    width: 100%;
+    display: block;
+    background: #222;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 15px 0;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  .shopify-challenge__container input[type=submit]:hover {
+    opacity: 0.75;
+  }
+}
+/*アカウント登録ページ*/

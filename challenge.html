@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,146 +51,79 @@
 			</div>
 		</div>
 	</header>
-	<article id="review" class="page-review">
-		<section class="section-review">
-			<div class="section_inner">
-				<div class="title_wrap">
-					<h1 class="title">ご意見をお聞かせください。</h1>
-					<h2 class="lead_txt"><span>この度はKomonsをご購入いただき、ありがとうございました。</span><span>今後の商品・サービス向上のため、以下にご協力ください。</span></h2>
-				</div><!-- title_wrap -->
-				<div id="formWrap" class="comp-review-question">
-					<input id="pointInput" type="text" name="point" style="display: none;" value="5">
-					<div class="review_item b_none">
-						<div class="question_ttl">
-							<span class="num">1</span>
-							<h3 class="text">お客様のプロフィールを教えてください</h3>
-						</div>
-						<div class="form_wrap">
-							<div class="radio_wrap">
-								<span class="title">▼性別</span>
-								<label class="radio_item">
-									<input type="radio" name="sex" value="男性" checked>
-									<span class="radio_checker"></span>
-									<span class="name">男性</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="sex" value="女性">
-									<span class="radio_checker"></span>
-									<span class="name">女性</span>
-								</label>
-							</div>
-							<div class="radio_wrap">
-								<span class="title">▼年齢</span>
-								<label class="radio_item">
-									<input type="radio" name="age" value="10代" checked>
-									<span class="radio_checker"></span>
-									<span class="name">10代</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="age" value="20代">
-									<span class="radio_checker"></span>
-									<span class="name">20代</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="age" value="30代">
-									<span class="radio_checker"></span>
-									<span class="name">30代</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="age" value="40代">
-									<span class="radio_checker"></span>
-									<span class="name">40代</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="age" value="50代">
-									<span class="radio_checker"></span>
-									<span class="name">50代</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="age" value="60代">
-									<span class="radio_checker"></span>
-									<span class="name">60代</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="age" value="70代以上">
-									<span class="radio_checker"></span>
-									<span class="name">70代以上</span>
-								</label>
-							</div>
-							<div class="radio_wrap">
-								<span class="title">▼家族構成</span>
-								<label class="radio_item">
-									<input type="radio" name="family" value="一人暮らし" checked>
-									<span class="radio_checker"></span>
-									<span class="name">一人暮らし</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="family" value="2人">
-									<span class="radio_checker"></span>
-									<span class="name">2人</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="family" value="3人">
-									<span class="radio_checker"></span>
-									<span class="name">3人</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="family" value="4人">
-									<span class="radio_checker"></span>
-									<span class="name">4人</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="family" value="5人">
-									<span class="radio_checker"></span>
-									<span class="name">5人</span>
-								</label>
-								<label class="radio_item">
-									<input type="radio" name="family" value="6人以上">
-									<span class="radio_checker"></span>
-									<span class="name">6人以上</span>
-								</label>
-							</div>
-						</div>
-					</div><!-- review_item -->
-					<div class="review_item">
-						<div class="question_ttl">
-							<span class="num">2</span>
-							<h3 class="text">Komonsを知った経緯を教えてください</h3>
-						</div>
-						<div class="form_wrap">
-							<select name="route">
-								<option value="">項目を選択してください</option>
-								<option value="Google/Yahooでの検索">Google/Yahooでの検索</option>
-								<option value="SNS">SNS</option>
-								<option value="知人からの紹介/口コミ">知人からの紹介/口コミ</option>
-								<option value="小売店">小売店</option>
-								<option value="WEBサイトでの紹介">WEBサイトでの紹介</option>
-								<option value="その他(自由記入)">その他(自由記入)</option>
-							</select>
-						</div>
-					</div><!-- review_item -->
-					<div class="review_item b_none">
-						<div class="question_ttl">
-							<span class="num">3</span>
-							<h3 class="text">コモンズの商品・サービスについて、良かった点/改善すべき点などあれば教えてください。(任意回答)</h3>
-						</div>
-						<div class="form_wrap">
-							<textarea name="content"></textarea>
-							<p class="example">例文) ここに例文が入ります。ここに例文が入ります。ここに例文が入ります。ここに例文が入ります。ここに例文が入ります。ここに例文が入ります。</p>
-						</div>
-					</div><!-- review_item -->
-					<div id="ajaxLoader" class="ajax_loader">
-						<span class="loading"></span>
+	<article id="challenge" class="page-challenge">
+		<section class="section-challenge">
+			<p class="shopify-challenge__message">続けるためには、あなたがロボットではないことを教えてください。</p>
+			<form action="https://komons-japan.com/account" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="6CGcSNJ3wQa6OcqSO0TqKBL-9Qo6Hhz9DcwKI5ZUuT4C8di5niHyyX4wSd3D32W8r1kZDj4LyJ73s_VqO5EfmA">
+				<script>
+					//<![CDATA[
+					var onCaptchaSuccess = function() {
+						var event;
+
+						try {
+							event = new Event('captchaSuccess', {
+								bubbles: true,
+								cancelable: true
+							});
+						} catch (e) {
+							event = document.createEvent('Event');
+							event.initEvent('captchaSuccess', true, true);
+						}
+
+						window.dispatchEvent(event);
+					}
+
+					//]]>
+				</script>
+				<script>
+					//<![CDATA[
+					window.addEventListener('captchaSuccess', function() {
+						var responseInput = document.querySelector('.g-recaptcha-response');
+						var submitButton = document.querySelector('.dialog-submit');
+
+						if (submitButton instanceof HTMLElement) {
+							var needResponse = (responseInput instanceof HTMLElement);
+							var responseValueMissing = !responseInput.value;
+							submitButton.disabled = (needResponse && responseValueMissing);
+						}
+					}, false);
+
+					//]]>
+				</script>
+				<script>
+					//<![CDATA[
+					var recaptchaCallback = function() {
+						grecaptcha.render('g-recaptcha', {
+							sitekey: "6LeoeSkTAAAAAA9rkZs5oS82l69OEYjKRZAiKdaF",
+							size: (window.innerWidth > 320) ? 'normal' : 'compact',
+							callback: 'onCaptchaSuccess',
+						});
+					};
+
+					//]]>
+				</script>
+				<script src="https://www.recaptcha.net/recaptcha/api.js?onload=recaptchaCallback&amp;render=6LcCR2cUAAAAANS1Gpq_mDIJ2pQuJphsSQaUEuc9&amp;hl=ja" async="async">
+					//<![CDATA[
+
+					//]]>
+				</script>
+				<noscript>
+					<div class="g-recaptcha-nojs"><iframe class="g-recaptcha-nojs__iframe" frameborder="0" scrolling="no" src="https://www.google.com/recaptcha/api/fallback?k=6LeoeSkTAAAAAA9rkZs5oS82l69OEYjKRZAiKdaF"></iframe>
+						<div class="g-recaptcha-nojs__input-wrapper"><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-nojs__input">
+</textarea></div>
 					</div>
-					<div id="statusMessage" class="status_message hidden"></div>
-					<div id="submitButton" class="submit_wrap">
-						<span class="text_wrap">
-							<span class="ja">内容を送信する</span>
-							<input type="button" value="内容を送信する">
-						</span>
-					</div>
-				</div><!-- comp-review-question -->
-			</div><!-- section_inner -->
+				</noscript>
+				<div id="g-recaptcha" class="g-recaptcha">
+					<div style="width: 304px; height: 78px;">
+						<div><iframe title="reCAPTCHA"
+								src="https://www.recaptcha.net/recaptcha/api2/anchor?ar=1&amp;k=6LeoeSkTAAAAAA9rkZs5oS82l69OEYjKRZAiKdaF&amp;co=aHR0cHM6Ly9rb21vbnMtamFwYW4uY29tOjQ0Mw..&amp;hl=ja&amp;v=6OAif-f8nYV0qSFmq-D6Qssr&amp;size=normal&amp;cb=wayedfgf3h8t"
+								width="304" height="78" role="presentation" name="a-j4esha5mtte6" frameborder="0" scrolling="no"
+								sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
+							class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+					</div><iframe style="display: none;"></iframe>
+				</div>
+				<input type="submit" value="送信" class="shopify-challenge__button btn">
+			</form>
 		</section>
 	</article>
 	<footer>
@@ -238,22 +172,25 @@
 							<div class="needsclick undefined kl-private-reset-css-Xuajs1">
 								<form class="needsclick View__FormView-sc-1ou3cq2-0 hEMewN klaviyo-form-version-cid_1 kl-private-reset-css-Xuajs1" novalidate="" isembed="true" tabindex="-1">
 									<div class="needsclick Column__FormColumn-z5j99u-0 hVFNhP kl-private-reset-css-Xuajs1">
-									<div data-testid="form-row" class="needsclick Row__FormRow-sc-17nghml-0 lnviXl kl-private-reset-css-Xuajs1">
-										<div component="[object Object]" formcomponentstyling="[object Object]" data-testid="form-component" class="needsclick FormComponent__StyledFormComponentWrapper-e0xun6-0 fptOlf notranslate kl-private-reset-css-Xuajs1" formcomponenttheme="[object Object]">
-											<div class="needsclick TextInput__StyledInputContainer-sc-1o6de9f-1 kvTDNe kl-private-reset-css-Xuajs1"><input type="email" name="email" tabindex="0" styling="[object Object]" placeholder="" aria-label="" aria-invalid="false" valid="1" options="[object Object]" class="notranslate needsclick TextInput__FormStyledTextInput-sc-1o6de9f-0 etaOCU kl-private-reset-css-Xuajs1">
-												<div class="needsclick ValidationMessage__Container-sc-1agouhi-0 eVRHhz kl-private-reset-css-Xuajs1"></div>
+										<div data-testid="form-row" class="needsclick Row__FormRow-sc-17nghml-0 lnviXl kl-private-reset-css-Xuajs1">
+											<div component="[object Object]" formcomponentstyling="[object Object]" data-testid="form-component" class="needsclick FormComponent__StyledFormComponentWrapper-e0xun6-0 fptOlf notranslate kl-private-reset-css-Xuajs1"
+												formcomponenttheme="[object Object]">
+												<div class="needsclick TextInput__StyledInputContainer-sc-1o6de9f-1 kvTDNe kl-private-reset-css-Xuajs1"><input type="email" name="email" tabindex="0" styling="[object Object]" placeholder="" aria-label="" aria-invalid="false"
+														valid="1" options="[object Object]" class="notranslate needsclick TextInput__FormStyledTextInput-sc-1o6de9f-0 etaOCU kl-private-reset-css-Xuajs1">
+													<div class="needsclick ValidationMessage__Container-sc-1agouhi-0 eVRHhz kl-private-reset-css-Xuajs1"></div>
+												</div>
+											</div>
+										</div>
+										<div data-testid="form-row" class="needsclick Row__FormRow-sc-17nghml-0 lnviXl kl-private-reset-css-Xuajs1">
+											<div component="[object Object]" fullwidth="true" formcomponentstyling="[object Object]" data-testid="form-component"
+												class="needsclick FormComponent__StyledFormComponentWrapper-e0xun6-0 fptOlf notranslate kl-private-reset-css-Xuajs1" formcomponenttheme="[object Object]">
+												<button type="button" tabindex="0" class="needsclick Button__FormStyledButton-p2mbjt-0 dZSiU kl-private-reset-css-Xuajs1">登録</button>
 											</div>
 										</div>
 									</div>
-									<div data-testid="form-row" class="needsclick Row__FormRow-sc-17nghml-0 lnviXl kl-private-reset-css-Xuajs1">
-										<div component="[object Object]" fullwidth="true" formcomponentstyling="[object Object]" data-testid="form-component" class="needsclick FormComponent__StyledFormComponentWrapper-e0xun6-0 fptOlf notranslate kl-private-reset-css-Xuajs1" formcomponenttheme="[object Object]">
-										<button type="button" tabindex="0" class="needsclick Button__FormStyledButton-p2mbjt-0 dZSiU kl-private-reset-css-Xuajs1">登録</button>
-									</div>
-								</div>
+									<input type="submit" tabindex="-1" class="notranslate needsclick View__HiddenSubmit-sc-1ou3cq2-1 StXTa kl-private-reset-css-Xuajs1" value="Submit">
+								</form>
 							</div>
-							<input type="submit" tabindex="-1" class="notranslate needsclick View__HiddenSubmit-sc-1ou3cq2-1 StXTa kl-private-reset-css-Xuajs1" value="Submit">
-						</form>
-					</div>
 						</div>
 					</div>
 				</div>
@@ -393,4 +330,5 @@
 		</div><!-- search_inner -->
 	</div><!-- slideMenu comp-slide-menu -->
 </body>
+
 </html>

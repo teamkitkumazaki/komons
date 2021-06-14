@@ -30,17 +30,48 @@
 				</script>
 				<div class="account_item default">
 					<h2 class="account_ttl">アカウント情報</h2>
-					<div class="description"><span>{{ customer.last_name }} {{ customer.first_name }}</span>〒{{ customer.default_address.zip }}<br>{{ customer.default_address.province }}<br>{{ customer.default_address.city }}{{ customer.default_address.street }}</div>
+					<div class="description">
+						<span>{{ customer.last_name }} 	{{ customer.first_name }}</span>
+					</div>
 				</div>
 				<div class="others">
-				<h3 class="account_ttl">その他の連絡先</h3>
 					{% for address in customer.addresses %}
+					{% if address == customer.default_address %}
+					<h3 class="account_ttl">デフォルトの連絡先</h3>
+					<div class="account_item">
+						<div class="description"><span>{{ address.last_name }} {{ address.first_name }}</span>〒{{ address.zip }}<br>{{ address.province }} {{ address.city }}{{ address.street }}</div>
+						<div class="btn_wrap">
+							<button id="EditFormButton_{{ address.id }}" type="button" class="btn btn_edit" data-form-id="{{ address.id }}" aria-owns="EditAddress_{{ address.id }}" aria-expanded="false"><span>修正</span></button>
+							<form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+							>
+							<button type="submit" class="btn btn_delete" data-target="{{ address.url }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"><span>削除</span></button>
+							</form>
+							<script>
+								document.getElementById("EditFormButton_" + {{ address.id }}).addEventListener('click', () => {
+									const newForm = document.getElementById('AddressNewForm');
+									const thisEditForm = document.getElementById('EditAddress_' + {{ address.id }});
+									newForm.setAttribute("style", "display: none;");
+									newForm.setAttribute("style", "display: none");
+									{% for address in customer.addresses %}
+									document.getElementById('EditAddress_' + {{ address.id }}).setAttribute("style", "display: none");
+									{% endfor %}
+									thisEditForm.setAttribute("style", "display: block;");
+								});
+							</script>
+						</div><!-- btn_wrap -->
+					</div>
+					{% endif %}
+					<h3 class="account_ttl">その他の配送先</h3>
+					{% if address == customer.default_address %}
 					{%- unless address == customer.default_address -%}
 					<div class="account_item">
 						<div class="description"><span>{{ address.last_name }} {{ address.first_name }}</span>〒{{ address.zip }}<br>{{ address.province }} {{ address.city }}{{ address.street }}</div>
 						<div class="btn_wrap">
 							<button id="EditFormButton_{{ address.id }}" type="button" class="btn btn_edit" data-form-id="{{ address.id }}" aria-owns="EditAddress_{{ address.id }}" aria-expanded="false"><span>修正</span></button>
-							<button type="button" class="btn btn_delete" data-target="{{ address.url }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"><span>削除</span></button>
+							<form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+							>
+							<button type="submit" class="btn btn_delete" data-target="{{ address.url }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"><span>削除</span></button>
+							</form>
 							<script>
 								document.getElementById("EditFormButton_" + {{ address.id }}).addEventListener('click', () => {
 									const newForm = document.getElementById('AddressNewForm');
@@ -202,4 +233,16 @@
 </article>
 <script>
 	$('body').addClass('fixed');
+</script>
+<script>
+document.querySelectorAll('.address-delete-form').forEach(deleteForm => {
+  deleteForm.addEventListener('submit', event => {
+    const confirmMessage = event.target.getAttribute('data-confirm-message');
+
+    if (!window.confirm('住所情報を削除しますか？')){
+      event.preventDefault();
+    }
+
+  });
+});
 </script>

@@ -94,6 +94,42 @@ RewriteRule ^/?$ https://komons-japan.com/products/k0006 [L,R=301]
 RewriteCond %{QUERY_STRING} (^|&)pid=132301743($|&)
 RewriteRule ^/?$ https://komons-japan.com/products/k0005 [L,R=301]
 
+########## リフィル商品詳細 ##########
+
+# 食器用洗剤
+RewriteCond %{QUERY_STRING} (^|&)pid=144279730($|&)
+RewriteRule ^/?$ https://komons-japan.com/products/k0021 [L,R=301]
+
+# ハンドソープ
+RewriteCond %{QUERY_STRING} (^|&)pid=144279357($|&)
+RewriteRule ^/?$ https://komons-japan.com/products/k0020 [L,R=301]
+
+# ファブリックミスト
+RewriteCond %{QUERY_STRING} (^|&)pid=147344420($|&)
+RewriteRule ^/?$ https://komons-japan.com/products/k0032 [L,R=301]
+
+# マルチクリーナー
+RewriteCond %{QUERY_STRING} (^|&)pid=147344470($|&)
+RewriteRule ^/?$ https://komons-japan.com/products/k0033 [L,R=301]
+
+########## ボトル＆リフィル商品詳細 ##########
+
+# 食器用洗剤
+RewriteCond %{QUERY_STRING} (^|&)pid=151202935($|&)
+RewriteRule ^/?$ https://komons-japan.com/products/k0001-set [L,R=301]
+
+# ハンドソープ
+RewriteCond %{QUERY_STRING} (^|&)pid=151138500($|&)
+RewriteRule ^/?$ https://komons-japan.com/products/k0003-set [L,R=301]
+
+# ファブリックミスト
+RewriteCond %{QUERY_STRING} (^|&)pid=151202909($|&)
+RewriteRule ^/?$ https://komons-japan.com/products/k0002-set [L,R=301]
+
+# マルチクリーナー
+RewriteCond %{QUERY_STRING} (^|&)pid=151202993($|&)
+RewriteRule ^/?$ https://komons-japan.com/products/k0004-set [L,R=301]
+
 
 ########## ギフト商品詳細 ##########
 
