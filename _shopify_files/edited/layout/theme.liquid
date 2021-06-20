@@ -27,7 +27,7 @@
 			{%- comment -%}
 			{{ 'general.search.results' | t: terms: search.terms }}
 			{%- endcomment -%}
-			{%- assign search_message = 'の検索結果 | 毎日の家事を心地よい時間に変えるホームケアブランド - Komons(コモンズ)' -%}
+			{%- assign search_message = 'の検索結果 | 毎日の家事を、心地よい時間に変えるホームケアブランド - Komons(コモンズ)' -%}
 			{{ search.terms }}{{ search_message }}
     {%- else -%}
       {{ page_title }}
@@ -44,9 +44,9 @@
     {%- endunless -%}
   {%- endcapture -%}
 	{%- if request.page_type contains 'index' -%}
-	<title>【公式】Komons (コモンズ) | 毎日の家事を心地よい時間に変えるホームケアブランド</title>
+	<title>【公式】Komons (コモンズ) | 毎日の家事を、心地よい時間に変えるホームケアブランド</title>
 	{%- else -%}
-	<title>{{ seo_title | strip }}</title>
+	<title>{{ seo_title }}</title>
 	{%- endif -%}
   {%- if page_description -%}
     <meta name="description" content="{{ page_description | escape }}">

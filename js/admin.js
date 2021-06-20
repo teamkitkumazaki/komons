@@ -69,6 +69,8 @@ if (document.getElementById('cart')) {
 }
 
 function cartOptionController(target){
+  var dayFlag = 0;
+  var firstDay;
   var deliveryDateList = $('#deliveryDateList');
   var optionItem = [];
   var optionItemHeight = [];
@@ -89,6 +91,7 @@ function cartOptionController(target){
   var time;
   var num;
   var testFlg = Number(0);
+  var correctDate = ['指定なし'];
   var wd = ['日', '月', '火', '水', '木', '金', '土'];
   var holiday = [/*2021年度*/ '7/22', '7/23','8/9','9/20','9/23', '11/3', '11/23','12/29', '12/30', '12/31',/*2022年度*/ '1/1', '1/2', '1/3', '1/10', '2/11', '2/23', '3/21', '4/29', '5/3', '5/4', '5/5'];
   var setDayStatus = 0;
@@ -100,7 +103,7 @@ function cartOptionController(target){
     $('#messageCartContent').attr('value', messageTxt);
   }
 
-  function getDayDisplay(day){
+  function getDayDisplay(day, mode, flg){
     var date = new Date();
     date.setDate(date.getDate() + day + testFlg);
     y  = date.getFullYear();
@@ -112,17 +115,37 @@ function cartOptionController(target){
     if(d < 10){ paramD = '0' + d }else{ paramD = d }
     var dayParam = y + '-' + paramM + '-' + paramD;
     var dayDisplay = m + '月' + d + '日' + '(' + wd[w] + ')';
-    deliveryDate.append('<option value="' + dayParam + '">' + dayDisplay + '</option>');
-  }
-
-  function setDayDisplay(num){
-    var startSet = Number(num) + Number(2);
-    for (var i= startSet; i<30; i++) {
-      getDayDisplay(i);
+    if(mode == 0){
+      deliveryDate.append('<option value="' + dayParam + '">' + dayDisplay + '</option>');
+    }else if(mode == 1){
+      if(flg == 1){
+        firstDay = dayDisplay;
+      }
+      correctDate.push(dayParam);
     }
   }
 
-  function setShippingDay2(delay){
+  function setDayDisplay(num, mode){
+    var startSet = Number(num) + Number(2);
+    for (var i= startSet; i<30; i++) {
+      if(mode == 1){
+        dayFlag = dayFlag + 1;
+      }
+      getDayDisplay(i, mode, dayFlag);
+    }
+    if(mode == 1){
+      var selectDate = deliveryDate.val();
+      var checkDateLabel = correctDate.includes(selectDate);
+      if(checkDateLabel){
+        $('#submitLoader').addClass('open');
+      }else{
+        event.preventDefault();
+        alert('最短配送日時は' + firstDay + 'となります。申し訳ございませんが、配送指定日を再度選択お願いします。');
+      }
+    }
+  }
+
+  function setShippingDay2(delay, mode){
     today.setDate(today.getDate() + delay);
     var todayY = today.getFullYear();
     var todayM = today.getMonth() + 1;
@@ -133,32 +156,32 @@ function cartOptionController(target){
     if(todayDate){
       if($.inArray(todayDate,holiday) != -1){
         delay = delay + 1;
-        setShippingDay2(delay);
+        setShippingDay2(delay, mode);
       }else{
-        setDayDisplay(delay);
+        setDayDisplay(delay, mode);
       }
     }
   }
 
-  function setShippingDay(){
+  function setShippingDay(mode){
     today.setDate(today.getDate() + testFlg);
     var dayTime = today.getHours();
     var todayW = today.getDay() % 7;
     if(dayTime < 10){ /* 10時までの注文の場合 */
       if(todayW == 0){ /* 日曜日の場合 */
-        setShippingDay2(1) /* 配送を月曜日にする*/
+        setShippingDay2(1,mode) /* 配送を月曜日にする*/
       }else if(todayW == 6){ /* 土曜日の場合*/
-        setShippingDay2(2); /* 配送を月曜日にする*/
+        setShippingDay2(2,mode); /* 配送を月曜日にする*/
       }else{ /*月~金曜日の注文の場合*/
-        setShippingDay2(0); /*当日に配送する*/
+        setShippingDay2(0,mode); /*当日に配送する*/
       }
     }else{ /* 10時以降の注文の場合 */
       if(todayW == 6){ /* 土曜日の場合*/
-        setShippingDay2(2);/* 配送を月曜日にする*/
+        setShippingDay2(2,mode);/* 配送を月曜日にする*/
       }else if(todayW == 5){ /* 金曜日の場合*/
-        setShippingDay2(3);/* 配送を月曜日にする*/
+        setShippingDay2(3,mode);/* 配送を月曜日にする*/
       }else{ /*月~木曜日の注文の場合*/
-        setShippingDay2(1);/*翌日に配送する*/
+        setShippingDay2(1,mode);/*翌日に配送する*/
       }
     }
   }
@@ -188,8 +211,8 @@ function cartOptionController(target){
     $.each(target.find('.comp-submit-button input'), function(index) {
       $(this).on({
         'click': function() {
+          setShippingDay(1);
           setMessageCardVal();
-          $('#submitLoader').addClass('open');
         }
       });
     });
@@ -205,7 +228,7 @@ function cartOptionController(target){
       }
     });
 
-    setShippingDay();
+    setShippingDay(0);
 
 
     $.each(target.find('.option_item'), function(index) {

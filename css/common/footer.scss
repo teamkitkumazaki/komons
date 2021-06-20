@@ -11,6 +11,9 @@ footer {
 			line-height: 45px !important;
 		}
 	}
+	.cvKlsh{
+		display: none !important;
+	}
 	.footer_wrap {
 		@include waku;
 		@media screen and (max-width: 1150px){

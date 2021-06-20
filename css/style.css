@@ -438,6 +438,9 @@ footer .fptOlf, footer .lnviXl {
 footer .fptOlf p, footer .lnviXl p {
   line-height: 45px !important;
 }
+footer .cvKlsh {
+  display: none !important;
+}
 footer .footer_wrap {
   max-width: 1080px;
   margin-left: auto;
@@ -9107,7 +9110,7 @@ body.loaded #loading {
 }
 #index #topConcept .txt_wrap h2 span {
   display: block;
-  text-indent: 4.7em;
+  text-indent: 4em;
 }
 #index #topConcept .txt_wrap p {
   text-align: left;

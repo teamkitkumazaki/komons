@@ -326,7 +326,7 @@ article {
   transition: right 0.2s;
   will-change: right;
 }
-.comp-submit-button input[type=submit] {
+.comp-submit-button input[type=submit], .comp-submit-button input[type=button] {
   position: absolute;
   top: 0;
   bottom: 0;
