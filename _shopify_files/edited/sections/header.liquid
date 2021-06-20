@@ -8,7 +8,11 @@
     </div>
     <div id="hNavi">
       <div id="hLogin" class="nav_item">
-        <a href="{{ routes.account_url }}">ログイン</a>
+      {% if customer %}
+        <a href="{{ routes.account_url }}">マイページ</a>
+      {% else %}
+      <a href="{{ routes.account_login_url }}">ログイン</a>
+      {% endif %}
       </div>
       <div id="hCart" class="nav_item">
         <a href="/cart">

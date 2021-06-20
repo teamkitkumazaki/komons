@@ -48,6 +48,7 @@
       {
         "@type" : "Offer",
         "sku": {{ product.handle | json }},
+        "description": {{ product.metafields.custom_fields["product_outline"] | strip_html | json }},
         "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
         "price" : {{ product.price | remove:',' | json }},
         "priceCurrency" : {{ cart.currency.iso_code | json }},

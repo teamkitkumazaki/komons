@@ -56,7 +56,7 @@
   	</div><!-- header_inner -->
 </header>
 <article id="cart" class="page-cart">
-<form action="/cart" method="post" novalidate="" class="cart">
+<form id="cartSubmit" action="/cart" method="post" novalidate="" class="cart">
 <section class="section-cart">
 	<div class="section_inner">
 		<div class="comp-admin-title inMypage">
@@ -171,7 +171,7 @@
 					</div></div><!-- option_field_wrap -->
 				<div class="comp-submit-button">
 					<button><span>レジに進む</span></button>
-					<input type="submit" name="checkout" class="checkout_button" value="CONTINUE TO CHECKOUT" data-omnisend-checked="true">
+					<input type="button" name="checkout" class="checkout_button" value="CONTINUE TO CHECKOUT" data-omnisend-checked="true">
 				</div>
 			</div><!-- cart_right -->
 		</div><!-- cart_flex -->

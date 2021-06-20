@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{%- if request.page_type contains 'customers' or request.page_type contains 'cart' or request.page_type contains 'account' or request.page_type contains 'blogs' -%}
+	{%- if request.page_type contains 'customers' or request.page_type contains 'cart' or request.page_type contains 'account' or request.page_type contains 'blogs' or request.page_type contains 'captcha' -%}
 	<meta name="robots" content="noindex" />
 	{%- endif -%}
 	<link rel="canonical" href="{{ canonical_url }}">
@@ -27,8 +27,8 @@
 			{%- comment -%}
 			{{ 'general.search.results' | t: terms: search.terms }}
 			{%- endcomment -%}
-			{%- assign search_message = 'の検索結果 | komons-japan' -%}
-			{{ search.terms }}{{ search_message  }}
+			{%- assign search_message = 'の検索結果 | 毎日の家事を、心地よい時間に変えるホームケアブランド - Komons(コモンズ)' -%}
+			{{ search.terms }}{{ search_message }}
     {%- else -%}
       {{ page_title }}
     {%- endif -%}
@@ -43,7 +43,11 @@
       &ndash; {{ shop.name }}
     {%- endunless -%}
   {%- endcapture -%}
-  <title>{{ seo_title | strip }}</title>
+	{%- if request.page_type contains 'index' -%}
+	<title>【公式】Komons (コモンズ) | 毎日の家事を、心地よい時間に変えるホームケアブランド</title>
+	{%- else -%}
+	<title>{{ seo_title }}</title>
+	{%- endif -%}
   {%- if page_description -%}
     <meta name="description" content="{{ page_description | escape }}">
   {%- endif -%}
@@ -132,7 +136,11 @@
   <!--<script src="{{ 'theme.js' | asset_url }}" defer="defer"></script> -->
 	{{ content_for_header }}
 </head>
-<body class="">
+{%- if request.page_type contains 'captcha' -%}
+<body class="fixed">
+	{%- else -%}
+<body class="{{ request.page_type }}">
+	{%- endif -%}
 	{% section 'header' %}
 	{{content_for_layout}}
 	{% section 'footer' %}

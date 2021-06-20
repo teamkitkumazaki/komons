@@ -7,7 +7,7 @@
 @import 'common/reset.scss'; //デフォルトCSSのリセット
 @import 'common/header.scss'; //ヘッダー
 @import 'common/footer.scss'; //フッター
-@import 'common/hummenu.scss'; //ハンバーガーメニュー
+/*@import 'common/hummenu.scss'; //ハンバーガーメニュー*/
 @import 'common/common.scss'; //共通レイアウト
 @import 'common/slideCart.scss'; //スライドカート
 
@@ -66,3 +66,4 @@
 @import 'page/giftService.scss'; /* ギフトサービスページ*/
 @import 'page/waitingList.scss'; /*ウェイティングリスト*/
 @import 'page/review.scss'; /*レビューページ*/
+@import 'page/challenge.scss'; /*アカウント登録ページ*/
