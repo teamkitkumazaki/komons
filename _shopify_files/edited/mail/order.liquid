@@ -6,7 +6,7 @@
 {% when 'local' %}
 <p>{{customer.last_name}}{{ customer.first_name }}様、ご注文の品を配達する準備を行っております。</p>
 {% else %}
-<p style="margin-bottom: 10px;">{{customer.last_name}}{{ customer.first_name }}様、<br>このたびは、『Komons』オンラインストアをご利用いただき誠にありがとうございます。</p><p>以下のご注文を承りましたので、ご確認をお願い申し上げます。商品到着まで、このメールは大切に保管しておいてくださいますようお願い申し上げます。<br>※このメールは、ご注文いただきますと自動的に送信されます。</p>
+<p style="margin-bottom: 10px;">{{customer.last_name}}{{ customer.first_name }}様<br><br>このたびは、『Komons』オンラインストアをご利用いただき誠にありがとうございます。</p><p>以下のご注文を承りましたので、ご確認をお願い申し上げます。商品到着まで、このメールは大切に保管しておいてくださいますようお願い申し上げます。<br>※このメールは、ご注文いただきますと自動的に送信されます。</p>
 {% endcase %}
 {% if delivery_instructions != blank  %}
 <p><b>配達情報:</b> {{ delivery_instructions }}</p>
@@ -590,14 +590,14 @@
             <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
               <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼配送について</h3>
               <div class="detail_content">
-                <p style="font-size: 14px;">オンラインからのご注文は基本的に翌営業日、遅くとも3営業日以内の発送致します。発送後、配送には1~2日かかってのお届けとなります。なお、離島などの場合は3日以上かかる場合もございますのでご了承ください。</p>
+                <p style="font-size: 14px;">オンラインからのご注文は基本的に平日午前10時までの注文で即日発送、それ以降は次営業日の発送となります。発送後、配送には1~2日かかってのお届けとなります。なお、離島などの場合は3日以上かかる場合もございますのでご了承ください。</p>
                 <p>※営業日：月～金(祝日を除く)</p>
                 </div>
             </div><!-- detail_section -->
             <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
               <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼変更・キャンセルについて</h3>
               <div class="detail_content">
-                <p style="font-size: 14px;">出荷前までの変更・キャンセルは受け付けておりますので、以下のお問い合わせ窓口までご連絡ください。</p>
+                <p style="font-size: 14px;">出荷前までの変更・キャンセルは受け付けておりますので、以下のお問い合わせ窓口までご連絡ください。ご連絡を頂いても配送業者への引渡が完了していた場合はキャンセルできません。ご了承下さいませ。</p>
               </div>
             </div><!-- detail_section -->
             <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
@@ -640,7 +640,8 @@
             ホームケアブランド</div>
             </div>
 
-            <div class="sns_wrap" style="text-align:center;"><a href="https://www.facebook.com/komons.japan"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_fb.png" style="width: 35px; margin-right: 10px; display: inline;" /></a> <a href="https://www.instagram.com/komons.jp/"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_ig.png" style="width: 35px; margin-right: 10px; display: inline;" /></a> <a href="https://twitter.com/komons_jp"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_tw.png" style="width: 35px; margin-right: 0px; display: inline;" /></a></div>
+            <div class="sns_wrap" style="text-align:center;"><a style="margin-right: 7px;" href="https://www.facebook.com/komons.japan"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_fb.png" style="width: 35px; display: inline;"></a><a style="margin-right: 7px;" href="https://www.instagram.com/komons.jp/"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_ig.png" style="width: 35px; display: inline;"></a><a style="margin-right: 7px;" href="https://twitter.com/komons_jp"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_tw.png" style="width: 35px; display: inline; "></a><a href="https://lin.ee/ID6naHI"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/icon_line.png?v=1623523522" style="width: 35px; margin-right: 0px; display: inline;"></a></div>
+            
             </div>
             </td>
           </tr>

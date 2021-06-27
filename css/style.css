@@ -8642,7 +8642,7 @@ body.loaded #loading {
   width: 100%;
   font-family: inherit;
   font-size: 14px;
-  padding: 15px 10px;
+  padding: 15px 15px;
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
@@ -8655,6 +8655,18 @@ body.loaded #loading {
   background-position: center right 15px;
 }
 .comp-review-question .review_item .form_wrap select:focus {
+  outline: none;
+}
+.comp-review-question .review_item .form_wrap input[type=email] {
+  display: block;
+  width: 100%;
+  padding: 15px 15px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+.comp-review-question .review_item .form_wrap input[type=email]:focus {
   outline: none;
 }
 .comp-review-question .review_item .form_wrap textarea {
@@ -8876,6 +8888,12 @@ body.loaded #loading {
   .comp-review-question .review_item .form_wrap select {
     font-size: 16px;
     padding: 15px 10px;
+  }
+  .comp-review-question .review_item .form_wrap input[type=email] {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 15px 12px;
   }
   .comp-review-question .review_item .form_wrap textarea {
     height: 200px;

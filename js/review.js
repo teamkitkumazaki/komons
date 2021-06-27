@@ -145,11 +145,14 @@ $(function() {
       //input要素を配列に格納
       items = [
         target.find('select[name="route"]'), //0 お問い合わせ項目
+        target.find('input[name="usermail"]'), //0 お問い合わせ項目
       ];
       //input要素のプロパティを設定
       $.each(items, function(index){
         items[index].prop('isSuccess', false);
       });
+
+      items[1].prop('isSuccess', true);
 
       //enterキーでsubmitしてしまうのを防止する
       target.find('input[type=text]').on({
@@ -167,6 +170,16 @@ $(function() {
         'change': function(){
           console.log('change');
           checkEmptyText( items[0], '※項目を選択してください。' );
+          checkAll();
+        }
+      });
+      items[1].on({
+        'blur': function(){
+          if( items[3].prop('isSuccess') ) checkFormatText( items[3], 3, '※メールアドレスの形式をご確認ください' );
+          checkAll();
+        },
+        'change': function(){
+          if( items[3].prop('isSuccess') ) checkFormatText( items[3], 3, '※メールアドレスの形式をご確認ください' );
           checkAll();
         }
       });
@@ -194,6 +207,7 @@ $(function() {
       var family = target.find("input[name=family]:checked").val();
       var route = target.find("select[name=route]").val();
       var content = target.find("textarea[name=content]").val();
+      var usermail = target.find("input[name=usermail]").val();
       event.preventDefault();
       $.ajax({
         url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdUANwksAcfDiH2qERK3bJ6lhmKjTZRKq9q-h0o6BgVRXqVmA/formResponse",
