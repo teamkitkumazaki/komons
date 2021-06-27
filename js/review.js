@@ -217,18 +217,19 @@ $(function() {
           "entry.161097082": age, /* 年齢 */
           "entry.55464818": family, /* 家族構成 */
           "entry.531319224": route, /* 知った経緯 */
-          "entry.1792741485": content /* 良かった点/改善すべき点 */
+          "entry.1792741485": content, /* 良かった点/改善すべき点 */
+          "entry.836973782": usermail /* メールアドレス */
         },
       type: "POST",
       dataType: "xml",
       statusCode: {
           0: function () {
             setTimeout(function() {
-              $('#ajaxLoader').removeClass('loading');
-              $('#statusMessage').addClass('complete').html('<span class="text">内容は正常に送信されました。アンケートへのご協力ありがとうございました。</span>');
+              /*$('#ajaxLoader').removeClass('loading');
+              $('#statusMessage').addClass('complete').html('<span class="text">内容は正常に送信されました。アンケートへのご協力ありがとうございました。</span>');*/
               setTimeout(function() {
-                location.href = 'https://komons-japan.com/'
-              }, 3000);
+                location.href = 'https://komons-japan.com/pages/thanks'
+              }, 10);
             }, 500);
           },
           200: function () {

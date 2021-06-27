@@ -15482,34 +15482,38 @@ body.loaded #loading {
   }
 }
 /* ギフトサービスページ*/
-#waitingList {
+.page-waiting-list {
+  padding-top: 150px;
   padding-bottom: 120px;
 }
-#waitingList input[type=submit] {
+.page-waiting-list input[type=submit] {
   padding: 15px 0 !important;
 }
-#waitingList .inner {
+.page-waiting-list .inner {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 1150px) {
-  #waitingList .inner {
+  .page-waiting-list .inner {
     max-width: 750px;
   }
 }
 @media screen and (max-width: 750px) {
-  #waitingList .inner {
+  .page-waiting-list .inner {
     width: 84vw;
   }
 }
-#waitingList .mailpoet_paragraph {
+.page-waiting-list .inner.review {
+  max-width: 780px;
+}
+.page-waiting-list .mailpoet_paragraph {
   margin-bottom: 10px !important;
 }
-#waitingList #register, #waitingList #complete {
+.page-waiting-list #register, .page-waiting-list #complete {
   display: none;
 }
-#waitingList .img_wrap {
+.page-waiting-list .img_wrap {
   width: 100%;
   height: 500px;
   background: #f1f1f1;
@@ -15518,57 +15522,90 @@ body.loaded #loading {
   background-position: center center;
   background-size: cover;
 }
-#waitingList .description {
+.page-waiting-list .comp-title.review {
+  margin-bottom: 30px;
+}
+.page-waiting-list .comp-title.review .ttl_ja {
+  font-size: 22px;
+}
+.page-waiting-list .description {
   text-align: center;
 }
-#waitingList .description .title {
+.page-waiting-list .description .title {
   font-size: 20px;
   font-weight: normal;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
-#waitingList .description p {
+.page-waiting-list .description p {
   color: #666;
   font-size: 14px;
   letter-spacing: 1px;
   line-height: 1.6;
+  margin-bottom: 1em;
 }
-#waitingList .description p span {
+.page-waiting-list .description p:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.page-waiting-list .description p span {
   display: block;
 }
-#waitingList .comp-linkbutton {
+.page-waiting-list .comp-linkbutton {
   margin: 40px auto 0;
 }
-#waitingList.register #register {
+.page-waiting-list .comp-linkbutton.left {
+  margin-left: 0;
+  margin-right: 0;
+}
+.page-waiting-list.register #register {
   display: block !important;
 }
-#waitingList.complete #complete {
+.page-waiting-list.complete #complete {
   display: block !important;
 }
 
+@media screen and (max-width: 980px) {
+  .page-waiting-list {
+    padding-top: 120px;
+  }
+  .page-waiting-list .inner {
+    max-width: 88vw;
+  }
+}
 @media screen and (max-width: 740px) {
-  #waitingList {
+  .page-waiting-list {
+    padding-top: 60px;
     padding-bottom: 80px;
   }
-  #waitingList .img_wrap {
+  .page-waiting-list .img_wrap {
     width: 100vw;
     height: 35vh;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     margin-left: -8vw;
     margin-right: -8vw;
   }
-  #waitingList .description .title {
+  .page-waiting-list .comp-title.review {
+    margin-bottom: 20px;
+  }
+  .page-waiting-list .comp-title.review .ttl_ja {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  .page-waiting-list .description .title {
     font-size: 18px;
     margin-bottom: 15px;
   }
-  #waitingList .description p {
+  .page-waiting-list .description p {
     text-align: left;
   }
-  #waitingList .description p span {
+  .page-waiting-list .description p span {
     display: inline;
   }
-  #waitingList .comp-linkbutton {
-    margin: 25px auto 0;
+  .page-waiting-list .comp-linkbutton {
+    margin: 35px auto 0;
+  }
+  .page-waiting-list .comp-linkbutton.left a {
+    max-width: 100%;
   }
 }
 /*ウェイティングリスト*/
