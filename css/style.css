@@ -432,11 +432,17 @@ footer {
   background-size: 1000px;
   background-position: center center;
 }
-footer .fptOlf, footer .lnviXl {
+footer .fptOlf, footer .lnviXl, footer .fPRXvs, footer .jBjzuA {
   position: static !important;
 }
-footer .fptOlf p, footer .lnviXl p {
+footer .fptOlf p, footer .lnviXl p, footer .fPRXvs p, footer .jBjzuA p {
   line-height: 45px !important;
+}
+footer .notranslate {
+  padding: 2px 0 !important;
+}
+footer .hEMewN {
+  padding: 0 !important;
 }
 footer .cvKlsh {
   display: none !important;
@@ -524,14 +530,14 @@ footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap form > div {
   overflow: hidden;
 }
 footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap form > div input[type=email] {
-  width: calc(100% - 75px);
+  width: calc(100% - 75px) !important;
   height: 100% !important;
-  font-size: 14px;
-  font-family: inherit;
-  position: absolute;
-  line-height: 45px;
+  font-size: 14px !important;
+  font-family: inherit !important;
+  position: absolute !important;
+  line-height: 45px !important;
   padding: 0 10px !important;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   border: none !important;
   background-color: rgba(255, 255, 255, 0.4) !important;
   top: 0;
@@ -540,7 +546,7 @@ footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap form > div input[type=e
   margin: auto;
 }
 footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap form > div input[type=email]:focus {
-  outline: none;
+  outline: none !important;
 }
 footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap form > div button[type=button] {
   -webkit-appearance: none;
@@ -548,16 +554,20 @@ footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap form > div button[type=
   box-shadow: none;
   position: absolute !important;
   color: #fff;
-  font-family: inherit;
+  font-size: 14px !important;
+  letter-spacing: 0.5px !important;
+  font-family: inherit !important;
   width: 75px !important;
   height: 100%;
   line-height: 45px;
+  box-sizing: border-box !important;
   border: none !important;
   background: #00381f !important;
   top: 0;
   bottom: 0;
   right: 0;
   margin: auto;
+  border-radius: 0 5px 5px 0;
   transition: opacity 0.3s;
   cursor: pointer;
 }

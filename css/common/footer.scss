@@ -5,11 +5,17 @@ footer {
 		size: 1000px;
 		position: center center;
 	}
-	.fptOlf, .lnviXl{
+	.fptOlf, .lnviXl, .fPRXvs, .jBjzuA{
 		position: static !important;
 		p{
 			line-height: 45px !important;
 		}
+	}
+	.notranslate{
+		padding: 2px 0 !important;
+	}
+	.hEMewN{
+		padding: 0 !important;
 	}
 	.cvKlsh{
 		display: none !important;
@@ -85,14 +91,14 @@ footer {
 						border-radius: 5px;
 						overflow: hidden;
 						input[type="email"]{
-							width: calc(100% - 75px);
+							width: calc(100% - 75px) !important;
 							height: 100% !important;
-							font-size: 14px;
-							font-family: inherit;
-							position: absolute;
-							line-height: 45px;
+							font-size: 14px !important;
+							font-family: inherit !important;
+							position: absolute !important;
+							line-height: 45px !important;
 							padding: 0 10px !important;
-							box-sizing: border-box;
+							box-sizing: border-box !important;
 							border: none !important;
 	  					background-color: rgba(255, 255, 255, 0.4) !important;
 							top:0;
@@ -100,7 +106,7 @@ footer {
 							bottom:0;
 							margin: auto;
 							&:focus{
-								outline: none;
+								outline: none !important;
 							}
 						}
 						button[type="button"]{
@@ -108,16 +114,20 @@ footer {
 							box-shadow: none;
 							position: absolute !important;
 							color: #fff;
-							font-family: inherit;
+							font-size: 14px !important;
+							letter-spacing: 0.5px !important;
+							font-family: inherit !important;
 							width:75px !important;
 							height: 100%;
 							line-height: 45px;
+							box-sizing: border-box !important;
 							border: none !important;
 							background: $basicGreen !important;
 							top:0;
 							bottom:0;
 							right:0;
 							margin: auto;
+							border-radius: 0 5px 5px 0;
 							@include hover;
 							cursor: pointer;
 						}
