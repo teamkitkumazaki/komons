@@ -186,33 +186,7 @@
   </script>
 {% endunless %}
 
-<script type="application/ld+json">
- {
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "{{ product.title }}",
-  "image": "{{ product.media[2] | img_url: 'master' }}",
-	"sku": "{{ product.handle }}",
-	"offers": {
-		"@type": "Offer",
-		"url": "https://komons-japan.com/products/{{ product.handle }}",
-		"price": "{{ product.price | remove:',' }}",
-		"priceCurrency": "JPN",
-		"priceValidUntil": "2024-12-31",
-		{%- if product.variants.first.inventory_quantity == 0 -%}
-		"availability": "OutOfStock",
-		{%- else -%}
-		"availability": "InStock",
-		{% endif %}
-		"itemCondition": "NewCondition",
-	}
-  "description": "{{ product.metafields.custom_fields["product_outline"] | strip_html }}",
-	"brand": {
-		"@type": "Brand",
-		"name": "Komons-Japan"
-	}
- }
-</script>
+
 
 
 {% schema %}
