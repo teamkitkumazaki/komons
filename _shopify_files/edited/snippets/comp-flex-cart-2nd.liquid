@@ -25,7 +25,7 @@
 				<input id="submitButtonLower" class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる" onclick="send_conversion(); console.log('click!'); return false;">
 			</div>
 		</div>
-		{%- if product.type != "option" and product.type != "refill" and product.type != "bottle-refill" and product.type != "gift" -%}
+		{%- if product.type != "option" and product.type != "refill" and product.type != "bottle-refill" and product.type != "gift" and product.handle != "k0025" -%}
 			<span class="wrapping_text"><a href="/products/ks005">ギフトラッピングはこちら</a></span>
 		{%- endif -%}
 	</div>

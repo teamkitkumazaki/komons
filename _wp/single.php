@@ -123,7 +123,7 @@ $src = $image[0];
             ?>
       <li>
         <div class="img_wrap">
-          <a href="aaaa"><img src="<?php echo $r_src; ?>"></a>
+          <a class="<?php echo get_field('thumb_type');?>" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
         </div>
         <div class="txt_wrap">
           <h3>

@@ -6,7 +6,7 @@
   .quote_ttl{
     font-size: 22px;
     letter-spacing: 0.7px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .quote_desc{
     font-size: 14px;
@@ -16,8 +16,9 @@
   }
   .quote_item{
     @include flexSet;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
     border-bottom: 1px dotted #acacac;
     &:nth-last-of-type(1){
       margin-bottom: 0;
@@ -26,11 +27,12 @@
     }
     .ttl{
       width: 120px;
+      margin-right: 20px;
       font-size: 14px;
       letter-spacing: 0.5px;
     }
     .content{
-      width: calc(100% - 120px);
+      width: calc(100% - 140px);
       font-size: 14px;
       letter-spacing: 0.5px;
       line-height: 1.6;
@@ -74,10 +76,11 @@
       border-bottom: 0px dotted #acacac;
       .ttl{
         display: block;
-        background: rgba($basicGreen, 0.8);
+        background: rgba($basicGreen,1);
         padding: 5px 10px;
         box-sizing: border-box;
         color: #fff;
+        text-align: center;
         width: 100%;
         font-size: 14px;
         letter-spacing: 0.5px;
