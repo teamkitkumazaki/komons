@@ -1,36 +1,5 @@
 $(function() {
 
-  //フロントリダイレクト
-  /*function redirectColorMeURL(){
-    var currentURL = location.href;
-    console.log(currentURL);
-    if(currentURL.indexOf('/?mode') !=  -1){
-      var redirectURL = currentURL.replace("/?mode", "/redirect?mode");
-      console.log(redirectURL);
-      location.href = redirectURL;
-    }
-    if(currentURL.indexOf('/?gid') !=  -1){
-      var redirectURL = currentURL.replace("/?gid", "/redirect?gid");
-      var paramCut = redirectURL.split('&');
-      console.log(paramCut[0]);
-      location.href = paramCut[0] + paramCut[1];
-    }
-    if(currentURL.indexOf('/?cbid') !=  -1){
-      var redirectURL = currentURL.replace("/?cbid", "/redirect?cbid");
-      var paramCut = redirectURL.split('&');
-      console.log(paramCut[0]);
-      location.href = paramCut[0] + paramCut[1] + paramCut[2];
-    }
-    if(currentURL.indexOf('/?pid') !=  -1){
-      var redirectURL = currentURL.replace("/?pid", "/redirect?pid");
-      var paramCut = redirectURL.split('&');
-      console.log(paramCut[0]);
-      location.href = paramCut[0];
-    }
-  }
-
-  redirectColorMeURL();*/
-
   // ローディングアニメーション
   function loadingAnimation() {
     var sliderImg = "https://journal.komons-japan.com/wp-content/themes/komons-theme/img/main_slide01.jpg";
@@ -1191,6 +1160,18 @@ $(function() {
   if (document.getElementById('giftList')) {
     giftProductFilter($('#giftProductList'));
   }
+
+
+  function setOptionValue(){
+    $('#noshiPrice').text('+110円(税込)');
+    $('#messagePrice').text('無料');
+    $('#tesagePrice').text('+330円(税込)');
+  }
+
+  if (document.getElementById('optionPop')) {
+    setOptionValue();
+  }
+
 
   if (document.getElementById('itemDetail')) {
     $('#relatedSlider').slick({

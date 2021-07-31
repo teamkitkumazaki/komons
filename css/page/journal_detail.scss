@@ -21,7 +21,9 @@
   .journal_detail {
     max-width: 700px;
     margin: 0 auto;
-
+    @media screen and (max-width: 980px){
+      max-width: 86vw;
+    }
     .post_head {
       position: relative;
       margin-top: 60px;
@@ -80,9 +82,9 @@
       }
     }
     .post_body {
-      color: #111;
       font-size: 16px;
       line-height: 37px;
+      color: $basicGreen;
       border-bottom: 1px solid #F0F0F0;
       padding-bottom: 80px;
       margin-bottom: 60px;
@@ -265,7 +267,9 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
-
+    @media screen and (max-width: 980px){
+      max-width: 86vw;
+    }
     h2 {
       font-size: 28px;
       border-bottom: 1px solid #f0f0f0;

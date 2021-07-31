@@ -1,0 +1,171 @@
+.section-item-introduction{
+  margin-top: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-bottom: 80px;
+  position: relative;
+  &::before, &::after{
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 1px;
+    background: #f1f1f1;
+    left:0;
+    right:0;
+    margin: auto;
+  }
+  &::before{
+    top:0;
+  }
+  &::after{
+    bottom:0;
+  }
+}
+.branding_ttl{
+  border-bottom: 0px !important;
+}
+.comp-jornal-item{
+  @include flexSet;
+  justify-content: center;
+  .intro_ttl{
+    width: 100%;
+    @include libre-r;
+    font-weight: normal;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  .item_wrap{
+    width: 31.333333%;
+    margin-right: 3%;
+    &:nth-last-of-type(1){
+      margin-right: 0;
+    }
+    .item_img{
+      margin-bottom: 20px;
+      a{
+        display: block;
+        @include hover;
+      }
+    }
+    .item_txt{
+      .item_name{
+        display: block;
+        color: $basicGreen;
+        margin-bottom: 10px;
+        .category{
+          font-size: 14px;
+          display: block;
+          letter-spacing: 0.03em;
+          margin-bottom: 5px;
+          text-indent: -0.1em;
+        }
+        .name{
+          font-size: 20px;
+          line-height: 1.6;
+          letter-spacing: 0.03em;
+        }
+      }
+      .item_price{
+        font-size: 14px;
+        display: block;
+        letter-spacing: 0.03em;
+        margin-bottom: 15px;
+      }
+      .item_desc{
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px){
+  .section-item-introduction{;
+    padding-bottom: 20px;
+  }
+  .branding_ttl{
+    border-bottom: 0px !important;
+  }
+  .comp-jornal-item{
+    display: block;
+    .intro_ttl{
+      width: 100%;
+      @include libre-r;
+      font-weight: normal;
+      font-size: 24px;
+      letter-spacing: 0.05em;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    .item_wrap{
+      width: 86vw;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 60px;
+      &:nth-last-of-type(1){
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 720px){
+  .section-item-introduction{
+    margin-top: 40px;
+    padding-top: 60px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+    position: relative;
+  }
+  .branding_ttl{
+    border-bottom: 0px !important;
+  }
+  .comp-jornal-item{
+    display: block;
+    .intro_ttl{
+      width: 100%;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+    .item_wrap{
+      margin-bottom: 40px;
+      .item_img{
+        margin-bottom: 20px;
+        a{
+          display: block;
+          @include hover;
+        }
+      }
+      .item_txt{
+        .item_name{
+          display: block;
+          color: $basicGreen;
+          margin-bottom: 10px;
+          .category{
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
+          .name{
+            font-size: 20px;
+          }
+        }
+        .item_price{
+          font-size: 14px;
+          display: block;
+          letter-spacing: 0.03em;
+          margin-bottom: 15px;
+        }
+        .item_desc{
+          font-size: 14px;
+          letter-spacing: 0.02em;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}

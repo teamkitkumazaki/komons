@@ -4824,7 +4824,7 @@ body.loaded #loading {
   letter-spacing: 0.51px;
   margin-right: 5px;
 }
-.comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .option_item label .input_wrap .option_name .price {
+.comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .option_item label .input_wrap .option_name .price, .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .option_item label .input_wrap .option_name .text_p {
   font-size: 14px;
   line-height: 1;
   letter-spacing: 1px;
@@ -5075,7 +5075,12 @@ body.loaded #loading {
     line-height: 1;
     letter-spacing: 0.51px;
     margin-right: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+  }
+  .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .option_item label .input_wrap .option_name .price, .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .option_item label .input_wrap .option_name .text_p {
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.44px;
   }
   .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .mizuhiki_desc {
     font-size: 13px;
@@ -8982,6 +8987,426 @@ body.loaded #loading {
   .comp-review-question .submit_wrap {
     margin: 0 auto 100px;
     padding: 15px 0;
+  }
+}
+.comp-joournal-footer {
+  padding: 100px 0 50px;
+  background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/footer_bg_ipnnmp.png");
+  background-size: 1000px;
+  background-position: center center;
+}
+.comp-joournal-footer .footer_wrap {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media screen and (max-width: 1150px) {
+  .comp-joournal-footer .footer_wrap {
+    max-width: 750px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .comp-joournal-footer .footer_wrap {
+    width: 84vw;
+  }
+}
+.comp-joournal-footer .footer_wrap .footer_menu {
+  width: calc(100% - 115px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: flex-start;
+}
+.comp-joournal-footer .footer_wrap .footer_menu .fmenu ul li {
+  margin-bottom: 20px;
+}
+.comp-joournal-footer .footer_wrap .footer_menu .fmenu ul li a {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #555555;
+}
+.comp-joournal-footer .footer_wrap .footer_menu .fmenu ul li a span {
+  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.comp-joournal-footer .footer_wrap .footer_menu .fmenu.fmenu01, .comp-joournal-footer .footer_wrap .footer_menu .fmenu.fmenu02 {
+  margin-right: 100px;
+}
+.comp-joournal-footer .footer_wrap .footer_sns {
+  width: 115px;
+  text-align: center;
+}
+.comp-joournal-footer .footer_wrap .footer_sns ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px auto 100px;
+}
+.comp-joournal-footer .footer_wrap .footer_sns ul li {
+  width: 18.3333333333%;
+  padding: 0 7.5%;
+}
+.comp-joournal-footer .footer_wrap .footer_sns .copy_right {
+  font-size: 10px;
+  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #aaaaaa;
+}
+
+@media screen and (max-width: 750px) {
+  .comp-joournal-footer {
+    padding: 50px 0 30px;
+  }
+  .comp-joournal-footer .footer_wrap {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+@media screen and (max-width: 750px) and (max-width: 1150px) {
+  .comp-joournal-footer .footer_wrap {
+    max-width: 750px;
+  }
+}
+@media screen and (max-width: 750px) and (max-width: 750px) {
+  .comp-joournal-footer .footer_wrap {
+    width: 84vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .comp-joournal-footer .footer_wrap .footer_menu {
+    width: 100%;
+    display: block;
+    margin-bottom: 80px;
+  }
+  .comp-joournal-footer .footer_wrap .footer_menu .fmenu ul {
+    margin-bottom: 60px;
+  }
+  .comp-joournal-footer .footer_wrap .footer_menu .fmenu ul li {
+    margin-bottom: 20px;
+  }
+  .comp-joournal-footer .footer_wrap .footer_menu .fmenu ul li a {
+    font-size: 3.5vw;
+  }
+  .comp-joournal-footer .footer_wrap .footer_menu .fmenu.fmenu01, .comp-joournal-footer .footer_wrap .footer_menu .fmenu.fmenu02 {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 750px) {
+  .comp-joournal-footer .footer_wrap .footer_sns {
+    width: 100%;
+    text-align: center;
+  }
+  .comp-joournal-footer .footer_wrap .footer_sns .img_wrap {
+    width: 22%;
+    margin: 0 auto;
+  }
+  .comp-joournal-footer .footer_wrap .footer_sns ul {
+    width: 30%;
+    margin: 30px auto 70px;
+  }
+  .comp-joournal-footer .footer_wrap .footer_sns .copy_right {
+    font-size: 11px;
+  }
+}
+.comp-section-information {
+  background: #00381f;
+  padding: 25px 0;
+}
+.comp-section-information .info_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: flex-start;
+  color: #fff;
+}
+.comp-section-information .info_flex .title_en {
+  position: relative;
+  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 1px;
+  margin-right: 15px;
+  padding-right: 20px;
+}
+.comp-section-information .info_flex .title_en::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  right: 0;
+  margin: auto;
+  background: #fff;
+  width: 1px;
+  height: 120%;
+}
+.comp-section-information .info_flex .content {
+  transition: opacity 0.3s;
+  color: inherit;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0.5px;
+}
+.comp-section-information .info_flex .content:hover {
+  opacity: 0.75;
+}
+.comp-section-information .info_flex .content span {
+  position: relative;
+  display: inline-block;
+  padding-right: 50px;
+}
+.comp-section-information .info_flex .content span::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+  margin: auto;
+  width: 24px;
+  height: 9px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/gift_service/arrow_white.png);
+}
+
+@media screen and (max-width: 980px) {
+  .comp-section-information .info_flex {
+    max-width: 88vw;
+    margin: 0 auto;
+  }
+  .comp-section-information .info_flex .content {
+    font-size: 14px;
+    letter-spacing: 0.44px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .comp-section-information {
+    padding: 20px 0;
+  }
+  .comp-section-information .info_flex {
+    max-width: 84vw !important;
+    display: block;
+  }
+  .comp-section-information .info_flex .title_en {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-right: 0px;
+    padding-right: 0px;
+    margin-bottom: 10px;
+  }
+  .comp-section-information .info_flex .title_en::after {
+    display: none;
+  }
+  .comp-section-information .info_flex .content {
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-indent: -0.5em;
+    text-decoraion: underline;
+  }
+  .comp-section-information .info_flex .content span {
+    position: relative;
+    display: inline-block;
+    padding-right: 0px;
+  }
+  .comp-section-information .info_flex .content span::after {
+    display: none;
+  }
+}
+.section-item-introduction {
+  margin-top: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-bottom: 80px;
+  position: relative;
+}
+.section-item-introduction::before, .section-item-introduction::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 1px;
+  background: #f1f1f1;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.section-item-introduction::before {
+  top: 0;
+}
+.section-item-introduction::after {
+  bottom: 0;
+}
+
+.branding_ttl {
+  border-bottom: 0px !important;
+}
+
+.comp-jornal-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: center;
+}
+.comp-jornal-item .intro_ttl {
+  width: 100%;
+  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-weight: normal;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.comp-jornal-item .item_wrap {
+  width: 31.333333%;
+  margin-right: 3%;
+}
+.comp-jornal-item .item_wrap:nth-last-of-type(1) {
+  margin-right: 0;
+}
+.comp-jornal-item .item_wrap .item_img {
+  margin-bottom: 20px;
+}
+.comp-jornal-item .item_wrap .item_img a {
+  display: block;
+  transition: opacity 0.3s;
+}
+.comp-jornal-item .item_wrap .item_img a:hover {
+  opacity: 0.75;
+}
+.comp-jornal-item .item_wrap .item_txt .item_name {
+  display: block;
+  color: #00381f;
+  margin-bottom: 10px;
+}
+.comp-jornal-item .item_wrap .item_txt .item_name .category {
+  font-size: 14px;
+  display: block;
+  letter-spacing: 0.03em;
+  margin-bottom: 5px;
+  text-indent: -0.1em;
+}
+.comp-jornal-item .item_wrap .item_txt .item_name .name {
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+.comp-jornal-item .item_wrap .item_txt .item_price {
+  font-size: 14px;
+  display: block;
+  letter-spacing: 0.03em;
+  margin-bottom: 15px;
+}
+.comp-jornal-item .item_wrap .item_txt .item_desc {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 980px) {
+  .section-item-introduction {
+    padding-bottom: 20px;
+  }
+
+  .branding_ttl {
+    border-bottom: 0px !important;
+  }
+
+  .comp-jornal-item {
+    display: block;
+  }
+  .comp-jornal-item .intro_ttl {
+    width: 100%;
+    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-weight: normal;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  .comp-jornal-item .item_wrap {
+    width: 86vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+  }
+  .comp-jornal-item .item_wrap:nth-last-of-type(1) {
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 720px) {
+  .section-item-introduction {
+    margin-top: 40px;
+    padding-top: 60px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+    position: relative;
+  }
+
+  .branding_ttl {
+    border-bottom: 0px !important;
+  }
+
+  .comp-jornal-item {
+    display: block;
+  }
+  .comp-jornal-item .intro_ttl {
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  .comp-jornal-item .item_wrap {
+    margin-bottom: 40px;
+  }
+  .comp-jornal-item .item_wrap .item_img {
+    margin-bottom: 20px;
+  }
+  .comp-jornal-item .item_wrap .item_img a {
+    display: block;
+    transition: opacity 0.3s;
+  }
+  .comp-jornal-item .item_wrap .item_img a:hover {
+    opacity: 0.75;
+  }
+  .comp-jornal-item .item_wrap .item_txt .item_name {
+    display: block;
+    color: #00381f;
+    margin-bottom: 10px;
+  }
+  .comp-jornal-item .item_wrap .item_txt .item_name .category {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .comp-jornal-item .item_wrap .item_txt .item_name .name {
+    font-size: 20px;
+  }
+  .comp-jornal-item .item_wrap .item_txt .item_price {
+    font-size: 14px;
+    display: block;
+    letter-spacing: 0.03em;
+    margin-bottom: 15px;
+  }
+  .comp-jornal-item .item_wrap .item_txt .item_desc {
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
   }
 }
 /* ########## ページ別レイアウト ########## */
@@ -12949,6 +13374,11 @@ body.loaded #loading {
   max-width: 700px;
   margin: 0 auto;
 }
+@media screen and (max-width: 980px) {
+  #journalDetail .journal_detail {
+    max-width: 86vw;
+  }
+}
 #journalDetail .journal_detail .post_head {
   position: relative;
   margin-top: 60px;
@@ -12997,9 +13427,9 @@ body.loaded #loading {
   font-weight: bold;
 }
 #journalDetail .journal_detail .post_body {
-  color: #111;
   font-size: 16px;
   line-height: 37px;
+  color: #00381f;
   border-bottom: 1px solid #F0F0F0;
   padding-bottom: 80px;
   margin-bottom: 60px;
@@ -13156,6 +13586,11 @@ body.loaded #loading {
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
+}
+@media screen and (max-width: 980px) {
+  #journalDetail .related_posts {
+    max-width: 86vw;
+  }
 }
 #journalDetail .related_posts h2 {
   font-size: 28px;

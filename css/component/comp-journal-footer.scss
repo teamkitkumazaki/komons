@@ -1,4 +1,4 @@
-.comp-joournal-footer
+.comp-joournal-footer{
 	padding: 100px 0 50px;
 	background: {
 		image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/footer_bg_ipnnmp.png");
@@ -65,7 +65,7 @@
 	}
 }
 @media screen and (max-width: 750px){
-	.comp-joournal-footer
+	.comp-joournal-footer{
 		padding: 50px 0 30px;
 
 		.footer_wrap {
