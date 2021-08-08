@@ -124,7 +124,7 @@
           <div class="delivery_option">
               <h2 class="sub_ttl">配送日時指定</h2>
               <div class="comp-cart-option">
-                  <div class="option_item">
+                  <div id="delivery1" class="option_item">
                     <label>
                     <input type="checkbox" name="dateInput" value="true">
                     <span class="radio_checker"></span>
@@ -136,7 +136,7 @@
                     </select>
                   </div>
                 </div><!-- option_item -->
-                <div class="option_item">
+                <div id="delivery2" class="option_item">
                   <label>
                     <input id="timeInput" type="checkbox" name="timeInput" value="true">
                     <span class="radio_checker"></span>
@@ -159,14 +159,15 @@
             <div class="comment_option">
               <h2 class="sub_ttl">備考欄</h2>
               <div class="comp-cart-option">
-                <div class="option_item">
+                <div id="note1" class="option_item">
                   <label class="untouchable">
-                    <input type="checkbox" name="dateInput" value="true">
+                    <input type="checkbox" name="noteInput" value="true">
                     <span class="radio_checker"></span>
                     <span class="label_ttl">ご要望・ご不明点など記入する</span>
                   </label>
                   <div class="input_wrap">
                     <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" data-cart-notes>{{ cart.note }}</textarea>
+                    <p class="example">1注文につき、お届け先は1件のみとなります。2件以上のお届け先をご希望の場合は別々にご注文ください。</p>
                   </div>
                 </div><!-- option_item -->
               </div>

@@ -9229,8 +9229,8 @@ body.loaded #loading {
 .section-item-introduction {
   margin-top: 80px;
   padding-top: 80px;
-  padding-bottom: 80px;
-  margin-bottom: 80px;
+  padding-bottom: 120px;
+  margin-bottom: 0px;
   position: relative;
 }
 .section-item-introduction::before, .section-item-introduction::after {
@@ -9248,11 +9248,48 @@ body.loaded #loading {
   top: 0;
 }
 .section-item-introduction::after {
+  display: none;
   bottom: 0;
 }
 
 .branding_ttl {
   border-bottom: 0px !important;
+}
+
+.branding_link_wrap {
+  margin-top: 40px;
+  width: 50%;
+}
+.branding_link_wrap a {
+  transition: opacity 0.3s;
+  display: block;
+  text-align: center;
+  border: 1px solid #00381f;
+  padding: 10px 15px;
+}
+.branding_link_wrap a:hover {
+  opacity: 0.75;
+}
+.branding_link_wrap a .txt {
+  display: inline-block;
+  padding-right: 40px;
+  color: #00381f;
+  position: relative;
+}
+.branding_link_wrap a .txt::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 6px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/link_arrow.png);
 }
 
 .comp-jornal-item {
@@ -9320,7 +9357,7 @@ body.loaded #loading {
 
 @media screen and (max-width: 980px) {
   .section-item-introduction {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
 
   .branding_ttl {
@@ -9362,6 +9399,19 @@ body.loaded #loading {
 
   .branding_ttl {
     border-bottom: 0px !important;
+  }
+
+  .branding_link_wrap {
+    margin-top: 30px;
+    width: 100%;
+  }
+  .branding_link_wrap a {
+    display: block;
+    text-align: center;
+    padding: 10px 10px;
+  }
+  .branding_link_wrap a .txt {
+    display: inline-block;
   }
 
   .comp-jornal-item {

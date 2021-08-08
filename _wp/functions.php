@@ -1,5 +1,8 @@
 <?php
 
+global $wp_rewrite;
+$wp_rewrite->flush_rules();
+
 add_theme_support('post-thumbnails');
 
 
@@ -29,7 +32,23 @@ function create_post_type() {
 			'supports' => $customPostSupports  // 投稿画面でどのmoduleを使うか的な設定
 		)
 	);
-	//カスタム投稿タイプ１（ここまで）
+	//カスタム投稿タイプ2（ここまで）
+	register_post_type(
+		'about',  // カスタム投稿名
+		array(
+			'labels' => array(
+				'name' => __( 'ブランディング' ), // 管理画面の左メニューに表示されるテキスト
+				'singular_name' => __( 'about' ),
+				'rewrite' => array('slug' => 'branding-post'),
+				'rewrite' => array( 'with_front' => false ),
+			),
+			'public' => true,  // 投稿タイプをパブリックにするか否か
+			'menu_position' => 6,  // 管理画面上でどこに配置するか ※「5」で「投稿」の下に配置
+			'has_archive' => true,  // アーカイブを有効にするか否か
+			'supports' => $customPostSupports  // 投稿画面でどのmoduleを使うか的な設定
+		)
+	);
+	//カスタム投稿タイプ2（ここまで）
 }
 add_action( 'init', 'create_post_type' ); // アクションに上記関数をフックします
 

@@ -9,7 +9,6 @@ $(function() {
 
   function controllQuantity(num, vector){
     quantityNum = quantityInput[num].val();
-    console.log(vector);
     if(vector == 1){
       quantityInput[num].attr('value', Number(quantityNum) + 1);
       reloadButton[num].click();
@@ -43,7 +42,6 @@ $(function() {
       });
     });
 
-    console.log('optionState:' + optionState);
     if(optionState.indexOf('熨斗') !=  -1){
       $('#noshi1').css({'display': 'block'});
       $('#noshi2').css({'display': 'block'});
@@ -70,127 +68,203 @@ if (document.getElementById('cart')) {
   controllProductQuantity($('#cartItem'));
 }
 
-  function cartOptionController(target){
-    var deliveryDateList = $('#deliveryDateList');
-    var optionItem = [];
-    var optionItemHeight = [];
-    var optionItemLabel = [];
-    var optionItemWrap = [];
-    var finalPrice = $('#finalPrice').html();
-    var priceCulc = finalPrice.replace(/,/g, '');
-    var today = new Date();
-    var y;
-    var m;
-    var paramM;
-    var d;
-    var paramD;
-    var w;
-    var paramW;
-    var wd = ['日', '月', '火', '水', '木', '金', '土'];
-    var setDayStatus = 0;
-    var deliveryDate = $('#deliveryDate');
-    var deliveryTime = $('#deliveryTime');
-    var messageCard = $('textarea[name="messeage_card"]');
-    if (document.getElementById('cart')) {
-      $('#messageCartContent').attr('value', messageTxt);
-    }
+function cartOptionController(target){
+  var dayFlag = 0;
+  var firstDay;
+  var deliveryDateList = $('#deliveryDateList');
+  var optionItem = [];
+  var optionItemHeight = [];
+  var optionItemLabel = [];
+  var optionItemWrap = [];
+  var finalPrice = $('#finalPrice').html();
+  var priceCulc = finalPrice.replace(/,/g, '');
+  var delay = 0; /*曜日・時間による配送日のスライド設定*/
+  var today = new Date();
+  var startDay;
+  var y;
+  var m;
+  var paramM;
+  var d;
+  var paramD;
+  var w;
+  var paramW;
+  var time;
+  var num;
+  var testFlg = Number(0);
+  var correctDate = ['指定なし'];
+  var wd = ['日', '月', '火', '水', '木', '金', '土'];
+  var holiday = [/*2021年度*/ '7/22', '7/23','8/9','9/20','9/23', '11/3', '11/23','12/29', '12/30', '12/31',/*2022年度*/ '1/1', '1/2', '1/3', '1/10', '2/11', '2/23', '3/21', '4/29', '5/3', '5/4', '5/5'];
+  var setDayStatus = 0;
+  var deliveryDate = $('#deliveryDate');
+  var deliveryTime = $('#deliveryTime');
+  var messageCard = $('textarea[name="messeage_card"]');
 
-    function getDayDisplay(day){
-      var date = new Date();
-      date.setDate(date.getDate() + day);
-      y  = date.getFullYear();
-      m = date.getMonth() + 1;
-      d = date.getDate();
-      w = date.getDay() % 7;
-      if(m < 10){ paramM = '0' + m }else{ paramM = m }
-      if(d < 10){ paramD = '0' + d }else{ paramD = d }
-      var dayParam = y + '-' + paramM + '-' + paramD;
-      var dayDisplay = m + '月' + d + '日' + '(' + wd[w] + ')';
+  /* アトリビュート保存用 */
+  var cartAttributes = {{ cart | json }};
+  var deliveryDateParam = cartAttributes.attributes['配送希望日:'];
+  var deriveryTimeParam = cartAttributes.attributes['配送時間帯:'];
+
+
+  function setMessageCardVal(){
+    var messageTxt = messageCard.val();
+    $('#messageCartContent').attr('value', messageTxt);
+  }
+
+  function getDayDisplay(day, mode, flg){
+    var date = new Date();
+    date.setDate(date.getDate() + day + testFlg);
+    y  = date.getFullYear();
+    m = date.getMonth() + 1;
+    d = date.getDate();
+    w = date.getDay() % 7;
+    time = date.getHours();
+    if(m < 10){ paramM = '0' + m }else{ paramM = m }
+    if(d < 10){ paramD = '0' + d }else{ paramD = d }
+    var dayParam = y + '-' + paramM + '-' + paramD;
+    var dayDisplay = m + '月' + d + '日' + '(' + wd[w] + ')';
+    if(mode == 0){
       deliveryDate.append('<option value="' + dayParam + '">' + dayDisplay + '</option>');
-    }
-
-    function setDayDisplay(){
-      for (var i=5; i<16; i++) {
-        getDayDisplay(i);
+      $('#deliveryDate').val(deliveryDateParam);
+      $('#deliveryTime').val(deriveryTimeParam);
+    }else if(mode == 1){
+      if(flg == 1){
+        firstDay = dayDisplay;
       }
+      correctDate.push(dayParam);
     }
+  }
 
-    function setMessageCardVal(){
-      var messageTxt = messageCard.val();
-      console.log(messageTxt);
-      $('#messageCartContent').attr('value', messageTxt);
+  function setDayDisplay(num, mode){
+    var startSet = Number(num) + Number(2);
+    for (var i= startSet; i<30; i++) {
+      if(mode == 1){
+        dayFlag = dayFlag + 1;
+      }
+      getDayDisplay(i, mode, dayFlag);
     }
-
-    function init(){
-      console.log('priceCulc:' + priceCulc);
-      if(priceCulc > 5499){
-        console.log('pattern1')
-        $('#shippingPrice').html('送料無料');
-      }else if(optionState.indexOf('定期') == 1){
-        console.log('pattern3')
-        $('#shippingPrice').html('送料無料');
+    if(mode == 1){
+      var selectDate = deliveryDate.val();
+      var checkDateLabel = correctDate.includes(selectDate);
+      if(checkDateLabel){
+        $('#submitLoader').addClass('open');
       }else{
-        console.log('pattern2')
-        var shippingTerm = Number(5500) - Number(priceCulc);
-        $('#shippingPrice').html('<span class="amount_price">660円</span>(税込)');
-        $('#shippingFree').html('※あと' + shippingTerm.toLocaleString() + '円で送料無料')
+        event.preventDefault();
+        alert('最短配送日時は' + firstDay + 'となります。申し訳ございませんが、配送指定日を再度選択お願いします。');
       }
-      deliveryTime.on({
-        'change': function() {
-          var timeValue =  $(this).val();
-          $('#delivery-time').val(timeValue);
-        }
-      });
-      messageCard.on({
-        'keyup': function() {
+    }
+  }
+
+  function setShippingDay2(delay, mode){
+    today.setDate(today.getDate() + delay);
+    var todayY = today.getFullYear();
+    var todayM = today.getMonth() + 1;
+    var todayD = today.getDate();
+    var todayW = today.getDay() % 7;
+    var dayTime = today.getHours();
+    var todayDate = todayM + '/' + todayD;
+    if(todayDate){
+      if($.inArray(todayDate,holiday) != -1){
+        delay = delay + 1;
+        setShippingDay2(delay, mode);
+      }else{
+        setDayDisplay(delay, mode);
+      }
+    }
+  }
+
+  function setShippingDay(mode){
+    today.setDate(today.getDate() + testFlg);
+    var dayTime = today.getHours();
+    var todayW = today.getDay() % 7;
+    if(dayTime < 10){ /* 10時までの注文の場合 */
+      if(todayW == 0){ /* 日曜日の場合 */
+        setShippingDay2(1,mode) /* 配送を月曜日にする*/
+      }else if(todayW == 6){ /* 土曜日の場合*/
+        setShippingDay2(2,mode); /* 配送を月曜日にする*/
+      }else{ /*月~金曜日の注文の場合*/
+        setShippingDay2(0,mode); /*当日に配送する*/
+      }
+    }else{ /* 10時以降の注文の場合 */
+      if(todayW == 6){ /* 土曜日の場合*/
+        setShippingDay2(2,mode);/* 配送を月曜日にする*/
+      }else if(todayW == 5){ /* 金曜日の場合*/
+        setShippingDay2(3,mode);/* 配送を月曜日にする*/
+      }else{ /*月~木曜日の注文の場合*/
+        setShippingDay2(1,mode);/*翌日に配送する*/
+      }
+    }
+  }
+
+  function setMessageCardVal(){
+    var messageTxt = messageCard.val();
+    $('#messageCartContent').attr('value', messageTxt);
+  }
+
+  function init(){
+    if(priceCulc > 5499){
+      $('#shippingPrice').html('送料無料');
+    }else if(optionState.indexOf('定期') == 1){
+      $('#shippingPrice').html('送料無料');
+    }else{
+      var shippingTerm = Number(5500) - Number(priceCulc);
+      $('#shippingPrice').html('<span class="amount_price">660円</span>(税込)');
+      $('#shippingFree').html('※あと' + shippingTerm.toLocaleString() + '円で送料無料')
+    }
+    deliveryTime.on({
+      'change': function() {
+        var timeValue =  $(this).val();
+        $('#delivery-time').val(timeValue);
+        setMessageCardVal();
+      }
+    });
+    $.each(target.find('.comp-submit-button input'), function(index) {
+      $(this).on({
+        'click': function() {
+          setShippingDay(1);
           setMessageCardVal();
         }
       });
-      deliveryDate.on({
+    });
+    messageCard.on({
+      'keyup': function() {
+        setMessageCardVal();
+      },
+      'blur': function(){
+        setMessageCardVal();
+      },
+      'change': function(){
+        setMessageCardVal();
+      }
+    });
+
+    setShippingDay(0);
+
+
+    $.each(target.find('.option_item'), function(index) {
+      optionItem[index] = $(this);
+      optionItemLabel[index] = $(this).find('label');
+      optionItemHeight[index] = optionItemLabel[index].outerHeight();
+      $(this).css({'height': optionItemLabel[index].outerHeight() + 'px'});
+      optionItemWrap[index] = $(this).find('.input_wrap').outerHeight();
+      optionItemLabel[index].on({
         'click': function() {
-          setDayDisplay();
-        }
-      });
-
-      setInterval(function(){
-        var deliveryDateListTxtNew = deliveryDateList.text().length;
-        if(deliveryDateListTxt != deliveryDateListTxtNew && setDayStatus == 0){
-          setDayDisplay();
-        }
-      },1000);
-
-
-
-      $(window).on({
-        'scroll': function() {
-          setDayDisplay();
-        }
-      });
-
-      $.each(target.find('.option_item'), function(index) {
-        optionItem[index] = $(this);
-        optionItemHeight[index] = $(this).outerHeight();
-        optionItemLabel[index] = $(this).find('label');
-        optionItemWrap[index] = $(this).find('.input_wrap').outerHeight();
-        optionItemLabel[index].on({
-          'click': function() {
-            if($(this).find('input[type=checkbox]:checked').val() == 'true'){
-              optionItem[index].css({height: optionItemHeight[index] + optionItemWrap[index] + 15 + 'px'});
-            }else{
-              optionItem[index].css({height: optionItemHeight[index] + 'px'});
-            }
+          if($(this).find('input[type=checkbox]:checked').val() == 'true'){
+            optionItem[index].css({height: optionItemHeight[index] + optionItemWrap[index] + 15 + 'px'});
+          }else{
+            optionItem[index].css({height: optionItemHeight[index] + 'px'});
           }
-        });
+        }
       });
-    }
-
-    init();
-
+    });
   }
 
-  if (document.getElementById('cart')) {
-    cartOptionController($('article'));
-  }
+  init();
+
+}
+
+if (document.getElementById('cart')) {
+  cartOptionController($('article'));
+}
 
   function setCategoryName(){
     var domain = 'https://' + location.host;
@@ -211,7 +285,6 @@ if (document.getElementById('cart')) {
       });
       cartItem.find(".bag_item").each(function(index) {
         var linkHref = $(this).find('.item_img a').attr('href').split("products/").slice(-1)[0];
-        console.log(index + ':' + linkHref.split("?")[0]);
         linkURLCart[index] = linkHref.split("?")[0];
         cartItemCategory[index] = $(this).find('.category');
         cartItemLength = cartItemLength + 1;
@@ -221,7 +294,6 @@ if (document.getElementById('cart')) {
         cache: false,
         dataType: 'html',
         success: function(html) {
-            console.log('success!');
             var product_num = 40; //抜き出したい商品の数
             var prop = [];
             var category = [];
@@ -235,14 +307,12 @@ if (document.getElementById('cart')) {
               }
               for (var j=0; j< cartItemLength; j++) {
                 if(prop[index] == linkURLCart[j]){
-                  console.log('j:' + j);
                   cartItemCategory[j].text('');
                   cartItemCategory[j].prepend(category[index]);
                 }
               }
             });
             if (document.getElementById('relatedSlider')) {
-              console.log('slick!')
               relatedSlider();
             }
         }
@@ -252,7 +322,6 @@ if (document.getElementById('cart')) {
     setInterval(function(){
       var upSellStateNew = $('#upsellSection').text().length;
       if(upSellState != upSellStateNew && setCategory == 0){
-        console.log('update!');
         ajaxLoad();
         setCategory = 1;
       }
@@ -263,7 +332,6 @@ if (document.getElementById('cart')) {
 
   function setHistoryBackLink(){
     var ref = document.referrer;
-    console.log('ref:' + ref);
     if ( ref.match(/collections/)) {
 
     }else if(ref.match(/products/)){
@@ -274,25 +342,5 @@ if (document.getElementById('cart')) {
   }
 
   setHistoryBackLink();
-
-
-  function loadingSubmit(target){
-
-    function init(){
-      $.each(target.find('.comp-submit-button input'), function(index) {
-        $(this).on({
-          'click': function() {
-            $('#submitLoader').addClass('open');
-          }
-        });
-      });
-    }
-
-    init();
-
-  }
-
-  loadingSubmit($('article'));
-
 
 });
