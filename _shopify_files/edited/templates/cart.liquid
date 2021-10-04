@@ -15,7 +15,6 @@ var deriveryTimeParam = cartAttributes.attributes['配送時間帯:'];
 var omotegakiParam = cartAttributes.attributes['熨斗の表書き:'];
 var naireParam = cartAttributes.attributes['熨斗の名入れ:'];
 var messageParam = cartAttributes.attributes['メッセージカードの内容:'];
-var messageParam = cartAttributes.attributes['メッセージカードの内容:'];
 var noteParam = cartAttributes.note;
 console.log('omotegakiParam:' + omotegakiParam);
 console.log('deliveryDateParam:' + deliveryDateParam);
@@ -127,7 +126,10 @@ var messageCard = $('textarea[name="messeage_card"]');
 
 function setMessageCardVal(){
   var messageTxt = messageCard.val();
-  $('#messageCartContent').attr('value', messageTxt);
+  console.log('message:' + messageTxt);
+  if(messageTxt != undefined){
+    $('#messageCartContent').text(messageTxt);
+  }
 }
 
 function getDayDisplay(day, mode, flg){
@@ -162,10 +164,10 @@ function setDayDisplay(num, mode){
     }
     getDayDisplay(i, mode, dayFlag);
   }
+  var selectDate = deliveryDate.val();
   if(mode == 1){
-    var selectDate = deliveryDate.val();
     var checkDateLabel = correctDate.includes(selectDate);
-    if(checkDateLabel){
+    if(checkDateLabel || selectDate == '指定なし' || selectDate == undefined){
       $('#submitLoader').addClass('open');
     }else{
       event.preventDefault();
@@ -216,8 +218,8 @@ function setShippingDay(mode){
 }
 
 function setMessageCardVal(){
-  var messageTxt = messageCard.val();
-  $('#messageCartContent').attr('value', messageTxt);
+  var messageTxt = messageCard.val
+  $('#messageCartContent').text(messageTxt);
 }
 
 function init(){

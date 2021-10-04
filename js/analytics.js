@@ -46,4 +46,9 @@ function checkPaymentWay(){
   }
 }
 
-/* アトリビュートの値を取得・処理 */
+/* Amazonペイ部分の表記変更*/
+var amazonPayment = parentWrap.querySelectorAll('.amazon-payments');
+var amazonBox = amazonPayment.innerHTML;
+console.log('amazonBox:' + amazonBox);
+var noteText = `<div class="added_wrap" style="margin-bottom: 25px;"><p>※Amazon payの場合、お届け先と購入者は同一となります。</p><p>※ギフトなどで、お届け先と異なる購入者情報を入力ご希望の場合は、他の決済手段をご利用ください"</p>`;
+amazonPayment.innerHTML = noteText + amazonBox;

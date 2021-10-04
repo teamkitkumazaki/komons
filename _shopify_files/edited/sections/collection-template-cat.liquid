@@ -4,7 +4,7 @@
 
 {%- assign product_1st = collection.products[0] -%}
 
-<section class="section-basic-item">
+<section class="section-basic-item {{collection.handle}}">
 <div class="section_inner">
   <div class="section_ttl">
   <h1><span>{{ collection.title }}</span><font>{{ collection.metafields.custom_fields["collection_title_ja"] }}</font></h1>
@@ -54,15 +54,17 @@
   </div>
   <!-- item_list -->
   {% paginate collection.products by 20 %}
+  {%- assign num = 0 -%}
   {%- for product in collection.products -%}
   {%- unless product.type == "gift" or product == product_1st -%}
-    {%- assign num = forloop.index | modulo:2 -%}
+    {%- assign num = num | plus:1 -%}
+    {%- assign num = num | modulo:2 -%}
     {%- if num == 1 -%}
-      {%- assign left_or_right = "right" -%}
-    {%- else -%}
       {%- assign left_or_right = "left" -%}
+    {%- else -%}
+      {%- assign left_or_right = "right" -%}
     {%- endif -%}
-  <div class="item_list {{ left_or_right }}">
+  <div class="item_list {{ left_or_right }} num{{num}}">
     <div class="img_wrap">
       <a href="{{ product.url }}" class="img_link_{{ product.id }}"></a>
       <style>
@@ -122,7 +124,7 @@
   <div id="giftProductList" class="comp-gift-product-list">
     {%- paginate collection.products by 20 -%}
     {%- for product_child in collection.products -%}
-    {% if product_child.type == "gift" %}
+    {% if product_child.type == "gift" or product_child.type == "mini-gift"  %}
 		{% include 'gift-list' %}
     {% endif %}
     {%- endfor -%}

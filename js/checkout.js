@@ -87,7 +87,7 @@ $(function() {
       var attributeBox = [];
       var checkoutNote;
       var cartAttribute;
-      var note = '{{ checkout.note }}';
+      var note = `{{ checkout.note }}`;
       var paymentMethod = $('.payment-method-list__item__info').text();
       var attributeLength = 0;
       var totelPrice = '{{ checkout.total_price | money_without_currency }}';
@@ -103,27 +103,27 @@ $(function() {
       }
 
       function addCartNoteDisplay(){
-        $('.step__sections').append('<div class="content-box"><div class="content-box__row content-box__row--no-border"><h2>備考</h2></div><!-- content-box --><div class="content-box__row"><div class="section__content"><p>' + note + '</p></div><!-- section__content --></div><!-- content-box__row --></div><!-- content-box -->');
+        $('.step__sections').append('<div class="content-box"><div class="content-box__row content-box__row--no-border"><h2>備考</h2></div><!-- content-box --><div class="content-box__row"><div class="section__content"><p style="white-space: pre-line;">' + note + '</p></div><!-- section__content --></div><!-- content-box__row --></div><!-- content-box -->');
       }
 
       function addCartAttributeDisplay(e, num){
         var splitText = e.split(':')
-        console.log(splitText);
+        console.log('text:' + splitText + '/ num:' + num);
         if(num == 0){
-          cartAttribute.append('<h3 class="heading-3">' + splitText[0] + '</h3><p>' + splitText[1] + '</p>');
+          cartAttribute.append('<h3 class="heading-3">' + splitText[0] + '</h3><p style="white-space: pre-line; margin-bottom: 20px;">' + splitText[1] + '</p>');
         }else if(num == 1){
-          cartAttribute2.append('<h3 class="heading-3">' + splitText[0] + '</h3><p>' + splitText[1] + '</p>');
+          cartAttribute2.append('<h3 class="heading-3">' + splitText[0] + '</h3><p style="white-space: pre-line; margin-bottom: 20px;">' + splitText[1] + '</p>');
         }else if(num == 2){
-          giftAttribute.append('<h3 class="heading-3">' + splitText[0] + '</h3><p>' + splitText[1] + '</p>');
+          giftAttribute.append('<h3 class="heading-3">' + splitText[0] + '</h3><p style="white-space: pre-line; margin-bottom: 20px;">' + splitText[1] + '</p>');
         }else if(num == 3){
-          giftAttribute2.append('<h3 class="heading-3">' + splitText[0] + '</h3><p>' + splitText[1] + '</p>');
+          giftAttribute2.append('<h3 class="heading-3">' + splitText[0] + '</h3><p style="white-space: pre-line; margin-bottom: 20px;">' + splitText[1] + '</p>');
         }else{
-          giftAttribute3.append('<h3 class="heading-3">' + splitText[0] + '</h3><p>' + splitText[1] + '</p>');
+          giftAttribute3.append('<h3 class="heading-3">' + splitText[0] + '</h3><p style="white-space: pre-line; margin-bottom: 20px;">' + splitText[1] + '</p>');
         }
       }
 
       function setContactLink(){
-        var checkoutNote = '{{ checkout.note }}';
+        var checkoutNote = note;
         var targetLink = $('.step__footer__info').find('a');
         targetLink.attr('href', 'https://journal.komons-japan.com/contact');
         targetLink.attr('target', '_blank');
@@ -135,19 +135,45 @@ $(function() {
         {% endfor %}
         console.log('attributeLength:' + attributeLength);
         setContactLink();
-        $('.step__sections').append('<div class="content-box"><div class="content-box__row content-box__row--no-border"><h2>配送情報</h2></div><div class="content-box__row"><div class="section__content"><div class="section__content__column section__content__column--half"><div id="cartAttribute01" class="text-container"></div></div><!-- section__content__column --><div class="section__content__column section__content__column--half"><div id="cartAttribute02" class="text-container"></div></div><!-- section__content__column --></div><!-- section__content --></div><!-- content-box__row --></div><!-- content-box -->');
-        if(attributeLength > 2){
-          $('.step__sections').append('<div class="content-box"><div class="content-box__row content-box__row--no-border"><h2>備考・ギフトオプション</h2></div><div class="content-box__row"><div class="section__content"><div class="section__content__column section__content__column--half"><div id="giftAttribute01" class="text-container"></div></div><!-- section__content__column --><div class="section__content__column section__content__column--half"><div id="giftAttribute02" class="text-container"></div></div><!-- section__content__column --></div><!-- section__content --><div class="section__content" style="margin-top: 2em"><div id="giftAttribute03" class="text-container"></div></div></div><!-- content-box__row --></div><!-- content-box -->');
-        }
+        $('.step__sections').append(`
+          <div class="content-box">
+            <div class="content-box__row content-box__row--no-border">
+              <h2>配送情報/オプション情報</h2>
+            </div>
+            <div class="content-box__row">
+              <div class="section__content">
+                <div class="section__content__column" style="width: 100%">
+                  <div id="cartAttribute01" class="text-container"></div>
+                </div><!-- section__content__column -->
+                <div class="section__content__column" style="width: 100%">
+                  <div id="cartAttribute02" class="text-container"></div>
+                </div>
+                <!-- section__content__column -->
+              </div><!-- section__content -->
+              <div class="section__content__column" style="width: 100%">
+                <div id="giftAttribute01" class="text-container"></div>
+              </div>
+              <!-- section__content__column -->
+              <div class="section__content__column" style="width: 100%">
+                <div id="giftAttribute02" class="text-container"></div>
+              </div>
+              <!-- section__content__column -->
+              <div class="section__content__column" style="width: 100%">
+                <div id="giftAttribute03" class="text-container"></div>
+              </div>
+              <!-- section__content__column -->
+            </div><!-- section__content -->
+            </div><!-- content-box__row -->
+          </div><!-- content-box -->`);
         cartAttribute = $('#cartAttribute01');
         cartAttribute2 = $('#cartAttribute02');
         giftAttribute = $('#giftAttribute01');
         giftAttribute2 = $('#giftAttribute02');
         giftAttribute3 = $('#giftAttribute03');
         commentMemo = $('#commentMemo');
+        var i = 0;
         {% for item in checkout.attributes %}
-          console.log('attributeBox[' + i + '] = {{ item }}');
-          attributeBox[i] = '{{ item }}';
+          attributeBox[i] = `{{ item }}`;
           addCartAttributeDisplay(attributeBox[i], i);
           i = i + 1;
         {% endfor %}
