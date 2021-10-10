@@ -16,8 +16,7 @@ var omotegakiParam = cartAttributes.attributes['熨斗の表書き:'];
 var naireParam = cartAttributes.attributes['熨斗の名入れ:'];
 var messageParam = cartAttributes.attributes['メッセージカードの内容:'];
 var noteParam = cartAttributes.note;
-console.log('omotegakiParam:' + omotegakiParam);
-console.log('deliveryDateParam:' + deliveryDateParam);
+console.log('messageParam:' + messageParam);
 
 function controllProductQuantity(target){
 var minusButton = [];
@@ -68,17 +67,24 @@ function init(){
     $('#noshiType').val(omotegakiParam);
     $('#noshiName').val(naireParam);
   }else{
-    $('#noshi1').remove();
-    $('#noshi2').remove();
+    $('#noshi1').css({'display': 'none'});
+    $('#noshi2').css({'display': 'none'});
+    $('#noshiType').val('');
+    $('#noshiName').val('');
   }
   if(optionState.indexOf('メッセージ') !=  -1){
     $('#message1').css({'display': 'block'});
-    $('#messeageCard').val(messageParam);
+    $('#messeageCard').html(messageParam);
+    console.log('messageParam:' + messageParam);
   }else{
-    $('#message1').remove();
+    $('#message1').css({'display': 'none'});
+    $('#messeageCard').val('');
   }
   if(optionState.indexOf('熨斗') ==  -1 && optionState.indexOf('メッセージ') ==  -1){
-    $('#giftOptionSection').remove();
+    $('#noshiType').val('');
+    $('#noshiName').val('');
+    $('#messeageCard').val('');
+    $('#giftOptionSection').css({'display': 'none'});
   }else{
     $('#giftOptionSection').css({'display': 'block'});
   }
@@ -126,7 +132,6 @@ var messageCard = $('textarea[name="messeage_card"]');
 
 function setMessageCardVal(){
   var messageTxt = messageCard.val();
-  console.log('message:' + messageTxt);
   if(messageTxt != undefined){
     $('#messageCartContent').text(messageTxt);
   }
@@ -287,6 +292,7 @@ function init(){
     }
     if(messageParam != undefined){
       $('#message1 label').click();
+      $('#messageInput').prop('checked', true);
     }
     if(deliveryDateParam != undefined){
       $('#delivery1 label').click();

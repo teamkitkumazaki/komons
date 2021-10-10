@@ -1,5 +1,5 @@
 $(function() {
-  
+
   function setCategoryName(){
     var domain = 'https://' + location.host;
     var upSellState = $('#upsellSection').text().length;
