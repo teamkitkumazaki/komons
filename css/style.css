@@ -536,10 +536,11 @@ footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap form > div input[type=e
   font-family: inherit !important;
   position: absolute !important;
   line-height: 45px !important;
+  height: 45px !important;
   padding: 0 10px !important;
   box-sizing: border-box !important;
   border: none !important;
-  background-color: rgba(255, 255, 255, 0.4) !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
   top: 0;
   left: 0;
   bottom: 0;
@@ -558,8 +559,8 @@ footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap form > div button[type=
   letter-spacing: 0.5px !important;
   font-family: inherit !important;
   width: 75px !important;
-  height: 100%;
-  line-height: 45px;
+  height: 45px !important;
+  font-weight: normal !important;
   box-sizing: border-box !important;
   border: none !important;
   background: #00381f !important;
@@ -3857,7 +3858,7 @@ body.loaded #loading {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 100px;
+  margin-bottom: 1px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -3966,7 +3967,7 @@ body.loaded #loading {
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0px;
+    margin-bottom: 1px;
     display: block;
   }
 }
@@ -9459,6 +9460,152 @@ body.loaded #loading {
     line-height: 1.6;
   }
 }
+.comp-instagram-wrap {
+  padding: 120px 0;
+  border-top: 1px solid #f1f1f1;
+  position: relative;
+  z-index: 10;
+  background: #fff;
+}
+.comp-instagram-wrap.b_none {
+  border-top: 0px solid #f1f1f1;
+}
+.comp-instagram-wrap .insta_ttl {
+  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 40px;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #00381f;
+  margin-bottom: 80px;
+}
+.comp-instagram-wrap .link_button {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.comp-instagram-wrap .link_button a {
+  display: block;
+  background: #00381f;
+  color: #fff;
+  text-align: center;
+  transition: background 0.2s;
+}
+.comp-instagram-wrap .link_button a span {
+  position: relative;
+  display: inline-block;
+  padding: 25px 0 25px 35px;
+  font-size: 18px;
+  letter-spacing: 0.75px;
+}
+.comp-instagram-wrap .link_button a span::before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_ig_ukbdvy.svg");
+}
+.comp-instagram-wrap .link_button a:hover {
+  background: #00522d;
+}
+.comp-instagram-wrap .insta_feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: 1px solid #d8d8d8 !important;
+  margin-bottom: 80px !important;
+}
+.comp-instagram-wrap .insta_feed a {
+  width: calc(100% / 6);
+  box-sizing: border-box;
+  position: relative !important;
+  display: block;
+  z-index: 1 !important;
+}
+.comp-instagram-wrap .insta_feed a .instafeed-container {
+  width: 100% !important;
+  padding-top: 0 !important;
+  border-left: 1px solid #d8d8d8 !important;
+  border-bottom: 1px solid #d8d8d8 !important;
+}
+.comp-instagram-wrap .insta_feed a .instafeed-container img {
+  position: static !important;
+}
+.comp-instagram-wrap .insta_feed a:nth-of-type(6) .instafeed-container {
+  border-right: 1px solid #d8d8d8;
+}
+.comp-instagram-wrap .insta_feed a:nth-of-type(n + 7) {
+  display: none;
+}
+.comp-instagram-wrap .insta_feed a::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.5s;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 20px;
+  background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_ig_ukbdvy.svg");
+}
+.comp-instagram-wrap .insta_feed a:hover::after {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .comp-instagram-wrap {
+    padding: 80px 0;
+  }
+  .comp-instagram-wrap .insta_ttl {
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
+  .comp-instagram-wrap .link_button {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .comp-instagram-wrap .insta_feed {
+    margin-bottom: 60px !important;
+  }
+}
+@media screen and (max-width: 720px) {
+  .comp-instagram-wrap {
+    padding: 60px 0;
+  }
+  .comp-instagram-wrap .insta_ttl {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .comp-instagram-wrap .link_button {
+    max-width: unset;
+  }
+  .comp-instagram-wrap .insta_feed {
+    margin-bottom: 20px !important;
+  }
+  .comp-instagram-wrap .insta_feed a {
+    width: calc(100% / 3) !important;
+  }
+  .comp-instagram-wrap .insta_feed a:nth-of-type(3n) .instafeed-container {
+    border-right: 1px solid #d8d8d8 !important;
+  }
+  .comp-instagram-wrap .insta_feed a:nth-of-type(n + 7) {
+    display: block;
+  }
+}
 /* ########## ページ別レイアウト ########## */
 #index #main {
   width: 100%;
@@ -11141,7 +11288,7 @@ body.loaded #loading {
     margin: 0 auto;
   }
   #itemList .gift_section {
-    margin-bottom: 60px;
+    margin-bottom: 0px;
   }
   #itemList .gift_section .section_ttl {
     padding: 50px 0 30px;
@@ -12131,8 +12278,9 @@ body.loaded #loading {
   margin-bottom: 0px;
 }
 #itemDetail .section-back {
-  padding: 100px 0 0;
+  padding: 100px 0;
   background: #f9f9f9;
+  margin-top: 60px;
 }
 
 @media screen and (max-width: 1150px) {
@@ -12926,6 +13074,7 @@ body.loaded #loading {
 @media screen and (max-width: 750px) {
   #itemDetail .section-back {
     padding: 60px 0;
+    margin-top: 60px;
   }
 }
 @media screen and (max-width: 750px) {
@@ -13870,14 +14019,11 @@ body.loaded #loading {
   }
 }
 /*ジャーナル詳細*/
-#concept {
-  padding-bottom: 100px;
-}
 #concept .concept_inner {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 50px;
+  padding-bottom: 100px;
 }
 #concept .main {
   width: 100%;
@@ -14083,7 +14229,7 @@ body.loaded #loading {
     height: 48vw;
   }
   #concept .concept_inner {
-    padding: 0 30px;
+    padding: 0 30px 60px;
   }
   #concept .concept_links {
     text-align: center;
@@ -14116,7 +14262,7 @@ body.loaded #loading {
     height: 54vw;
   }
   #concept .concept_inner {
-    padding: 0;
+    padding: 0 0 60px;
   }
   #concept .concept_index {
     display: none;
@@ -14320,10 +14466,6 @@ body.loaded #loading {
   }
 }
 /*コンセプト*/
-#faq {
-  padding-bottom: 100px;
-}
-
 .underPage .txt_main {
   max-width: 1080px;
   margin-left: auto;

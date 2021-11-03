@@ -97,10 +97,11 @@ footer {
 							font-family: inherit !important;
 							position: absolute !important;
 							line-height: 45px !important;
+							height: 45px !important;
 							padding: 0 10px !important;
 							box-sizing: border-box !important;
 							border: none !important;
-	  					background-color: rgba(255, 255, 255, 0.4) !important;
+	  					background-color: rgba(255, 255, 255, 0.6) !important;
 							top:0;
 							left:0;
 							bottom:0;
@@ -118,8 +119,8 @@ footer {
 							letter-spacing: 0.5px !important;
 							font-family: inherit !important;
 							width:75px !important;
-							height: 100%;
-							line-height: 45px;
+							height: 45px !important;
+							font-weight: normal !important;
 							box-sizing: border-box !important;
 							border: none !important;
 							background: $basicGreen !important;

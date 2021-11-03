@@ -83,14 +83,14 @@
 								 <a href="/products/{{ product.metafields.custom_fields["variation_bottle_refill"] }}">
 									 <span class="wrap">
 										 <span class="title">ボトル&レフィル(詰め替え用)</span>
-										 <span id="refillPrice"></span>
+										 <span id="bottleRefillPrice"></span>
 									 </span>
 								 </a>
 								{%- endif -%}
 							 {% if product.metafields.custom_fields["variation_mini"] != blank %}
 								<a href="/products/{{ product.metafields.custom_fields["variation_mini"] }}">
 									<span class="wrap">
-										<span class="title">Mini(30ml)</span>
+										<span class="title">Mini</span>
 										<span id="miniPrice" class="desc"></span>
 									</span>
 								</a>
@@ -98,7 +98,7 @@
 								{% if product.metafields.custom_fields["variation_mini_gift"] != blank %}
 								 <a href="/products/{{ product.metafields.custom_fields["variation_mini_gift"] }}">
 									 <span class="wrap">
-										 <span class="title">ギフトラッピング版(30ml)</span>
+										 <span class="title">ギフトラッピング版(Mini)</span>
 										 <span id="miniGiftPrice" class="desc"></span>
 									 </span>
 								 </a>

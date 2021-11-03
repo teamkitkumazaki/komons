@@ -5,6 +5,7 @@
 {%- if collection.handle == "gift" -%}
 <article id="giftList" class="page-gift-list">
 	{% section 'collection-template-gift' %}
+  {% section 'instagram' %}
 </article>
 {%- elsif collection.handle == "dish"
 	or collection.handle == "fabric"
@@ -16,6 +17,7 @@
 <article id="itemGroupList" class="page-item-group-list">
 	{% section 'collection-template-cat' %}
 	{% section 'section-back' %}
+  {% section 'instagram' %}
 </article>
 {%- elsif collection.handle == "ajax" -%}
 <article id="itemAjax" class="page-item-ajax">
@@ -24,5 +26,6 @@
 {%- else -%}
 <article id="itemList" class="page-item-list">
 	{% section 'collection-template' %}
+  {% section 'instagram' %}
 </article>
 {%- endif -%}

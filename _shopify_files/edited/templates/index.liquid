@@ -266,17 +266,7 @@
     </div>
   </section>
   {% section 'journal-list' %}
-  <section id="instagram">
-    <div class="ig_ttl">
-      <h2>#komons</h2>
-    </div>
-    <div class="insta_wrap">
-      <div class="iframe_wrap">
-				<div id="insta-feed"></div>
-      </div>
-      <p><a href="https://www.instagram.com/komons.jp/" target="_blank"><span>@komons.jp</span></a></p>
-    </div>
-  </section>
+  {% section 'instagram' %}
 </article>
 
 <!--PERZONALIZATION-START Do not modify or delete this comment--><div id="perzonalization" class="perzonalization"></div><script type='text/javascript'>var productDetailsForPrz = {{ product | json }};var basketDetailsForPrz = {{ cart | json }};var filterDetailsForPrz = {{ collection | json }};var detailsForPrz = { userId: '{{ customer.id }}', language: '{{ shop.locale }}', currency:'{{ shop.currency }}' };var searchDetailsForPrz = {{ search.results | json }};if(productDetailsForPrz) { productDetailsForPrz.collections = []; }{% for collection in product.collections %}   if(productDetailsForPrz) { productDetailsForPrz.collections.push("{{ collection.title }}") }{% endfor %}if (filterDetailsForPrz) { filterDetailsForPrz.products = []; }{% for product in collection.products %}   if(filterDetailsForPrz) { filterDetailsForPrz.products.push({ id:"{{ product.id }}", handle:"{{ product.handle }}" }) }{% endfor %}</script><!--Do not modify or delete this comment PERZONALIZATION-END-->

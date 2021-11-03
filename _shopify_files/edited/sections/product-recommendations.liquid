@@ -26,7 +26,6 @@
       linkURL[index] = $(this).find('.rktheme-product-image-wrap').attr('href').split("products/").slice(-1)[0];
       targetDom[index] = $(this).find('.rktheme-product-details');
 
-      console.log(index + ':' + linkURL[index]);
     });
     if (document.getElementById('variationToggle')) {
       var varitationItem = [
@@ -38,7 +37,6 @@
       cache: false,
       dataType: 'html',
       success: function(html) {
-          console.log('success!');
           var product_num = 40; //抜き出したい商品の数
           var prop = [];
           var content = [];
@@ -60,21 +58,25 @@
               $('#refillPrice').html(priceDisplay[index])
             }
             {%- endif -%}
+
             {%- if product.metafields.custom_fields["variation_refill"] != blank %}
             if(prop[index] == varitationItem[2] ){
               $('#bottleRefillPrice').html(priceDisplay[index])
             }
             {%- endif -%}
+
             {%- if product.metafields.custom_fields["variation_mini"] != blank %}
             if(prop[index] == varitationItem[3] ){
               $('#miniPrice').html(priceDisplay[index])
             }
             {%- endif -%}
+
             {%- if product.metafields.custom_fields["variation_mini_gift"] != blank %}
             if(prop[index] == varitationItem[4] ){
               $('#miniGiftPrice').html(priceDisplay[index])
             }
             {%- endif -%}
+
             if (prop[index] == linkURL[0]){
               targetDom[0].prepend(category[index]);
             };
@@ -89,7 +91,6 @@
             };
           });
           if (document.getElementById('relatedSlider')) {
-            console.log('slick!')
             relatedSlider();
           }
       }
@@ -99,7 +100,6 @@
   setInterval(function(){
     var upSellStateNew = $('#upsellSection').text().length;
     if(upSellState != upSellStateNew && setCategory == 0){
-      console.log('update!');
       ajaxLoad();
       setCategory = 1;
     }

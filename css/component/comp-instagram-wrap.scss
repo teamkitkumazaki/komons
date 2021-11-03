@@ -1,0 +1,157 @@
+.comp-instagram-wrap {
+  padding: 120px 0;
+  border-top: 1px solid #f1f1f1;
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  &.b_none{
+    border-top: 0px solid #f1f1f1;
+  }
+  .insta_ttl {
+    @include libre-r;
+    font-size: 40px;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $basicGreen;
+    margin-bottom: 80px;
+  }
+
+  .link_button {
+    max-width: 600px;
+    margin: 0 auto;
+
+    a {
+      display: block;
+      background: $basicGreen;
+      color: #fff;
+      text-align: center;
+      transition: background 0.2s;
+      span {
+        position: relative;
+        display: inline-block;
+        padding: 25px 0 25px 35px;
+        font-size: 18px;
+        letter-spacing: 0.75px;
+
+        &::before {
+          display: block;
+          content: "";
+          position: absolute;
+          width: 28px;
+          height: 28px;
+          @include bgSet;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+          background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_ig_ukbdvy.svg");
+        }
+      }
+
+      &:hover {
+        background: lighten($basicGreen, 5%);
+      }
+    }
+  }
+
+  .insta_feed {
+    @include flexSet;
+    border-top: 1px solid #d8d8d8 !important;
+    margin-bottom: 80px !important;
+
+    a {
+      width: calc(100% / 6);
+      box-sizing: border-box;
+      position: relative !important;
+      display: block;
+      z-index: 1 !important;
+      .instafeed-container{
+        width: 100% !important;
+        padding-top: 0 !important;
+        border-left: 1px solid #d8d8d8 !important;
+        border-bottom: 1px solid #d8d8d8 !important;
+        img{
+          position: static !important;
+        }
+      }
+      &:nth-of-type(6) {
+        .instafeed-container{
+          border-right: 1px solid #d8d8d8;
+        }
+      }
+      &:nth-of-type(n + 7) {
+        display: none;
+      }
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000, 0.4);
+        opacity: 0;
+        transition: opacity 0.5s;
+        @include bgSet;
+        background-size: 20px;
+        background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/v1614235426/hummenu/icon_ig_ukbdvy.svg");
+      }
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .comp-instagram-wrap {
+    padding: 80px 0;
+
+    .insta_ttl {
+      font-size: 36px;
+      margin-bottom: 60px;
+    }
+
+    .link_button {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .insta_feed {
+      margin-bottom: 60px !important;
+    }
+  }
+}
+@media screen and (max-width: 720px) {
+  .comp-instagram-wrap {
+    padding: 60px 0;
+
+    .insta_ttl {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .link_button {
+      max-width: unset;
+    }
+
+    .insta_feed {
+      margin-bottom: 20px !important;
+      a {
+        width: calc(100% / 3) !important;
+        &:nth-of-type(3n) {
+          .instafeed-container{
+            border-right: 1px solid #d8d8d8 !important;
+          }
+        }
+        &:nth-of-type(n + 7) {
+          display: block;
+        }
+      }
+    }
+  }
+}

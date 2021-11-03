@@ -938,8 +938,9 @@
 		margin-bottom: 0px;
 	}
 	.section-back{
-		padding: 100px 0 0;
+		padding: 100px 0;
 		background: $basicGray;
+		margin-top: 60px;
 	}
 }
 @media screen and (max-width: 1150px) {
@@ -1736,6 +1737,7 @@
 		}
 		.section-back{
 			padding: 60px 0;
+			margin-top: 60px;
 		}
 
 		.related_item {
