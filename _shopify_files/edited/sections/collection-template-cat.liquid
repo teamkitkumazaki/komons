@@ -40,8 +40,12 @@
               {% endfor %}
             </select>
             <div class="cartin_button">
+              {%- if product_1st.variants.first.inventory_quantity == 0 -%}
+              <span class="soldout" style="margin-top:0;">在庫切れ<span style="font-size:0.8rem; display: inline-block; margin-left: 0.5em;">(※12月中に再入荷予定)</span></span>
+              {%- else -%}
               <button><span>カートに入れる</span></button>
               <input id="cartSubmit-{{ product_1st.id }}" type="submit" value="カートに入れる">
+              {%- endif -%}
             </div>
             {% endform %}
           </div>
@@ -96,8 +100,12 @@
               {% endfor %}
             </select>
             <div class="cartin_button">
+              {%- if product.variants.first.inventory_quantity == 0 -%}
+						  <span class="soldout" style="margin-top:0;">在庫切れ<span style="font-size:0.8rem; display: inline-block; margin-left: 0.5em;">(※12月中に再入荷予定)</span></span>
+						  {%- else -%}
               <button><span>カートに入れる</span></button>
               <input id="cartSubmit-{{ product.id }}" type="submit" value="カートに入れる">
+              {%- endif -%}
             </div>
             {% endform %}
           </div>

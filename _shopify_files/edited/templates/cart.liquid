@@ -62,13 +62,16 @@ function init(){
   });
 
   if(optionState.indexOf('熨斗') !=  -1){
+    $('#noshi0').css({'display': 'block'});
     $('#noshi1').css({'display': 'block'});
     $('#noshi2').css({'display': 'block'});
     $('#noshiType').val(omotegakiParam);
     $('#noshiName').val(naireParam);
   }else{
+    $('#noshi0').css({'display': 'none'});
     $('#noshi1').css({'display': 'none'});
     $('#noshi2').css({'display': 'none'});
+    $("#noshi0 input").attr("checked",false);
     $('#noshiType').val('');
     $('#noshiName').val('');
   }
@@ -269,7 +272,7 @@ function init(){
 
   $.each(target.find('.option_item'), function(index) {
     optionItem[index] = $(this);
-    optionItemLabel[index] = $(this).find('label');
+    optionItemLabel[index] = $(this).find('.toggle_label');
     optionItemHeight[index] = optionItemLabel[index].outerHeight();
     $(this).css({'height': optionItemLabel[index].outerHeight() + 'px'});
     optionItemWrap[index] = $(this).find('.input_wrap').outerHeight();

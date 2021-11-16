@@ -2,7 +2,7 @@
 <div class="comp-waiting-button">
 	<a href="https://journal.komons-japan.com/waiting-list/register">
 		<span class="title">再入荷リクエスト</span>
-		<span class="desc">販売再開をメールでお知らせいたします</span>
+		<span class="desc">※12月中に再入荷予定</span>
 	</a>
 	<!--<span class="notice_txt" style="font-size: 14px; letter-spacing: 0.5px; margin-top: 10px; display: block;">※2月中～下旬に販売再開予定</span> -->
 </div>
@@ -33,7 +33,7 @@
 		</div>
 		{%- if product.handle == "k0009" or product.handle == "k0056" -%}
 			<span class="wrapping_text"><a href="/products/{{ product.metafields.custom_fields["variation_mini_gift"]}}">ギフトラッピング版はこちら</a></span>
-		{%- elsif  product.type != "option" and product.type != "refill" and product.type != "bottle-refill" and product.type != "gift" and product.handle != "k0025" and product.handle != "k0010" and product.handle != "k0058" -%} 
+		{%- elsif  product.type != "option" and product.type != "refill" and product.type != "bottle-refill" and product.type != "gift" and product.handle != "k0025" and product.handle != "k0010" and product.handle != "k0058" -%}
 		<span class="wrapping_text"><a href="/products/ks005">ギフトラッピングはこちら</a></span>
 		{%- endif -%}
 	</div>
