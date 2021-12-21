@@ -1,0 +1,77 @@
+.comp-popup-store{
+  .popup_item{
+    @include flexSet;
+    align-items: center;
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid #d8d8d8;
+    &:nth-last-of-type(1){
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+      border-bottom: 0px solid #d8d8d8;
+    }
+    .img_wrap{
+      width: 380px;
+      margin-right: 40px;
+    }
+    .txt_wrap{
+      width: calc(100% - 420px);
+      .shop_name{
+        font-size: 2.0rem;
+        line-height: normal;
+        letter-spacing: normal;
+        margin-bottom: 10px;
+        padding-left: 40px;
+        background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store.svg?v=1640016183);
+        background-size: 26px;
+        background-position: left top 2px;
+        background-repeat: no-repeat;
+      }
+      .address{
+        font-size: 1.6rem;
+        line-height: 1.8;
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
+        color: #646464;
+      }
+      .event_detail{
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 25px;
+        .detail_item{
+          @include flexSet;
+          line-height: 2;
+          justify-content: flex-start;
+          .ttl{
+            display: block;
+            &::after{
+              display: inline;
+              content: "：";
+            }
+          }
+        }
+      }
+      .map{
+        color: inherit;
+        font-size: 1.6rem;
+        text-decoration: underline;
+        @include hover;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px){
+  .comp-popup-store{
+    .popup_item{
+      .img_wrap{
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 30px;
+      }
+      .txt_wrap{
+        width: 100%;
+      }
+    }
+  }
+}

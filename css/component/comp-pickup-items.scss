@@ -5,7 +5,7 @@
   .pickup_item{
     width: 48%;
     .img_wrap{
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       a{
         display: block;
         @include hover;
@@ -20,28 +20,32 @@
           letter-spacing: normal;
           color: rgba(0, 56, 31, 0.8);
           font-size: 14px;
-          margin-bottom: 10px;
+          margin-bottom: 15px;
           span{
             display: inline-block;
             font-size: 16px;
-            font-weight: bold;
+            font-weight: normal;
             margin-right: 0.5em;
-            &::after{
-              display: inline-block;
-              content: "-";
-              padding-left: 0.5em;
-            }
+          }
+          .en{
+            display: none;
           }
         }
         .prod_name{
           display: block;
           letter-spacing: normal;
-          color: rgba(0, 56, 31, 0.8);
+          color: $basicGreen;
           font-size: 24px;
+          line-height: 1.5;
           @include hover;
           margin-bottom: 15px;
-          span{
+          .name{
+            display: block;
             font-size: 24px;
+          }
+          .genre{
+            font-size: 16px;
+            color: #646464;
           }
         }
         .price{
@@ -96,9 +100,12 @@
             font-size: 20px;
             line-height: 1.6;
             margin-bottom: 15px;
-            span{
+            .name{
               display: block;
               font-size: 20px;
+            }
+            .genre{
+              font-size: 14px;
             }
           }
         }
@@ -117,7 +124,7 @@
         margin-bottom: 0;
       }
       .img_wrap{
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         a{
           display: block;
           @include hover;
@@ -130,7 +137,7 @@
           border-bottom: 0px solid #d8d8d8;
           .cat_ttl{
             font-size: 14px;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             span{
               font-size: 14px;
             }
@@ -138,9 +145,12 @@
           .prod_name{
             font-size: 18px;
             margin-bottom: 10px;
-            span{
-              display: inline-block;
+            .name{
+              display: block;
               font-size: 20px;
+            }
+            .genre{
+              font-size: 14px;
             }
           }
           .price{

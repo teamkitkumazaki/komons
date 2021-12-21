@@ -788,6 +788,30 @@ footer .footer_wrap .footer_sns .sns_wrap .copy_right {
   }
 }
 /*@import 'common/hummenu.scss'; //ハンバーガーメニュー*/
+html {
+  font-size: 10px;
+}
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 1340px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 980px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 9px;
+  }
+}
+
 body {
   font-size: 14px;
   color: #00381f;
@@ -826,6 +850,29 @@ h1, h2, h3, h4, h5 {
 @media screen and (max-width: 750px) {
   .section_inner {
     width: 84vw;
+  }
+}
+
+.section_inner_new {
+  max-width: 1400px;
+  width: 80.5vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 1200px) {
+  .section_inner_new {
+    width: 86vw;
+  }
+}
+@media screen and (max-width: 980px) {
+  .section_inner_new {
+    max-width: 780px;
+    width: 86vw;
+  }
+}
+@media screen and (max-width: 720px) {
+  .section_inner_new {
+    width: 86vw;
   }
 }
 
@@ -3005,7 +3052,7 @@ body.loaded #loading {
   width: 48%;
 }
 .comp-pickup-items .pickup_item .img_wrap {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .comp-pickup-items .pickup_item .img_wrap a {
   display: block;
@@ -3023,32 +3070,36 @@ body.loaded #loading {
   letter-spacing: normal;
   color: rgba(0, 56, 31, 0.8);
   font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .comp-pickup-items .pickup_item .txt_wrap .prod_detail .cat_ttl span {
   display: inline-block;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: normal;
   margin-right: 0.5em;
 }
-.comp-pickup-items .pickup_item .txt_wrap .prod_detail .cat_ttl span::after {
-  display: inline-block;
-  content: "-";
-  padding-left: 0.5em;
+.comp-pickup-items .pickup_item .txt_wrap .prod_detail .cat_ttl .en {
+  display: none;
 }
 .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name {
   display: block;
   letter-spacing: normal;
-  color: rgba(0, 56, 31, 0.8);
+  color: #00381f;
   font-size: 24px;
+  line-height: 1.5;
   transition: opacity 0.3s;
   margin-bottom: 15px;
 }
 .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name:hover {
   opacity: 0.75;
 }
-.comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name span {
+.comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name .name {
+  display: block;
   font-size: 24px;
+}
+.comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name .genre {
+  font-size: 16px;
+  color: #646464;
 }
 .comp-pickup-items .pickup_item .txt_wrap .prod_detail .price {
   display: block;
@@ -3091,9 +3142,12 @@ body.loaded #loading {
     line-height: 1.6;
     margin-bottom: 15px;
   }
-  .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name span {
+  .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name .name {
     display: block;
     font-size: 20px;
+  }
+  .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name .genre {
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 760px) {
@@ -3108,7 +3162,7 @@ body.loaded #loading {
     margin-bottom: 0;
   }
   .comp-pickup-items .pickup_item .img_wrap {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   .comp-pickup-items .pickup_item .img_wrap a {
     display: block;
@@ -3124,7 +3178,7 @@ body.loaded #loading {
   }
   .comp-pickup-items .pickup_item .txt_wrap .prod_detail .cat_ttl {
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   .comp-pickup-items .pickup_item .txt_wrap .prod_detail .cat_ttl span {
     font-size: 14px;
@@ -3133,9 +3187,12 @@ body.loaded #loading {
     font-size: 18px;
     margin-bottom: 10px;
   }
-  .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name span {
-    display: inline-block;
+  .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name .name {
+    display: block;
     font-size: 20px;
+  }
+  .comp-pickup-items .pickup_item .txt_wrap .prod_detail .prod_name .genre {
+    font-size: 14px;
   }
   .comp-pickup-items .pickup_item .txt_wrap .prod_detail .price {
     font-size: 14px;
@@ -9161,6 +9218,10 @@ body.loaded #loading {
 .comp-section-information .info_flex .content:hover {
   opacity: 0.75;
 }
+.comp-section-information .info_flex .content font {
+  display: inline-block;
+  padding-left: 0.5em;
+}
 .comp-section-information .info_flex .content span {
   position: relative;
   display: inline-block;
@@ -9194,13 +9255,14 @@ body.loaded #loading {
 }
 @media screen and (max-width: 720px) {
   .comp-section-information {
-    padding: 20px 0;
+    padding: 15px 0;
   }
   .comp-section-information .info_flex {
     max-width: 84vw !important;
     display: block;
   }
   .comp-section-information .info_flex .title_en {
+    text-align: center;
     display: block;
     font-size: 14px;
     letter-spacing: 0.5px;
@@ -9212,11 +9274,17 @@ body.loaded #loading {
     display: none;
   }
   .comp-section-information .info_flex .content {
+    display: block;
     font-size: 14px;
     line-height: 1.8;
     letter-spacing: 0.5px;
     text-indent: -0.5em;
     text-decoraion: underline;
+    text-align: center;
+  }
+  .comp-section-information .info_flex .content font {
+    display: block;
+    padding-left: 0em;
   }
   .comp-section-information .info_flex .content span {
     position: relative;
@@ -9604,6 +9672,305 @@ body.loaded #loading {
   }
   .comp-instagram-wrap .insta_feed a:nth-of-type(n + 7) {
     display: block;
+  }
+}
+/* ストア一覧・FAQ */
+.comp-category-button button {
+  width: 100%;
+  font-size: 1.4rem;
+  font-family: inherit;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 5px;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+.comp-category-button button:hover {
+  opacity: 0.75;
+}
+.comp-category-button button::after {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 15px;
+  margin: auto;
+  border-bottom: 1px solid #00381f;
+  border-right: 1px solid #00381f;
+  transform: rotate(-45deg);
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 980px) {
+  .comp-category-button button {
+    width: auto;
+    font-size: 1.6rem;
+    border: 0px solid #d8d8d8;
+    text-align: left;
+    padding: 15px 30px 15px 0px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+  }
+  .comp-category-button button:nth-last-of-type(1) {
+    margin-right: 0;
+  }
+  .comp-category-button button::after {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: -5px;
+    right: 15px;
+    transform: rotate(45deg);
+  }
+}
+.comp-popup-store .popup_item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.comp-popup-store .popup_item:nth-last-of-type(1) {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  border-bottom: 0px solid #d8d8d8;
+}
+.comp-popup-store .popup_item .img_wrap {
+  width: 380px;
+  margin-right: 40px;
+}
+.comp-popup-store .popup_item .txt_wrap {
+  width: calc(100% - 420px);
+}
+.comp-popup-store .popup_item .txt_wrap .shop_name {
+  font-size: 2rem;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 10px;
+  padding-left: 40px;
+  background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store.svg?v=1640016183);
+  background-size: 26px;
+  background-position: left top 2px;
+  background-repeat: no-repeat;
+}
+.comp-popup-store .popup_item .txt_wrap .address {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  color: #646464;
+}
+.comp-popup-store .popup_item .txt_wrap .event_detail {
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+}
+.comp-popup-store .popup_item .txt_wrap .event_detail .detail_item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 2;
+  justify-content: flex-start;
+}
+.comp-popup-store .popup_item .txt_wrap .event_detail .detail_item .ttl {
+  display: block;
+}
+.comp-popup-store .popup_item .txt_wrap .event_detail .detail_item .ttl::after {
+  display: inline;
+  content: "：";
+}
+.comp-popup-store .popup_item .txt_wrap .map {
+  color: inherit;
+  font-size: 1.6rem;
+  text-decoration: underline;
+  transition: opacity 0.3s;
+}
+.comp-popup-store .popup_item .txt_wrap .map:hover {
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 980px) {
+  .comp-popup-store .popup_item .img_wrap {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+  .comp-popup-store .popup_item .txt_wrap {
+    width: 100%;
+  }
+}
+.comp-stock-list .store_list_wrap {
+  margin-bottom: 50px;
+}
+.comp-stock-list .store_list_wrap .area_ttl {
+  display: block;
+  background: #f4f4f4;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 0.8px;
+  margin-bottom: 30px;
+}
+.comp-stock-list .store_list_wrap .store_item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  padding: 0 5px 35px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.comp-stock-list .store_list_wrap .store_item:nth-last-of-type(1) {
+  margin-bottom: 0px;
+  padding: 0 5px 0px;
+  border-bottom: 0px solid #d8d8d8;
+}
+.comp-stock-list .store_list_wrap .store_item .shop_info {
+  max-width: 70%;
+}
+.comp-stock-list .store_list_wrap .store_item .shop_info .shop_name {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store.svg?v=1640016183);
+  background-size: 20px;
+  background-position: left top 3px;
+  background-repeat: no-repeat;
+}
+.comp-stock-list .store_list_wrap .store_item .shop_info .address {
+  font-size: 1.4rem;
+  color: #646464;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+.comp-stock-list .store_list_wrap .store_item .shop_info .address span {
+  display: inline-block;
+  padding-left: 1rem;
+}
+.comp-stock-list .store_list_wrap .store_item .detail {
+  max-width: 30%;
+  text-align: right;
+}
+.comp-stock-list .store_list_wrap .store_item .detail .detail_txt {
+  font-size: 1.4rem;
+  color: #646464;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.comp-stock-list .store_list_wrap .store_item .detail .map {
+  transition: opacity 0.3s;
+  color: inherit;
+  font-size: 1.6rem;
+  text-decoration: underline;
+  transition: opacity 0.3s;
+}
+.comp-stock-list .store_list_wrap .store_item .detail .map:hover {
+  opacity: 0.75;
+}
+
+.comp-popup-archive {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.comp-popup-archive .archive_item {
+  width: 48%;
+  margin-right: 4%;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #d8d8d8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.comp-popup-archive .archive_item:nth-of-type(2n) {
+  margin-right: 0;
+}
+.comp-popup-archive .archive_item .img_wrap {
+  width: 150px;
+  margin-right: 25px;
+}
+.comp-popup-archive .archive_item .txt_wrap {
+  width: calc(100% - 175px);
+}
+.comp-popup-archive .archive_item .txt_wrap .shop_name {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store.svg?v=1640016183);
+  background-size: 20px;
+  background-position: left top 3px;
+  background-repeat: no-repeat;
+}
+.comp-popup-archive .archive_item .txt_wrap .date {
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: #646464;
+  margin-bottom: 15px;
+}
+.comp-popup-archive .archive_item .txt_wrap .link {
+  transition: opacity 0.3s;
+  color: inherit;
+  font-size: 1.4rem;
+  text-decoration: underline;
+  transition: opacity 0.3s;
+}
+.comp-popup-archive .archive_item .txt_wrap .link:hover {
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 980px) {
+  .comp-popup-archive .archive_item {
+    width: 47%;
+    margin-right: 6%;
+    margin-bottom: 50px;
+    padding-bottom: 0px;
+    border-bottom: 0px solid #d8d8d8;
+    display: block;
+  }
+  .comp-popup-archive .archive_item:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  .comp-popup-archive .archive_item .img_wrap {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+  .comp-popup-archive .archive_item .txt_wrap {
+    width: 100%;
+  }
+  .comp-popup-archive .archive_item .txt_wrap .shop_name {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    padding-left: 30px;
+    background-size: 18px;
+    margin-bottom: 15px;
+  }
+  .comp-popup-archive .archive_item .txt_wrap .date {
+    margin-bottom: 25px;
+  }
+  .comp-popup-archive .archive_item .txt_wrap .link {
+    font-size: 1.6rem;
   }
 }
 /* ########## ページ別レイアウト ########## */
@@ -14635,6 +15002,171 @@ body.loaded #loading {
 }
 
 /*下層ページ共通*/
+.page-stockist {
+  padding-top: 100px;
+}
+.page-stockist .section_ttl {
+  padding-top: 60px;
+  max-width: 1400px;
+  width: 80.5vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 1200px) {
+  .page-stockist .section_ttl {
+    width: 86vw;
+  }
+}
+@media screen and (max-width: 980px) {
+  .page-stockist .section_ttl {
+    max-width: 780px;
+    width: 86vw;
+  }
+}
+@media screen and (max-width: 720px) {
+  .page-stockist .section_ttl {
+    width: 86vw;
+  }
+}
+.page-stockist .shop_ttl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: 50px;
+}
+.page-stockist .shop_ttl .ttl_en {
+  font-size: 3.4rem;
+  letter-spacing: normal;
+  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.page-stockist .shop_ttl .ttl_ja {
+  padding-left: 1em;
+  font-size: 1.4rem;
+  line-height: normal;
+  letter-spacing: 0.73px;
+}
+.page-stockist .section-main {
+  margin-bottom: 100px;
+}
+.page-stockist .section-shop-list {
+  margin-bottom: 100px;
+}
+.page-stockist .section-shop-list .stock_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.page-stockist .section-shop-list .stock_flex .category_wrap {
+  width: 220px;
+  position: sticky;
+  left: 0;
+  top: 140px;
+  margin-right: 80px;
+}
+.page-stockist .section-shop-list .stock_flex .category_wrap .shop_ttl {
+  display: none;
+}
+.page-stockist .section-shop-list .stock_flex .category_wrap .category_ttl {
+  display: block;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 20px;
+}
+.page-stockist .section-shop-list .stock_flex .comp-stock-list {
+  width: calc(100% - 300px);
+}
+
+@media screen and (max-width: 980px) {
+  .page-stockist {
+    padding-top: 100px;
+  }
+  .page-stockist .section_ttl {
+    padding-top: 60px;
+    max-width: 1400px;
+    width: 80.5vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 980px) and (max-width: 1200px) {
+  .page-stockist .section_ttl {
+    width: 86vw;
+  }
+}
+@media screen and (max-width: 980px) and (max-width: 980px) {
+  .page-stockist .section_ttl {
+    max-width: 780px;
+    width: 86vw;
+  }
+}
+@media screen and (max-width: 980px) and (max-width: 720px) {
+  .page-stockist .section_ttl {
+    width: 86vw;
+  }
+}
+@media screen and (max-width: 980px) {
+  .page-stockist .shop_ttl {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-bottom: 50px;
+  }
+  .page-stockist .shop_ttl .ttl_en {
+    font-size: 3.4rem;
+    letter-spacing: normal;
+    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .page-stockist .shop_ttl .ttl_ja {
+    padding-left: 1em;
+    font-size: 1.4rem;
+    line-height: normal;
+    letter-spacing: 0.73px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .page-stockist .section-main {
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .page-stockist .section-shop-list {
+    margin-bottom: 100px;
+  }
+  .page-stockist .section-shop-list .stock_flex {
+    display: block;
+  }
+  .page-stockist .section-shop-list .stock_flex .category_wrap {
+    width: 100%;
+    position: static;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .page-stockist .section-shop-list .stock_flex .category_wrap .shop_ttl {
+    display: block;
+  }
+  .page-stockist .section-shop-list .stock_flex .category_wrap .category_ttl {
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+  .page-stockist .section-shop-list .stock_flex .comp-stock-list {
+    width: 100%;
+  }
+  .page-stockist .section-shop-list .stock_flex .comp-stock-list .shop_ttl {
+    display: none;
+  }
+}
+/*アカウント登録ページ*/
 #contact {
   margin: 50px auto;
 }

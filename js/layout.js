@@ -1162,6 +1162,45 @@ $(function() {
   }
 
 
+  // 店舗一覧・FAQの目次ボタン
+
+  function indexAnker(target){
+    var ankerButton = [];
+    var scrollTarget = [];
+
+    function windowMove(e) {
+      var headerHeight = $('header').outerHeight();
+      var scrollHeight = $(scrollTarget[e]).offset().top;
+      var adScroll = scrollHeight - headerHeight - 20;
+      $("html, body").animate({
+        scrollTop: adScroll
+      }, 500);
+    }
+
+
+    function init(){
+      target.find('button').each(function(index) {
+        ankerButton[index] = $(this);
+        scrollTarget[index] = $(this).attr('jump');
+        ankerButton[index].on({
+          'click': function() {
+            windowMove(index);
+          }
+        });
+      });
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('stockist')) {
+    indexAnker($('#categoryList'));
+  }
+
+
+
+
   function setOptionValue(){
     $('#noshiPrice').text('+110円(税込)');
     $('#messagePrice').text('無料');

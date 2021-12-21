@@ -33,8 +33,10 @@
       @include flexSet;
       justify-content: space-between;
       margin-top: 15px;
-      .btn{
+      form{
         width: 48%;
+      }
+      .btn{
         font-family: inherit;
         font-size: 14px;
         line-height: normal;
@@ -47,10 +49,12 @@
         box-shadow: none;
         @include hover;
         &.btn_edit{
+          width: 48%;
           background: $basicGreen;
           color: #fff;
         }
         &.btn_delete{
+          width: 100%;
           background: #fff;
           color: $basicGreen;
         }

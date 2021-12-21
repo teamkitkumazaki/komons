@@ -35,6 +35,22 @@ $basicGreen: #00381f;
     width: 84vw;
   }
 }
+@mixin wrapper{
+  max-width: 1400px;
+  width: 80.5vw;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 1200px){
+    width: 86vw;
+  }
+  @media screen and (max-width: 980px){
+    max-width: 780px;
+    width: 86vw;
+  }
+  @media screen and (max-width: 720px){
+    width: 86vw;
+  }
+}
 @mixin flexSet {
 	display: flex;
 	flex-wrap: wrap;

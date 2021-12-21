@@ -610,8 +610,10 @@ article {
   justify-content: space-between;
   margin-top: 15px;
 }
-.comp-account-info .account_item .btn_wrap .btn {
+.comp-account-info .account_item .btn_wrap form {
   width: 48%;
+}
+.comp-account-info .account_item .btn_wrap .btn {
   font-family: inherit;
   font-size: 14px;
   line-height: normal;
@@ -629,10 +631,12 @@ article {
   opacity: 0.75;
 }
 .comp-account-info .account_item .btn_wrap .btn.btn_edit {
+  width: 48%;
   background: #00381f;
   color: #fff;
 }
 .comp-account-info .account_item .btn_wrap .btn.btn_delete {
+  width: 100%;
   background: #fff;
   color: #00381f;
 }

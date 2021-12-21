@@ -53,6 +53,12 @@
 @import 'component/comp-jornal-item.scss';
 @import 'component/comp-instagram-wrap.scss';
 
+/* ストア一覧・FAQ */
+@import 'component/comp-category-button.scss';
+@import 'component/store/comp-popup-store.scss';
+@import 'component/store/comp-stock-list.scss';
+@import 'component/store/comp-popup-archive.scss';
+
 
 
 /* ########## ページ別レイアウト ########## */
@@ -64,6 +70,7 @@
 @import 'page/journal_detail.scss'; /*ジャーナル詳細*/
 @import 'page/concept.scss'; /*コンセプト*/
 @import 'page/underpage.scss'; /*下層ページ共通*/
+@import 'page/stockist.scss'; /*アカウント登録ページ*/
 @import 'page/contact.scss'; /*コンタクトフォーム*/
 @import 'page/faq.scss'; /*よくある質問*/
 @import 'page/giftList.scss'; /*ギフトページ*/

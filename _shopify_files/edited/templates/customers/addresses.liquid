@@ -26,18 +26,15 @@
 						{% for address in customer.addresses %}
 						document.getElementById('EditAddress_' + {{ address.id }}).setAttribute("style", "display: none");
 						{% endfor %}
+						var Height = $('#addressEditor').offset().top;
+						var header = $('header').outerHeight();
+						window.scroll({top: Height - header, behavior: 'smooth'});
 					});
 				</script>
 				<div class="account_item default">
 					<h2 class="account_ttl">アカウント情報</h2>
-					<div class="description">
-						<span>{{ customer.last_name }} 	{{ customer.first_name }}</span>
-					</div>
-				</div>
-				<div class="others">
 					{% for address in customer.addresses %}
-					{% if address == customer.default_address %}
-					<h3 class="account_ttl">デフォルトの連絡先</h3>
+					{%- if address == customer.default_address -%}
 					<div class="account_item">
 						<div class="description"><span>{{ address.last_name }} {{ address.first_name }}</span>〒{{ address.zip }}<br>{{ address.province }} {{ address.city }}{{ address.street }}</div>
 						<div class="btn_wrap">
@@ -45,6 +42,7 @@
 							<form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
 							>
 							<button type="submit" class="btn btn_delete" data-target="{{ address.url }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"><span>削除</span></button>
+							<input type="hidden" name="_method" value="delete" />
 							</form>
 							<script>
 								document.getElementById("EditFormButton_" + {{ address.id }}).addEventListener('click', () => {
@@ -56,13 +54,19 @@
 									document.getElementById('EditAddress_' + {{ address.id }}).setAttribute("style", "display: none");
 									{% endfor %}
 									thisEditForm.setAttribute("style", "display: block;");
+									var Height = $('#addressEditor').offset().top;
+									var header = $('header').outerHeight();
+									window.scroll({top: Height - header, behavior: 'smooth'});
 								});
 							</script>
 						</div><!-- btn_wrap -->
 					</div>
-					{% endif %}
-					<h3 class="account_ttl">その他の配送先</h3>
-					{% if address == customer.default_address %}
+					{%- endif -%}
+					{% endfor %}
+				</div>
+				<div class="others">
+				<h3 class="account_ttl">その他の連絡先</h3>
+					{% for address in customer.addresses %}
 					{%- unless address == customer.default_address -%}
 					<div class="account_item">
 						<div class="description"><span>{{ address.last_name }} {{ address.first_name }}</span>〒{{ address.zip }}<br>{{ address.province }} {{ address.city }}{{ address.street }}</div>
@@ -71,6 +75,7 @@
 							<form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
 							>
 							<button type="submit" class="btn btn_delete" data-target="{{ address.url }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"><span>削除</span></button>
+							<input type="hidden" name="_method" value="delete" />
 							</form>
 							<script>
 								document.getElementById("EditFormButton_" + {{ address.id }}).addEventListener('click', () => {
@@ -82,6 +87,9 @@
 									document.getElementById('EditAddress_' + {{ address.id }}).setAttribute("style", "display: none");
 									{% endfor %}
 									thisEditForm.setAttribute("style", "display: block;");
+									var Height = $('#addressEditor').offset().top;
+									var header = $('header').outerHeight();
+									window.scroll({top: Height - header, behavior: 'smooth'});
 								});
 							</script>
 						</div><!-- btn_wrap -->
@@ -92,7 +100,7 @@
 			</div>
 			</div><!-- comp-account-info -->
 		</div><!-- flex_right -->
-			<div class="flex_left">
+			<div id="addressEditor" class="flex_left">
 				<div id="AddressNewForm" class="comp-form-wrap" style="display: block;">
 				{% form 'customer_address', customer.new_address %}
 					<h2 class="sub_ttl">新しい住所を登録</h2>
@@ -127,12 +135,12 @@
 							</div>
 						</div>
 						<div class="form_item">
-							<label class="must">住所（町名・番地）</label>
+							<label class="must">住所（市町村以下の住所・建物名）</label>
 							<div class="input_wrap">
 								<input type="text" id="AddressAddress1New" name="address[address1]" value="{{ form.address1 }}" autocomplete="street-address address-line1" placeholder="南大塚3－36－7">
 							</div>
 						</div>
-						<div class="form_item">
+						<div class="form_item" style="display: none;">
 							<label class="non-must">住所（建物名）</label>
 							<div class="input_wrap">
 								<input type="text" id="AddressAddress2New" name="address[address2]" value="{{ form.address2 }}" autocomplete="street-address address-line2" placeholder="南大塚T&Tビル 6F">
@@ -198,12 +206,12 @@
 								</div>
 							</div>
 							<div class="form_item">
-								<label class="must">住所（町名・番地）</label>
+								<label class="must">住所（市町村以下の住所・建物名）</label>
 								<div class="input_wrap">
 									<input type="text" id="AddressAddress1New" name="address[address1]" value="{{ form.address1 }}" autocomplete="street-address address-line1" placeholder="南大塚3－36－7">
 								</div>
 							</div>
-							<div class="form_item">
+							<div class="form_item" style="display: none;">
 								<label class="non-must">住所（建物名）</label>
 								<div class="input_wrap">
 									<input type="text" id="AddressAddress2New" name="address[address2]" value="{{ form.address2 }}" autocomplete="street-address address-line2" placeholder="南大塚T&Tビル 6F">

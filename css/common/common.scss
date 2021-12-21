@@ -1,5 +1,19 @@
 @charset "UTF-8";
-
+html{
+	font-size: 10px;
+	@media screen and (min-width: 1600px){
+		font-size: 11px;
+	}
+	@media screen and (max-width: 1340px){
+		font-size: 9px;
+	}
+	@media screen and (max-width: 980px){
+		font-size: 10px;
+	}
+	@media screen and (max-width: 350px){
+		font-size: 9px;
+	}
+}
 body {
 	font-size: 14px;
 	color: $basicGreen;
@@ -24,6 +38,9 @@ h1,h2,h3,h4,h5{
 }
 .section_inner{
 	@include waku;
+}
+.section_inner_new{
+	@include wrapper;
 }
 .section_ttl {
 	@include waku;

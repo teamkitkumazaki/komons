@@ -127,7 +127,7 @@
 <section class="section-set-product">
 <div class="section_inner">
   <div class="section_ttl">
-    <h2><span>Gift Set</span><font>食器用洗剤を含むギフトセット</font></h2>
+    <h2><span>Gift Set</span><font>{{ collection.metafields.custom_fields["collection_title_ja"] }}を含むギフトセット</font></h2>
   </div>
   <div id="giftProductList" class="comp-gift-product-list">
     {%- paginate collection.products by 20 -%}
