@@ -67,3 +67,61 @@
     }
   }
 }
+
+
+@media screen and (max-width: 720px){
+  .comp-stock-list{
+    .store_list_wrap{
+      margin-bottom: 50px;
+      .area_ttl{
+        display: block;
+        background: #f4f4f4;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 1.8rem;
+        letter-spacing: 0.8px;
+        margin-bottom: 30px;
+      }
+      .store_item{
+        display: block;
+        margin-bottom: 30px;
+        padding: 0 0px 30px;
+        border-bottom: 1px solid #d8d8d8;
+        &:nth-last-of-type(1){
+          margin-bottom: 0px;
+          padding: 0 5px 0px;
+          border-bottom: 0px solid #d8d8d8;
+        }
+        .shop_info{
+          max-width: 100%;
+          .shop_name{
+            font-size: 1.6rem;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            background-size: 16px;
+            background-position: left top 5px;
+          }
+          .address{
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            span{
+              display: block;
+              padding-left: 0rem;
+            }
+          }
+        }
+        .detail{
+          max-width: 100%;
+          text-align: left;
+          .detail_txt{
+            font-size: 1.3rem;
+          }
+          .map{
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

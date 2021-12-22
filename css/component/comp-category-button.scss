@@ -56,3 +56,21 @@
     }
   }
 }
+@media screen and (max-width: 720px){
+  .comp-category-button {
+    button {
+      width: auto;
+      font-size: 1.6rem;
+      padding: 5px 20px 5px 0px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      &:nth-last-of-type(1){
+        margin-right: 0;
+      }
+      &::after {
+        top:-5px;
+        right: 5px;
+      }
+    }
+  }
+}

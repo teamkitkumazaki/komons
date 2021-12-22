@@ -1,5 +1,6 @@
 .page-stockist{
-  padding-top: 100px;
+  padding-top: 20px;
+  margin-bottom: 120px;
   .section_ttl{
     padding-top: 60px;
     @include wrapper;
@@ -56,33 +57,7 @@
 
 @media screen and (max-width: 980px){
   .page-stockist{
-    padding-top: 100px;
-    .section_ttl{
-      padding-top: 60px;
-      @include wrapper;
-    }
-    .shop_ttl{
-      @include flexSet;
-      justify-content: flex-start;
-      align-items: baseline;
-      margin-bottom: 50px;
-      .ttl_en{
-        font-size: 3.4rem;
-        letter-spacing: normal;
-        @include libre-r;
-      }
-      .ttl_ja{
-        padding-left: 1em;
-        font-size: 1.4rem;
-        line-height: normal;
-        letter-spacing: 0.73px;
-      }
-    }
-    .section-main{
-      margin-bottom: 100px;
-    }
     .section-shop-list{
-      margin-bottom: 100px;
       .stock_flex{
         display: block;
         .category_wrap{
@@ -103,6 +78,58 @@
           .shop_ttl{
             display: none;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px){
+  .page-stockist{
+    padding-top: 0px;
+    margin-bottom: 60px;
+    .section_ttl{
+      padding-top: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #d8d8d8;
+      margin-bottom: 30px;
+    }
+    .shop_ttl{
+      display: block;
+      margin-bottom: 30px;
+      .ttl_en{
+        display: block;
+        font-size: 2.6rem;
+        margin-bottom: 10px;
+      }
+      .ttl_ja{
+        padding-left: 0em;
+        font-size: 1.3rem;
+        letter-spacing: 0.5px;
+      }
+    }
+    .section-main{
+      margin-bottom: 40px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid #d8d8d8;
+    }
+    .section-shop-list{
+      margin-bottom: 40px;
+      padding-bottom: 1px;
+      border-bottom: 1px solid #d8d8d8;
+      .stock_flex{
+        .category_wrap{
+          width: 100%;
+          margin-right: 0px;
+          .shop_ttl{
+            margin-bottom: 20px;
+          }
+          .category_ttl{
+            display: none;
+          }
+        }
+        .comp-stock-list{
+          width: 100%;
         }
       }
     }

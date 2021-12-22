@@ -84,3 +84,21 @@
     }
   }
 }
+
+@media screen and (max-width: 720px){
+  .comp-popup-archive{
+    .archive_item{
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 50px;
+      display: block;
+      &:nth-last-of-type(1){
+        margin-bottom: 0;
+      }
+      .txt_wrap{
+        width: 100%;
+        padding: 0 5px;
+      }
+    }
+  }
+}

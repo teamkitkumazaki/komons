@@ -1,6 +1,21 @@
 .page-cart {
   width: 100vw;
   overflow: hidden;
+  .section-banner{
+    margin-bottom: 60px;
+    .section_inner{
+      max-width: 1200px;
+      @include responsive-waku;
+      margin: 0 auto;
+      .img_wrap{
+        display: block;
+        @include hover;
+        .img_sp{
+          display: none;
+        }
+      }
+    }
+  }
   .section-cart {
     margin-bottom: 120px;
     .section_inner {
@@ -191,6 +206,24 @@
 }
 @media screen and (max-width: 720px) {
   .page-cart {
+    .section-banner{
+      margin-bottom: 60px;
+      .section_inner{
+        max-width: 1200px;
+        @include responsive-waku;
+        margin: 0 auto;
+        .img_wrap{
+          display: block;
+          @include hover;
+          .img_pc{
+            display: none;
+          }
+          .img_sp{
+            display: block;
+          }
+        }
+      }
+    }
     .section-cart {
       margin-bottom: 60px;
       .section_inner {
