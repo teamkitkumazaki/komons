@@ -17,7 +17,7 @@
       </div>
       <hgroup class="shop_ttl">
         <span class="ttl_en">Popup Store</span>
-        <h2 class="ttl_ja">催事店舗情報</h2>
+        <h2 class="ttl_ja">イベント情報</h2>
       </hgroup>
       <div class="comp-popup-store">
         <div class="popup_item">
@@ -45,12 +45,12 @@
   </section>
   <section class="section-shop-list">
     <div class="section_inner_new">
+      <hgroup class="shop_ttl">
+        <span class="ttl_en">Stockist</span>
+        <span class="ttl_ja">取扱店舗一覧</span>
+      </hgroup>
       <div class="stock_flex">
         <div class="category_wrap">
-          <hgroup class="shop_ttl">
-            <span class="ttl_en">Stockist</span>
-            <span class="ttl_ja">取扱店舗一覧</span>
-          </hgroup>
           <span class="category_ttl">エリア一覧</span>
           <div id="categoryList" class="category_list comp-category-button">
             <?php if (!empty($tokyo)) : ?>
@@ -60,31 +60,24 @@
             <button jump="#areaKanto"><span>関東</span></button>
             <?php endif; ?>
             <?php if (!empty($others)) : ?>
-            <button jump="#areaOthers"><span>OHTERS</span></button>
+            <button jump="#areaOthers"><span>OTHERS</span></button>
             <?php endif; ?>
             <button jump="#areaOverseas"><span>OVERSEAS</span></button>
           </div>
         </div>
         <div class="comp-stock-list">
-          <hgroup class="shop_ttl">
-            <span class="ttl_en">Stockist</span>
-            <h2 class="ttl_ja">取扱店舗一覧</h2>
-          </hgroup>
           <?php if (!empty($tokyo)) : ?>
             <div id="areaTokyo" class="store_list_wrap">
               <h3 class="area_ttl">東京都</h3>
             <?php foreach ($tokyo as $i) : ?>
               <div class="store_item">
-                <div class="shop_info">
-                  <h4 class="shop_name"><?= $i['shop_name_tokyo'] ?></h4>
-                  <p class="address"><?= $i['postal_code_tokyo'] ?><span><?= $i['address_tokyo'] ?></span></p>
-                </div>
-                <div class="detail">
+                <a target="_blank" href="<?= $i['google_map_tokyo'] ?>" class="shop_info">
+                  <span class="shop_name"><?= $i['shop_name_tokyo'] ?></span>
+                  <span class="address"><?= $i['postal_code_tokyo'] ?><span><?= $i['address_tokyo'] ?></span></span>
                   <?php if (!empty($i['note_tokyo'])) : ?>
                     <p class="detail_txt"><?= $i['note_tokyo'] ?></p>
                   <?php endif; ?>
-                  <a class="map" target="_blank" href="<?= $i['google_map_tokyo'] ?>">Website</a>
-                </div>
+                </a>
               </div>
             <?php endforeach; ?>
             </div><!-- store_list_wrap -->
@@ -94,16 +87,13 @@
               <h3 class="area_ttl">関東</h3>
             <?php foreach ($kanto as $i) : ?>
               <div class="store_item">
-                <div class="shop_info">
-                  <h4 class="shop_name"><?= $i['shop_name_kanto'] ?></h4>
-                  <p class="address"><?= $i['postal_code_kanto'] ?><span><?= $i['address_kanto'] ?></span></p>
-                </div>
-                <div class="detail">
+                <a target="_blank" href="<?= $i['google_map_kanto'] ?>" class="shop_info">
+                  <span class="shop_name"><?= $i['shop_name_kanto'] ?></span>
+                  <span class="address"><?= $i['postal_code_kanto'] ?><span><?= $i['address_kanto'] ?></span></span>
                   <?php if (!empty($i['note_kanto'])) : ?>
                     <p class="detail_txt"><?= $i['note_kanto'] ?></p>
                   <?php endif; ?>
-                  <a class="map" target="_blank" href="<?= $i['google_map_kanto'] ?>">Website</a>
-                </div>
+                </a>
               </div>
             <?php endforeach; ?>
             </div><!-- store_list_wrap -->
@@ -113,18 +103,13 @@
               <h3 class="area_ttl">OTHERS</h3>
             <?php foreach ($others as $i) : ?>
               <div class="store_item">
-                <div class="shop_info">
-                  <h4 class="shop_name"><?= $i['shop_name_others'] ?></h4>
-                  <?php if (!empty($i['postal_code_others'])) : ?>
-                  <p class="address"><?= $i['postal_code_others'] ?><span><?= $i['address_others'] ?></span></p>
-                  <?php endif; ?>
-                </div>
-                <div class="detail">
+                <a target="_blank" href="<?= $i['google_map_others'] ?>" class="shop_info">
+                  <span class="shop_name"><?= $i['shop_name_others'] ?></span>
+                  <span class="address"><?= $i['postal_code_others'] ?><span><?= $i['address_others'] ?></span></span>
                   <?php if (!empty($i['note_others'])) : ?>
                     <p class="detail_txt"><?= $i['note_others'] ?></p>
                   <?php endif; ?>
-                  <a class="map" target="_blank" href="<?= $i['google_map_others'] ?>">Website</a>
-                </div>
+                </a>
               </div>
             <?php endforeach; ?>
             </div><!-- store_list_wrap -->
@@ -132,12 +117,10 @@
           <div id="areaOverseas" class="store_list_wrap">
             <h3 class="area_ttl">OVERSEAS</h3>
             <div class="store_item">
-              <div class="shop_info">
-                <h4 class="shop_name">everydayobject@台湾</h4>
-              </div>
-              <div class="detail">
-                <a target="_blank" class="map" href="https://www.everydayobject.us/">Website</a>
-              </div>
+              <a target="_blank" class="shop_info" href="https://www.everydayobject.us/">
+                 <span class="shop_name">EVERYDAYOBJECT</span>
+                 <span class="address">@台湾</span>
+              </a>
             </div>
           </div>
         </div><!-- comp-stock-list -->

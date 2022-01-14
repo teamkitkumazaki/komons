@@ -75,30 +75,29 @@
 
 @media screen and (max-width: 720px){
   .comp-section-information{
-    padding: 15px 0;
+    padding: 12px 0;
     .info_flex{
       max-width: 84vw !important;
       display: block;
       .title_en{
-        text-align: center;
+        text-align: left;
         display: block;
-        font-size: 14px;
+        font-size: 12px;
         letter-spacing: 0.5px;
         margin-right: 0px;
         padding-right: 0px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         &::after{
           display: none;
         }
       }
       .content{
         display: block;
-        font-size: 14px;
+        font-size: 13px;
         line-height: 1.8;
         letter-spacing: 0.5px;
-        text-indent: -0.5em;
-        text-decoraion: underline;
-        text-align: center;
+        text-decoration: underline;
+        text-align: left;
         font{
           display: block;
           padding-left: 0em;
@@ -107,6 +106,7 @@
           position: relative;
           display: inline-block;
           padding-right: 0px;
+          text-decoration: underline;
           &::after{
             display: none;
           }

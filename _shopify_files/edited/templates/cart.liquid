@@ -125,7 +125,7 @@ var num;
 var testFlg = Number(0);
 var correctDate = ['指定なし'];
 var wd = ['日', '月', '火', '水', '木', '金', '土'];
-var holiday = [/*2021年度*/ '7/22', '7/23','8/9','9/20','9/23', '11/3', '11/23','12/29', '12/30', '12/31',/*2022年度*/ '1/1', '1/2', '1/3', '1/10', '2/11', '2/23', '3/21', '4/29', '5/3', '5/4', '5/5'];
+var holiday = ['12/29', '12/30', '12/31', '1/1', '1/2', '1/3', '1/4', '1/10', '2/11', '2/23', '3/21', '4/29', '5/3', '5/4', '5/5', '7/18', '8/11', '9/19', '9/23', '10/10', '11/3', '11/23'];
 var setDayStatus = 0;
 var deliveryDate = $('#deliveryDate');
 var deliveryTime = $('#deliveryTime');
@@ -143,7 +143,7 @@ function setMessageCardVal(){
 function getDayDisplay(day, mode, flg){
   var date = new Date();
   date.setDate(date.getDate() + day + testFlg);
-  y  = date.getFullYear();
+  y = date.getFullYear();
   m = date.getMonth() + 1;
   d = date.getDate();
   w = date.getDay() % 7;
@@ -159,13 +159,15 @@ function getDayDisplay(day, mode, flg){
   }else if(mode == 1){
     if(flg == 1){
       firstDay = dayDisplay;
+      console.log('firstDay:' + firstDay);
     }
     correctDate.push(dayParam);
   }
 }
 
 function setDayDisplay(num, mode){
-  var startSet = Number(num) + Number(2);
+  console.log('num:'+ num + '/' + 'mode:' + mode);
+  var startSet = Number(num) + Number(3);
   for (var i= startSet; i<30; i++) {
     if(mode == 1){
       dayFlag = dayFlag + 1;
@@ -185,7 +187,7 @@ function setDayDisplay(num, mode){
 }
 
 function setShippingDay2(delay, mode){
-  today.setDate(today.getDate() + delay);
+  today.setDate(today.getDate() + 1);
   var todayY = today.getFullYear();
   var todayM = today.getMonth() + 1;
   var todayD = today.getDate();

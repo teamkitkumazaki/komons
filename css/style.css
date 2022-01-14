@@ -9255,32 +9255,31 @@ body.loaded #loading {
 }
 @media screen and (max-width: 720px) {
   .comp-section-information {
-    padding: 15px 0;
+    padding: 12px 0;
   }
   .comp-section-information .info_flex {
     max-width: 84vw !important;
     display: block;
   }
   .comp-section-information .info_flex .title_en {
-    text-align: center;
+    text-align: left;
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 0.5px;
     margin-right: 0px;
     padding-right: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   .comp-section-information .info_flex .title_en::after {
     display: none;
   }
   .comp-section-information .info_flex .content {
     display: block;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.8;
     letter-spacing: 0.5px;
-    text-indent: -0.5em;
-    text-decoraion: underline;
-    text-align: center;
+    text-decoration: underline;
+    text-align: left;
   }
   .comp-section-information .info_flex .content font {
     display: block;
@@ -9290,6 +9289,7 @@ body.loaded #loading {
     position: relative;
     display: inline-block;
     padding-right: 0px;
+    text-decoration: underline;
   }
   .comp-section-information .info_flex .content span::after {
     display: none;
@@ -9734,8 +9734,9 @@ body.loaded #loading {
 @media screen and (max-width: 720px) {
   .comp-category-button button {
     width: auto;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     padding: 5px 20px 5px 0px;
+    color: inherit;
     margin-bottom: 5px;
     margin-right: 10px;
   }
@@ -9769,7 +9770,7 @@ body.loaded #loading {
   width: calc(100% - 420px);
 }
 .comp-popup-store .popup_item .txt_wrap .shop_name {
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: normal;
   letter-spacing: normal;
   margin-bottom: 10px;
@@ -9780,7 +9781,7 @@ body.loaded #loading {
   background-repeat: no-repeat;
 }
 .comp-popup-store .popup_item .txt_wrap .address {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.8;
   letter-spacing: 0.5px;
   margin-bottom: 20px;
@@ -9833,7 +9834,7 @@ body.loaded #loading {
   background: #f4f4f4;
   padding: 20px 0;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   letter-spacing: 0.8px;
   margin-bottom: 30px;
 }
@@ -9853,49 +9854,61 @@ body.loaded #loading {
   border-bottom: 0px solid #d8d8d8;
 }
 .comp-stock-list .store_list_wrap .store_item .shop_info {
-  max-width: 70%;
+  width: 100%;
+  display: block;
 }
 .comp-stock-list .store_list_wrap .store_item .shop_info .shop_name {
-  font-size: 1.8rem;
+  display: inline-block;
+  transition: opacity 0.3s;
+  font-size: 1.6rem;
+  color: #00381f;
   line-height: 1.6;
   letter-spacing: 1px;
-  padding-left: 30px;
+  padding-right: 25px;
   margin-bottom: 10px;
+  /*padding-left: 30px;
   background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store.svg?v=1640016183);
   background-size: 20px;
   background-position: left top 3px;
+  background-repeat: no-repeat;*/
+  position: relative;
+}
+.comp-stock-list .store_list_wrap .store_item .shop_info .shop_name:hover {
+  opacity: 0.75;
+}
+.comp-stock-list .store_list_wrap .store_item .shop_info .shop_name::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  content: "";
+  width: 16px;
+  height: 16px;
   background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store_caret2.svg?v=1640578093);
 }
 .comp-stock-list .store_list_wrap .store_item .shop_info .address {
-  font-size: 1.4rem;
-  color: #646464;
+  display: block;
+  font-size: 1.3rem;
   letter-spacing: 0.5px;
   line-height: 1.6;
+  color: #00381f;
 }
 .comp-stock-list .store_list_wrap .store_item .shop_info .address span {
   display: inline-block;
   padding-left: 1rem;
 }
-.comp-stock-list .store_list_wrap .store_item .detail {
-  max-width: 30%;
-  text-align: right;
-}
-.comp-stock-list .store_list_wrap .store_item .detail .detail_txt {
-  font-size: 1.4rem;
+.comp-stock-list .store_list_wrap .store_item .shop_info .detail_txt {
+  margin-top: 20px;
+  font-size: 1.3rem;
   color: #646464;
   letter-spacing: 0.5px;
   line-height: 1.6;
   margin-bottom: 10px;
-}
-.comp-stock-list .store_list_wrap .store_item .detail .map {
-  transition: opacity 0.3s;
-  color: inherit;
-  font-size: 1.6rem;
-  text-decoration: underline;
-  transition: opacity 0.3s;
-}
-.comp-stock-list .store_list_wrap .store_item .detail .map:hover {
-  opacity: 0.75;
 }
 
 @media screen and (max-width: 720px) {
@@ -9907,7 +9920,7 @@ body.loaded #loading {
     background: #f4f4f4;
     padding: 20px 0;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     letter-spacing: 0.8px;
     margin-bottom: 30px;
   }
@@ -9926,30 +9939,26 @@ body.loaded #loading {
     max-width: 100%;
   }
   .comp-stock-list .store_list_wrap .store_item .shop_info .shop_name {
+    display: block;
     font-size: 1.6rem;
-    padding-left: 25px;
+    padding-left: 0;
     margin-bottom: 10px;
-    background-size: 16px;
-    background-position: left top 5px;
+  }
+  .comp-stock-list .store_list_wrap .store_item .shop_info .shop_name::after {
+    top: 5px;
+    bottom: unset;
   }
   .comp-stock-list .store_list_wrap .store_item .shop_info .address {
     font-size: 1.3rem;
     line-height: 1.6;
-    margin-bottom: 15px;
   }
   .comp-stock-list .store_list_wrap .store_item .shop_info .address span {
     display: block;
     padding-left: 0rem;
   }
-  .comp-stock-list .store_list_wrap .store_item .detail {
-    max-width: 100%;
-    text-align: left;
-  }
-  .comp-stock-list .store_list_wrap .store_item .detail .detail_txt {
+  .comp-stock-list .store_list_wrap .store_item .shop_info .detail_txt {
+    margin-top: 15px;
     font-size: 1.3rem;
-  }
-  .comp-stock-list .store_list_wrap .store_item .detail .map {
-    font-size: 1.5rem;
   }
 }
 .comp-popup-archive {
@@ -15123,7 +15132,7 @@ body.loaded #loading {
   margin-bottom: 50px;
 }
 .page-stockist .shop_ttl .ttl_en {
-  font-size: 3.4rem;
+  font-size: 3.8rem;
   letter-spacing: normal;
   font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
@@ -15131,7 +15140,7 @@ body.loaded #loading {
 }
 .page-stockist .shop_ttl .ttl_ja {
   padding-left: 1em;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   line-height: normal;
   letter-spacing: 0.73px;
 }
@@ -15155,9 +15164,6 @@ body.loaded #loading {
   top: 140px;
   margin-right: 80px;
 }
-.page-stockist .section-shop-list .stock_flex .category_wrap .shop_ttl {
-  display: none;
-}
 .page-stockist .section-shop-list .stock_flex .category_wrap .category_ttl {
   display: block;
   font-size: 18px;
@@ -15180,7 +15186,7 @@ body.loaded #loading {
     margin-bottom: 20px;
   }
   .page-stockist .section-shop-list .stock_flex .category_wrap .shop_ttl {
-    display: block;
+    display: flex;
   }
   .page-stockist .section-shop-list .stock_flex .category_wrap .category_ttl {
     margin-top: -20px;
@@ -15205,17 +15211,15 @@ body.loaded #loading {
     margin-bottom: 30px;
   }
   .page-stockist .shop_ttl {
-    display: block;
     margin-bottom: 30px;
   }
   .page-stockist .shop_ttl .ttl_en {
     display: block;
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     margin-bottom: 10px;
   }
   .page-stockist .shop_ttl .ttl_ja {
-    padding-left: 0em;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     letter-spacing: 0.5px;
   }
   .page-stockist .section-main {

@@ -11,13 +11,13 @@
     align-items: baseline;
     margin-bottom: 50px;
     .ttl_en{
-      font-size: 3.4rem;
+      font-size: 3.8rem;
       letter-spacing: normal;
       @include libre-r;
     }
     .ttl_ja{
       padding-left: 1em;
-      font-size: 1.4rem;
+      font-size: 1.7rem;
       line-height: normal;
       letter-spacing: 0.73px;
     }
@@ -37,9 +37,6 @@
         left:0;
         top: 140px;
         margin-right: 80px;
-        .shop_ttl{
-          display: none;
-        }
         .category_ttl{
           display: block;
           font-size: 18px;
@@ -66,7 +63,7 @@
           margin-right: 0px;
           margin-bottom: 20px;
           .shop_ttl{
-            display: block;
+            display: flex;
           }
           .category_ttl{
             margin-top: -20px;
@@ -95,16 +92,14 @@
       margin-bottom: 30px;
     }
     .shop_ttl{
-      display: block;
       margin-bottom: 30px;
       .ttl_en{
         display: block;
-        font-size: 2.6rem;
+        font-size: 2.8rem;
         margin-bottom: 10px;
       }
       .ttl_ja{
-        padding-left: 0em;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         letter-spacing: 0.5px;
       }
     }
