@@ -23,14 +23,14 @@
           background: $basicGreen;
           @include libre-r;
           color: #fff;
-          font-size: 18px;
+          font-size: 1.8rem;
           line-height: 45px;
           text-align: center;
           margin-right: 10px;
         }
         .txt{
           width: calc(100% - 55px);
-          font-size: 20px;
+          font-size: 2.0rem;
           font-weight: normal;
           line-height: normal;
           letter-spacing: 0.6px;
@@ -40,7 +40,7 @@
       .desc_wrap{
         padding: 0 5px;
         p{
-          font-size: 15px;
+          font-size: 1.5rem;
           line-height: 1.7;
           letter-spacing: 0.6px;
           margin-bottom: 1.2em;
@@ -52,7 +52,7 @@
             margin-bottom: 0;
           }
           &.added{
-            font-size: 13px;
+            font-size: 1.3rem;
             line-height: 1.7;
             letter-spacing: 0.5px;
             color: #646464;
@@ -66,7 +66,7 @@
             border: 1px solid $basicGreen;
             box-sizing: border-box;
             padding: 15px 15px;
-            font-size: 16px;
+            font-size: 1.6rem;
             letter-spacing: 0.6px;
             position: relative;
             transition: opacity .3s;
@@ -96,4 +96,48 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 720px){
+  .comp-gift-service-wrap{
+    display: block;
+    .service_item{
+      width: 100%;
+      margin-right: 0%;
+      margin-bottom: 50px;
+      .img_wrap{
+        margin-bottom: 20px;
+      }
+      .txt_wrap{
+        .title_wrap{
+          margin-bottom: 15px;
+          .num{
+            width: 35px;
+            height: 35px;
+            font-size: 1.6rem;
+            line-height: 35px;
+            margin-right: 10px;
+          }
+          .txt{
+            width: calc(100% - 45px);
+            font-size: 2.0rem;
+            letter-spacing: 0.5px;
+          }
+        }
+        .desc_wrap{
+          padding: 0 2px;
+          .link_button{
+            margin-top: 25px;
+            a{
+              max-width: 100%;
+              width: 100%;
+              font-size: 1.6rem;
+              padding: 15px 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }

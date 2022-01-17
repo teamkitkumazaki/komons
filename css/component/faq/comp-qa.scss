@@ -33,7 +33,7 @@
 
       .toggle_button {
         padding: 15px 5px 15px 5px;
-        font-size: 14px;
+        font-size: 1.4rem;
         color: #00381f;
         display: block;
         position: relative;
@@ -41,6 +41,7 @@
         align-items: center;
         font-family: inherit;
         width: 100%;
+        margin: 0 !important;
         box-sizing: border-box;
         background: transparent;
         justify-content: flex-start;
@@ -48,6 +49,7 @@
         cursor: pointer;
         border: none;
         text-align: left;
+        color: #00381f;
         .icon{
           width: 40px;
           height: 40px;
@@ -60,9 +62,11 @@
         }
         .txt{
           width: calc(100% - 55px);
-          font-size: 16px;
+          font-size: 1.6rem;
           line-height: 1.6;
           letter-spacing: 0.6px;
+          padding-right: 40px;
+          box-sizing: border-box;
         }
         &::after {
           display: block;
@@ -103,7 +107,7 @@
           border-radius:50%;
           text-align: center;
           line-height: 38px;
-          font-size: 1.6;
+          font-size: 1.6rem;
           text-indent: 0.2em;
           @include libre-r;
           margin-right: 15px;
@@ -111,8 +115,8 @@
         .description{
           width: calc(100% - 55px);
           p {
-            font-size: 14px;
-            color: #464646;
+            font-size: 1.4rem;
+            color: #00381f;
             line-height: 1.8;
             letter-spacing: 0.3px;
             a{
@@ -129,7 +133,7 @@
       margin: 50px auto 0;
 
       a {
-        font-size: 14px;
+        font-size: 1.4rem;
         color: #068acc;;
         text-decoration: underline;
       }
@@ -143,92 +147,93 @@
   }
 }
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 720px){
   .comp-qa{
-    padding: 60px 0 50px;
+    padding: 120px 0 80px;
     .gift_ttl {
-      font-size: 7vw;
-      margin-bottom: 60px;
+      font-size: 40px;
+      letter-spacing: 1.1px;
+      text-align: center;
+      color: #00381f;
+      position: relative;
+      margin-bottom: 100px;
 
       &::after {
-        bottom: -20px;
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        margin: auto;
+        width: 36px;
+        height: 2px;
+        background-color: #c2cfc9;
       }
     }
     .qa_toggle {
-      @include waku;
-
+      max-width: 900px;
+      margin: 0 auto;
       .toggle_item {
         height: 50px;
         margin-bottom: 10px;
         transition: height 0.5s;
         overflow: hidden;
-
-        &.row2 {
-          height: 70px;
-        }
+        border-bottom: 1px solid #f1f1f1;
 
         .toggle_button {
-          padding: 10px 35px 10px 45px;
-          line-height: 1.6;
-          font-size: 3.4vw;
-          margin-bottom: 5px;
-
-          &::before {
-            width: 20px;
-            height: 20px;
-            left: 10px;
-            background-size: 15px;
+          padding: 15px 5px 15px 5px;
+          font-size: 1.4rem;
+          .icon{
+            width: 35px;
+            height: 35px;
+            border-radius:50%;
+            line-height: 32px;
+            margin-right: 10px;
           }
-
+          .txt{
+            width: calc(100% - 45px);
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+            padding-right: 35px;
+          }
           &::after {
             right: 10px;
-            width: 20px;
-            height: 20px;
-            background-size: 15px;
-          }
-
-          &.active {
-            &::after {
-              background-size: 15px;
-            }
+            width: 16px;
+            height: 16px;
           }
         }
 
         .toggle_contents {
-          padding: 15px 0 15px 45px;
-          position: relative;
-
-          &::before {
-            display: block;
-            content: "";
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            top: 10px;
-            left: 10px;
-            @include bgSet;
-            background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/a_dktkar.png");
-            background-size: 20px;
+          padding: 15px 5px 25px 5px;
+          .icon{
+            width: 35px;
+            height: 35px;
+            line-height: 32px;
+            margin-right: 10px;
           }
-
-          p {
-            line-height: 1.6;
+          .description{
+            width: calc(100% - 45px);
+            p {
+              font-size: 1.4rem;
+            }
           }
         }
       }
 
       .others {
         text-align: center;
-        margin: 40px auto 0;
-        line-height: 1.6;
-
-        a {
-          color: $basicGreen;
-          text-decoration: underline;
+        font-size: 1.5rem;
+        line-height: 1.8;
+        margin: 50px auto 0;
+        span{
+          display: block;
         }
 
-        span {
-          display: block;
+        a {
+          font-size: 1.4rem;
+          color: #068acc;;
+          text-decoration: underline;
         }
       }
     }

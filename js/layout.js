@@ -558,18 +558,19 @@ $(function() {
     var toggleState = [];
 
     function toggleMove(e) {
-      if (toggleState[e] == -1 || toggleState[e] == 0) {
+      if ( toggleState[e] == 0 ) {
         toggleButton[e].addClass('active');
-        var tagetHeight = toggleContents[e].height();
+        var buttonHeight = toggleButton[e].outerHeight();
+        var tagetHeight = toggleContents[e].outerHeight();
         toggleItem[e].css({
-          'height': 110 + tagetHeight + 'px'
+          'height': buttonHeight + tagetHeight + 'px'
         });
         toggleState[e] = 1;
       } else {
         toggleButton[e].removeClass('active');
-        var toggleHeight = toggleButton[e].outerHeight();
+        var buttonHeight = toggleButton[e].outerHeight();
           toggleItem[e].css({
-            'height': toggleHeight + 4 + 'px'
+            'height': buttonHeight + 'px'
           });
         toggleState[e] = 0;
       }
@@ -580,8 +581,8 @@ $(function() {
         toggleItem[index] = $(this);
         toggleButton[index] = $(this).find('.toggle_button');
         toggleContents[index] = $(this).find('.toggle_contents');
-        $(this).css({'height': toggleButton[index].outerHeight() + 4 + 'px'});
-        toggleState[index] = -1;
+        $(this).css({'height': toggleButton[index].outerHeight() + 'px'});
+        toggleState[index] = 0;
         toggleButton[index].on({
           'click': function() {
             toggleMove(index);

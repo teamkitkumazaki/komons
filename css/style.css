@@ -9720,14 +9720,14 @@ body.loaded #loading {
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
   color: #fff;
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 45px;
   text-align: center;
   margin-right: 10px;
 }
 .comp-gift-service-wrap .service_item .txt_wrap .title_wrap .txt {
   width: calc(100% - 55px);
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: normal;
   line-height: normal;
   letter-spacing: 0.6px;
@@ -9737,7 +9737,7 @@ body.loaded #loading {
   padding: 0 5px;
 }
 .comp-gift-service-wrap .service_item .txt_wrap .desc_wrap p {
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 1.7;
   letter-spacing: 0.6px;
   margin-bottom: 1.2em;
@@ -9753,7 +9753,7 @@ body.loaded #loading {
   margin-bottom: 0;
 }
 .comp-gift-service-wrap .service_item .txt_wrap .desc_wrap p.added {
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 1.7;
   letter-spacing: 0.5px;
   color: #646464;
@@ -9767,7 +9767,7 @@ body.loaded #loading {
   border: 1px solid #00381f;
   box-sizing: border-box;
   padding: 15px 15px;
-  font-size: 16px;
+  font-size: 1.6rem;
   letter-spacing: 0.6px;
   position: relative;
   transition: opacity 0.3s;
@@ -9793,6 +9793,46 @@ body.loaded #loading {
   right: 10px;
 }
 
+@media screen and (max-width: 720px) {
+  .comp-gift-service-wrap {
+    display: block;
+  }
+  .comp-gift-service-wrap .service_item {
+    width: 100%;
+    margin-right: 0%;
+    margin-bottom: 50px;
+  }
+  .comp-gift-service-wrap .service_item .img_wrap {
+    margin-bottom: 20px;
+  }
+  .comp-gift-service-wrap .service_item .txt_wrap .title_wrap {
+    margin-bottom: 15px;
+  }
+  .comp-gift-service-wrap .service_item .txt_wrap .title_wrap .num {
+    width: 35px;
+    height: 35px;
+    font-size: 1.6rem;
+    line-height: 35px;
+    margin-right: 10px;
+  }
+  .comp-gift-service-wrap .service_item .txt_wrap .title_wrap .txt {
+    width: calc(100% - 45px);
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+  }
+  .comp-gift-service-wrap .service_item .txt_wrap .desc_wrap {
+    padding: 0 2px;
+  }
+  .comp-gift-service-wrap .service_item .txt_wrap .desc_wrap .link_button {
+    margin-top: 25px;
+  }
+  .comp-gift-service-wrap .service_item .txt_wrap .desc_wrap .link_button a {
+    max-width: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 15px 12px;
+  }
+}
 /* FAQ */
 .comp-qa {
   padding: 120px 0 80px;
@@ -9830,7 +9870,7 @@ body.loaded #loading {
 }
 .comp-qa .qa_toggle .toggle_item .toggle_button {
   padding: 15px 5px 15px 5px;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #00381f;
   display: block;
   position: relative;
@@ -9864,9 +9904,11 @@ body.loaded #loading {
 }
 .comp-qa .qa_toggle .toggle_item .toggle_button .txt {
   width: calc(100% - 55px);
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.6;
   letter-spacing: 0.6px;
+  padding-right: 40px;
+  box-sizing: border-box;
 }
 .comp-qa .qa_toggle .toggle_item .toggle_button::after {
   display: block;
@@ -9905,7 +9947,7 @@ body.loaded #loading {
   border-radius: 50%;
   text-align: center;
   line-height: 38px;
-  font-size: 1.6;
+  font-size: 1.6rem;
   text-indent: 0.2em;
   font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
@@ -9917,7 +9959,7 @@ body.loaded #loading {
   width: calc(100% - 55px);
 }
 .comp-qa .qa_toggle .toggle_item .toggle_contents .description p {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #464646;
   line-height: 1.8;
   letter-spacing: 0.3px;
@@ -9934,7 +9976,7 @@ body.loaded #loading {
   margin: 50px auto 0;
 }
 .comp-qa .qa_toggle .others a {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #068acc;
   text-decoration: underline;
 }
@@ -9944,97 +9986,91 @@ body.loaded #loading {
     padding: 80px 30px 40px;
   }
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 720px) {
   .comp-qa {
-    padding: 60px 0 50px;
+    padding: 120px 0 80px;
   }
   .comp-qa .gift_ttl {
-    font-size: 7vw;
-    margin-bottom: 60px;
+    font-size: 40px;
+    letter-spacing: 1.1px;
+    text-align: center;
+    color: #00381f;
+    position: relative;
+    margin-bottom: 100px;
   }
   .comp-qa .gift_ttl::after {
-    bottom: -20px;
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    margin: auto;
+    width: 36px;
+    height: 2px;
+    background-color: #c2cfc9;
   }
   .comp-qa .qa_toggle {
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 900px;
+    margin: 0 auto;
   }
-}
-@media screen and (max-width: 760px) and (max-width: 1150px) {
-  .comp-qa .qa_toggle {
-    max-width: 750px;
-  }
-}
-@media screen and (max-width: 760px) and (max-width: 750px) {
-  .comp-qa .qa_toggle {
-    width: 84vw;
-  }
-}
-@media screen and (max-width: 760px) {
   .comp-qa .qa_toggle .toggle_item {
     height: 50px;
     margin-bottom: 10px;
     transition: height 0.5s;
     overflow: hidden;
-  }
-  .comp-qa .qa_toggle .toggle_item.row2 {
-    height: 70px;
+    border-bottom: 1px solid #f1f1f1;
   }
   .comp-qa .qa_toggle .toggle_item .toggle_button {
-    padding: 10px 35px 10px 45px;
-    line-height: 1.6;
-    font-size: 3.4vw;
-    margin-bottom: 5px;
+    padding: 15px 5px 15px 5px;
+    font-size: 1.4rem;
   }
-  .comp-qa .qa_toggle .toggle_item .toggle_button::before {
-    width: 20px;
-    height: 20px;
-    left: 10px;
-    background-size: 15px;
+  .comp-qa .qa_toggle .toggle_item .toggle_button .icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 32px;
+    margin-right: 10px;
+  }
+  .comp-qa .qa_toggle .toggle_item .toggle_button .txt {
+    width: calc(100% - 45px);
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    padding-right: 35px;
   }
   .comp-qa .qa_toggle .toggle_item .toggle_button::after {
     right: 10px;
-    width: 20px;
-    height: 20px;
-    background-size: 15px;
-  }
-  .comp-qa .qa_toggle .toggle_item .toggle_button.active::after {
-    background-size: 15px;
+    width: 16px;
+    height: 16px;
   }
   .comp-qa .qa_toggle .toggle_item .toggle_contents {
-    padding: 15px 0 15px 45px;
-    position: relative;
+    padding: 15px 5px 25px 5px;
   }
-  .comp-qa .qa_toggle .toggle_item .toggle_contents::before {
-    display: block;
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 10px;
-    left: 10px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift/a_dktkar.png");
-    background-size: 20px;
+  .comp-qa .qa_toggle .toggle_item .toggle_contents .icon {
+    width: 35px;
+    height: 35px;
+    line-height: 32px;
+    margin-right: 10px;
   }
-  .comp-qa .qa_toggle .toggle_item .toggle_contents p {
-    line-height: 1.6;
+  .comp-qa .qa_toggle .toggle_item .toggle_contents .description {
+    width: calc(100% - 45px);
   }
-}
-@media screen and (max-width: 760px) {
+  .comp-qa .qa_toggle .toggle_item .toggle_contents .description p {
+    font-size: 1.4rem;
+  }
   .comp-qa .qa_toggle .others {
     text-align: center;
-    margin: 40px auto 0;
-    line-height: 1.6;
-  }
-  .comp-qa .qa_toggle .others a {
-    color: #00381f;
-    text-decoration: underline;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin: 50px auto 0;
   }
   .comp-qa .qa_toggle .others span {
     display: block;
+  }
+  .comp-qa .qa_toggle .others a {
+    font-size: 1.4rem;
+    color: #068acc;
+    text-decoration: underline;
   }
 }
 /* ########## ページ別レイアウト ########## */
@@ -16580,13 +16616,13 @@ body.loaded #loading {
   text-indent: -2px;
 }
 .gift-service .section-main .section_inner_new .txt_wrap .main_ttl .title_ja {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: normal;
   line-height: normal;
   letter-spacing: normal;
 }
 .gift-service .section-main .section_inner_new .txt_wrap .main_desc {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: normal;
   line-height: 2;
   letter-spacing: 0.46px;
@@ -16599,7 +16635,7 @@ body.loaded #loading {
   margin-bottom: 40px;
 }
 .gift-service .section-service .section_ttl {
-  max-width: unset;
+  max-width: 100%;
   margin-bottom: 70px;
 }
 .gift-service .section-faq {
@@ -16621,32 +16657,25 @@ body.loaded #loading {
   .gift-service .section-main .main_visual {
     width: 100%;
     height: 500px;
-    position: static;
-    background-position: top center;
-    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/main_tab_vkkeyh.jpg);
     bottom: unset;
     margin: auto;
   }
-  .gift-service .section-main .section_inner_new {
-    display: block;
-    position: relative;
-    z-index: 10;
-  }
   .gift-service .section-main .section_inner_new .txt_wrap {
-    width: 100%;
-    padding: 0 30px;
+    width: 50%;
+    padding: 30px 30px 0;
     box-sizing: border-box;
-    padding-bottom: 50px;
+    padding-bottom: 0px;
   }
-  .gift-service .section-main .section_inner_new .height_adjust {
-    display: none;
+}
+@media screen and (max-width: 1100px) and (max-width: 980px) {
+  .gift-service .section-main .section_inner_new .txt_wrap {
+    width: 55%;
+    padding: 30px 0px 0;
   }
-  .gift-service .section-service01 {
-    margin-bottom: 80px;
-    padding: 0 30px;
-  }
-  .gift-service .section-service02 {
-    padding: 60px 30px;
+}
+@media screen and (max-width: 1100px) {
+  .gift-service .section-service {
+    margin-bottom: 20px;
   }
 }
 @media screen and (max-width: 760px) {
@@ -16657,15 +16686,15 @@ body.loaded #loading {
   }
   .gift-service .section_ttl h2 span {
     display: block;
-    font-size: 30px;
+    font-size: 3.4rem;
     padding-right: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .gift-service .section_ttl h2 font {
-    font-size: 16px;
+    font-size: 1.8rem;
   }
   .gift-service .section-main {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     background: #4d0010;
   }
   .gift-service .section-main .main_visual {
@@ -16674,6 +16703,7 @@ body.loaded #loading {
     background-size: contain;
     background-position: center center;
     background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/main_sp_ekk7dy.jpg);
+    position: static;
   }
   .gift-service .section-main .section_inner_new {
     position: relative;
@@ -16695,7 +16725,7 @@ body.loaded #loading {
     border-bottom: 0px;
   }
   .gift-service .section-main .section_inner_new .txt_wrap .main_ttl .title_en {
-    font-size: 45px;
+    font-size: 4.2rem;
     font-weight: normal;
     line-height: normal;
     letter-spacing: 0.05em;
@@ -16704,13 +16734,20 @@ body.loaded #loading {
     text-indent: 0px;
   }
   .gift-service .section-main .section_inner_new .txt_wrap .main_ttl .title_ja {
-    font-size: 17px;
+    font-size: 1.6rem;
   }
   .gift-service .section-main .section_inner_new .txt_wrap .main_desc {
-    font-size: 14px;
+    font-size: 1.3rem;
     line-height: 1.8;
     letter-spacing: 0.3px;
     text-align: left;
+  }
+  .gift-service .section-main .section_inner_new .height_adjust {
+    display: none;
+  }
+  .gift-service .section-faq {
+    padding: 60px 0;
+    margin-bottom: 0;
   }
 }
 /* ギフトサービスページ*/
