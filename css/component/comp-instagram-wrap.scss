@@ -126,7 +126,7 @@
     }
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 980px) {
   .comp-instagram-wrap {
     padding: 60px 0;
 
@@ -136,11 +136,14 @@
     }
 
     .link_button {
-      max-width: unset;
+      max-width: 600px !important;
     }
-
     .insta_feed {
-      margin-bottom: 20px !important;
+      max-width: 600px !important;
+      margin: 0 auto 40px !important;
+      @media screen and (max-width: 720px){
+        margin: 0 auto 20px !important;
+      }
       a {
         width: calc(100% / 3) !important;
         &:nth-of-type(3n) {

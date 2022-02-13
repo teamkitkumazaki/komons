@@ -4454,7 +4454,7 @@ body.loaded #loading {
     height: 25vw;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 980px) {
   .comp-insta-wrap #instafeed {
     width: 100%;
     max-width: 100%;
@@ -10120,7 +10120,7 @@ body.loaded #loading {
     margin-bottom: 60px !important;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 980px) {
   .comp-instagram-wrap {
     padding: 60px 0;
   }
@@ -10129,11 +10129,19 @@ body.loaded #loading {
     margin-bottom: 40px;
   }
   .comp-instagram-wrap .link_button {
-    max-width: unset;
+    max-width: 600px !important;
   }
   .comp-instagram-wrap .insta_feed {
-    margin-bottom: 20px !important;
+    max-width: 600px !important;
+    margin: 0 auto 40px !important;
   }
+}
+@media screen and (max-width: 980px) and (max-width: 720px) {
+  .comp-instagram-wrap .insta_feed {
+    margin: 0 auto 20px !important;
+  }
+}
+@media screen and (max-width: 980px) {
   .comp-instagram-wrap .insta_feed a {
     width: calc(100% / 3) !important;
   }
@@ -10514,7 +10522,7 @@ body.loaded #loading {
 }
 
 .comp-detail-title {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .comp-detail-title hgroup .title_en {
   display: block;
@@ -10531,6 +10539,15 @@ body.loaded #loading {
   font-size: 1.6rem;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-detail-title {
+    margin-bottom: 40px;
+  }
+  .comp-detail-title hgroup .title_en {
+    font-size: 3.8rem;
+    margin-bottom: 15px;
+  }
+}
 .comp-detail-desc .detail_item {
   margin-bottom: 30px;
 }
@@ -10557,6 +10574,29 @@ body.loaded #loading {
   line-height: 1.7;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-detail-desc .detail_item {
+    margin-bottom: 50px;
+  }
+  .comp-detail-desc .detail_item .img_wrap {
+    margin-bottom: 35px;
+  }
+  .comp-detail-desc .detail_item .txt_wrap .prod_name {
+    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 2.6rem;
+    margin-bottom: 15px;
+  }
+  .comp-detail-desc .detail_item .txt_wrap .prod_genre {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  .comp-detail-desc .detail_item .txt_wrap .desc_wrap {
+    font-size: 1.5rem;
+  }
+}
 .comp-detail-button {
   margin-top: 25px;
 }
@@ -10608,6 +10648,18 @@ body.loaded #loading {
   background-size: 18px;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-detail-button {
+    margin-top: 25px;
+  }
+  .comp-detail-button a {
+    padding: 25px 0;
+  }
+  .comp-detail-button a.small {
+    font-size: 1.4rem;
+    padding: 20px 0;
+  }
+}
 .comp-detail-toggle-new .toggle_item {
   height: 35px;
   overflow: hidden;
@@ -10704,6 +10756,39 @@ body.loaded #loading {
   color: #046734;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-related-item-slide {
+    width: 100vw;
+    margin-left: -9vw;
+    padding-left: 9vw;
+  }
+  .comp-related-item-slide .slide_inner {
+    width: calc(59vw * 3);
+  }
+  .comp-related-item-slide .slide_inner .related_item {
+    width: 55vw;
+    margin-right: 4vw;
+  }
+  .comp-related-item-slide .slide_inner .related_item .img_wrap {
+    margin-bottom: 25px;
+  }
+  .comp-related-item-slide .slide_inner .related_item .txt_wrap .genre {
+    display: block;
+    font-size: 1.3rem;
+  }
+  .comp-related-item-slide .slide_inner .related_item .txt_wrap .prod_name {
+    margin-bottom: 20px;
+  }
+  .comp-related-item-slide .slide_inner .related_item .txt_wrap .prod_name .name {
+    font-size: 2.4rem;
+  }
+  .comp-related-item-slide .slide_inner .related_item .txt_wrap .prod_name .genre {
+    font-size: 1.4rem;
+  }
+  .comp-related-item-slide .slide_inner .related_item .txt_wrap .price {
+    font-size: 1.4rem;
+  }
+}
 .comp-related-journal-slide {
   width: 100vw;
   margin-left: -7vw;
@@ -10760,6 +10845,51 @@ body.loaded #loading {
   color: #046734;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-related-journal-slide {
+    width: auto;
+    overflow: unset;
+  }
+  .comp-related-journal-slide .slide_inner {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item {
+    width: 48%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .img_wrap {
+    margin-bottom: 20px;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .img_wrap a {
+    max-height: 25vw;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .txt_wrap {
+    padding: 0 5px;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .txt_wrap .article_name {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .txt_wrap .genre {
+    font-size: 1.3rem;
+  }
+}
 .comp-list-link .link_item {
   margin-bottom: 15px;
 }
@@ -10811,6 +10941,24 @@ body.loaded #loading {
   letter-spacing: 0.5px;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-list-link .link_item {
+    margin-bottom: 15px;
+  }
+  .comp-list-link .link_item a .txt_wrap {
+    padding: 30px 25px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  }
+  .comp-list-link .link_item a .txt_wrap .txt_en {
+    font-size: 3.2rem;
+    margin-right: 15px;
+  }
+  .comp-list-link .link_item a .txt_wrap .txt_ja {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+}
 /* ストア一覧・FAQ */
 .comp-category-button button {
   width: 100%;
@@ -15517,7 +15665,6 @@ body.loaded #loading {
 .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .genre {
   display: block;
   font-size: 1.4rem;
-  color: #464646;
 }
 .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .price_wrap {
   font-size: 1.3rem;
@@ -15559,13 +15706,91 @@ body.loaded #loading {
   margin-top: 50px;
   margin-bottom: 60px;
 }
+.page-item-detail-new .section-related-item .section_inner_new {
+  max-width: 82vw;
+}
 .page-item-detail-new .section-related-journal {
   margin-bottom: 60px;
+}
+.page-item-detail-new .section-related-journal .section_inner_new {
+  max-width: 82vw;
 }
 .page-item-detail-new .section-item-list {
   margin-bottom: 60px;
 }
+.page-item-detail-new .section-item-list .section_inner_new {
+  max-width: 82vw;
+}
 
+@media screen and (min-width: 720px) {
+  .page-item-detail-new .section-main .main_flex .main_detail {
+    margin-top: 60px;
+    margin-bottom: 80px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner {
+    max-width: 82vw;
+    margin: 0 auto;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .category {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 7px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name {
+    line-height: 1.6;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .name {
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .genre {
+    display: block;
+    font-size: 1.6rem;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .price_wrap {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .price_wrap .volume {
+    color: #464646;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .desc_wrap {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_description .desc_inner {
+    padding: 60px 9vw 70px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit {
+    margin-bottom: 60px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit .brand_introduction .img_wrap {
+    margin-bottom: 30px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit .brand_introduction .txt_wrap .brand_concept {
+    font-size: 2.2rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit .brand_introduction .txt_wrap .brand_desc {
+    font-size: 1.5rem;
+  }
+  .page-item-detail-new .section-related-item {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .page-item-detail-new .section-related-journal {
+    margin-bottom: 40px;
+  }
+  .page-item-detail-new .section-item-list {
+    margin-bottom: 80px;
+  }
+}
 .page-item-group-list .section-basic-item {
   padding-top: 100px;
 }

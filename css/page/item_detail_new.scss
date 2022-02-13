@@ -29,7 +29,6 @@
 							.genre{
 								display: block;
 								font-size: 1.4rem;
-								color: #464646;
 							}
 						}
 					}
@@ -82,11 +81,102 @@
 	.section-related-item{
 		margin-top: 50px;
 		margin-bottom: 60px;
+		.section_inner_new{
+			max-width: 82vw;
+		}
 	}
 	.section-related-journal{
 		margin-bottom: 60px;
+		.section_inner_new{
+			max-width: 82vw;
+		}
 	}
 	.section-item-list{
 		margin-bottom: 60px;
+		.section_inner_new{
+			max-width: 82vw;
+		}
+	}
+}
+
+@media screen and (min-width: 720px){
+	.page-item-detail-new{
+		.section-main{
+			.main_flex{
+				.main_detail{
+					margin-top: 60px;
+					margin-bottom: 80px;
+					.detail_inner{
+						max-width: 82vw;
+						margin: 0 auto;
+						.prod_info{
+							padding-bottom: 15px;
+							margin-bottom: 20px;
+							border-bottom: 1px solid #d8d8d8;
+							.category{
+								display: block;
+								font-size: 1.4rem;
+								margin-bottom: 7px;
+							}
+							.prod_name{
+								line-height: 1.6;
+								.name{
+									font-size: 2.8rem;
+									margin-bottom: 5px;
+								}
+								.genre{
+									display: block;
+									font-size: 1.6rem;
+								}
+							}
+						}
+						.price_wrap{
+							font-size: 1.4rem;
+							margin-bottom: 20px;
+							.volume{
+								color: #464646;
+							}
+						}
+						.desc_wrap{
+							font-size: 1.6rem;
+							margin-bottom: 30px;
+						}
+					}
+				}
+				.main_description{
+					.desc_inner{
+						padding: 60px 9vw 70px;
+						.desc_unit{
+							margin-bottom: 60px;
+							.brand_introduction{
+								.img_wrap{
+									margin-bottom: 30px;
+								}
+								.txt_wrap{
+									.brand_concept{
+										font-size: 2.2rem;
+										line-height: 1.6;
+										margin-bottom: 12px;
+									}
+									.brand_desc{
+										font-size: 1.5rem;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.section-related-item{
+			margin-top: 80px;
+			margin-bottom: 80px;
+		}
+		.section-related-journal{
+			margin-bottom: 40px;
+		}
+		.section-item-list{
+			margin-bottom: 80px;
+		}
 	}
 }

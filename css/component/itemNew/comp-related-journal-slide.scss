@@ -43,3 +43,38 @@
     }
   }
 }
+
+@media screen and (min-width: 720px){
+  .comp-related-journal-slide{
+    width: auto;
+    overflow: unset;
+    .slide_inner{
+      width: 100%;
+      @include flexSet;
+      justify-content: flex-start;
+      justify-content: space-between;
+      .journal_item{
+        width: 48%;
+        margin-right: 0;
+        margin-bottom: 40px;
+        .img_wrap{
+          margin-bottom: 20px;
+          a{
+            max-height: 25vw;
+          }
+        }
+        .txt_wrap{
+          padding: 0 5px;
+          .article_name{
+            display: block;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+          }
+          .genre{
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}

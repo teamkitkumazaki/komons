@@ -24,3 +24,28 @@
     }
   }
 }
+
+@media screen and (min-width: 720px){
+  .comp-detail-desc{
+    .detail_item{
+      margin-bottom: 50px;
+      .img_wrap{
+        margin-bottom: 35px;
+      }
+      .txt_wrap{
+        .prod_name{
+          @include libre-r;
+          font-size: 2.6rem;
+          margin-bottom: 15px;
+        }
+        .prod_genre{
+          font-size: 1.6rem;
+          margin-bottom: 20px;
+        }
+        .desc_wrap{
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

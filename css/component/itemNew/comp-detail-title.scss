@@ -1,5 +1,5 @@
 .comp-detail-title{
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   hgroup{
     .title_en{
       display: block;
@@ -11,6 +11,17 @@
     .title_ja{
       display: block;
       font-size: 1.6rem;
+    }
+  }
+}
+@media screen and (min-width: 720px){
+  .comp-detail-title{
+    margin-bottom: 40px;
+    hgroup{
+      .title_en{
+        font-size: 3.8rem;
+        margin-bottom: 15px;
+      }
     }
   }
 }
