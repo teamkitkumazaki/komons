@@ -1,0 +1,45 @@
+.comp-related-journal-slide{
+  width: 100vw;
+  margin-left: -7vw;
+  padding-left: 7vw;
+  box-sizing: border-box;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  .slide_inner{
+    width:calc(calc(77vw * 4) + 17vw);
+    @include flexSet;
+    justify-content: flex-start;
+    .journal_item{
+      width: 72vw;
+      margin-right: 5vw;
+      .img_wrap{
+        margin-bottom: 20px;
+        a{
+          display: block;
+          overflow: hidden;
+          max-height: 45vw;
+        }
+      }
+      .txt_wrap{
+        padding: 0 5px;
+        .article_name{
+          display: block;
+          font-size: 1.5rem;
+          line-height: 1.6;
+          color: inherit;
+          margin-bottom: 15px;
+        }
+        .genre{
+          display: block;
+          font-size: 1.2rem;
+          color: $insertGreen
+        }
+      }
+    }
+  }
+}

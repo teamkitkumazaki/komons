@@ -1,0 +1,36 @@
+.comp-list-link{
+  .link_item{
+    margin-bottom: 15px;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
+    a{
+      position: relative;
+      display: block;
+      .txt_wrap{
+        display: block;
+        position: absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px 15px;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+        color: #fff;
+        @include flexSet;
+        align-items: baseline;
+        justify-content: flex-start;
+        .txt_en{
+          @include libre-r;
+          font-size: 2.8rem;
+          margin-right: 10px;
+        }
+        .txt_ja{
+          font-size: 1.4rem;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}

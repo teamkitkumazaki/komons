@@ -1,0 +1,26 @@
+.comp-detail-desc{
+  .detail_item{
+    margin-bottom: 30px;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
+    .img_wrap{
+      margin-bottom: 25px;
+    }
+    .txt_wrap{
+      .prod_name{
+        @include libre-r;
+        font-size: 2.4rem;
+        margin-bottom: 15px;
+      }
+      .prod_genre{
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+      }
+      .desc_wrap{
+        font-size: 1.4rem;
+        line-height: 1.7;
+      }
+    }
+  }
+}

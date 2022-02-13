@@ -1,0 +1,92 @@
+.page-item-detail-new{
+	padding-top: 0;
+	margin-bottom: 0;
+	.section-main{
+		.main_flex{
+			.main_detail{
+				margin-top: 30px;
+				margin-bottom: 50px;
+				.detail_inner{
+					max-width: 86vw;
+					margin: 0 auto;
+					.prod_info{
+						padding-bottom: 15px;
+						margin-bottom: 20px;
+						border-bottom: 1px solid #d8d8d8;
+						.category{
+							display: block;
+							font-size: 1.3rem;
+							margin-bottom: 7px;
+						}
+						.prod_name{
+							line-height: 1.6;
+							.name{
+								display: block;
+								font-size: 2.4rem;
+								text-indent: -0.1em;
+								margin-bottom: 5px;
+							}
+							.genre{
+								display: block;
+								font-size: 1.4rem;
+								color: #464646;
+							}
+						}
+					}
+					.price_wrap{
+						font-size: 1.3rem;
+						margin-bottom: 20px;
+						.price{
+						}
+						.volume{
+							color: #464646;
+						}
+					}
+					.desc_wrap{
+						font-size: 1.4rem;
+						line-height: 1.7;
+						margin-bottom: 30px;
+					}
+				}
+			}
+			.main_description{
+				background-color: #f8f8f8;
+				.desc_inner{
+					padding: 40px 7vw 50px;
+					.desc_unit{
+						margin-bottom: 50px;
+						&:nth-last-of-type(1){
+							margin-bottom: 0;
+						}
+						.brand_introduction{
+							.img_wrap{
+								margin-bottom: 20px;
+							}
+							.txt_wrap{
+								.brand_concept{
+									font-size: 1.8rem;
+									line-height: 1.6;
+									margin-bottom: 12px;
+								}
+								.brand_desc{
+									font-size: 1.4rem;
+									line-height: 1.7;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.section-related-item{
+		margin-top: 50px;
+		margin-bottom: 60px;
+	}
+	.section-related-journal{
+		margin-bottom: 60px;
+	}
+	.section-item-list{
+		margin-bottom: 60px;
+	}
+}

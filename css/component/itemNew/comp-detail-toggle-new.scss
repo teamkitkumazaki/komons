@@ -1,0 +1,28 @@
+.comp-detail-toggle-new{
+  .toggle_item{
+    height: 35px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
+    .toggle_button_new{
+      width: 100%;
+      display: block;
+      padding: 0 0 10px;
+      font-size: 1.6rem;
+      text-align: left;
+      border: none;
+      font-family: inherit;
+      border-bottom: 1px solid rgba($basicGreen, 0.5);
+      box-shadow: none;
+      background: transparent;
+      appearance:none;
+      @include bgSet;
+      background-size: 12px;
+      background-position: bottom 16px right 5px;
+      background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
+      color: inherit;
+    }
+  }
+}
