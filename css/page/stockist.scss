@@ -22,9 +22,6 @@
       letter-spacing: 0.73px;
     }
   }
-  .section-main{
-    margin-bottom: 100px;
-  }
   .section-shop-list{
     margin-bottom: 100px;
     .stock_flex{
@@ -87,9 +84,7 @@
     margin-bottom: 60px;
     .section_ttl{
       padding-top: 40px;
-      padding-bottom: 30px;
-      border-bottom: 1px solid #d8d8d8;
-      margin-bottom: 30px;
+      margin-bottom: 0px;
     }
     .shop_ttl{
       margin-bottom: 30px;
@@ -102,11 +97,6 @@
         font-size: 1.4rem;
         letter-spacing: 0.5px;
       }
-    }
-    .section-main{
-      margin-bottom: 40px;
-      padding-bottom: 50px;
-      border-bottom: 1px solid #d8d8d8;
     }
     .section-shop-list{
       margin-bottom: 40px;

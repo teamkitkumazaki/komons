@@ -15,34 +15,73 @@
       margin-right: 0;
     }
     .img_wrap{
-      width: 150px;
+      width: 120px;
       margin-right: 25px;
+      a{
+        display: block;
+        overflow: hidden;
+        img{
+          transition: transform 0.3s, filter 0.3s;
+          will-change: transform, filter;
+        }
+        &:hover{
+          img{
+            filter: brightness(1.1);
+            transform: scale(1.05);
+          }
+        }
+      }
     }
     .txt_wrap{
-      width: calc(100% - 175px);
-      .shop_name{
-        font-size: 1.6rem;
-        line-height: 1.6;
-        letter-spacing: 1px;
-        padding-left: 30px;
-        margin-bottom: 10px;
-        background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store.svg?v=1640016183);
-        background-size: 20px;
-        background-position: left top 3px;
-        background-repeat: no-repeat;
-      }
-      .date{
-        font-size: 1.4rem;
-        letter-spacing: 0.5px;
-        color: #646464;
-        margin-bottom: 15px;
-      }
-      .link{
+      width: calc(100% - 145px);
+      .info_wrap{
+        display: block;
         @include hover;
         color: inherit;
-        font-size: 1.4rem;
-        text-decoration: underline;
-        transition: opacity 0.3s;
+        .shop_name{
+          display: block;
+          font-size: 2.4rem;
+          @include libre-r;
+          line-height: 1.6;
+          letter-spacing: 1px;
+          margin-bottom: 5px;
+          background-size: 20px;
+          background-position: left top 3px;
+          background-repeat: no-repeat;
+          span{
+            position: relative;
+            display: inline-block;
+            padding-right: 25px;
+            &::after{
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              margin: auto;
+              display: block;
+              content: "";
+              width: 16px;
+              height: 16px;
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: contain;
+              background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store_caret2.svg?v=1640578093);
+            }
+          }
+        }
+        .place{
+          display: block;
+          font-size: 1.4rem;
+          line-height: 1.6;
+          letter-spacing: 0.5px;
+          margin-bottom: 15px;
+        }
+        .date{
+          display: block;
+          font-size: 1.2rem;
+          color: #646464;
+          letter-spacing: 0.44px;
+        }
       }
     }
   }
@@ -50,36 +89,17 @@
 
 @media screen and (max-width: 980px){
   .comp-popup-archive{
+    display: block;
     .archive_item{
-      width: 47%;
-      margin-right: 6%;
-      margin-bottom: 50px;
-      padding-bottom: 0px;
-      border-bottom: 0px solid #d8d8d8;
-      display: block;
-      &:nth-of-type(2n){
-        margin-right: 0;
-      }
-      .img_wrap{
-        width: 100%;
-        margin-right: 0px;
-        margin-bottom: 30px;
-      }
-      .txt_wrap{
-        width: 100%;
-        .shop_name{
-          font-size: 1.5rem;
-          letter-spacing: 0.5px;
-          padding-left: 30px;
-          background-size: 18px;
-          margin-bottom: 15px;
-        }
-        .date{
-          margin-bottom: 25px;
-        }
-        .link{
-          font-size: 1.6rem;
-        }
+      width: 100%;
+      margin-right: 0%;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #d8d8d8;
+      &:nth-last-of-type(1){
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        border-bottom: 0px solid #d8d8d8;
       }
     }
   }
@@ -88,16 +108,39 @@
 @media screen and (max-width: 720px){
   .comp-popup-archive{
     .archive_item{
-      width: 100%;
-      margin-right: 0;
-      margin-bottom: 50px;
-      display: block;
-      &:nth-last-of-type(1){
-        margin-bottom: 0;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      .img_wrap{
+        width: 100px;
+        margin-right: 15px;
       }
       .txt_wrap{
-        width: 100%;
-        padding: 0 5px;
+        width: calc(100% - 115px);
+        .info_wrap{
+          .shop_name{
+            font-size: 1.8rem;
+            line-height: 1.6;
+            margin-bottom: 5px;
+            span{
+              padding-right: 22px;
+              &::after{
+                content: "";
+                width: 14px;
+                height: 14px;
+              }
+            }
+          }
+          .place{
+            font-size: 1.2rem;
+            line-height: 1.6;
+            letter-spacing: 0.44px;
+            margin-bottom: 10px;
+          }
+          .date{
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+          }
+        }
       }
     }
   }

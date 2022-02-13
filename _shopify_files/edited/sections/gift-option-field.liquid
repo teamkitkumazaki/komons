@@ -39,7 +39,7 @@
           </div>
           <div class="option_item tesage">
             <label>
-              <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_tesage_yv4i6v.jpg)"></div>
+              <div class="img_wrap" {% if product.handle != 'k0018' and product.handle != 'k0027' %}style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_tesage_yv4i6v.jpg)"{%- else -%}style="background-image:url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/tesage_large_2c7b4458-19db-48c5-a5f0-8fcc4a70f4cd.jpg?v=1644388616)"{%- endif -%}></div>
               <div class="input_wrap">
                 <input type="checkbox" name="tesage" value="tesage">
                 <span class="radio_checker"></span>

@@ -20,7 +20,7 @@
       right:0;
       margin: auto;
     }
-    .section_inner{
+    .section_inner_new{
       @include flexSet;
       justify-content: flex-start;
       align-items: center;
@@ -30,29 +30,28 @@
         width: 540px;
         color: #fff;
         .main_ttl{
-          padding-bottom: 10px;
-          margin-bottom: 15px;
-          border-bottom: 1px solid #fff;
+          padding-bottom: 0px;
+          margin-bottom: 25px;
           .title_en{
             display: block;
             font-size: 54px;
             @include libre-r;
             letter-spacing: 1px;
             padding-right: 0.2em;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             text-indent: -2px;
           }
           .title_ja{
-            font-size: 18px;
+            font-size: 1.8rem;
             font-weight: normal;
             line-height: normal;
             letter-spacing: normal;
           }
         }
         .main_desc{
-          font-size: 16px;
+          font-size: 1.4rem;
           font-weight: normal;
-          line-height: 1.52;
+          line-height: 2;
           letter-spacing: 0.46px;
         }
       }
@@ -62,12 +61,16 @@
       }
     }
   }
-  .section-service01{
-    margin-bottom: 100px;
+  .section-service{
+    margin-bottom: 40px;
+    .section_ttl{
+      max-width: 100%;
+      margin-bottom: 70px;
+    }
   }
-  .section-service02{
-    padding: 80px 0;
-    background-color: #f8f8f8;
+  .section-faq{
+    border-top: 1px solid #f1f1f1;
+    margin-bottom: 20px;
   }
 }
 
@@ -85,33 +88,24 @@
       .main_visual{
         width: 100%;
         height: 500px;
-        position: static;
-        background-position: top center;
-        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/main_tab_vkkeyh.jpg);
         bottom: unset;
         margin: auto;
       }
-      .section_inner{
-        display: block;
-        position: relative;
-        z-index: 10;
+      .section_inner_new{
         .txt_wrap{
-          width: 100%;
-          padding: 0 30px;
+          width: 50%;
+          padding: 30px 30px 0;
           box-sizing: border-box;
-          padding-bottom: 50px;
-        }
-        .height_adjust{
-          display: none;
+          padding-bottom: 0px;
+          @media screen and (max-width: 980px){
+            width: 55%;
+            padding: 30px 0px 0;
+          }
         }
       }
     }
-    .section-service01{
-      margin-bottom: 80px;
-      padding: 0 30px;
-    }
-    .section-service02{
-      padding: 60px 30px;
+    .section-service{
+      margin-bottom: 20px;
     }
   }
 }
@@ -125,17 +119,17 @@
       h2{
         span{
           display: block;
-          font-size: 30px;
+          font-size: 3.4rem;
           padding-right: 0;
-          margin-bottom: 10px;
+          margin-bottom: 20px;
         }
         font{
-          font-size: 16px;
+          font-size: 1.8rem;
         }
       }
     }
     .section-main{
-      margin-bottom: 40px;
+      margin-bottom: 60px;
       background: #4d0010;
       .main_visual{
         width: 100%;
@@ -143,8 +137,9 @@
         background-size: contain;
         background-position: center center;
         background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/main_sp_ekk7dy.jpg);
+        position: static;
       }
-      .section_inner{
+      .section_inner_new{
         position: relative;
         z-index: 10;
         .txt_wrap{
@@ -156,36 +151,36 @@
             align-items: center;
             justify-content: flex-start;
             padding-bottom: 0px;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
             border-bottom: 0px;
             .title_en{
-              font-size: 28px;
+              font-size: 4.2rem;
               font-weight: normal;
               line-height: normal;
               letter-spacing: 0.05em;
               margin-right: 7px;
-              margin-bottom: 3px;
+              margin-bottom: 5px;
               text-indent: 0px;
             }
             .title_ja{
-              font-size: 18px;
+              font-size: 1.6rem;
             }
           }
           .main_desc{
-            font-size: 14px;
-            line-height: 1.6;
-            letter-spacing: 0.46px;
-            text-align: justify;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+            text-align: left;
           }
+        }
+        .height_adjust{
+          display: none;
         }
       }
     }
-    .section-service01{
-      padding: 0;
-      margin-bottom: 60px;
-    }
-    .section-service02{
-      padding: 50px 0 60px;
+    .section-faq{
+      padding: 60px 0;
+      margin-bottom: 0;
     }
   }
 }
