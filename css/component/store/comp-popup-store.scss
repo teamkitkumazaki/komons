@@ -1,31 +1,66 @@
 .comp-popup-store{
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid #d8d8d8;
   .popup_item{
     @include flexSet;
+    flex-direction: row-reverse;
+    box-sizing: border-box;
     align-items: center;
-    margin-bottom: 35px;
-    padding-bottom: 35px;
-    border-bottom: 1px solid #d8d8d8;
-    &:nth-last-of-type(1){
-      margin-bottom: 0px;
-      padding-bottom: 0px;
-      border-bottom: 0px solid #d8d8d8;
-    }
     .img_wrap{
-      width: 380px;
-      margin-right: 40px;
+      width: 45%;
+      margin-right: 0px;
+      a{
+        display: block;
+        overflow: hidden;
+        img{
+          transition: transform 0.3s, filter 0.3s;
+          will-change: transform, filter;
+        }
+        &:hover{
+          img{
+            filter: brightness(1.1);
+            transform: scale(1.05);
+          }
+        }
+      }
     }
     .txt_wrap{
-      width: calc(100% - 420px);
+      width: 55%;
+      box-sizing: border-box;
+      .shop_ttl{
+        margin-bottom: 30px;
+      }
       .shop_name{
+        display: block;
         font-size: 1.8rem;
         line-height: normal;
         letter-spacing: normal;
+        color: inherit;
         margin-bottom: 10px;
-        padding-left: 40px;
-        background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store.svg?v=1640016183);
-        background-size: 26px;
-        background-position: left top 2px;
-        background-repeat: no-repeat;
+        &.link{
+          @include hover;
+          span{
+            display: inline-block;
+            padding-right: 22px;
+            position: relative;
+            &::after{
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              margin: auto;
+              display: block;
+              content: "";
+              width: 16px;
+              height: 16px;
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: contain;
+              background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store_caret2.svg?v=1640578093);
+            }
+          }
+        }
       }
       .address{
         font-size: 1.4rem;
@@ -37,7 +72,7 @@
       .event_detail{
         font-size: 1.4rem;
         letter-spacing: 0.5px;
-        margin-bottom: 25px;
+        margin-bottom: 0;
         .detail_item{
           @include flexSet;
           line-height: 2;
@@ -63,6 +98,8 @@
 
 @media screen and (max-width: 980px){
   .comp-popup-store{
+    margin-bottom: 60px;
+    padding-bottom: 60px;
     .popup_item{
       .img_wrap{
         width: 100%;
@@ -71,6 +108,61 @@
       }
       .txt_wrap{
         width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px){
+  .comp-popup-store{
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    .popup_item{
+      .img_wrap{
+        width: 100%;
+        margin-right: 0px;
+      }
+      .txt_wrap{
+        width: 100%;
+        .shop_ttl{
+          margin-bottom: 10px;
+        }
+        .shop_name{
+          display: block;
+          font-size: 1.6rem;
+          margin-bottom: 10px;
+          &.link{
+            @include hover;
+            span{
+              display: inline-block;
+              padding-right: 22px;
+              position: relative;
+              &::after{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                display: block;
+                content: "";
+                width: 16px;
+                height: 16px;
+              }
+            }
+          }
+        }
+        .address{
+          font-size: 1.3rem;
+          letter-spacing: 0.44px;
+          color: $basicGreen;
+          margin-bottom: 15px;
+        }
+        .event_detail{
+          font-size: 1.2rem;
+          letter-spacing: 0.5px;
+          margin-bottom: 0;
+          color: #646464;
+        }
       }
     }
   }

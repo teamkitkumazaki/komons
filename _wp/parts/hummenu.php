@@ -79,6 +79,11 @@
             </a>
           </div>
           <div class="menu_item">
+            <a class="parent" href="https://journal.komons-japan.com/shoplist">
+              <span class="ja">取扱店舗・イベント</span>
+            </a>
+          </div>
+          <div class="menu_item">
             <a class="parent" href="https://journal.komons-japan.com/">
               <span class="ja">ジャーナル記事一覧</span>
             </a>

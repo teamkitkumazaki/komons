@@ -9366,37 +9366,75 @@ body.loaded #loading {
     right: 5px;
   }
 }
+.comp-popup-store {
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid #d8d8d8;
+}
 .comp-popup-store .popup_item {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: row-reverse;
+  box-sizing: border-box;
   align-items: center;
-  margin-bottom: 35px;
-  padding-bottom: 35px;
-  border-bottom: 1px solid #d8d8d8;
-}
-.comp-popup-store .popup_item:nth-last-of-type(1) {
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  border-bottom: 0px solid #d8d8d8;
 }
 .comp-popup-store .popup_item .img_wrap {
-  width: 380px;
-  margin-right: 40px;
+  width: 45%;
+  margin-right: 0px;
+}
+.comp-popup-store .popup_item .img_wrap a {
+  display: block;
+  overflow: hidden;
+}
+.comp-popup-store .popup_item .img_wrap a img {
+  transition: transform 0.3s, filter 0.3s;
+  will-change: transform, filter;
+}
+.comp-popup-store .popup_item .img_wrap a:hover img {
+  filter: brightness(1.1);
+  transform: scale(1.05);
 }
 .comp-popup-store .popup_item .txt_wrap {
-  width: calc(100% - 420px);
+  width: 55%;
+  box-sizing: border-box;
+}
+.comp-popup-store .popup_item .txt_wrap .shop_ttl {
+  margin-bottom: 30px;
 }
 .comp-popup-store .popup_item .txt_wrap .shop_name {
+  display: block;
   font-size: 1.8rem;
   line-height: normal;
   letter-spacing: normal;
+  color: inherit;
   margin-bottom: 10px;
-  padding-left: 40px;
-  background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store.svg?v=1640016183);
-  background-size: 26px;
-  background-position: left top 2px;
+}
+.comp-popup-store .popup_item .txt_wrap .shop_name.link {
+  transition: opacity 0.3s;
+}
+.comp-popup-store .popup_item .txt_wrap .shop_name.link:hover {
+  opacity: 0.75;
+}
+.comp-popup-store .popup_item .txt_wrap .shop_name.link span {
+  display: inline-block;
+  padding-right: 22px;
+  position: relative;
+}
+.comp-popup-store .popup_item .txt_wrap .shop_name.link span::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  content: "";
+  width: 16px;
+  height: 16px;
   background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store_caret2.svg?v=1640578093);
 }
 .comp-popup-store .popup_item .txt_wrap .address {
   font-size: 1.4rem;
@@ -9408,7 +9446,7 @@ body.loaded #loading {
 .comp-popup-store .popup_item .txt_wrap .event_detail {
   font-size: 1.4rem;
   letter-spacing: 0.5px;
-  margin-bottom: 25px;
+  margin-bottom: 0;
 }
 .comp-popup-store .popup_item .txt_wrap .event_detail .detail_item {
   display: flex;
@@ -9435,6 +9473,10 @@ body.loaded #loading {
 }
 
 @media screen and (max-width: 980px) {
+  .comp-popup-store {
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+  }
   .comp-popup-store .popup_item .img_wrap {
     width: 100%;
     margin-right: 0px;
@@ -9442,6 +9484,61 @@ body.loaded #loading {
   }
   .comp-popup-store .popup_item .txt_wrap {
     width: 100%;
+  }
+}
+@media screen and (max-width: 720px) {
+  .comp-popup-store {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+  }
+  .comp-popup-store .popup_item .img_wrap {
+    width: 100%;
+    margin-right: 0px;
+  }
+  .comp-popup-store .popup_item .txt_wrap {
+    width: 100%;
+  }
+  .comp-popup-store .popup_item .txt_wrap .shop_ttl {
+    margin-bottom: 10px;
+  }
+  .comp-popup-store .popup_item .txt_wrap .shop_name {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  .comp-popup-store .popup_item .txt_wrap .shop_name.link {
+    transition: opacity 0.3s;
+  }
+  .comp-popup-store .popup_item .txt_wrap .shop_name.link:hover {
+    opacity: 0.75;
+  }
+  .comp-popup-store .popup_item .txt_wrap .shop_name.link span {
+    display: inline-block;
+    padding-right: 22px;
+    position: relative;
+  }
+  .comp-popup-store .popup_item .txt_wrap .shop_name.link span::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    content: "";
+    width: 16px;
+    height: 16px;
+  }
+  .comp-popup-store .popup_item .txt_wrap .address {
+    font-size: 1.3rem;
+    letter-spacing: 0.44px;
+    color: #00381f;
+    margin-bottom: 15px;
+  }
+  .comp-popup-store .popup_item .txt_wrap .event_detail {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 0;
+    color: #646464;
   }
 }
 .comp-stock-list .store_list_wrap {
@@ -9521,12 +9618,12 @@ body.loaded #loading {
   padding-left: 1rem;
 }
 .comp-stock-list .store_list_wrap .store_item .shop_info .detail_txt {
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 1.3rem;
   color: #646464;
   letter-spacing: 0.5px;
   line-height: 1.6;
-  margin-bottom: 10px;
+  margin-bottom: -5px;
 }
 
 @media screen and (max-width: 720px) {
@@ -9602,87 +9699,131 @@ body.loaded #loading {
   margin-right: 0;
 }
 .comp-popup-archive .archive_item .img_wrap {
-  width: 150px;
+  width: 120px;
   margin-right: 25px;
 }
-.comp-popup-archive .archive_item .txt_wrap {
-  width: calc(100% - 175px);
+.comp-popup-archive .archive_item .img_wrap a {
+  display: block;
+  overflow: hidden;
 }
-.comp-popup-archive .archive_item .txt_wrap .shop_name {
-  font-size: 1.6rem;
+.comp-popup-archive .archive_item .img_wrap a img {
+  transition: transform 0.3s, filter 0.3s;
+  will-change: transform, filter;
+}
+.comp-popup-archive .archive_item .img_wrap a:hover img {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+.comp-popup-archive .archive_item .txt_wrap {
+  width: calc(100% - 145px);
+}
+.comp-popup-archive .archive_item .txt_wrap .info_wrap {
+  display: block;
+  transition: opacity 0.3s;
+  color: inherit;
+}
+.comp-popup-archive .archive_item .txt_wrap .info_wrap:hover {
+  opacity: 0.75;
+}
+.comp-popup-archive .archive_item .txt_wrap .info_wrap .shop_name {
+  display: block;
+  font-size: 2.4rem;
+  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
   line-height: 1.6;
   letter-spacing: 1px;
-  padding-left: 30px;
-  margin-bottom: 10px;
-  background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store.svg?v=1640016183);
+  margin-bottom: 5px;
   background-size: 20px;
   background-position: left top 3px;
   background-repeat: no-repeat;
 }
-.comp-popup-archive .archive_item .txt_wrap .date {
+.comp-popup-archive .archive_item .txt_wrap .info_wrap .shop_name span {
+  position: relative;
+  display: inline-block;
+  padding-right: 25px;
+}
+.comp-popup-archive .archive_item .txt_wrap .info_wrap .shop_name span::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store_caret2.svg?v=1640578093);
+}
+.comp-popup-archive .archive_item .txt_wrap .info_wrap .place {
+  display: block;
   font-size: 1.4rem;
+  line-height: 1.6;
   letter-spacing: 0.5px;
-  color: #646464;
   margin-bottom: 15px;
 }
-.comp-popup-archive .archive_item .txt_wrap .link {
-  transition: opacity 0.3s;
-  color: inherit;
-  font-size: 1.4rem;
-  text-decoration: underline;
-  transition: opacity 0.3s;
-}
-.comp-popup-archive .archive_item .txt_wrap .link:hover {
-  opacity: 0.75;
+.comp-popup-archive .archive_item .txt_wrap .info_wrap .date {
+  display: block;
+  font-size: 1.2rem;
+  color: #646464;
+  letter-spacing: 0.44px;
 }
 
 @media screen and (max-width: 980px) {
-  .comp-popup-archive .archive_item {
-    width: 47%;
-    margin-right: 6%;
-    margin-bottom: 50px;
-    padding-bottom: 0px;
-    border-bottom: 0px solid #d8d8d8;
+  .comp-popup-archive {
     display: block;
   }
-  .comp-popup-archive .archive_item:nth-of-type(2n) {
-    margin-right: 0;
-  }
-  .comp-popup-archive .archive_item .img_wrap {
+  .comp-popup-archive .archive_item {
     width: 100%;
-    margin-right: 0px;
+    margin-right: 0%;
     margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d8d8d8;
   }
-  .comp-popup-archive .archive_item .txt_wrap {
-    width: 100%;
-  }
-  .comp-popup-archive .archive_item .txt_wrap .shop_name {
-    font-size: 1.5rem;
-    letter-spacing: 0.5px;
-    padding-left: 30px;
-    background-size: 18px;
-    margin-bottom: 15px;
-  }
-  .comp-popup-archive .archive_item .txt_wrap .date {
-    margin-bottom: 25px;
-  }
-  .comp-popup-archive .archive_item .txt_wrap .link {
-    font-size: 1.6rem;
+  .comp-popup-archive .archive_item:nth-last-of-type(1) {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    border-bottom: 0px solid #d8d8d8;
   }
 }
 @media screen and (max-width: 720px) {
   .comp-popup-archive .archive_item {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 50px;
-    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
   }
-  .comp-popup-archive .archive_item:nth-last-of-type(1) {
-    margin-bottom: 0;
+  .comp-popup-archive .archive_item .img_wrap {
+    width: 100px;
+    margin-right: 15px;
   }
   .comp-popup-archive .archive_item .txt_wrap {
-    width: 100%;
-    padding: 0 5px;
+    width: calc(100% - 115px);
+  }
+  .comp-popup-archive .archive_item .txt_wrap .info_wrap .shop_name {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 5px;
+  }
+  .comp-popup-archive .archive_item .txt_wrap .info_wrap .shop_name span {
+    padding-right: 22px;
+  }
+  .comp-popup-archive .archive_item .txt_wrap .info_wrap .shop_name span::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+  }
+  .comp-popup-archive .archive_item .txt_wrap .info_wrap .place {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    letter-spacing: 0.44px;
+    margin-bottom: 10px;
+  }
+  .comp-popup-archive .archive_item .txt_wrap .info_wrap .date {
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
   }
 }
 /* ギフトサービス */
@@ -9880,6 +10021,7 @@ body.loaded #loading {
   align-items: center;
   font-family: inherit;
   width: 100%;
+  margin: 0 !important;
   box-sizing: border-box;
   background: transparent;
   justify-content: flex-start;
@@ -9888,6 +10030,7 @@ body.loaded #loading {
   cursor: pointer;
   border: none;
   text-align: left;
+  color: #00381f;
 }
 .comp-qa .qa_toggle .toggle_item .toggle_button .icon {
   width: 40px;
@@ -9960,7 +10103,7 @@ body.loaded #loading {
 }
 .comp-qa .qa_toggle .toggle_item .toggle_contents .description p {
   font-size: 1.4rem;
-  color: #464646;
+  color: #00381f;
   line-height: 1.8;
   letter-spacing: 0.3px;
 }
@@ -12252,19 +12395,21 @@ body.loaded #loading {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 35px;
-  margin-bottom: 35px;
+  align-items: center;
+  padding-bottom: 45px;
+  margin-bottom: 45px;
   border-bottom: 1px dotted #ccc;
 }
 #itemDetail #features .detail_list .detail_wrap .txt_wrap {
-  width: calc(100% - 485px);
+  width: calc(100% - 500px);
   padding-top: 15px;
+  margin-bottom: 20px;
 }
 #itemDetail #features .detail_list .detail_wrap .txt_wrap h4 {
   align-items: center;
   font-size: 16px;
   letter-spacing: 1px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 #itemDetail #features .detail_list .detail_wrap .txt_wrap h4 .num {
   display: none;
@@ -12287,7 +12432,7 @@ body.loaded #loading {
   width: 100%;
   font-size: 20px;
   line-height: 1.65;
-  letter-spacing: 4px;
+  letter-spacing: 0.05em;
   display: block;
   margin-top: 5px;
 }
@@ -12297,7 +12442,7 @@ body.loaded #loading {
 #itemDetail #features .detail_list .detail_wrap .txt_wrap p {
   font-size: 14px;
   line-height: 2;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 }
 #itemDetail #features .detail_list .detail_wrap .txt_wrap p span {
   display: block;
@@ -12334,14 +12479,14 @@ body.loaded #loading {
 }
 #itemDetail #features .detail_list .detail_wrap.img_left .img_wrap {
   width: 450px;
-  margin-right: 35px;
+  margin-right: 50px;
 }
 #itemDetail #features .detail_list .detail_wrap.img_right {
   flex-direction: row-reverse;
 }
 #itemDetail #features .detail_list .detail_wrap.img_right .img_wrap {
   width: 450px;
-  margin-left: 35px;
+  margin-left: 50px;
 }
 #itemDetail #features .detail_list .detail_wrap.img_full {
   display: block;
@@ -13318,6 +13463,7 @@ body.loaded #loading {
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 30px;
   }
 }
 @media screen and (max-width: 750px) and (max-width: 1150px) {
@@ -13332,8 +13478,9 @@ body.loaded #loading {
 }
 @media screen and (max-width: 750px) {
   #itemDetail #features .detail_list .detail_wrap {
-    padding-bottom: 25px;
-    margin-bottom: 25px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 0px !important;
   }
   #itemDetail #features .detail_list .detail_wrap .txt_wrap {
     width: 100%;
@@ -15162,9 +15309,6 @@ body.loaded #loading {
   line-height: normal;
   letter-spacing: 0.73px;
 }
-.page-stockist .section-main {
-  margin-bottom: 100px;
-}
 .page-stockist .section-shop-list {
   margin-bottom: 100px;
 }
@@ -15224,9 +15368,7 @@ body.loaded #loading {
   }
   .page-stockist .section_ttl {
     padding-top: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #d8d8d8;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
   .page-stockist .shop_ttl {
     margin-bottom: 30px;
@@ -15239,11 +15381,6 @@ body.loaded #loading {
   .page-stockist .shop_ttl .ttl_ja {
     font-size: 1.4rem;
     letter-spacing: 0.5px;
-  }
-  .page-stockist .section-main {
-    margin-bottom: 40px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #d8d8d8;
   }
   .page-stockist .section-shop-list {
     margin-bottom: 40px;

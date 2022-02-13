@@ -15,40 +15,41 @@
       <div class="section_ttl">
         <h1><span>Shop List</span><font>店舗一覧</font></h1>
       </div>
-      <hgroup class="shop_ttl">
-        <span class="ttl_en">Popup Store</span>
-        <h2 class="ttl_ja">イベント情報</h2>
-      </hgroup>
-      <div class="comp-popup-store">
+      <!--<div class="comp-popup-store">
         <div class="popup_item">
           <div class="img_wrap">
-            <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/popup_image.jpg?v=1640010685">
+            <a href="#aaaa">
+              <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/popup_image.jpg?v=1640010685">
+            </a>
           </div>
           <div class="txt_wrap">
-            <h3 class="shop_name">酒屋「花」/ コーヒースタンド「烏」</h3>
-            <p class="address">〒160-0022 東京都渋谷区桜丘町30-15 ビバリーヒルズ102<br>(渋谷駅から徒歩約6分)</p>
+            <hgroup class="shop_ttl">
+              <span class="ttl_en">Popup Store</span>
+              <h2 class="ttl_ja">イベント情報</h2>
+            </hgroup>
+            <a class="shop_name link" href="#aaaa"><span>酒屋「花」/ コーヒースタンド「烏」</span></a>
+            <p class="address">〒160-0022 東京都渋谷区桜丘町30-15 ビバリーヒルズ102(渋谷駅から徒歩約6分)</p>
             <div class="event_detail">
               <div class="detail_item">
                 <span class="ttl">開催期間</span>
-                <p class="contents">2021年11月20日(土) - 21日(日)</p>
+                <p class="contents">2020年11月20日,21日</p>
               </div>
               <div class="detail_item">
                 <span class="ttl">営業時間</span>
                 <p class="contents">11:00 - 18:00</p>
               </div>
             </div>
-            <a class="map" href="#aaaa" target="_blank"><span>Google Map</span></a>
           </div>
         </div>
-      </div><!-- comp-popup-store -->
+      </div> -->
     </div><!-- section_inner -->
   </section>
   <section class="section-shop-list">
     <div class="section_inner_new">
-      <hgroup class="shop_ttl">
+      <!--<hgroup class="shop_ttl">
         <span class="ttl_en">Stockist</span>
         <span class="ttl_ja">取扱店舗一覧</span>
-      </hgroup>
+      </hgroup> -->
       <div class="stock_flex">
         <div class="category_wrap">
           <span class="category_ttl">エリア一覧</span>
@@ -136,50 +137,50 @@
       <div class="comp-popup-archive">
         <div class="archive_item">
           <div class="img_wrap">
-            <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/popup_image.jpg?v=1640010685">
+            <a href="https://journal.komons-japan.com/archives/1060"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/shop01.jpg?v=1642429855"></a>
           </div>
           <div class="txt_wrap">
-            <div class="info_wrap">
-              <h3 class="shop_name">酒屋「花」/ コーヒースタンド「烏」</h3>
-              <p class="date">2021年11月20日(土) - 21日(日)</p>
-            </div>
-            <a class="link" href="#aaaa">Detail</a>
+            <a href="https://journal.komons-japan.com/archives/1060" class="info_wrap">
+              <span class="shop_name"><span>Free as Every Bird</span></span>
+              <span class="place">@酒屋 花</span>
+              <span class="date">2021年11月20日 - 21日</span>
+            </a>
           </div>
         </div>
         <div class="archive_item">
           <div class="img_wrap">
-            <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/popup_image.jpg?v=1640010685">
+            <a href="https://journal.komons-japan.com/archives/190"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/shop02.jpg?v=1642429856"></a>
           </div>
           <div class="txt_wrap">
-            <div class="info_wrap">
-              <h3 class="shop_name">酒屋「花」/ コーヒースタンド「烏」</h3>
-              <p class="date">2021年11月20日(土) - 21日(日)</p>
-            </div>
-            <a class="link" href="#aaaa">Detail</a>
+            <a href="https://journal.komons-japan.com/archives/190" class="info_wrap">
+              <span class="shop_name"><span>Komons Fair</span></span>
+              <span class="place">@カリモク60新宿店 / カリモク60ららぽーと豊洲店</span>
+              <span class="date">2020年12月4日(土) - 22日(日)</span>
+            </a>
           </div>
         </div>
         <div class="archive_item">
           <div class="img_wrap">
-            <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/popup_image.jpg?v=1640010685">
+              <a target="_blank" href="https://www.facebook.com/komons.japan/posts/795155317980705"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/shop04.jpg?v=1642429855"></a>
           </div>
           <div class="txt_wrap">
-            <div class="info_wrap">
-              <h3 class="shop_name">酒屋「花」/ コーヒースタンド「烏」</h3>
-              <p class="date">2021年11月20日(土) - 21日(日)</p>
-            </div>
-            <a class="link" href="#aaaa">Detail</a>
+            <a target="_blank" href="https://www.facebook.com/komons.japan/posts/795155317980705" class="info_wrap">
+              <span class="shop_name"><span>DEAR</span></span>
+              <span class="place">@EQUALAND(MIYASHITA PARK)</span>
+              <span class="date">2020年10月1日-12月31日</span>
+            </a>
           </div>
         </div>
         <div class="archive_item">
           <div class="img_wrap">
-            <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/popup_image.jpg?v=1640010685">
+            <a target="_blank" href="https://www.facebook.com/komons.japan/posts/632448070918098"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/shop03.jpg?v=1642429855"></a>
           </div>
           <div class="txt_wrap">
-            <div class="info_wrap">
-              <h3 class="shop_name">酒屋「花」/ コーヒースタンド「烏」</h3>
-              <p class="date">2021年11月20日(土) - 21日(日)</p>
-            </div>
-            <a class="link" href="#aaaa">Detail</a>
+            <a target="_blank" href="https://www.facebook.com/komons.japan/posts/632448070918098" class="info_wrap">
+              <span class="shop_name"><span>Popup Store</span></span>
+              <span class="place">@六本松 蔦屋書店</span>
+              <span class="date">2020年2月20日-3月31日</span>
+            </a>
           </div>
         </div>
       </div><!-- comp-popup-archive -->
