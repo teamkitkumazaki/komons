@@ -147,3 +147,40 @@
     }
   }
 }
+
+@media screen and (min-width: 1100px){
+  .comp-cart-wrap {
+    margin-top: 20px;
+
+    .order_lot {
+      margin-bottom: 20px;
+
+      .title {
+        font-size: 1.6rem;
+      }
+
+      .input_wrap {
+        width: 120px;
+        position: relative;
+
+        button {
+          cursor: pointer;
+          }
+        }
+
+        input[name="quantity"] {
+          width: 100%;
+          border: none;
+          font-size: 1.6rem;
+          text-align: center;
+        }
+      }
+      .cart_note{
+        margin-top: 25px;
+        button{
+          margin: 0 1em 0 0;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }

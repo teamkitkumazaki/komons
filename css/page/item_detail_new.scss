@@ -180,3 +180,123 @@
 		}
 	}
 }
+
+@media screen and (min-width: 980px){
+	.page-item-detail-new{
+		.section-main{
+			.main_flex{
+				@include flexSet;
+				align-items: flex-start;
+				.item_thumb{
+					width: 50%;
+					order: 1;
+				}
+				.main_detail{
+					width: 50%;
+					order: 0;
+					position: sticky;
+					top: 60px;
+					left:0;
+					height: calc(100vh - 60px);
+					@include flexSet;
+					align-items: center;
+					margin: 0;
+					.detail_inner{
+						max-width: unset;
+						margin: 0 auto;
+						padding: 0 50px;
+					}
+				}
+				.main_description{
+					width: 50%;
+					margin-left: 50%;
+					order: 2;
+					.desc_inner{
+						padding: 60px 50px 70px;
+					}
+				}
+			}
+		}
+		.section-related-item{
+			margin-top: 100px;
+			margin-bottom: 100px;
+		}
+		.section-related-journal{
+			margin-bottom: 100px;
+		}
+		.section-item-list{
+			margin-bottom: 100px;
+		}
+	}
+}
+
+@media screen and (min-width: 1100px){
+	.page-item-detail-new{
+		.section-main{
+			.main_flex{
+				.main_detail{
+					top: 40px;
+					height: calc(100vh - 40px);
+					.detail_inner{
+						max-width: unset;
+						margin: 0 auto;
+						padding: 0 80px;
+						.prod_info{
+							padding-bottom: 5px;
+							margin-bottom: 20px;
+							.category{
+								font-size: 1.4rem;
+								margin-bottom: 10px;
+							}
+							.prod_name{
+								line-height: 1.6;
+								@include flexSet;
+								align-items: baseline;
+								justify-content: flex-start;
+								.name{
+									font-size: 2.6rem;
+									text-indent: -0.1em;
+									margin-right: 10px;
+									margin-bottom: 5px;
+								}
+								.genre{
+									font-size: 1.6rem;
+								}
+							}
+						}
+						.price_wrap{
+							font-size: 1.4rem;
+							margin-bottom: 30px;
+							.volume{
+								color: #464646;
+							}
+						}
+						.desc_wrap{
+							font-size: 1.5rem;
+							letter-spacing: 0.01em;
+							margin-bottom: 30px;
+							span{
+								display: block;
+							}
+						}
+					}
+				}
+				.main_description{
+					.desc_inner{
+						padding: 80px 80px 80px;
+					}
+				}
+			}
+		}
+		.section-related-item{
+			margin-top: 120px;
+			margin-bottom: 100px;
+		}
+		.section-related-journal{
+			margin-bottom: 100px;
+		}
+		.section-item-list{
+			margin-bottom: 100px;
+		}
+	}
+}

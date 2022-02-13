@@ -87,3 +87,18 @@
     }
   }
 }
+@media screen and (min-width: 980px){
+  .comp-related-item-slide{
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    .slide_inner{
+      width: 100%;
+      justify-content: space-between;
+      .related_item{
+        width: 31%;
+        margin-right: 0vw;
+      }
+    }
+  }
+}

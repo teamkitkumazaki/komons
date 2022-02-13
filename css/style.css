@@ -10284,7 +10284,6 @@ body.loaded #loading {
 }
 .comp-gift-options-new .option_help button span {
   position: relative;
-  text-decoration: underline;
 }
 .comp-gift-options-new .form_wrap .radio_wrap {
   display: -webkit-box;
@@ -10359,6 +10358,44 @@ body.loaded #loading {
   display: block;
 }
 
+@media screen and (min-width: 1100px) {
+  .comp-gift-options-new {
+    position: relative;
+  }
+  .comp-gift-options-new .item_label {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  .comp-gift-options-new .option_help {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+  }
+  .comp-gift-options-new .form_wrap .radio_wrap {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comp-gift-options-new .form_wrap .radio_wrap label {
+    width: auto;
+    font-size: 1.5rem;
+    padding: 15px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .comp-gift-options-new .form_wrap .radio_wrap label:nth-of-type(3) {
+    width: auto;
+  }
+  .comp-gift-options-new .form_wrap .radio_wrap label .name {
+    pointer-events: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+}
 .comp-cart-wrap {
   margin-top: 30px;
 }
@@ -10521,6 +10558,37 @@ body.loaded #loading {
   text-decoration: underline;
 }
 
+@media screen and (min-width: 1100px) {
+  .comp-cart-wrap {
+    margin-top: 20px;
+  }
+  .comp-cart-wrap .order_lot {
+    margin-bottom: 20px;
+  }
+  .comp-cart-wrap .order_lot .title {
+    font-size: 1.6rem;
+  }
+  .comp-cart-wrap .order_lot .input_wrap {
+    width: 120px;
+    position: relative;
+  }
+  .comp-cart-wrap .order_lot .input_wrap button {
+    cursor: pointer;
+  }
+  .comp-cart-wrap .order_lot input[name=quantity] {
+    width: 100%;
+    border: none;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .comp-cart-wrap .cart_note {
+    margin-top: 25px;
+  }
+  .comp-cart-wrap .cart_note button {
+    margin: 0 1em 0 0;
+    font-size: 1.5rem;
+  }
+}
 .comp-detail-title {
   margin-bottom: 40px;
 }
@@ -10607,6 +10675,8 @@ body.loaded #loading {
   font-size: 1.6rem;
   padding: 15px 0;
   text-align: center;
+  -webkit-transition: color 0.3s, background 0.3s;
+  transition: color 0.3s, background 0.3s;
 }
 .comp-detail-button a span {
   display: inline-block;
@@ -10647,6 +10717,12 @@ body.loaded #loading {
   height: 10px;
   background-size: 18px;
 }
+.comp-detail-button a:hover {
+  background: #dfdfdf;
+}
+.comp-detail-button a:hover span::after {
+  right: -5px;
+}
 
 @media screen and (min-width: 720px) {
   .comp-detail-button {
@@ -10654,6 +10730,19 @@ body.loaded #loading {
   }
   .comp-detail-button a {
     padding: 25px 0;
+  }
+  .comp-detail-button a.small {
+    font-size: 1.4rem;
+    padding: 20px 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  .comp-detail-button {
+    margin-top: 25px;
+    max-width: 50%;
+  }
+  .comp-detail-button a {
+    padding: 20px 0;
   }
   .comp-detail-button a.small {
     font-size: 1.4rem;
@@ -10789,6 +10878,23 @@ body.loaded #loading {
     font-size: 1.4rem;
   }
 }
+@media screen and (min-width: 980px) {
+  .comp-related-item-slide {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .comp-related-item-slide .slide_inner {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .comp-related-item-slide .slide_inner .related_item {
+    width: 31%;
+    margin-right: 0vw;
+  }
+}
 .comp-related-journal-slide {
   width: 100vw;
   margin-left: -7vw;
@@ -10890,6 +10996,29 @@ body.loaded #loading {
     font-size: 1.3rem;
   }
 }
+@media screen and (min-width: 980px) {
+  .comp-related-journal-slide .slide_inner .journal_item {
+    width: 23%;
+    margin-bottom: 0px;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .img_wrap {
+    margin-bottom: 20px;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .img_wrap a {
+    max-height: 12.5vw;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .txt_wrap {
+    padding: 0 5px;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .txt_wrap .article_name {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .txt_wrap .genre {
+    font-size: 1.2rem;
+  }
+}
 .comp-list-link .link_item {
   margin-bottom: 15px;
 }
@@ -10949,6 +11078,36 @@ body.loaded #loading {
     padding: 30px 25px;
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  }
+  .comp-list-link .link_item a .txt_wrap .txt_en {
+    font-size: 3.2rem;
+    margin-right: 15px;
+  }
+  .comp-list-link .link_item a .txt_wrap .txt_ja {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .comp-list-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .comp-list-link .link_item {
+    width: 48.5%;
+    margin-bottom: 0px;
+  }
+  .comp-list-link .link_item a .txt_wrap {
+    padding: 20px;
   }
   .comp-list-link .link_item a .txt_wrap .txt_en {
     font-size: 3.2rem;
@@ -15789,6 +15948,147 @@ body.loaded #loading {
   }
   .page-item-detail-new .section-item-list {
     margin-bottom: 80px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .page-item-detail-new .section-main .main_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .page-item-detail-new .section-main .main_flex .item_thumb {
+    width: 50%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail {
+    width: 50%;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    position: sticky;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner {
+    max-width: unset;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_description {
+    width: 50%;
+    margin-left: 50%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .page-item-detail-new .section-main .main_flex .main_description .desc_inner {
+    padding: 60px 50px 70px;
+  }
+  .page-item-detail-new .section-related-item {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .page-item-detail-new .section-related-journal {
+    margin-bottom: 100px;
+  }
+  .page-item-detail-new .section-item-list {
+    margin-bottom: 100px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .page-item-detail-new .section-main .main_flex .main_detail {
+    top: 40px;
+    height: calc(100vh - 40px);
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner {
+    max-width: unset;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info {
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .category {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name {
+    line-height: 1.6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .name {
+    font-size: 2.6rem;
+    text-indent: -0.1em;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .genre {
+    font-size: 1.6rem;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .price_wrap {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .price_wrap .volume {
+    color: #464646;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .desc_wrap {
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 30px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .desc_wrap span {
+    display: block;
+  }
+  .page-item-detail-new .section-main .main_flex .main_description .desc_inner {
+    padding: 80px 80px 80px;
+  }
+  .page-item-detail-new .section-related-item {
+    margin-top: 120px;
+    margin-bottom: 100px;
+  }
+  .page-item-detail-new .section-related-journal {
+    margin-bottom: 100px;
+  }
+  .page-item-detail-new .section-item-list {
+    margin-bottom: 100px;
   }
 }
 .page-item-group-list .section-basic-item {

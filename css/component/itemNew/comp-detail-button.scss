@@ -7,6 +7,7 @@
     font-size: 1.6rem;
     padding: 15px 0;
     text-align: center;
+    transition: color .3s, background .3s;
     span{
       display: inline-block;
       position: relative;
@@ -44,6 +45,14 @@
         }
       }
     }
+    &:hover{
+      background: #dfdfdf;
+      span{
+        &::after{
+          right: -5px;
+        }
+      }
+    }
   }
 }
 
@@ -58,5 +67,18 @@
       }
     }
   }
+}
 
+@media screen and (min-width: 980px){
+  .comp-detail-button{
+    margin-top: 25px;
+    max-width: 50%;
+    a{
+      padding: 20px 0;
+      &.small{
+        font-size: 1.4rem;
+        padding: 20px 0;
+      }
+    }
+  }
 }
