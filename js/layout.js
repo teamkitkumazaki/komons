@@ -74,6 +74,7 @@ $(function() {
 
     function afterScroll(noAnimate) {
       target.addClass('rolled');
+      $('header').addClass('rolled');
       headerArrow.attr('id', 'arrowReturn');
       scrollSwitch = 1;
     };
@@ -83,6 +84,7 @@ $(function() {
 
       } else {
         target.removeClass('rolled');
+        $('header').removeClass('rolled');
         headerArrow.attr('id', 'arrowScroll');
         scrollSwitch = 0;
       }
