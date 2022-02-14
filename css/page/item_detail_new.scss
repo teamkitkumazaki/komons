@@ -1,6 +1,10 @@
 .page-item-detail-new{
 	padding-top: 0;
 	margin-bottom: 0;
+	overflow: hidden;
+	h1, h2, h3, h4, h5,p, span{
+		-webkit-font-smoothing: antialiased;
+	}
 	.section-main{
 		.main_flex{
 			.main_detail{
@@ -160,6 +164,7 @@
 									}
 									.brand_desc{
 										font-size: 1.5rem;
+										line-height: 2;
 									}
 								}
 							}
@@ -183,6 +188,7 @@
 
 @media screen and (min-width: 980px){
 	.page-item-detail-new{
+		overflow: visible;
 		.section-main{
 			.main_flex{
 				@include flexSet;

@@ -10156,6 +10156,7 @@ body.loaded #loading {
 .comp-item-thumbs {
   position: relative;
   overflow: hidden;
+  background: #00381f;
 }
 .comp-item-thumbs .thumb_number {
   display: block;
@@ -10592,28 +10593,38 @@ body.loaded #loading {
 .comp-detail-title {
   margin-bottom: 40px;
 }
+.comp-detail-title.margin {
+  margin: 0 5px 30px;
+}
 .comp-detail-title hgroup .title_en {
   display: block;
   font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
-  font-size: 3.4rem;
+  font-size: 1.4rem;
   margin-bottom: 12px;
-  text-indent: 0.01em;
 }
 .comp-detail-title hgroup .title_ja {
   display: block;
-  font-size: 1.6rem;
+  font-size: 2.2rem;
+  text-indent: -0.1em;
 }
 
 @media screen and (min-width: 720px) {
   .comp-detail-title {
     margin-bottom: 40px;
   }
+  .comp-detail-title.margin {
+    margin: 0 10px 30px;
+  }
   .comp-detail-title hgroup .title_en {
-    font-size: 3.8rem;
+    font-size: 1.5rem;
     margin-bottom: 15px;
+  }
+  .comp-detail-title hgroup .title_ja {
+    display: block;
+    font-size: 2.8rem;
   }
 }
 .comp-detail-desc .detail_item {
@@ -10663,6 +10674,7 @@ body.loaded #loading {
   }
   .comp-detail-desc .detail_item .txt_wrap .desc_wrap {
     font-size: 1.5rem;
+    line-height: 2;
   }
 }
 .comp-detail-button {
@@ -10752,6 +10764,9 @@ body.loaded #loading {
 .comp-detail-toggle-new .toggle_item {
   height: 35px;
   overflow: hidden;
+  border-bottom: 1px solid #d8d8d8;
+  -webkit-transition: height 0.3s;
+  transition: height 0.3s;
   margin-bottom: 15px;
 }
 .comp-detail-toggle-new .toggle_item:nth-last-of-type(1) {
@@ -10760,12 +10775,11 @@ body.loaded #loading {
 .comp-detail-toggle-new .toggle_item .toggle_button_new {
   width: 100%;
   display: block;
-  padding: 0 0 10px;
+  padding: 0 0 10px 5px;
   font-size: 1.6rem;
   text-align: left;
   border: none;
   font-family: inherit;
-  border-bottom: 1px solid rgba(0, 56, 31, 0.5);
   -webkit-box-shadow: none;
           box-shadow: none;
   background: transparent;
@@ -10779,7 +10793,72 @@ body.loaded #loading {
   background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
   color: inherit;
 }
+.comp-detail-toggle-new .toggle_item .toggle_button_new.active {
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
+}
+.comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item {
+  margin-bottom: 20px;
+}
+.comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item:nth-of-type(1) {
+  margin-top: 10px;
+}
+.comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item .payment_img {
+  width: 80%;
+  margin-left: -5px;
+  margin-top: -5px;
+  max-width: 280px;
+}
+.comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item .img_wrap {
+  margin: 0 5px 15px;
+}
+.comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item .title {
+  display: block;
+  background: #f0f0f0;
+  font-size: 1.5rem;
+  padding: 12px 10px;
+  margin-bottom: 15px;
+}
+.comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item .content p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  padding: 0 10px;
+  margin-bottom: 1rem;
+}
+.comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item .content p:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
 
+@media screen and (min-width: 720px) {
+  .comp-detail-toggle-new .toggle_item {
+    margin-bottom: 15px;
+  }
+  .comp-detail-toggle-new .toggle_item .toggle_button_new {
+    padding: 0 0 15px 10px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+  }
+  .comp-detail-toggle-new .toggle_item .toggle_button_new:hover {
+    color: #046734;
+  }
+  .comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item {
+    margin-bottom: 20px;
+  }
+  .comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item .title {
+    font-size: 1.6rem;
+    padding: 15px 12px;
+    margin-bottom: 15px;
+  }
+  .comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item .content .img_wrap {
+    margin: 0 10px 25px;
+  }
+  .comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item .content p {
+    font-size: 1.4rem;
+    line-height: 2;
+    padding: 0 12px;
+  }
+}
 .comp-related-item-slide {
   width: 100vw;
   margin-left: -7vw;
@@ -15793,6 +15872,10 @@ body.loaded #loading {
 .page-item-detail-new {
   padding-top: 0;
   margin-bottom: 0;
+  overflow: hidden;
+}
+.page-item-detail-new h1, .page-item-detail-new h2, .page-item-detail-new h3, .page-item-detail-new h4, .page-item-detail-new h5, .page-item-detail-new p, .page-item-detail-new span {
+  -webkit-font-smoothing: antialiased;
 }
 .page-item-detail-new .section-main .main_flex .main_detail {
   margin-top: 30px;
@@ -15938,6 +16021,7 @@ body.loaded #loading {
   }
   .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit .brand_introduction .txt_wrap .brand_desc {
     font-size: 1.5rem;
+    line-height: 2;
   }
   .page-item-detail-new .section-related-item {
     margin-top: 80px;
@@ -15951,6 +16035,9 @@ body.loaded #loading {
   }
 }
 @media screen and (min-width: 980px) {
+  .page-item-detail-new {
+    overflow: visible;
+  }
   .page-item-detail-new .section-main .main_flex {
     display: -webkit-box;
     display: -ms-flexbox;
