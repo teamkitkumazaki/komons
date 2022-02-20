@@ -110,9 +110,9 @@
 							<span class="volume">/ セット商品</span>
 						</div>
 						<div class="desc_wrap">
-							<p>IKEUCHI ORGANICのウォッシュタオルと、<span>Komonsの食器用洗剤のコラボセットです。</span></p>
+							<p>IKEUCHI ORGANICのウォッシュタオルと、Komonsの食器用洗剤のコラボセットです。</p>
 						</div>
-						<div class="comp-gift-options-new">
+						<!--<div class="comp-gift-options-new">
 							<label class="item_label">ギフトオプション</label>
 							<div class="form_wrap">
 								<div class="radio_wrap">
@@ -136,7 +136,8 @@
 									<button><span>ギフトオプションについて</span></button>
 								</div>
 							</div>
-						</div><!-- comp-gift-options-new -->
+						</div> -->
+						<!-- comp-gift-options-new -->
 						<div class="comp-cart-wrap">
 							<div class="order_lot">
 								<span class="title">数量</span>
@@ -148,18 +149,18 @@
 							</div>
 							<div class="submit_button">
 								<div class="cart_box">
-									<div class="cart_item">
+									<div id="optionSelect" class="cart_item">
 										<span class="button_wrap">
-											<span class="title cart_in">購入する</span>
+											<span class="title cart_in">オプションを選択して購入</span>
 											<span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
 										</span>
 										<input type="hidden" name="properties[カテゴリー]" value="">
-										<input id="cartSubmit" class="product_cart_btn product_addcart_btn" type="submit" value=" カートに入れる">
 									</div>
 								</div>
-								<div class="cart_note">
-									<button>お支払い方法</button>
-									<button>配送について</button>
+								<div id="cartNoteList" class="cart_note">
+									<button prop="#toggleGift">ギフトサービス</button>
+									<button prop="#toggleDelivary">配送について</button>
+									<button prop="#togglePayment">お支払い方法</button>
 								</div>
 							</div><!-- comp-flex-cart -->
 						</div><!-- submit_wrap -->
@@ -263,12 +264,12 @@
 						<div class="desc_unit">
 							<div class="comp-detail-title margin">
 								<hgroup>
-									<span class="title_en">Shopping Guide</span>
-									<h2 class="title_ja">ショッピングガイド</h2>
+									<span class="title_en">Gift Service</span>
+									<h2 class="title_ja">ギフト対応について</h2>
 								</hgroup>
 							</div>
 							<div class="comp-detail-toggle-new">
-								<div class="toggle_item">
+								<div id="toggleGift" class="toggle_item">
 									<button class="toggle_button_new">ギフト対応について</button>
 									<div class="toggle_content_new">
 										<div class="detail_item">
@@ -311,7 +312,39 @@
 										</div>
 									</div><!-- toggle_content -->
 								</div>
-								<div class="toggle_item">
+								<div id="toggleDelivary" class="toggle_item">
+									<button class="toggle_button_new">配送について</button>
+									<div class="toggle_content_new">
+										<div class="detail_item">
+											<p class="title">送料について</p>
+											<div class="content">
+												<p>お届け先1件につき税込5,500円以上で送料無料になります。（ギフト包装料・代引手数料は除く）税込5,500円未満の場合は、お届け先1件につき全国一律660円（税込）の送料となります。</p>
+											</div>
+										</div>
+										<div class="detail_item">
+											<p class="title">到着日・時間指定について</p>
+											<div class="content">
+												<p>現在ご注文頂くと最短で"2月17日(木)"にお届け致します。</p>
+												<p>時間に関しましては、午前中、14～16時、16～18時、18～20時、19～21時の時間帯をお選び頂くことができます。</p>
+												<p>※地域によってはご希望に添えない場合もございますので、その点ご了承下さいませ。また、天候・道路・交通事情等運送上の事情により、ご希望のお届け時間帯にお届けできない場合もございますので、ご了承下さい。</p>
+											</div>
+										</div>
+										<div class="detail_item">
+											<p class="title">別住所への配送</p>
+											<div class="content">
+												<p>可能です。オンライン注文のカート画面にて配送先住所を入力ください。また、1注文につき、お届け先は１件のみとなりますので2件以上へ配送をご希望の場合は別々にご注文下さい。</p>
+											</div>
+										</div>
+										<div class="detail_item">
+											<p class="title">複数住所へ配送は可能ですか？</p>
+											<div class="content">
+												<p>可能です。大変お手数をおかけいたしますが、送り先ごとにご注文手続きをお願いいたします。お届け先が10件以上になる場合は、問い合わせフォームまたはinfo@komons-japan.comにその旨をご連絡くださいませ。ご注文情報入力用のエクセルフォームをお送りさせていただきます。</p>
+											</div>
+										</div>
+
+									</div><!-- toggle_content -->
+								</div>
+								<div id="togglePayment" class="toggle_item">
 									<button class="toggle_button_new">決済方法について</button>
 									<div class="toggle_content_new">
 										<div class="detail_item">
@@ -353,45 +386,13 @@
 										</div>
 									</div><!-- toggle_content -->
 								</div>
-								<div class="toggle_item">
-									<button class="toggle_button_new">配送について</button>
-									<div class="toggle_content_new">
-										<div class="detail_item">
-											<p class="title">送料について</p>
-											<div class="content">
-												<p>お届け先1件につき税込5,500円以上で送料無料になります。（ギフト包装料・代引手数料は除く）税込5,500円未満の場合は、お届け先1件につき全国一律660円（税込）の送料となります。</p>
-											</div>
-										</div>
-										<div class="detail_item">
-											<p class="title">到着日・時間指定について</p>
-											<div class="content">
-												<p>現在ご注文頂くと最短で"2月17日(木)"にお届け致します。</p>
-												<p>時間に関しましては、午前中、14～16時、16～18時、18～20時、19～21時の時間帯をお選び頂くことができます。</p>
-												<p>※地域によってはご希望に添えない場合もございますので、その点ご了承下さいませ。また、天候・道路・交通事情等運送上の事情により、ご希望のお届け時間帯にお届けできない場合もございますので、ご了承下さい。</p>
-											</div>
-										</div>
-										<div class="detail_item">
-											<p class="title">別住所への配送</p>
-											<div class="content">
-												<p>可能です。オンライン注文のカート画面にて配送先住所を入力ください。また、1注文につき、お届け先は１件のみとなりますので2件以上へ配送をご希望の場合は別々にご注文下さい。</p>
-											</div>
-										</div>
-										<div class="detail_item">
-											<p class="title">複数住所へ配送は可能ですか？</p>
-											<div class="content">
-												<p>可能です。大変お手数をおかけいたしますが、送り先ごとにご注文手続きをお願いいたします。お届け先が10件以上になる場合は、問い合わせフォームまたはinfo@komons-japan.comにその旨をご連絡くださいませ。ご注文情報入力用のエクセルフォームをお送りさせていただきます。</p>
-											</div>
-										</div>
-
-									</div><!-- toggle_content -->
-								</div>
 							</div><!-- comp-detail-toggle-new -->
 						</div><!-- desc_unit -->
 					</div><!-- desc_inner -->
 				</div>
 			</div><!-- main_flex -->
 		</section>
-		<section class="section-related-item">
+		<section id="relatedItem" class="section-related-item">
 			<div class="section_inner_new">
 				<div class="comp-detail-title">
 					<hgroup>
@@ -449,7 +450,7 @@
 				<div class="comp-detail-title">
 					<hgroup>
 						<span class="title_en">Journal</span>
-						<h2 class="title_ja">Komonsについてもっと知る</h2>
+						<h2 class="title_ja">Komonsをもっと知る</h2>
 					</hgroup>
 				</div>
 				<div class="comp-related-journal-slide">
@@ -524,104 +525,118 @@
 				</div><!-- comp-list-link -->
 			</div><!-- section_inner_new -->
 		</section>
-		<section class="section-instagram comp-instagram-wrap">
-			<div class="section_inner">
-				<p class="insta_ttl">Instagram</p>
-				<div id="insta-feed" class="insta_feed"><a href="https://www.instagram.com/p/CZtqjcKlRAP/" target="_blank" rel="noopener">
-						<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image js-lazy-image--handled" style="width:99%;height:99%;"
-								src="https://scontent.cdninstagram.com/v/t51.29350-15/273672204_706205870749488_3267490175752053412_n.jpg?_nc_cat=102&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=oUVssweKHW4AX_wULoA&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT-L0sOqn_B1FwCfs0uLLxL0Sb8-fcETtsK-AVg726U6DQ&amp;oe=620E6D63"
-								data-src="https://scontent.cdninstagram.com/v/t51.29350-15/273672204_706205870749488_3267490175752053412_n.jpg?_nc_cat=102&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=oUVssweKHW4AX_wULoA&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT-L0sOqn_B1FwCfs0uLLxL0Sb8-fcETtsK-AVg726U6DQ&amp;oe=620E6D63"
-								alt="【MONTAGE 27th 出展中】本日2月8日(火)〜10日(木)の3日間、TOC有明にて行われているMONTAGE 27thに出展しております。WESTホール4階にてKomons全ライ">
-							<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-						</div>
-					</a>
-					<a href="https://www.instagram.com/p/CZjO0aaFrAg/" target="_blank" rel="noopener">
-						<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image js-lazy-image--handled" style="width:99%;height:99%;"
-								src="https://scontent.cdninstagram.com/v/t51.29350-15/273189161_4620141288114045_2354166504098333041_n.jpg?_nc_cat=110&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=PyWR7UoJwaAAX-ShlJw&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT-tsB1Od683hO2nXymy_Xyw2OEhJUA1I_iXovqdjsY8AQ&amp;oe=620E6E79"
-								data-src="https://scontent.cdninstagram.com/v/t51.29350-15/273189161_4620141288114045_2354166504098333041_n.jpg?_nc_cat=110&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=PyWR7UoJwaAAX-ShlJw&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT-tsB1Od683hO2nXymy_Xyw2OEhJUA1I_iXovqdjsY8AQ&amp;oe=620E6E79"
-								alt="【Komonsマルシェバッグの通常販売がスタート！】
-.
-プレゼントキャンペーンで大きな反響を頂いた、Komonsオリジナルマルシェバッグがレギュラー商品として帰ってきました。
-.
-容量23Lとかなり">
-							<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-						</div>
-					</a><a href="https://www.instagram.com/p/CZeUxqeFOzg/" target="_blank" rel="noopener">
-						<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image js-lazy-image--handled" style="width:99%;height:99%;"
-								src="https://scontent.cdninstagram.com/v/t51.29350-15/273123990_950854798879460_8403822144806075608_n.jpg?_nc_cat=100&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=NTTYmYvFjl4AX99SsFg&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_lCn4VeXp9DLjSTT4PyhvuNRV9Fix16zLRDjixAz3R_Q&amp;oe=620EAF2D"
-								data-src="https://scontent.cdninstagram.com/v/t51.29350-15/273123990_950854798879460_8403822144806075608_n.jpg?_nc_cat=100&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=NTTYmYvFjl4AX99SsFg&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_lCn4VeXp9DLjSTT4PyhvuNRV9Fix16zLRDjixAz3R_Q&amp;oe=620EAF2D"
-								alt="【トイレ・バスクリーナーレフィルが新発売】
-.
-皆様大変お待たせしました。
-トイレクリーナーとバスクリーナーの詰め替え用レフィルが販売開始となりました。
-.
-これにて全レフィルが勢揃いしましたので是非">
-							<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-						</div>
-					</a><a href="https://www.instagram.com/p/CZRtOGRPLjo/" target="_blank" rel="noopener">
-						<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image js-lazy-image--handled" style="width:99%;height:99%;"
-								src="https://scontent.cdninstagram.com/v/t51.29350-15/272828594_995057741100198_43329831143019033_n.jpg?_nc_cat=111&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=9HfB5u89zYMAX9z2X2V&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT8tZd-uwoxBpQLfli3obo3XJ4YVyUWXjG4Lgo1KBW4Lrw&amp;oe=620DE0D2"
-								data-src="https://scontent.cdninstagram.com/v/t51.29350-15/272828594_995057741100198_43329831143019033_n.jpg?_nc_cat=111&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=9HfB5u89zYMAX9z2X2V&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT8tZd-uwoxBpQLfli3obo3XJ4YVyUWXjG4Lgo1KBW4Lrw&amp;oe=620DE0D2"
-								alt="【Komons POP-UP SHOP Taiwan】
-.
-台湾のフラワーショップ「Salon flowers」にてPOP UPを開催しております。
-.
-.
-〈開催期間〉
-2022年1月4日(火) -">
-							<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-						</div>
-					</a><a href="https://www.instagram.com/p/CZHOu5slYQ1/" target="_blank" rel="noopener">
-						<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image js-lazy-image--handled" style="width:99%;height:99%;"
-								src="https://scontent.cdninstagram.com/v/t51.29350-15/272446024_676390630053276_2294827573347665394_n.jpg?_nc_cat=100&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=iWncOigPRXUAX9ygZ7c&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_aMrBwDUe00IaVNqaqR2B_AMOlBZsFAYRxNQNtrCE6NA&amp;oe=620EE1AA"
-								data-src="https://scontent.cdninstagram.com/v/t51.29350-15/272446024_676390630053276_2294827573347665394_n.jpg?_nc_cat=100&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=iWncOigPRXUAX9ygZ7c&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_aMrBwDUe00IaVNqaqR2B_AMOlBZsFAYRxNQNtrCE6NA&amp;oe=620EE1AA"
-								alt="【マスクスプレー】
-.
-マスクスプレーとしても人気のKomons除菌消臭ミスト。
-.
-30mLのミニサイズは持ち運びにも便利。
-お出かけ先でも気になる匂いをリフレッシュしてくれます。
-.
-.
-＜おすす">
-							<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-						</div>
-					</a><a href="https://www.instagram.com/p/CYymzwLFcR-/" target="_blank" rel="noopener">
-						<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image js-lazy-image--handled" style="width:99%;height:99%;"
-								src="https://scontent.cdninstagram.com/v/t51.29350-15/271939357_142432868207328_4431126629966270646_n.jpg?_nc_cat=108&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=eiC3XEB6N7AAX85-sZ0&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT98ZeVKXecBOUhZvDPdta_gIj1TYOekFxPYAFiYEgxduQ&amp;oe=620ECAEA"
-								data-src="https://scontent.cdninstagram.com/v/t51.29350-15/271939357_142432868207328_4431126629966270646_n.jpg?_nc_cat=108&amp;ccb=1-5&amp;_nc_sid=8ae9d6&amp;_nc_ohc=eiC3XEB6N7AAX85-sZ0&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT98ZeVKXecBOUhZvDPdta_gIj1TYOekFxPYAFiYEgxduQ&amp;oe=620ECAEA"
-								alt="【あけましておめでとうございます】
-.
-ご挨拶が遅くなり申し訳ありません。
-.
-旧年は格別のお引き立てを賜り、誠にありがとうございました。
-.
-2022年が皆様にとって素敵な年となりますように。
-ko">
-							<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-						</div>
-					</a>
-				</div>
-				<div class="link_button">
-					<a target="_blank" href="https://www.instagram.com/komons.jp/"><span>komons.jp</span></a>
-				</div>
-			</div><!-- section_inner -->
-		</section>
 	</article>
+	<div id="optionPop" class="comp-gift-option-pop">
+		<div id="popBg" class="pop_bg"></div>
+		<form method="post" action="/cart/add" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="novalidate" data-product-form="">
+			<input type="hidden" name="form_type" value="product">
+			<input type="hidden" name="utf8" value="✓">
+			<div class="pop_flex">
+				<div class="height_adjust"></div>
+				<div class="pop_contents">
+					<div id="popClose" class="pop_close"></div>
+					<div class="contents_inner">
+						<div class="item_thumb">
+						</div>
+						<p class="pop_title">下記よりギフトオプションを<span>お選びいただけます</span></p>
+						<div class="option_select">
+							<div class="option_item nosi">
+								<label>
+									<div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_mizuhiki_nl5vi0.jpg)"></div>
+									<div class="input_wrap">
+										<input type="checkbox" name="mizuhiki" value="mizuhiki">
+										<span class="radio_checker"></span>
+										<div class="option_name">
+											<span class="name">熨斗(のし)</span>
+											<span id="noshiPrice" class="text_p">+110円(税込)</span>
+										</div>
+									</div>
+								</label>
+							</div>
+							<div class="option_item message">
+								<label>
+									<div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1617607081/gift_service/option_message_f7iisa.jpg)"></div>
+									<div class="input_wrap">
+										<input type="checkbox" name="message" value="message">
+										<span class="radio_checker"></span>
+										<div class="option_name">
+											<span class="name">メッセージカード</span>
+											<span id="messagePrice" class="text_p">無料</span>
+										</div>
+									</div>
+								</label>
+							</div>
+							<div class="option_item tesage">
+								<label>
+									<div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_tesage_yv4i6v.jpg)"></div>
+									<div class="input_wrap">
+										<input type="checkbox" name="tesage" value="tesage">
+										<span class="radio_checker"></span>
+										<div class="option_name">
+											<span class="name">手提げ布バッグ</span>
+											<span id="tesagePrice" class="text_p">+330円(税込)</span>
+										</div>
+									</div>
+								</label>
+							</div>
+							<div class="desc_wrap" style="margin-top: 20px">
+								<p class="mizuhiki_desc">※水引きの種類はどのシーンのお祝い事にもお使いいただける「紅白梅結び」と弔事用の「白黒あわじ結び」がございます。注文確認画面にてご指定下さい。</p>
+								<p class="mizuhiki_desc">※熨斗に「表書き（御祝/内祝/御結婚祝など）」、「お名前」の印字をご希望のお客様は、カート画面の「ギフトオプション」欄にご記入ください。ご記入のない場合は、「無地熨斗」にて対応させていただきます。</p>
+								<p class="mizuhiki_desc">※メッセージカードへの印字をご希望の場合は、メッセージの内容をカート画面の「ギフトオプション」欄にご記入ください。ご記入のない場合は、「無地カード」にて対応させていただきます。</p>
+								<p class="mizuhiki_desc">※お渡し用に「手提げ紙袋（無地）」を無償でお付け可能ですので、ご希望の場合は購入備考欄にてお申し付けください。</p>
+							</div>
+						</div>
+					</div>
+					<select name="id" id="ProductSelect-gift-option-field" class="giftOptionFields" style="display: none;">
+
+						<option value="39253775155394" id="0-1">
+							オプションなし
+						</option>
+
+						<option value="39253775188162" id="0-2">
+							熨斗
+						</option>
+
+						<option value="39253775220930" id="0-3">
+							手提げバック
+						</option>
+
+						<option value="39253775253698" id="0-4">
+							熨斗/手提げバック
+						</option>
+
+						<option value="39628592218306" id="0-5">
+							メッセージカード
+						</option>
+
+						<option value="39628594446530" id="0-6">
+							熨斗/メッセージカード
+						</option>
+
+						<option value="39628595069122" id="0-7">
+							手提げバック/メッセージカード
+						</option>
+
+						<option value="39628595757250" id="0-8">
+							熨斗/手提げ/メッセージカード
+						</option>
+
+					</select>
+					<div class="fix_wrapper">
+						<div class="option_fix">
+							<button id="optionFix" class="option_fix_button" href="javascript:void(0);"><span>購入する</span></button>
+							<input class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる">
+							<input id="lot03" type="number" name="quantity" value="1" class="product_init_num" style="display: none;">
+						</div>
+					</div>
+				</div>
+			</div><!-- pop_flex -->
+		</form>
+	</div>
 	<div id="fixedCartWrap" class="comp-fixed-cart-wrap">
-  	<div class="cart_inner">
-    	<div class="product_detail">
-      	<span class="category"><span class="en">Hand Wash</span><span class="ja">ハンドソープ</span></span><span class="item_name">I can hear music</span><span class="price">2,750円(税込)</span>
-    	</div>
-    	<div class="product_cart_button">
-				<select name="id" id="ProductSelect-fixed-cart-wrap" class="product-form__variants no-js" style="display: none;">
-					<option value="38321477714114">
-						Default Title
-					</option>
-				</select>
-				<button id="fixedCartButton" class="fixed_cart_button" onclick="send_conversion(); return false;"><span>購入する</span></button>
-			</div>
-  	</div>
+		<div class="cart_inner">
+			<button id="fixedCartButton" class="fixed_cart_button"><span>オプションを選択して購入</span></button>
+		</div>
 	</div>
 	<div id="slideMenuNew" class="comp-slide-menu">
 		<button id="humClose" class="hum_close"></button>
@@ -747,4 +762,5 @@ ko">
 	</div><!-- slideMenu comp-slide-menu -->
 </body>
 <script type="text/javascript" src="js/detail.js"></script>
+
 </html>

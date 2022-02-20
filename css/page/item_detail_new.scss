@@ -47,7 +47,8 @@
 					}
 					.desc_wrap{
 						font-size: 1.4rem;
-						line-height: 1.7;
+						letter-spacing: 0.05em;
+						line-height: 1.8;
 						margin-bottom: 30px;
 					}
 				}
@@ -70,10 +71,15 @@
 									font-size: 1.8rem;
 									line-height: 1.6;
 									margin-bottom: 12px;
+									letter-spacing: 0.1em;
+									br{
+										display: none;
+									}
 								}
 								.brand_desc{
 									font-size: 1.4rem;
-									line-height: 1.7;
+									letter-spacing: 0.05em;
+									line-height: 1.8;
 								}
 							}
 						}
@@ -243,6 +249,7 @@
 				.main_detail{
 					top: 40px;
 					height: calc(100vh - 40px);
+					max-height: 800px;
 					.detail_inner{
 						max-width: unset;
 						margin: 0 auto;

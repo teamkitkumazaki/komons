@@ -163,11 +163,15 @@ $(function() {
     controllBuyingQuantity($('#quantityWrap'));
   }
 
+  // 商品詳細ページ トグルレイアウト
   function itemDetailToggle(){
     var toggleItem = [];
     var toggleButton = [];
     var toggleContents = [];
     var toggleState = [];
+    var ankerButton = [];
+    var cartAnker = [];
+    var cartNoteList = $('#cartNoteList');
 
     function toggleMove(e) {
       if ( toggleState[e] == 0 ) {
@@ -175,7 +179,7 @@ $(function() {
         var buttonHeight = toggleButton[e].outerHeight();
         var tagetHeight = toggleContents[e].outerHeight();
         toggleItem[e].css({
-          'height': buttonHeight + tagetHeight + 25 + 'px'
+          'height': buttonHeight + tagetHeight + 'px'
         });
         toggleState[e] = 1;
       } else {
@@ -187,6 +191,21 @@ $(function() {
         toggleState[e] = 0;
       }
     }
+
+    function ankerMove(e){
+      var scrollHeight = $(cartAnker[e]).offset().top;
+      var headerHeight = $('header').outerHeight();
+      $("html, body").animate({
+        scrollTop: scrollHeight - headerHeight - 20
+      }, 500);
+      setTimeout(function() {
+        if ( toggleState[e + 1] == 0 ) {
+          $(cartAnker[e]).find('button').click();
+        }
+      }, 500);
+
+    }
+
 
     function init(){
       $.each($('article').find('.toggle_item'), function(index) {
@@ -201,6 +220,17 @@ $(function() {
           }
         });
       });
+
+      $.each(cartNoteList.find('button'), function(index) {
+        ankerButton[index] = $(this);
+        cartAnker[index] = $(this).attr('prop');
+        ankerButton[index].on({
+          'click': function() {
+            ankerMove(index);
+          }
+        });
+      });
+
     }
 
     init();

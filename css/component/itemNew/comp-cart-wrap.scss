@@ -3,7 +3,8 @@
 
   .order_lot {
     padding-bottom: 10px;
-    border-bottom: 1px solid #d8d8d8;
+    background: #f4f4f4;
+    padding: 10px;
     @include flexSet;
     align-items: center;
     justify-content: space-between;
@@ -50,6 +51,7 @@
         border: none;
         font-size: 1.6rem;
         text-align: center;
+        background: transparent;
       }
     }
   }
@@ -58,6 +60,9 @@
     .cart_box{
       .cart_item{
         position: relative;
+        &#optionSelect{
+          cursor: pointer;
+        }
         .button_wrap{
           display: block;
           position: relative;
@@ -154,7 +159,7 @@
 
     .order_lot {
       margin-bottom: 20px;
-
+      padding: 15px;
       .title {
         font-size: 1.6rem;
       }

@@ -187,6 +187,24 @@ $(function() {
               };
             });
           }
+          if (document.getElementById('itemDetailNew')) {
+            $("section").each(function() {
+              var rolledHeight = $('#rolledHeight').offset().top;
+              var relatedItem = $('#relatedItem').offset().top;
+              var sectionscroll = $(window).scrollTop();
+              console.log('rolledHeight:' + rolledHeight);
+              console.log('sectionscroll:' + sectionscroll);
+              console.log('relatedItem:' + relatedItem);
+              if ( sectionscroll > rolledHeight) {
+                $('#fixedCartWrap').addClass('display');
+                if ( sectionscroll > relatedItem) {
+                  $('#fixedCartWrap').removeClass('display');
+                }
+              }else{
+                $('#fixedCartWrap').removeClass('display');
+              }
+            });
+          }
         },
       });
     };
@@ -995,6 +1013,10 @@ $(function() {
   }
 
   if (document.getElementById('itemDetail')) {
+    optionPopup($('#optionPop'));
+  }
+
+  if (document.getElementById('itemDetailNew')) {
     optionPopup($('#optionPop'));
   }
 

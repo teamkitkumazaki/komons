@@ -100,7 +100,7 @@
 						a{
 							&::before{
 								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/login_icon_rolled_oy80ng.png);
-								filter: brightness(1000%);
+								filter: invert(1) saturate(0) brightness(1000%);
 							}
 						}
 					}
@@ -123,7 +123,7 @@
 							}
 							&::before{
 								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_rolled_tnklrf.png);
-								filter: brightness(1000%);
+								filter: invert(1) saturate(0) brightness(1000%);
 							}
 						}
 					}
@@ -189,7 +189,7 @@
 				.header_logo{
 					margin-right: 20px;
 					@include bgSet;
-					filter: brightness(1000%);
+					filter: invert(1) saturate(0) brightness(1000%);
 					transition: filter .2s;
 				}
 			}
