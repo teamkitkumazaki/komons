@@ -14,7 +14,6 @@ $(function() {
     var imgAlt = [];
     var time = 300;
     var thumbLength = $('#thumbBox').find("li").length;
-    console.log('thumbLength:' + thumbLength);
 
     function thumbChange(num) {
       $('#thumbBox').stop().animate({
@@ -196,7 +195,7 @@ $(function() {
       var scrollHeight = $(cartAnker[e]).offset().top;
       var headerHeight = $('header').outerHeight();
       $("html, body").animate({
-        scrollTop: scrollHeight - headerHeight - 20
+        scrollTop: scrollHeight - headerHeight
       }, 500);
       setTimeout(function() {
         if ( toggleState[e + 1] == 0 ) {

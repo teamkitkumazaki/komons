@@ -192,9 +192,6 @@ $(function() {
               var rolledHeight = $('#rolledHeight').offset().top;
               var relatedItem = $('#relatedItem').offset().top;
               var sectionscroll = $(window).scrollTop();
-              console.log('rolledHeight:' + rolledHeight);
-              console.log('sectionscroll:' + sectionscroll);
-              console.log('relatedItem:' + relatedItem);
               if ( sectionscroll > rolledHeight) {
                 $('#fixedCartWrap').addClass('display');
                 if ( sectionscroll > relatedItem) {
@@ -414,7 +411,6 @@ $(function() {
 
     function init(){
       $.each(target.find('input[type=number]'), function(index) {
-        console.log('index:' + index);
         $(this).on({
           'change': function() {
             lotNumer = $(this).val();
@@ -1061,7 +1057,6 @@ $(function() {
       });
       giftOptionFields.find("option").each(function(index) {
         variationFields[index] = $(this).val();
-        console.log('optionVal:' + variationFields[index]);
       });
 
       cycleList.find("input[name=sub_cycle]").each(function(index) {
