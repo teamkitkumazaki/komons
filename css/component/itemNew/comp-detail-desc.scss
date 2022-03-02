@@ -12,6 +12,13 @@
         @include libre-r;
         font-size: 2.4rem;
         margin-bottom: 15px;
+        &.ja{
+          font-size: 1.8rem;
+          letter-spacing: 0.06em;
+          line-height: 1.6;
+          margin-top: -3px;
+          margin-bottom: 10px;
+        }
       }
       .prod_genre{
         font-size: 1.6rem;
@@ -39,6 +46,14 @@
           @include libre-r;
           font-size: 2.6rem;
           margin-bottom: 15px;
+          &.ja{
+            font-size: 2.0rem;
+            letter-spacing: 0.06em;
+            line-height: 1.6;
+            margin-top: -3px;
+            margin-bottom: 10px;
+            white-space: pre-line;
+          }
         }
         .prod_genre{
           font-size: 1.6rem;

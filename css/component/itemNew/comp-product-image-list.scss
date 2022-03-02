@@ -5,6 +5,9 @@
   .image_item{
     width: calc(50% - 2.5px);
     margin-bottom: 5px;
+    img{
+      height: auto;
+    }
   }
 }
 

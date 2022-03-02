@@ -209,7 +209,7 @@ img {
 }
 .header_new .header_inner .header_left .header_navigation ul li a {
   display: block;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -317,7 +317,7 @@ img {
   text-align: center;
   color: #00381f;
   line-height: 25px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -720,7 +720,7 @@ footer .footer_wrap .footer_sns .sns_wrap ul li:nth-last-of-type(1) {
 }
 footer .footer_wrap .footer_sns .sns_wrap .copy_right {
   font-size: 10px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 500;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -758,7 +758,7 @@ footer .footer_wrap .footer_sns .sns_wrap .copy_right {
     color: #555555;
   }
   footer .footer_wrap .footer_menu .fmenu ul li a span {
-    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
     font-weight: 500;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
@@ -804,7 +804,7 @@ footer .footer_wrap .footer_sns .sns_wrap .copy_right {
   }
   footer .footer_wrap .footer_sns .sns_wrap .copy_right {
     font-size: 14px;
-    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
     font-weight: 500;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
@@ -1017,7 +1017,7 @@ h1, h2, h3, h4, h5 {
 .section_ttl h1 span, .section_ttl h2 span {
   display: inline-block;
   font-size: 54px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -1048,7 +1048,7 @@ h1, h2, h3, h4, h5 {
   .section_ttl h1 span, .section_ttl h2 span {
     display: inline-block;
     font-size: 54px;
-    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
     font-weight: 400;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
@@ -1585,7 +1585,7 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 10px;
 }
 .products ul li .txt_wrap h3 a {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -1708,7 +1708,7 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
   }
   .products ul li .txt_wrap h3 a {
-    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
     font-weight: 500;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
@@ -1794,7 +1794,7 @@ h1, h2, h3, h4, h5 {
   letter-spacing: normal;
 }
 #slidecarthq .slidecarthq .header h2::before {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -2534,7 +2534,7 @@ body.loaded #loading {
 }
 .comp-title .ttl_ja .en {
   display: inline-block;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -2545,7 +2545,7 @@ body.loaded #loading {
 }
 .comp-title .ttl_en {
   display: block;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -3608,7 +3608,7 @@ body.loaded #loading {
   font-size: 14px;
 }
 .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name a {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -3771,7 +3771,7 @@ body.loaded #loading {
     margin-bottom: 5px;
   }
   .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name a {
-    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
     font-weight: 500;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
@@ -4214,7 +4214,7 @@ body.loaded #loading {
 .comp-centered-section-title .title_en {
   display: block;
   font-size: 54px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -4322,7 +4322,7 @@ body.loaded #loading {
   display: block;
   font-size: 34px;
   letter-spacing: 1.5px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -4720,7 +4720,7 @@ body.loaded #loading {
 }
 .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .category .en {
   font-size: 16px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -5499,7 +5499,7 @@ body.loaded #loading {
 .comp-gift-product-list .list_item .item_thumb.soldout::after {
   content: "SOLD OUT";
   color: #fff;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -5877,7 +5877,7 @@ body.loaded #loading {
   font-size: 28px;
   line-height: 1;
   letter-spacing: 1.5px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -6086,7 +6086,7 @@ body.loaded #loading {
   width: 35px;
   height: 35px;
   margin-right: 10px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -6338,7 +6338,7 @@ body.loaded #loading {
 .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_ttl .number {
   display: inline-block;
   padding: 0 0.1em;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -6365,7 +6365,7 @@ body.loaded #loading {
   padding: 0px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -6577,7 +6577,7 @@ body.loaded #loading {
 }
 .comp-article-related-item .related_item .txt_wrap .prod_name .en .name {
   display: block;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -6980,7 +6980,7 @@ body.loaded #loading {
   margin-right: 15px;
 }
 .comp-slide-menu .search_inner .content .pop_ttl .ttl_en {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -7155,7 +7155,7 @@ body.loaded #loading {
 }
 .comp-slide-menu .search_inner .content .pop_section .category a .en {
   display: block;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -7739,7 +7739,7 @@ body.loaded #loading {
   display: none;
 }
 .comp-item-group .item_list .txt_wrap .prod_name .en {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -9351,7 +9351,7 @@ body.loaded #loading {
   color: #555555;
 }
 .comp-joournal-footer .footer_wrap .footer_menu .fmenu ul li a span {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 500;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -9381,7 +9381,7 @@ body.loaded #loading {
 }
 .comp-joournal-footer .footer_wrap .footer_sns .copy_right {
   font-size: 10px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 500;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -9465,7 +9465,7 @@ body.loaded #loading {
 }
 .comp-section-information .info_flex .title_en {
   position: relative;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -9655,7 +9655,7 @@ body.loaded #loading {
 }
 .comp-jornal-item .intro_ttl {
   width: 100%;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -9726,7 +9726,7 @@ body.loaded #loading {
   }
   .comp-jornal-item .intro_ttl {
     width: 100%;
-    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
     font-weight: 400;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
@@ -9829,7 +9829,7 @@ body.loaded #loading {
   border-top: 0px solid #f1f1f1;
 }
 .comp-instagram-wrap .insta_ttl {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -10072,6 +10072,9 @@ body.loaded #loading {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.comp-item-thumbs ul li img {
+  height: auto;
 }
 .comp-item-thumbs ul li.active {
   z-index: 10;
@@ -10435,7 +10438,7 @@ body.loaded #loading {
 }
 .comp-detail-title hgroup .title_en {
   display: block;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -10462,7 +10465,7 @@ body.loaded #loading {
   }
   .comp-detail-title hgroup .title_ja {
     display: block;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
 }
 .comp-detail-desc .detail_item {
@@ -10475,12 +10478,19 @@ body.loaded #loading {
   margin-bottom: 25px;
 }
 .comp-detail-desc .detail_item .txt_wrap .prod_name {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
   font-size: 2.4rem;
   margin-bottom: 15px;
+}
+.comp-detail-desc .detail_item .txt_wrap .prod_name.ja {
+  font-size: 1.8rem;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+  margin-top: -3px;
+  margin-bottom: 10px;
 }
 .comp-detail-desc .detail_item .txt_wrap .prod_genre {
   font-size: 1.6rem;
@@ -10501,12 +10511,20 @@ body.loaded #loading {
     margin-bottom: 35px;
   }
   .comp-detail-desc .detail_item .txt_wrap .prod_name {
-    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
     font-weight: 400;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
     font-size: 2.6rem;
     margin-bottom: 15px;
+  }
+  .comp-detail-desc .detail_item .txt_wrap .prod_name.ja {
+    font-size: 2rem;
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+    margin-top: -3px;
+    margin-bottom: 10px;
+    white-space: pre-line;
   }
   .comp-detail-desc .detail_item .txt_wrap .prod_genre {
     font-size: 1.6rem;
@@ -10757,7 +10775,7 @@ body.loaded #loading {
 .comp-related-item-slide .slide_inner .related_item .txt_wrap .prod_name .name {
   display: block;
   font-size: 1.8rem;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -11038,6 +11056,9 @@ body.loaded #loading {
   width: calc(50% - 2.5px);
   margin-bottom: 5px;
 }
+.comp-product-image-list .image_item img {
+  height: auto;
+}
 
 @media screen and (min-width: 720px) {
   .comp-product-image-list {
@@ -11062,6 +11083,105 @@ body.loaded #loading {
 @media screen and (min-width: 980px) {
   .comp-product-image-list {
     display: none;
+  }
+}
+.comp-scent-detail .scent_img_wrap {
+  background: #fff;
+  padding: 25px 30px;
+  margin-bottom: 20px;
+}
+.comp-scent-detail .scent_txt_wrap .scent_main_ttl {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  letter-spacing: 0.1em;
+}
+.comp-scent-detail .scent_txt_wrap .scent_item {
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+}
+.comp-scent-detail .scent_txt_wrap .scent_item:nth-last-of-type(1) {
+  border-bottom: 0px solid #d8d8d8;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.comp-scent-detail .scent_txt_wrap .scent_item .title {
+  display: block;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.comp-scent-detail .scent_txt_wrap .scent_item .content {
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+}
+.comp-scent-detail .scent_txt_wrap .scent_desc {
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 720px) {
+  .comp-scent-detail .scent_img_wrap {
+    padding: 50px 100px;
+    margin-bottom: 30px;
+  }
+  .comp-scent-detail .scent_txt_wrap .scent_main_ttl {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+  .comp-scent-detail .scent_txt_wrap .scent_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comp-scent-detail .scent_txt_wrap .scent_item .title {
+    width: 100px;
+    font-size: 1.8rem;
+    margin-top: 4px;
+    margin-bottom: 0px;
+  }
+  .comp-scent-detail .scent_txt_wrap .scent_item .content {
+    width: calc(100% - 100px);
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+  }
+  .comp-scent-detail .scent_txt_wrap .scent_desc {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .comp-scent-detail .scent_img_wrap {
+    padding: 50px 80px;
+    margin-bottom: 30px;
+  }
+  .comp-scent-detail .scent_txt_wrap .scent_main_ttl {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+  .comp-scent-detail .scent_txt_wrap .scent_item .title {
+    width: 120px;
+    margin-top: 4px;
+  }
+  .comp-scent-detail .scent_txt_wrap .scent_item .content {
+    width: calc(100% - 120px);
+    font-size: 1.5rem;
   }
 }
 .comp-list-link .link_item {
@@ -11103,7 +11223,7 @@ body.loaded #loading {
           justify-content: flex-start;
 }
 .comp-list-link .link_item a .txt_wrap .txt_en {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -11664,7 +11784,7 @@ body.loaded #loading {
 .comp-popup-archive .archive_item .txt_wrap .info_wrap .shop_name {
   display: block;
   font-size: 2.4rem;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -11806,7 +11926,7 @@ body.loaded #loading {
   height: 45px;
   border-radius: 50%;
   background: #00381f;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -12005,7 +12125,7 @@ body.loaded #loading {
   border-radius: 50%;
   text-align: center;
   line-height: 38px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -12067,7 +12187,7 @@ body.loaded #loading {
   line-height: 38px;
   font-size: 1.6rem;
   text-indent: 0.2em;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -12517,7 +12637,7 @@ body.loaded #loading {
   margin-bottom: 40px;
 }
 #index .product_section .txt_wrapper .txt_block h4 span {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -12525,7 +12645,7 @@ body.loaded #loading {
   padding-right: 0.5em;
 }
 #index .product_section .txt_wrapper .txt_block h3 {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -14084,7 +14204,7 @@ body.loaded #loading {
   margin-bottom: 15px;
 }
 #itemDetail .cart_wrap01 .product_ex .product_cat .en {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -14116,7 +14236,7 @@ body.loaded #loading {
   letter-spacing: 1.2px;
 }
 #itemDetail .cart_wrap01 .product_ex .prodcut_name {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 500;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -14489,7 +14609,7 @@ body.loaded #loading {
   height: 65px;
   margin-right: 15px;
   font-size: 28px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -14693,7 +14813,7 @@ body.loaded #loading {
   width: 150px;
   font-size: 18px;
   letter-spacing: 2px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -14806,7 +14926,7 @@ body.loaded #loading {
   padding-left: 0.3em;
 }
 #itemDetail .cart_wrap02 .txt_wrap h2 {
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 500;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -15226,7 +15346,7 @@ body.loaded #loading {
     width: 150px;
     font-size: 18px;
     letter-spacing: 2px;
-    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
     font-weight: 400;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
@@ -15296,7 +15416,7 @@ body.loaded #loading {
     margin-bottom: 15px;
   }
   #itemDetail .cart_wrap02 .txt_wrap h2 {
-    font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
     font-weight: 500;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
@@ -15870,9 +15990,25 @@ body.loaded #loading {
   text-indent: -0.1em;
   margin-bottom: 5px;
 }
+.page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .name.en {
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  text-indent: 0.01em;
+  margin-bottom: -5px;
+}
+@media screen and (min-width: 1100px) {
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .name.en {
+    margin-bottom: 0;
+  }
+}
 .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .genre {
   display: block;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+}
+.page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .genre.mt {
+  margin-top: 5px;
 }
 .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .price_wrap {
   font-size: 1.3rem;
@@ -15987,9 +16123,12 @@ body.loaded #loading {
     margin-bottom: 30px;
   }
   .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit .brand_introduction .txt_wrap .brand_concept {
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: 1.6;
     margin-bottom: 12px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit .brand_introduction .txt_wrap .brand_concept br {
+    display: block;
   }
   .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit .brand_introduction .txt_wrap .brand_desc {
     font-size: 1.5rem;
@@ -16707,7 +16846,7 @@ body.loaded #loading {
           transform: rotate(90deg);
   text-align: left;
   width: 200px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -17652,7 +17791,7 @@ body.loaded #loading {
 .underPage .txt_main .ttl_wrap h2 span {
   display: inline-block;
   font-size: 30px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 500;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -17842,7 +17981,7 @@ body.loaded #loading {
 .page-stockist .shop_ttl .ttl_en {
   font-size: 3.8rem;
   letter-spacing: normal;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -18932,7 +19071,7 @@ body.loaded #loading {
 .page-gift-list .section-main .lead_txt .title_wrap .title_en {
   display: block;
   font-size: 54px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -19387,7 +19526,7 @@ body.loaded #loading {
 .gift-service .section-main .section_inner_new .txt_wrap .main_ttl .title_en {
   display: block;
   font-size: 54px;
-  font-family: "EB Garamond", "Libre Baskerville", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;

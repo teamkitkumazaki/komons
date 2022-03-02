@@ -17,13 +17,13 @@ $bgGreen: #2f281e;
     url('../fonts/LibreBaskerville-Bold.ttf') format('truetype'),
 }
 @mixin libre-r {
-  font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: 'EB Garamond', 'Libre Baskerville', YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
 }
 @mixin libre-b {
-  font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: 'EB Garamond', 'Libre Baskerville', YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 500;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
