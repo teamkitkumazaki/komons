@@ -80,7 +80,19 @@
               {%- endif -%}
               {%- endif -%}
               </div>
-              {%- if product.type != "upcoming" -%}
+              <div class="comp-variation">
+								<div class="variation_wrap">
+									<a href="/products/k0021">
+										<span class="title">詰め替え用(500ml)</span>
+										<span id="refillPrice" class="desc">2,530円(税込)</span>
+									</a>
+									<a href="/products/k0008">
+										<span class="title">Mini(30ml)</span>
+										<span id="miniPrice" class="desc">495円(税込)</span>
+									</a>
+								</div><!-- variation_wrap -->
+							</div>
+              {%- if product.type == "gift" -%}
               <div id="cartNoteList" class="cart_note">
                 <button prop="#toggleGift">ギフトサービス</button>
                 <button prop="#toggleDelivary">配送について</button>
@@ -94,14 +106,6 @@
       {%- if product.type != "upcoming" -%}
       <div id="rolledHeight" class="main_description">
         <div class="desc_inner">
-          <div class="comp-product-image-list">
-            {% for image in product.images %}
-            {%- assign thumbIndex2 = thumbIndex2 | plus: 1 -%}
-            {%- if thumbIndex2 > 1 -%}
-            <div class="image_item">{{ image.src | image_url: width: 380 | image_tag }}</div>
-            {% endif %}
-            {% endfor %}
-          </div><!-- comp-image-list -->
           <div class="desc_unit">
             <div class="comp-detail-title">
               <hgroup>
@@ -168,22 +172,21 @@
           {% endif %}
           {% if product.metafields.custom_fields["scent_detail_image"] != blank %}
           <div class="desc_unit">
-            <div class="comp-detail-title margin">
-              <hgroup>
+            <div class="scent_detail comp-scent-detail">
+              <div class="comp-detail-title">
+                <hgroup>
                 <span class="title_en">Scent</span>
                 <h2 class="title_ja">香りの特徴</h2>
-              </hgroup>
-            </div>
-            <div class="scent_detail comp-scent-detail">
+                </hgroup>
+              </div>
+              <div class="scent_desc">
+                <p style="white-space: pre-line">{{ product.metafields.custom_fields["scent_detail_desc"] }}</p>
+              </div>
               <div class="scent_img_wrap">
                 <img src="{{ product.metafields.custom_fields["scent_detail_image"] }}">
               </div>
               <div class="scent_txt_wrap">
                 <div class="scent_structure">
-                  <h3 class="scent_main_ttl">使用精油の構成</h3>
-                  <div class="scent_desc">
-                    <p style="white-space: pre-line">{{ product.metafields.custom_fields["scent_detail_desc"] }}</p>
-                  </div>
                   <div class="scent_item">
                     <span class="title">TOP</span>
                     <div class="content">
