@@ -9689,7 +9689,7 @@ body.loaded #loading {
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.5px;
   padding-right: 0.4em;
 }
 .comp-section-ttl hgroup .ttl_ja {
@@ -9699,6 +9699,27 @@ body.loaded #loading {
   text-indent: 0.05em;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-section-ttl hgroup .ttl_en {
+    font-size: 5.4rem;
+    letter-spacing: 1px;
+  }
+  .comp-section-ttl hgroup .ttl_ja {
+    font-size: 1.8rem;
+  }
+  .comp-section-ttl hgroup .ttl_ja::after {
+    display: block;
+    content: "";
+    width: 120px;
+    height: 1px;
+    background: #00381f;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -140px;
+    margin: auto;
+  }
+}
 /* 商品一覧*/
 .comp-product-list .item_wrapper {
   display: -webkit-box;
@@ -9757,7 +9778,7 @@ body.loaded #loading {
 }
 .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name .ttl_ja {
   display: none;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name a {
   font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
@@ -9821,9 +9842,18 @@ body.loaded #loading {
 }
 
 @media screen and (min-width: 720px) {
+  .comp-product-list .item_wrapper {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
   .comp-product-list .item_wrapper .item_box {
-    width: calc(33% - 10px);
+    width: 32%;
     margin-bottom: 30px;
+    margin-right: 2%;
+  }
+  .comp-product-list .item_wrapper .item_box:nth-of-type(3n) {
+    margin-right: 0;
   }
   .comp-product-list .item_wrapper .item_box .img_wrap {
     margin-bottom: 20px;
@@ -9834,7 +9864,7 @@ body.loaded #loading {
   }
   .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name {
     line-height: 1.4;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name .ttl_ja {
     display: none;
@@ -9842,10 +9872,7 @@ body.loaded #loading {
   }
   .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name a {
     letter-spacing: 0.05em;
-    font-size: 2.2rem;
-  }
-  .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name a.small {
-    font-size: 17px;
+    font-size: 2.4rem;
   }
   .comp-product-list .item_wrapper .item_box .txt_wrap .product_detail {
     display: block;
@@ -14027,6 +14054,117 @@ body.loaded #loading {
   font-weight: normal;
 }
 
+@media screen and (min-width: 720px) {
+  .page-item-list {
+    padding-top: 0;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .page-item-list .section_inner_new {
+    width: 88vw;
+  }
+  .page-item-list .section-main {
+    margin-bottom: 50px;
+  }
+  .page-item-list .section-main .image_wrap {
+    height: 67vw;
+  }
+  .page-item-list .section-products {
+    margin-bottom: 100px;
+  }
+  .page-item-list .section-products .title_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin-bottom: 50px;
+  }
+  .page-item-list .section-products .title_flex .comp-section-ttl {
+    width: calc(100% - 200px);
+    margin-bottom: 0px;
+  }
+  .page-item-list .section-products .title_flex .postform {
+    width: 200px;
+    padding: 15px 10px 15px 0px;
+    height: auto;
+  }
+  .page-item-list .section-products .title_flex .postform:focus {
+    outline: none;
+  }
+  .page-item-list .section-products .comp-pager {
+    max-width: 380px;
+    margin-top: 60px;
+  }
+  .page-item-list .section-gift {
+    padding-top: 50px;
+    margin-bottom: 8vw;
+  }
+  .page-item-list .section-gift .img_wrap {
+    width: 100%;
+    margin: 45px auto 0;
+    position: relative;
+  }
+  .page-item-list .section-gift .img_wrap .cover_link {
+    display: block;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .page-item-list .section-gift .img_wrap .cover_link .caret {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    top: 0;
+    bottom: 0;
+    right: 25px;
+    margin: auto;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .page-item-list .section-gift .img_wrap .cover_link .caret::before {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    content: "";
+    top: 0;
+    bottom: 0;
+    right: 3px;
+    left: 0;
+    margin: auto;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .page-item-list .section-gift .img_wrap .txt_block {
+    left: 5%;
+    bottom: 30px;
+  }
+  .page-item-list .section-gift .img_wrap .txt_block h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  .page-item-list .section-gift .img_wrap .txt_block h4 {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    font-weight: normal;
+  }
+}
 #itemDetail #leadTxt {
   display: none;
 }
