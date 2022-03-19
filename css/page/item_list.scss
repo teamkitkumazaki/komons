@@ -3,7 +3,7 @@
 	width: 100vw;
 	overflow: hidden;
 	.section_inner_new{
-		width: 88vw;
+		width: 90vw;
 	}
 	.section-main{
 		margin-bottom: 30px;
@@ -108,12 +108,6 @@
 
 @media screen and (min-width: 720px){
 	.page-item-list{
-		padding-top: 0;
-		width: 100vw;
-		overflow: hidden;
-		.section_inner_new{
-			width: 88vw;
-		}
 		.section-main{
 			margin-bottom: 50px;
 			.image_wrap{
@@ -124,6 +118,7 @@
 			margin-bottom: 100px;
 			.title_flex{
 				@include flexSet;
+				justify-content: space-between;
 				align-items: flex-end;
 				margin-bottom: 50px;
 				.comp-section-ttl{
@@ -141,7 +136,7 @@
 			}
 			.comp-pager{
 				max-width: 380px;
-				margin-top: 60px;
+				margin: 60px auto 0;
 			}
 		}
 		.section-gift{
@@ -161,31 +156,8 @@
 					right: 0;
 					margin:auto;
 					.caret{
-						position: absolute;
-						width: 26px;
-						height: 26px;
-						border-radius: 100%;
-						background: rgba(255, 255, 255, 0.3);
-						top: 0;
-						bottom: 0;
-						right: 25px;
-						margin: auto;
-						transition: all 0.5s;
-						&::before{
-							position: absolute;
-	    				width: 6px;
-	    				height: 6px;
-	    				content: "";
-	    				top: 0;
-	    				bottom: 0;
-	    				right: 3px;
-	    				left: 0;
-	    				margin: auto;
-	    				border-top: 2px solid #fff;
-	    				border-right: 2px solid #fff;
-	    				transform: rotate(45deg);
-	    				transition: all 0.5s;
-						}
+						width: 30px;
+						height: 30px;
 					}
 				}
 				.txt_block{
@@ -199,6 +171,88 @@
 						font-size: 1.6rem;
 						letter-spacing: 0.05em;
 						font-weight: normal;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 980px){
+	.page-item-list{
+		padding-top: 0;
+		width: 100vw;
+		overflow: hidden;
+		.section_inner_new{
+			width: 84vw;
+			max-width: 1400px;
+		}
+		.section-main{
+			margin-bottom: 70px;
+			.image_wrap{
+				background-size: cover;
+				background-position: center center;
+				background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/product_list/main_psww0f.jpg);
+				height: 580px;
+				img{
+					display: none;
+				}
+			}
+		}
+		.section-products{
+			margin-bottom: 120px;
+			.title_flex{
+				margin-bottom: 60px;
+				.comp-section-ttl{
+					width: calc(100% - 220px);
+				}
+				.postform{
+					width: 220px;
+				}
+			}
+			.comp-pager{
+				margin: 60px auto 0;
+			}
+		}
+		.section-gift{
+			padding-top: 100px;
+			.section_inner_new{
+				max-width: 1000px;
+			}
+			.img_wrap{
+				width: 100%;
+				margin: 50px auto 0;
+				position: relative;
+				.cover_link{
+					&::before{
+						display: block;
+						content: "";
+						position: absolute;
+						top:0;
+						left:0;
+						width: 100%;
+						height: 100%;
+						pointer-events: none;
+						background: rgba(255,255,255,0.1);
+						opacity: 0;
+						transition: opacity .3s;
+					}
+					&:hover{
+						&::before{
+							opacity: 1;
+						}
+					}
+				}
+				.txt_block{
+					left: 40px;
+					bottom: 40px;
+					h3{
+						font-size: 3.0rem;
+						font-weight: normal;
+	    			margin-bottom: 20px;
+					}
+					h4{
+						font-size: 1.6rem;
 					}
 				}
 			}
