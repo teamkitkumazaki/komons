@@ -19254,6 +19254,9 @@ body.loaded #loading {
   height: 100vw;
   margin-bottom: 30px;
 }
+.page-gift-list .section-main .main_img img {
+  height: auto;
+}
 .page-gift-list .section-main .lead_txt .comp-section-ttl {
   margin-bottom: 20px;
 }
@@ -19351,7 +19354,7 @@ body.loaded #loading {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-image: url(../img/gift/new/gift_main.jpg);
+    background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/gift_main.jpg?v=1647696769);
     margin-bottom: 60px;
   }
   .page-gift-list .section-main .main_img img {
@@ -19361,7 +19364,7 @@ body.loaded #loading {
     margin-bottom: 30px;
   }
   .page-gift-list .section-main .lead_txt .main_desc {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     letter-spacing: 0.05em;
     line-height: 2;
   }

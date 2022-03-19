@@ -7,6 +7,9 @@
     .main_img{
       height: 100vw;
       margin-bottom: 30px;
+      img{
+        height: auto;
+      }
     }
     .lead_txt{
       .comp-section-ttl{
@@ -111,7 +114,7 @@
         height: 550px;
         @include bgSet;
         background-size:cover;
-        background-image: url(../img/gift/new/gift_main.jpg);
+        background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/gift_main.jpg?v=1647696769);
         margin-bottom: 60px;
         img{
           display: none;
@@ -122,7 +125,7 @@
           margin-bottom: 30px;
         }
         .main_desc{
-          font-size: 1.6rem;
+          font-size: 1.5rem;
           letter-spacing: 0.05em;
           line-height: 2;
           p{

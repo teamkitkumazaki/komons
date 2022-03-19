@@ -2,18 +2,26 @@
 {% paginate collection.products by limit %}
 <section class="section-main">
 	<div class="main_img">
+		{{ collection.image | image_url: width: 1500 | image_tag }}
 	</div>
-	<div class="lead_txt">
-		<div class="title_wrap">
-			<span class="title_en">Gift Set</span>
-			<h1 class="main_ttl">Komonsのギフトセット</h1>
+	<div class="section_inner_new">
+		<div class="lead_txt">
+			<div class="comp-section-ttl">
+				<hgroup>
+					<span class="ttl_en">Gift Set</span>
+					<h1 class="ttl_ja">ギフト商品一覧</h1>
+				</hgroup>
+			</div>
+			<div class="main_desc">
+				<p>毎日の家事を「プラスな時間」に変えるKomonsのギフトセットを、大切な人への贈り物に。</p>
+				<p>新築祝い、引っ越し祝い、結婚祝い、日頃のお礼などにおすすめです。<span>すべてのセットはギフトボックス付き。熨斗やメッセージカードなどのギフトサービスも承ります。</span></p>
+			</div>
 		</div>
-		<p class="main_desc"><span>毎日の家事を「プラスな時間」に変えるKomonsのギフトセットを、<font>大切な人への贈り物に。</font></span><span class="pc_only">新築祝い、引っ越し祝い、結婚祝い、日頃のお礼などにおすすめです。</span><span>すべてのセットはギフトボックス付き。熨斗やメッセージカードなどの<font>ギフトサービスも承ります。</font></span></p>
-	</div>
+	</div><!-- section_inner_new -->
 </section>
-{%- include 'gift-item-handler' -%}
+{%- render 'gift-item-handler' -%}
 <section class="section-gift-products">
-	<div class="section_inner">
+	<div class="section_inner_new">
 		<div id="giftProductList" class="comp-gift-product-list">
 			{%- for product in collection.products -%}
 			{% include 'gift-item-card' %}
@@ -21,9 +29,7 @@
 		</div>
 	</div>
 </section>
-<section class="section-gift-service">
-	{%- render 'gift-service' -%}
-</section>
+{%- render 'gift-service' -%}
 {%- render 'gift-faq' -%}
 
 {% endpaginate %}
