@@ -221,9 +221,10 @@
 					width: 50%;
 					order: 0;
 					position: sticky;
-					top: 60px;
+					padding-top: 140px;
+					top:0;
 					left:0;
-					height: calc(100vh - 60px);
+					height: auto;
 					@include flexSet;
 					align-items: center;
 					margin: 0;
@@ -261,8 +262,6 @@
 		.section-main{
 			.main_flex{
 				.main_detail{
-					top: 40px;
-					height: calc(100vh - 40px);
 					max-height: 800px;
 					.detail_inner{
 						max-width: unset;

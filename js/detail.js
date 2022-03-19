@@ -239,4 +239,40 @@ $(function() {
     itemDetailToggle();
   }
 
+  // 縦幅が足りない場合の追従レイアウト調整
+
+  function adjustStickyLayout(){
+    var mainDetail = $('#mainDetail');
+    console.log('adjustStickyLayout');
+
+    function setAdjuster(){
+      var stickyHeight = $('#mainDetail').outerHeight();
+      if(stickyHeight > window.innerHeight){
+        var offset = window.innerHeight - stickyHeight - 40;
+        mainDetail.css({
+          'top': offset + 'px'
+        });
+      }else{
+        mainDetail.css({
+          'top': 0 + 'px'
+        });
+      }
+    }
+
+    function init(){
+      setAdjuster();
+      $(window).on({
+        'resize': function() {
+          setAdjuster();
+        }
+      });
+    }
+
+    init();
+  }
+
+  if (document.getElementById('itemDetailNew')) {
+    adjustStickyLayout();
+  }
+
 });

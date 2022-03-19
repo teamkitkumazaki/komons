@@ -21,7 +21,7 @@
 @import 'component/comp-waiting-list.scss';
 @import 'component/comp-waiting-button.scss';
 @import 'component/comp-pickup-items.scss';
-@import 'component/comp-product-list.scss';
+/*@import 'component/comp-product-list.scss';*/
 @import 'component/comp-list-cart-button.scss';
 @import 'component/comp-related-product.scss';
 
@@ -51,6 +51,15 @@
 @import 'component/comp-section-information.scss';
 @import 'component/comp-jornal-item.scss';
 @import 'component/comp-instagram-wrap.scss';
+
+/* 共通 */
+@import 'component/comp-section-ttl.scss';
+
+
+/* 商品一覧*/
+@import 'component/products/comp-product-list.scss';
+@import 'component/products/comp-pager.scss';
+
 
 /* 商品詳細(新)*/
 @import 'component/itemNew/comp-item-thumbs.scss';

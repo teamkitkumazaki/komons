@@ -5,7 +5,7 @@
 <section class="main"></section>
 <section id="products" class="list_section">
 	<div class="section_ttl">
-		<h1><span>{{ collection.title }}</span><font>{{ collection.metafields.custom_fields["collection_title_ja"] }}</font></h1>
+		<h1><span>{{ collection.title }}</span><font><font>商品一覧</font></font></h1>
 		{%- assign selected1 = "" -%}
 		{%- assign selected2 = "" -%}
 		{%- assign selected3 = "" -%}
@@ -36,22 +36,17 @@
 			{% for product in collection.products %}
 			{% assign product_image = product.featured_image %}
 			<li class="item_box">
-				<span class="cat_ttl">{{ product.metafields.custom_fields["category_name"] }}</span>
 				<div class="img_wrap">
-					<a href="{{ product.url }}" class="collection-img-link-{{ product.id }}"></a>
-					<style>
-						.collection-img-link-{{ product.id }} {
-							background-image: url({{ product_image | img_url: 'master' }});
-						}
-					</style>
+				{%- if product.handle == "k0001" or product.handle == "k0002" or product.handle == "k0003" or product.handle == "k0004" or product.handle == "k0005" or product.handle == "k0006" -%}
+					<a href="{{ product.url }}">{{ product.media[1] | image_url: width: 520 | image_tag }}</a>
+					{%- else -%}
+					<a href="{{ product.url }}">{{ product.media[0] | image_url: width: 520 | image_tag }}</a>
+					{%- endif -%}
 				</div>
-				<div class="txt_wrap">
+				<div class="txt_wrap height-adjust">
+					<span class="cat_ttl">{{ product.metafields.custom_fields["prod_category"] }}</span>
 					<h3 class="prod_name">
-						{%- if product.handle == "k0048" or product.handle == "k0049" or product.handle == "k0053" or product.handle == "k0055" or product.handle == "k0056" -%}
-							<a class="small" href="{{ product.url }}">{{ product.title }}</a>
-						{%- else -%}
-							<a class="" href="{{ product.url }}">{{ product.title }}</a>
-						{%- endif -%}
+						<a href="{{ product.url }}">{{ product.metafields.custom_fields["prod_display_name"] }}</a>
 					</h3>
 					<span class="product_detail">
 						<span class="price">
