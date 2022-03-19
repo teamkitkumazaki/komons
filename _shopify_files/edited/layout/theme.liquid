@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500">
 	{{ 'style.css' | asset_url | stylesheet_tag }}
   <link rel="stylesheet" href="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/slick.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp.min.css">
 	{%- if request.page_type contains 'customers/' or page.handle == 'challenge' or request.page_type contains 'cart' -%}
 	{{ 'admin.css' | asset_url | stylesheet_tag }}
 	{%- endif -%}

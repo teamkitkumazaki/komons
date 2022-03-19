@@ -1,0 +1,114 @@
+.comp-gift-options-new{
+  .item_label{
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  .option_help{
+    margin-top: 15px;
+    button{
+      background: transparent;
+      font-family: inherit;
+      text-align: left;
+      font-size: 1.4rem;
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      span{
+        position: relative;
+      }
+    }
+  }
+  .form_wrap{
+    .radio_wrap{
+      @include flexSet;
+      justify-content: space-between;
+      label{
+        width: calc(50% - 2.5px);
+        font-size: 1.4rem;
+        background: #f4f4f4;
+        padding: 15px 12px;
+        box-sizing: border-box;
+        margin-bottom: 5px;
+        @include flexSet;
+        align-items: center;
+        &:nth-of-type(3){
+          width: 100%;
+        }
+        input[type="checkbox"]{
+          display: none;
+        }
+        .radio_checker{
+          width: 11px;
+          height: 11px;
+          border: 1px solid #979797;
+          background: #fff;
+          border-radius: 50%;
+          margin-right: 5px;
+          position: relative;
+          &::after{
+            display: block;
+            content: "";
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 0px;
+            height: 0px;
+            border-radius: 50%;
+            background: $basicGreen;
+            transition: width .2s,height .2s;
+          }
+        }
+        input[type="checkbox"]:checked + .radio_checker{
+          &::after{
+            width: 7px;
+            height: 7px;
+          }
+        }
+        .name{
+          width: calc(100% - 18px);
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px){
+  .comp-gift-options-new{
+    position: relative;
+    .item_label{
+      display: block;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .option_help{
+      position: absolute;
+      top:0;
+      right:0;
+      margin-top: 0;
+    }
+    .form_wrap{
+      .radio_wrap{
+        justify-content: flex-start;
+        label{
+          width: auto;
+          font-size: 1.5rem;
+          padding: 15px 20px;
+          margin-right: 5px;
+          cursor: pointer;
+          &:nth-of-type(3){
+            width: auto;
+          }
+          .name{
+            pointer-events: none;
+            user-select: none;
+          }
+        }
+      }
+    }
+  }
+}

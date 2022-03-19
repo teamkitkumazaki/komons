@@ -33,7 +33,7 @@
 							<span class="ja">{{ product.metafields.custom_fields["category_name"] }}</span>
 							<span class="en">{{ product.metafields.custom_fields["product_name"] }}</span>
 						</a>
-						<span class="price">{{ product.price | money_without_currency }}円(税抜)</span>
+						<span class="price">{{ product.price | money_without_currency }}円(税込)</span>
 						{%- if product.type == "gift" -%}
 						<div class="button_wrap">
 							<a class="full" href="{{ product.url }}"><span>詳細を見る</span></a>

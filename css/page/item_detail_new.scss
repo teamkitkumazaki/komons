@@ -1,0 +1,328 @@
+.page-item-detail-new{
+	padding-top: 0;
+	margin-bottom: 0;
+	overflow: hidden;
+	h1, h2, h3, h4, h5,p, span{
+		-webkit-font-smoothing: antialiased;
+	}
+	.section-main{
+		.main_flex{
+			.main_detail{
+				margin-top: 30px;
+				margin-bottom: 50px;
+				.detail_inner{
+					max-width: 86vw;
+					margin: 0 auto;
+					.prod_info{
+						padding-bottom: 15px;
+						margin-bottom: 20px;
+						border-bottom: 1px solid #d8d8d8;
+						.category{
+							display: block;
+							font-size: 1.3rem;
+							margin-bottom: 7px;
+						}
+						.prod_name{
+							line-height: 1.6;
+							.name{
+								display: block;
+								font-size: 2.4rem;
+								text-indent: -0.1em;
+								margin-bottom: 5px;
+								&.en{
+									@include libre-r;
+									text-indent: 0.01em;
+									margin-bottom: -5px;
+									@media screen and (min-width: 1100px){
+										margin-bottom: 0;
+									}
+								}
+							}
+							.genre{
+								display: block;
+								font-size: 1.3rem;
+								&.mt{
+									margin-top: 5px;
+								}
+							}
+						}
+					}
+					.price_wrap{
+						font-size: 1.3rem;
+						margin-bottom: 20px;
+						.price{
+						}
+						.volume{
+							color: #464646;
+						}
+					}
+					.desc_wrap{
+						font-size: 1.4rem;
+						letter-spacing: 0.05em;
+						line-height: 1.8;
+						margin-bottom: 30px;
+					}
+				}
+			}
+			.main_description{
+				background-color: #f8f8f8;
+				.desc_inner{
+					padding: 40px 7vw 50px;
+					.desc_unit{
+						margin-bottom: 50px;
+						&:nth-last-of-type(1){
+							margin-bottom: 0;
+						}
+						.brand_introduction{
+							.img_wrap{
+								margin-bottom: 20px;
+							}
+							.txt_wrap{
+								.brand_concept{
+									font-size: 1.8rem;
+									line-height: 1.6;
+									margin-bottom: 12px;
+									letter-spacing: 0.1em;
+									br{
+										display: none;
+									}
+								}
+								.brand_desc{
+									font-size: 1.4rem;
+									letter-spacing: 0.05em;
+									line-height: 1.8;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.section-related-item{
+		margin-top: 50px;
+		margin-bottom: 60px;
+		.section_inner_new{
+			max-width: 82vw;
+		}
+	}
+	.section-related-journal{
+		margin-bottom: 60px;
+		.section_inner_new{
+			max-width: 82vw;
+		}
+	}
+	.section-item-list{
+		margin-bottom: 60px;
+		.section_inner_new{
+			max-width: 82vw;
+		}
+	}
+}
+
+@media screen and (min-width: 720px){
+	.page-item-detail-new{
+		.section-main{
+			.main_flex{
+				.main_detail{
+					margin-top: 60px;
+					margin-bottom: 80px;
+					.detail_inner{
+						max-width: 82vw;
+						margin: 0 auto;
+						.prod_info{
+							padding-bottom: 15px;
+							margin-bottom: 20px;
+							border-bottom: 1px solid #d8d8d8;
+							.category{
+								display: block;
+								font-size: 1.4rem;
+								margin-bottom: 7px;
+							}
+							.prod_name{
+								line-height: 1.6;
+								.name{
+									font-size: 2.8rem;
+									margin-bottom: 5px;
+								}
+								.genre{
+									display: block;
+									font-size: 1.6rem;
+								}
+							}
+						}
+						.price_wrap{
+							font-size: 1.4rem;
+							margin-bottom: 20px;
+							.volume{
+								color: #464646;
+							}
+						}
+						.desc_wrap{
+							font-size: 1.6rem;
+							margin-bottom: 30px;
+						}
+					}
+				}
+				.main_description{
+					.desc_inner{
+						padding: 60px 9vw 70px;
+						.desc_unit{
+							margin-bottom: 60px;
+							.brand_introduction{
+								.img_wrap{
+									margin-bottom: 30px;
+								}
+								.txt_wrap{
+									.brand_concept{
+										font-size: 2.0rem;
+										line-height: 1.6;
+										margin-bottom: 12px;
+										br{
+											display: block;
+										}
+									}
+									.brand_desc{
+										font-size: 1.5rem;
+										line-height: 2;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.section-related-item{
+			margin-top: 80px;
+			margin-bottom: 80px;
+		}
+		.section-related-journal{
+			margin-bottom: 40px;
+		}
+		.section-item-list{
+			margin-bottom: 80px;
+		}
+	}
+}
+
+@media screen and (min-width: 980px){
+	.page-item-detail-new{
+		overflow: visible;
+		.section-main{
+			.main_flex{
+				@include flexSet;
+				align-items: flex-start;
+				.item_thumb{
+					width: 50%;
+					order: 1;
+				}
+				.main_detail{
+					width: 50%;
+					order: 0;
+					position: sticky;
+					padding-top: 140px;
+					top:0;
+					left:0;
+					height: auto;
+					@include flexSet;
+					align-items: center;
+					margin: 0;
+					.detail_inner{
+						max-width: unset;
+						margin: 0 auto;
+						padding: 0 50px;
+					}
+				}
+				.main_description{
+					width: 50%;
+					margin-left: 50%;
+					order: 2;
+					.desc_inner{
+						padding: 60px 50px 70px;
+					}
+				}
+			}
+		}
+		.section-related-item{
+			margin-top: 100px;
+			margin-bottom: 100px;
+		}
+		.section-related-journal{
+			margin-bottom: 100px;
+		}
+		.section-item-list{
+			margin-bottom: 100px;
+		}
+	}
+}
+
+@media screen and (min-width: 1100px){
+	.page-item-detail-new{
+		.section-main{
+			.main_flex{
+				.main_detail{
+					max-height: 800px;
+					.detail_inner{
+						max-width: unset;
+						margin: 0 auto;
+						padding: 0 80px;
+						.prod_info{
+							padding-bottom: 5px;
+							margin-bottom: 20px;
+							.category{
+								font-size: 1.4rem;
+								margin-bottom: 10px;
+							}
+							.prod_name{
+								line-height: 1.6;
+								@include flexSet;
+								align-items: baseline;
+								justify-content: flex-start;
+								.name{
+									font-size: 2.6rem;
+									text-indent: -0.1em;
+									margin-right: 10px;
+									margin-bottom: 5px;
+								}
+								.genre{
+									font-size: 1.6rem;
+								}
+							}
+						}
+						.price_wrap{
+							font-size: 1.4rem;
+							margin-bottom: 30px;
+							.volume{
+								color: #464646;
+							}
+						}
+						.desc_wrap{
+							font-size: 1.5rem;
+							letter-spacing: 0.01em;
+							margin-bottom: 30px;
+							span{
+								display: block;
+							}
+						}
+					}
+				}
+				.main_description{
+					.desc_inner{
+						padding: 80px 80px 80px;
+					}
+				}
+			}
+		}
+		.section-related-item{
+			margin-top: 120px;
+			margin-bottom: 100px;
+		}
+		.section-related-journal{
+			margin-bottom: 100px;
+		}
+		.section-item-list{
+			margin-bottom: 100px;
+		}
+	}
+}

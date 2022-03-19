@@ -74,6 +74,7 @@ $(function() {
 
     function afterScroll(noAnimate) {
       target.addClass('rolled');
+      $('header').addClass('rolled');
       headerArrow.attr('id', 'arrowReturn');
       scrollSwitch = 1;
     };
@@ -83,6 +84,7 @@ $(function() {
 
       } else {
         target.removeClass('rolled');
+        $('header').removeClass('rolled');
         headerArrow.attr('id', 'arrowScroll');
         scrollSwitch = 0;
       }
@@ -185,6 +187,21 @@ $(function() {
               };
             });
           }
+          if (document.getElementById('itemDetailNew')) {
+            $("section").each(function() {
+              var rolledHeight = $('#rolledHeight').offset().top;
+              var relatedItem = $('#relatedItem').offset().top;
+              var sectionscroll = $(window).scrollTop();
+              if ( sectionscroll > rolledHeight) {
+                $('#fixedCartWrap').addClass('display');
+                if ( sectionscroll > relatedItem) {
+                  $('#fixedCartWrap').removeClass('display');
+                }
+              }else{
+                $('#fixedCartWrap').removeClass('display');
+              }
+            });
+          }
         },
       });
     };
@@ -244,7 +261,7 @@ $(function() {
   };
 
   humMenuToggle($('#humMenu'));
-
+  
   //トップページ メインスライダー
   function backGroundSlider(target) {
     var obj = $('#slideShow');
@@ -394,7 +411,6 @@ $(function() {
 
     function init(){
       $.each(target.find('input[type=number]'), function(index) {
-        console.log('index:' + index);
         $(this).on({
           'change': function() {
             lotNumer = $(this).val();
@@ -996,6 +1012,10 @@ $(function() {
     optionPopup($('#optionPop'));
   }
 
+  if (document.getElementById('itemDetailNew')) {
+    optionPopup($('#optionPop'));
+  }
+
   //定期購入 サイクル選択ポップアップ
   function subscriptionSelect(target){
     var optionSelecter = target.find('select');
@@ -1037,7 +1057,6 @@ $(function() {
       });
       giftOptionFields.find("option").each(function(index) {
         variationFields[index] = $(this).val();
-        console.log('optionVal:' + variationFields[index]);
       });
 
       cycleList.find("input[name=sub_cycle]").each(function(index) {

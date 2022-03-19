@@ -1,0 +1,55 @@
+<li class="item_box">
+  <div class="img_wrap">
+  {%- if product.handle == "k0001" or product.handle == "k0002" or product.handle == "k0003" or product.handle == "k0004" or product.handle == "k0005" or product.handle == "k0006" -%}
+    <a href="{{ product.url }}">{{ product.media[1] | image_url: width: 520 | image_tag }}</a>
+    {%- else -%}
+    <a href="{{ product.url }}">{{ product.media[0] | image_url: width: 520 | image_tag }}</a>
+    {%- endif -%}
+  </div>
+  <div class="txt_wrap height-adjust">
+    <span class="cat_ttl">{{ product.metafields.custom_fields["prod_category"] }}</span>
+    <h3 class="prod_name">
+      <a href="{{ product.url }}">{{ product.metafields.custom_fields["prod_display_name"] }}</a>
+    </h3>
+    <span class="product_detail">
+      <span class="price">
+        {%- if collection.handle == "upcoming" -%}
+        {{ product.metafields.custom_fields["category_name"] }}
+        {%- else -%}
+        {{ product.price | money_without_currency }}円(税込)
+        {%- endif -%}
+      </span>
+    </span>
+  </div>
+  <div class="comp-list-cart-button">
+    {%- if product.type == "upcoming" -%}
+    <div class="comp-arrow-link">
+      <a href={{ product.url }}><span>詳細を見る</span></a>
+    </div>
+    {%- else -%}
+      {%- if product.variants.first.inventory_quantity == 0 -%}
+      <span class="soldout">在庫切れ</span>
+      {%- else -%}
+      <div style="width: 100%; margin: 0 auto; padding: 0">
+        <div class="cartjs_box">
+        {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+          <select name="id" id="ProductSelect-{{ product.id }}" class="product-form__variants no-js" style="display: none;">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}"
+              {%- if variant == current_variant %} selected="selected" {%- endif -%}
+            >
+              {{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+            </option>
+          {% endfor %}
+          </select>
+          <div class="cartin_button">
+            <button><span>カートに入れる</span></button>
+            <input id="cartSubmit-{{ product.id }}" type="submit" value="カートに入れる">
+          </div>
+        {% endform %}
+        </div>
+      </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</li>

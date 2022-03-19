@@ -1,0 +1,108 @@
+.comp-related-journal-slide{
+  width: 100vw;
+  margin-left: -7vw;
+  padding-left: 7vw;
+  box-sizing: border-box;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  .slide_inner{
+    width:calc(calc(77vw * 4) + 17vw);
+    @include flexSet;
+    justify-content: flex-start;
+    .journal_item{
+      width: 72vw;
+      margin-right: 5vw;
+      .img_wrap{
+        margin-bottom: 20px;
+        a{
+          display: block;
+          overflow: hidden;
+          max-height: 45vw;
+        }
+      }
+      .txt_wrap{
+        padding: 0 5px;
+        .article_name{
+          display: block;
+          font-size: 1.5rem;
+          line-height: 1.6;
+          color: inherit;
+          margin-bottom: 15px;
+        }
+        .genre{
+          display: block;
+          font-size: 1.2rem;
+          color: $insertGreen
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-related-journal-slide{
+    width: auto;
+    overflow: unset;
+    .slide_inner{
+      width: 100%;
+      @include flexSet;
+      justify-content: flex-start;
+      justify-content: space-between;
+      .journal_item{
+        width: 48%;
+        margin-right: 0;
+        margin-bottom: 40px;
+        .img_wrap{
+          margin-bottom: 20px;
+          a{
+            max-height: 25vw;
+          }
+        }
+        .txt_wrap{
+          padding: 0 5px;
+          .article_name{
+            display: block;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+          }
+          .genre{
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 980px){
+  .comp-related-journal-slide{
+    .slide_inner{
+      .journal_item{
+        width: 23%;
+        margin-bottom: 0px;
+        .img_wrap{
+          margin-bottom: 20px;
+          a{
+            max-height: 12.5vw;
+          }
+        }
+        .txt_wrap{
+          padding: 0 5px;
+          .article_name{
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+          }
+          .genre{
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

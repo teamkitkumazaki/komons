@@ -21,7 +21,7 @@
 @import 'component/comp-waiting-list.scss';
 @import 'component/comp-waiting-button.scss';
 @import 'component/comp-pickup-items.scss';
-@import 'component/comp-product-list.scss';
+/*@import 'component/comp-product-list.scss';*/
 @import 'component/comp-list-cart-button.scss';
 @import 'component/comp-related-product.scss';
 
@@ -33,7 +33,6 @@
 @import 'component/comp-gift-option-pop.scss';
 @import 'component/comp-filter-wrap.scss';
 @import 'component/comp-gift-product-list.scss';
-@import 'component/comp-fixed-cart-wrap.scss';
 @import 'component/comp-detail-toggle.scss';
 @import 'component/comp-article-quote.scss';
 @import 'component/comp-article-form.scss';
@@ -53,6 +52,33 @@
 @import 'component/comp-jornal-item.scss';
 @import 'component/comp-instagram-wrap.scss';
 
+/* 共通 */
+@import 'component/comp-section-ttl.scss';
+
+
+/* 商品一覧*/
+@import 'component/products/comp-product-list.scss';
+@import 'component/products/comp-pager.scss';
+
+
+/* 商品詳細(新)*/
+@import 'component/itemNew/comp-item-thumbs.scss';
+@import 'component/itemNew/comp-gift-options-new.scss';
+@import 'component/itemNew/comp-cart-wrap.scss';
+@import 'component/itemNew/comp-detail-title.scss';
+@import 'component/itemNew/comp-detail-desc.scss';
+@import 'component/itemNew/comp-detail-button.scss';
+@import 'component/itemNew/comp-detail-toggle-new.scss';
+@import 'component/itemNew/comp-related-item-slide.scss';
+@import 'component/itemNew/comp-related-journal-slide.scss';
+@import 'component/itemNew/comp-fixed-cart-wrap.scss';
+@import 'component/itemNew/comp-product-image-list.scss';
+@import 'component/itemNew/comp-scent-detail.scss';
+
+
+@import 'component/comp-list-link.scss';
+
+
 /* ストア一覧・FAQ */
 @import 'component/comp-category-button.scss';
 @import 'component/store/comp-popup-store.scss';
@@ -65,10 +91,13 @@
 /* FAQ */
 @import 'component/faq/comp-qa.scss';
 
+
+
 /* ########## ページ別レイアウト ########## */
 @import 'page/index.scss'; //トップページ
 @import 'page/item_list.scss'; //商品一覧
 @import 'page/item_detail.scss'; //商品詳細
+@import 'page/item_detail_new.scss'; //商品詳細
 @import 'page/group.scss'; //商品グループ一覧・検索結果
 @import 'page/journal.scss'; /*ジャーナル一覧*/
 @import 'page/journal_detail.scss'; /*ジャーナル詳細*/

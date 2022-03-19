@@ -1,0 +1,84 @@
+.comp-detail-button{
+  margin-top: 25px;
+  a{
+    display: block;
+    background: #fff;
+    color: $basicGreen;
+    font-size: 1.6rem;
+    padding: 15px 0;
+    text-align: center;
+    transition: color .3s, background .3s;
+    span{
+      display: inline-block;
+      position: relative;
+      padding-right: 35px;
+      &::after{
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: 22px;
+        height: 10px;
+        transition: all .3s;
+        @include bgSet;
+        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750746/product_list/arrow_hnk35p.png);
+        background-size: 22px;
+      }
+    }
+    &.bg{
+      background: #f8f8f8;
+    }
+    &.small{
+      font-size: 1.3rem;
+      padding: 15px 0;
+      span{
+        display: inline-block;
+        position: relative;
+        padding-right: 25px;
+        &::after{
+          width: 18px;
+          height: 10px;
+          background-size: 18px;
+        }
+      }
+    }
+    &:hover{
+      background: #dfdfdf;
+      span{
+        &::after{
+          right: -5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-detail-button{
+    margin-top: 25px;
+    a{
+      padding: 25px 0;
+      &.small{
+        font-size: 1.4rem;
+        padding: 20px 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 980px){
+  .comp-detail-button{
+    margin-top: 25px;
+    max-width: 50%;
+    a{
+      padding: 20px 0;
+      &.small{
+        font-size: 1.4rem;
+        padding: 20px 0;
+      }
+    }
+  }
+}

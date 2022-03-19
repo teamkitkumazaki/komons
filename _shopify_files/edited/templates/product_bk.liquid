@@ -11,6 +11,7 @@
 {%- endif -%}
 {% section 'journal-list' %}
 {% section 'section-back' %}
+{% section 'instagram' %}
 </article>
 {% section 'fixed-cart-wrap' %}
 
@@ -33,38 +34,6 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
 
 <script type="application/ld+json">
- {
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "{{ product.title }}",
-  "image": "{{ product.media[2] | img_url: 'master' }}",
-	"sku": "{{ product.handle }}",
-  "offers": [
-    {
-      "@type": "Offer",
-      "url": "https://komons-japan.com/products/{{ product.handle }}",
-      "price": "{{ product.price | remove:',' }}",
-      "priceCurrency": "JPN",
-      "priceValidUntil": "2024-12-31",
-      "description": "{{ product.metafields.custom_fields["product_outline"] | strip_html }}",
-      {%- if product.available -%}
-      "availability": "InStock",
-      {%- else -%}
-      "availability": "OutOfStock",
-      {% endif %}
-      "itemCondition": "NewCondition",
-      "description": {{ product.metafields.custom_fields["product_outline"] | strip_html | json }},
-    }
-  ]
-	"brand": {
-		"@type": "Brand",
-		"name": "Komons-Japan"
-	}
- }
-</script>
-
-<!--
-<script type="application/ld+json">
 {
   "@context": "http://schema.org/",
   "@type": "Product",
@@ -80,8 +49,8 @@
       {
         "@type" : "Offer",
         "sku": {{ product.handle | json }},
-        "description": {{ product.metafields.custom_fields["product_outline"] | strip_html | json }},
-        "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+        "description": {{ product.metafields.custom_fields["product_outline"] | strip_html | strip_newlines | json }},
+        {% if product.available %}"availability": "InStock",{% else %}"availability": "OutOfStock",{% endif %}
         "price" : {{ product.price | remove:',' | json }},
         "priceCurrency" : {{ cart.currency.iso_code | json }},
         "priceValidUntil": "2024-12-31",
@@ -91,4 +60,3 @@
   ]
 }
 </script>
--->

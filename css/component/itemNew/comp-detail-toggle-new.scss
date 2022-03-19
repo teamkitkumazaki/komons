@@ -1,0 +1,113 @@
+.comp-detail-toggle-new{
+  .toggle_item{
+    height: 35px;
+    overflow: hidden;
+    border-bottom: 1px solid #d8d8d8;
+    transition: height .3s;
+    margin-bottom: 15px;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
+    .toggle_button_new{
+      width: 100%;
+      display: block;
+      padding: 0 0 10px 5px;
+      font-size: 1.5rem;
+      text-align: left;
+      border: none;
+      font-family: inherit;
+      box-shadow: none;
+      background: transparent;
+      appearance:none;
+      @include bgSet;
+      background-size: 12px;
+      background-position: bottom 16px right 5px;
+      background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
+      color: #646464;
+      letter-spacing: 0.08em;
+      &.active{
+        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
+      }
+    }
+    .toggle_content_new{
+      padding-bottom: 30px;
+      .detail_item{
+        margin-bottom: 25px;
+        &:nth-of-type(1){
+          margin-top: 10px;
+        }
+        &:nth-last-of-type(1){
+          margin-bottom: 0;
+        }
+        .payment_img{
+          width: 80%;
+          margin-left: -5px;
+          margin-top: -5px;
+          max-width: 280px;
+        }
+        .img_wrap{
+          margin: 0 5px 15px;
+        }
+        .title{
+          display: block;
+          background: #f0f0f0;
+          font-size: 1.5rem;
+          padding: 12px 12px;
+          margin-bottom: 15px;
+          letter-spacing: 0.08em;
+        }
+        .content{
+          p{
+            font-size: 1.3rem;
+            line-height: 1.8;
+            padding: 0 10px;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            &:nth-last-of-type(1){
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-detail-toggle-new{
+    .toggle_item{
+      margin-bottom: 15px;
+
+      .toggle_button_new{
+        padding: 0 0 15px 10px;
+        font-size: 1.8rem;
+        cursor: pointer;
+        transition: color .3s;
+        &:hover{
+          color: $insertGreen;
+        }
+      }
+      .toggle_content_new{
+        .detail_item{
+          margin-bottom: 20px;
+          .title{
+            font-size: 1.6rem;
+            padding: 15px 12px;
+            margin-bottom: 15px;
+          }
+          .content{
+            .img_wrap{
+              margin: 0 10px 25px;
+            }
+            p{
+              font-size: 1.4rem;
+              line-height: 2;
+              padding: 0 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

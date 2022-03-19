@@ -1,0 +1,114 @@
+.comp-pager{
+  .comp_inner{
+    @include flexSet;
+    justify-content: center;
+    align-items: center;
+    .link{
+      font-size: 1.3rem;
+      color: inherit;
+      width: 25%;
+      text-align: center;
+      border: 1px solid $basicGreen;
+      height: 45px;
+      line-height: 43px;
+      box-sizing: border-box;
+      span{
+        position: relative;
+        display: inline-block;
+        &::after{
+          display: block;
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          content: "";
+          border-top: 1px solid $basicGreen;
+          border-right: 1px solid $basicGreen;
+          transition: border 0.2s;
+        }
+      }
+      &.disabled{
+        background: #f1f1f1;
+        border: 1px solid #f1f1f1;
+        color: #acacac;
+        span{
+          &::after{
+            border-top: 1px solid #acacac;
+            border-right: 1px solid #acacac;
+          }
+        }
+      }
+      &.previous{
+        span{
+          padding-left: 10px;
+          &::after{
+            left:0;
+            transform: rotate(-135deg);
+          }
+        }
+      }
+      &.next{
+        span{
+          padding-right: 10px;
+          &::after{
+            right:0;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    select{
+      width: 44%;
+      margin: 0 3%;
+      height: 45px;
+      line-height: 43px;
+      font-size: 16px;
+      padding: 0 10px;
+      text-indent: 42px;
+      @media screen and (min-width: 720px){
+        text-indent: 55px;
+      }
+      border-radius:0px;
+      @include libre-r;
+      color: #fff;
+      background: $basicGreen;
+      border: 1px solid $basicGreen;
+      @include bgSet;
+      background-size: 7px;
+      background-position: top 16px right 15px;
+      background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/select_caret.svg?v=1647681780);
+      cursor: pointer;
+			appearance: none;
+      &:focus{
+        border: 1px solid $basicGreen;
+        outline: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-pager{
+    margin-top: 50px;
+    .comp_inner{
+      .link{
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px){
+  .comp-pager{
+    .comp_inner{
+      justify-content: flex-start;
+      .link{
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

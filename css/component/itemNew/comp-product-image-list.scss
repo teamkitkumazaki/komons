@@ -1,0 +1,30 @@
+.comp-product-image-list{
+  @include flexSet;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  .image_item{
+    width: calc(50% - 2.5px);
+    margin-bottom: 5px;
+    img{
+      height: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-product-image-list{
+    @include flexSet;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    .image_item{
+      width: calc(33% - 2.5px);
+      margin-bottom: 7px;
+    }
+  }
+}
+
+@media screen and (min-width: 980px){
+  .comp-product-image-list{
+    display: none;
+  }
+}

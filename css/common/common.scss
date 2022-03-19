@@ -19,7 +19,7 @@ body {
 	font-size: 14px;
 	color: $basicGreen;
 	line-height: 1;
-	font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+	font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
 	width: 100%;
 	left:0;
 	right:0;
@@ -44,7 +44,7 @@ h1,h2,h3,h4,h5{
 	@include wrapper;
 }
 .section_ttl {
-	@include waku;
+	@include wrapper;
 	padding: 130px 0 70px;
 
 	h1, h2 {

@@ -1,0 +1,47 @@
+.comp-section-ttl{
+  hgroup{
+    @include flexSet;
+    justify-content: flex-start;
+    align-items: baseline;
+    .ttl_en{
+      display: block;
+      font-size: 3.4rem;
+      @include libre-r;
+      letter-spacing: 0.5px;
+      padding-right: 0.4em;
+    }
+    .ttl_ja{
+      display: block;
+      position: relative;
+      font-size: 1.6rem;
+      text-indent: 0.05em;
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-section-ttl{
+    hgroup{
+      .ttl_en{
+        font-size: 5.4rem;
+        letter-spacing: 1px;
+      }
+      .ttl_ja{
+        font-size: 1.8rem;
+        &::after{
+          display: block;
+          content: "";
+          width: 120px;
+          height: 1px;
+          background: $basicGreen;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: -140px;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+}
