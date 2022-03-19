@@ -1,0 +1,95 @@
+.comp-gift-product-list{
+  @include flexSet;
+  justify-content: space-between;
+  .list_item{
+    width: 48%;
+    position: relative;
+    padding-bottom: 45px;
+    margin-bottom: 20px;
+    .item_thumb{
+      display: block;
+      margin-bottom: 20px;
+      img{
+        height: auto;
+      }
+    }
+    .txt_wrap{
+      margin-bottom: 15px;
+      .name{
+        display: block;
+        color: inherit;
+        margin-bottom: 15px;
+        font-size: 1.6rem;
+        letter-spacing: 0.02em;
+        margin-bottom: 10px;
+        &.en{
+          @include libre-r;
+          /*text-indent: -0.1em;*/
+          font-size: 2.1rem;
+          letter-spacing: 0.5px;
+          display: block;
+          margin-bottom: 8px;
+        }
+      }
+      .added{
+        font-size: 1.2rem;
+        line-height: 1.6;
+        letter-spacing: 0.08em;
+      }
+      .price{
+        margin-top: 15px;
+        display: block;
+        font-size: 1.2rem;
+        letter-spacing: 0.08em;
+      }
+    }
+    .product_desc{
+      display: block;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      letter-spacing: 0.01em;
+      color: #646464;
+      margin-bottom: 15px;
+    }
+    .content_icon{
+      display: none;
+    }
+    .detail_button{
+      position: absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      margin: auto;
+      width: 100%;
+      .gift_detail_button{
+        display: block;
+        padding: 15px 0;
+        border-top: 1px solid #d8d8d8;
+        color: inherit;
+        font-size: 1.3rem;
+        letter-spacing: 0.05em;
+        span{
+          display: block;
+          position: relative;
+          &::after{
+            display: block;
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 12px;
+            top: 0;
+            bottom: 0;
+            right: 5px;
+            transition: right 0.5s;
+            margin: auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/arrow_vuojtf.png);
+            background-size: contain;
+            background-position: center center;
+          }
+        }
+      }
+    }
+  }
+}
