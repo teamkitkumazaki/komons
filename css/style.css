@@ -9532,6 +9532,49 @@ body.loaded #loading {
   color: #fff;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-filter-wrap {
+    max-width: 1400px;
+    width: 80.5vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 1200px) {
+  .comp-filter-wrap {
+    width: 86vw;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 980px) {
+  .comp-filter-wrap {
+    max-width: 780px;
+    width: 86vw;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 720px) {
+  .comp-filter-wrap {
+    width: 86vw;
+  }
+}
+@media screen and (min-width: 720px) {
+  .comp-filter-wrap .fil_ttl {
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 25px;
+  }
+}
+@media screen and (min-width: 720px) {
+  .comp-filter-wrap .input_wrap .radio_wrap {
+    width: calc(50% - 5px);
+    margin-bottom: 10px;
+  }
+  .comp-filter-wrap .input_wrap .radio_wrap label {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    padding: 15px 0;
+  }
+}
 .comp-gift-product-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9641,6 +9684,57 @@ body.loaded #loading {
   background-position: center center;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-gift-product-list {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comp-gift-product-list .list_item {
+    width: 31%;
+    margin-right: 3.5%;
+    position: relative;
+    padding-bottom: 45px;
+    margin-bottom: 30px;
+  }
+  .comp-gift-product-list .list_item:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  .comp-gift-product-list .list_item .item_thumb {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .comp-gift-product-list .list_item .item_thumb img {
+    height: auto;
+  }
+  .comp-gift-product-list .list_item .txt_wrap {
+    margin-bottom: 15px;
+  }
+  .comp-gift-product-list .list_item .txt_wrap .name {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .comp-gift-product-list .list_item .txt_wrap .name.en {
+    font-size: 2.6rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .comp-gift-product-list .list_item .txt_wrap .added {
+    font-size: 1.4rem;
+  }
+  .comp-gift-product-list .list_item .txt_wrap .price {
+    margin-top: 15px;
+    font-size: 1.4rem;
+  }
+  .comp-gift-product-list .list_item .product_desc {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  .comp-gift-product-list .list_item .detail_button .gift_detail_button {
+    font-size: 1.4rem;
+  }
+}
 .comp-gift-service-list .service_item {
   margin-bottom: 40px;
 }
@@ -9658,6 +9752,9 @@ body.loaded #loading {
   font-size: 1.4rem;
   letter-spacing: 0.05em;
   line-height: 1.8;
+}
+.comp-gift-service-list .service_item .title_wrap .service_desc a {
+  color: #068acc;
 }
 .comp-gift-service-list .service_item .title_wrap .service_desc span {
   display: block;
@@ -9702,6 +9799,72 @@ body.loaded #loading {
   background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/gift_service/arrow_white.png);
 }
 
+@media screen and (min-width: 720px) {
+  .comp-gift-service-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .comp-gift-service-list .service_item {
+    width: 48%;
+    margin-bottom: 60px;
+  }
+  .comp-gift-service-list .service_item .img_wrap {
+    margin-bottom: 40px;
+  }
+  .comp-gift-service-list .service_item .title_wrap .service_name {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  .comp-gift-service-list .service_item .title_wrap .service_desc {
+    font-size: 1.4rem;
+  }
+  .comp-gift-service-list .service_item .title_wrap .service_desc span {
+    font-size: 1.2rem;
+  }
+  .comp-gift-service-list .gift_link_button {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .comp-gift-service-list .gift_link_button a {
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 15px 0;
+    text-align: center;
+  }
+  .comp-gift-service-list .gift_link_button a span {
+    display: inline-block;
+    font-size: 1.6rem;
+    line-height: normal;
+    letter-spacing: 0.02em;
+    padding: 0 40px 0 0px;
+    color: #fff;
+    position: relative;
+  }
+  .comp-gift-service-list .gift_link_button a span::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0px;
+    margin: auto;
+    width: 24px;
+    height: 9px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/gift_service/arrow_white.png);
+  }
+}
 /* 商品詳細(新)*/
 .comp-item-thumbs {
   position: relative;
@@ -18771,19 +18934,6 @@ body.loaded #loading {
   height: 100vw;
   margin-bottom: 30px;
 }
-.page-gift-list .section-main .lead_txt {
-  /*.comp-section-ttl{
-    text-align: center;
-    margin-bottom: 30px;
-    hgroup{
-      display: block;
-      .ttl_en{
-        padding-right: 0;
-        margin-bottom: 10px;
-      }
-    }
-  }*/
-}
 .page-gift-list .section-main .lead_txt .comp-section-ttl {
   margin-bottom: 20px;
 }
@@ -18815,6 +18965,58 @@ body.loaded #loading {
   padding: 60px 0;
 }
 
+@media screen and (min-width: 720px) {
+  .page-gift-list {
+    padding-top: 0;
+  }
+  .page-gift-list .section_inner_new {
+    width: 88vw;
+  }
+  .page-gift-list .section-main {
+    margin-bottom: 40px;
+  }
+  .page-gift-list .section-main .main_img {
+    height: 100vw;
+    margin-bottom: 60px;
+  }
+  .page-gift-list .section-main .lead_txt .comp-section-ttl {
+    margin-bottom: 30px;
+  }
+  .page-gift-list .section-main .lead_txt .main_desc {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+  }
+  .page-gift-list .section-main .lead_txt .main_desc p {
+    margin-bottom: 0em;
+  }
+  .page-gift-list .section-filter {
+    margin-bottom: 60px;
+  }
+  .page-gift-list .section-filter .comp-filter-wrap {
+    width: 88vw;
+  }
+  .page-gift-list .section-gift-products {
+    margin-bottom: 80px;
+  }
+  .page-gift-list .section-gift-products .section_inner_new {
+    width: 88vw;
+  }
+  .page-gift-list .section-gift-service {
+    padding: 100px 0;
+  }
+  .page-gift-list .section-gift-service .comp-centered-section-title {
+    margin-bottom: 60px;
+  }
+  .page-gift-list .section-gift-service .section_inner_new {
+    width: 82vw;
+  }
+  .page-gift-list .section-faq {
+    padding: 80px 0;
+  }
+  .page-gift-list .section-faq .section_inner_new {
+    width: 82vw;
+  }
+}
 /*ギフトページ*/
 .gift-service .section_ttl {
   padding: 0;

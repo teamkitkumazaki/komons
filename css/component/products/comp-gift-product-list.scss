@@ -93,3 +93,55 @@
     }
   }
 }
+
+@media screen and (min-width: 720px){
+  .comp-gift-product-list{
+    justify-content: flex-start;
+    .list_item{
+      width: 31%;
+      margin-right: 3.5%;
+      position: relative;
+      padding-bottom: 45px;
+      margin-bottom: 30px;
+      &:nth-of-type(3n){
+        margin-right: 0;
+      }
+      .item_thumb{
+        display: block;
+        margin-bottom: 20px;
+        img{
+          height: auto;
+        }
+      }
+      .txt_wrap{
+        margin-bottom: 15px;
+        .name{
+          margin-bottom: 15px;
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+          &.en{
+            font-size: 2.6rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+          }
+        }
+        .added{
+          font-size: 1.4rem;
+        }
+        .price{
+          margin-top: 15px;
+          font-size: 1.4rem;
+        }
+      }
+      .product_desc{
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+      }
+      .detail_button{
+        .gift_detail_button{
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}

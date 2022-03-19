@@ -16,6 +16,9 @@
         font-size: 1.4rem;
         letter-spacing: 0.05em;
         line-height: 1.8;
+        a{
+          color: #068acc;
+        }
         span{
           display: block;
           margin-top: 0.5em;
@@ -55,6 +58,66 @@
           background-position: center center;
           background-size: contain;
           background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/gift_service/arrow_white.png);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-gift-service-list{
+    @include flexSet;
+    justify-content: space-between;
+    .service_item{
+      width: 48%;
+      margin-bottom: 60px;
+      .img_wrap{
+        margin-bottom: 40px;
+      }
+      .title_wrap{
+        .service_name{
+          font-size: 2.2rem;
+          margin-bottom: 20px;
+        }
+        .service_desc{
+          font-size: 1.4rem;
+          span{
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+    .gift_link_button{
+      width: 100%;
+      margin-top: 30px;
+      a{
+        max-width: 380px;
+        margin: 0 auto;
+        padding: 15px 0;
+        text-align: center;
+        span{
+          display: inline-block;
+          font-size: 1.6rem;
+          line-height: normal;
+          letter-spacing: 0.02em;
+          padding: 0 40px 0 0px;
+          color: #fff;
+          position: relative;
+          &::after{
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0px;
+            margin: auto;
+            width: 24px;
+            height: 9px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/gift_service/arrow_white.png);
+          }
         }
       }
     }

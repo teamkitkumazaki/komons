@@ -33,3 +33,26 @@
     }
   }
 }
+
+@media screen and (min-width: 720px){
+  .comp-filter-wrap{
+    @include wrapper;
+    padding: 30px;
+    .fil_ttl{
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 25px;
+    }
+    .input_wrap{
+      .radio_wrap{
+        width: calc(50% - 5px);
+        margin-bottom: 10px;
+        label{
+          font-size: 1.6rem;
+          letter-spacing: 0.05em;
+          padding: 15px 0;
+        }
+      }
+    }
+  }
+}
