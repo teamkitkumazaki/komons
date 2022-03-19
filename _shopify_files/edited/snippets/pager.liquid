@@ -1,0 +1,27 @@
+{%- if paginate.pages > 1 -%}
+{%- assign next = paginate.current_page | plus: 1 -%}
+{%- assign prev = paginate.current_page | minus: 1 -%}
+<div class="comp-pager">
+  <div class="comp_inner">
+  {%- if prev > 0 -%}
+    <a class="link previous" href="{{ shop.url }}/collections/{{collection.handle}}?page={{prev}}"><span>前へ</span></a>
+  {%- else -%}
+    <a class="link previous disabled" href="{{ shop.url }}/collections/{{collection.handle}}?page={{prev}}"><span>前へ</span></a>
+  {%- endif -%}
+    <select class="pjax-select" name="pager" onChange="location.href=value;">
+    {% for i in (1..paginate.pages) %}
+    {%- if i == paginate.current_page -%}
+    <option selected value="{{shop.url}}/collections/{{collection.handle}}?page={{ i }}">{{ i }}/{{paginate.pages}}</option>
+    {%- else -%}
+    <option value="{{shop.url}}/collections/{{collection.handle}}?page={{ i }}">{{ i }}/{{paginate.pages}}</option>
+    {%- endif -%}
+    {% endfor %}
+    </select>
+    {%- if paginate.current_page < paginate.pages -%}
+      <a class="link next" href="{{shop.url}}/collections/{{collection.handle}}?page={{next}}"><span>次へ</span></a>
+    {%- else -%}
+      <a class="link next disabled" href="{{shop.url}}/collections/{{collection.handle}}?page={{next}}"><span>次へ</span></a>
+    {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
