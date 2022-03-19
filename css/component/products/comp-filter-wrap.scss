@@ -36,7 +36,6 @@
 
 @media screen and (min-width: 720px){
   .comp-filter-wrap{
-    @include wrapper;
     padding: 30px;
     .fil_ttl{
       font-size: 1.8rem;
@@ -51,6 +50,36 @@
           font-size: 1.6rem;
           letter-spacing: 0.05em;
           padding: 15px 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 980px){
+  .comp-filter-wrap{
+    padding: 15px 20px;
+    @include flexSet;
+    align-items: center;
+    justify-content: flex-start;
+    .fil_ttl{
+      width: 200px;
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0;
+    }
+    .filter_item{
+      width: calc(100% - 200px);
+    }
+    .input_wrap{
+      @include flexSet;
+      justify-content: space-between;
+      .radio_wrap{
+        width: calc(25% - 5px);
+        margin-bottom: 0px;
+        label{
+          font-size: 1.4rem;
+          padding: 12px 0;
         }
       }
     }

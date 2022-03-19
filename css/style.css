@@ -9534,37 +9534,13 @@ body.loaded #loading {
 
 @media screen and (min-width: 720px) {
   .comp-filter-wrap {
-    max-width: 1400px;
-    width: 80.5vw;
-    margin-left: auto;
-    margin-right: auto;
     padding: 30px;
   }
-}
-@media screen and (min-width: 720px) and (max-width: 1200px) {
-  .comp-filter-wrap {
-    width: 86vw;
-  }
-}
-@media screen and (min-width: 720px) and (max-width: 980px) {
-  .comp-filter-wrap {
-    max-width: 780px;
-    width: 86vw;
-  }
-}
-@media screen and (min-width: 720px) and (max-width: 720px) {
-  .comp-filter-wrap {
-    width: 86vw;
-  }
-}
-@media screen and (min-width: 720px) {
   .comp-filter-wrap .fil_ttl {
     font-size: 1.8rem;
     letter-spacing: 0.05em;
     margin-bottom: 25px;
   }
-}
-@media screen and (min-width: 720px) {
   .comp-filter-wrap .input_wrap .radio_wrap {
     width: calc(50% - 5px);
     margin-bottom: 10px;
@@ -9573,6 +9549,55 @@ body.loaded #loading {
     font-size: 1.6rem;
     letter-spacing: 0.05em;
     padding: 15px 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  .comp-filter-wrap {
+    padding: 15px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comp-filter-wrap .fil_ttl {
+    width: 200px;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+  }
+  .comp-filter-wrap .filter_item {
+    width: calc(100% - 200px);
+  }
+  .comp-filter-wrap .input_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .comp-filter-wrap .input_wrap .radio_wrap {
+    width: calc(25% - 5px);
+    margin-bottom: 0px;
+  }
+  .comp-filter-wrap .input_wrap .radio_wrap label {
+    font-size: 1.4rem;
+    padding: 12px 0;
   }
 }
 .comp-gift-product-list {
@@ -9735,6 +9760,249 @@ body.loaded #loading {
     font-size: 1.4rem;
   }
 }
+@media screen and (min-width: 980px) {
+  .comp-gift-product-list {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comp-gift-product-list .list_item {
+    width: 23%;
+    margin-right: calc(8% / 3);
+    position: relative;
+    padding-bottom: 55px;
+    margin-bottom: 30px;
+  }
+  .comp-gift-product-list .list_item:nth-of-type(3n) {
+    margin-right: calc(8% / 3);
+  }
+  .comp-gift-product-list .list_item:nth-of-type(4n) {
+    margin-right: 0;
+  }
+  .comp-gift-product-list .list_item .item_thumb {
+    display: block;
+    position: relative;
+    height: 18vw;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .comp-gift-product-list .list_item .item_thumb::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(70, 70, 70, 0.8);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 160px;
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1614236875/common/viewmore_iorulq.png);
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .comp-gift-product-list .list_item .item_thumb img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .comp-gift-product-list .list_item .item_thumb:hover::after {
+    opacity: 1;
+  }
+  .comp-gift-product-list .list_item .txt_wrap {
+    margin-bottom: 20px;
+  }
+  .comp-gift-product-list .list_item .txt_wrap .name {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .comp-gift-product-list .list_item .txt_wrap .name.en {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+  }
+  .comp-gift-product-list .list_item .txt_wrap .added {
+    font-size: 1.4rem;
+  }
+  .comp-gift-product-list .list_item .txt_wrap .price {
+    margin-top: 15px;
+    font-size: 1.4rem;
+  }
+  .comp-gift-product-list .list_item .content_icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon {
+    display: block;
+    width: calc(50% - 2.5px);
+    border: 1px solid #d8d8d8;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 12px 0;
+    letter-spacing: 0.2px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span::before {
+    display: block;
+    content: "";
+    width: 23px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 3px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span::after {
+    display: block;
+    font-size: 1.2rem;
+    font-family: inherit;
+    color: #00381f;
+    letter-spacing: 0em;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.dish {
+    padding-left: 27px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.dish::before {
+    width: 21px;
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_dish_argayb.svg);
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.dish::after {
+    content: "食器用洗剤";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.multi {
+    padding-left: 25px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.multi::before {
+    width: 19px;
+    left: 3px;
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_multi_ggduzs.svg);
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.multi::after {
+    content: "マルチクリーナー";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.hand {
+    padding-left: 27px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.hand::before {
+    width: 22px;
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_hand_bfofjk.svg);
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.hand::after {
+    content: "ハンドソープ";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric {
+    padding-left: 25px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric::before {
+    width: 20px;
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_fabric_evs2ba.svg);
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric::after {
+    content: "除菌消臭ミスト";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini {
+    padding-left: 25px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini::before {
+    width: 20px;
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_fabric_evs2ba.svg);
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini::after {
+    font-size: 12px;
+    content: "除菌消臭ミスト(Mini)";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.toilet {
+    padding-left: 25px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.toilet::before {
+    width: 20px;
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_toilet_lpe5tz.svg);
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.toilet::after {
+    content: "トイレクリーナー";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.towel {
+    padding-left: 23px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.towel::before {
+    width: 18px;
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328917/giftList/icon_towel_gkghwa.svg);
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.towel::after {
+    content: "ウォッシュタオル";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.bath {
+    padding-left: 27px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.bath::before {
+    bottom: 1px;
+    width: 20px;
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_bath_xnu2oh.svg);
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.bath::after {
+    content: "バスクリーナー";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  .comp-gift-product-list .list_item .product_desc {
+    display: none;
+  }
+  .comp-gift-product-list .list_item .detail_button .gift_detail_button {
+    text-align: center;
+    background: #f1f1f1;
+    border: none;
+    font-size: 1.4rem;
+    -webkit-transition: background 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s;
+  }
+  .comp-gift-product-list .list_item .detail_button .gift_detail_button span {
+    display: inline-block;
+    padding-right: 30px;
+  }
+  .comp-gift-product-list .list_item .detail_button .gift_detail_button span::after {
+    -webkit-transition: -webkit-filter 0.3s;
+    transition: -webkit-filter 0.3s;
+    transition: filter 0.3s;
+    transition: filter 0.3s, -webkit-filter 0.3s;
+  }
+  .comp-gift-product-list .list_item .detail_button .gift_detail_button:hover {
+    background: #00381f;
+    color: #fff;
+  }
+  .comp-gift-product-list .list_item .detail_button .gift_detail_button:hover span::after {
+    -webkit-filter: brightness(1000%) saturate(0);
+            filter: brightness(1000%) saturate(0);
+  }
+}
 .comp-gift-service-list .service_item {
   margin-bottom: 40px;
 }
@@ -9863,6 +10131,56 @@ body.loaded #loading {
     background-position: center center;
     background-size: contain;
     background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/gift_service/arrow_white.png);
+  }
+}
+@media screen and (min-width: 980px) {
+  .comp-gift-service-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .comp-gift-service-list .service_item {
+    width: 23%;
+    margin-bottom: 60px;
+  }
+  .comp-gift-service-list .service_item .img_wrap {
+    margin-bottom: 30px;
+  }
+  .comp-gift-service-list .service_item .title_wrap .service_name {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  .comp-gift-service-list .service_item .title_wrap .service_desc {
+    font-size: 1.4rem;
+  }
+  .comp-gift-service-list .service_item .title_wrap .service_desc span {
+    font-size: 1.2rem;
+  }
+  .comp-gift-service-list .gift_link_button {
+    margin-top: 20px;
+  }
+  .comp-gift-service-list .gift_link_button a {
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+  }
+  .comp-gift-service-list .gift_link_button a span::after {
+    right: 0px;
+    -webkit-transition: right 0.3s;
+    transition: right 0.3s;
+  }
+  .comp-gift-service-list .gift_link_button a:hover {
+    background: #046734;
+  }
+  .comp-gift-service-list .gift_link_button a:hover span::after {
+    right: -5px;
   }
 }
 /* 商品詳細(新)*/
@@ -18926,6 +19244,8 @@ body.loaded #loading {
 /*よくある質問*/
 .page-gift-list {
   padding-top: 0;
+  width: 100%;
+  overflow: hidden;
 }
 .page-gift-list .section-main {
   margin-bottom: 30px;
@@ -18994,6 +19314,7 @@ body.loaded #loading {
   }
   .page-gift-list .section-filter .comp-filter-wrap {
     width: 88vw;
+    margin: 0 auto;
   }
   .page-gift-list .section-gift-products {
     margin-bottom: 80px;
@@ -19015,6 +19336,58 @@ body.loaded #loading {
   }
   .page-gift-list .section-faq .section_inner_new {
     width: 82vw;
+  }
+}
+@media screen and (min-width: 980px) {
+  .page-gift-list .section_inner_new {
+    width: 82vw;
+    max-width: 1400px;
+  }
+  .page-gift-list .section-main {
+    margin-bottom: 40px;
+  }
+  .page-gift-list .section-main .main_img {
+    height: 550px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../img/gift/new/gift_main.jpg);
+    margin-bottom: 60px;
+  }
+  .page-gift-list .section-main .main_img img {
+    display: none;
+  }
+  .page-gift-list .section-main .lead_txt .comp-section-ttl {
+    margin-bottom: 30px;
+  }
+  .page-gift-list .section-main .lead_txt .main_desc {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    line-height: 2;
+  }
+  .page-gift-list .section-main .lead_txt .main_desc p span {
+    display: block;
+  }
+  .page-gift-list .section-filter {
+    margin-bottom: 60px;
+  }
+  .page-gift-list .section-filter .comp-filter-wrap {
+    width: 82vw;
+    max-width: 1400px;
+  }
+  .page-gift-list .section-gift-products {
+    margin-bottom: 100px;
+  }
+  .page-gift-list .section-gift-products .section_inner_new {
+    width: 82vw;
+    max-width: 1400px;
+  }
+  .page-gift-list .section-gift-service {
+    padding: 100px 0;
+    background: #f4f4f4;
+  }
+  .page-gift-list .section-faq {
+    padding: 100px 0;
   }
 }
 /*ギフトページ*/

@@ -1,5 +1,7 @@
 .page-gift-list {
   padding-top: 0;
+  width: 100%;
+  overflow: hidden;
   .section-main{
     margin-bottom: 30px;
     .main_img{
@@ -70,6 +72,7 @@
       margin-bottom: 60px;
       .comp-filter-wrap{
         width: 88vw;
+        margin: 0 auto;
       }
     }
     .section-gift-products{
@@ -92,6 +95,64 @@
       .section_inner_new{
         width: 82vw;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 980px){
+  .page-gift-list {
+    .section_inner_new{
+      width: 82vw;
+      max-width: 1400px;
+    }
+    .section-main{
+      margin-bottom: 40px;
+      .main_img{
+        height: 550px;
+        @include bgSet;
+        background-size:cover;
+        background-image: url(../img/gift/new/gift_main.jpg);
+        margin-bottom: 60px;
+        img{
+          display: none;
+        }
+      }
+      .lead_txt{
+        .comp-section-ttl{
+          margin-bottom: 30px;
+        }
+        .main_desc{
+          font-size: 1.6rem;
+          letter-spacing: 0.05em;
+          line-height: 2;
+          p{
+            span{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .section-filter{
+      margin-bottom: 60px;
+      .comp-filter-wrap{
+        width: 82vw;
+        max-width: 1400px;
+      }
+    }
+    .section-gift-products{
+      margin-bottom: 100px;
+      .section_inner_new{
+        width: 82vw;
+        max-width: 1400px;
+      }
+    }
+    .section-gift-service{
+      padding: 100px 0;
+      background: #f4f4f4;
+    }
+    .section-faq{
+      padding: 100px 0;
     }
   }
 }
