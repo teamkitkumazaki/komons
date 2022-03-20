@@ -57,7 +57,9 @@
           {%- endif -%}
           </div>
           <div class="comp-detail-desc">
+          {%- if product.type == "gift" -%}
           {% include 'product-set-content' %}
+          {%- endif -%}
           {% for item in product.metafields.custom_fields["prod_detail_desc"] %}
             <div class="detail_item">
               <div class="img_wrap">

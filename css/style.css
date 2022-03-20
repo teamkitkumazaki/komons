@@ -11075,7 +11075,25 @@ body.loaded #loading {
     margin-bottom: 20px;
   }
   .comp-related-journal-slide .slide_inner .journal_item .img_wrap a {
+    position: relative;
     max-height: 12.5vw;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .img_wrap a::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .comp-related-journal-slide .slide_inner .journal_item .img_wrap a:hover::before {
+    opacity: 1;
   }
   .comp-related-journal-slide .slide_inner .journal_item .txt_wrap {
     padding: 0 5px;
@@ -11544,6 +11562,26 @@ body.loaded #loading {
   .comp-list-link .link_item {
     width: 48.5%;
     margin-bottom: 0px;
+  }
+  .comp-list-link .link_item a {
+    position: relative;
+  }
+  .comp-list-link .link_item a::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .comp-list-link .link_item a:hover::before {
+    opacity: 1;
   }
   .comp-list-link .link_item a .txt_wrap {
     padding: 20px;

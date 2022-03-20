@@ -88,7 +88,26 @@
         .img_wrap{
           margin-bottom: 20px;
           a{
+            position: relative;
             max-height: 12.5vw;
+            &::before{
+              display: block;
+              content: "";
+              position: absolute;
+              top:0;
+              left:0;
+              width: 100%;
+              height: 100%;
+              background: rgba(255,255,255,0.2);
+              opacity:0;
+              pointer-events: none;
+              transition: opacity .3s;
+            }
+            &:hover{
+              &::before{
+                opacity: 1;
+              }
+            }
           }
         }
         .txt_wrap{
