@@ -21,7 +21,7 @@
         <div class="prod_info">
           <span class="category">{{ product.metafields.custom_fields["prod_category"] }}</span>
           <h1 class="prod_name">{{ product.metafields.custom_fields["prod_display_name"] }}</h1>
-        </div>
+        </div><!-- prod_info -->
         <div class="price_wrap">
         {%- if product.type != "upcoming" -%}
           <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
@@ -29,98 +29,17 @@
         {%- else -%}
           <span class="price">構想中</span>
         {%- endif -%}
-        </div>
+        </div><!-- price_wrap -->
         <div class="desc_wrap">
           <p>{{ product.metafields.custom_fields["prod_description"] }}</p>
-        </div>
-        <div class="comp-cart-wrap">
-        {%- if product.type != "upcoming" -%}
-          <div class="order_lot">
-            <span class="title">数量</span>
-            <div id="quantityWrap" class="input_wrap number">
-              <button id="minusButton" class="minus">-</button>
-              <input id="quantityInput" type="text" class="product_init_num" name="quantity" min="1" value="1">
-              <button id="plusButton" class="plus">+</button>
-            </div>
-          </div>
-        {%- endif -%}
-          <div class="submit_button">
-            <div class="cart_box">
-            {%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
-              <div id="optionSelect" class="cart_item">
-                <span class="button_wrap">
-                  <span class="title cart_in">オプションを選択して購入</span>
-                  <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
-                </span>
-                <input type="hidden" name="properties[カテゴリー]" value="">
-              </div>
-            {%- else -%}
-            {%- if product.type != "upcoming" -%}
-            <div id="optionSelect" class="cart_item">
-              <span class="button_wrap">
-                <span class="title cart_in">カートに入れる</span>
-                <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
-              </span>
-              <input type="hidden" name="properties[カテゴリー]" value="">
-            </div>
-            {%- else -%}
-            <div class="comp-waiting-button">
-               <a href="https://journal.komons-japan.com/waiting-list/uc0002">
-                 <span class="title">Waiting Listに登録</span>
-                 <span class="desc">発売時にメールにてお知らせいたします</span>
-               </a>
-             </div>
-            {%- endif -%}
-            {%- endif -%}
-            </div>
-            <div class="comp-variation">
-              <div class="variation_wrap">
-                <a href="/products/k0021">
-                  <span class="title">詰め替え用(500ml)</span>
-                  <span id="refillPrice" class="desc">2,530円(税込)</span>
-                </a>
-                <a href="/products/k0008">
-                  <span class="title">Mini(30ml)</span>
-                  <span id="miniPrice" class="desc">495円(税込)</span>
-                </a>
-              </div><!-- variation_wrap -->
-            </div>
-            {%- if product.type == "gift" -%}
-            <div id="cartNoteList" class="cart_note">
-              <button prop="#toggleGift">ギフトサービス</button>
-              <button prop="#toggleDelivary">配送について</button>
-              <button prop="#togglePayment">お支払い方法</button>
-            </div>
-            {%- endif -%}
-          </div><!-- comp-flex-cart -->
-        </div><!-- submit_wrap -->
+        </div><!-- desc_wrap -->
+        {% include 'product-cart-wrap' %}
       </div><!-- detail_inner -->
     </div><!-- main_detail -->
     {%- if product.type != "upcoming" -%}
     <div id="rolledHeight" class="main_description">
       <div class="desc_inner">
-        <div class="desc_unit">
-          <div class="comp-detail-title">
-            <hgroup>
-              <span class="title_en">About Us</span>
-              <h2 class="title_ja">コモンズについて</h2>
-            </hgroup>
-          </div>
-          <div class="brand_introduction">
-            <div class="img_wrap">
-              <img src="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/about_img.jpg?v=1646128839">
-            </div>
-            <div class="txt_wrap">
-              <h2 class="brand_concept">毎日の家事を、心地よい時間に変える<br>ホームケアブランド</h2>
-              <div class="brand_desc">
-                <p>台所、お風呂、リビング、寝室。毎日を過ごす家の中のそれぞれの空間に、あなたと家族の気持ちをあげる最適な香りをデザインするために、商品ごとに異なるオリジナルの精油ブレンドを配合した洗剤です。</p>
-              </div>
-              <div class="comp-detail-button">
-                <a href="/pages/concept"><span>Komonsについて</span></a>
-              </div>
-            </div>
-          </div>
-        </div><!-- desc_unit -->
+        {% include 'product-brand-introduction' %}
         {% if product.metafields.custom_fields["prod_detail_desc"] != blank %}
         <div class="desc_unit">
           <div class="comp-detail-title">
@@ -169,7 +88,7 @@
         {% if product.type != gift %}
         {% include 'product-conponent' %}
         {%- else -%}
-        
+
         {% endif %}
         <div class="desc_unit">
           <div class="comp-detail-title margin">

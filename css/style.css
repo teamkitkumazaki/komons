@@ -2689,154 +2689,6 @@ body.loaded #loading {
   background-size: 24px;
 }
 
-.comp-variation {
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
-.comp-variation .variation_wrap a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 1px solid #d8d8d8;
-  padding: 15px 10px;
-  letter-spacing: 0.01em;
-  color: inherit;
-  margin-bottom: 5px;
-}
-.comp-variation .variation_wrap a .title {
-  font-size: 1.3rem;
-}
-.comp-variation .variation_wrap a .desc {
-  position: relative;
-  font-size: 1.2rem;
-  position: relative;
-  padding-right: 30px;
-}
-.comp-variation .variation_wrap a .desc::after {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  width: 22px;
-  height: 10px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750746/product_list/arrow_hnk35p.png);
-  background-size: 18px;
-}
-
-@media screen and (min-width: 720px) {
-  .comp-variation {
-    margin-top: 15px;
-    margin-bottom: 30px;
-  }
-  .comp-variation .variation_wrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .comp-variation .variation_wrap a {
-    width: calc(50% - 5px);
-    padding: 15px 15px;
-    margin-bottom: 5px;
-  }
-  .comp-variation .variation_wrap a .title {
-    font-size: 1.4rem;
-  }
-  .comp-variation .variation_wrap a .desc {
-    padding-right: 30px;
-  }
-}
-@media screen and (min-width: 1100px) {
-  .comp-variation {
-    margin-top: 15px;
-    margin-bottom: 20px;
-  }
-  .comp-variation .variation_wrap a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    padding: 15px 15px;
-    letter-spacing: 0.01em;
-    color: inherit;
-    margin-bottom: 5px;
-    padding-right: 30px;
-    position: relative;
-    -webkit-transition: background 0.2s;
-    transition: background 0.2s;
-  }
-  .comp-variation .variation_wrap a:hover {
-    background: #f8f8f8;
-  }
-  .comp-variation .variation_wrap a::after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 15px;
-    margin: auto;
-    width: 22px;
-    height: 10px;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750746/product_list/arrow_hnk35p.png);
-    background-size: 22px;
-  }
-  .comp-variation .variation_wrap a .title {
-    font-size: 1.5rem;
-  }
-  .comp-variation .variation_wrap a .desc {
-    display: block;
-    width: 100%;
-    position: relative;
-    font-size: 1.2rem;
-    margin-top: 10px;
-    position: relative;
-  }
-  .comp-variation .variation_wrap a .desc::after {
-    display: none;
-  }
-}
 .comp-flex-cart {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9738,7 +9590,7 @@ body.loaded #loading {
 .comp-gift-product-list .list_item .detail_button .gift_detail_button {
   display: block;
   padding: 15px 0;
-  border-top: 1px solid #d8d8d8;
+  border-top: 1px solid #046734;
   color: inherit;
   font-size: 1.3rem;
   letter-spacing: 0.05em;
@@ -9908,7 +9760,7 @@ body.loaded #loading {
   .comp-gift-product-list .list_item .content_icon .icon {
     display: block;
     width: calc(50% - 2.5px);
-    border: 1px solid #d8d8d8;
+    border: 1px solid #046734;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     text-align: center;
@@ -10353,6 +10205,11 @@ body.loaded #loading {
   }
   .comp-item-thumbs ul li {
     position: static;
+    pointer-events: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
   }
 }
 .comp-gift-options-new .item_label {
@@ -10642,7 +10499,7 @@ body.loaded #loading {
   display: block;
   padding: 0;
   margin: 0 1em 0 0;
-  color: #696969;
+  color: #046734;
   font-size: 1.4rem;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -10652,8 +10509,8 @@ body.loaded #loading {
   -webkit-box-shadow: none;
           box-shadow: none;
   font-family: inherit;
-  border-bottom: 1px solid #696969;
-  padding-bottom: 2px;
+  border-bottom: 1px solid #046734;
+  padding-bottom: 4px;
   cursor: pointer;
 }
 
@@ -10881,10 +10738,10 @@ body.loaded #loading {
 .comp-detail-toggle-new .toggle_item {
   height: 35px;
   overflow: hidden;
-  border-bottom: 1px solid #d8d8d8;
+  border: 1px solid #046734;
   -webkit-transition: height 0.3s;
   transition: height 0.3s;
-  margin-bottom: 15px;
+  margin-bottom: 7px;
 }
 .comp-detail-toggle-new .toggle_item:nth-last-of-type(1) {
   margin-bottom: 0;
@@ -10892,8 +10749,8 @@ body.loaded #loading {
 .comp-detail-toggle-new .toggle_item .toggle_button_new {
   width: 100%;
   display: block;
-  padding: 0 0 10px 5px;
-  font-size: 1.5rem;
+  padding: 15px 15px;
+  font-size: 1.4rem;
   text-align: left;
   border: none;
   font-family: inherit;
@@ -10906,16 +10763,16 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 12px;
-  background-position: bottom 16px right 5px;
+  background-position: center right 15px;
   background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
-  color: #646464;
+  color: inherit;
   letter-spacing: 0.08em;
 }
 .comp-detail-toggle-new .toggle_item .toggle_button_new.active {
   background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
 }
 .comp-detail-toggle-new .toggle_item .toggle_content_new {
-  padding-bottom: 30px;
+  padding: 0 15px 30px;
 }
 .comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item {
   margin-bottom: 25px;
@@ -10956,17 +10813,20 @@ body.loaded #loading {
 
 @media screen and (min-width: 720px) {
   .comp-detail-toggle-new .toggle_item {
-    margin-bottom: 15px;
+    margin-bottom: 7px;
   }
   .comp-detail-toggle-new .toggle_item .toggle_button_new {
-    padding: 0 0 15px 10px;
-    font-size: 1.8rem;
+    padding: 15px 20px;
+    font-size: 1.6rem;
     cursor: pointer;
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
   }
   .comp-detail-toggle-new .toggle_item .toggle_button_new:hover {
     color: #046734;
+  }
+  .comp-detail-toggle-new .toggle_item .toggle_content_new {
+    padding: 0 20px 40px;
   }
   .comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item {
     margin-bottom: 20px;
@@ -11362,6 +11222,9 @@ body.loaded #loading {
   -webkit-filter: brightness(0.97);
           filter: brightness(0.97);
 }
+.comp-scent-detail .scent_txt_wrap {
+  border: 1px solid #046734;
+}
 .comp-scent-detail .scent_txt_wrap .scent_main_ttl {
   font-size: 1.8rem;
   line-height: 1.6;
@@ -11369,14 +11232,11 @@ body.loaded #loading {
   letter-spacing: 0.1em;
 }
 .comp-scent-detail .scent_txt_wrap .scent_item {
-  border-bottom: 1px solid #d8d8d8;
-  padding-bottom: 20px;
-  margin-bottom: 25px;
+  border-bottom: 1px solid #046734;
+  padding: 20px;
 }
 .comp-scent-detail .scent_txt_wrap .scent_item:nth-last-of-type(1) {
-  border-bottom: 0px solid #d8d8d8;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
+  border-bottom: 0px solid #046734;
 }
 .comp-scent-detail .scent_txt_wrap .scent_item .title {
   display: block;
@@ -11451,6 +11311,154 @@ body.loaded #loading {
   .comp-scent-detail .scent_txt_wrap .scent_item .content {
     width: calc(100% - 120px);
     font-size: 1.5rem;
+  }
+}
+.comp-variation {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.comp-variation .variation_wrap a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #046734;
+  padding: 15px 10px;
+  letter-spacing: 0.01em;
+  color: inherit;
+  margin-bottom: 5px;
+}
+.comp-variation .variation_wrap a .title {
+  font-size: 1.3rem;
+}
+.comp-variation .variation_wrap a .desc {
+  position: relative;
+  font-size: 1.2rem;
+  position: relative;
+  padding-right: 30px;
+}
+.comp-variation .variation_wrap a .desc::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 22px;
+  height: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750746/product_list/arrow_hnk35p.png);
+  background-size: 18px;
+}
+
+@media screen and (min-width: 720px) {
+  .comp-variation {
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+  .comp-variation .variation_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .comp-variation .variation_wrap a {
+    width: calc(50% - 5px);
+    padding: 15px 15px;
+    margin-bottom: 5px;
+  }
+  .comp-variation .variation_wrap a .title {
+    font-size: 1.4rem;
+  }
+  .comp-variation .variation_wrap a .desc {
+    padding-right: 30px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .comp-variation {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+  .comp-variation .variation_wrap a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 15px 15px;
+    letter-spacing: 0.01em;
+    color: inherit;
+    margin-bottom: 5px;
+    padding-right: 30px;
+    position: relative;
+    -webkit-transition: background 0.2s;
+    transition: background 0.2s;
+  }
+  .comp-variation .variation_wrap a:hover {
+    background: #f8f8f8;
+  }
+  .comp-variation .variation_wrap a::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    margin: auto;
+    width: 22px;
+    height: 10px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750746/product_list/arrow_hnk35p.png);
+    background-size: 22px;
+  }
+  .comp-variation .variation_wrap a .title {
+    font-size: 1.5rem;
+  }
+  .comp-variation .variation_wrap a .desc {
+    display: block;
+    width: 100%;
+    position: relative;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    position: relative;
+  }
+  .comp-variation .variation_wrap a .desc::after {
+    display: none;
   }
 }
 .comp-list-link .link_item {
@@ -16236,7 +16244,7 @@ body.loaded #loading {
 .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info {
   padding-bottom: 15px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #d8d8d8;
+  border-bottom: 1px solid #046734;
 }
 .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .category {
   display: block;
@@ -16292,7 +16300,12 @@ body.loaded #loading {
   padding: 40px 7vw 50px;
 }
 .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+}
+.page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit.border {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #046734;
 }
 .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit:nth-last-of-type(1) {
   margin-bottom: 0;
@@ -16346,7 +16359,7 @@ body.loaded #loading {
   .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info {
     padding-bottom: 15px;
     margin-bottom: 20px;
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid #046734;
   }
   .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .category {
     display: block;
@@ -16380,6 +16393,11 @@ body.loaded #loading {
   }
   .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit {
     margin-bottom: 60px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit.border {
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #046734;
   }
   .page-item-detail-new .section-main .main_flex .main_description .desc_inner .desc_unit .brand_introduction .img_wrap {
     margin-bottom: 30px;

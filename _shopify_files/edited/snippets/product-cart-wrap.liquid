@@ -1,0 +1,61 @@
+<div class="comp-cart-wrap">
+{%- if product.type != "upcoming" -%}
+  <div class="order_lot">
+    <span class="title">数量</span>
+    <div id="quantityWrap" class="input_wrap number">
+      <button id="minusButton" class="minus">-</button>
+      <input id="quantityInput" type="text" class="product_init_num" name="quantity" min="1" value="1">
+      <button id="plusButton" class="plus">+</button>
+    </div>
+  </div><!-- order_lot -->
+{%- endif -%}
+  <div class="submit_button">
+    <div class="cart_box">
+    {%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
+      <div id="optionSelect" class="cart_item">
+        <span class="button_wrap">
+          <span class="title cart_in">オプションを選択して購入</span>
+          <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
+        </span>
+        <input type="hidden" name="properties[カテゴリー]" value="">
+      </div><!-- cart_item -->
+    {%- else -%}
+    {%- if product.type != "upcoming" -%}
+    <div id="optionSelect" class="cart_item">
+      <span class="button_wrap">
+        <span class="title cart_in">カートに入れる</span>
+        <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
+      </span>
+      <input type="hidden" name="properties[カテゴリー]" value="">
+    </div><!-- cart_item -->
+    {%- else -%}
+    <div class="comp-waiting-button">
+       <a href="https://journal.komons-japan.com/waiting-list/uc0002">
+         <span class="title">Waiting Listに登録</span>
+         <span class="desc">発売時にメールにてお知らせいたします</span>
+       </a>
+     </div><!-- waiting-button -->
+    {%- endif -%}
+    {%- endif -%}
+    </div>
+    <div class="comp-variation">
+      <div class="variation_wrap">
+        <a href="/products/k0021">
+          <span class="title">詰め替え用(500ml)</span>
+          <span id="refillPrice" class="desc">2,530円(税込)</span>
+        </a>
+        <a href="/products/k0008">
+          <span class="title">Mini(30ml)</span>
+          <span id="miniPrice" class="desc">495円(税込)</span>
+        </a>
+      </div><!-- variation_wrap -->
+    </div><!-- comp-variation -->
+    <div id="cartNoteList" class="cart_note">
+      {%- if product.type == "gift" -%}
+      <button prop="#toggleGift">ギフトサービス</button>
+      {%- endif -%}
+      <button prop="#toggleDelivary">配送について</button>
+      <button prop="#togglePayment">お支払い方法</button>
+    </div><!-- cart_note -->
+  </div><!-- comp-flex-cart -->
+</div><!-- submit_wrap -->
