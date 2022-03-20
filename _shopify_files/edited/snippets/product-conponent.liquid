@@ -10,6 +10,20 @@
   {%- endif -%}
 {% endfor %}
 {% endfor %}
+
+{% if product.tags contains 'nerori' %}
+{% for collection in collections %}
+{%- if collection.handle == 'nerori' -%}
+{% for product in collection.products %}
+  {% assign category = collection.metafields.custom_fields["category_detail_name"] %}
+  {% assign useage = collection.metafields.custom_fields["category_usage"] %}
+  {% assign useway = collection.metafields.custom_fields["category_useway"] %}
+  {% assign component = collection.metafields.custom_fields["caterogory_component"] %}
+{% endfor %}
+{%- endif -%}
+{% endfor %}
+{% endif %}
+
 <div class="desc_unit">
   <div class="comp-detail-title margin">
     <hgroup>

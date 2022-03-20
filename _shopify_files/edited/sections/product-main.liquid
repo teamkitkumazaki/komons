@@ -166,7 +166,11 @@
         {% if product.type != gift %}
         {% include 'scent-detail' %}
         {% endif %}
+        {% if product.type != gift %}
         {% include 'product-conponent' %}
+        {%- else -%}
+        
+        {% endif %}
         <div class="desc_unit">
           <div class="comp-detail-title margin">
             <hgroup>
