@@ -2,17 +2,17 @@
   .toggle_item{
     height: 35px;
     overflow: hidden;
-    border-bottom: 1px solid #d8d8d8;
+    border: 1px solid $insertGreen;
     transition: height .3s;
-    margin-bottom: 15px;
+    margin-bottom: 7px;
     &:nth-last-of-type(1){
       margin-bottom: 0;
     }
     .toggle_button_new{
       width: 100%;
       display: block;
-      padding: 0 0 10px 5px;
-      font-size: 1.5rem;
+      padding: 15px 15px;
+      font-size: 1.4rem;
       text-align: left;
       border: none;
       font-family: inherit;
@@ -21,16 +21,16 @@
       appearance:none;
       @include bgSet;
       background-size: 12px;
-      background-position: bottom 16px right 5px;
+      background-position: center right 15px;
       background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
-      color: #646464;
+      color: inherit;
       letter-spacing: 0.08em;
       &.active{
         background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
       }
     }
     .toggle_content_new{
-      padding-bottom: 30px;
+      padding: 0 15px 30px;
       .detail_item{
         margin-bottom: 25px;
         &:nth-of-type(1){
@@ -76,11 +76,11 @@
 @media screen and (min-width: 720px){
   .comp-detail-toggle-new{
     .toggle_item{
-      margin-bottom: 15px;
+      margin-bottom: 7px;
 
       .toggle_button_new{
-        padding: 0 0 15px 10px;
-        font-size: 1.8rem;
+        padding: 15px 20px;
+        font-size: 1.6rem;
         cursor: pointer;
         transition: color .3s;
         &:hover{
@@ -88,6 +88,7 @@
         }
       }
       .toggle_content_new{
+        padding: 0 20px 40px;
         .detail_item{
           margin-bottom: 20px;
           .title{

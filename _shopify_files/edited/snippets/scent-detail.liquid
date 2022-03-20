@@ -1,0 +1,51 @@
+{% for tag in product.tags %}
+  {% for collection in collections %}
+  {%- if collection.handle == tag -%}
+  {% for product in collection.products %}
+    {% assign scent_desc = collection.metafields.custom_fields["scent_detail_desc"] %}
+    {% assign scent_image = collection.metafields.custom_fields["scent_detail_image"] %}
+    {% assign scent_top = collection.metafields.custom_fields["scent_top"] %}
+    {% assign scent_middle = collection.metafields.custom_fields["scent_middle"] %}
+    {% assign scent_bottom = collection.metafields.custom_fields["scent_bottom"] %}
+  {% endfor %}
+  {%- endif -%}
+{% endfor %}
+{% endfor %}
+<div class="desc_unit">
+  <div class="scent_detail comp-scent-detail">
+    <div class="comp-detail-title">
+      <hgroup>
+      <span class="title_en">Scent</span>
+      <h2 class="title_ja">香りの特徴</h2>
+      </hgroup>
+    </div>
+    <div class="scent_desc">
+      <p style="white-space: pre-line">{{scent_desc}}</p>
+    </div>
+    <div class="scent_img_wrap">
+      <img src="{{ scent_image }}">
+    </div>
+    <div class="scent_txt_wrap">
+      <div class="scent_structure">
+        <div class="scent_item">
+          <span class="title">TOP</span>
+          <div class="content">
+            <p>{{ scent_top }}</p>
+          </div>
+        </div>
+        <div class="scent_item">
+          <span class="title">MIDDLE</span>
+          <div class="content">
+            <p>{{ scent_middle }}</p>
+          </div>
+        </div>
+        <div class="scent_item">
+          <span class="title">BOTTOM</span>
+          <div class="content">
+            <p>{{ scent_bottom }}</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- scent_txt_wrap -->
+  </div><!-- comp-scent-detail -->
+</div><!-- desc_unit -->

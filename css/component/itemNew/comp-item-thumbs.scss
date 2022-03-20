@@ -112,7 +112,8 @@
       height: auto;
       li{
         position: static;
-
+        pointer-events: none;
+        user-select: none;
       }
     }
   }

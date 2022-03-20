@@ -17,6 +17,7 @@
     }
   }
   .scent_txt_wrap{
+    border: 1px solid $insertGreen;
     .scent_main_ttl{
       font-size: 1.8rem;
       line-height: 1.6;
@@ -24,13 +25,10 @@
       letter-spacing: 0.1em;
     }
     .scent_item{
-      border-bottom: 1px solid #d8d8d8;
-      padding-bottom: 20px;
-      margin-bottom: 25px;
+      border-bottom: 1px solid $insertGreen;;
+      padding: 20px;
       &:nth-last-of-type(1){
-        border-bottom: 0px solid #d8d8d8;
-        padding-bottom: 0px;
-        margin-bottom: 0px;
+        border-bottom: 0px solid $insertGreen;;
       }
       .title{
         display: block;

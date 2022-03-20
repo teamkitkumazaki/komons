@@ -1,0 +1,377 @@
+.comp-gift-product-list{
+  @include flexSet;
+  justify-content: space-between;
+  .list_item{
+    width: 48%;
+    position: relative;
+    padding-bottom: 45px;
+    margin-bottom: 20px;
+    .item_thumb{
+      display: block;
+      margin-bottom: 20px;
+      img{
+        height: auto;
+      }
+    }
+    .txt_wrap{
+      margin-bottom: 15px;
+      .name{
+        display: block;
+        color: inherit;
+        margin-bottom: 15px;
+        font-size: 1.6rem;
+        letter-spacing: 0.02em;
+        margin-bottom: 10px;
+        &.en{
+          @include libre-r;
+          /*text-indent: -0.1em;*/
+          font-size: 2.1rem;
+          letter-spacing: 0.5px;
+          display: block;
+          margin-bottom: 8px;
+        }
+      }
+      .added{
+        font-size: 1.2rem;
+        line-height: 1.6;
+        letter-spacing: 0.08em;
+      }
+      .price{
+        margin-top: 15px;
+        display: block;
+        font-size: 1.2rem;
+        letter-spacing: 0.08em;
+      }
+    }
+    .product_desc{
+      display: block;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      letter-spacing: 0.01em;
+      color: #646464;
+      margin-bottom: 15px;
+    }
+    .content_icon{
+      display: none;
+    }
+    .detail_button{
+      position: absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      margin: auto;
+      width: 100%;
+      .gift_detail_button{
+        display: block;
+        padding: 15px 0;
+        border-top: 1px solid $insertGreen;
+        color: inherit;
+        font-size: 1.3rem;
+        letter-spacing: 0.05em;
+        span{
+          display: block;
+          position: relative;
+          &::after{
+            display: block;
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 12px;
+            top: 0;
+            bottom: 0;
+            right: 5px;
+            transition: right 0.5s;
+            margin: auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/arrow_vuojtf.png);
+            background-size: contain;
+            background-position: center center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-gift-product-list{
+    justify-content: flex-start;
+    .list_item{
+      width: 31%;
+      margin-right: 3.5%;
+      position: relative;
+      padding-bottom: 45px;
+      margin-bottom: 30px;
+      &:nth-of-type(3n){
+        margin-right: 0;
+      }
+      .item_thumb{
+        display: block;
+        margin-bottom: 20px;
+        img{
+          height: auto;
+        }
+      }
+      .txt_wrap{
+        margin-bottom: 15px;
+        .name{
+          margin-bottom: 15px;
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+          &.en{
+            font-size: 2.6rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+          }
+        }
+        .added{
+          font-size: 1.4rem;
+        }
+        .price{
+          margin-top: 15px;
+          font-size: 1.4rem;
+        }
+      }
+      .product_desc{
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+      }
+      .detail_button{
+        .gift_detail_button{
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px){
+  .comp-gift-product-list{
+    justify-content: flex-start;
+    .list_item{
+      width: 23%;
+      margin-right: calc(8% / 3);
+      position: relative;
+      padding-bottom: 55px;
+      margin-bottom: 30px;
+      &:nth-of-type(3n){
+        margin-right: calc(8% / 3);
+      }
+      &:nth-of-type(4n){
+        margin-right: 0;
+      }
+
+      .item_thumb{
+        display: block;
+        position: relative;
+        height: 18vw;
+        overflow: hidden;
+        margin-bottom: 20px;
+        &::after{
+          display: block;
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          background-color: rgba(70, 70, 70, 0.8);
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 160px;
+          background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1614236875/common/viewmore_iorulq.png);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s;
+        }
+        img{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+        &:hover{
+          &::after{
+            opacity: 1;
+          }
+        }
+      }
+      .txt_wrap{
+        margin-bottom: 20px;
+        .name{
+          margin-bottom: 15px;
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+          &.en{
+            font-size: 2.6rem;
+            margin-bottom: 10px;
+          }
+        }
+        .added{
+          font-size: 1.4rem;
+        }
+        .price{
+          margin-top: 15px;
+          font-size: 1.4rem;
+        }
+      }
+      .content_icon{
+        @include flexSet;
+        justify-content: space-between;
+        .icon{
+          display: block;
+          width: calc(50% - 2.5px);
+          border: 1px solid $insertGreen;
+          box-sizing: border-box;
+          text-align: center;
+          margin-bottom: 4px;
+          span{
+            position: relative;
+            display: inline-block;
+            font-size: 1.2rem;
+            padding: 12px 0;
+            letter-spacing: 0.2px;
+            &::before{
+              display: block;
+              content: "";
+              width: 23px;
+              height: 100%;
+              position: absolute;
+              top:0;
+              bottom:0;
+              left:3px;
+              margin: auto;
+              @include bgSet;
+              background-size: contain;
+              transform: scale(0.8);
+            }
+            &::after{
+              display: block;
+              font-size: 1.2rem;
+              font-family: inherit;
+              color: #00381f;
+              letter-spacing: 0em;
+            }
+            &.dish{
+              padding-left: 27px;
+              &::before{
+                width: 21px;
+                left:1px;
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_dish_argayb.svg);
+              }
+              &::after{
+                content: "食器用洗剤";
+              }
+            }
+            &.multi{
+              padding-left: 25px;
+              &::before{
+                width: 19px;
+                left: 3px;
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_multi_ggduzs.svg);
+              }
+              &::after{
+                content: "マルチクリーナー";
+              }
+            }
+            &.hand{
+              padding-left: 27px;
+              &::before{
+                width: 22px;
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_hand_bfofjk.svg);
+              }
+              &::after{
+                content: "ハンドソープ";
+              }
+            }
+            &.fabric, &.mistmini{
+              padding-left: 25px;
+              &::before{
+                width: 20px;
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_fabric_evs2ba.svg);
+              }
+              &::after{
+                content: "除菌消臭ミスト";
+              }
+            }
+            &.fabric_mini{
+              padding-left: 25px;
+              &::before{
+                width: 20px;
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_fabric_evs2ba.svg);
+              }
+              &::after{
+                font-size: 12px;
+                content: "除菌消臭ミスト(Mini)";
+              }
+            }
+            &.toilet{
+              padding-left: 25px;
+              &::before{
+                width: 20px;
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_toilet_lpe5tz.svg);
+              }
+              &::after{
+                content: "トイレクリーナー";
+              }
+            }
+            &.towel{
+              padding-left: 23px;
+              &::before{
+                width: 18px;
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328917/giftList/icon_towel_gkghwa.svg);
+              }
+              &::after{
+                content: "ウォッシュタオル";
+              }
+            }
+            &.bath{
+              padding-left: 27px;
+              &::before{
+                bottom: 1px;
+                width: 20px;
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_bath_xnu2oh.svg);
+              }
+              &::after{
+                content: "バスクリーナー";
+              }
+            }
+          }
+          &:nth-of-type(2n){
+            margin-right: 0;
+          }
+        }
+      }
+      .product_desc{
+        display: none;
+      }
+      .detail_button{
+        .gift_detail_button{
+          text-align: center;
+          background: #f1f1f1;
+          border: none;
+          font-size: 1.4rem;
+          transition: background .3s, color .3s;
+          span{
+            display: inline-block;
+            padding-right: 30px;
+            &::after{
+              transition: filter .3s;
+            }
+          }
+          &:hover{
+            background: $basicGreen;
+            color: #fff;
+            span::after{
+              filter: brightness(1000%) saturate(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}

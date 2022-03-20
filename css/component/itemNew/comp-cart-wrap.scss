@@ -141,15 +141,15 @@
       display: block;
       padding: 0;
       margin: 0 1em 0 0;
-      color: #696969;
+      color: $insertGreen;
       font-size: 1.4rem;
       appearance: none;
       background: transparent;
       border: none;
       box-shadow: none;
       font-family: inherit;
-      border-bottom: 1px solid #696969;
-      padding-bottom: 2px;
+      border-bottom: 1px solid $insertGreen;
+      padding-bottom: 4px;
       cursor: pointer;
     }
   }

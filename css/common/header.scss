@@ -24,7 +24,13 @@
 				height: 90px;
 				margin-right: 40px;
 				@include bgSet;
+				filter: invert(1) saturate(0) brightness(1000);
 				background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/logo.svg?v=1623513464) !important;
+				a{
+					display: block;
+					width: 155px;
+					height: 90px;
+				}
 			}
 			.header_navigation{
 				@media screen and (max-width: 1100px){
@@ -43,6 +49,7 @@
 							@include libre-r;
 							font-size: 1.8rem;
 							color: inherit;
+							color: #fff;
 						}
 					}
 				}
@@ -137,14 +144,25 @@
 					@include bgSet;
 					background-color: $basicGreen;
 					background-size: 35px;
-					background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_acfmbl.png);
-					@include hover;
+					background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/header_menu.svg?v=1647733005);
+					transition: background .3s;
+					&:hover{
+						background-color: #2f281e;
+					}
 				}
 			}
 		}
 	}
 	&.rolled{
 		.header_inner{
+			.header_left{
+				.header_logo{
+					filter: none;
+				}
+				.header_navigation ul li a{
+					color: $basicGreen;
+				}
+			}
 			.header_right{
 				.header_guide{
 					.nav_item{
@@ -171,6 +189,41 @@
 								}
 								&::before{
 									filter: unset;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.colored{
+		.header_inner{
+			.header_left{
+				.header_logo{
+					filter: invert(1) saturate(0) brightness(1000%);
+				}
+				.header_navigation ul li a{
+					color: #fff;
+				}
+			}
+			.header_right{
+				.header_guide{
+					.nav_item{
+						a{
+							color: #fff;
+						}
+						&.h_login{
+							a{
+								&::before{
+									filter: invert(1) saturate(0) brightness(1000%);
+								}
+							}
+						}
+						&.h_cart{
+							a{
+								&::before{
+									filter: invert(1) saturate(0) brightness(1000%);
 								}
 							}
 						}
@@ -228,6 +281,11 @@
 					right:0;
 					margin: auto;
 					background-size: contain;
+					a{
+						display: block;
+						width: 122px;
+	    			height: 31px;
+					}
 				}
 			}
 			.header_right{
@@ -282,17 +340,48 @@
 						background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_acfmbl.png);
 						background-size: 28px;
 						background-color: transparent;
+						&:hover{
+							background-color: transparent;	
+						}
 					}
 				}
 			}
 		}
-		&.rolled{
+		&.rolled_sp{
 			.header_inner{
 				background: #fff;
 				border-top: 3px solid $basicGreen;
 				.header_menu{
 					a{
 						background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_rolled_ddjxzw.png);
+					}
+				}
+				.header_left{
+					.header_logo{
+						filter: none;
+					}
+				}
+				.header_right{
+					.header_guide{
+						.nav_item{
+							a{
+								color: $basicGreen;
+								span{
+									display: none;
+								}
+							}
+							&.h_cart{
+								a{
+									.cart_item_num{
+										background-color: $basicGreen;
+										color: #fff;
+									}
+									&::before{
+										filter: unset;
+									}
+								}
+							}
+						}
 					}
 				}
 			}

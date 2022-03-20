@@ -71,23 +71,40 @@ $(function() {
     var scrollArrow = $('#arrowScroll a');
     var headerArrow = $('.header_arrow');
     var scrollTarget = $('#scrollTarget');
+    var headerRolled = $('#headerRolled');
+    var headerRolledSp = $('#headerRolledSp');
+
+    if (document.getElementById('headerRolled')) {
+    }else{
+      if(window.innerWidth > 720){
+        $('header').addClass('rolled');
+      }
+    }
+
+    if (document.getElementById('headerRolledSp')) {
+    }else{
+      if(window.innerWidth < 720){
+        $('header').addClass('rolled_sp');
+      }
+    }
 
     function afterScroll(noAnimate) {
-      target.addClass('rolled');
-      $('header').addClass('rolled');
-      headerArrow.attr('id', 'arrowReturn');
+      if(window.innerWidth > 720){
+        $('header').addClass('rolled');
+      }else{
+        $('header').addClass('rolled_sp');
+      }
       scrollSwitch = 1;
     };
 
     function beforeScroll() {
-      if ($('.underPage').length) {
-
-      } else {
-        target.removeClass('rolled');
+      if(window.innerWidth > 720){
         $('header').removeClass('rolled');
-        headerArrow.attr('id', 'arrowScroll');
-        scrollSwitch = 0;
+      }else{
+        $('header').removeClass('rolled_sp');
       }
+
+      scrollSwitch = 0;
     };
 
     function scrollIndex() {
@@ -128,14 +145,48 @@ $(function() {
 
       $(window).on({
         'scroll': function() {
-          var scroll = $(window).scrollTop();
-          if (scroll > 100) {
-            if (scrollSwitch == 0) {
-              afterScroll();
+          if (document.getElementById('headerRolled')) {
+            if(window.innerWidth > 720){
+              var scroll = $(window).scrollTop();
+              var rolledHeight = headerRolled.offset().top;
+              if (scroll > rolledHeight) {
+                if (scrollSwitch == 0) {
+                  afterScroll();
+                }
+              } else {
+                if (scrollSwitch == 1) {
+                  beforeScroll();
+                }
+              }
             }
-          } else {
-            if (scrollSwitch == 1) {
-              beforeScroll();
+          }
+          if (document.getElementById('headerRolledSp')) {
+            if(window.innerWidth < 720){
+              var scroll = $(window).scrollTop();
+              var rolledHeight = headerRolledSp.offset().top;
+              if (scroll > rolledHeight) {
+                if (scrollSwitch == 0) {
+                  afterScroll();
+                }
+              } else {
+                if (scrollSwitch == 1) {
+                  beforeScroll();
+                }
+              }
+            }
+          }
+          if (document.getElementById('index')) {
+            var productWrap = $('#product_wrap');
+            var topGift = $('#topGift');
+            var scroll = $(window).scrollTop();
+            if(scroll > productWrap.offset().top){
+              if(scroll < topGift.offset().top){
+                $('header').addClass('colored');
+              }else{
+                $('header').removeClass('colored');
+              }
+            }else{
+              $('header').removeClass('colored');
             }
           }
           if (document.getElementById('concept')) {
@@ -261,7 +312,7 @@ $(function() {
   };
 
   humMenuToggle($('#humMenu'));
-  
+
   //トップページ メインスライダー
   function backGroundSlider(target) {
     var obj = $('#slideShow');
