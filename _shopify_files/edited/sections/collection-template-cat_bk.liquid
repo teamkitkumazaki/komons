@@ -1,0 +1,144 @@
+{%- assign limit = 16 -%}
+
+{% paginate collection.products by limit %}
+
+{%- assign product_1st = collection.products[0] -%}
+
+<section class="section-basic-item {{collection.handle}}">
+<div class="section_inner_new">
+  <div class="section_ttl">
+  <h1><span>{{ collection.title }}</span><font>{{ collection.metafields.custom_fields["collection_title_ja"] }}</font></h1>
+</div>
+<div id="productList" class="comp-product-list">
+  <div class="item_list large">
+    <div class="img_wrap">
+      <a href="{{ product_1st.url }}" class="img_link_1st"></a>
+      <style>
+        .img_link_1st {
+          background-image: url({{ product_1st.media[1] | img_url: 'master'}});
+        }
+      </style>
+    </div>
+    <div class="txt_wrap">
+      <a class="prod_name" href="{{ product_1st.url }}">
+        <span class="ja">{{ collection.metafields.custom_fields["collection_title_ja"] }}</span>
+        <span class="en">{{ product_1st.title }}</span>
+      </a>
+      <span class="price">{{ product_1st.metafields.custom_fields["weight"] }} / {{ product_1st.price | money_without_currency }}円(税込)</span>
+      <div class="button_wrap">
+        <a href="{{ product_1st.url }}"><span>詳細を見る</span></a>
+        <div class="comp-list-cart-button">
+          <div class="cartjs_box">
+            {% form 'product', product_1st, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+            <select name="id" id="ProductSelect-{{ product_1st.id }}" class="product-form__variants no-js" style="display: none;">
+              {% for variant in product_1st.variants %}
+                <option value="{{ variant.id }}"
+                  {%- if variant == current_variant %} selected="selected" {%- endif -%}
+                >
+                  {{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+                </option>
+              {% endfor %}
+            </select>
+            <div class="cartin_button">
+              {%- if product_1st.variants.first.inventory_quantity == 0 -%}
+              <span class="soldout" style="margin-top:0;">在庫切れ<span style="font-size:0.8rem; display: inline-block; margin-left: 0.5em;">(※12月中に再入荷予定)</span></span>
+              {%- else -%}
+              <button><span>カートに入れる</span></button>
+              <input id="cartSubmit-{{ product_1st.id }}" type="submit" value="カートに入れる">
+              {%- endif -%}
+            </div>
+            {% endform %}
+          </div>
+        </div>
+      </div>
+      <div class="description">
+        {{ product_1st.metafields.custom_fields["product_outline"] }}
+      </div>
+    </div>
+  </div>
+  <!-- item_list -->
+  {% paginate collection.products by 20 %}
+  {%- assign num = 0 -%}
+  {%- for product in collection.products -%}
+  {%- unless product.type == "gift" or product == product_1st -%}
+    {%- assign num = num | plus:1 -%}
+    {%- assign num = num | modulo:2 -%}
+    {%- if num == 1 -%}
+      {%- assign left_or_right = "left" -%}
+    {%- else -%}
+      {%- assign left_or_right = "right" -%}
+    {%- endif -%}
+  <div class="item_list {{ left_or_right }} num{{num}}">
+    <div class="img_wrap">
+      <a href="{{ product.url }}" class="img_link_{{ product.id }}"></a>
+      <style>
+        .img_link_{{ product.id }} {
+          background-image: url({{ product.media[2] | img_url: 'master'}});
+        }
+      </style>
+    </div>
+    <div class="txt_wrap">
+      <a class="prod_name" href="{{ product.url }}">
+        <span class="ja">{{ collection.metafields.custom_fields["collection_title_ja"] }}</span>
+        <span class="en">
+          {{ product.metafields.custom_fields["product_name"] }}
+        </span>
+      </a>
+      <span class="price">{{ product.metafields.custom_fields["weight"] }} / {{ product.price | money_without_currency }}円(税込)</span>
+      <div class="button_wrap">
+        <a href="{{ product.url }}"><span>詳細を見る</span></a>
+        <div class="comp-list-cart-button">
+          <div class="cartjs_box">
+            {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+            <select name="id" id="ProductSelect-{{ product.id }}" class="product-form__variants no-js" style="display: none;">
+              {% for variant in product.variants %}
+                <option value="{{ variant.id }}"
+                  {%- if variant == current_variant %} selected="selected" {%- endif -%}
+                >
+                  {{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+                </option>
+              {% endfor %}
+            </select>
+            <div class="cartin_button">
+              {%- if product.variants.first.inventory_quantity == 0 -%}
+						  <span class="soldout" style="margin-top:0;">在庫切れ<span style="font-size:0.8rem; display: inline-block; margin-left: 0.5em;">(※12月中に再入荷予定)</span></span>
+						  {%- else -%}
+              <button><span>カートに入れる</span></button>
+              <input id="cartSubmit-{{ product.id }}" type="submit" value="カートに入れる">
+              {%- endif -%}
+            </div>
+            {% endform %}
+          </div>
+        </div>
+      </div>
+      <div class="description">
+        {{ product.metafields.custom_fields["product_outline"] }}
+      </div>
+    </div>
+  </div>
+  {%- endunless -%}
+  {%- endfor -%}
+  {% endpaginate %}
+</div>
+<!-- comp-item-group -->
+
+</div>
+</section>
+<section class="section-set-product">
+<div class="section_inner_new">
+  <div class="section_ttl">
+    <h2><span>Gift Set</span><font>{{ collection.metafields.custom_fields["collection_title_ja"] }}を含むギフトセット</font></h2>
+  </div>
+  <div id="giftProductList" class="comp-gift-product-list">
+    {%- paginate collection.products by 20 -%}
+    {%- for product in collection.products -%}
+    {% if product.type == "gift" or product_child.type == "mini-gift"  %}
+    {% include 'gift-item-card' %}
+    {% endif %}
+    {%- endfor -%}
+    {%- endpaginate -%}
+  </div>
+</div>
+</section>
+
+{% endpaginate %}
