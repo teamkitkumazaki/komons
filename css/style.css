@@ -183,7 +183,14 @@ img {
   margin-right: 40px;
   background-repeat: no-repeat;
   background-position: center center;
+  -webkit-filter: invert(1) saturate(0) brightness(1000);
+          filter: invert(1) saturate(0) brightness(1000);
   background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/logo.svg?v=1623513464) !important;
+}
+.header_new .header_inner .header_left .header_logo a {
+  display: block;
+  width: 155px;
+  height: 90px;
 }
 @media screen and (max-width: 1100px) {
   .header_new .header_inner .header_left .header_navigation {
@@ -215,6 +222,7 @@ img {
   -webkit-font-smoothing: antialiased;
   font-size: 1.8rem;
   color: inherit;
+  color: #fff;
 }
 .header_new .header_inner .header_right {
   display: -webkit-box;
@@ -337,12 +345,19 @@ img {
   background-position: center center;
   background-color: #00381f;
   background-size: 35px;
-  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_acfmbl.png);
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+  background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/header_menu.svg?v=1647733005);
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
 }
 .header_new .header_inner .header_right .header_menu a:hover {
-  opacity: 0.75;
+  background-color: #046734;
+}
+.header_new.rolled .header_inner .header_left .header_logo {
+  -webkit-filter: none;
+          filter: none;
+}
+.header_new.rolled .header_inner .header_left .header_navigation ul li a {
+  color: #00381f;
 }
 .header_new.rolled .header_inner .header_right .header_guide .nav_item a {
   color: #00381f;
@@ -365,6 +380,24 @@ img {
 .header_new.rolled .header_inner .header_right .header_guide .nav_item.h_cart a::before {
   -webkit-filter: unset;
           filter: unset;
+}
+.header_new.colored .header_inner .header_left .header_logo {
+  -webkit-filter: invert(1) saturate(0) brightness(1000%);
+          filter: invert(1) saturate(0) brightness(1000%);
+}
+.header_new.colored .header_inner .header_left .header_navigation ul li a {
+  color: #fff;
+}
+.header_new.colored .header_inner .header_right .header_guide .nav_item a {
+  color: #fff;
+}
+.header_new.colored .header_inner .header_right .header_guide .nav_item.h_login a::before {
+  -webkit-filter: invert(1) saturate(0) brightness(1000%);
+          filter: invert(1) saturate(0) brightness(1000%);
+}
+.header_new.colored .header_inner .header_right .header_guide .nav_item.h_cart a::before {
+  -webkit-filter: invert(1) saturate(0) brightness(1000%);
+          filter: invert(1) saturate(0) brightness(1000%);
 }
 
 @media screen and (max-width: 980px) {
@@ -411,6 +444,11 @@ img {
     right: 0;
     margin: auto;
     background-size: contain;
+  }
+  .header_new .header_inner .header_left .header_logo a {
+    display: block;
+    width: 122px;
+    height: 31px;
   }
   .header_new .header_inner .header_right {
     -webkit-box-orient: horizontal;
@@ -474,12 +512,30 @@ img {
     background-size: 28px;
     background-color: transparent;
   }
-  .header_new.rolled .header_inner {
+  .header_new.rolled_sp .header_inner {
     background: #fff;
     border-top: 3px solid #00381f;
   }
-  .header_new.rolled .header_inner .header_menu a {
+  .header_new.rolled_sp .header_inner .header_menu a {
     background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_rolled_ddjxzw.png);
+  }
+  .header_new.rolled_sp .header_inner .header_left .header_logo {
+    -webkit-filter: none;
+            filter: none;
+  }
+  .header_new.rolled_sp .header_inner .header_right .header_guide .nav_item a {
+    color: #00381f;
+  }
+  .header_new.rolled_sp .header_inner .header_right .header_guide .nav_item a span {
+    display: none;
+  }
+  .header_new.rolled_sp .header_inner .header_right .header_guide .nav_item.h_cart a .cart_item_num {
+    background-color: #00381f;
+    color: #fff;
+  }
+  .header_new.rolled_sp .header_inner .header_right .header_guide .nav_item.h_cart a::before {
+    -webkit-filter: unset;
+            filter: unset;
   }
 }
 footer {
@@ -5980,7 +6036,7 @@ body.loaded #loading {
   width: 70px;
   height: 70px;
   top: 4px;
-  left: 22px;
+  right: 22px;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -6428,7 +6484,7 @@ body.loaded #loading {
     width: 70px;
     height: 70px;
     top: 5px;
-    left: 5px;
+    right: 5px;
     background-size: 20px;
   }
   .comp-slide-menu .search_inner {
@@ -6475,13 +6531,14 @@ body.loaded #loading {
     width: 60px;
     height: 60px;
     top: 0px;
+    right: unset;
     left: 0px;
     background-size: 15px;
   }
   .comp-slide-menu .search_inner {
     max-width: 100vw;
     width: 100vw;
-    height: calc(100vh - 60px);
+    height: 100vh;
     padding: 60px 5vw 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -6683,7 +6740,7 @@ body.loaded #loading {
   }
   .comp-slide-menu .search_inner .content .content_right {
     width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
   }
   .comp-slide-menu .search_inner .content .content_right .sns_wrap {
     width: 100%;
@@ -13995,14 +14052,14 @@ body.loaded #loading {
 @media screen and (min-width: 1151px) {
   body.product01 #product01 .productBg {
     position: fixed !important;
-    top: 90px;
+    top: 0px;
     left: 0;
     right: 0;
     margin: auto !important;
   }
   body.product02 #product02 .productBg {
     position: fixed !important;
-    top: 90px;
+    top: 0px;
     left: 0;
     right: 0;
     margin: auto !important;
@@ -14010,7 +14067,7 @@ body.loaded #loading {
 
   body.product03 #product03 .productBg {
     position: fixed !important;
-    top: 90px;
+    top: 0px;
     left: 0;
     right: 0;
     margin: auto !important;
@@ -14018,7 +14075,7 @@ body.loaded #loading {
 
   body.product04 #product04 .productBg {
     position: fixed !important;
-    top: 90px;
+    top: 0px;
     left: 0;
     right: 0;
     margin: auto !important;
@@ -14026,7 +14083,7 @@ body.loaded #loading {
 
   body.product05 #product05 .productBg {
     position: fixed !important;
-    top: 90px;
+    top: 0px;
     left: 0;
     right: 0;
     margin: auto !important;
@@ -14045,6 +14102,9 @@ body.loaded #loading {
 }
 .page-item-list .section-main .image_wrap {
   height: 67vw;
+}
+.page-item-list .section-main .image_wrap img {
+  height: auto;
 }
 .page-item-list .section-products {
   margin-bottom: 80px;

@@ -54,8 +54,8 @@
 	</div>
 </section> -->
   <section id="topConcept">
-    <div class="concept_wrap">
-        <div class="txt_wrap">
+    <div id="headerRolled" class="concept_wrap">
+        <div id="headerRolledSp" class="txt_wrap">
           <h2>毎日の家事を、<span>心地よい時間に。</span></h2>
           <p>掃除、洗濯、食器洗い。<span class="sp_block">家事は時に面倒で、余計なものに思えます。</span></p>
           <p><span>だけど、それらがより楽しく、</span><span>幸せな時間に変わるとしたら、</span><span>毎日も人生もより豊かなものになるはずです。</span></p>
@@ -71,58 +71,22 @@
     </div>
   </section>
   <section class="section-pickup">
-    <div class="inner">
+    <div class="section_inner_new">
       <div class="section_ttl">
         <h2><span>Pickup</span><font>ピックアップ商品</font></h2>
       </div>
-      <div class="comp-pickup-items">
+      <div class="comp-product-list">
+        <ul class="item_wrapper">
 				{% for collection in collections %}
 				{%- if collection.title == "pickup" -%}
-				{% paginate collection.products by 2 %}
+				{% paginate collection.products by 4 %}
 				{% for product in collection.products %}
-				<div class="pickup_item">
-          <div class="img_wrap">
-            <a href="{{ product.url }}"><img src="{{ product.featured_image | | img_url: 'master' }}"></a>
-          </div>
-          <div class="txt_wrap">
-            <div class="prod_detail">
-              <h3 class="cat_ttl">{{ product.metafields.custom_fields["category_name"] }}</h3>
-              <a class="prod_name" href="{{ product.url }}">{{ product.metafields.custom_fields["product_name"] }}</a>
-              <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
-            </div>
-            <a class="arrow_link" href="{{ product.url }}"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
-          </div>
-        </div>
+          {%- include 'all-item-card' -%}
 				{% endfor %}
 				{% endpaginate %}
 				{%- endif -%}
 				{% endfor %}
-        <!-- <div class="pickup_item">
-          <div class="img_wrap">
-            <a href="/?pid=134416250"><img src="https://img07.shop-pro.jp/PA01416/697/product/134416250_o2.jpg?cmsp_timestamp=20200710154136"></a>
-          </div>
-          <div class="txt_wrap">
-            <div class="prod_detail">
-              <h3 class="cat_ttl"><span>Gift Set</span>ギフトセット</h3>
-              <a class="prod_name" href="/?pid=134416250">エントリーコンビ</a>
-              <span class="price">5,000円(税抜)</span>
-            </div>
-            <a class="arrow_link" href="/?pid=134416250"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
-          </div>
-        </div>
-        <div class="pickup_item">
-          <div class="img_wrap">
-            <a href="/?pid=139975276"><img src="https://img07.shop-pro.jp/PA01416/697/product/139975276_o2.jpg?cmsp_timestamp=20190212131113"></a>
-          </div>
-          <div class="txt_wrap">
-            <div class="prod_detail">
-              <h3 class="cat_ttl"><span>Fabric Mist</span>除菌消臭ミスト</h3>
-              <a class="prod_name" href="/?pid=139975276">【ギフト】<span>Free as a Bird (Mini)</span></a>
-              <span class="price">750円(税抜)</span>
-            </div>
-            <a class="arrow_link" href="/?pid=139975276"><span class="link_wrap">詳しく見る<span class="arrow"></span></span></a>
-          </div>
-        </div> -->
+        </ul>
       </div>
     </div>
   </section>
