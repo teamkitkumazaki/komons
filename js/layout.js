@@ -206,7 +206,7 @@ $(function() {
               var sectionimgPos = $(this).offset().top;
               var sectionscroll = $(window).scrollTop();
               var windowHeight = $(window).height();
-              if (sectionscroll + 90 > sectionimgPos - windowHeight + windowHeight) {
+              if (sectionscroll > sectionimgPos - windowHeight + windowHeight) {
                 var setClass = $(this).attr('id');
                 $('body').removeClass('main topConcept product01 product02 product03 product04 product05 product06 topGift topCF topJournal instagram');
                 $('body').addClass(setClass);
