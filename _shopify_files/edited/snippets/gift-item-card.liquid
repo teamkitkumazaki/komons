@@ -15,9 +15,11 @@
 	</p>
 	<div class="content_icon">
 		{% for tag in product.tags %}
+		{%- if tag != 'nerori' -%}
 		<div class="icon">
 			<span class="{{ tag }}"></span>
 		</div>
+		{%- endif -%}
 		{% endfor %}
 	</div>
 	<div class="detail_button">

@@ -38,18 +38,41 @@
     {%- endif -%}
     {%- endif -%}
     </div>
+    {%- if product.type != 'gift' -%}
     <div class="comp-variation">
       <div class="variation_wrap">
-        <a href="/products/k0021">
-          <span class="title">詰め替え用(500ml)</span>
-          <span id="refillPrice" class="desc">2,530円(税込)</span>
-        </a>
-        <a href="/products/k0008">
-          <span class="title">Mini(30ml)</span>
-          <span id="miniPrice" class="desc">495円(税込)</span>
-        </a>
+      {% unless product.tags contains 'nerori' %}
+      {% for tag in product.tags %}
+        {% for collection in collections %}
+          {%- if collection.handle == tag -%}
+          {% for item in collection.metafields.custom_fields["variations"] %}
+            {%- if item["variation_id"] != product.handle -%}
+              <a href="/products/{{item["variation_id"]}}">
+                <span class="title">{{ item["variation_name"] }}({{ item["variation_ml"] }})はこちら</span>
+                <span class="desc"> {{ item["variation_price"] }}円(税込)</span>
+              </a>
+            {%- endif -%}
+          {% endfor %}
+          {%- endif -%}
+        {% endfor %}
+      {% endfor %}
+      {%- else -%}
+      {% for collection in collections %}
+        {%- if collection.handle == 'nerori' -%}
+        {% for item in collection.metafields.custom_fields["variations"] %}
+          {%- if item["variation_id"] != product.handle -%}
+            <a href="/products/{{item["variation_id"]}}">
+              <span class="title">{{ item["variation_name"] }}({{ item["variation_ml"] }})はこちら</span>
+              <span class="desc"> {{ item["variation_price"] }}円(税込)</span>
+            </a>
+          {%- endif -%}
+        {% endfor %}
+        {%- endif -%}
+      {% endfor %}
+      {%- endunless -%}
       </div><!-- variation_wrap -->
     </div><!-- comp-variation -->
+    {%- endif -%}
     <div id="cartNoteList" class="cart_note">
       {%- if product.type == "gift" -%}
       <button prop="#toggleGift">ギフトサービス</button>

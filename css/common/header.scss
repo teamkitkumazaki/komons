@@ -147,7 +147,7 @@
 					background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/header_menu.svg?v=1647733005);
 					transition: background .3s;
 					&:hover{
-						background-color: $insertGreen;
+						background-color: #2f281e;
 					}
 				}
 			}
@@ -340,6 +340,9 @@
 						background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_acfmbl.png);
 						background-size: 28px;
 						background-color: transparent;
+						&:hover{
+							background-color: transparent;	
+						}
 					}
 				}
 			}

@@ -1,3 +1,4 @@
+{%- assign thumbIndex = 0 -%}
 <section class="section-main">
   <div class="main_flex">
     <div id="thumbList" class="item_thumb">
@@ -82,13 +83,13 @@
           </div><!-- comp-detail-desc -->
         </div><!-- desc_unit -->
         {% endif %}
-        {% if product.type != gift %}
+        {% if product.type != 'gift' %}
         {% include 'scent-detail' %}
         {% endif %}
-        {% if product.type != gift %}
+        {% if product.type != 'gift' %}
         {% include 'product-conponent' %}
         {%- else -%}
-
+        {% include 'product-conponent-gift' %}
         {% endif %}
         <div class="desc_unit">
           <div class="comp-detail-title margin">
