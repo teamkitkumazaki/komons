@@ -42,7 +42,7 @@
       <div class="desc_inner">
         {% include 'product-brand-introduction' %}
         {% if product.metafields.custom_fields["prod_detail_desc"] != blank %}
-        <div class="desc_unit">
+        <div class="desc_unit border">
           <div class="comp-detail-title">
           {%- if product.type == "gift" -%}
             <hgroup>
@@ -57,6 +57,7 @@
           {%- endif -%}
           </div>
           <div class="comp-detail-desc">
+          {% include 'product-set-content' %}
           {% for item in product.metafields.custom_fields["prod_detail_desc"] %}
             <div class="detail_item">
               <div class="img_wrap">

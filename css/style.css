@@ -9672,7 +9672,7 @@ body.loaded #loading {
     font-size: 1.4rem;
   }
 }
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 1100px) {
   .comp-gift-product-list {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -9804,6 +9804,7 @@ body.loaded #loading {
   }
   .comp-gift-product-list .list_item .content_icon .icon span.dish::before {
     width: 21px;
+    left: 1px;
     background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_dish_argayb.svg);
   }
   .comp-gift-product-list .list_item .content_icon .icon span.dish::after {
@@ -9830,14 +9831,14 @@ body.loaded #loading {
   .comp-gift-product-list .list_item .content_icon .icon span.hand::after {
     content: "ハンドソープ";
   }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric {
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric, .comp-gift-product-list .list_item .content_icon .icon span.mistmini {
     padding-left: 25px;
   }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric::before {
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric::before, .comp-gift-product-list .list_item .content_icon .icon span.mistmini::before {
     width: 20px;
     background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_fabric_evs2ba.svg);
   }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric::after {
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric::after, .comp-gift-product-list .list_item .content_icon .icon span.mistmini::after {
     content: "除菌消臭ミスト";
   }
   .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini {
@@ -11420,7 +11421,7 @@ body.loaded #loading {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 15px 15px;
+    padding: 20px;
     letter-spacing: 0.01em;
     color: inherit;
     margin-bottom: 5px;
@@ -11438,7 +11439,7 @@ body.loaded #loading {
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 15px;
+    right: 20px;
     margin: auto;
     width: 22px;
     height: 10px;
