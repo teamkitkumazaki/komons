@@ -1,24 +1,32 @@
 {%- assign thumbIndex = 0 -%}
+{%- assign thumbIndexNum = 0 -%}
+{% for image in product.images %}
+  {%- assign thumbIndexNum = thumbIndexNum | plus: 1 -%}
+{% endfor %}
 <section class="section-main">
   <div class="main_flex">
     <div id="thumbList" class="item_thumb">
-      <div class="comp-item-thumbs">
+      <div class="comp-item-thumbs" {% if thumbIndexNum < 2 %}style="pointer-events: none";{%- endif -%}>
+        {% if thumbIndexNum > 1 %}
         <div class="thumb_number">
           <span id="currentThumb" class="current">1</span>
           <span id="allThumb">1</span>
         </div>
         <button id="slideNext" class="slide_caret slide_next"></button>
         <button id="slidePrev" class="slide_caret slide_prev"></button>
-        <ul id="thumbBox">
-        {% for image in product.images %}
-        <li class="{% if thumbIndex == 0 %}active{% endif %} slide{{thumbIndex}}">{{ image.src | image_url: width: 1440 | image_tag }}</li>
-        {%- assign thumbIndex = thumbIndex | plus: 1 -%}
-        {% endfor %}
+        {%- endif -%}
+        <div id="thumbWrapper" class="thumb_wrapper">
+          <ul id="thumbBox" class="thumb_box">
+          {% for image in product.images %}
+          <li class="{% if thumbIndex == 0 %}active{% endif %} slide{{thumbIndex}}">{{ image.src | image_url: width: 1440 | image_tag }}</li>
+          {%- assign thumbIndex = thumbIndex | plus: 1 -%}
+          {% endfor %}
         </ul>
+        </div>
       </div>
     </div>
     <div id="mainDetail" class="main_detail sticky">
-      <div id="headerRolledSp" class="detail_inner">
+      <div class="detail_inner" {%- if product.type != "upcoming" -%}id="headerRolledSp"{%- endif -%}>
         <div class="prod_info">
           <span class="category">{{ product.metafields.custom_fields["prod_category"] }}</span>
           <h1 class="prod_name">{{ product.metafields.custom_fields["prod_display_name"] }}</h1>

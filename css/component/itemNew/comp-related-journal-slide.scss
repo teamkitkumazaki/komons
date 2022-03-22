@@ -1,5 +1,6 @@
 .comp-related-journal-slide{
   width: 100vw;
+  height: 72vw;
   margin-left: -7vw;
   padding-left: 7vw;
   box-sizing: border-box;
@@ -47,6 +48,7 @@
 @media screen and (min-width: 720px){
   .comp-related-journal-slide{
     width: auto;
+    height: auto;
     overflow: unset;
     .slide_inner{
       width: 100%;

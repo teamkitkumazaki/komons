@@ -1,5 +1,5 @@
 {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
-<div class="comp-cart-wrap">
+<div id="productCartWrap" class="comp-cart-wrap">
 {%- if product.type != "upcoming" -%}
   <div class="order_lot">
     <span class="title">数量</span>
@@ -82,6 +82,7 @@
       </div><!-- variation_wrap -->
     </div><!-- comp-variation -->
     {%- endif -%}
+    {%- if product.type != "upcoming" -%}
     <div id="cartNoteList" class="cart_note">
       {%- if product.type == "gift" -%}
       <button prop="#toggleGift">ギフトサービス</button>
@@ -89,6 +90,7 @@
       <button prop="#toggleDelivary">配送について</button>
       <button prop="#togglePayment">お支払い方法</button>
     </div><!-- cart_note -->
+    {%- endif -%}
   </div><!-- comp-flex-cart -->
 </div><!-- comp-cart-wrap -->
 {% endform %}

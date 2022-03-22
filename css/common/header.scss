@@ -341,7 +341,7 @@
 						background-size: 28px;
 						background-color: transparent;
 						&:hover{
-							background-color: transparent;	
+							background-color: transparent;
 						}
 					}
 				}
@@ -373,7 +373,9 @@
 							&.h_cart{
 								a{
 									.cart_item_num{
+										display: block;
 										background-color: $basicGreen;
+										border: 2px solid $basicGreen;
 										color: #fff;
 									}
 									&::before{

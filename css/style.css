@@ -533,7 +533,9 @@ img {
     display: none;
   }
   .header_new.rolled_sp .header_inner .header_right .header_guide .nav_item.h_cart a .cart_item_num {
+    display: block;
     background-color: #00381f;
+    border: 2px solid #00381f;
     color: #fff;
   }
   .header_new.rolled_sp .header_inner .header_right .header_guide .nav_item.h_cart a::before {
@@ -2474,7 +2476,7 @@ body #loading {
 body #loading .load_inner {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: var(--wHeightPx);
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
@@ -2541,7 +2543,7 @@ body.loaded #loading {
     background-size: 1000px;
   }
   body #loading .load_inner .main_txt {
-    height: 160px;
+    height: 120px;
     bottom: 0;
   }
   body #loading .load_inner .main_txt .main_img {
@@ -4291,7 +4293,7 @@ body.loaded #loading {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   background: #fff;
-  padding: 30px 30px 20px;
+  padding: 60px 60px 60px;
 }
 .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb {
   width: 100%;
@@ -4667,7 +4669,7 @@ body.loaded #loading {
   }
   .comp-gift-option-pop .pop_flex .pop_contents .contents_inner {
     max-height: 65vh;
-    padding: 20px 20px 40px;
+    padding: 30px 30px 40px;
   }
   .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .item_thumb {
     width: 100%;
@@ -4764,10 +4766,10 @@ body.loaded #loading {
     letter-spacing: 0.44px;
   }
   .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .option_select .mizuhiki_desc {
-    font-size: 13px;
-    line-height: 1.6;
-    letter-spacing: 0.4px;
-    margin-top: 5px;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    margin-top: 15px;
   }
   .comp-gift-option-pop .pop_flex .pop_contents .contents_inner .mizuhiki {
     padding-bottom: 40px;
@@ -9098,7 +9100,7 @@ body.loaded #loading {
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   font-size: 1.8rem;
   color: #00381f;
   -webkit-transition: opacity 0.3s;
@@ -9255,8 +9257,8 @@ body.loaded #loading {
     margin-bottom: 20px;
   }
   .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name a {
-    letter-spacing: 0.05em;
-    font-size: 2.4rem;
+    letter-spacing: 0.04em;
+    font-size: 2.2rem;
   }
   .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name a .genre {
     font-size: 1.4rem;
@@ -9351,7 +9353,7 @@ body.loaded #loading {
   line-height: 43px;
   font-size: 16px;
   padding: 0 10px;
-  text-indent: 42px;
+  text-indent: 36px;
   border-radius: 0px;
   font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
@@ -9367,12 +9369,12 @@ body.loaded #loading {
   background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/select_caret.svg?v=1647681780);
   cursor: pointer;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+       appearance: none;
 }
 @media screen and (min-width: 720px) {
   .comp-pager .comp_inner select {
-    text-indent: 55px;
+    text-indent: 60px;
   }
 }
 .comp-pager .comp_inner select:focus {
@@ -9547,7 +9549,7 @@ body.loaded #loading {
   color: inherit;
   margin-bottom: 15px;
   font-size: 1.6rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0em;
   margin-bottom: 10px;
 }
 .comp-gift-product-list .list_item .txt_wrap .name.en {
@@ -9555,7 +9557,6 @@ body.loaded #loading {
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
-  /*text-indent: -0.1em;*/
   font-size: 2.1rem;
   letter-spacing: 0.5px;
   display: block;
@@ -9733,13 +9734,14 @@ body.loaded #loading {
     margin-bottom: 20px;
   }
   .comp-gift-product-list .list_item .txt_wrap .name {
-    margin-bottom: 15px;
-    font-size: 1.8rem;
     margin-bottom: 10px;
+    font-size: 2rem;
+    margin-top: 25px;
   }
   .comp-gift-product-list .list_item .txt_wrap .name.en {
-    font-size: 2.6rem;
+    margin-top: 0;
     margin-bottom: 10px;
+    font-size: 2.6rem;
   }
   .comp-gift-product-list .list_item .txt_wrap .added {
     font-size: 1.4rem;
@@ -10177,9 +10179,19 @@ body.loaded #loading {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
+.comp-item-thumbs .thumb_wrapper {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: opacity 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.comp-item-thumbs .thumb_wrapper.display {
+  opacity: 1;
+  pointer-events: all;
+}
 .comp-item-thumbs ul {
   position: relative;
-  height: 108vw;
+  height: 107vw;
   overflow: hidden;
 }
 .comp-item-thumbs ul li {
@@ -10393,6 +10405,7 @@ body.loaded #loading {
           box-shadow: none;
   background: transparent;
   color: #00381f;
+  cursor: unset;
 }
 .comp-cart-wrap .order_lot .input_wrap button.minus {
   left: 0;
@@ -10504,7 +10517,7 @@ body.loaded #loading {
   display: block;
   padding: 0;
   margin: 0 1em 0 0;
-  color: #046734;
+  color: #00381f;
   font-size: 1.4rem;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -10514,7 +10527,7 @@ body.loaded #loading {
   -webkit-box-shadow: none;
           box-shadow: none;
   font-family: inherit;
-  border-bottom: 1px solid #046734;
+  border-bottom: 1px solid #00381f;
   padding-bottom: 4px;
   cursor: pointer;
 }
@@ -10563,14 +10576,15 @@ body.loaded #loading {
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
-  font-size: 1.4rem;
+  letter-spacing: 0.3px;
+  font-size: 1.6rem;
   margin-bottom: 12px;
 }
 .comp-detail-title hgroup .title_ja {
   display: block;
   font-size: 2.2rem;
   text-indent: -0.1em;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
 }
 
 @media screen and (min-width: 720px) {
@@ -10586,7 +10600,7 @@ body.loaded #loading {
   }
   .comp-detail-title hgroup .title_ja {
     display: block;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 }
 .comp-detail-desc .detail_item {
@@ -10597,6 +10611,9 @@ body.loaded #loading {
 }
 .comp-detail-desc .detail_item .img_wrap {
   margin-bottom: 25px;
+}
+.comp-detail-desc .detail_item .img_wrap img {
+  width: 100%;
 }
 .comp-detail-desc .detail_item .txt_wrap .prod_name {
   font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
@@ -10754,8 +10771,8 @@ body.loaded #loading {
 .comp-detail-toggle-new .toggle_item .toggle_button_new {
   width: 100%;
   display: block;
-  padding: 15px 15px;
-  font-size: 1.4rem;
+  padding: 20px 20px;
+  font-size: 1.5rem;
   text-align: left;
   border: none;
   font-family: inherit;
@@ -10768,7 +10785,7 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 12px;
-  background-position: center right 15px;
+  background-position: center right 20px;
   background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
   color: inherit;
   letter-spacing: 0.08em;
@@ -10821,7 +10838,7 @@ body.loaded #loading {
     margin-bottom: 7px;
   }
   .comp-detail-toggle-new .toggle_item .toggle_button_new {
-    padding: 15px 20px;
+    padding: 20px 25px;
     font-size: 1.6rem;
     cursor: pointer;
     -webkit-transition: color 0.3s;
@@ -10918,6 +10935,7 @@ body.loaded #loading {
 @media screen and (min-width: 720px) {
   .comp-related-item-slide {
     width: 100vw;
+    height: auto;
     margin-left: -9vw;
     padding-left: 9vw;
   }
@@ -10967,6 +10985,7 @@ body.loaded #loading {
 }
 .comp-related-journal-slide {
   width: 100vw;
+  height: 72vw;
   margin-left: -7vw;
   padding-left: 7vw;
   -webkit-box-sizing: border-box;
@@ -11024,6 +11043,7 @@ body.loaded #loading {
 @media screen and (min-width: 720px) {
   .comp-related-journal-slide {
     width: auto;
+    height: auto;
     overflow: unset;
   }
   .comp-related-journal-slide .slide_inner {
@@ -11242,11 +11262,9 @@ body.loaded #loading {
   margin-bottom: 20px;
 }
 .comp-scent-detail .scent_img_wrap img {
+  width: 100%;
   -webkit-filter: brightness(0.97);
           filter: brightness(0.97);
-}
-.comp-scent-detail .scent_txt_wrap {
-  border: 1px solid #046734;
 }
 .comp-scent-detail .scent_txt_wrap .scent_main_ttl {
   font-size: 1.8rem;
@@ -11256,7 +11274,7 @@ body.loaded #loading {
 }
 .comp-scent-detail .scent_txt_wrap .scent_item {
   border-bottom: 1px solid #046734;
-  padding: 20px;
+  padding: 20px 5px;
 }
 .comp-scent-detail .scent_txt_wrap .scent_item:nth-last-of-type(1) {
   border-bottom: 0px solid #046734;
@@ -11285,7 +11303,7 @@ body.loaded #loading {
     margin-bottom: 30px;
   }
   .comp-scent-detail .scent_img_wrap {
-    padding: 30px 20px;
+    padding: 30px 60px;
     margin-bottom: 30px;
   }
   .comp-scent-detail .scent_txt_wrap .scent_main_ttl {
@@ -11320,12 +11338,18 @@ body.loaded #loading {
 }
 @media screen and (min-width: 980px) {
   .comp-scent-detail .scent_img_wrap {
-    padding: 20px 20px;
+    padding: 20px 60px;
     margin-bottom: 30px;
+  }
+  .comp-scent-detail .scent_txt_wrap {
+    border: 0px;
   }
   .comp-scent-detail .scent_txt_wrap .scent_main_ttl {
     font-size: 2.2rem;
     margin-bottom: 15px;
+  }
+  .comp-scent-detail .scent_txt_wrap .scent_item {
+    padding: 20px 5px;
   }
   .comp-scent-detail .scent_txt_wrap .scent_item .title {
     width: 120px;
@@ -14168,16 +14192,24 @@ body.loaded #loading {
   color: inherit;
   background-color: transparent;
   padding: 15px 10px 15px 0px;
+  border-radius: 0px;
   height: auto;
-  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/select_caret_green.svg?v=1647776456);
+  background-size: 8px;
   background-position: center right 10px;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
 }
 .page-item-list .section-products .title_flex .postform:focus {
   outline: none;
 }
 .page-item-list .section-products .comp-pager {
   max-width: 75vw;
-  margin-top: 20px;
+  margin: 20px auto 0;
 }
 .page-item-list .section-gift {
   padding-top: 50px;
@@ -16291,11 +16323,13 @@ body.loaded #loading {
 }
 .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .name {
   display: block;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
+  letter-spacing: -0.06em;
   text-indent: -0.1em;
   margin-bottom: 5px;
 }
 .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .name.en {
+  font-size: 2.4rem;
   font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
@@ -16404,8 +16438,11 @@ body.loaded #loading {
     line-height: 1.6;
   }
   .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .name {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     margin-bottom: 5px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .name.en {
+    font-size: 2.8rem;
   }
   .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .genre {
     display: block;
@@ -16569,10 +16606,13 @@ body.loaded #loading {
             justify-content: flex-start;
   }
   .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .name {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     text-indent: -0.1em;
     margin-right: 10px;
     margin-bottom: 5px;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .name.en {
+    font-size: 2.6rem;
   }
   .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .prod_info .prod_name .genre {
     font-size: 1.6rem;
@@ -19469,7 +19509,7 @@ body.loaded #loading {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/gift_main.jpg?v=1647696769);
+    background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/gift_pc.jpg?v=1647928410);
     margin-bottom: 60px;
   }
   .page-gift-list .section-main .main_img img {

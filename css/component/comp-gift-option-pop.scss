@@ -68,7 +68,7 @@
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
         background: #fff;
-        padding: 30px 30px 20px;
+        padding: 60px 60px 60px;
         .item_thumb{
           width: 100%;
           margin-bottom: 35px;
@@ -388,7 +388,7 @@
         }
         .contents_inner{
           max-height: 65vh;
-          padding: 20px 20px 40px;
+          padding: 30px 30px 40px;
           .item_thumb{
             width: 100%;
             margin-bottom: 25px;
@@ -475,10 +475,10 @@
               }
             }
             .mizuhiki_desc{
-              font-size: 13px;
-              line-height: 1.6;
-              letter-spacing: 0.4px;
-              margin-top: 5px;
+              font-size: 1.4rem;
+              line-height: 1.8;
+              letter-spacing: 0.05em;
+              margin-top: 15px;
             }
           }
           .mizuhiki{

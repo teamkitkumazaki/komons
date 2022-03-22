@@ -13,11 +13,11 @@
     padding: 25px 0px;
     margin-bottom: 20px;
     img{
+      width: 100%;
       filter: brightness(0.97);
     }
   }
   .scent_txt_wrap{
-    border: 1px solid $insertGreen;
     .scent_main_ttl{
       font-size: 1.8rem;
       line-height: 1.6;
@@ -26,7 +26,7 @@
     }
     .scent_item{
       border-bottom: 1px solid $insertGreen;;
-      padding: 20px;
+      padding: 20px 5px;
       &:nth-last-of-type(1){
         border-bottom: 0px solid $insertGreen;;
       }
@@ -55,7 +55,7 @@
       margin-bottom: 30px;
     }
     .scent_img_wrap{
-      padding:30px 20px;
+      padding:30px 60px;
       margin-bottom: 30px;
     }
     .scent_txt_wrap{
@@ -86,15 +86,17 @@
 @media screen and (min-width: 980px){
   .comp-scent-detail{
     .scent_img_wrap{
-      padding: 20px 20px;
+      padding: 20px 60px;
       margin-bottom: 30px;
     }
     .scent_txt_wrap{
+      border: 0px;
       .scent_main_ttl{
         font-size: 2.2rem;
         margin-bottom: 15px;
       }
       .scent_item{
+        padding: 20px 5px;
         .title{
           width: 120px;
           margin-top: 4px;

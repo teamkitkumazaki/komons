@@ -20,11 +20,10 @@
         color: inherit;
         margin-bottom: 15px;
         font-size: 1.6rem;
-        letter-spacing: 0.02em;
+        letter-spacing: 0em;
         margin-bottom: 10px;
         &.en{
           @include libre-r;
-          /*text-indent: -0.1em;*/
           font-size: 2.1rem;
           letter-spacing: 0.5px;
           display: block;
@@ -203,12 +202,13 @@
       .txt_wrap{
         margin-bottom: 20px;
         .name{
-          margin-bottom: 15px;
-          font-size: 1.8rem;
           margin-bottom: 10px;
+          font-size: 2.0rem;
+          margin-top: 25px;
           &.en{
-            font-size: 2.6rem;
+            margin-top: 0;
             margin-bottom: 10px;
+            font-size: 2.6rem;
           }
         }
         .added{

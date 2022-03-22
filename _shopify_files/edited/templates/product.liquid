@@ -7,56 +7,6 @@
 <article id="itemDetailNew" class="page-item-detail-new">
   {% section 'product-main' %}
   {% section 'product-relation' %}
-  <section class="section-related-journal">
-    <div class="section_inner_new">
-      <div class="comp-detail-title">
-        <hgroup>
-          <span class="title_en">Journal</span>
-          <h2 class="title_ja">Komonsをもっと知る</h2>
-        </hgroup>
-      </div>
-      <div class="comp-related-journal-slide">
-        <div class="slide_inner">
-          <div class="journal_item">
-            <div class="img_wrap">
-              <a href="#aaaa"><img src="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/journal01.jpg?v=1646131273"></a>
-            </div>
-            <div class="txt_wrap">
-              <a class="article_name" href="#aaaa">「Komons」の名前の由来は「江戸小紋」</a>
-              <span class="genre">#Fans & Users</span>
-            </div>
-          </div>
-          <div class="journal_item">
-            <div class="img_wrap">
-              <a href="#aaaa"><img src="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/journal04.jpg?v=1646131273"></a>
-            </div>
-            <div class="txt_wrap">
-              <a class="article_name" href="#aaaa">なぜトイレクリーナーがShelter from the Stormという名前になったのか？</a>
-              <span class="genre">#Fans & Users</span>
-            </div>
-          </div>
-          <div class="journal_item">
-            <div class="img_wrap">
-              <a href="#aaaa"><img src="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/journal03.jpg?v=1646131273"></a>
-            </div>
-            <div class="txt_wrap">
-              <a class="article_name" href="#aaaa">”天空の茶畑”産ティーシードオイルについて</a>
-              <span class="genre">#Fans & Users</span>
-            </div>
-          </div>
-          <div class="journal_item">
-            <div class="img_wrap">
-              <a href="#aaaa"><img src="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/journal02.jpg?v=1646131273"></a>
-            </div>
-            <div class="txt_wrap">
-              <a class="article_name" href="#aaaa">Komonsの成分について</a>
-              <span class="genre">#Fans & Users</span>
-            </div>
-          </div>
-        </div>
-      </div><!-- comp-related-item-slide -->
-    </div><!-- section_inner_new -->
-  </section>
   <section class="section-item-list">
     <div class="section_inner_new">
       <div class="comp-detail-title">
@@ -88,16 +38,8 @@
     </div><!-- section_inner_new -->
   </section>
 </article>
-<!--{% section 'fixed-cart-wrap' %} -->
-<div id="fixedCartWrap" class="comp-fixed-cart-wrap">
-  <div class="cart_inner">
-  {%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
-    <button id="fixedCartButton" class="fixed_cart_button"><span>オプションを選択して購入</span></button>
-    {%- else -%}
-    <button id="fixedCartButton" class="fixed_cart_button"><span>カートに入れる</span></button>
-    {%- endif -%}
-  </div>
-</div>
+{% section 'fixed-cart-wrap' %}
+
 
 {%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
 {% section 'gift-option-field' %}

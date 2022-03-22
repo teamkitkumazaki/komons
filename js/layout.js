@@ -1,5 +1,44 @@
 $(function() {
 
+  // スクロール + ウィンドウサイズ系の対策処理
+  function scrollAnimationSet(target) {
+    const scButtonWrap = $('#scrollTopWrap');
+    const position = document.documentElement;
+    let wHeight = window.innerHeight;
+    let preSetWidth = window.innerWidth;
+    let scrollCount = 0;
+
+    function setHeightProperty() {
+      wHeight = window.innerHeight;
+      position.style.setProperty('--wHeight', window.innerHeight);
+      position.style.setProperty('--wHeightPx', window.innerHeight + 'px');
+      position.style.setProperty('--scroll', window.scrollY);
+      if(window.scrollY > window.innerHeight){
+        scButtonWrap.addClass('display');
+      }else{
+        scButtonWrap.removeClass('display');
+      }
+
+    }
+
+    function setProperties() {
+      setHeightProperty();
+    }
+
+    function init() {
+      var timer = false;
+      setProperties();
+      position.style.setProperty('--wHeightFixedPx', window.innerHeight + 'px');
+      window.addEventListener('scroll', _.throttle(setProperties, 100, { leading: true, trailing: true}));
+      window.addEventListener('resize', _.throttle(setProperties, 100, { leading: true, trailing: true}));
+    }
+
+    init();
+
+  }
+
+  scrollAnimationSet($('article'));
+
   // ローディングアニメーション
   function loadingAnimation() {
     var sliderImg = "https://journal.komons-japan.com/wp-content/themes/komons-theme/img/main_slide01.jpg";

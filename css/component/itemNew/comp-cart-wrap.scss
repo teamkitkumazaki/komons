@@ -30,7 +30,7 @@
         box-shadow: none;
         background: transparent;
         color: $basicGreen;
-
+        cursor: unset;
         &.minus {
           left: 0;
           text-align: left;
@@ -141,14 +141,14 @@
       display: block;
       padding: 0;
       margin: 0 1em 0 0;
-      color: $insertGreen;
+      color: $basicGreen;
       font-size: 1.4rem;
       appearance: none;
       background: transparent;
       border: none;
       box-shadow: none;
       font-family: inherit;
-      border-bottom: 1px solid $insertGreen;
+      border-bottom: 1px solid $basicGreen;
       padding-bottom: 4px;
       cursor: pointer;
     }

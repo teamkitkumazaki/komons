@@ -9,6 +9,8 @@ $(function() {
     var slideNextButton = $('#slideNext');
     var slidePrevButton = $('#slidePrev');
     var thumbButton = [];
+    var thumbImage = [];
+    var thumbImageSrc = [];
     var currentSlide = 0;
     var imgObj = [];
     var imgAlt = [];
@@ -76,7 +78,17 @@ $(function() {
       $.each(target.find('li'), function(index) {
         thumbButton[index] = $(this);
         thumbButton[index].addClass('slide' + index);
+        thumbImage[index] = $(this).find('img');
+        thumbImageSrc[index] = thumbImage[index].attr('src');
+        thumbImage[index].attr('src', "");
+        thumbImage[index].attr('src', thumbImageSrc[index]);
       });
+
+      thumbImage[0].on({
+        'load': function(){
+          $('#thumbWrapper').addClass('display');
+        }
+      })
 
       slideNextButton.on({
         'click': function() {
@@ -225,6 +237,7 @@ $(function() {
         cartAnker[index] = $(this).attr('prop');
         ankerButton[index].on({
           'click': function() {
+            event.preventDefault();
             ankerMove(index);
           }
         });
@@ -273,6 +286,28 @@ $(function() {
 
   if (document.getElementById('itemDetailNew')) {
     adjustStickyLayout();
+  }
+
+  function remoteCartSubmit(){
+    var fixedCartButton = $('#fixedCartButton');
+    var submitForm = $('#productCartWrap');
+
+    function init(){
+      fixedCartButton.on({
+        'click': function() {
+          console.log('submit');
+          submitForm.parent('form').submit();
+        }
+      });
+
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('itemDetailNew')) {
+    remoteCartSubmit();
   }
 
 });
