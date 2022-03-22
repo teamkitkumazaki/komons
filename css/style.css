@@ -10099,6 +10099,60 @@ body.loaded #loading {
     right: -5px;
   }
 }
+.comp-load-more {
+  max-width: 90%;
+  margin: 20px auto 0;
+}
+.comp-load-more button {
+  display: block;
+  width: 100%;
+  background: #00381f;
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 15px 0;
+  text-align: center;
+  letter-spacing: 0.3px;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.comp-load-more button span {
+  display: inline-block;
+  padding-right: 20px;
+  position: relative;
+}
+.comp-load-more button span::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  content: "";
+  top: 0;
+  bottom: 3px;
+  right: 0;
+  margin: auto;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media screen and (min-width: 720px) {
+  .comp-load-more {
+    max-width: 380px;
+    margin: 40px auto 0;
+  }
+  .comp-load-more button:hover {
+    background: #046734;
+  }
+}
 /* 商品詳細(新)*/
 .comp-item-thumbs {
   position: relative;

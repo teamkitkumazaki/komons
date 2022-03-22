@@ -1320,6 +1320,46 @@ $(function() {
   if (document.getElementById('optionPop')) {
     setOptionValue();
   }
+  
+  //商品一覧 商品をもっとみるボタン
+  function listReadMore(){
+    console.log('listReadMore');
+    var readMoreButton = $('#readMoreButton button');
+    function setNextList(url){
+      $.ajax({
+        url: url,
+          cache: false,
+          dataType:'html',
+          success: function(html){
+            var product_num = 12;
+            var list = $(html).find('#productList').find('.item_box');
+            for (var i = 0; i < product_num; i++) {
+              if ( !list[i] ) break;
+              $('#productList ul').append(list[i]);
+            }
+            readMoreButton.remove();
+          },
+      });
+    }
+    
+    function init(){
+      readMoreButton.on({
+        'click': function() {
+          console.log('click');
+          var ajaxURL = $(this).attr('setURL');
+          console.log(ajaxURL);
+          setNextList(ajaxURL);
+        }
+      });
+    }
+    
+    init();
+    
+  }
+  
+  if (document.getElementById('itemList')) {
+    listReadMore();
+  }
 
 
   if (document.getElementById('itemDetail')) {

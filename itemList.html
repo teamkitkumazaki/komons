@@ -30,6 +30,7 @@
 	<link rel="stylesheet" href="mypage_css/admin.css">
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/lodash.js"></script>
 	<script type="text/javascript" src="js/layout.js"></script>
 	<script type="text/javascript" src="js/admin.js"></script>
 </head>
@@ -489,17 +490,10 @@
 				</li>
 				</ul>
 			</div><!-- comp-product-list -->
-			<div class="comp-pager">
-				<div class="comp_inner">
-					<a class="link previous disabled pjax" style="pointer-events: all;" href="https://coalition.co.jp/projects/page/0/"><span>前へ</span></a>
-					<select class="pjax-select" name="pager">
-						<option value="https://coalition.co.jp/projects/page/1/" selected="selected">1/3</option>
-						<option value="https://coalition.co.jp/projects/page/2/">2/3</option>
-						<option value="https://coalition.co.jp/projects/page/3/">3/3</option>
-					</select>
-					<a class="link next pjax" href="https://coalition.co.jp/projects/page/2/" style="pointer-events: all;"><span>次へ</span></a>
-				</div>
-			</div><!-- comp-pager -->
+			<div id="readMoreButton" class="comp-load-more">
+				<button class="button0" setURL="https://komons-demo.myshopify.com/collections/all-products?page=2"><span>商品をもっと見る</span></button>
+				<!--<button class="button1" setURL="https://komons-demo.myshopify.com/collections/all-products?page=2">商品をもっと見る</button> -->
+			</div>
 		</div><!-- section_inner_new -->
 	</section>
 	<section class="section-gift gift_section">
