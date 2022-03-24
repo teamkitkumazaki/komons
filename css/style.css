@@ -16703,6 +16703,10 @@ body.loaded #loading {
 .page-item-group-list .section-basic-item {
   padding-top: 100px;
 }
+.page-item-group-list .section-basic-item .comp-section-ttl {
+  padding-top: 60px;
+  margin-bottom: 70px;
+}
 .page-item-group-list .section-basic-item .section_ttl {
   padding-top: 60px;
 }
@@ -16808,6 +16812,9 @@ body.loaded #loading {
 .page-item-group-list .section-set-product {
   margin-bottom: 80px;
 }
+.page-item-group-list .section-set-product .comp-section-ttl {
+  padding-top: 20px;
+}
 .page-item-group-list .section-set-product .section_ttl {
   padding-top: 20px;
 }
@@ -16821,6 +16828,10 @@ body.loaded #loading {
     max-width: 90%;
     width: 90%;
   }
+  .page-item-group-list .section_inner .comp-section-ttl {
+    max-width: 100%;
+    width: 100%;
+  }
   .page-item-group-list .section_inner .section_ttl {
     max-width: 100%;
     width: 100%;
@@ -16830,6 +16841,10 @@ body.loaded #loading {
   .page-item-group-list .section-basic-item {
     padding-top: 80px;
     padding-bottom: 60px;
+  }
+  .page-item-group-list .section-basic-item .comp-section-ttl {
+    max-width: 100%;
+    width: 100%;
   }
   .page-item-group-list .section-basic-item .section_ttl {
     padding-top: 60px;
@@ -16869,6 +16884,15 @@ body.loaded #loading {
   .page-item-group-list .section-basic-item {
     padding-top: 40px;
     padding-bottom: 60px;
+  }
+  .page-item-group-list .section-basic-item .comp-section-ttl {
+    margin-bottom: 30px;
+  }
+  .page-item-group-list .section-basic-item .comp-section-ttl hgroup {
+    display: block;
+  }
+  .page-item-group-list .section-basic-item .comp-section-ttl hgroup .ttl_en {
+    margin-bottom: 15px;
   }
   .page-item-group-list .section-basic-item .section_ttl {
     padding-top: 60px;

@@ -256,7 +256,6 @@ $(function() {
 
   function adjustStickyLayout(){
     var mainDetail = $('#mainDetail');
-    console.log('adjustStickyLayout');
 
     function setAdjuster(){
       var stickyHeight = $('#mainDetail').outerHeight();
@@ -295,7 +294,6 @@ $(function() {
     function init(){
       fixedCartButton.on({
         'click': function() {
-          console.log('submit');
           submitForm.parent('form').submit();
         }
       });
@@ -309,5 +307,19 @@ $(function() {
   if (document.getElementById('itemDetailNew')) {
     remoteCartSubmit();
   }
+
+  function displayBrandIntroduction(){
+    var ref = document.referrer;
+    var hereHost = window.location.hostname;
+    var param = location.search
+    if ( ref.indexOf(hereHost) == -1 && param.indexOf('mailmag') != -1) {
+      $('#brandIntroduction').css({'display': 'block'});
+    }
+  }
+
+  if (document.getElementById('itemDetailNew')) {
+    displayBrandIntroduction();
+  }
+
 
 });

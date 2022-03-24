@@ -49,7 +49,6 @@
     <div id="rolledHeight" class="main_description">
       <div class="desc_inner">
         {% include 'product-brand-introduction' %}
-        {% if product.metafields.custom_fields["prod_detail_desc"] != blank %}
         <div class="desc_unit border">
           <div class="comp-detail-title">
           {%- if product.type == "gift" -%}
@@ -69,9 +68,10 @@
           {% include 'product-set-content' %}
           {%- endif -%}
           {% for item in product.metafields.custom_fields["prod_detail_desc"] %}
+          {%- if item["detail_desc"] != blank -%}
             <div class="detail_item">
               <div class="img_wrap">
-                <img src="{{ item["detail_image_url"] }}">
+                <img src="{{ item["detail_image_url_"] }}">
               </div>
               <div class="txt_wrap">
               {% if item["detail_ttl_ja"] != blank %}
@@ -90,10 +90,10 @@
                 {% endif %}
               </div>
             </div><!-- detail_item -->
+            {% endif %}
             {% endfor %}
           </div><!-- comp-detail-desc -->
         </div><!-- desc_unit -->
-        {% endif %}
         {% if product.type != 'gift' %}
         {% include 'scent-detail' %}
         {% endif %}
