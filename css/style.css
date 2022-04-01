@@ -1285,7 +1285,10 @@ h1, h2, h3, h4, h5 {
 #topJournal .article_wrap ul li .txt_wrap a,
 #iframe .article_wrap ul li .txt_wrap a,
 .journal_wrap .article_wrap ul li .txt_wrap a {
-  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   color: #00381f;
   font-size: 16px;
   line-height: 1.75;
