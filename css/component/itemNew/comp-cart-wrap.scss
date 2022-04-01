@@ -30,7 +30,7 @@
         box-shadow: none;
         background: transparent;
         color: $basicGreen;
-
+        cursor: unset;
         &.minus {
           left: 0;
           text-align: left;
@@ -54,6 +54,19 @@
         background: transparent;
       }
     }
+  }
+
+  .out_of_stock{
+    display: block;
+    @include libre-r;
+    border: 1px solid #d8d8d8;
+    color: $basicGreen;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: -10px;
+    margin-bottom: 10px;
   }
 
   .submit_button {
@@ -141,14 +154,14 @@
       display: block;
       padding: 0;
       margin: 0 1em 0 0;
-      color: $insertGreen;
+      color: $basicGreen;
       font-size: 1.4rem;
       appearance: none;
       background: transparent;
       border: none;
       box-shadow: none;
       font-family: inherit;
-      border-bottom: 1px solid $insertGreen;
+      border-bottom: 1px solid $basicGreen;
       padding-bottom: 4px;
       cursor: pointer;
     }

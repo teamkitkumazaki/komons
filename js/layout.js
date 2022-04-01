@@ -1,5 +1,44 @@
 $(function() {
 
+  // スクロール + ウィンドウサイズ系の対策処理
+  function scrollAnimationSet(target) {
+    const scButtonWrap = $('#scrollTopWrap');
+    const position = document.documentElement;
+    let wHeight = window.innerHeight;
+    let preSetWidth = window.innerWidth;
+    let scrollCount = 0;
+
+    function setHeightProperty() {
+      wHeight = window.innerHeight;
+      position.style.setProperty('--wHeight', window.innerHeight);
+      position.style.setProperty('--wHeightPx', window.innerHeight + 'px');
+      position.style.setProperty('--scroll', window.scrollY);
+      if(window.scrollY > window.innerHeight){
+        scButtonWrap.addClass('display');
+      }else{
+        scButtonWrap.removeClass('display');
+      }
+
+    }
+
+    function setProperties() {
+      setHeightProperty();
+    }
+
+    function init() {
+      var timer = false;
+      setProperties();
+      position.style.setProperty('--wHeightFixedPx', window.innerHeight + 'px');
+      window.addEventListener('scroll', _.throttle(setProperties, 100, { leading: true, trailing: true}));
+      window.addEventListener('resize', _.throttle(setProperties, 100, { leading: true, trailing: true}));
+    }
+
+    init();
+
+  }
+
+  scrollAnimationSet($('article'));
+
   // ローディングアニメーション
   function loadingAnimation() {
     var sliderImg = "https://journal.komons-japan.com/wp-content/themes/komons-theme/img/main_slide01.jpg";
@@ -206,7 +245,7 @@ $(function() {
               var sectionimgPos = $(this).offset().top;
               var sectionscroll = $(window).scrollTop();
               var windowHeight = $(window).height();
-              if (sectionscroll + 90 > sectionimgPos - windowHeight + windowHeight) {
+              if (sectionscroll > sectionimgPos - windowHeight + windowHeight) {
                 var setClass = $(this).attr('id');
                 $('body').removeClass('main topConcept product01 product02 product03 product04 product05 product06 topGift topCF topJournal instagram');
                 $('body').addClass(setClass);
@@ -1280,6 +1319,46 @@ $(function() {
 
   if (document.getElementById('optionPop')) {
     setOptionValue();
+  }
+  
+  //商品一覧 商品をもっとみるボタン
+  function listReadMore(){
+    console.log('listReadMore');
+    var readMoreButton = $('#readMoreButton button');
+    function setNextList(url){
+      $.ajax({
+        url: url,
+          cache: false,
+          dataType:'html',
+          success: function(html){
+            var product_num = 12;
+            var list = $(html).find('#productList').find('.item_box');
+            for (var i = 0; i < product_num; i++) {
+              if ( !list[i] ) break;
+              $('#productList ul').append(list[i]);
+            }
+            readMoreButton.remove();
+          },
+      });
+    }
+    
+    function init(){
+      readMoreButton.on({
+        'click': function() {
+          console.log('click');
+          var ajaxURL = $(this).attr('setURL');
+          console.log(ajaxURL);
+          setNextList(ajaxURL);
+        }
+      });
+    }
+    
+    init();
+    
+  }
+  
+  if (document.getElementById('itemList')) {
+    listReadMore();
   }
 
 

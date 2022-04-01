@@ -6,9 +6,12 @@
 
 <section class="section-basic-item {{collection.handle}}">
 <div class="section_inner_new">
-  <div class="section_ttl">
-  <h1><span>{{ collection.title }}</span><font>{{ collection.metafields.custom_fields["collection_title_ja"] }}</font></h1>
-</div>
+  <div class="comp-section-ttl">
+    <hgroup>
+      <span class="ttl_en">{{ collection.title }}</span>
+      <h1 class="ttl_ja">{{ collection.metafields.custom_fields["collection_title_ja"] }}</h1>
+    </hgourp>
+  </div><!-- comp-section-ttl -->
 <div id="productList" class="comp-product-list">
   <ul class="item_wrapper">
   {% paginate collection.products by 20 %}

@@ -1,6 +1,10 @@
 .page-item-group-list {
   .section-basic-item{
     padding-top: 100px;
+    .comp-section-ttl{
+      padding-top: 60px;
+      margin-bottom: 70px;
+    }
     .section_ttl{
       padding-top: 60px;
       &.search_ttl{
@@ -66,6 +70,9 @@
   }
   .section-set-product{
     margin-bottom: 80px;
+    .comp-section-ttl{
+      padding-top: 20px;
+    }
     .section_ttl{
       padding-top: 20px;
     }
@@ -81,6 +88,10 @@
     .section_inner{
       max-width: 90%;
       width: 90%;
+      .comp-section-ttl{
+        max-width: 100%;
+        width: 100%;
+      }
       .section_ttl{
         max-width: 100%;
         width: 100%;
@@ -94,6 +105,10 @@
     .section-basic-item{
       padding-top: 80px;
       padding-bottom: 60px;
+      .comp-section-ttl{
+        max-width: 100%;
+        width: 100%;
+      }
       .section_ttl{
         padding-top: 60px;
         &.search_ttl{
@@ -129,8 +144,18 @@
     .section-basic-item{
       padding-top: 40px;
       padding-bottom: 60px;
+      .comp-section-ttl{
+        margin-bottom: 30px;
+        hgroup{
+          display: block;
+          .ttl_en{
+            margin-bottom: 15px;
+          }
+        }
+      }
       .section_ttl{
         padding-top: 60px;
+
         &.search_ttl{
           display: block;
           .key_input{

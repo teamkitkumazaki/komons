@@ -1,7 +1,10 @@
 {%- if paginate.pages > 1 -%}
 {%- assign next = paginate.current_page | plus: 1 -%}
 {%- assign prev = paginate.current_page | minus: 1 -%}
-<div class="comp-pager">
+<div id="readMoreButton" class="comp-load-more">
+  <button class="button0" setURL="https://komons-japan.com//collections/all-products?page=2"><span>商品をもっと見る</span></button>
+</div>
+<div class="comp-pager" style="display: none;">
   <div class="comp_inner">
   {%- if prev > 0 -%}
     <a class="link previous" href="{{ shop.url }}/collections/{{collection.handle}}?page={{prev}}"><span>前へ</span></a>

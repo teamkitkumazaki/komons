@@ -31,9 +31,15 @@
 				color: inherit;
     		background-color: transparent;
     		padding: 15px 10px 15px 0px;
+				border-radius: 0px;
     		height: auto;
-				background-size: 14px;
+				@include bgSet;
+				background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/select_caret_green.svg?v=1647776456);
+				background-size: 8px;
     		background-position: center right 10px;
+				background-color: transparent;
+				-webkit-appearance: none;
+				appearance: none;
 				&:focus{
 					outline: none;
 				}
@@ -41,7 +47,7 @@
 		}
 		.comp-pager{
 			max-width: 75vw;
-			margin-top: 20px;
+			margin: 20px auto 0;
 		}
 	}
 	.section-gift{

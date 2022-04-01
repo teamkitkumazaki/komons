@@ -28,40 +28,7 @@
           {% if cart.item_count != 0 %}
           <div id="cartItem" class="comp-cart-item">
             {%- for item in cart.items -%}
-            <div class="bag_item" data-cart-item data-cart-item-key="{{ item.key }}" data-cart-item-url="{{ item.url }}" data-cart-item-title="{{ item.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ item.quantity }}">
-              <div class="item_img">
-                <a href="{{ item.url }}"><img src="{{ item | img_url: 'master' }}" alt="{{ item.product.title }}"></a>
-              </div>
-              <div class="item_txt">
-                <span class="category"><span class="ja">{{item.properties['カテゴリー']}}</span></span>
-                <a href="{{ item.url }}" class="prod_name"><span class="name">{{ item.product.title }}</span></a>
-                {% if item.selling_plan_allocation != empty %}
-                {%- assign variant_options = 'template ' | split: ' ' -%}
-                {%- if item.product.has_only_default_variant != true -%}
-                  {%- assign variant_options = item.options_with_values -%}
-                {%- endif -%}
-                {%- assign property_size = item.properties | size -%}
-
-                <div class="product-details{% if item.product.has_only_default_variant and property_size == 0 and item.selling_plan_allocation == nil %} hide{% endif %}" data-cart-item-details aria-label="{{ 'cart.label.product_details' | t }}">
-                  {%- for option in variant_options -%}
-                    <p class="product_variants product-details__item product-details__item--variant-option{% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</p>
-                  {%- endfor -%}
-                </div>
-                {% endif %}
-                <div class="lower_wrap">
-                  <div class="order_lot">
-                    <button class="order_button minus"></button>
-                      <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0">
-                    <button class="order_button plus"></button>
-                    <button class="reload_button"></button>
-                  </div>
-                  <div class="price">{{ item.price | money_without_currency }}円(税込)</div>
-                </div>
-                <div class="remove">
-                  <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="text-link text-link--accent" aria-label="{{ 'cart.label.remove' | t: product: item.title }}" data-cart-remove data-role="product-remove"></a>
-                </div>
-              </div>
-            </div>
+              {% include 'cart-item-card' %}
             {%- endfor -%}
           </div><!-- comp-cart-item -->
           <div class="amount_section">
@@ -143,7 +110,7 @@
                   <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
                 </div>
               </div><!-- option_item -->
-              <div id="noshi2" class="option_item" style="display: none; margin-bottom: 0;">
+              <div id="noshi2" class="option_item" style="display: none;">
                 <label class="toggle_label">
                   <input id="naireInput" type="checkbox" name="naireInput" value="true">
                   <span class="radio_checker"></span>

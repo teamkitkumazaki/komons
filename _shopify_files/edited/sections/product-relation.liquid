@@ -1,0 +1,23 @@
+<section id="relatedItem" class="section-related-item">
+  <div class="section_inner_new">
+    <div class="comp-detail-title">
+      <hgroup>
+        <span class="title_en">Related Items</span>
+        <h2 class="title_ja">関連商品</h2>
+      </hgroup>
+    </div>
+    <div class="comp-product-list">
+    <ul class="item_wrapper">
+    {% for collection in collections %}
+    {%- if collection.title == "pickup" -%}
+    {% paginate collection.products by 4 %}
+    {% for product in collection.products %}
+      {%- include 'all-item-card' -%}
+    {% endfor %}
+    {% endpaginate %}
+    {%- endif -%}
+    {% endfor %}
+    </ul>
+    </div><!-- comp-product-list -->
+  </div><!-- section_inner_new -->
+</section>

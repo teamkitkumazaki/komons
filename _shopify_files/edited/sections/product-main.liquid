@@ -1,24 +1,32 @@
 {%- assign thumbIndex = 0 -%}
+{%- assign thumbIndexNum = 0 -%}
+{% for image in product.images %}
+  {%- assign thumbIndexNum = thumbIndexNum | plus: 1 -%}
+{% endfor %}
 <section class="section-main">
   <div class="main_flex">
     <div id="thumbList" class="item_thumb">
-      <div class="comp-item-thumbs">
+      <div class="comp-item-thumbs" {% if thumbIndexNum < 2 %}style="pointer-events: none";{%- endif -%}>
+        {% if thumbIndexNum > 1 %}
         <div class="thumb_number">
           <span id="currentThumb" class="current">1</span>
           <span id="allThumb">1</span>
         </div>
         <button id="slideNext" class="slide_caret slide_next"></button>
         <button id="slidePrev" class="slide_caret slide_prev"></button>
-        <ul id="thumbBox">
-        {% for image in product.images %}
-        <li class="{% if thumbIndex == 0 %}active{% endif %} slide{{thumbIndex}}">{{ image.src | image_url: width: 1440 | image_tag }}</li>
-        {%- assign thumbIndex = thumbIndex | plus: 1 -%}
-        {% endfor %}
+        {%- endif -%}
+        <div id="thumbWrapper" class="thumb_wrapper">
+          <ul id="thumbBox" class="thumb_box">
+          {% for image in product.images %}
+          <li class="{% if thumbIndex == 0 %}active{% endif %} slide{{thumbIndex}}">{{ image.src | image_url: width: 1440 | image_tag }}</li>
+          {%- assign thumbIndex = thumbIndex | plus: 1 -%}
+          {% endfor %}
         </ul>
+        </div>
       </div>
     </div>
     <div id="mainDetail" class="main_detail sticky">
-      <div id="headerRolledSp" class="detail_inner">
+      <div class="detail_inner" {%- if product.type != "upcoming" -%}id="headerRolledSp"{%- endif -%}>
         <div class="prod_info">
           <span class="category">{{ product.metafields.custom_fields["prod_category"] }}</span>
           <h1 class="prod_name">{{ product.metafields.custom_fields["prod_display_name"] }}</h1>
@@ -41,7 +49,6 @@
     <div id="rolledHeight" class="main_description">
       <div class="desc_inner">
         {% include 'product-brand-introduction' %}
-        {% if product.metafields.custom_fields["prod_detail_desc"] != blank %}
         <div class="desc_unit border">
           <div class="comp-detail-title">
           {%- if product.type == "gift" -%}
@@ -57,11 +64,14 @@
           {%- endif -%}
           </div>
           <div class="comp-detail-desc">
+          {%- if product.type == "gift" -%}
           {% include 'product-set-content' %}
+          {%- endif -%}
           {% for item in product.metafields.custom_fields["prod_detail_desc"] %}
+          {%- if item["detail_desc"] != blank -%}
             <div class="detail_item">
               <div class="img_wrap">
-                <img src="{{ item["detail_image_url"] }}">
+                <img src="{{ item["detail_image_url_"] }}">
               </div>
               <div class="txt_wrap">
               {% if item["detail_ttl_ja"] != blank %}
@@ -80,10 +90,10 @@
                 {% endif %}
               </div>
             </div><!-- detail_item -->
+            {% endif %}
             {% endfor %}
           </div><!-- comp-detail-desc -->
         </div><!-- desc_unit -->
-        {% endif %}
         {% if product.type != 'gift' %}
         {% include 'scent-detail' %}
         {% endif %}
@@ -157,7 +167,7 @@
                 <div class="detail_item">
                   <p class="title">到着日・時間指定について</p>
                   <div class="content">
-                    <p>現在ご注文頂くと最短で"2月17日(木)"にお届け致します。</p>
+                    <p>現在ご注文頂くと最短で<span id="derivaryDate" style="font-weight: bold;"></span>にお届け致します。</p>
                     <p>時間に関しましては、午前中、14～16時、16～18時、18～20時、19～21時の時間帯をお選び頂くことができます。</p>
                     <p>※地域によってはご希望に添えない場合もございますので、その点ご了承下さいませ。また、天候・道路・交通事情等運送上の事情により、ご希望のお届け時間帯にお届けできない場合もございますので、ご了承下さい。</p>
                   </div>
@@ -200,6 +210,12 @@
                   </div>
                 </div>
                 <div class="detail_item">
+                  <p class="title">代引き決済</p>
+                  <div class="content">
+                    <p>商品代金に加え、代引き手数料(税込330円)が発生します。お届けの際に配達員にお支払いください。</p>
+                  </div>
+                </div>
+                <!-- <div class="detail_item">
                   <p class="title">コンビニ後払い(Paidy)</p>
                   <div class="content">
                     <div class="payment_img">
@@ -207,8 +223,8 @@
                     </div>
                     <p>商品到着後にコンビニ、郵便局、銀行などからお支払いいただけます。 (合計金額が￥40,000 までご利用可能です)</p>
                   </div>
-                </div>
-                <div class="detail_item">
+                </div> -->
+                <!-- <div class="detail_item">
                   <p class="title">QRコード決済</p>
                   <div class="content">
                     <div class="payment_img">
@@ -216,7 +232,7 @@
                     </div>
                     <p>QRコード決済(Paypay / LINE PAY / メルペイ)でのお支払いに対応しています。</p>
                   </div>
-                </div>
+                </div>-->
               </div><!-- toggle_content -->
             </div>
           </div><!-- comp-detail-toggle-new -->

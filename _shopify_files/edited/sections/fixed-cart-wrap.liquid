@@ -1,32 +1,9 @@
 <div id="fixedCartWrap" class="comp-fixed-cart-wrap">
   <div class="cart_inner">
-    <div class="img_thumb">
-			<img src="{{ product.media[2] | img_url: 'master' }}">
-    </div>
-    <div class="product_detail">
-      <span class="category">{{ product.metafields.custom_fields["category_name"] }}</span>
-      {%- if product.handle == "k0055" or product.handle == "k0056" or product.handle == "k0057" -%}
-      <span class="item_name small">{{ product.metafields.custom_fields["product_name"] }}</span>
-      {%- else -%}
-      <span class="item_name">{{ product.metafields.custom_fields["product_name"] }}</span>
-      {%- endif -%}
-      <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
-    </div>
-    <div class="product_cart_button">
-			{%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
-			<button id="fixedPopButton" class="fixed_cart_button"><span>オプションを選択</span></button>
-			{%- else -%}
-			<select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js" style="display: none;">
-				{% for variant in product.variants %}
-					<option value="{{ variant.id }}"
-						{%- if variant == current_variant %} selected="selected" {%- endif -%}
-					>
-						{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
-					</option>
-				{% endfor %}
-			</select>
-			<button id="fixedCartButton" class="fixed_cart_button" onclick="send_conversion(); return false;"><span>購入する</span></button>
-			{%- endif -%}
-    </div>
+  {%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
+    <button id="fixedPopButton" class="fixed_cart_button"><span>オプションを選択して購入</span></button>
+    {%- else -%}
+    <button id="fixedCartButton" class="fixed_cart_button"><span>カートに入れる</span></button>
+    {%- endif -%}
   </div>
 </div>

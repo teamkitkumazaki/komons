@@ -48,9 +48,13 @@
 @import 'component/comp-jornal-item.scss';
 @import 'component/comp-instagram-wrap.scss';
 
+
+
 /* 共通 */
 @import 'component/comp-section-ttl.scss';
 
+/* トップページ*/
+@import 'component/index/comp-index-product-section.scss';
 
 /* 商品一覧*/
 @import 'component/products/comp-product-list.scss';
@@ -58,6 +62,8 @@
 @import 'component/products/comp-filter-wrap.scss';
 @import 'component/products/comp-gift-product-list.scss';
 @import 'component/products/comp-gift-service-list.scss';
+@import 'component/products/comp-load-more.scss';
+
 
 /* 商品詳細(新)*/
 @import 'component/itemNew/comp-item-thumbs.scss';

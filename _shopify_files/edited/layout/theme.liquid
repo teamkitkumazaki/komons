@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="{{ request.locale.iso_code }}">
+<html class="no-js" lang="{{ request.locale.iso_code }}" style="--wHeightPx: 100vh;">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,6 +59,7 @@
   <meta name="robots" content="follow">
 	<!-- <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script> -->
 	<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
+		<script src="{{ 'lodash.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'layout.js' | asset_url }}" defer="defer"></script>
 		{{ 'api.jquery.js' | shopify_asset_url | script_tag }}
 	{%- if request.page_type contains 'cart' -%}
