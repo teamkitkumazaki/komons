@@ -56,6 +56,19 @@
     }
   }
 
+  .out_of_stock{
+    display: block;
+    @include libre-r;
+    border: 1px solid #d8d8d8;
+    color: $basicGreen;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
   .submit_button {
     .cart_box{
       .cart_item{

@@ -7,7 +7,7 @@
 </head>
 <body id="journal" class="fixed-header rolled">
 <?php get_template_part("parts/header");?>
-<article id="waitingList">
+<article id="waitingList" class="page-waiting-list">
 	<div class="inner">
 	<div
 		class="img_wrap"

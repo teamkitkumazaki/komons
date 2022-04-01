@@ -147,10 +147,13 @@
 				text-align: left;
 				font-size: 28px;
 				font-weight: normal;
+				font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
 				line-height: 1.75;
 				letter-spacing: 3px;
 				margin-left: 90px;
-
+				@media screen and (max-width: 980px){
+					font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+				}
 				span {
 					display: block;
 					text-indent: 4em;
@@ -162,8 +165,11 @@
 				font-size: 14px;
 				letter-spacing: 0.2em;
 				line-height: 2.8;
+				font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
 				margin-right: 20px;
-
+				@media screen and (max-width: 980px){
+					font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+				}
 				span {
 					display: block;
 				}

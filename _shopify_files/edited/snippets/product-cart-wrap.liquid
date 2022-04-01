@@ -1,6 +1,6 @@
 {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
 <div id="productCartWrap" class="comp-cart-wrap">
-{%- if product.type != "upcoming" -%}
+{%- if product.type != "upcoming" and product.metafields.custom_fields["stock_state"] != 1 -%}
   <div class="order_lot">
     <span class="title">数量</span>
     <div id="quantityWrap" class="input_wrap number">
@@ -12,7 +12,7 @@
 {%- endif -%}
   <div class="submit_button">
     <div class="cart_box">
-    {%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
+    {%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' and product.metafields.custom_fields["stock_state"] != 1 -%}
       <div id="optionSelect" class="cart_item">
         <span class="button_wrap">
           <span class="title cart_in">オプションを選択して購入</span>
@@ -20,7 +20,7 @@
         </span>
       </div><!-- cart_item -->
     {%- else -%}
-    {%- if product.type != "upcoming" -%}
+    {%- if product.type != "upcoming" and product.metafields.custom_fields["stock_state"] != 1 -%}
     {%- assign index = 0 -%}
     <select name="id" id="ProductSelect-product-template" style="display: none; opacity:0; height:0; overflow: hidden;">
     {% for variant in product.variants %}
@@ -36,10 +36,17 @@
       <input id="cartSubmit" class="product_cart_btn button" type="submit" value="カートに入れる">
     </div><!-- cart_item -->
     {%- else -%}
+    {%- if product.metafields.custom_fields["stock_state"] == 1 -%}
+    <div class="out_of_stock">SOLD OUT</div>
+    {%- endif -%}
     <div class="comp-waiting-button">
-       <a href="https://journal.komons-japan.com/waiting-list/uc0002">
+       <a href="https://journal.komons-japan.com/waiting-list/{{product.handle}}">
          <span class="title">Waiting Listに登録</span>
+         {%- if product.type != "upcoming" -%}
+         <span class="desc">4月29日(金)販売再開予定</span>
+         {%- else -%}
          <span class="desc">発売時にメールにてお知らせいたします</span>
+         {%- endif -%}
        </a>
      </div><!-- waiting-button -->
     {%- endif -%}
