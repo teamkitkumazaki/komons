@@ -11,6 +11,8 @@
 {% endfor %}
 {% endfor %}
 
+
+
 {% if product.tags contains 'nerori' %}
 {% for collection in collections %}
 {%- if collection.handle == 'nerori' -%}
@@ -23,6 +25,8 @@
 {%- endif -%}
 {% endfor %}
 {% endif %}
+
+
 
 <div class="desc_unit">
   <div class="comp-detail-title margin">
@@ -41,24 +45,38 @@
         </div>
         {% if useage != blank %}
         <div class="detail_item">
+          {%- if product.type != "goods" -%}
           <p class="title">用途</p>
+          {%- else -%}
+          <p class="title">素材</p>
+          {% endif %}
           <div class="content" style="white-space: pre-line;"><p>{{useage}}</p></div>
         </div>
         {% endif %}
         <div class="detail_item">
+          {%- if product.type != "goods" -%}
           <p class="title">全成分</p>
+          {%- else -%}
+          <p class="title">持ち手サイズ</p>
+          {% endif %}
           <div class="content" style="white-space: pre-line;"><p>{{component}}</p></div>
         </div>
         {% if useway != blank %}
         <div class="detail_item">
+          {%- if product.type != "goods" -%}
           <p class="title">使用方法</p>
+          {%- else -%}
+          <p class="title">サイズ</p>
+          {% endif %}
           <div class="content" style="white-space: pre-line;"><p>{{useway}}</p></div>
         </div>
         {% endif %}
+        {%- if product.type != "goods" -%}
         <div class="detail_item">
           <p class="title">備考</p>
           <div class="content"><p>天然成分を多く含むため濁りや沈殿物が生じる可能性がありますが、品質には問題はありません。開封後は6か月以内にご使用ください。<br>天然精油を使用しているため香りや色に差が生じる場合がございますが、ご使用上支障はありません。<br>※商品のデザイン、香り、仕様などは予告なく変更になる場合がございます。予めご了承ください。</p></div>
         </div>
+        {%- endif -%}
       </div><!-- toggle_content -->
     </div>
   </div><!-- comp-detail-toggle-new -->

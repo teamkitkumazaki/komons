@@ -59,7 +59,11 @@
           {%- else -%}
           <hgroup>
             <span class="title_en">Features</span>
+            {%- if product.type == "goods" -%}
+            <h2 class="title_ja">商品の特徴</h2>
+            {%- else -%}
             <h2 class="title_ja">成分へのこだわり</h2>
+            {%- endif -%}
           </hgroup>
           {%- endif -%}
           </div>
@@ -94,7 +98,7 @@
             {% endfor %}
           </div><!-- comp-detail-desc -->
         </div><!-- desc_unit -->
-        {% if product.type != 'gift' %}
+        {% if product.type != 'gift' and product.type != 'goods' %}
         {% include 'scent-detail' %}
         {% endif %}
         {% if product.type != 'gift' %}

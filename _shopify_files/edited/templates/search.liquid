@@ -12,61 +12,19 @@
 					</div>
 				</form>
 			</div>
-			<div class="comp-item-group">
+			<div class="comp-product-list">
 				{% if search.performed and search.results_count == 0 %}
 				<p class="no_entry">該当する商品がありません。</p>
 				{% endif %}
+        <ul class="item_wrapper">
 				{% paginate search.results by 20 %}
 				{%- for product in search.results -%}
 				{%- if product.object_type == 'product' -%}
-				<div class="item_list">
-					<div class="img_wrap">
-						<a href="{{ product.url }}" class="img_link_{{ product.id }}"></a>
-						<style>
-							.img_link_{{ product.id }} {
-								background-image: url({{ product.featured_image | img_url: 'master'}});
-							}
-						</style>
-					</div>
-					<div class="txt_wrap">
-						<a class="prod_name" href="{{ product.url }}">
-							<span class="ja">{{ product.metafields.custom_fields["category_name"] }}</span>
-							<span class="en">{{ product.metafields.custom_fields["product_name"] }}</span>
-						</a>
-						<span class="price">{{ product.price | money_without_currency }}円(税込)</span>
-						{%- if product.type == "gift" -%}
-						<div class="button_wrap">
-							<a class="full" href="{{ product.url }}"><span>詳細を見る</span></a>
-						</div>
-						{%- else -%}
-						<div class="button_wrap">
-							<a href="{{ product.url }}"><span>詳細を見る</span></a>
-							<div class="comp-list-cart-button">
-								<div class="cartjs_box">
-									{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
-									<select name="id" id="ProductSelect-{{ product.id }}" class="product-form__variants no-js" style="display: none;">
-										{% for variant in product.variants %}
-											<option value="{{ variant.id }}"
-												{%- if variant == current_variant %} selected="selected" {%- endif -%}
-											>
-												{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
-											</option>
-										{% endfor %}
-									</select>
-									<div class="cartin_button">
-										<button><span>カートに入れる</span></button>
-										<input id="cartSubmit" type="submit" value="カートに入れる">
-									</div>
-									{% endform %}
-								</div>
-							</div>
-						</div>
-						{%- endif -%}
-					</div>
-				</div>
+          {%- include 'all-item-card' -%}
 				{%- endif -%}
 				{%- endfor -%}
 				{% endpaginate %}
+        </ul>
 			</div>
 		</div>
 	</section>

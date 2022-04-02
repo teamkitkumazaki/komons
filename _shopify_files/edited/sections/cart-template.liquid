@@ -56,141 +56,143 @@
           {% endif %}
         </div><!-- cart_left -->
         <div class="cart_right">
-          <div class="option_field_wrap">
-          <div id="giftOptionSection" class="gift_option">
-            <h2 class="sub_ttl">ギフトオプション</h2>
-            <div class="comp-cart-option">
-            <div id="noshi0" class="option_item open" style="display: none; height: auto;">
-              <label class="toggle_label" style="pointer-events: none;">
-                <input id="omoteInput" type="checkbox" name="omoteInput" value="true" checked>
+        {% if cart.item_count != 0 %}
+        <div class="option_field_wrap">
+        <div id="giftOptionSection" class="gift_option">
+          <h2 class="sub_ttl">ギフトオプション</h2>
+          <div class="comp-cart-option">
+          <div id="noshi0" class="option_item open" style="display: none; height: auto;">
+            <label class="toggle_label" style="pointer-events: none;">
+              <input id="omoteInput" type="checkbox" name="omoteInput" value="true" checked>
+              <span class="radio_checker"></span>
+              <span class="label_ttl">熨斗の種類を選択してください</span>
+            </label>
+            <div class="radio_wrap">
+              <div class="radio_item">
+                <label>
+                  <div class="img_wrap" style="background-image:url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/noshi01.jpg?v=1636947887)"></div>
+                  <div class="input_wrap">
+                    <div class="option_ttl">
+                      <input type="radio" name="attributes[熨斗の種類:]" value="紅白梅結び" checked>
+                      <span class="radio_checker"></span>
+                      <span class="name">紅白梅結び</span>
+                    </div>
+                    <div class="option_desc">
+                      <p>結婚祝、内祝、引越し祝いなど、あらゆるお祝い事(慶事)にお使いいただける紅白の水引きです。</p>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="radio_item">
+                <label>
+                  <div class="img_wrap" style="background-image:url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/noshi02.jpg?v=1636947887)"></div>
+                  <div class="input_wrap">
+                    <div class="option_ttl">
+                      <input type="radio" name="attributes[熨斗の種類:]" value="白黒あわじ結び">
+                      <span class="radio_checker"></span>
+                      <span class="name">白黒あわじ結び</span>
+                    </div>
+                    <div class="option_desc">
+                      <p>香典返しなど、弔事に広く用いられる白黒の水引きです。</p>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div><!-- option_item -->
+            <div id="noshi1" class="option_item" style="display: none;">
+              <label class="toggle_label">
+                <input id="omoteInput" type="checkbox" name="omoteInput" value="true">
                 <span class="radio_checker"></span>
-                <span class="label_ttl">熨斗の種類を選択してください</span>
+                <span class="label_ttl">熨斗の表書きをご希望(任意)</span>
               </label>
-              <div class="radio_wrap">
-                <div class="radio_item">
-                  <label>
-                    <div class="img_wrap" style="background-image:url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/noshi01.jpg?v=1636947887)"></div>
-                    <div class="input_wrap">
-                      <div class="option_ttl">
-                        <input type="radio" name="attributes[熨斗の種類:]" value="紅白梅結び" checked>
-                        <span class="radio_checker"></span>
-                        <span class="name">紅白梅結び</span>
-                      </div>
-                      <div class="option_desc">
-                        <p>結婚祝、内祝、引越し祝いなど、あらゆるお祝い事(慶事)にお使いいただける紅白の水引きです。</p>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-                <div class="radio_item">
-                  <label>
-                    <div class="img_wrap" style="background-image:url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/noshi02.jpg?v=1636947887)"></div>
-                    <div class="input_wrap">
-                      <div class="option_ttl">
-                        <input type="radio" name="attributes[熨斗の種類:]" value="白黒あわじ結び">
-                        <span class="radio_checker"></span>
-                        <span class="name">白黒あわじ結び</span>
-                      </div>
-                      <div class="option_desc">
-                        <p>香典返しなど、弔事に広く用いられる白黒の水引きです。</p>
-                      </div>
-                    </div>
-                  </label>
-                </div>
+              <div class="input_wrap">
+                <input id="noshiType" type="text" name="attributes[熨斗の表書き:]">
+                <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
               </div>
             </div><!-- option_item -->
-              <div id="noshi1" class="option_item" style="display: none;">
-                <label class="toggle_label">
-                  <input id="omoteInput" type="checkbox" name="omoteInput" value="true">
+            <div id="noshi2" class="option_item" style="display: none;">
+              <label class="toggle_label">
+                <input id="naireInput" type="checkbox" name="naireInput" value="true">
+                <span class="radio_checker"></span>
+                <span class="label_ttl">熨斗の名入れをご希望(任意)</span>
+              </label>
+              <div class="input_wrap">
+                <input id="noshiName" type="text" name="attributes[熨斗の名入れ:]">
+                <p class="example">連名の場合は、その旨ご記載ください。</p>
+              </div>
+            </div><!-- option_item -->
+            <div id="message1" class="option_item" style="display: none;">
+              <label class="toggle_label">
+                <input id="messageInput" type="checkbox" name="messageInput" value="true">
+                <span class="radio_checker"></span>
+                <span class="label_ttl">メッセージカードへの印字をご希望(任意)</span>
+              </label>
+              <div class="input_wrap">
+                <textarea id="messeageCard" type="text" name="attributes[メッセージカードの内容:]"></textarea>
+                <p class="example">おおむね60文字以内に収まるようにご記入ください。</p>
+              </div>
+            </div><!-- option_item -->
+          </div><!-- comp-cart-option -->
+        </div><!-- gift_option -->
+        <div class="delivery_option">
+            <h2 class="sub_ttl">配送日時指定</h2>
+            <div class="comp-cart-option">
+                <div id="delivery1" class="option_item">
+                  <label class="toggle_label">
+                  <input type="checkbox" name="dateInput" value="true">
                   <span class="radio_checker"></span>
-                  <span class="label_ttl">熨斗の表書きをご希望(任意)</span>
+                  <span class="label_ttl">配送希望日</span>
                 </label>
                 <div class="input_wrap">
-                  <input id="noshiType" type="text" name="attributes[熨斗の表書き:]">
-                  <p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
+                  <select id="deliveryDate" name="attributes[配送希望日:]">
+                    <option value="指定なし" selected="selected">指定なし</option>
+                  </select>
                 </div>
               </div><!-- option_item -->
-              <div id="noshi2" class="option_item" style="display: none;">
+              <div id="delivery2" class="option_item">
                 <label class="toggle_label">
-                  <input id="naireInput" type="checkbox" name="naireInput" value="true">
+                  <input id="timeInput" type="checkbox" name="timeInput" value="true">
                   <span class="radio_checker"></span>
-                  <span class="label_ttl">熨斗の名入れをご希望(任意)</span>
+                  <span class="label_ttl">配送時間帯を指定</span>
                 </label>
                 <div class="input_wrap">
-                  <input id="noshiName" type="text" name="attributes[熨斗の名入れ:]">
-                  <p class="example">連名の場合は、その旨ご記載ください。</p>
-                </div>
-              </div><!-- option_item -->
-              <div id="message1" class="option_item" style="display: none;">
-                <label class="toggle_label">
-                  <input id="messageInput" type="checkbox" name="messageInput" value="true">
-                  <span class="radio_checker"></span>
-                  <span class="label_ttl">メッセージカードへの印字をご希望(任意)</span>
-                </label>
-                <div class="input_wrap">
-                  <textarea id="messeageCard" type="text" name="attributes[メッセージカードの内容:]"></textarea>
-                  <p class="example">おおむね60文字以内に収まるようにご記入ください。</p>
+                  <select id="deliveryTime" name="attributes[配送時間帯:]">
+                    <option value="指定なし" selected="selected">指定なし</option>
+                    <option value="午前中（12時まで）">午前中（12時まで）</option>
+                    <option value="14時から16時">14時から16時</option>
+                    <option value="16時から18時">16時から18時</option>
+                    <option value="18時から20時">18時から20時</option>
+                    <option value="19時から21時">19時から21時</option>
+                  </select>
                 </div>
               </div><!-- option_item -->
             </div><!-- comp-cart-option -->
-          </div><!-- gift_option -->
-          <div class="delivery_option">
-              <h2 class="sub_ttl">配送日時指定</h2>
-              <div class="comp-cart-option">
-                  <div id="delivery1" class="option_item">
-                    <label class="toggle_label">
-                    <input type="checkbox" name="dateInput" value="true">
-                    <span class="radio_checker"></span>
-                    <span class="label_ttl">配送希望日</span>
-                  </label>
-                  <div class="input_wrap">
-                    <select id="deliveryDate" name="attributes[配送希望日:]">
-                      <option value="指定なし" selected="">指定なし</option>
-                    </select>
-                  </div>
-                </div><!-- option_item -->
-                <div id="delivery2" class="option_item">
-                  <label class="toggle_label">
-                    <input id="timeInput" type="checkbox" name="timeInput" value="true">
-                    <span class="radio_checker"></span>
-                    <span class="label_ttl">配送時間帯を指定</span>
-                  </label>
-                  <div class="input_wrap">
-                    <select id="deliveryTime" name="attributes[配送時間帯:]">
-                      <option value="指定なし" selected="">指定なし</option>
-                      <option value="午前中（12時まで）">午前中（12時まで）</option>
-                      <option value="14時から16時">14時から16時</option>
-                      <option value="16時から18時">16時から18時</option>
-                      <option value="18時から20時">18時から20時</option>
-                      <option value="19時から21時">19時から21時</option>
-                    </select>
-                  </div>
-                </div><!-- option_item -->
-              </div><!-- comp-cart-option -->
-          </div>
-            {%- if section.settings.cart_notes_enable -%}
-            <div class="comment_option">
-              <h2 class="sub_ttl">備考欄</h2>
-              <div class="comp-cart-option">
-                <div id="note1" class="option_item">
-                  <label class="untouchable toggle_label">
-                    <input type="checkbox" name="noteInput" value="true">
-                    <span class="radio_checker"></span>
-                    <span class="label_ttl">ご要望・ご不明点など記入する</span>
-                  </label>
-                  <div class="input_wrap">
-                    <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" data-cart-notes>{{ cart.note }}</textarea>
-                    <p class="example">1注文につき、お届け先は1件のみとなります。2件以上のお届け先をご希望の場合は別々にご注文ください。</p>
-                  </div>
-                </div><!-- option_item -->
-              </div>
+        </div>
+          {%- if section.settings.cart_notes_enable -%}
+          <div class="comment_option">
+            <h2 class="sub_ttl">備考欄</h2>
+            <div class="comp-cart-option">
+              <div id="note1" class="option_item">
+                <label class="untouchable toggle_label">
+                  <input type="checkbox" name="noteInput" value="true">
+                  <span class="radio_checker"></span>
+                  <span class="label_ttl">ご要望・ご不明点など記入する</span>
+                </label>
+                <div class="input_wrap">
+                  <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" data-cart-notes>{{ cart.note }}</textarea>
+                  <p class="example">1注文につき、お届け先は1件のみとなります。2件以上のお届け先をご希望の場合は別々にご注文ください。</p>
+                </div>
+              </div><!-- option_item -->
             </div>
-            {%- endif -%}
-          </div><!-- option_field_wrap -->
-          <div class="comp-submit-button">
-            <button><span>レジに進む</span></button>
-            <input type="submit" name="checkout" class="checkout_button" value="CONTINUE TO CHECKOUT">
           </div>
+          {%- endif -%}
+        </div><!-- option_field_wrap -->
+        <div class="comp-submit-button">
+          <button><span>レジに進む</span></button>
+          <input type="submit" name="checkout" class="checkout_button" value="CONTINUE TO CHECKOUT">
+        </div>
+        {% endif %}
         </div><!-- cart_right -->
       </div><!-- cart_flex -->
     </div><!-- section_inner -->
