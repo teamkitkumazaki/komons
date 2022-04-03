@@ -11,37 +11,34 @@
 {%- endif -%}
 {% endfor %}
 
-<div class="bag_item" data-cart-item data-cart-item-key="{{ item.key }}" data-cart-item-url="{{ item.url }}" data-cart-item-title="{{ item.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ item.quantity }}">
-  <div class="item_img">
+{%- assign variant_options = 'template ' | split: ' ' -%}
+{%- if item.product.has_only_default_variant != true -%}
+  {%- assign variant_options = item.options_with_values -%}
+{%- endif -%}
+{%- assign property_size = item.properties | size -%}
+
+<div class="cart_item" data-cart-item data-cart-item-key="{{ item.key }}" data-cart-item-url="{{ item.url }}" data-cart-item-title="{{ item.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ item.quantity }}">
+  <div class="img_wrap">
     <a href="{{ item.url }}">{{ item.image.src | image_url: width: 300 | image_tag }}</a>
   </div>
-  <div class="item_txt">
-    <span class="category"><span class="ja">{{ category }}</span></span>
-    <a href="{{ item.url }}" class="prod_name">{{ prodName }}</a>
-    {% if item.selling_plan_allocation != empty %}
-    {%- assign variant_options = 'template ' | split: ' ' -%}
-    {%- if item.product.has_only_default_variant != true -%}
-      {%- assign variant_options = item.options_with_values -%}
-    {%- endif -%}
-    {%- assign property_size = item.properties | size -%}
-
-    <div class="product-details{% if item.product.has_only_default_variant and property_size == 0 and item.selling_plan_allocation == nil %} hide{% endif %}" data-cart-item-details aria-label="{{ 'cart.label.product_details' | t }}">
-      {%- for option in variant_options -%}
-        <p class="product_variants product-details__item product-details__item--variant-option{% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</p>
-      {%- endfor -%}
-    </div>
-    {% endif %}
-    <div class="lower_wrap">
-      <div class="order_lot">
-        <button class="order_button minus"></button>
-          <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0">
-        <button class="order_button plus"></button>
-        <button class="reload_button"></button>
+  <div class="txt_wrap">
+    <div class="txt_inner">
+      <div class="item_info">
+        <span class="category"><span class="ja">{{ category }}</span></span>
+        <a class="links" href="{{ item.url }}">{{ prodName }}{%- for option in variant_options -%}<span class="options genre {% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}</a>
+        <span class="price">{{ item.price | money_without_currency }}円(税込)</span></a>
       </div>
-      <div class="price">{{ item.price | money_without_currency }}円(税込)</div>
-    </div>
-    <div class="remove">
-      <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="text-link text-link--accent" aria-label="{{ 'cart.label.remove' | t: product: item.title }}" data-cart-remove data-role="product-remove"></a>
-    </div>
-  </div>
-</div>
+      <div class="controll_wrap">
+        <div class="order_lot">
+          <button class="order_button minus">-</button>
+          <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0">
+          <button class="order_button plus">+</button>
+          <button class="reload_button"></button>
+        </div>
+          <a class="cancel_button" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="text-link text-link--accent" aria-label="{{ 'cart.label.remove' | t: product: item.title }}" data-cart-remove data-role="product-remove">削除</a>
+      </div>
+    </div><!-- txt_inner -->
+    {%- assign totalPrice = item.price | times : item.quantity -%}
+    <div class="amount_price">¥{{ totalPrice | money_without_currency }}</div>
+  </div><!-- txt_wrap -->
+</div><!-- cart_item -->

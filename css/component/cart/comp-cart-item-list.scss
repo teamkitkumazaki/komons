@@ -201,6 +201,15 @@
         .img_wrap{
           width: 100px;
           margin-right: 25px;
+          a{
+            height: auto;
+            overflow: visible;
+            img{
+              position: static;
+              max-width: 100%;
+              height: auto;
+            }
+          }
         }
         .txt_wrap{
           align-items: center;

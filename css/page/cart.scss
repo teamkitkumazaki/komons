@@ -77,10 +77,16 @@
         .item_wrap{
           width: 60%;
           .comp-cart-item-list{
-            margin-bottom: 70px;
+            margin-bottom: 40px;
           }
-          .comp-amount-wrap, .comp-admin-button, .anker_wrap{
+          .comp-admin-button, .anker_wrap{
             display: none;
+          }
+          .comp-amount-wrap{
+            margin-bottom: 60px;
+            &.pc_none{
+              display: none;
+            }
           }
         }
         .comp-side-wrap{
