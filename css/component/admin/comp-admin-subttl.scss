@@ -1,0 +1,16 @@
+.comp-admin-subttl{
+  margin-bottom: 30px;
+  .ttl{
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 0.06em;
+  }
+}
+@media screen and (min-width: 720px){
+  .comp-admin-subttl{
+    margin-bottom: 20px;
+    .ttl{
+      font-size: 2.4rem;
+    }
+  }
+}

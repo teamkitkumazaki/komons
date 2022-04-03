@@ -1,0 +1,93 @@
+.comp-option-setting{
+  width: 100vw;
+  background: $bgColor2;
+  margin: 0 -7vw;
+  padding: 50px 0;
+  .setting_item{
+    position: relative;
+    padding: 0 7vw 30px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    &:after{
+      display: block;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background: #d8d8d8;
+      position: absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      margin: auto;
+    }
+    &:nth-last-of-type(1){
+      padding: 0 7vw;
+      margin-bottom: 0px;
+      &:after{
+        display: none;
+      }
+    }
+    .option_flex{
+      .img_wrap{
+        margin-bottom: 30px;
+        .radio_wrap{
+          @include flexSet;
+          justify-content: space-between;
+          .radio_item{
+            width: 47%;
+            label{
+              .img_wrap{
+                margin-bottom: 15px;
+              }
+              .input_wrap{
+                .option_ttl{
+                  @include flexSet;
+                  justify-content: flex-start;
+                  align-items: center;
+                  margin-bottom: 10px;
+                  input[type="radio"] {
+                    display: none;
+                  }
+                  .radio_checker {
+                    width: 13px;
+                    height: 13px;
+                    border: 1px solid #979797;
+                    background: #fff;
+                    background: #fff;
+                    border-radius: 50%;
+                    margin-right: 7px;
+                    position: relative;
+                  }
+                  input[type="radio"]:checked + .radio_checker {
+                    &::before {
+                      display: block;
+                      content: "";
+                      position: absolute;
+                      top: -1px;
+                      bottom: -1px;
+                      left: 0;
+                      right: 0;
+                      margin: auto;
+                      width: 7px;
+                      height: 7px;
+                      background: #333;
+                      border-radius: 50%;
+                    }
+                  }
+                  .name{
+                    font-size: 1.5rem;
+                  }
+                }
+                .option_desc{
+                  font-size: 1.2rem;
+                  line-height: 1.6;
+                  letter-spacing: 0.06em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

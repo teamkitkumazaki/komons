@@ -96,6 +96,21 @@
 /* FAQ */
 @import 'component/faq/comp-qa.scss';
 
+/* カート */
+@import 'component/cart/comp-cart-item-list.scss';
+@import 'component/cart/comp-amount-wrap.scss';
+@import 'component/cart/comp-option-setting.scss';
+
+
+
+/* 管理画面 */
+@import 'component/admin/comp-admin-title.scss';
+@import 'component/admin/comp-admin-subttl.scss';
+@import 'component/admin/comp-admin-button.scss';
+@import 'component/admin/comp-side-wrap.scss';
+@import 'component/admin/comp-admin-form.scss';
+
+
 
 
 /* ########## ページ別レイアウト ########## */
@@ -116,3 +131,4 @@
 @import 'page/waitingList.scss'; /*ウェイティングリスト*/
 @import 'page/review.scss'; /*レビューページ*/
 @import 'page/challenge.scss'; /*アカウント登録ページ*/
+@import 'page/cart.scss'; /*アカウント登録ページ*/
