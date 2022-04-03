@@ -5,6 +5,7 @@
   .item_list{
     .cart_item{
       @include flexSet;
+      justify-content: flex-start;
       margin-bottom: 30px;
       padding-bottom: 30px;
       border-bottom: 1px solid $borderColor;
@@ -35,6 +36,7 @@
         width: calc(100% - 110px);
         position: relative;
         @include flexSet;
+        justify-content: flex-start;
         margin-top: 5px;
         .txt_inner{
           width: calc(100% - 3.5em);
@@ -206,10 +208,12 @@
           .txt_inner{
             width: calc(100% - 60px);
             @include flexSet;
+            justify-content: flex-start;
             align-items: center;
             .item_info{
-              width: calc(100% - 180px);
+              width: calc(100% - 220px);
               padding-right: 25px;
+              box-sizing: border-box;
               .name{
                 font-size: 1.6rem;
                 margin-bottom: 5px;
@@ -219,7 +223,7 @@
               }
             }
             .fixed_lot{
-              width: 180px;
+              width: 220px;
               position: static;
               .number{
                 margin: 0 auto;
@@ -238,7 +242,6 @@
                 margin-top: 0px;
                 input[type="number"]{
                   padding: 10px 0 10px 3em;
-                  border: 2px solid #e6e6e6;
                 }
               }
               .cancel_button{

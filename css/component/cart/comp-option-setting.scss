@@ -28,7 +28,7 @@
       }
     }
     .option_flex{
-      .img_wrap{
+      .img_box{
         margin-bottom: 30px;
         .radio_wrap{
           @include flexSet;
@@ -86,6 +86,50 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-option-setting{
+    padding: 60px 0;
+    .setting_item{
+      position: relative;
+      padding: 0 7vw 60px;
+      margin-bottom: 60px;
+      box-sizing: border-box;
+      .option_flex{
+        @include flexSet;
+        justify-content: space-between;
+        .img_box{
+          width: 48%;
+          margin-bottom: 0px;
+          .radio_wrap{
+            .radio_item{
+              width: 48%;
+              label{
+                .img_wrap{
+                  margin-bottom: 20px;
+                }
+                .input_wrap{
+                  .option_ttl{
+                    margin-bottom: 15px;
+                    .name{
+                      font-size: 1.6rem;
+                    }
+                  }
+                  .option_desc{
+                    font-size: 1.3rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .comp-admin-form{
+          width: 48%;
         }
       }
     }

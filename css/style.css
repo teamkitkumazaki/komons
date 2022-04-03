@@ -12820,6 +12820,9 @@ body.loaded #loading {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-bottom: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid #d8d8d8;
@@ -12862,6 +12865,9 @@ body.loaded #loading {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-top: 5px;
 }
 .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner {
@@ -13055,13 +13061,18 @@ body.loaded #loading {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
   .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .item_info {
-    width: calc(100% - 180px);
+    width: calc(100% - 220px);
     padding-right: 25px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .item_info .name {
     font-size: 1.6rem;
@@ -13071,7 +13082,7 @@ body.loaded #loading {
     margin-bottom: 5px;
   }
   .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .fixed_lot {
-    width: 180px;
+    width: 220px;
     position: static;
   }
   .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .fixed_lot .number {
@@ -13102,7 +13113,6 @@ body.loaded #loading {
   }
   .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot input[type=number] {
     padding: 10px 0 10px 3em;
-    border: 2px solid #e6e6e6;
   }
   .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .cancel_button {
     position: static;
@@ -13188,6 +13198,9 @@ body.loaded #loading {
 }
 
 @media screen and (min-width: 1100px) {
+  .comp-amount-wrap {
+    margin-top: 40px;
+  }
   .comp-amount-wrap .amount_item {
     padding: 12px;
     margin-bottom: 5px;
@@ -13238,10 +13251,10 @@ body.loaded #loading {
 .comp-option-setting .setting_item:nth-last-of-type(1):after {
   display: none;
 }
-.comp-option-setting .setting_item .option_flex .img_wrap {
+.comp-option-setting .setting_item .option_flex .img_box {
   margin-bottom: 30px;
 }
-.comp-option-setting .setting_item .option_flex .img_wrap .radio_wrap {
+.comp-option-setting .setting_item .option_flex .img_box .radio_wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13254,13 +13267,13 @@ body.loaded #loading {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.comp-option-setting .setting_item .option_flex .img_wrap .radio_wrap .radio_item {
+.comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item {
   width: 47%;
 }
-.comp-option-setting .setting_item .option_flex .img_wrap .radio_wrap .radio_item label .img_wrap {
+.comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .img_wrap {
   margin-bottom: 15px;
 }
-.comp-option-setting .setting_item .option_flex .img_wrap .radio_wrap .radio_item label .input_wrap .option_ttl {
+.comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13277,10 +13290,10 @@ body.loaded #loading {
           align-items: center;
   margin-bottom: 10px;
 }
-.comp-option-setting .setting_item .option_flex .img_wrap .radio_wrap .radio_item label .input_wrap .option_ttl input[type=radio] {
+.comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl input[type=radio] {
   display: none;
 }
-.comp-option-setting .setting_item .option_flex .img_wrap .radio_wrap .radio_item label .input_wrap .option_ttl .radio_checker {
+.comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl .radio_checker {
   width: 13px;
   height: 13px;
   border: 1px solid #979797;
@@ -13290,7 +13303,7 @@ body.loaded #loading {
   margin-right: 7px;
   position: relative;
 }
-.comp-option-setting .setting_item .option_flex .img_wrap .radio_wrap .radio_item label .input_wrap .option_ttl input[type=radio]:checked + .radio_checker::before {
+.comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl input[type=radio]:checked + .radio_checker::before {
   display: block;
   content: "";
   position: absolute;
@@ -13304,15 +13317,62 @@ body.loaded #loading {
   background: #333;
   border-radius: 50%;
 }
-.comp-option-setting .setting_item .option_flex .img_wrap .radio_wrap .radio_item label .input_wrap .option_ttl .name {
+.comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl .name {
   font-size: 1.5rem;
 }
-.comp-option-setting .setting_item .option_flex .img_wrap .radio_wrap .radio_item label .input_wrap .option_desc {
+.comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_desc {
   font-size: 1.2rem;
   line-height: 1.6;
   letter-spacing: 0.06em;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-option-setting {
+    padding: 60px 0;
+  }
+  .comp-option-setting .setting_item {
+    position: relative;
+    padding: 0 7vw 60px;
+    margin-bottom: 60px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .comp-option-setting .setting_item .option_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .comp-option-setting .setting_item .option_flex .img_box {
+    width: 48%;
+    margin-bottom: 0px;
+  }
+  .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item {
+    width: 48%;
+  }
+  .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .img_wrap {
+    margin-bottom: 20px;
+  }
+  .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl {
+    margin-bottom: 15px;
+  }
+  .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl .name {
+    font-size: 1.6rem;
+  }
+  .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_desc {
+    font-size: 1.3rem;
+  }
+  .comp-option-setting .setting_item .option_flex .comp-admin-form {
+    width: 48%;
+  }
+}
 /* 管理画面 */
 .comp-admin-title {
   text-align: center;
@@ -13411,7 +13471,7 @@ body.loaded #loading {
 
 @media screen and (min-width: 720px) {
   .comp-admin-subttl {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   .comp-admin-subttl .ttl {
     font-size: 2.4rem;
@@ -21227,4 +21287,10 @@ body.loaded #loading {
   background-image: url(../img/common/anker_caret.svg);
 }
 
+@media screen and (min-width: 720px) {
+  .page-cart-new .section-cart .item_wrap .anker_wrap {
+    margin-top: 25px;
+    margin-bottom: 60px;
+  }
+}
 /*アカウント登録ページ*/
