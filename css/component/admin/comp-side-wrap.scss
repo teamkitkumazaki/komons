@@ -2,17 +2,12 @@
   width: 100vw;
   background: #fff;
   margin: 0 -7vw;
-  padding: 50px 7vw;
+  padding: 50px 7vw 60px;
   box-sizing: border-box;
-  margin-bottom: -120px;
 }
 @media screen and (min-width: 720px){
   .comp-side-wrap{
-    padding: 60px 7vw;
-    margin-bottom: -160px;
-    @media screen and (min-width: 980px){
-      margin-bottom: -24vw;
-    }
+    padding: 60px 7vw 80px;
   }
 }
 

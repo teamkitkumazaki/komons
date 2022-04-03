@@ -13414,60 +13414,20 @@ body.loaded #loading {
   .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item {
     width: 47%;
   }
+  .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label {
+    cursor: pointer;
+  }
   .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .img_wrap {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-bottom: 10px;
-  }
-  .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl input[type=radio] {
-    display: none;
-  }
-  .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl .radio_checker {
-    width: 13px;
-    height: 13px;
-    border: 1px solid #979797;
-    background: #fff;
-    background: #fff;
-    border-radius: 50%;
-    margin-right: 7px;
-    position: relative;
-  }
-  .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl input[type=radio]:checked + .radio_checker::before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -1px;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 7px;
-    height: 7px;
-    background: #333;
-    border-radius: 50%;
+    margin-bottom: 15px;
   }
   .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_ttl .name {
     font-size: 1.5rem;
   }
   .comp-option-setting .setting_item .option_flex .img_box .radio_wrap .radio_item label .input_wrap .option_desc {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    letter-spacing: 0.06em;
+    font-size: 1.3rem;
   }
 }
 /* 管理画面 */
@@ -13554,7 +13514,8 @@ body.loaded #loading {
     margin-bottom: 80px;
   }
   .comp-admin-title .page_ttl {
-    font-size: 2.6rem;
+    font-size: 3rem;
+    margin-bottom: 20px;
   }
 }
 .comp-admin-subttl {
@@ -13644,21 +13605,14 @@ body.loaded #loading {
   width: 100vw;
   background: #fff;
   margin: 0 -7vw;
-  padding: 50px 7vw;
+  padding: 50px 7vw 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-bottom: -120px;
 }
 
 @media screen and (min-width: 720px) {
   .comp-side-wrap {
-    padding: 60px 7vw;
-    margin-bottom: -160px;
-  }
-}
-@media screen and (min-width: 720px) and (min-width: 980px) {
-  .comp-side-wrap {
-    margin-bottom: -24vw;
+    padding: 60px 7vw 80px;
   }
 }
 @media screen and (min-width: 1100px) {
@@ -21391,14 +21345,23 @@ body.loaded #loading {
   background-position: center center;
   background-image: url(../img/common/anker_caret.svg);
 }
+.page-cart-new .section-related-item {
+  margin-bottom: 50px;
+}
 
 @media screen and (min-width: 720px) {
   .page-cart-new .section-cart .cart_flex .item_wrap .anker_wrap {
     margin-top: 25px;
     margin-bottom: 60px;
   }
+  .page-cart-new .section-related-item {
+    margin-bottom: 60px;
+  }
 }
 @media screen and (min-width: 1100px) {
+  .page-cart-new .section-cart {
+    margin-bottom: 120px;
+  }
   .page-cart-new .section-cart .cart_flex {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -21426,6 +21389,9 @@ body.loaded #loading {
   }
   .page-cart-new .section-cart .cart_flex .comp-side-wrap {
     width: 33%;
+  }
+  .page-cart-new .section-related-item {
+    margin-bottom: 80px;
   }
 }
 /*アカウント登録ページ*/

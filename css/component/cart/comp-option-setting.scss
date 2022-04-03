@@ -164,52 +164,19 @@
             .radio_item{
               width: 47%;
               label{
+                cursor: pointer;
                 .img_wrap{
-                  margin-bottom: 15px;
+                  margin-bottom: 20px;
                 }
                 .input_wrap{
                   .option_ttl{
-                    @include flexSet;
-                    justify-content: flex-start;
-                    align-items: center;
-                    margin-bottom: 10px;
-                    input[type="radio"] {
-                      display: none;
-                    }
-                    .radio_checker {
-                      width: 13px;
-                      height: 13px;
-                      border: 1px solid #979797;
-                      background: #fff;
-                      background: #fff;
-                      border-radius: 50%;
-                      margin-right: 7px;
-                      position: relative;
-                    }
-                    input[type="radio"]:checked + .radio_checker {
-                      &::before {
-                        display: block;
-                        content: "";
-                        position: absolute;
-                        top: -1px;
-                        bottom: -1px;
-                        left: 0;
-                        right: 0;
-                        margin: auto;
-                        width: 7px;
-                        height: 7px;
-                        background: #333;
-                        border-radius: 50%;
-                      }
-                    }
+                    margin-bottom: 15px;
                     .name{
                       font-size: 1.5rem;
                     }
                   }
                   .option_desc{
-                    font-size: 1.2rem;
-                    line-height: 1.6;
-                    letter-spacing: 0.06em;
+                    font-size: 1.3rem;
                   }
                 }
               }
