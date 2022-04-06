@@ -146,6 +146,12 @@
         width: 100%;
         max-width: unset !important;
         overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar{
+          display: none;
+        }
       .rktheme-grid{
         width: calc(56vw * 8);
         li{
@@ -194,6 +200,13 @@
               }
             }
           }
+        }
+      }
+    }
+    &.pickup{
+      .rktheme-widget-container{
+        .rktheme-grid{
+          width: calc(56vw * 4);
         }
       }
     }

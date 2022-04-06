@@ -1,0 +1,102 @@
+.page-cart-new{
+  .section-cart{
+    margin-bottom: 50px;
+    .cart_flex{
+      .item_wrap{
+        .anker_wrap{
+          margin-top: 20px;
+          margin-bottom: 50px;
+          .anker_button{
+            appearance: none;
+            border: none;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            font-family: inherit;
+            color: $basicGreen;
+            font-size: 1.4rem;
+            letter-spacing: 0.06rem;
+            text-align: center;
+            margin-bottom: 15px;
+            background-color: transparent;
+            &:nth-last-of-type(1){
+              margin-bottom: 0;
+            }
+            span{
+              position: relative;
+              padding: 5px 15px 5px 0;
+              &::after{
+                display: block;
+                content: "";
+                position: absolute;
+                top:0;
+                bottom:0;
+                right: 0;
+                margin: auto;
+                width: 8px;
+                height: 8px;
+                @include bgSet;
+                background-image: url(../img/common/anker_caret.svg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .section-related-item, .section-recommendation{
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 720px){
+  .page-cart-new{
+    .section-cart{
+      .cart_flex{
+        .item_wrap{
+          .anker_wrap{
+            margin-top: 25px;
+            margin-bottom: 60px;
+          }
+        }
+      }
+    }
+    .section-related-item{
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media screen and (min-width: 1100px){
+  .page-cart-new{
+    .section-cart{
+      margin-bottom: 120px;
+      .cart_flex{
+        @include flexSet;
+        align-items: flex-start;
+        justify-content: space-between;
+        .item_wrap{
+          width: 60%;
+          .comp-cart-item-list{
+            margin-bottom: 40px;
+          }
+          .comp-admin-button, .anker_wrap{
+            display: none;
+          }
+          .comp-amount-wrap{
+            margin-bottom: 60px;
+            &.pc_none{
+              display: none;
+            }
+          }
+        }
+        .comp-side-wrap{
+          width: 33%;
+        }
+      }
+    }
+    .section-related-item, .section-recommendation{
+      margin-bottom: 80px;
+    }
+  }
+}

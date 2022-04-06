@@ -65,7 +65,6 @@
 			</div>
 			<div class="sns_wrap">
 				<ul>
-					<li><a class="tw" href="https://business.facebook.com/komons.japan/" target="_blank"></a></li>
 					<li><a class="fb" href="https://business.facebook.com/komons.japan/" target="_blank"></a></li>
 					<li><a class="ig" href="https://www.instagram.com/komons.jp/" target="_blank"></a></li>
 					<li><a class="line" href="https://line.me/R/ti/p/%40266mlpqk" target="_blank"></a></li>

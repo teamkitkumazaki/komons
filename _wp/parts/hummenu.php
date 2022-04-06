@@ -15,7 +15,6 @@
             <div class="child">
               <a href="https://komons-japan.com/collections/bottle">ボトル商品</a>
               <a href="https://komons-japan.com/collections/refill">レフィル商品</a>
-              <a href="https://komons-japan.com/collections/bottle-and-refill">レフィル&amp;ボトルセット</a>
               <a href="https://komons-japan.com/collections/upcoming">UPCOMING商品</a>
             </div>
           </div>
@@ -117,9 +116,9 @@
           </div>
         </div><!-- pop_section -->
         <div class="sns_wrap">
-          <a class="tw" href="https://twitter.com/komons_jp" target="_blank"></a>
           <a class="fb" href="https://www.facebook.com/komons.japan" target="_blank"></a>
           <a class="ig" href="https://www.instagram.com/komons.jp/" target="_blank"></a>
+          <a class="line" href="https://line.me/R/ti/p/%40266mlpqk" target="_blank"></a>
         </div>
       </div><!-- content_right -->
     </div><!-- content -->
