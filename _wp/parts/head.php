@@ -80,6 +80,7 @@
 		<link href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg" rel="apple-touch-icon" sizes="200x200">
 		<link rel="stylesheet" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/css/style.css?<?php echo date('Ymd-Hi');?>">
 		<link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500" rel="stylesheet">
+		<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/lodash.js" charset="UTF-8"></script>
 		<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/layout.js?<?php echo date('Ymd-Hi');?>" charset="UTF-8"></script>
 		<script type="text/javascript" src="https://journal.komons-japan.com/wp-content/themes/komons-theme/js/instafeed.min.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->

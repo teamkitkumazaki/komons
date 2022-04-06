@@ -1,19 +1,32 @@
-	<header>
-		<div class="header_inner">
-			<div id="humMenu">
-				<a href="javascript:void(0);"></a>
-			</div>
-			<div id="hLogo">
-				<a href="https://www.komons-japan.com"></a>
-			</div>
-			<div id="hNavi">
-				<div id="hLogin" class="nav_item">
-					<a href="https://komons-japan.com/account/login">ログイン</a>
-				</div>
-				<div id="hCart" class="nav_item">
-					<a href="https://komons-japan.com/cart">カート</a>
-				</div>
-			</div>
-		</div>
-		<!-- header_inner -->
-	</header>
+<header class="header_new">
+  <div class="header_inner">
+    <div class="header_left">
+      <div id="hLogo" class="header_logo">
+        <a href="https://komons-japan.com"></a>
+      </div>
+      <nav class="header_navigation">
+        <ul>
+          <li><a href="/pages/concept">About</a></li>
+          <li><a href="/collections/all-products">Products</a></li>
+          <li><a href="/collections/gift">Gift</a></li>
+          <li><a href="/pages/gift-service">Wrapping</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header_right">
+      <div id="hNavi" class="header_guide">
+        <div id="hLogin" class="nav_item h_login">
+          <a href="https://komons-japan.com/account/login">ログイン</a>
+        </div>
+        <div id="hCart" class="nav_item h_cart">
+          <a href="https://komons-japan.com/cart">
+            <span class="text">カート</span><span id="cartItemNum" class="cart_item_num">3</span></a>
+        </div>
+      </div>
+      <div id="humMenu" class="header_menu">
+        <a href="javascript:void(0);"></a>
+      </div>
+    </div>
+  </div><!-- header_inner -->
+</header>
