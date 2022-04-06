@@ -112,6 +112,12 @@
                 font-size: 1.4rem;
                 font-family: inherit !important;
                 padding: 4px 0 4px 3.2em;
+                -moz-appearance:textfield; 
+                &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                  margin: 0;
+                }
+
               }
               button{
                 position: absolute;
@@ -223,12 +229,29 @@
               width: calc(100% - 220px);
               padding-right: 25px;
               box-sizing: border-box;
-              .name{
-                font-size: 1.6rem;
-                margin-bottom: 5px;
+              .category{
+                display: block;
+                font-size: 1.3rem;
+                letter-spacing: 0.06em;
+                margin-bottom: 10px;
               }
-              .variation{
-                margin-bottom: 5px;
+              .links{
+                display: block;
+                color: inherit;
+                margin-bottom: 20px;
+                .name{
+                  font-size: 1.8rem;
+                  &.en{
+                    font-size: 2.0rem;
+                  }
+                }
+                .genre{
+                  display: block;
+                  margin-top: 10px;
+                  font-size: 1.2rem;
+                  color: #646464;
+                  letter-spacing: 0.06em;
+                }
               }
             }
             .fixed_lot{

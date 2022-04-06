@@ -50,14 +50,7 @@
         {%- endif -%}
         {% include 'cart-amount-price' %}
         </div><!-- comp-amount-wrap -->
-        <div class="comp-admin-button mt">
-          <input type="submit" name="checkout" class="checkout_button " value="ご購入手続きへ">
-        </div>
         {%- if noshiLength != 0 or messageLength != 0 -%}
-        <div class="anker_wrap">
-          <button class="anker_button"><span>熨斗・メッセージカードを設定</span></button>
-          <button class="anker_button"><span>配送希望日を設定</span></button>
-        </div>
         <div class="comp-option-setting">
           {%- if noshiLength != 0 -%}
           {% include 'cart-noshi-setting' %}

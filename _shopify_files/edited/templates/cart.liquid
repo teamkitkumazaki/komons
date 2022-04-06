@@ -1,6 +1,13 @@
 <article id="cart" class="page-cart-new">
 {% section 'cart-template' %}
 {% section 'cart-relations' %}
+<section id="submitLoader" class="comp-submit-loader">
+	<div class="height_adjust"></div>
+	<div class="loader_inner">
+		<span class="loader"></span>
+		<p class="loader_txt">ご注文を処理中です。しばらくお待ちください。</p>
+	</div><!-- loader_inner -->
+</section>
 </article>
 
 
@@ -15,6 +22,7 @@ var naireParam = cartAttributes.attributes['熨斗の名入れ:'];
 var messageParam = cartAttributes.attributes['メッセージカードの内容:'];
 var noteParam = cartAttributes.note;
 
+
 /* カートに戻った際にアトリビュートの値を維持 */
 if(omotegakiParam != undefined){
   $('#noshiType').val(omotegakiParam);
@@ -27,6 +35,10 @@ if(messageParam != undefined){
 }
 if(deriveryTimeParam != undefined){
   $('#deliveryTime').val(deriveryTimeParam);
+}
+
+if(noteParam != undefined){
+  $('#CartSpecialInstructions').val(noteParam);
 }
 
 
@@ -145,17 +157,16 @@ function cartOptionController(target){
     var dayDisplay = m + '月' + d + '日' + '(' + wd[w] + ')';
     if(mode == 0){
       deliveryDate.append('<option value="' + dayParam + '">' + dayDisplay + '</option>');
-      $('#deliveryDate').val(deliveryDateParam);
-      $('#deliveryTime').val(deriveryTimeParam);
     }else if(mode == 1){
     if(flg == 1){
       firstDay = dayDisplay;
       console.log('firstDay:' + firstDay);
     }
     correctDate.push(dayParam);
-    if(deliveryDateParam != undefined){
-      $('#deliveryDate').val(deliveryDateParam);
-    }
+  }
+  console.log('deliveryDateParam:' + deliveryDateParam);
+  if(deliveryDateParam != undefined){
+    $('#deliveryDate').val(deliveryDateParam);
   }
 }
 
@@ -232,6 +243,12 @@ function init(){
   });
 
   setShippingDay(0);
+
+  deliveryDate.on({
+    'change': function() {
+      $('#dateInput').val(deliveryDate.val());
+    }
+  });
 
 }
 

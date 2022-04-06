@@ -1,5 +1,6 @@
 .page-cart-new{
   .section-cart{
+    margin-bottom: 50px;
     .cart_flex{
       .item_wrap{
         .anker_wrap{
@@ -43,7 +44,7 @@
       }
     }
   }
-  .section-related-item{
+  .section-related-item, .section-recommendation{
     margin-bottom: 50px;
   }
 }
@@ -94,7 +95,7 @@
         }
       }
     }
-    .section-related-item{
+    .section-related-item, .section-recommendation{
       margin-bottom: 80px;
     }
   }
