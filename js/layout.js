@@ -1419,6 +1419,93 @@ $(function() {
     switchLoginFunction();
   }
 
+  /* 住所一覧ページの切り替えレイアウト */
+  function switchAddressFunction(){
+    var addressContentWrap = $('#addressContentWrap');
+    var wrapperList = $('#wrapperList');
+    var wrapperAdd = $('#wrapperAdd');
+    var addressList = $('#addressList');
+    var addressEdit = $('#addressEdit');
+    var adminBar = $('#adminBar');
+    var editbutton = [];
+    var editId = [];
+
+
+    function switchList(){
+      adminBar.removeClass('mode-edit').addClass('mode-list');
+      window.scroll({top: 0, behavior: 'smooth'});
+      addressContentWrap.animate({opacity:0}, 400, function(){
+        $('.content_wrapper').css({'display': 'none'});
+        wrapperList.css({'display': 'block'});
+        addressContentWrap.css({'display': 'block'});
+        setTimeout(function() {
+          addressContentWrap.animate({opacity: 1}, 400);
+        }, 50);
+      });
+    }
+
+    function switchAdd(){
+      adminBar.addClass('mode-edit').removeClass('mode-list');
+      window.scroll({top: 0, behavior: 'smooth'});
+      addressContentWrap.animate({opacity:0}, 400, function(){
+          $('.content_wrapper').css({'display': 'none'});
+          wrapperAdd.css({'display': 'block'});
+          addressContentWrap.css({'display': 'block'});
+          setTimeout(function() {
+            addressContentWrap.animate({opacity: 1}, 400);
+          }, 50);
+      });
+    }
+
+    function switchEdit(e){
+      adminBar.addClass('mode-edit').removeClass('mode-list');
+      window.scroll({top: 0, behavior: 'smooth'});
+      addressContentWrap.animate({opacity:0}, 400, function(){
+          $('.content_wrapper').css({'display': 'none'});
+          $('#' + editId[e]).css({'display': 'block'});
+          addressContentWrap.css({'display': 'block'});
+          setTimeout(function() {
+            addressContentWrap.animate({opacity: 1}, 400);
+          }, 50);
+      });
+    }
+
+    function init(){
+      addressList.on({
+        'click': function() {
+          event.preventDefault();
+          switchList();
+        }
+      });
+
+      addressEdit.on({
+        'click': function() {
+          event.preventDefault();
+          switchAdd();
+        }
+      });
+
+      $.each($('article').find('.btn_edit'), function(index) {
+        editbutton[index] = $(this);
+        editId[index] = $(this).attr('formId');
+        editbutton[index].on({
+          'click': function() {
+            console.log(editId[index]);
+            switchEdit(index);
+          }
+        });
+      });
+
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('addressContentWrap')) {
+    switchAddressFunction();
+  }
+
 
   if (document.getElementById('itemDetail')) {
     $('#relatedSlider').slick({
