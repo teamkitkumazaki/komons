@@ -17,6 +17,9 @@
     font-weight: normal;
     font-size: 1.6rem;
     letter-spacing: 0.5px;
+    &.ja{
+      font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    }
   }
   .page_bread{
     margin-top: 30px;

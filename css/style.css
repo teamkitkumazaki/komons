@@ -12700,7 +12700,7 @@ body.loaded #loading {
 .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .fixed_lot .number {
   display: block;
   width: 65px;
-  padding: 5px 0;
+  padding: 10px 0;
   font-size: 1.3rem;
   background: #f8f8f8;
   text-align: center;
@@ -12894,7 +12894,7 @@ body.loaded #loading {
   .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .fixed_lot .number {
     margin: 0 auto;
     width: 75px;
-    padding: 5px 0;
+    padding: 10px 0;
     font-size: 1.4rem;
     -webkit-transform: translateX(-5px);
             transform: translateX(-5px);
@@ -13591,6 +13591,9 @@ body.loaded #loading {
   font-size: 1.6rem;
   letter-spacing: 0.5px;
 }
+.comp-admin-title .page_subttl.ja {
+  font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+}
 .comp-admin-title .page_bread {
   margin-top: 30px;
   font-weight: normal;
@@ -14184,6 +14187,189 @@ body.loaded #loading {
     width: calc(100% - 260px);
   }
 }
+.comp-order-list {
+  width: 100%;
+  margin-top: 25px;
+}
+.comp-order-list .order_item {
+  margin-bottom: 20px;
+}
+.comp-order-list .order_item:nth-of-type(n + 6) {
+  display: none;
+}
+.comp-order-list .order_item .order_bar {
+  position: relative;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  color: inherit;
+  padding: 15px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.comp-order-list .order_item .order_bar .bar_text {
+  width: calc(100% - 50px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.comp-order-list .order_item .order_bar .bar_text .title {
+  display: block;
+  letter-spacing: 0.05em;
+  margin-right: 0.2em;
+}
+.comp-order-list .order_item .order_bar .bar_text .order_num {
+  display: block;
+  color: #068acc;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.comp-order-list .order_item .order_bar .bar_text .order_num:hover {
+  opacity: 0.75;
+}
+.comp-order-list .order_item .order_bar .bar_text .price {
+  width: 100%;
+  display: block;
+  font-size: 1.4rem;
+  margin-top: 5px;
+  font-weight: 400;
+}
+.comp-order-list .order_item .order_bar .circle {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 24px;
+  background-color: #00381f;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.comp-order-list .order_item .order_bar .circle .circle-inner {
+  position: absolute;
+  display: block;
+  width: 7px;
+  height: 7px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 4px;
+  margin: auto;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  border-bottom: solid 1px #fff;
+  border-right: solid 1px #fff;
+}
+.comp-order-list .order_item .order_bar:hover .circle {
+  background-color: #2f281e;
+}
+.comp-order-list .order_item .order_condition {
+  margin: 15px 0 0;
+  padding: 0 10px;
+  line-height: 1.8;
+}
+.comp-order-list .order_item .order_condition span {
+  font-size: 1.3rem;
+  display: block;
+}
+.comp-order-list.display .order_item {
+  margin-bottom: 20px;
+}
+.comp-order-list.display .order_item:nth-of-type(n + 6) {
+  display: block;
+}
+
+@media screen and (min-width: 720px) {
+  .comp-order-list {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  .comp-order-list .order_item {
+    margin-bottom: 25px;
+  }
+  .comp-order-list .order_item .order_bar {
+    padding: 15px 15px 12px;
+  }
+  .comp-order-list .order_item .order_bar .bar_text .order_num {
+    margin-right: 1em;
+  }
+  .comp-order-list .order_item .order_bar .bar_text .price {
+    width: unset;
+    font-size: 1.4rem;
+    margin-top: 0px;
+  }
+  .comp-order-list .order_item .order_condition {
+    margin: 20px 5px 0;
+    padding: 0 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comp-order-list .order_item .order_condition span {
+    display: block;
+    position: relative;
+    margin-right: 1em;
+    padding-right: 1em;
+  }
+  .comp-order-list .order_item .order_condition span::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 1px;
+    height: 15px;
+    background: #d8d8d8;
+  }
+  .comp-order-list .order_item .order_condition span:nth-last-of-type(1) {
+    margin-right: 0em;
+    padding-right: 0em;
+  }
+  .comp-order-list .order_item .order_condition span:nth-last-of-type(1)::after {
+    display: none;
+  }
+}
+.comp-admin-hr {
+  margin: 20px 0 25px;
+  width: 100%;
+  height: 1px;
+  padding: 0;
+  border: none;
+  background: #d8d8d8;
+}
+
 /* ########## ページ別レイアウト ########## */
 #index #main {
   width: 100%;
