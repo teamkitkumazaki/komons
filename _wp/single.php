@@ -11,9 +11,10 @@ $image = wp_get_attachment_image_src( $thumbnail_id, 'full' );
 $src = $image[0];
 
 ?>
-<article id="journalDetail">
+<article id="journalDetail" class="page-journal-detail">
   <section class="main" style="background-image: url('<?php echo $src ?>');"></section>
   <section class="journal_detail">
+    <div class="detail_inner">
       <?php
       /* Start the Loop */
       while ( have_posts() ) : the_post();
@@ -32,13 +33,19 @@ $src = $image[0];
     <div class="post_body">
         <?= the_content(); ?>
     </div>
-    <div class="post_share">
-      <p>この記事をシェアする</p>
-      <ul>
-
-        <li><a href="https://twitter.com/share?url=<?php echo get_permalink($id); ?>" target="_blank"><img src="<?php echo get_template_directory_uri();?>/img/journal/share_twitter.png" alt="twitter"></a></li>
-        <li><a href="http://www.facebook.com/share.php?u=<?php echo get_permalink($id); ?>" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri();?>/img/journal/share_facebook.png" alt="facebook"></a></li>
-      </ul>
+    </div><!-- detail_inner -->
+    <div class="section_inner_new">
+      <?php $url = $_SERVER['REQUEST_URI']; ?>
+      <?php if(strstr($url,'1317')):?>
+        <?php get_template_part("parts/hakka");?>
+      <?php endif; ?>
+      <div class="post_share">
+        <p>この記事をシェアする</p>
+        <ul>
+          <li><a href="https://twitter.com/share?url=<?php echo get_permalink($id); ?>" target="_blank"><img src="<?php echo get_template_directory_uri();?>/img/journal/share_twitter.png" alt="twitter"></a></li>
+          <li><a href="http://www.facebook.com/share.php?u=<?php echo get_permalink($id); ?>" rel="nofollow" target="_blank"><img src="<?php echo get_template_directory_uri();?>/img/journal/share_facebook.png" alt="facebook"></a></li>
+        </ul>
+      </div>
     </div>
     <?php
       endwhile; // End of the loop.
@@ -95,51 +102,52 @@ $src = $image[0];
 </section>
 <?php endif; ?>
   <section class="related_posts">
-    <h2>こちらの記事もおすすめ</h2>
-    <div class="article_wrap">
+    <div class="section_inner_new">
+      <h2>こちらの記事もおすすめ</h2>
+      <div class="article_wrap">
+      <ul>
 
-    <ul>
+        <?php
+          $args = array(
+            'posts_per_page'    => 4,
+            'orderby'           => 'post_date',
+            'order'             => 'DESC',
+            'post_type' => 'post',
+            'post_status'       => 'publish',
+            'post__not_in' => array($id)
+          );
 
-      <?php
-        $args = array(
-          'posts_per_page'    => 4,
-          'orderby'           => 'post_date',
-          'order'             => 'DESC',
-          'post_type' => 'post',
-          'post_status'       => 'publish',
-          'post__not_in' => array($id)
-        );
+          $the_query = new WP_Query($args);
 
-        $the_query = new WP_Query($args);
+          if ( $the_query->have_posts() ) :
+            while ( $the_query->have_posts() ) : $the_query->the_post();
+              $r_id = get_the_ID();
+              $r_title = get_the_title($post_id);
+              $r_thumbnail_id = get_post_thumbnail_id($r_id);
+              $r_image = wp_get_attachment_image_src( $r_thumbnail_id, 'medium' );
+              $r_src = $r_image[0];
+              $r_permalink = get_permalink($r_id);
+              ?>
+        <li>
+          <div class="img_wrap">
+            <a class="<?php echo get_field('thumb_type');?>" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+          </div>
+          <div class="txt_wrap">
+            <h3>
+                <a href="<?php echo $r_permalink; ?>"><?php echo $r_title; ?></a>
+              </h3>
+          </div>
+        </li>
+              <?php
 
-        if ( $the_query->have_posts() ) :
-          while ( $the_query->have_posts() ) : $the_query->the_post();
-            $r_id = get_the_ID();
-            $r_title = get_the_title($post_id);
-            $r_thumbnail_id = get_post_thumbnail_id($r_id);
-            $r_image = wp_get_attachment_image_src( $r_thumbnail_id, 'medium' );
-            $r_src = $r_image[0];
-            $r_permalink = get_permalink($r_id);
-            ?>
-      <li>
-        <div class="img_wrap">
-          <a class="<?php echo get_field('thumb_type');?>" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
-        </div>
-        <div class="txt_wrap">
-          <h3>
-              <a href="<?php echo $r_permalink; ?>"><?php echo $r_title; ?></a>
-            </h3>
-        </div>
-      </li>
-            <?php
+            endwhile;
+          else:
+          endif;
+        ?>
 
-          endwhile;
-        else:
-        endif;
-      ?>
-
-    </ul>
-  </div>
+      </ul>
+    </div>
+    </div>
   </section>
 
 </article>

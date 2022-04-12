@@ -18534,16 +18534,16 @@ body.loaded #loading {
   }
 }
 /*ジャーナル一覧*/
-#journalDetail {
+.page-journal-detail {
   padding-bottom: 100px;
 }
-#journalDetail .main {
+.page-journal-detail .main {
   width: 100%;
   height: 520px;
   background-size: 100% auto;
   background-position: center center;
 }
-#journalDetail .main::after {
+.page-journal-detail .main::after {
   width: 100%;
   height: 520px;
   content: " ";
@@ -18551,23 +18551,23 @@ body.loaded #loading {
   background: url("../img/shadow_overlay.png") top center;
   background-repeat: repeat-x;
 }
-#journalDetail .journal_detail {
+.page-journal-detail .journal_detail .detail_inner {
   max-width: 700px;
   margin: 0 auto;
 }
 @media screen and (max-width: 980px) {
-  #journalDetail .journal_detail {
+  .page-journal-detail .journal_detail .detail_inner {
     max-width: 86vw;
   }
 }
-#journalDetail .journal_detail .post_head {
+.page-journal-detail .journal_detail .post_head {
   position: relative;
   margin-top: 60px;
   padding-bottom: 45px;
   margin-bottom: 45px;
   border-bottom: 1px solid #E4E4E4;
 }
-#journalDetail .journal_detail .post_head .post_date {
+.page-journal-detail .journal_detail .post_head .post_date {
   position: absolute;
   left: -140px;
   top: 103px;
@@ -18583,47 +18583,46 @@ body.loaded #loading {
   letter-spacing: 1px;
   color: #111111;
 }
-#journalDetail .journal_detail .post_head .post_date span {
+.page-journal-detail .journal_detail .post_head .post_date span {
   display: inline-block;
 }
-#journalDetail .journal_detail .post_head .post_excerpt {
+.page-journal-detail .journal_detail .post_head .post_excerpt {
   line-height: 28px;
   color: #111;
   font-size: 14px;
   margin-top: 35px;
 }
-#journalDetail .journal_detail .post_head .post_title {
+.page-journal-detail .journal_detail .post_head .post_title {
   font-size: 35px;
   line-height: 50px;
 }
-#journalDetail .journal_detail .post_head .post_tags {
+.page-journal-detail .journal_detail .post_head .post_tags {
   margin-top: 15px;
 }
-#journalDetail .journal_detail .post_head .post_tags li {
+.page-journal-detail .journal_detail .post_head .post_tags li {
   float: left;
   margin-right: 10px;
 }
-#journalDetail .journal_detail .post_head .post_tags li a {
+.page-journal-detail .journal_detail .post_head .post_tags li a {
   color: #007a44;
   font-size: 14px;
   line-height: 20px;
   font-weight: bold;
 }
-#journalDetail .journal_detail .post_body {
+.page-journal-detail .journal_detail .post_body {
   font-size: 16px;
   line-height: 37px;
   color: #00381f;
-  border-bottom: 1px solid #F0F0F0;
-  padding-bottom: 80px;
-  margin-bottom: 60px;
+  padding-bottom: 0px;
+  margin-bottom: 80px;
 }
-#journalDetail .journal_detail .post_body h1, #journalDetail .journal_detail .post_body h2 {
+.page-journal-detail .journal_detail .post_body h1, .page-journal-detail .journal_detail .post_body h2 {
   font-size: 30px;
   line-height: 38px;
   margin-bottom: 25px;
   color: #333;
 }
-#journalDetail .journal_detail .post_body h3, #journalDetail .journal_detail .post_body h4 {
+.page-journal-detail .journal_detail .post_body h3, .page-journal-detail .journal_detail .post_body h4 {
   font-size: 20px;
   line-height: 34px;
   margin-bottom: 25px;
@@ -18631,53 +18630,53 @@ body.loaded #loading {
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: 7px;
 }
-#journalDetail .journal_detail .post_body h5, #journalDetail .journal_detail .post_body h6 {
+.page-journal-detail .journal_detail .post_body h5, .page-journal-detail .journal_detail .post_body h6 {
   font-size: 13px;
   margin-top: -12px;
 }
-#journalDetail .journal_detail .post_body p.large {
+.page-journal-detail .journal_detail .post_body p.large {
   display: inline-block;
   font-size: 20px;
   letter-spacing: 0.5px;
   border-bottom: 1px dotted #00381f;
 }
-#journalDetail .journal_detail .post_body p.notice {
+.page-journal-detail .journal_detail .post_body p.notice {
   color: #666;
 }
-#journalDetail .journal_detail .post_body a {
+.page-journal-detail .journal_detail .post_body a {
   color: #068acc;
   line-height: 1.6;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-#journalDetail .journal_detail .post_body a:hover {
+.page-journal-detail .journal_detail .post_body a:hover {
   opacity: 0.75;
 }
-#journalDetail .journal_detail .post_body a.block {
+.page-journal-detail .journal_detail .post_body a.block {
   display: block;
   margin-bottom: 10px;
 }
 @media screen and (max-width: 760px) {
-  #journalDetail .journal_detail .post_body a.block {
+  .page-journal-detail .journal_detail .post_body a.block {
     display: block;
     margin-bottom: 15px;
   }
 }
-#journalDetail .journal_detail .post_body a img {
+.page-journal-detail .journal_detail .post_body a img {
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-#journalDetail .journal_detail .post_body a img:hover {
+.page-journal-detail .journal_detail .post_body a img:hover {
   opacity: 0.75;
 }
-#journalDetail .journal_detail .post_body .sns_wrap a {
+.page-journal-detail .journal_detail .post_body .sns_wrap a {
   display: block;
   color: #1B4E37 !important;
   padding: 5px 0 5px 30px;
   margin-bottom: 5px;
   position: relative;
 }
-#journalDetail .journal_detail .post_body .sns_wrap a::after {
+.page-journal-detail .journal_detail .post_body .sns_wrap a::after {
   display: block;
   content: "";
   position: absolute;
@@ -18690,101 +18689,135 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-position: center center;
 }
-#journalDetail .journal_detail .post_body .sns_wrap a.ig::after {
+.page-journal-detail .journal_detail .post_body .sns_wrap a.ig::after {
   background-size: 17px;
   background-image: url(../img/journal/icon_ig.svg);
 }
-#journalDetail .journal_detail .post_body .sns_wrap a.fb::after {
+.page-journal-detail .journal_detail .post_body .sns_wrap a.fb::after {
   background-size: 10px;
   background-image: url(../img/journal/icon_fb.svg);
 }
-#journalDetail .journal_detail .post_body .sns_wrap a.tw::after {
+.page-journal-detail .journal_detail .post_body .sns_wrap a.tw::after {
   background-size: 18px;
   background-image: url(../img/journal/icon_tw.svg);
 }
-#journalDetail .journal_detail .post_body .flavor_chart {
+.page-journal-detail .journal_detail .post_body .flavor_chart {
   margin-bottom: 10px;
 }
-#journalDetail .journal_detail .post_body .deocrate {
+.page-journal-detail .journal_detail .post_body .deocrate {
   background: #f8f8f8;
   padding: 10px;
   line-height: 1;
   margin-bottom: 5px;
 }
-#journalDetail .journal_detail .post_body hr {
+.page-journal-detail .journal_detail .post_body hr {
   border: none;
   margin: 0;
   padding: 0;
   height: 15px;
 }
-#journalDetail .journal_detail .post_body img {
+.page-journal-detail .journal_detail .post_body img {
   max-width: 100%;
   height: auto;
   display: block;
   margin: 20px 0;
 }
-#journalDetail .journal_detail .post_body blockquote {
+.page-journal-detail .journal_detail .post_body blockquote {
   padding-left: 25px;
   border-left: 4px solid #e0e0e0;
   color: #666;
 }
-#journalDetail .journal_detail .post_body .article_section {
+.page-journal-detail .journal_detail .post_body .article_section {
   margin-bottom: 40px;
 }
-#journalDetail .journal_detail .post_body .item_wrap {
+.page-journal-detail .journal_detail .post_body .item_wrap {
   margin-bottom: 30px;
 }
-#journalDetail .journal_detail .post_body .item_wrap img {
+.page-journal-detail .journal_detail .post_body .item_wrap img {
   margin: 20px 0 10px;
 }
-#journalDetail .journal_detail .post_share p {
+.page-journal-detail .journal_detail .post_share {
+  padding-top: 60px;
+  border-top: 1px solid #F0F0F0;
+}
+@media screen and (max-width: 720px) {
+  .page-journal-detail .journal_detail .post_share {
+    padding-top: 40px;
+  }
+}
+.page-journal-detail .journal_detail .post_share p {
   text-align: center;
   font-size: 14px;
   color: #111;
 }
-#journalDetail .journal_detail .post_share ul {
+.page-journal-detail .journal_detail .post_share ul {
   text-align: center;
   margin-top: 35px;
 }
-#journalDetail .journal_detail .post_share ul li {
+.page-journal-detail .journal_detail .post_share ul li {
   display: inline-block;
   margin: 0 8px;
 }
-#journalDetail .journal_detail .post_share ul li a {
+.page-journal-detail .journal_detail .post_share ul li a {
   display: block;
   width: 66px;
   height: 66px;
 }
-#journalDetail .journal_detail .post_share ul li a img {
+.page-journal-detail .journal_detail .post_share ul li a img {
   display: block;
   width: 66px;
   height: 66px;
 }
-#journalDetail a {
+.page-journal-detail .comp-product-list {
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 720px) {
+  .page-journal-detail .comp-product-list {
+    margin-top: 60px;
+  }
+}
+.page-journal-detail .comp-product-list .journal_product_ttl {
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
+  text-align: center;
+  font-size: 3.6rem;
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 720px) {
+  .page-journal-detail .comp-product-list .journal_product_ttl {
+    font-size: 3.2rem;
+    margin-bottom: 40px;
+  }
+}
+.page-journal-detail a {
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-#journalDetail a:hover {
+.page-journal-detail a:hover {
   opacity: 0.7 !important;
 }
-#journalDetail .related_posts {
+.page-journal-detail .related_posts {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
 }
 @media screen and (max-width: 980px) {
-  #journalDetail .related_posts {
+  .page-journal-detail .related_posts {
     max-width: 86vw;
   }
 }
-#journalDetail .related_posts h2 {
+.page-journal-detail .related_posts h2 {
   font-size: 28px;
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: 25px;
   margin-bottom: 50px;
 }
-#journalDetail .related_products {
+.page-journal-detail .related_products {
   background-color: #F9F9F9;
   border-top: 1px solid #F1F1F1;
   border-bottom: 1px solid #F1F1F1;
@@ -18792,45 +18825,45 @@ body.loaded #loading {
   margin-top: 100px;
   padding: 100px 0;
 }
-#journalDetail .related_products h2 {
+.page-journal-detail .related_products h2 {
   font-size: 28px;
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: 25px;
   margin-bottom: 50px;
 }
-#journalDetail .related_products .section_inner {
+.page-journal-detail .related_products .section_inner {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
 }
-#journalDetail .related_products .section_inner .products {
+.page-journal-detail .related_products .section_inner .products {
   display: block;
 }
-#journalDetail .related_products .section_inner .products ul {
+.page-journal-detail .related_products .section_inner .products ul {
   display: block;
 }
-#journalDetail .related_products .section_inner .product_slider {
+.page-journal-detail .related_products .section_inner .product_slider {
   margin: 0 -20px;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item {
   width: 33.3333%;
   float: left;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner {
   padding: 0 20px;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_category {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_category {
   padding-bottom: 10px;
   margin-bottom: 15px;
   border-bottom: 2px solid #00381F;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_category a {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_category a {
   color: #00381F;
   font-size: 17px;
   font-weight: bold;
   line-height: 1;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_price {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_price {
   display: block;
   line-height: 1;
   padding-bottom: 20px;
@@ -18838,7 +18871,7 @@ body.loaded #loading {
   margin-bottom: 20px;
   color: #333;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_img {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_img {
   height: 190px;
   line-height: 190px;
   overflow: hidden;
@@ -18846,34 +18879,34 @@ body.loaded #loading {
   background-color: #fff;
   vertical-align: middle;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_img a {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_img a {
   display: block;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_img img {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_img img {
   display: inline-block;
   width: 100%;
   height: auto;
   vertical-align: middle;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_title {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_title {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_title a {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_title a {
   font-size: 24px;
   color: #00381F;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .arrow_link {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .arrow_link {
   display: block;
   font-size: 14px;
   color: #00381f;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .arrow_link .link_wrap {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .arrow_link .link_wrap {
   display: inline-block;
   position: relative;
   padding-right: 40px;
 }
-#journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .arrow_link .link_wrap .arrow {
+.page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .arrow_link .link_wrap .arrow {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -18888,39 +18921,45 @@ body.loaded #loading {
   background-repeat: no-repeat;
   background-size: 24px;
 }
-#journalDetail .related_products .section_inner .product_slider .slick-dots {
+.page-journal-detail .related_products .section_inner .product_slider .slick-dots {
   position: relative !important;
   top: auto !important;
   left: auto !important;
   margin-top: 40px;
 }
-#journalDetail .related_products .section_inner .product_slider .slick-dots li {
+.page-journal-detail .related_products .section_inner .product_slider .slick-dots li {
   margin: 0 2px !important;
 }
 
 @media screen and (max-width: 1150px) {
-  #journalDetail .main {
+  .page-journal-detail {
+    margin-bottom: 60px;
+  }
+  .page-journal-detail .main {
     width: 100%;
     height: 48vw;
   }
 }
 @media screen and (max-width: 750px) {
-  #journalDetail .main {
+  .page-journal-detail {
+    margin-bottom: 0px;
+  }
+  .page-journal-detail .main {
     height: 54vw;
   }
-  #journalDetail .journal_detail {
+  .page-journal-detail .journal_detail {
     max-width: 100%;
     width: 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 0 30px;
   }
-  #journalDetail .journal_detail .post_head {
+  .page-journal-detail .journal_detail .post_head {
     margin-top: 35px;
     margin-bottom: 35px;
     padding-bottom: 35px;
   }
-  #journalDetail .journal_detail .post_head .post_date {
+  .page-journal-detail .journal_detail .post_head .post_date {
     position: relative;
     left: auto;
     top: auto;
@@ -18928,19 +18967,19 @@ body.loaded #loading {
             transform: rotate(0);
     margin-bottom: 15px;
   }
-  #journalDetail .journal_detail .post_head .post_title {
+  .page-journal-detail .journal_detail .post_head .post_title {
     font-size: 24px;
     line-height: 36px;
   }
-  #journalDetail .journal_detail .post_body {
-    padding-bottom: 40px;
+  .page-journal-detail .journal_detail .post_body {
+    margin-bottom: 40px;
   }
-  #journalDetail .journal_detail .post_body h1, #journalDetail .journal_detail .post_body h2 {
+  .page-journal-detail .journal_detail .post_body h1, .page-journal-detail .journal_detail .post_body h2 {
     font-size: 23px;
     line-height: 32px;
     margin-bottom: 22px;
   }
-  #journalDetail .journal_detail .post_body h3, #journalDetail .journal_detail .post_body h4 {
+  .page-journal-detail .journal_detail .post_body h3, .page-journal-detail .journal_detail .post_body h4 {
     font-size: 18px;
     line-height: 28px;
     margin-bottom: 18px;
@@ -18948,63 +18987,63 @@ body.loaded #loading {
     border-bottom: 1px solid #f0f0f0;
     padding-bottom: 7px;
   }
-  #journalDetail .related_posts {
+  .page-journal-detail .related_posts {
     max-width: 100%;
     width: 100%;
     padding: 50px 0;
     margin-top: 0;
   }
-  #journalDetail .related_posts h2 {
+  .page-journal-detail .related_posts h2 {
     font-size: 22px;
     margin: 0 30px;
     margin-bottom: 25px;
     padding-bottom: 15px;
   }
-  #journalDetail .related_products {
+  .page-journal-detail .related_products {
     padding: 50px 0 35px 0;
     margin-top: 70px;
   }
-  #journalDetail .related_products h2 {
+  .page-journal-detail .related_products h2 {
     font-size: 22px;
     margin: 0 30px;
     margin-bottom: 45px;
     padding-bottom: 15px;
   }
-  #journalDetail .related_products .section_inner {
+  .page-journal-detail .related_products .section_inner {
     max-width: 100%;
     width: 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 0 5px;
   }
-  #journalDetail .related_products .section_inner .product_slider {
+  .page-journal-detail .related_products .section_inner .product_slider {
     margin: 0 -5px;
   }
-  #journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner {
+  .page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner {
     padding: 0 5px;
   }
-  #journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .arrow_link {
+  .page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .arrow_link {
     display: none;
   }
-  #journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_img {
+  .page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_img {
     height: 120px;
     line-height: 120px;
   }
-  #journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_category a {
+  .page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_category a {
     font-size: 12px;
   }
-  #journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_title {
+  .page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_title {
     margin-top: 10px;
     margin-bottom: 15px;
   }
-  #journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_title a {
+  .page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_title a {
     font-size: 16px;
     line-height: 22px;
   }
-  #journalDetail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_price {
+  .page-journal-detail .related_products .section_inner .product_slider .slider_item .slider_item_inner .item_price {
     font-size: 12px;
   }
-  #journalDetail .related_products .section_inner .product_slider .slick-dots {
+  .page-journal-detail .related_products .section_inner .product_slider .slick-dots {
     display: none;
     margin-top: 0px;
   }
@@ -21490,3 +21529,55 @@ body.loaded #loading {
   }
 }
 /*アカウント登録ページ*/
+.page-404 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: calc(100vh - 60px);
+  margin-bottom: 0px;
+}
+.page-404 .section_inner_new .contact_ttl {
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
+  font-size: 3.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.page-404 .section_inner_new .contact_desc {
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 30px;
+}
+.page-404 .section_inner_new .comp-admin-button {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 980px) {
+  .page-404 .section_inner_new .contact_ttl {
+    font-size: 4.2rem;
+    margin-bottom: 25px;
+  }
+  .page-404 .section_inner_new .contact_desc {
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 40px;
+  }
+  .page-404 .section_inner_new .comp-admin-button {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
