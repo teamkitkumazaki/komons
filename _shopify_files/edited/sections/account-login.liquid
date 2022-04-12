@@ -1,0 +1,48 @@
+<article id="login" class="page-admin-login">
+	<section class="section-login">
+    <div class="section_inner_new">
+      <div class="admin_wrapper">
+        <div class="comp-admin-title">
+          <hgroup>
+            <h1 class="page_ttl en">LOGIN</h1>
+            <span class="page_subttl ja">ログイン</span>
+          </hgroup>
+        </div>
+				<div class="form_width">
+					{%- form 'customer_login', novalidate: 'novalidate' -%}
+					{%- if form.errors -%}
+          <div class="comp-form-message">
+            <div class="message_inner error">
+              <p>{{ form.errors | default_errors }}</p>
+            </div>
+          </div>
+					{%- endif -%}
+					<div class="comp-admin-form">
+						<div id="loginWrap" class="form_item">
+							<label>メールアドレス</label>
+							<div class="form_wrap">
+								<input type="email" name="customer[email]" id="CustomerEmail" class="admin" autocomplete="email" autocorrect="off" autocapitalize="off" placeholder="info@komons-japan.com">
+							</div>
+						</div>
+						{%- if form.password_needed -%}
+						<div class="form_item">
+							<label>パスワード</label>
+							<div class="form_wrap">
+							  <input type="password" value="" name="customer[password]" id="CustomerPassword" autocomplete="current-password" class="admin" placeholder="">
+                <button id="resetPassword" class="switch_button">パスワードをお忘れですか？</button>
+              </div>
+						</div>
+						{% endif %}
+						</div><!-- comp-admin-form -->
+						<div id="submitButton" class="comp-admin-button">
+						<input type="submit" class="btn" value="ログイン">
+						</div>
+						<div class="footer_button">
+							<a href="{{ routes.account_register_url }}" class="back_button"><span>アカウントの新規作成</span></a>
+						</div>
+					{%- endform -%}
+				</div><!-- form_width -->
+			</div><!-- admin_wrapper -->
+		</div><!-- section_inner_new -->
+	</section>
+</article>

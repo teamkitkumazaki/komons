@@ -100,6 +100,7 @@
 @import 'component/cart/comp-amount-wrap.scss';
 @import 'component/cart/comp-option-setting.scss';
 @import 'component/cart/comp-browse-history.scss';
+@import 'component/cart/comp-submit-loader.scss';
 
 
 /* 管理画面 */
@@ -132,3 +133,4 @@
 @import 'page/challenge.scss'; /*アカウント登録ページ*/
 @import 'page/cart.scss'; /*アカウント登録ページ*/
 @import 'page/404.scss';
+@import 'page/login.scss';

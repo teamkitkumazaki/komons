@@ -1,0 +1,55 @@
+.page-admin-login{
+  padding-top: 120px;
+  margin-bottom: 60px;
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
+  @media screen and (min-width: 720px){
+    margin-bottom: 80px;
+  }
+  @media screen and (min-width: 1100px){
+    padding-top: 160px;
+    margin-bottom: 120px;
+  }
+  .comp-admin-title{
+    margin-bottom: 40px;
+    @media screen and (min-width: 720px){
+      margin-bottom: 60px;
+    }
+  }
+  .form_width{
+    max-width: 520px;
+    margin: 0 auto;
+    .comp-admin-button{
+      margin-top: 30px;
+      @media screen and (min-width: 720px){
+        margin-top: 40px;
+      }
+    }
+    .footer_button{
+      margin-top: 25px;
+      text-align: center;
+      margin: 25px auto 0;
+      a, button{
+        display: inline-block;
+        text-align: center;
+        color: $black02;
+        font-weight: 300;
+        font-family: inherit;
+        cursor: pointer;
+        appearance: none;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid $black02;
+        margin: 0;
+        padding-bottom: 2px;
+        font-size: 1.5rem;
+        transition: color .3s, border .3s;
+        &:hover{
+          color: $hoverColor;
+          border-bottom: 1px solid $hoverColor;
+        }
+      }
+    }
+  }
+}

@@ -3534,9 +3534,6 @@ body.loaded #loading {
   .comp-list-cart-button .gift_detail_button:hover span::before {
     right: 0px;
   }
-  .comp-list-cart-button .cartin_button {
-    margin-bottom: 15px;
-  }
   .comp-list-cart-button .cartin_button button {
     padding: 14px 0;
     font-size: 12px;
@@ -8834,7 +8831,7 @@ body.loaded #loading {
   width: calc(50% - 7px);
   margin-bottom: 20px;
   position: relative;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
 }
 .comp-product-list .item_wrapper .item_box .img_wrap {
   margin-bottom: 20px;
@@ -13500,6 +13497,72 @@ body.loaded #loading {
     width: calc(56vw * 4);
   }
 }
+.comp-submit-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 2000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.comp-submit-loader.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.comp-submit-loader .height_adjust {
+  width: 1px;
+  height: 100vh;
+}
+.comp-submit-loader .loader_inner {
+  width: calc(100% - 2px);
+  margin-right: 1px;
+  text-align: center;
+}
+.comp-submit-loader .loader_inner .loader {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0 auto 40px;
+  background-size: contain;
+  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/common/loading.svg);
+}
+.comp-submit-loader .loader_inner .loader_txt {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 720px) {
+  .comp-submit-loader .loader_inner .loader {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 40px;
+    background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/common/loading.svg);
+  }
+  .comp-submit-loader .loader_inner .loader_txt {
+    font-size: 3.6vw;
+    letter-spacing: 0.02em;
+  }
+}
 /* 管理画面 */
 .comp-admin-title {
   text-align: center;
@@ -13510,6 +13573,13 @@ body.loaded #loading {
   font-weight: normal;
   letter-spacing: 0.06em;
   margin-bottom: 15px;
+}
+.comp-admin-title .page_ttl.en {
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 3rem;
 }
 .comp-admin-title .page_subttl {
   font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
@@ -13586,6 +13656,13 @@ body.loaded #loading {
   .comp-admin-title .page_ttl {
     font-size: 3rem;
     margin-bottom: 20px;
+  }
+  .comp-admin-title .page_ttl.en {
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 3.6rem;
   }
 }
 .comp-admin-subttl {
@@ -13809,6 +13886,7 @@ body.loaded #loading {
   text-align: right;
   font-size: 1.3rem;
   color: #00381f;
+  font-family: inherit;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -13870,6 +13948,13 @@ body.loaded #loading {
 .comp-admin-form .form_item .form_wrap input[type=tel]:focus,
 .comp-admin-form .form_item .form_wrap input[type=password]:focus {
   outline: none;
+}
+.comp-admin-form .form_item .form_wrap input[type=text].admin,
+.comp-admin-form .form_item .form_wrap input[type=email].admin,
+.comp-admin-form .form_item .form_wrap input[type=tel].admin,
+.comp-admin-form .form_item .form_wrap input[type=password].admin {
+  background-color: #f4f4f4;
+  border: 1px solid #f4f4f4;
 }
 .comp-admin-form .form_item .form_wrap textarea {
   display: block;
@@ -21429,6 +21514,10 @@ body.loaded #loading {
   }
 }
 /*アカウント登録ページ*/
+.page-cart-new {
+  padding-top: 120px;
+  margin-bottom: 60px;
+}
 .page-cart-new .section-cart {
   margin-bottom: 50px;
 }
@@ -21478,6 +21567,9 @@ body.loaded #loading {
 }
 
 @media screen and (min-width: 720px) {
+  .page-cart-new {
+    margin-bottom: 80px;
+  }
   .page-cart-new .section-cart .cart_flex .item_wrap .anker_wrap {
     margin-top: 25px;
     margin-bottom: 60px;
@@ -21487,6 +21579,10 @@ body.loaded #loading {
   }
 }
 @media screen and (min-width: 1100px) {
+  .page-cart-new {
+    padding-top: 160px;
+    margin-bottom: 120px;
+  }
   .page-cart-new .section-cart {
     margin-bottom: 120px;
   }
@@ -21580,4 +21676,72 @@ body.loaded #loading {
     width: 90%;
     margin: 0 auto;
   }
+}
+.page-admin-login {
+  padding-top: 120px;
+  margin-bottom: 60px;
+  min-height: calc(100vh - 60px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media screen and (min-width: 720px) {
+  .page-admin-login {
+    margin-bottom: 80px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .page-admin-login {
+    padding-top: 160px;
+    margin-bottom: 120px;
+  }
+}
+.page-admin-login .comp-admin-title {
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 720px) {
+  .page-admin-login .comp-admin-title {
+    margin-bottom: 60px;
+  }
+}
+.page-admin-login .form_width {
+  max-width: 520px;
+  margin: 0 auto;
+}
+.page-admin-login .form_width .comp-admin-button {
+  margin-top: 30px;
+}
+@media screen and (min-width: 720px) {
+  .page-admin-login .form_width .comp-admin-button {
+    margin-top: 40px;
+  }
+}
+.page-admin-login .form_width .footer_button {
+  margin-top: 25px;
+  text-align: center;
+  margin: 25px auto 0;
+}
+.page-admin-login .form_width .footer_button a, .page-admin-login .form_width .footer_button button {
+  display: inline-block;
+  text-align: center;
+  color: #00381f;
+  font-weight: 300;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  border-bottom: 1px solid #00381f;
+  margin: 0;
+  padding-bottom: 2px;
+  font-size: 1.5rem;
+  -webkit-transition: color 0.3s, border 0.3s;
+  transition: color 0.3s, border 0.3s;
+}
+.page-admin-login .form_width .footer_button a:hover, .page-admin-login .form_width .footer_button button:hover {
+  color: #2f281e;
+  border-bottom: 1px solid #2f281e;
 }

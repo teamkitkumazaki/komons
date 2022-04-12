@@ -1320,7 +1320,7 @@ $(function() {
   if (document.getElementById('optionPop')) {
     setOptionValue();
   }
-  
+
   //商品一覧 商品をもっとみるボタン
   function listReadMore(){
     console.log('listReadMore');
@@ -1341,7 +1341,7 @@ $(function() {
           },
       });
     }
-    
+
     function init(){
       readMoreButton.on({
         'click': function() {
@@ -1352,13 +1352,71 @@ $(function() {
         }
       });
     }
-    
+
     init();
-    
+
   }
-  
+
   if (document.getElementById('itemList')) {
     listReadMore();
+  }
+
+  /* ログインページの切り替えレイアウト */
+  function switchLoginFunction(){
+    var loginLayout = $('#login');
+    var resetLayout = $('#reset');
+    var resetPassword = $('#resetPassword');
+    var loginBack = $('#loginBack');
+    var urlHash = location.hash;
+
+    function switchLogin(){
+      $('#contentSwitcher').animate({opacity:0}, 400, function(){
+          loginLayout.css({'display': 'block'});
+          resetLayout.css({'display': 'none'});
+          $("#contentSwitcher").css({'display': 'block'});
+          setTimeout(function() {
+            $("#contentSwitcher").animate({opacity: 1}, 400);
+          }, 50);
+      });
+    }
+
+    function switchReset(){
+      $('#contentSwitcher').animate({opacity:0}, 400, function(){
+          loginLayout.css({'display': 'none'});
+          resetLayout.css({'display': 'block'});
+          $("#contentSwitcher").css({'display': 'block'});
+          setTimeout(function() {
+            $("#contentSwitcher").animate({opacity: 1}, 400);
+          }, 50);
+      });
+    }
+
+    function init(){
+      if(urlHash.indexOf('recover') > -1){
+        switchReset();
+      }
+      resetPassword.on({
+        'click': function() {
+          event.preventDefault();
+          switchReset();
+        }
+      });
+
+      loginBack.on({
+        'click': function() {
+          event.preventDefault();
+          switchLogin();
+        }
+      });
+
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('contentSwitcher')) {
+    switchLoginFunction();
   }
 
 
