@@ -1,58 +1,105 @@
+{%- assign limit = 5 -%}
+{%- assign orderSize = customer.orders.size | minus : 1 -%}
+{%- assign ordernum = orderSize | divided_by : limit -%}
+{%- assign pagenum = ordernum | plus: 1 -%}
+{% paginate customer.orders by limit %}
 <article id="mypage" class="page-mypage">
-	<div class="section_inner">
-		<div class="comp-admin-title inMypage">
-		<div class="text_inner">
-			<h1 class="title_ja">マイページ</h1>
-			<span class="title_en">My Page</span>
-		</div>
-		</div>
-		<div class="comp-admin-bread">
-			<div class="bread_wrap">
-				{{ 'layout.customer.log_out' | t | customer_logout_link }}
-				<span class="current">マイページトップ</span>
-			</div><!-- bread_wrap -->
-		</div><!-- comp-admin-bread -->
-		<div class="comp-flex-wrap">
-			<div class="flex_left">
-				<h2 class="sub_ttl">ご注文/定期購入履歴</h2>
-				<div class="comp-order-list">
-				{% paginate customer.orders by 20 %}
-				{%- if customer.orders.size != 0 -%}
-				{%- for order in customer.orders -%}
-				<div class="order_item">
-					<div class="order_bar">
-						<div class="bar_text">
-							<span class="title">ご注文番号</span>
-							<a href="{{ order.customer_url }}">{{ order.name }}</a>
-							<span class="price">お会計金額：{{ order.total_price | money_without_currency }}円(税込)</span>
+	<section class="section-admin">
+		<div class="section_inner_new">
+			<div class="admin_wrapper">
+				<div class="comp-admin-title">
+					<hgroup>
+						<h1 class="page_ttl en">MYPAGE</h1>
+						<span class="page_subttl ja">マイページ</span>
+					</hgroup>
+					<div class="page_bread">
+						<div class="link_wrap">
+							<a href="{{ routes.account_logout_url }}">ログアウト</a>
 						</div>
-							<a href="{{ order.customer_url }}" class="circle">
-							<span class="circle-inner"></span></a>
-						</div>
-						<div class="order_condition">
-							<span class="time">ご注文日時：{{ order.created_at | time_tag: format: 'basic' }}</span>
-							<span class="payment">お支払い状況：{{ order.financial_status_label }}</span>
-							<span class="condition">配送状況：{{ order.fulfillment_status_label }}</span>
-						</div>
-				</div><!-- order_item -->
-				{%- endfor -%}
-				{%- else -%}
-				<p>{{ 'customer.orders.none' | t }}</p>
-				{%- endif -%}
-				{% endpaginate %}
-				</div><!-- comp-order-list -->
-			</div><!-- flex_left -->
-			<div class="flex_right">
-			<div class="comp-account-info">
-				<div class="account_item">
-					<h2 class="account_ttl">アカウント情報</h2>
-					<div class="description"><span>{{ customer.first_name }} {{ customer.last_name }}</span>〒{{ customer.default_address.zip }}<br>{{ customer.default_address.province }} {{ customer.default_address.city }}<br>{{ customer.default_address.street }}</div>
+					</div>
 				</div>
-				<a class="edit_button" href="/account/addresses">配送先情報の追加・変更</a>
-			</div><!-- comp-account-info -->
-		</div><!-- flex_right -->
-	</div><!-- comp-flex-wrap -->
-</article>
-<script>
-	$('body').addClass('fixed');
-</script>
+				<div class="admin_flex">
+					<div class="admin_left">
+					<div class="comp-admin-subttl">
+						<h2 class="ttl">ご注文履歴</h2>
+					</div>
+					{%- if customer.orders.size != 0 -%}
+					<div id="orderList" class="comp-order-list">
+					{%- for order in customer.orders -%}
+						<div class="order_item">
+							<a href="{{ order.customer_url }}" class="order_bar">
+								<span class="bar_text">
+									<span class="title">ご注文番号:</span>
+									<span class="order_num">{{ order.name }}</span>
+									<span class="price">お会計金額：{{ order.total_price | money_without_currency }}円(税込)</span>
+								</span>
+								<span class="circle">
+									<span class="circle-inner"></span>
+								</span>
+							</a>
+							<div class="order_condition">
+								<span class="time">ご注文日時：{{ order.created_at | time_tag: format: 'basic' }}</span>
+								<span class="payment">お支払い状況：{{ order.financial_status_label }}</span>
+								<span class="condition">配送状況：{{ order.fulfillment_status_label }}</span>
+							</div>
+						</div><!-- order_item -->
+						{%- endfor -%}
+					</div><!-- comp-order-list -->
+					{%- if pagenum > 1 -%}
+					{%- assign next = paginate.current_page | plus: 1 -%}
+					{%- assign prev = paginate.current_page | minus: 1 -%}
+					<div class="wp-pagenavi_area">
+						<div class="wp-pagenavi" role="navigation">
+							<span class="pages">{{paginate.current_page}} / {{pagenum}}</span>
+							{%- if prev > 0 -%}
+								<a class="previouspostslink" href="{{ shop.url }}/account?page={{prev}}">&lt;</a>
+							{%- endif -%}
+							{% for i in (1..pagenum) %}
+								{%- if i == paginate.current_page -%}
+								<span aria-current="page" class="current">{{i}}</span>
+								{%- else -%}
+								<a class="page" href="/account?page={{ i }}">{{i}}</a>
+								{%- endif -%}
+							{% endfor %}
+							{%- if paginate.current_page < pagenum -%}
+								<a class="nextpostslink" rel="next" href="/account?page={{next}}">&gt;</a>
+							{%- endif -%}
+						</div>
+					</div><!--wp-pagenavi_area-->
+					{%- endif -%}
+					{%- else -%}
+					<div class="comp-no-entry">
+						<p>お客様のご注文履歴はありません</p>
+					 </div>
+					{%- endif -%}
+					</div><!-- admin_left -->
+						<div class="comp-side-wrap bg">
+							<div class="comp-admin-subttl">
+								<h2 class="ttl">アカウント情報</h2>
+							</div>
+							<div class="comp-user-address">
+								<div class="address_item">
+									<p class="username ">{{ customer.last_name }}{{ customer.first_name }}</p>
+									<div class="address">
+									{%- if customer.default_address.zip != blank -%}
+										<p>
+											<span>〒{{ customer.default_address.zip }}</span>
+											<span>{{ customer.default_address.province }} {{ customer.default_address.city }}</span>
+											<span>{{ customer.default_address.street }}</span>
+										</p>
+									{%- else -%}
+										<p>住所情報未登録</p>
+									{%- endif -%}
+									</div>
+								</div>
+							</div>
+							<div class="comp-admin-button mt">
+								<a href="{{ routes.account_addresses_url }}" class=" "><span class=" ">配送先情報の追加・変更</span></a>
+							</div>
+						</div>
+					</div>
+				</div><!-- admin_wrapper -->
+			</div><!-- section_inner_new -->
+		</section>
+	</article>
+{% endpaginate %}

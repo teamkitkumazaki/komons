@@ -14071,6 +14071,21 @@ body.loaded #loading {
   font-size: 1.4rem;
 }
 
+.comp-user-address .address_item .username {
+  display: block;
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.comp-user-address .address_item .address p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+.comp-user-address .address_item .address p span {
+  display: block;
+}
+
 /* ########## ページ別レイアウト ########## */
 #index #main {
   width: 100%;
@@ -21744,4 +21759,53 @@ body.loaded #loading {
 .page-admin-login .form_width .footer_button a:hover, .page-admin-login .form_width .footer_button button:hover {
   color: #2f281e;
   border-bottom: 1px solid #2f281e;
+}
+
+.page-mypage {
+  padding-top: 120px;
+}
+@media screen and (min-width: 1100px) {
+  .page-mypage {
+    padding-top: 160px;
+    margin-bottom: 120px;
+  }
+}
+.page-mypage .comp-admin-title {
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 720px) {
+  .page-mypage .comp-admin-title {
+    margin-bottom: 100px;
+  }
+}
+.page-mypage .admin_flex .admin_left {
+  margin-bottom: 60px;
+}
+.page-mypage .admin_flex .comp-side-wrap {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1100px) {
+  .page-mypage .admin_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .page-mypage .admin_flex .admin_left {
+    width: 60%;
+    margin-bottom: 0px;
+  }
+  .page-mypage .admin_flex .comp-side-wrap {
+    width: 33%;
+  }
 }

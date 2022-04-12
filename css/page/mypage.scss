@@ -1,0 +1,33 @@
+.page-mypage{
+  padding-top: 120px;
+  @media screen and (min-width: 1100px){
+    padding-top: 160px;
+    margin-bottom: 120px;
+  }
+  .comp-admin-title{
+    margin-bottom: 60px;
+    @media screen and (min-width: 720px){
+      margin-bottom: 100px;
+    }
+  }
+  .admin_flex{
+    .admin_left{
+      margin-bottom: 60px;
+    }
+    .comp-side-wrap{
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: 1100px){
+      @include flexSet;
+      justify-content: space-between;
+      align-items: flex-start;
+      .admin_left{
+        width: 60%;
+        margin-bottom: 0px;
+      }
+      .comp-side-wrap{
+        width: 33%;
+      }
+    }
+  }
+}
