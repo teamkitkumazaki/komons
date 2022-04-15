@@ -43,6 +43,17 @@ h1,h2,h3,h4,h5{
 .section_inner_new{
 	@include wrapper;
 }
+#huckleberry-subscription-customer-portal{
+	padding-top: 60px;
+}
+.huckleberry-subscription-list-color{
+	@include waku;
+	margin: 0px auto !important;
+	font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
+	h1,h2,h3,h4,h5,p{
+		font-weight: normal;
+	}
+}
 .section_ttl {
 	@include wrapper;
 	padding: 130px 0 70px;

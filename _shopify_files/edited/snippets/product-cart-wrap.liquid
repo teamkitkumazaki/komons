@@ -20,6 +20,7 @@
         </span>
       </div><!-- cart_item -->
     {%- else -%}
+    {% render 'huckleberry-subscription-widget-container' %}
     {%- if product.type != "upcoming" and product.metafields.custom_fields["stock_state"] != 1 -%}
     {%- assign index = 0 -%}
     <select name="id" id="ProductSelect-product-template" style="display: none; opacity:0; height:0; overflow: hidden;">

@@ -23,6 +23,7 @@
 					<div class="comp-admin-subttl">
 						<h2 class="ttl">ご注文履歴</h2>
 					</div>
+					<a href="/account?hbSubscriptionPath=/">定期購買一覧</a>
 					{%- if customer.orders.size != 0 -%}
 					<div id="orderList" class="comp-order-list">
 					{%- for order in customer.orders -%}
@@ -103,3 +104,5 @@
 		</section>
 	</article>
 {% endpaginate %}
+
+{% render 'huckleberry-subscription-customer-portal' %}

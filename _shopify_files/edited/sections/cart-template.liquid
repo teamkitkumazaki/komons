@@ -43,6 +43,7 @@
               {%- endfor -%}
             </div>
         </div><!-- comp-cart-item-list-->
+        {% render 'huckleberry-subscription-cart', item: item %}
         {%- if noshiLength == 0 and messageLength == 0 -%}
         <div class="comp-amount-wrap left">
         {%- else -%}

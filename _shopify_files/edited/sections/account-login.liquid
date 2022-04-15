@@ -14,6 +14,7 @@
           <div class="comp-form-message">
             <div class="message_inner error">
               <p>{{ form.errors | default_errors }}</p>
+							<p>{{ form.errors.messages['form'] }}</p>
             </div>
           </div>
 					{%- endif -%}
