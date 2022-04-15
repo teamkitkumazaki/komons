@@ -8859,7 +8859,6 @@ body.loaded #loading {
 }
 .comp-product-list .item_wrapper .item_box .img_wrap a.soldout {
   position: relative;
-  pointer-events: none;
 }
 .comp-product-list .item_wrapper .item_box .img_wrap a.soldout::before {
   display: block;
@@ -8873,6 +8872,7 @@ body.loaded #loading {
   letter-spacing: 0.5px;
   text-align: center;
   position: absolute;
+  pointer-events: none;
   background-color: rgba(70, 70, 70, 0.8);
   width: 100%;
   height: 100%;
@@ -9072,6 +9072,17 @@ body.loaded #loading {
   }
   .comp-product-list .item_wrapper .item_box .img_wrap a:hover::after {
     opacity: 1;
+  }
+  .comp-product-list .item_wrapper .item_box .img_wrap a.soldout::after {
+    display: none;
+  }
+  .comp-product-list .item_wrapper .item_box .img_wrap a.soldout::before {
+    background-color: rgba(70, 70, 70, 0.8);
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+  }
+  .comp-product-list .item_wrapper .item_box .img_wrap a.soldout:hover::before {
+    background-color: rgba(70, 70, 70, 0.6);
   }
   .comp-product-list .item_wrapper .item_box .txt_wrap .prod_name {
     line-height: 1.4;
@@ -9364,7 +9375,6 @@ body.loaded #loading {
 }
 .comp-gift-product-list .list_item .item_thumb.soldout {
   position: relative;
-  pointer-events: none;
 }
 .comp-gift-product-list .list_item .item_thumb.soldout::before {
   display: block;
@@ -9378,6 +9388,7 @@ body.loaded #loading {
   letter-spacing: 0.5px;
   text-align: center;
   position: absolute;
+  pointer-events: none;
   background-color: rgba(70, 70, 70, 0.8);
   width: 100%;
   height: 100%;
@@ -9593,6 +9604,21 @@ body.loaded #loading {
   }
   .comp-gift-product-list .list_item .item_thumb:hover::after {
     opacity: 1;
+  }
+  .comp-gift-product-list .list_item .item_thumb.soldout {
+    position: relative;
+  }
+  .comp-gift-product-list .list_item .item_thumb.soldout::after {
+    display: none;
+  }
+  .comp-gift-product-list .list_item .item_thumb.soldout::before {
+    background-color: rgba(70, 70, 70, 0.8);
+    line-height: 18vw;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+  }
+  .comp-gift-product-list .list_item .item_thumb.soldout:hover::before {
+    background-color: rgba(70, 70, 70, 0.6);
   }
   .comp-gift-product-list .list_item .txt_wrap {
     margin-bottom: 20px;

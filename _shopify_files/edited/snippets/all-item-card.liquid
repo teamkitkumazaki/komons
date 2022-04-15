@@ -23,8 +23,10 @@
       <a href={{ product.url }}><span>詳細を見る</span></a>
     </div>
     {%- else -%}
-      {%- if product.variants.first.inventory_quantity == 0 -%}
-      <span class="soldout">在庫切れ</span>
+      {%- if product.variants.first.inventory_quantity == 0 or product.metafields.custom_fields["stock_state"] == 1 -%}
+      <div class="comp-arrow-link">
+        <a href={{ product.url }}><span>詳細を見る</span></a>
+      </div>
       {%- else -%}
       <div style="width: 100%; margin: 0 auto; padding: 0">
         <div class="cartjs_box">
