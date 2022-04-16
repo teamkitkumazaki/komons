@@ -14052,6 +14052,10 @@ body.loaded #loading {
 .comp-admin-form .form_item .form_wrap textarea:focus {
   outline: none;
 }
+.comp-admin-form .form_item .form_wrap textarea.admin {
+  background-color: #f4f4f4;
+  border: 1px solid #f4f4f4;
+}
 .comp-admin-form .form_item .form_wrap select {
   display: block;
   width: 100%;
@@ -14097,6 +14101,10 @@ body.loaded #loading {
 }
 .comp-admin-form .form_item .form_wrap select:focus {
   outline: none;
+}
+.comp-admin-form .form_item .form_wrap select.admin {
+  background-color: #f4f4f4;
+  border: 1px solid #f4f4f4;
 }
 .comp-admin-form .form_item .form_wrap .age_wrap {
   display: -webkit-box;

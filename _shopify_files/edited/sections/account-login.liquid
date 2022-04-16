@@ -13,10 +13,16 @@
 					{%- if form.errors -%}
           <div class="comp-form-message">
             <div class="message_inner error">
-              <p>{{ form.errors | default_errors }}</p>
-							<p>{{ form.errors.messages['form'] }}</p>
+              <p>{{ form.errors.messages['form'] }}</p>
             </div>
           </div>
+					{%- endif -%}
+					{%- if recover_success == true -%}
+					<div class="comp-form-message">
+						<div class="message_inner success">
+							<p>{{ 'customer.recover_password.success' | t }}</p>
+						</div>
+					</div>
 					{%- endif -%}
 					<div class="comp-admin-form">
 						<div id="loginWrap" class="form_item">
