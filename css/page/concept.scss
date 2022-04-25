@@ -4,7 +4,13 @@
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 60px;
+  }
+  .section-item-list{
     padding-bottom: 100px;
+    position: relative;
+    z-index: 50;
+    background: #fff;
   }
 
   .main {
@@ -263,7 +269,7 @@
     }
 
     .concept_inner {
-      padding: 0 30px 60px;
+      padding: 0 30px 20px;
     }
 
     .concept_links {
@@ -301,12 +307,16 @@
     padding-top: 0;
     margin: 0 auto;
 
+    .section-item-list{
+      padding-bottom: 40px;
+    }
+
     .main {
       height: 54vw;
     }
 
     .concept_inner {
-      padding: 0 0 60px;
+      padding: 0 0 0px;
     }
 
     .concept_index {

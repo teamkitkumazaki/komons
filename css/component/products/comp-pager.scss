@@ -32,6 +32,8 @@
         }
       }
       &.disabled{
+        pointer-events: none;
+        user-select: none;
         background: #f1f1f1;
         border: 1px solid #f1f1f1;
         color: #acacac;
@@ -68,10 +70,6 @@
       line-height: 43px;
       font-size: 16px;
       padding: 0 10px;
-      text-indent: 36px;
-      @media screen and (min-width: 720px){
-        text-indent: 60px;
-      }
       border-radius:0px;
       @include libre-r;
       color: #fff;
@@ -84,6 +82,7 @@
       cursor: pointer;
       -webkit-appearance: none;
       appearance: none;
+      text-indent: 2.7em;
       &:focus{
         border: 1px solid $basicGreen;
         outline: none;
@@ -95,6 +94,7 @@
 @media screen and (min-width: 720px){
   .comp-pager{
     margin-top: 50px;
+    max-width: 320px;
     .comp_inner{
       .link{
         font-size: 1.4rem;

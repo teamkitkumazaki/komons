@@ -10,6 +10,7 @@
       position: relative;
       border-radius: 5px;
       background-color: $bgColor;
+      color: inherit;
       padding: 15px 15px;
       @include flexSet;
       justify-content: space-between;
@@ -36,7 +37,6 @@
           display: block;
           font-size: 1.4rem;
           margin-top: 5px;
-          @include nijimi;
           font-weight: 400;
         }
       }
@@ -71,7 +71,7 @@
     .order_condition {
       margin: 15px 0 0;
       padding: 0 10px;
-      @include weightNormal;
+      line-height: 1.8;
       span{
         font-size: 1.3rem;
         display: block;

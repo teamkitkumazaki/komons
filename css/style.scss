@@ -100,6 +100,7 @@
 @import 'component/cart/comp-amount-wrap.scss';
 @import 'component/cart/comp-option-setting.scss';
 @import 'component/cart/comp-browse-history.scss';
+@import 'component/cart/comp-submit-loader.scss';
 
 
 /* 管理画面 */
@@ -108,6 +109,11 @@
 @import 'component/admin/comp-admin-button.scss';
 @import 'component/admin/comp-side-wrap.scss';
 @import 'component/admin/comp-admin-form.scss';
+@import 'component/admin/comp-user-address.scss';
+@import 'component/admin/comp-address-list.scss';
+@import 'component/admin/comp-order-list.scss';
+@import 'component/admin/comp-admin-hr.scss';
+@import 'component/admin/comp-form-message.scss';
 
 
 
@@ -132,3 +138,6 @@
 @import 'page/challenge.scss'; /*アカウント登録ページ*/
 @import 'page/cart.scss'; /*アカウント登録ページ*/
 @import 'page/404.scss';
+@import 'page/login.scss';
+@import 'page/mypage.scss';
+@import 'page/address.scss';

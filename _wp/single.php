@@ -39,6 +39,9 @@ $src = $image[0];
       <?php if(strstr($url,'1317')):?>
         <?php get_template_part("parts/hakka");?>
       <?php endif; ?>
+      <?php if(strstr($url,'1338')):?>
+        <?php get_template_part("parts/mothers");?>
+      <?php endif; ?>
       <div class="post_share">
         <p>この記事をシェアする</p>
         <ul>

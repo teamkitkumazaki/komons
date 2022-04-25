@@ -1,5 +1,7 @@
-footer {
+.footer {
 	padding: 100px 0 100px;
+	position: relative;
+	z-index: 10;
 	background: {
 		image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/footer_bg_ipnnmp.png");
 		size: 1000px;
@@ -188,7 +190,7 @@ footer {
 	}
 }
 @media screen and (max-width: 980px){
-	footer {
+	.footer {
 		padding: 60px 0;
 
 		.footer_wrap {
@@ -255,7 +257,7 @@ footer {
 	}
 }
 @media screen and (max-width: 750px){
-	footer {
+	.footer {
 		padding: 60px 0;
 
 		.footer_wrap {

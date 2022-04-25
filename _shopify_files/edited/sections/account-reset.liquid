@@ -1,0 +1,39 @@
+<article id="reset" class="page-admin-login" style="display: none;">
+	<section class="section-login">
+    <div class="section_inner_new">
+      <div class="admin_wrapper">
+        <div class="comp-admin-title">
+          <hgroup>
+            <h1 class="page_ttl en">PASSWORD RESET</h1>
+            <span class="page_subttl ja">パスワードの再設定</span>
+          </hgroup>
+        </div>
+				<div class="form_width">
+					{%- form 'recover_customer_password' -%}
+					{%- if form.errors -%}
+          <div class="comp-form-message">
+            <div class="message_inner error">
+							<p>{{ form.errors.messages['form'] }}</p>
+            </div>
+          </div>
+					{%- endif -%}
+					<div class="comp-admin-form">
+						<div id="loginWrap2" class="form_item">
+							<label>メールアドレス</label>
+							<div class="form_wrap">
+								<input type="email" value="" name="email" id="RecoverEmail" autocorrect="off" class="admin" autocapitalize="off" autocomplete="email" aria-invalid="true" aria-describedby="RecoverEmail-email-error" autofocus placeholder="info@komons-japan.com">
+							</div>
+						</div>
+					</div><!-- comp-admin-form -->
+					<div id="submitButton" class="comp-admin-button">
+						<input type="submit" class="btn" value="パスワードをリセット">
+					</div>
+					<div class="footer_button">
+						<button id="loginBack" class="back_button"><span>ログインに戻る</span></button>
+					</div>
+					{%- endform -%}
+				</div><!-- form_width -->
+			</div><!-- admin_wrapper -->
+		</div><!-- section_inner_new -->
+	</section>
+</article>

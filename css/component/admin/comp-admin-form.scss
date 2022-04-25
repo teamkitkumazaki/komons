@@ -83,6 +83,7 @@
         text-align: right;
         font-size: 1.3rem;
         color: $black02;
+        font-family: inherit;
         appearance: none;
         border: none;
         box-shadow: none;
@@ -116,6 +117,10 @@
         &:focus {
           outline: none;
         }
+        &.admin{
+          background-color: #f4f4f4;
+          border: 1px solid #f4f4f4;
+        }
       }
       textarea{
         display: block;
@@ -136,6 +141,10 @@
         }
         &:focus {
           outline: none;
+        }
+        &.admin{
+          background-color: #f4f4f4;
+          border: 1px solid #f4f4f4;
         }
       }
       select{
@@ -162,6 +171,10 @@
         }
         &:focus {
           outline: none;
+        }
+        &.admin{
+          background-color: #f4f4f4;
+          border: 1px solid #f4f4f4;
         }
       }
       .age_wrap{

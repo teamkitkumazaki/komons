@@ -6,11 +6,11 @@
       </div>
       <nav class="header_navigation">
         <ul>
-          <li><a href="/pages/concept">About</a></li>
-          <li><a href="/collections/all-products">Products</a></li>
-          <li><a href="/collections/gift">Gift</a></li>
-          <li><a href="/pages/gift-service">Wrapping</a></li>
-          <li><a href="/pages/faq">FAQ</a></li>
+          <li><a href="https://komons-japan.com/pages/concept">About</a></li>
+          <li><a href="https://komons-japan.com/collections/all-products">Products</a></li>
+          <li><a href="https://komons-japan.com/collections/gift">Gift</a></li>
+          <li><a href="https://komons-japan.com/pages/gift-service">Wrapping</a></li>
+          <li><a href="https://komons-japan.com/pages/faq">FAQ</a></li>
         </ul>
       </nav>
     </div>

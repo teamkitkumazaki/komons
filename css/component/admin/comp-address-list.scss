@@ -9,9 +9,8 @@
     .userinfo{
       .username{
         display: block;
-        font-size: 1.6rem;
-        font-weight: bold;
-        margin-bottom: 5px;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
       }
       .address{
         p{
@@ -25,12 +24,13 @@
     }
     .btn_wrap{
       @include flexSet;
+      justify-content: flex-start;
       margin-top: 15px;
       .btn{
         display: block;
         width: 100%;
-        @include nijimi;
         font-weight: normal;
+        font-family: inherit;
         border: none;
         transition: background .2s;
         padding: 5px 0;

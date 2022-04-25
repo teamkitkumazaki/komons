@@ -1,4 +1,10 @@
-{%- assign productId = item.url | split : "?" -%}
+{%- if request.page_type contains "customers" -%}
+{%- assign property = line_item -%}
+{%- else -%}
+{%- assign property = item -%}
+{%- endif -%}
+
+{%- assign productId = property.url | split : "?" -%}
 {%- assign productURL = productId[0] | split : "/" -%}
 {% for collection in collections %}
 {%- if collection.handle == "ajax" -%}
@@ -12,33 +18,39 @@
 {% endfor %}
 
 {%- assign variant_options = 'template ' | split: ' ' -%}
-{%- if item.product.has_only_default_variant != true -%}
-  {%- assign variant_options = item.options_with_values -%}
+{%- if property.product.has_only_default_variant != true -%}
+  {%- assign variant_options = property.options_with_values -%}
 {%- endif -%}
-{%- assign property_size = item.properties | size -%}
+{%- assign property_size = property.properties | size -%}
 
-<div class="cart_item" data-cart-item data-cart-item-key="{{ item.key }}" data-cart-item-url="{{ item.url }}" data-cart-item-title="{{ item.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ item.quantity }}">
+<div class="cart_item" data-cart-item data-cart-item-key="{{ property.key }}" data-cart-item-url="{{ property.url }}" data-cart-item-title="{{ property.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ property.quantity }}">
   <div class="img_wrap">
-    <a href="{{ item.url }}">{{ item.image.src | image_url: width: 300 | image_tag }}</a>
+    <a href="{{ property.url }}">{{ property.image.src | image_url: width: 300 | image_tag }}</a>
   </div>
   <div class="txt_wrap">
     <div class="txt_inner">
       <div class="item_info">
         <span class="category"><span class="ja">{{ category }}</span></span>
-        <a class="links" href="{{ item.url }}">{{ prodName }}{%- for option in variant_options -%}<span class="options genre {% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}</a>
-        <span class="price">{{ item.price | money_without_currency }}円(税込)</span></a>
+        <a class="links" href="{{ property.url }}">{{ prodName }}{%- for option in variant_options -%}<span class="options genre {% if property.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}</a>
+        <span class="price">{{ property.price | money_without_currency }}円(税込)</span></a>
       </div>
       <div class="controll_wrap">
-        <div class="order_lot">
-          <button class="order_button minus">-</button>
-          <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0">
-          <button class="order_button plus">+</button>
-          <button class="reload_button"></button>
-        </div>
-          <a class="cancel_button" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="text-link text-link--accent" aria-label="{{ 'cart.label.remove' | t: product: item.title }}" data-cart-remove data-role="product-remove">削除</a>
+      {%- if request.page_type contains "customers" -%}
+      <div class="fixed_lot">
+        <span class="number">{{ property.quantity }}点</span>
+      </div>
+      {%- else -%}
+      <div class="order_lot">
+        <button class="order_button minus">-</button>
+        <input type="number" name="updates[]" id="updates_{{ property.key }}" data-id="{{ property.key }}" value="{{ property.quantity }}" min="0">
+        <button class="order_button plus">+</button>
+        <button class="reload_button"></button>
+      </div>
+      <a class="cancel_button" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="text-link text-link--accent" aria-label="{{ 'cart.label.remove' | t: product: property.title }}" data-cart-remove data-role="product-remove">削除</a>
+      {%- endif -%}
       </div>
     </div><!-- txt_inner -->
-    {%- assign totalPrice = item.price | times : item.quantity -%}
+    {%- assign totalPrice = property.price | times : property.quantity -%}
     <div class="amount_price">¥{{ totalPrice | money_without_currency }}</div>
   </div><!-- txt_wrap -->
 </div><!-- cart_item -->

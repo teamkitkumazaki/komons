@@ -1,16 +1,16 @@
 .comp-user-address{
-  margin-top: -10px;
   .address_item{
     .username{
       display: block;
-      font-size: 1.6rem;
-      font-weight: bold;
-      margin-bottom: 5px;
+      font-size: 1.8rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
     }
     .address{
       p{
         font-size: 1.4rem;
         line-height: 1.8;
+        letter-spacing: 0.08em;
         span{
           display: block;
         }

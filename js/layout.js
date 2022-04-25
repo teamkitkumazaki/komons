@@ -1215,6 +1215,7 @@ $(function() {
       });
     }
 
+
     function priceRangeSort(min,max){
       target.stop().animate({ opacity: 0 }, time, function() {
         target.html('');
@@ -1320,7 +1321,7 @@ $(function() {
   if (document.getElementById('optionPop')) {
     setOptionValue();
   }
-  
+
   //商品一覧 商品をもっとみるボタン
   function listReadMore(){
     console.log('listReadMore');
@@ -1341,7 +1342,7 @@ $(function() {
           },
       });
     }
-    
+
     function init(){
       readMoreButton.on({
         'click': function() {
@@ -1352,13 +1353,158 @@ $(function() {
         }
       });
     }
-    
+
     init();
-    
+
   }
-  
+
   if (document.getElementById('itemList')) {
     listReadMore();
+  }
+
+  /* ログインページの切り替えレイアウト */
+  function switchLoginFunction(){
+    var loginLayout = $('#login');
+    var resetLayout = $('#reset');
+    var resetPassword = $('#resetPassword');
+    var loginBack = $('#loginBack');
+    var urlHash = location.hash;
+
+    function switchLogin(){
+      $('#contentSwitcher').animate({opacity:0}, 400, function(){
+          loginLayout.css({'display': 'block'});
+          resetLayout.css({'display': 'none'});
+          $("#contentSwitcher").css({'display': 'block'});
+          setTimeout(function() {
+            $("#contentSwitcher").animate({opacity: 1}, 400);
+          }, 50);
+      });
+    }
+
+    function switchReset(){
+      $('#contentSwitcher').animate({opacity:0}, 400, function(){
+          loginLayout.css({'display': 'none'});
+          resetLayout.css({'display': 'block'});
+          $("#contentSwitcher").css({'display': 'block'});
+          setTimeout(function() {
+            $("#contentSwitcher").animate({opacity: 1}, 400);
+          }, 50);
+      });
+    }
+
+    function init(){
+      if(urlHash.indexOf('recover') > -1){
+        switchReset();
+      }
+      resetPassword.on({
+        'click': function() {
+          event.preventDefault();
+          switchReset();
+        }
+      });
+
+      loginBack.on({
+        'click': function() {
+          event.preventDefault();
+          switchLogin();
+        }
+      });
+
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('contentSwitcher')) {
+    switchLoginFunction();
+  }
+
+  /* 住所一覧ページの切り替えレイアウト */
+  function switchAddressFunction(){
+    var addressContentWrap = $('#addressContentWrap');
+    var wrapperList = $('#wrapperList');
+    var wrapperAdd = $('#wrapperAdd');
+    var addressList = $('#addressList');
+    var addressEdit = $('#addressEdit');
+    var adminBar = $('#adminBar');
+    var editbutton = [];
+    var editId = [];
+
+
+    function switchList(){
+      adminBar.removeClass('mode-edit').addClass('mode-list');
+      window.scroll({top: 0, behavior: 'smooth'});
+      addressContentWrap.animate({opacity:0}, 400, function(){
+        $('.content_wrapper').css({'display': 'none'});
+        wrapperList.css({'display': 'block'});
+        addressContentWrap.css({'display': 'block'});
+        setTimeout(function() {
+          addressContentWrap.animate({opacity: 1}, 400);
+        }, 50);
+      });
+    }
+
+    function switchAdd(){
+      adminBar.addClass('mode-edit').removeClass('mode-list');
+      window.scroll({top: 0, behavior: 'smooth'});
+      addressContentWrap.animate({opacity:0}, 400, function(){
+          $('.content_wrapper').css({'display': 'none'});
+          wrapperAdd.css({'display': 'block'});
+          addressContentWrap.css({'display': 'block'});
+          setTimeout(function() {
+            addressContentWrap.animate({opacity: 1}, 400);
+          }, 50);
+      });
+    }
+
+    function switchEdit(e){
+      adminBar.addClass('mode-edit').removeClass('mode-list');
+      window.scroll({top: 0, behavior: 'smooth'});
+      addressContentWrap.animate({opacity:0}, 400, function(){
+          $('.content_wrapper').css({'display': 'none'});
+          $('#' + editId[e]).css({'display': 'block'});
+          addressContentWrap.css({'display': 'block'});
+          setTimeout(function() {
+            addressContentWrap.animate({opacity: 1}, 400);
+          }, 50);
+      });
+    }
+
+    function init(){
+      addressList.on({
+        'click': function() {
+          event.preventDefault();
+          switchList();
+        }
+      });
+
+      addressEdit.on({
+        'click': function() {
+          event.preventDefault();
+          switchAdd();
+        }
+      });
+
+      $.each($('article').find('.btn_edit'), function(index) {
+        editbutton[index] = $(this);
+        editId[index] = $(this).attr('formId');
+        editbutton[index].on({
+          'click': function() {
+            console.log(editId[index]);
+            switchEdit(index);
+          }
+        });
+      });
+
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('addressContentWrap')) {
+    switchAddressFunction();
   }
 
 
