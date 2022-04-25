@@ -23,7 +23,6 @@
 					<div class="comp-admin-subttl">
 						<h2 class="ttl">ご注文履歴</h2>
 					</div>
-					<a href="/account?hbSubscriptionPath=/">定期購買一覧</a>
 					{%- if customer.orders.size != 0 -%}
 					<div id="orderList" class="comp-order-list">
 					{%- for order in customer.orders -%}
@@ -49,24 +48,29 @@
 					{%- if pagenum > 1 -%}
 					{%- assign next = paginate.current_page | plus: 1 -%}
 					{%- assign prev = paginate.current_page | minus: 1 -%}
-					<div class="wp-pagenavi_area">
-						<div class="wp-pagenavi" role="navigation">
-							<span class="pages">{{paginate.current_page}} / {{pagenum}}</span>
-							{%- if prev > 0 -%}
-								<a class="previouspostslink" href="{{ shop.url }}/account?page={{prev}}">&lt;</a>
+					<div class="comp-pager">
+						<div class="comp_inner">
+						{%- if prev > 0 -%}
+							<a class="link previous" href="{{ shop.url }}/account?page={{prev}}">前へ</a>
+							{%- else -%}
+							<a class="link previous disabled" href="{{ shop.url }}/account?page={{prev}}">前へ</a>
+						{%- endif -%}
+						<select class="pjax-select" name="pager" onchange="location.href=value;">
+						{% for i in (1..pagenum) %}
+							{%- if i == paginate.current_page -%}
+								<option selected="selected" value="{{ shop.url }}/account?page={{i}}">{{i}}/{{pagenum}}</option>
+							{%- else -%}
+								<option value="{{ shop.url }}/account?page={{i}}">{{i}}/{{pagenum}}</option>
 							{%- endif -%}
-							{% for i in (1..pagenum) %}
-								{%- if i == paginate.current_page -%}
-								<span aria-current="page" class="current">{{i}}</span>
-								{%- else -%}
-								<a class="page" href="/account?page={{ i }}">{{i}}</a>
-								{%- endif -%}
-							{% endfor %}
-							{%- if paginate.current_page < pagenum -%}
-								<a class="nextpostslink" rel="next" href="/account?page={{next}}">&gt;</a>
-							{%- endif -%}
-						</div>
-					</div><!--wp-pagenavi_area-->
+						{% endfor %}
+						</select>
+						{%- if paginate.current_page < pagenum -%}
+							<a class="link next" href="{{ shop.url }}/account?page={{next}}">次へ</a>
+						{%- else -%}
+							<a class="link next disabled" href="{{ shop.url }}/account?page={{next}}">次へ</a>
+						{%- endif -%}
+					</div><!-- comp_inner -->
+					</div><!-- comp-pager -->
 					{%- endif -%}
 					{%- else -%}
 					<div class="comp-no-entry">
@@ -104,5 +108,3 @@
 		</section>
 	</article>
 {% endpaginate %}
-
-{% render 'huckleberry-subscription-customer-portal' %}

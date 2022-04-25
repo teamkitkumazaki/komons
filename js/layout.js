@@ -1215,6 +1215,7 @@ $(function() {
       });
     }
 
+
     function priceRangeSort(min,max){
       target.stop().animate({ opacity: 0 }, time, function() {
         target.html('');

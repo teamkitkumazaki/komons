@@ -9181,6 +9181,11 @@ body.loaded #loading {
   transition: border 0.2s;
 }
 .comp-pager .comp_inner .link.disabled {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   background: #f1f1f1;
   border: 1px solid #f1f1f1;
   color: #acacac;
@@ -9212,7 +9217,6 @@ body.loaded #loading {
   line-height: 43px;
   font-size: 16px;
   padding: 0 10px;
-  text-indent: 36px;
   border-radius: 0px;
   font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
@@ -9230,11 +9234,7 @@ body.loaded #loading {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
-}
-@media screen and (min-width: 720px) {
-  .comp-pager .comp_inner select {
-    text-indent: 60px;
-  }
+  text-indent: 2.7em;
 }
 .comp-pager .comp_inner select:focus {
   border: 1px solid #00381f;
@@ -9244,6 +9244,7 @@ body.loaded #loading {
 @media screen and (min-width: 720px) {
   .comp-pager {
     margin-top: 50px;
+    max-width: 320px;
   }
   .comp-pager .comp_inner .link {
     font-size: 1.4rem;
