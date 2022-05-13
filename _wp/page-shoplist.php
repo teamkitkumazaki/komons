@@ -8,40 +8,45 @@
   $tokyo = SCF::get('tokyo', $post_id);
   $kanto = SCF::get('kanto', $post_id);
   $others = SCF::get('others', $post_id);
+  $overseas = SCF::get('overseas', $post_id);
 ;?>
 <article id="stockist" class="page-stockist">
   <section class="section-main">
     <div class="section_inner_new">
-      <div class="section_ttl">
-        <h1><span>Shop List</span><font>店舗一覧</font></h1>
+      <div class="comp-section-ttl">
+        <hgroup>
+          <span class="ttl_en">Shop List</span>
+          <h1 class="ttl_ja">店舗一覧</h1>
+        </hgroup>
+        <div class="lead_txt">
+          <p>※お取扱い商品は、各店舗によって異なりますので、<span>販売商品に関しましてはお手数ですが、各店舗までお問合せください。</span></p>
+        </div>
       </div>
-      <!--<div class="comp-popup-store">
+      <div class="comp-popup-store">
         <div class="popup_item">
           <div class="img_wrap">
-            <a href="#aaaa">
-              <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/popup_image.jpg?v=1640010685">
-            </a>
+						<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/ethical_labo.jpg?v=1651581111">
           </div>
           <div class="txt_wrap">
             <hgroup class="shop_ttl">
               <span class="ttl_en">Popup Store</span>
               <h2 class="ttl_ja">イベント情報</h2>
             </hgroup>
-            <a class="shop_name link" href="#aaaa"><span>酒屋「花」/ コーヒースタンド「烏」</span></a>
-            <p class="address">〒160-0022 東京都渋谷区桜丘町30-15 ビバリーヒルズ102(渋谷駅から徒歩約6分)</p>
+            <div class="shop_name"><span>エシカルビューティーラボ</span></div>
+            <p class="address">神奈川県横浜市西区高島2-18-1<span>横浜そごう地下1階 ビューティーサロン</span></p>
             <div class="event_detail">
               <div class="detail_item">
                 <span class="ttl">開催期間</span>
-                <p class="contents">2020年11月20日,21日</p>
+                <p class="contents">2022年4月20日~7月31日</p>
               </div>
               <div class="detail_item">
                 <span class="ttl">営業時間</span>
-                <p class="contents">11:00 - 18:00</p>
+                <p class="contents">午前10時～午後8時</p>
               </div>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div><!-- section_inner -->
   </section>
   <section class="section-shop-list">
@@ -72,7 +77,11 @@
               <h3 class="area_ttl">東京都</h3>
             <?php foreach ($tokyo as $i) : ?>
               <div class="store_item">
+                <?php if($i['google_map_tokyo'] != null) : ?>
                 <a target="_blank" href="<?= $i['google_map_tokyo'] ?>" class="shop_info">
+                <?php else:?>
+                <a class="shop_info no_link" href="javascript:void(0);">
+                <?php endif; ?>
                   <span class="shop_name"><?= $i['shop_name_tokyo'] ?></span>
                   <span class="address"><?= $i['postal_code_tokyo'] ?><span><?= $i['address_tokyo'] ?></span></span>
                   <?php if (!empty($i['note_tokyo'])) : ?>
@@ -88,7 +97,11 @@
               <h3 class="area_ttl">関東</h3>
             <?php foreach ($kanto as $i) : ?>
               <div class="store_item">
+                <?php if($i['google_map_kanto'] != null) : ?>
                 <a target="_blank" href="<?= $i['google_map_kanto'] ?>" class="shop_info">
+                <?php else:?>
+                <a class="shop_info no_link" href="javascript:void(0);">
+                <?php endif; ?>
                   <span class="shop_name"><?= $i['shop_name_kanto'] ?></span>
                   <span class="address"><?= $i['postal_code_kanto'] ?><span><?= $i['address_kanto'] ?></span></span>
                   <?php if (!empty($i['note_kanto'])) : ?>
@@ -104,7 +117,11 @@
               <h3 class="area_ttl">OTHERS</h3>
             <?php foreach ($others as $i) : ?>
               <div class="store_item">
+                <?php if($i['google_map_others'] != null) : ?>
                 <a target="_blank" href="<?= $i['google_map_others'] ?>" class="shop_info">
+                <?php else:?>
+                <a class="shop_info no_link" href="javascript:void(0);">
+                <?php endif; ?>
                   <span class="shop_name"><?= $i['shop_name_others'] ?></span>
                   <span class="address"><?= $i['postal_code_others'] ?><span><?= $i['address_others'] ?></span></span>
                   <?php if (!empty($i['note_others'])) : ?>
@@ -115,15 +132,26 @@
             <?php endforeach; ?>
             </div><!-- store_list_wrap -->
           <?php endif; ?>
-          <div id="areaOverseas" class="store_list_wrap">
-            <h3 class="area_ttl">OVERSEAS</h3>
-            <div class="store_item">
-              <a target="_blank" class="shop_info" href="https://www.everydayobject.us/">
-                 <span class="shop_name">EVERYDAYOBJECT</span>
-                 <span class="address">@台湾</span>
-              </a>
-            </div>
-          </div>
+          <?php if (!empty($overseas)) : ?>
+            <div id="areaOverseas" class="store_list_wrap">
+              <h3 class="area_ttl">OVERSEAS</h3>
+            <?php foreach ($overseas as $i) : ?>
+              <div class="store_item">
+                <?php if($i['google_map_overseas'] != null) : ?>
+                <a target="_blank" href="<?= $i['google_map_overseas'] ?>" class="shop_info">
+                <?php else:?>
+                <a class="shop_info no_link" href="javascript:void(0);">
+                <?php endif; ?>
+                  <span class="shop_name"><?= $i['shop_name_overseas'] ?></span>
+                  <span class="address"><?= $i['address_overseas'] ?></span>
+                  <?php if (!empty($i['note_overseas'])) : ?>
+                    <p class="detail_txt"><?= $i['note_overseas'] ?></p>
+                  <?php endif; ?>
+                </a>
+              </div>
+            <?php endforeach; ?>
+            </div><!-- store_list_wrap -->
+          <?php endif; ?>
         </div><!-- comp-stock-list -->
       </div><!-- stock_flex -->
     </div><!-- section_inner_new -->

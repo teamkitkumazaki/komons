@@ -10627,6 +10627,16 @@ body.loaded #loading {
   letter-spacing: 0.05em;
   line-height: 1.8;
 }
+.comp-detail-desc .detail_item.border {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.comp-detail-desc .detail_item.border:nth-last-of-type(1) {
+  border: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
 
 @media screen and (min-width: 720px) {
   .comp-detail-desc .detail_item {
@@ -10658,6 +10668,16 @@ body.loaded #loading {
   .comp-detail-desc .detail_item .txt_wrap .desc_wrap {
     font-size: 1.5rem;
     line-height: 2;
+  }
+  .comp-detail-desc .detail_item.border {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  .comp-detail-desc .detail_item.border:nth-last-of-type(1) {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 }
 .comp-detail-button {
@@ -11698,10 +11718,6 @@ body.loaded #loading {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-align: center;
@@ -11731,19 +11747,26 @@ body.loaded #loading {
 }
 .comp-popup-store .popup_item .txt_wrap {
   width: 55%;
+  padding-left: 80px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+@media screen and (max-width: 980px) {
+  .comp-popup-store .popup_item .txt_wrap {
+    padding-left: 0px;
+  }
 }
 .comp-popup-store .popup_item .txt_wrap .shop_ttl {
   margin-bottom: 30px;
 }
 .comp-popup-store .popup_item .txt_wrap .shop_name {
   display: block;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
+  font-weight: normal;
   line-height: normal;
   letter-spacing: normal;
   color: inherit;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .comp-popup-store .popup_item .txt_wrap .shop_name.link {
   -webkit-transition: opacity 0.3s;
@@ -11773,11 +11796,14 @@ body.loaded #loading {
   background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store_caret2.svg?v=1640578093);
 }
 .comp-popup-store .popup_item .txt_wrap .address {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.8;
   letter-spacing: 0.5px;
-  margin-bottom: 20px;
-  color: #646464;
+  margin-bottom: 15px;
+}
+.comp-popup-store .popup_item .txt_wrap .address span {
+  display: inline-block;
+  padding-left: 0.5em;
 }
 .comp-popup-store .popup_item .txt_wrap .event_detail {
   font-size: 1.4rem;
@@ -11843,11 +11869,11 @@ body.loaded #loading {
     width: 100%;
   }
   .comp-popup-store .popup_item .txt_wrap .shop_ttl {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   .comp-popup-store .popup_item .txt_wrap .shop_name {
     display: block;
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin-bottom: 10px;
   }
   .comp-popup-store .popup_item .txt_wrap .shop_name.link {
@@ -11874,16 +11900,19 @@ body.loaded #loading {
     height: 16px;
   }
   .comp-popup-store .popup_item .txt_wrap .address {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     letter-spacing: 0.44px;
     color: #00381f;
     margin-bottom: 15px;
+  }
+  .comp-popup-store .popup_item .txt_wrap .address span {
+    display: block;
+    padding-left: 0;
   }
   .comp-popup-store .popup_item .txt_wrap .event_detail {
     font-size: 1.2rem;
     letter-spacing: 0.5px;
     margin-bottom: 0;
-    color: #646464;
   }
 }
 .comp-stock-list .store_list_wrap {
@@ -11979,6 +12008,18 @@ body.loaded #loading {
   letter-spacing: 0.5px;
   line-height: 1.6;
   margin-bottom: -5px;
+}
+.comp-stock-list .store_list_wrap .store_item .shop_info.no_link {
+  cursor: auto;
+}
+.comp-stock-list .store_list_wrap .store_item .shop_info.no_link .shop_name::after {
+  display: none;
+}
+.comp-stock-list .store_list_wrap .store_item .shop_info.no_link:hover {
+  opacity: 1;
+}
+.comp-stock-list .store_list_wrap .store_item .shop_info.no_link:hover .shop_name {
+  opacity: 1;
 }
 
 @media screen and (max-width: 720px) {
@@ -12634,6 +12675,165 @@ body.loaded #loading {
     font-size: 1.4rem;
     color: #068acc;
     text-decoration: underline;
+  }
+}
+.comp-faq-contents {
+  margin-bottom: 60px;
+}
+.comp-faq-contents .faq_ttl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-bottom: 30px;
+}
+.comp-faq-contents .faq_ttl .ttl_en {
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 3.2rem;
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+.comp-faq-contents .faq_ttl .ttl_ja {
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+.comp-faq-contents .item_wrap {
+  margin-bottom: 40px;
+}
+.comp-faq-contents .item_wrap .ttl_h3 {
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+.comp-faq-contents .item_wrap .toggle_item {
+  overflow: hidden;
+  -webkit-transition: height 0.4s;
+  transition: height 0.4s;
+  will-change: height;
+  margin-bottom: 8px;
+}
+.comp-faq-contents .item_wrap .toggle_item .toggle_button {
+  width: 100%;
+  position: relative;
+  padding: 15px 40px;
+  font-family: inherit;
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+  color: #00381f;
+  line-height: 1.5;
+  text-align: left;
+  background: transparent;
+  border: solid 1px #d8d8d8;
+}
+.comp-faq-contents .item_wrap .toggle_item .toggle_button::before {
+  display: block;
+  content: "Q.";
+  position: absolute;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  color: #00381f;
+  font-size: 1.6rem;
+  top: 14px;
+  left: 15px;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+}
+.comp-faq-contents .item_wrap .toggle_item .toggle_button::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/faq/plus.png);
+}
+.comp-faq-contents .item_wrap .toggle_item .toggle_button.active::after {
+  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/faq/minus.png);
+}
+.comp-faq-contents .item_wrap .toggle_item .toggle_contents .contents_inner {
+  padding: 20px 10px 20px 40px;
+  position: relative;
+  line-height: 1.8;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+.comp-faq-contents .item_wrap .toggle_item .toggle_contents .contents_inner p span {
+  display: block;
+  margin-bottom: 0.75em;
+}
+.comp-faq-contents .item_wrap .toggle_item .toggle_contents .contents_inner p span:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.comp-faq-contents .item_wrap .toggle_item .toggle_contents .contents_inner p a {
+  color: #068acc;
+}
+.comp-faq-contents .item_wrap .toggle_item .toggle_contents .contents_inner::before {
+  display: block;
+  content: "A.";
+  position: absolute;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  color: #00381f;
+  font-size: 1.6rem;
+  top: 19px;
+  left: 15px;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+}
+
+@media screen and (min-width: 720px) {
+  .comp-faq-contents {
+    margin-bottom: 100px;
+  }
+  .comp-faq-contents .faq_ttl {
+    margin-bottom: 30px;
+  }
+  .comp-faq-contents .faq_ttl .ttl_en {
+    font-size: 4.4rem;
+    margin-right: 15px;
+  }
+  .comp-faq-contents .faq_ttl .ttl_ja {
+    font-size: 1.8rem;
+  }
+  .comp-faq-contents .item_wrap {
+    margin-bottom: 40px;
+  }
+  .comp-faq-contents .item_wrap .ttl_h3 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  .comp-faq-contents .item_wrap .toggle_item {
+    margin-bottom: 10px;
+  }
+  .comp-faq-contents .item_wrap .toggle_item .toggle_button {
+    font-size: 1.5rem;
+    cursor: pointer;
   }
 }
 /* カート */
@@ -20184,31 +20384,21 @@ body.loaded #loading {
 
 /*下層ページ共通*/
 .page-stockist {
-  padding-top: 20px;
+  padding-top: 80px;
   margin-bottom: 120px;
 }
-.page-stockist .section_ttl {
-  padding-top: 60px;
-  max-width: 1400px;
-  width: 80.5vw;
-  margin-left: auto;
-  margin-right: auto;
+.page-stockist .comp-section-ttl {
+  margin: 60px 0 80px;
 }
-@media screen and (max-width: 1200px) {
-  .page-stockist .section_ttl {
-    width: 86vw;
-  }
+.page-stockist .comp-section-ttl .lead_txt {
+  margin-top: 40px;
+  line-height: 1.8;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  margin-bottom: -30px;
 }
-@media screen and (max-width: 980px) {
-  .page-stockist .section_ttl {
-    max-width: 780px;
-    width: 86vw;
-  }
-}
-@media screen and (max-width: 720px) {
-  .page-stockist .section_ttl {
-    width: 86vw;
-  }
+.page-stockist .comp-section-ttl .lead_txt span {
+  display: block;
 }
 .page-stockist .shop_ttl {
   display: -webkit-box;
@@ -20306,12 +20496,21 @@ body.loaded #loading {
 }
 @media screen and (max-width: 720px) {
   .page-stockist {
-    padding-top: 0px;
+    padding-top: 40px;
     margin-bottom: 60px;
   }
-  .page-stockist .section_ttl {
-    padding-top: 40px;
-    margin-bottom: 0px;
+  .page-stockist .comp-section-ttl {
+    margin: 40px 0 20px;
+  }
+  .page-stockist .comp-section-ttl .lead_txt {
+    margin-top: 25px;
+    line-height: 1.8;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 25px;
+  }
+  .page-stockist .comp-section-ttl .lead_txt span {
+    display: inline;
   }
   .page-stockist .shop_ttl {
     margin-bottom: 30px;
@@ -21058,41 +21257,17 @@ body.loaded #loading {
 }
 
 /*コンタクトフォーム*/
-#faq #guideNav {
-  background: #f5f5f5;
-  padding: 50px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 70px;
-  margin-bottom: 70px;
+.page-faq {
+  padding-top: 40px;
+  margin-bottom: 60px;
 }
-@media screen and (max-width: 1150px) {
-  #faq #guideNav {
-    max-width: 750px;
-  }
+.page-faq .section-header {
+  margin-bottom: 40px;
 }
-@media screen and (max-width: 750px) {
-  #faq #guideNav {
-    width: 84vw;
-  }
+.page-faq .section-header .comp-section-ttl {
+  margin: 40px 0 30px;
 }
-@media screen and (max-width: 1150px) {
-  #faq #guideNav {
-    margin-bottom: 50px;
-  }
-}
-#faq #guideNav .item_wrap .ttl_h3 {
-  padding: 10px;
-  background: #f1f1f1;
-  font-size: 16px;
-  margin-bottom: 20px;
-  margin-top: 50px;
-}
-#faq #guideNav .item_wrap ul {
-  padding: 0;
+.page-faq .section-header .search_wrap .key_input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21101,194 +21276,167 @@ body.loaded #loading {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
 }
-#faq #guideNav .item_wrap ul li {
-  width: 32%;
-  margin-right: 2%;
-  padding: 5px 0;
-  margin-bottom: 5px;
+.page-faq .section-header .search_wrap .key_input input[type=text] {
+  width: calc(100% - 75px);
+  border: none;
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+  font-family: inherit;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-bottom: 1px solid #979797;
+  border-radius: 0px;
 }
-#faq #guideNav .item_wrap ul li:nth-child(3n) {
-  margin-right: 0;
+.page-faq .section-header .search_wrap .key_input input[type=text]:focus {
+  outline: none;
 }
-#faq #guideNav .item_wrap ul li a {
-  display: block;
+.page-faq .section-header .search_wrap .key_input .search_submit {
+  width: 60px;
+  font-size: 1.4rem;
+  padding: 7px 0;
   color: #fff;
-  font-size: 14px;
-  padding: 10px 40px 10px 10px;
-  position: relative;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-  background: #312c24;
-  border-radius: 5px;
-}
-#faq #guideNav .item_wrap ul li a::before {
+  text-align: center;
+  background: #00381f;
+  font-family: inherit;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
   position: absolute;
-  width: 6px;
-  height: 6px;
-  content: "";
-  top: -5px;
+  right: 0;
   bottom: 0;
-  right: 12px;
-  margin: auto;
-  border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
 }
-#faq #guideNav .item_wrap ul li a:hover {
-  opacity: 0.7;
-}
-#faq .toggle_menu {
+.page-faq .section-faq-contents .faq_flex .category_wrap {
   margin-bottom: 50px;
 }
-#faq .toggle_menu .toggle_item {
-  height: 50px;
-  margin-bottom: 10px;
-  -webkit-transition: height 0.5s;
-  transition: height 0.5s;
-  overflow: hidden;
-}
-#faq .toggle_menu .toggle_item .toggle_button {
-  padding: 10px 15px;
-  font-size: 14px;
-  color: #00381f !important;
-  border: 1px solid #00381f;
+.page-faq .section-faq-contents .faq_flex .category_wrap .category_ttl {
   display: block;
-  position: relative;
-  cursor: pointer;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
 }
-#faq .toggle_menu .toggle_item .toggle_button::before {
-  display: inline-block;
-  content: "Q.";
-  padding-right: 0.1em;
-}
-#faq .toggle_menu .toggle_item .toggle_button::after {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 10px;
-  margin: auto;
-  width: 25px;
-  height: 25px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/faq/plus.png);
-  background-size: 20px;
-  background-position: center center;
-}
-#faq .toggle_menu .toggle_item .toggle_button.active::after {
-  background-image: url(https://journal.komons-japan.com/wp-content/themes/komons-theme/img/faq/minus.png);
-  background-size: 20px;
-  background-position: center center;
-}
-#faq .toggle_menu .toggle_item .toggle_contents {
-  padding: 15px 0;
-}
-#faq .toggle_menu .toggle_item .toggle_contents p:first-child::before {
-  display: inline-block;
-  content: "A.";
-  padding-right: 0.2em;
-}
-@media screen and (max-width: 1150px) {
-  #faq #guideNav {
-    padding: 15px 0 60px 0;
-    background: transparent;
-    margin-bottom: 60px;
-    border-bottom: 1px solid #f1f1f1;
-  }
-  #faq #guideNav .item_wrap ul li {
-    width: 49%;
-    margin-right: 2%;
-    padding: 5px 0;
-    margin-bottom: 5px;
-  }
-  #faq #guideNav .item_wrap ul li:nth-child(3n) {
-    margin-right: 2%;
-  }
-  #faq #guideNav .item_wrap ul li:nth-child(2n) {
-    margin-right: 0;
-  }
-  #faq #guideNav .item_wrap ul li a {
-    padding: 8px 40px 8px 10px;
-  }
-  #faq #guideNav .item_wrap ul li a:hover {
-    opacity: 1;
-  }
-}
-@media screen and (max-width: 750px) {
-  #faq #guideNav {
-    margin-bottom: 50px;
-    padding-bottom: 50px;
-  }
-  #faq #guideNav .item_wrap ul {
-    padding: 0;
-  }
-  #faq #guideNav .item_wrap ul li {
-    width: 100%;
-    margin-right: 0;
-    padding: 0;
-    margin-bottom: 6px;
-  }
-  #faq #guideNav .item_wrap ul li:nth-child(3n) {
-    margin-right: 0;
-  }
-  #faq #guideNav .item_wrap ul li:nth-child(2n) {
-    margin-right: 0;
-  }
-  #faq #guideNav .item_wrap ul li a {
-    font-size: 14px;
-    padding: 15px 10px;
-    letter-spacing: 1px;
-  }
-  #faq #guideNav .item_wrap ul li a:hover {
-    opacity: 1;
-  }
-  #faq .toggle_menu {
-    margin-bottom: 30px;
-  }
-  #faq .toggle_menu p {
-    font-size: 12px !important;
-  }
-  #faq .toggle_menu .toggle_item {
-    margin-bottom: 5px;
-  }
-  #faq .toggle_menu .toggle_item .toggle_button {
-    padding: 15px 30px 15px 10px;
-    font-size: 13px;
-    letter-spacing: 1.5;
-    line-height: 1.5;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  #faq .toggle_menu .toggle_item .toggle_button::before {
-    display: none;
-    content: "Q.";
-    padding-right: 0.1em;
-  }
-  #faq .toggle_menu .toggle_item .toggle_button::after {
-    right: 10px;
-    margin: auto;
-    width: 15px;
-    height: 15px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 15px;
-  }
-  #faq .toggle_menu .toggle_item .toggle_button.active::after {
-    background-size: 10px;
-  }
+.page-faq .section-faq-contents .faq_flex .category_wrap .comp-category-button .sp_none {
+  display: none;
 }
 
+@media screen and (min-width: 720px) {
+  .page-faq {
+    padding-top: 80px;
+    margin-bottom: 100px;
+  }
+  .page-faq .section-header {
+    margin-bottom: 60px;
+  }
+  .page-faq .section-header .comp-section-ttl {
+    margin: 40px 0 30px;
+  }
+  .page-faq .section-header .search_wrap .key_input input[type=text] {
+    width: calc(100% - 80px);
+    height: 45px;
+    line-height: 45px;
+  }
+  .page-faq .section-header .search_wrap .key_input .search_submit {
+    width: 60px;
+    height: 45px;
+    line-height: 45px;
+  }
+  .page-faq .section-faq-contents .faq_flex .category_wrap {
+    margin-bottom: 30px;
+  }
+  .page-faq .section-faq-contents .faq_flex .category_wrap .comp-category-button .sp_none {
+    display: inline;
+  }
+}
+@media screen and (min-width: 980px) {
+  .page-faq {
+    padding-top: 100px;
+    margin-bottom: 120px;
+  }
+  .page-faq .section-header {
+    margin-bottom: 80px;
+  }
+  .page-faq .section-header .section_inner_new {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .page-faq .section-header .comp-section-ttl {
+    margin: 40px 0 0px;
+  }
+  .page-faq .section-header .search_wrap {
+    width: 360px;
+  }
+  .page-faq .section-header .search_wrap .key_input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .page-faq .section-header .search_wrap .key_input input[type=text] {
+    width: calc(100% - 80px);
+    font-size: 16px;
+  }
+  .page-faq .section-header .search_wrap .key_input .search_submit {
+    width: 60px;
+  }
+  .page-faq .section-faq-contents .faq_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .page-faq .section-faq-contents .faq_flex .category_wrap {
+    width: 260px;
+    position: sticky;
+    left: 0;
+    top: 120px;
+    margin-right: 80px;
+    margin-bottom: 0;
+  }
+  .page-faq .section-faq-contents .faq_flex .category_wrap .category_ttl {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  .page-faq .section-faq-contents .faq_flex .faq_wrap {
+    width: calc(100% - 340px);
+  }
+}
 /*よくある質問*/
 .page-gift-list {
   padding-top: 0;
@@ -21913,6 +22061,37 @@ body.loaded #loading {
 .page-cart-new {
   padding-top: 120px;
   margin-bottom: 60px;
+}
+.page-cart-new .section-banner {
+  margin-bottom: 60px;
+}
+.page-cart-new .section-banner .section_inner_new {
+  margin: 0 auto;
+}
+.page-cart-new .section-banner .section_inner_new .img_wrap {
+  display: block;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.page-cart-new .section-banner .section_inner_new .img_wrap .img_pc {
+  display: none;
+}
+@media screen and (min-width: 720px) {
+  .page-cart-new .section-banner {
+    margin-bottom: 80px;
+  }
+  .page-cart-new .section-banner .section_inner_new {
+    margin: 0 auto;
+  }
+  .page-cart-new .section-banner .section_inner_new .img_wrap .img_pc {
+    display: block;
+  }
+  .page-cart-new .section-banner .section_inner_new .img_wrap .img_sp {
+    display: none;
+  }
 }
 .page-cart-new .section-cart {
   margin-bottom: 50px;

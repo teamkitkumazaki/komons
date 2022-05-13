@@ -21,7 +21,7 @@
         </div>
         <div id="hCart" class="nav_item h_cart">
           <a href="https://komons-japan.com/cart">
-            <span class="text">カート</span><span id="cartItemNum" class="cart_item_num">3</span></a>
+            <span class="text">カート</span></a>
         </div>
       </div>
       <div id="humMenu" class="header_menu">

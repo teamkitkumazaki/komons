@@ -616,44 +616,6 @@ $(function() {
     }
   }
 
-  //FAQページにて、ページ内スクロールを有効にする
-  function faqScroll(target) {
-    var scrollObj = [];
-
-    function windowMove(e) {
-      var w = $(window).width();
-      var scrollHeight = $(scrollObj[e]).offset().top;
-      if (w > 1100) {
-        var adScroll = scrollHeight - 100;
-      } else {
-        var adScroll = scrollHeight - 60;
-      }
-      $("html, body").animate({
-        scrollTop: adScroll
-      }, 500);
-      return false;
-    }
-
-    function init() {
-      $.each(target.find('li a'), function(index) {
-        $(this).attr('href', 'javascript:void(0);');
-        scrollObj[index] = $(this).attr("jump");
-        $(this).on({
-          'click': function() {
-            windowMove(index);
-          }
-        });
-      });
-    }
-
-    init();
-
-  }
-
-  if (document.getElementById('faq')) {
-    faqScroll($('.fmenu02'));
-    faqScroll($('#guideNav'));
-  }
 
   //FAQページ内の、トグル制御
 
@@ -662,6 +624,47 @@ $(function() {
     var toggleButton = [];
     var toggleContents = [];
     var toggleState = [];
+    var toggleTitleTxt = [];
+    var toggleContentsTxt = [];
+    var faqSearch = $('#faqSearch');
+    var faqFlex = $('#faqFlex');
+
+    function filterFaqItem(){
+      var searchValue = faqSearch.val();
+      $.each(target.find('.toggle_item'), function(index) {
+        if(searchValue.length > 1){
+          if(toggleTitleTxt[index].indexOf(searchValue) != -1 || toggleContentsTxt[index].indexOf(searchValue) != -1){
+            $(this).css({'display': 'block'});
+          }else{
+            $(this).css({'display': 'none'});
+          }
+        }else{
+          $(this).css({'display': 'block'});
+        }
+      });
+      $.each(target.find('.comp-faq-contents'), function(index) {
+        if(searchValue.length > 1){
+          if($(this).text().indexOf(searchValue) != -1){
+            $(this).css({'display': 'block'});
+          }else{
+            $(this).css({'display': 'none'});
+          }
+        }else{
+          $(this).css({'display': 'block'});
+        }
+      });
+      $.each(target.find('.item_wrap'), function(index) {
+        if(searchValue.length > 1){
+          if($(this).text().indexOf(searchValue) != -1){
+            $(this).css({'display': 'block'});
+          }else{
+            $(this).css({'display': 'none'});
+          }
+        }else{
+          $(this).css({'display': 'block'});
+        }
+      });
+    }
 
     function toggleMove(e) {
       if ( toggleState[e] == 0 ) {
@@ -676,10 +679,20 @@ $(function() {
         toggleButton[e].removeClass('active');
         var buttonHeight = toggleButton[e].outerHeight();
           toggleItem[e].css({
-            'height': buttonHeight + 'px'
+            'height': buttonHeight + 2 + 'px'
           });
         toggleState[e] = 0;
       }
+    }
+
+    function setToggleHeight(){
+      $.each(target.find('.toggle_item'), function(index) {
+        toggleItem[index] = $(this);
+        toggleButton[index] = $(this).find('.toggle_button');
+        toggleContents[index] = $(this).find('.toggle_contents');
+        $(this).css({'height': toggleButton[index].outerHeight() + 2 + 'px'});
+        toggleState[index] = 0;
+      });
     }
 
     function init() {
@@ -687,14 +700,28 @@ $(function() {
         toggleItem[index] = $(this);
         toggleButton[index] = $(this).find('.toggle_button');
         toggleContents[index] = $(this).find('.toggle_contents');
-        $(this).css({'height': toggleButton[index].outerHeight() + 'px'});
+        $(this).css({'height': toggleButton[index].outerHeight() + 2 + 'px'});
         toggleState[index] = 0;
+        toggleTitleTxt[index] = toggleButton[index].text();
+        toggleContentsTxt[index] = toggleContents[index].text();
         toggleButton[index].on({
           'click': function() {
             toggleMove(index);
           }
         });
       });
+      if (document.getElementById('faq')) {
+        faqSearch.on({
+          'blur': function(){
+            faqFlex.stop().animate({opacity: 0}, 300);
+            setTimeout(function() {
+              filterFaqItem();
+              faqFlex.stop().animate({opacity: 1}, 300);
+            }, 300);
+          }
+        });
+      }
+      window.addEventListener('resize', _.throttle(setToggleHeight, 100, { leading: true, trailing: true}));
     }
 
     init();
@@ -1306,6 +1333,10 @@ $(function() {
   }
 
   if (document.getElementById('stockist')) {
+    indexAnker($('#categoryList'));
+  }
+
+  if (document.getElementById('faq')) {
     indexAnker($('#categoryList'));
   }
 

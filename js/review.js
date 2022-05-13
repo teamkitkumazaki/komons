@@ -175,12 +175,24 @@ $(function() {
       });
       items[1].on({
         'blur': function(){
-          if( items[3].prop('isSuccess') ) checkFormatText( items[3], 3, '※メールアドレスの形式をご確認ください' );
-          checkAll();
+          if(items[1].val().length > 0){
+            if( items[1].prop('isSuccess') ) checkFormatText( items[1], 3, '※メールアドレスの形式をご確認ください' );
+            checkAll();
+          }else{
+            items[1].prop('isSuccess', true);
+            checkAll();
+            removeErrorMessage(items[1]);
+          }
         },
         'change': function(){
-          if( items[3].prop('isSuccess') ) checkFormatText( items[3], 3, '※メールアドレスの形式をご確認ください' );
-          checkAll();
+          if(items[1].val().length > 0){
+            if( items[1].prop('isSuccess') ) checkFormatText( items[1], 3, '※メールアドレスの形式をご確認ください' );
+            checkAll();
+          }else{
+            items[1].prop('isSuccess', true);
+            checkAll();
+            removeErrorMessage(items[1]);
+          }
         }
       });
       submitButton.on({

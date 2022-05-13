@@ -1,6 +1,34 @@
 .page-cart-new{
   padding-top: 120px;
   margin-bottom: 60px;
+  .section-banner{
+    margin-bottom: 60px;
+    .section_inner_new{
+      margin: 0 auto;
+      .img_wrap{
+        display: block;
+        pointer-events: none;
+        user-select: none;
+        .img_pc{
+          display: none;
+        }
+      }
+    }
+    @media screen and (min-width: 720px){
+      margin-bottom: 80px;
+      .section_inner_new{
+        margin: 0 auto;
+        .img_wrap{
+          .img_pc{
+            display: block;
+          }
+          .img_sp{
+            display: none;
+          }
+        }
+      }
+    }
+  }
   .section-cart{
     margin-bottom: 50px;
     .cart_flex{

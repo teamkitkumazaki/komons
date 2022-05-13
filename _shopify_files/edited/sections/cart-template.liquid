@@ -28,6 +28,14 @@
           </div>
         </div>
       </div><!-- comp-admin-title -->
+      <!-- <div class="section-banner">
+        <div class="section_inner_new">
+          <a target="_blank" href="https://journal.komons-japan.com/archives/1263" class="img_wrap">
+            <img class="img_pc" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/cart_banner_pc.jpg?v=1651196419">
+            <img class="img_sp" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/cart_banner_sp_4857754a-2681-486a-ae5d-2646b909b13f.jpg?v=1651196419">
+          </a>
+        </div>
+      </div> -->
       {% if cart.item_count != 0 %}
       <div class="cart_flex">
         <div class="item_wrap">
@@ -43,7 +51,6 @@
               {%- endfor -%}
             </div>
         </div><!-- comp-cart-item-list-->
-        {% render 'huckleberry-subscription-cart', item: item %}
         {%- if noshiLength == 0 and messageLength == 0 -%}
         <div class="comp-amount-wrap left">
         {%- else -%}

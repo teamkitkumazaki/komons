@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer">
 	<div class="footer_wrap">
 		<div class="footer_menu">
 			<div class="fmenu01 fmenu">

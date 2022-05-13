@@ -74,6 +74,20 @@
           line-height: 1.6;
           margin-bottom: -5px;
         }
+        &.no_link{
+          cursor:auto;
+          .shop_name{
+            &::after{
+              display: none;
+            }
+          }
+          &:hover{
+            opacity: 1;
+            .shop_name{
+              opacity: 1;
+            }
+          }
+        }
       }
     }
   }

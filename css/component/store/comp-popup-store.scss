@@ -4,7 +4,6 @@
   border-bottom: 1px solid #d8d8d8;
   .popup_item{
     @include flexSet;
-    flex-direction: row-reverse;
     box-sizing: border-box;
     align-items: center;
     .img_wrap{
@@ -27,17 +26,22 @@
     }
     .txt_wrap{
       width: 55%;
+      padding-left: 80px;
       box-sizing: border-box;
+      @media screen and (max-width: 980px){
+        padding-left: 0px;
+      }
       .shop_ttl{
         margin-bottom: 30px;
       }
       .shop_name{
         display: block;
-        font-size: 1.8rem;
+        font-size: 2.4rem;
+        font-weight: normal;
         line-height: normal;
         letter-spacing: normal;
         color: inherit;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         &.link{
           @include hover;
           span{
@@ -63,11 +67,14 @@
         }
       }
       .address{
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         line-height: 1.8;
         letter-spacing: 0.5px;
-        margin-bottom: 20px;
-        color: #646464;
+        margin-bottom: 15px;
+        span{
+          display: inline-block;
+          padding-left: 0.5em;
+        }
       }
       .event_detail{
         font-size: 1.4rem;
@@ -125,11 +132,11 @@
       .txt_wrap{
         width: 100%;
         .shop_ttl{
-          margin-bottom: 10px;
+          margin-bottom: 15px;
         }
         .shop_name{
           display: block;
-          font-size: 1.6rem;
+          font-size: 2.0rem;
           margin-bottom: 10px;
           &.link{
             @include hover;
@@ -152,16 +159,19 @@
           }
         }
         .address{
-          font-size: 1.3rem;
+          font-size: 1.4rem;
           letter-spacing: 0.44px;
           color: $basicGreen;
           margin-bottom: 15px;
+          span{
+            display: block;
+            padding-left: 0;
+          }
         }
         .event_detail{
           font-size: 1.2rem;
           letter-spacing: 0.5px;
           margin-bottom: 0;
-          color: #646464;
         }
       }
     }

@@ -76,7 +76,7 @@
 			<a href="https://komons-japan.com/products/k0018"><span class="name en">フルセット</a>
 		</h3>
 		<span class="product_detail">
-		<span class="price">7,590円(税込)</span>
+		<span class="price">11,880円(税込)</span>
 		</span>
 	</div>
 	<div class="comp-list-cart-button">

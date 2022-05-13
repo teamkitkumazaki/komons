@@ -73,10 +73,14 @@
           {%- endif -%}
           {% for item in product.metafields.custom_fields["prod_detail_desc"] %}
           {%- if item["detail_desc"] != blank -%}
+          {%- if item["detail_image_url_"] != blank -%}
             <div class="detail_item">
               <div class="img_wrap">
-                <img src="{{ item["detail_image_url"] }}">
+                <img src="{{ item["detail_image_url_"] }}">
               </div>
+          {% else %}
+            <div class="detail_item border">
+          {% endif %}
               <div class="txt_wrap">
               {% if item["detail_ttl_ja"] != blank %}
                 <h3 class="prod_name">{{ item["detail_ttl_en"] }}</h3>

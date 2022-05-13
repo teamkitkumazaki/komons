@@ -2366,11 +2366,6 @@ article {
 @media screen and (max-width: 720px) {
   .page-cart .section-banner .section_inner .img_wrap {
     display: block;
-    -webkit-transition: opacity 0.3s;
-    transition: opacity 0.3s;
-  }
-  .page-cart .section-banner .section_inner .img_wrap:hover {
-    opacity: 0.75;
   }
   .page-cart .section-banner .section_inner .img_wrap .img_pc {
     display: none;
