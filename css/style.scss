@@ -68,6 +68,8 @@
 @import 'component/itemNew/comp-item-thumbs.scss';
 @import 'component/itemNew/comp-gift-options-new.scss';
 @import 'component/itemNew/comp-cart-wrap.scss';
+@import 'component/itemNew/comp-cart-wrap-switch.scss';
+
 @import 'component/itemNew/comp-detail-title.scss';
 @import 'component/itemNew/comp-detail-desc.scss';
 @import 'component/itemNew/comp-detail-button.scss';
@@ -123,7 +125,6 @@
 /* ########## ページ別レイアウト ########## */
 @import 'page/index.scss'; //トップページ
 @import 'page/item_list.scss'; //商品一覧
-@import 'page/item_detail.scss'; //商品詳細
 @import 'page/item_detail_new.scss'; //商品詳細
 @import 'page/group.scss'; //商品グループ一覧・検索結果
 @import 'page/journal.scss'; /*ジャーナル一覧*/
