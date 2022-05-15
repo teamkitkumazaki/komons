@@ -438,6 +438,56 @@ $(function() {
     setdeliveryDate();
   }
 
+  // 定期・通常購入の切り替えレイアウト
+  function switchCartWrap(){
+    const purchaseButton = $('#purchaseButton');
+    const subscriptionButton = $('#subscriptionButton');
+    const contentSwitcher = $('#contentSwitcher');
+    const normalBox = $('#normalBox');
+    const subscriptionBox = $('#subscriptionBox');
+    let switchState = 0;
+
+
+
+    function init(){
+      purchaseButton.on({
+        'click': function(){
+          if(switchState == 1){
+            purchaseButton.addClass('active');
+            subscriptionButton.removeClass('active');
+            contentSwitcher.stop().animate({ opacity: 0 }, 300, function() {
+              normalBox.css({'display': 'block'});
+              subscriptionBox.css({'display': 'none'});
+              contentSwitcher.stop().animate({ opacity: 1 }, 300);
+              switchState = 0;
+            });
+          }
+        }
+      })
+      subscriptionButton.on({
+        'click': function(){
+          if(switchState == 0){
+            purchaseButton.removeClass('active');
+            subscriptionButton.addClass('active');
+            contentSwitcher.stop().animate({ opacity: 0 }, 300, function() {
+              normalBox.css({'display': 'none'});
+              subscriptionBox.css({'display': 'block'});
+              contentSwitcher.stop().animate({ opacity: 1 }, 300);
+              switchState = 1;
+            });
+          }
+        }
+      })
+    }
+
+    init();
+  }
+
+  if (document.getElementById('itemDetailNew')) {
+    switchCartWrap();
+  }
+
+
 
 
 });
