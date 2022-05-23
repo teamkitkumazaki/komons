@@ -1,0 +1,10 @@
+<script src="https://statics.a8.net/a8sales/a8sales.js"></script>
+<script src="{{ 'lodash.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'layout.js' | asset_url }}" defer="defer"></script>
+{%- if request.page_type contains 'review' -%}
+<script src="{{ 'review.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+{%- if request.page_type contains 'addresses' -%}
+<script src="{{ 'ajaxzip3.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+<!-- <script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/slick.min.js?ver{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}" charset="UTF-8"></script> -->

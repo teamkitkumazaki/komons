@@ -186,6 +186,10 @@
         .cycle_select{
           padding: 15px;
           appearance:none;
+          background-repeat: no-repeat;
+          background-size: 8px !important;
+          background-position: center right 15px;
+          background-image: url(https://cdn.shopify.com/s/files/1/0606/6932/9625/t/1/assets/select_caret.svg)!important;
         }
       }
       .wrapper_box{
