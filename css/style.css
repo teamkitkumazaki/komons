@@ -9200,6 +9200,7 @@ body.loaded #loading {
   right: 0;
   margin: auto;
   height: auto;
+  min-width: 100%;
 }
 .comp-product-list .item_wrapper .item_box .img_wrap a.soldout {
   position: relative;
@@ -12063,6 +12064,9 @@ body.loaded #loading {
 .comp-list-link .link_item a {
   position: relative;
   display: block;
+}
+.comp-list-link .link_item a img {
+  height: auto;
 }
 .comp-list-link .link_item a .txt_wrap {
   display: block;

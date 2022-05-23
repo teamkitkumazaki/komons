@@ -53,7 +53,7 @@
   {% include 'social-meta-tags' %}
   <meta name="robots" content="index">
   <meta name="robots" content="follow">
-	{%- if request.page_type contains 'index' -%}
+	{%- if request.page_type contains 'index' or request.page_type contains 'product' -%}
 	<link rel="preload"
   as="image" href="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_sp_dzdwrd.jpg"
   imagesizes="100vw"/>
@@ -163,7 +163,7 @@
 		}
 	});
 </script>
-{%- if request.page_type contains 'index' -%}
+{%- if request.page_type contains 'index' or request.page_type contains 'product' -%}
 <script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
 {%- endif -%}
 <script async src="https://statics.a8.net/a8sales/a8sales.js"></script>

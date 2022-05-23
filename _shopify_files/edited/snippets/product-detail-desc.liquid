@@ -16,7 +16,7 @@
   {% for item in product.metafields.custom_fields["prod_detail_desc"] %}
     <div class="detail_item">
       <div class="img_wrap">
-        <img src="{{ item["detail_image_url"] }}">
+        <img loading="lazy" src="{{ item["detail_image_url"] }}">
       </div>
       <div class="txt_wrap">
       {% if item["detail_ttl_ja"] != blank %}
