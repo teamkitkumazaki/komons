@@ -12,9 +12,7 @@
 	<link rel="apple-touch-icon" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg" sizes="200x200">
 	<meta name="google-site-verification" content="hmx_ejVjHWOZdBvcBBZJDO223RAXBT-8VFHv1_SuNdg" />
 	<meta name="facebook-domain-verification" content="n1740khqc61uch3sbafw6md4c74g7p" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500">
 	{{ 'style.css' | asset_url | stylesheet_tag }}
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp.min.css">
   {%- capture seo_title -%}
     {%- if request.page_type == 'search' and search.performed == true -%}
 			{%- comment -%}
@@ -53,10 +51,15 @@
   {% include 'social-meta-tags' %}
   <meta name="robots" content="index">
   <meta name="robots" content="follow">
-	{%- if request.page_type contains 'index' or request.page_type contains 'product' -%}
+	{%- if request.page_type contains 'index' -%}
 	<link rel="preload"
   as="image" href="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_sp_dzdwrd.jpg"
   imagesizes="100vw"/>
+	<link rel="preload"
+	as="image" href="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide02_sp_bphwgj.jpg"
+	imagesizes="100vw"/>
+	{%- endif -%}
+	{%- if request.page_type contains 'index' or request.page_type contains 'product' or request.page_type contains 'collection' -%}
 	{%- else -%}
 	<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
 	{%- endif -%}
@@ -139,6 +142,8 @@
 	{% section 'footer' %}
 	{% section 'slide-menu' %}
 </body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp.min.css">
 <!-- Global site tag (gtag.js) - Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-798502701"></script>
 <script>
@@ -163,7 +168,7 @@
 		}
 	});
 </script>
-{%- if request.page_type contains 'index' or request.page_type contains 'product' -%}
+{%- if request.page_type contains 'index' or request.page_type contains 'product' or request.page_type contains 'collection' -%}
 <script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
 {%- endif -%}
 <script async src="https://statics.a8.net/a8sales/a8sales.js"></script>

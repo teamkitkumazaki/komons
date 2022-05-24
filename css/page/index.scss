@@ -303,6 +303,10 @@
 			.img_wrap {
 				position: relative;
 				transition: opacity 1s;
+				img{
+					width: 100%;
+					height: auto;
+				}
 				&:hover{
 					opacity: 0.8;
 				}
@@ -1083,7 +1087,7 @@
 				img {
 					display: block;
 					max-width: unset;
-					width: 118vw;
+					width: 118vw !important;
 					margin: 0 -9vw;
 				}
 			}

@@ -1,4 +1,13 @@
 $(function() {
+  /*
+  var ref = document.referrer;
+  console.log('ref:' + ref);
+  if ( ref == 'https://shop.kume.jp/') {
+    console.log('login');
+  }else{
+    console.log('not login');
+  }
+  */
 
   // スクロール + ウィンドウサイズ系の対策処理
   function scrollAnimationSet(target) {

@@ -76,7 +76,11 @@
           {%- if item["detail_image_url_"] != blank -%}
             <div class="detail_item">
               <div class="img_wrap">
+              {%- if item["detail_image_url_sp"] != blank -%}
+                <img loading="lazy" src="{{ item["detail_image_url_"] }}" srcset="{{ item["detail_image_url_"] }} 1440w, {{ item["detail_image_url_sp"] }} 768w, {{ item["detail_image_url_"] }} 2048w">
+              {%- else -%}
                 <img loading="lazy" src="{{ item["detail_image_url_"] }}">
+              {% endif %}
               </div>
           {% else %}
             <div class="detail_item border">

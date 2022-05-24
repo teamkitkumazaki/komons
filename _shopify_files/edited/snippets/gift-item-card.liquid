@@ -1,10 +1,11 @@
+{%- assign thumb_image = product.media[0] -%}
 {%- if product.handle != 'ks005' -%}
 	<div class="list_item" price="{{ product.price | money_without_currency }}" recommend="2">
 		{%- if product.variants.first.inventory_quantity == 0 or product.metafields.custom_fields["stock_state"] == 1 -%}
 		<a class="item_thumb soldout" href="{{ product.url }}">{{ product.media[0] | image_url: width: 520 | image_tag }}</a>
 		{%- else -%}
 		<a class="item_thumb" href="{{ product.url }}">
-			{{ product.media[0] | image_url: width: 520 | image_tag }}
+			<img loading="lazy" src="{{ thumb_image | image_url: width: 533 }}" srcset="{{ thumb_image | image_url: width: 533 }} 1440w, {{ thumb_image | image_url: width: 360 }} 768w, {{ thumb_image | image_url: width: 533 }} 2048w">
 		</a>
 		{%- endif -%}
 	<div class="txt_wrap">
