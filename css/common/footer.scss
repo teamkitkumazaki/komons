@@ -153,26 +153,24 @@
 							display: block;
 							width: 100%;
 							height: 30px;
-							border-radius: 50%;
-							border: solid 0.6px $basicGreen;
 							@include bgSet;
 							background-size: 16px;
 							&.tw{
-								background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/tw_icon_8bb48353-f5e2-4860-a354-16f715f99236.png?v=1623519333);
+								/*background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/tw_icon_8bb48353-f5e2-4860-a354-16f715f99236.png?v=1623519333);*/
 							}
 							&.fb{
-								background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/fb_icon_747b4124-db39-4841-baaa-1dca0b54e6e9.png?v=1623519333);
+								/*background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/fb_icon_747b4124-db39-4841-baaa-1dca0b54e6e9.png?v=1623519333);*/
 							}
 							&.ig{
 								background-size: 16px;
-								background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/ig_icon_f4cb92c6-0f94-4a4a-84be-4b348afd04e5.png?v=1623519333);
+								/*background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/ig_icon_f4cb92c6-0f94-4a4a-84be-4b348afd04e5.png?v=1623519333);*/
 							}
 							&.line{
 								background-size: 28px;
-								background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/line_icon_99a97e0c-93fa-4466-ba66-d8bfd6c524ec.png?v=1623519333);
+								/*background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/line_icon_99a97e0c-93fa-4466-ba66-d8bfd6c524ec.png?v=1623519333);*/
 							}
 							img{
-								display: none;
+								display: block;
 							}
 						}
 						&:nth-last-of-type(1){
@@ -259,7 +257,7 @@
 @media screen and (max-width: 750px){
 	.footer {
 		padding: 60px 0;
-
+		background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1653406618/common/footer_bg_sp_dkr8t5.png);
 		.footer_wrap {
 			max-width: 80%;
 			display: block;

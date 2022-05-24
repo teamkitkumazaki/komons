@@ -7,6 +7,9 @@
     a{
       position: relative;
       display: block;
+      img{
+        height: auto;
+      }
       .txt_wrap{
         display: block;
         position: absolute;

@@ -53,10 +53,23 @@
 	.section-gift{
 		padding-top: 50px;
 		background: linear-gradient(180deg, #fafafa 0%, #fafafa 70%, #fff 70%, #fff 100%);
+		width: 100%;
+		overflow: hidden;
 		.img_wrap{
 			width: calc(100vw + 1px);
-			margin: 35px -6vw 0;
+			margin: 35px -5vw 0;
 			position: relative;
+			img{
+				max-width: unset;
+				width: 118vw;
+				height: auto;
+				margin: 0 -9vw;
+				@media screen and (min-width: 720px){
+					max-width: 100%;
+					width: 100%;
+					margin: 0 auto;
+				}
+			}
 			.cover_link{
 				display: block;
 				position: absolute;
@@ -97,7 +110,7 @@
 			.txt_block{
 				position: absolute;
 				left: 25px;
-				bottom: 20px;
+				bottom: 25px;
 				color: #fff;
 				h3{
 					font-size: 2.0rem;
