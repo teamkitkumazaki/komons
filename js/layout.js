@@ -730,7 +730,11 @@ $(function() {
           }
         });
       }
-      window.addEventListener('resize', _.throttle(setToggleHeight, 100, { leading: true, trailing: true}));
+      
+      $(window).on(
+        'resize', function() {
+          setToggleHeight();
+        });
     }
 
     init();
