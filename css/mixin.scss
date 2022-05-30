@@ -10,6 +10,7 @@ $bgGreen: #2f281e;
 $hoverColor: #2f281e;
 
 /* ----- Google Fonts ----- */
+/*
 @font-face {
     font-family: 'libre-regular';
 		font-weight: 400;
@@ -22,6 +23,7 @@ $hoverColor: #2f281e;
     src: url('../fonts/librebaskerville-bold-webfont.eot'),url('../fonts/librebaskerville-bold-webfont.woff') format('woff'),
     url('../fonts/LibreBaskerville-Bold.ttf') format('truetype'),
 }
+*/
 @mixin libre-r {
   font-family: 'EB Garamond', 'Libre Baskerville', YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;

@@ -1,0 +1,62 @@
+.content-right{
+  .huckleberry-subscription-detail-schedule-title,
+  .huckleberry-subscription-detail-order-title,
+  .huckleberry-subscription-detail-payment-title,
+  .huckleberry-subscription-detail-payment-title{
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  .huckleberry-subscription-detail-schedule{
+    main{
+      display: block !important;
+      margin: -5px 0 25px !important;
+      p{
+        &:nth-of-type(1){
+          display: none;
+          font-size: 1.4rem;
+          margin-bottom: 15px;
+        }
+        &:nth-of-type(2){
+          font-size: 1.6rem;
+          br{
+            display: none;
+          }
+        }
+      }
+    }
+    footer{
+      @include flexSet;
+      display: flex !important;
+      align-items: center;
+      justify-content: space-between;
+
+      .change{
+        width: 48%;
+        margin-top:0px;
+        background-color: $basicGreen;
+        border: none !important;
+        color: #fff;
+      }
+      .change + .huckleberry-subscription-detail-order-btn-group{
+        width: 48%;
+        margin-top: 0 !important;
+        .skip{
+          max-width: 100% !important;
+          padding: 0;
+          line-height: 43px;
+          box-sizing: border-box;
+        }
+      }
+      .change + .huckleberry-subscription-detail-order-btn-group + .huckleberry-subscription-detail-order-btn-group{
+        width: 100%;
+        .huckleberry-subscription-detail-skip-reset-btn{
+          color: inherit;
+          font-weight: normal;
+          letter-spacing: inherit;
+          text-decoration: underline;
+          margin-bottom: -10px;
+        }
+      }
+    }
+  }
+}

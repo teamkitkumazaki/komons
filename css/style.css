@@ -1,15 +1,19 @@
 @charset "UTF-8";
 /* ----- Google Fonts ----- */
+/*
 @font-face {
-  font-family: "libre-regular";
-  font-weight: 400;
-  src: url("../fonts/LibreBaskerville-Regular.eot"), url("../fonts/LibreBaskerville-Regular.woff") format("woff"), url("../fonts/LibreBaskerville-Regular.ttf") format("truetype");
+    font-family: 'libre-regular';
+		font-weight: 400;
+    src: url('../fonts/LibreBaskerville-Regular.eot'),url('../fonts/LibreBaskerville-Regular.woff') format('woff'),
+    url('../fonts/LibreBaskerville-Regular.ttf') format('truetype'),
 }
 @font-face {
-  font-family: "libre-bold";
-  font-weight: 700;
-  src: url("../fonts/librebaskerville-bold-webfont.eot"), url("../fonts/librebaskerville-bold-webfont.woff") format("woff"), url("../fonts/LibreBaskerville-Bold.ttf") format("truetype");
+    font-family: 'libre-bold';
+		font-weight: 700;
+    src: url('../fonts/librebaskerville-bold-webfont.eot'),url('../fonts/librebaskerville-bold-webfont.woff') format('woff'),
+    url('../fonts/LibreBaskerville-Bold.ttf') format('truetype'),
 }
+*/
 /* ########## 共通セクション ########## */
 /*
 html5doctor.com Reset Stylesheet
@@ -1058,31 +1062,6 @@ h1, h2, h3, h4, h5 {
   .section_inner_new {
     width: 86vw;
   }
-}
-
-#huckleberry-subscription-customer-portal {
-  padding-top: 60px;
-}
-
-.huckleberry-subscription-list-color {
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 0px auto !important;
-  font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
-}
-@media screen and (max-width: 1150px) {
-  .huckleberry-subscription-list-color {
-    max-width: 750px;
-  }
-}
-@media screen and (max-width: 750px) {
-  .huckleberry-subscription-list-color {
-    width: 84vw;
-  }
-}
-.huckleberry-subscription-list-color h1, .huckleberry-subscription-list-color h2, .huckleberry-subscription-list-color h3, .huckleberry-subscription-list-color h4, .huckleberry-subscription-list-color h5, .huckleberry-subscription-list-color p {
-  font-weight: normal;
 }
 
 .section_ttl {

@@ -1,15 +1,90 @@
-article{
-  padding-top: 160px;
-  margin-bottom: 120px;
-  @media screen and (max-width: 980px){
-    margin-bottom: 80px;
-  }
-  @media screen and (max-width: 730px){
-    padding-top: 120px;
-    margin-bottom: 60px;
+#huckleberry-subscription-customer-portal{
+	padding-top: 90px;
+  min-height: 100vh;
+  article{
+    margin:0;
+    padding: 0;
   }
 }
 
-.hide {
-	display: none !important;
+body.huckleberry-subscription-list-color{
+  // body
+  font-size: 1.4rem;
+  color: $basicGreen !important;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  width: 86vw !important;
+  margin: 0px auto !important;
+  h1,h2,h3,h4,h5,p{
+    font-weight: normal;
+  }
+  button{
+    font-family: inherit;
+    letter-spacing: inherit;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: none;
+  }
+  header{
+    margin-bottom: 25px;
+    .huckleberry-subscription-detail-title{
+      font-size: 2.2rem;
+      text-align: center;
+      color: #fff;
+      &::before{
+        display: block;
+        content: "Subscription";
+        font-size: 2.6rem;
+        font-weight: normal;
+        letter-spacing: 0.06em;
+        margin-bottom: 15px;
+        @include libre-r;
+        font-size: 3.0rem;
+        text-indent: 0;
+        color: $basicGreen;
+      }
+      &::after{
+        display: block;
+        content: "定期購入";
+        font-size: 1.6rem;
+        color: $basicGreen;
+        text-indent: 0;
+        margin-top: -1.5rem;
+      }
+    }
+  }
+  .wrap{
+    @include flexSet;
+    display: flex !important;
+    margin-top: 40px !important;
+    .content-right{
+      width: 100%;
+      order: 0;
+    }
+    .content-left{
+      width: 100%;
+      order: 1;
+      section{
+        margin: 0 0 60px !important;
+        article{
+          @include flexSet;
+          justify-content: flex-start;
+          margin: 0 0 25px !important;
+          border: none !important;
+        }
+      }
+    }
+    .content-right{
+      section{
+        margin: 0 0 60px !important;
+        article{
+          padding: 30px 25px 25px !important;
+          margin-top: 0px;
+          border: none !important;
+          margin-bottom: 15px !important;
+        }
+      }
+    }
+  }
 }

@@ -24,6 +24,7 @@
 						<h2 class="ttl">ご注文履歴</h2>
 					</div>
 					{%- if customer.orders.size != 0 -%}
+					<a href="/account?hbSubscriptionPath=/">定期購買の変更</a>
 					<div id="orderList" class="comp-order-list">
 					{%- for order in customer.orders -%}
 						<div class="order_item">
@@ -108,3 +109,5 @@
 		</section>
 	</article>
 {% endpaginate %}
+
+{% render 'huckleberry-subscription-customer-portal' %}

@@ -1,7 +1,16 @@
 $basicGray: #f9f9f9;
-$basicBlack: #0B1A17;
+$basicBlack: #2f281e;
+$black02: #00381f;
+$bgColor: #f8f8f8;
+$borderColor: #d8d8d8;
 $basicGreen: #00381f;
+$bgColor2: #f4f7f4;
+$insertGreen: #046734;
+$bgGreen: #2f281e;
+$hoverColor: #2f281e;
+
 /* ----- Google Fonts ----- */
+/*
 @font-face {
     font-family: 'libre-regular';
 		font-weight: 400;
@@ -14,15 +23,18 @@ $basicGreen: #00381f;
     src: url('../fonts/librebaskerville-bold-webfont.eot'),url('../fonts/librebaskerville-bold-webfont.woff') format('woff'),
     url('../fonts/LibreBaskerville-Bold.ttf') format('truetype'),
 }
+*/
 @mixin libre-r {
-  font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: 'EB Garamond', 'Libre Baskerville', YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
 }
 @mixin libre-b {
-  font-family: 'EB Garamond', 'Libre Baskerville', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-family: 'EB Garamond', 'Libre Baskerville', YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 500;
   letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
 }
 @mixin waku{
   max-width: 1080px;
@@ -35,36 +47,20 @@ $basicGreen: #00381f;
     width: 84vw;
   }
 }
-@mixin responsive-waku{
-  max-width: 1200px;
+@mixin wrapper{
+  max-width: 1400px;
+  width: 80.5vw;
   margin-left: auto;
   margin-right: auto;
-  @media screen and (max-width: 1280px){
-    max-width: 900px;
+  @media screen and (max-width: 1200px){
+    width: 86vw;
   }
-  @media screen and (max-width: 960px){
-    max-width: 88vw;
+  @media screen and (max-width: 980px){
+    max-width: 780px;
+    width: 86vw;
   }
-	@media screen and (max-width: 520px){
-    width: 84vw;
-  }
-}
-$pc: 1280px; // PC
-$tab: 960px; // タブレット
-$sp: 520px;  // スマホ
-@mixin pc {
-  @media (max-width: ($pc)) {
-    @content;
-  }
-}
-@mixin tab {
-  @media (max-width: ($tab)) {
-    @content;
-  }
-}
-@mixin sp {
-  @media (max-width: ($sp)) {
-    @content;
+  @media screen and (max-width: 720px){
+    width: 86vw;
   }
 }
 @mixin flexSet {
