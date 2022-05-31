@@ -1,12 +1,24 @@
+#huckleberry-subscription-customer-portal-wrap > p{
+	display: none;
+}
+
 #huckleberry-subscription-customer-portal{
 	padding-top: 90px;
   min-height: 100vh;
+	margin-bottom: 80px;
+	@media screen and (min-width: 1100px){
+		padding-top: 160px;
+		margin-bottom: 120px;
+	}
   article{
     margin:0;
     padding: 0;
   }
+	a, button{
+		cursor: pointer;
+		@include hover;
+	}
 }
-
 body.huckleberry-subscription-list-color{
   // body
   font-size: 1.4rem;
@@ -28,13 +40,51 @@ body.huckleberry-subscription-list-color{
   }
   header{
     margin-bottom: 25px;
+		.huckleberry-subscription-list-title{
+			font-size: 2.2rem;
+      text-align: center;
+      color: #fff;
+			pointer-events: none;
+			user-select: none;
+      &::before{
+        display: block;
+        content: "Subscription";
+        font-size: 2.6rem;
+        font-weight: normal;
+        letter-spacing: 0.06em;
+        margin-bottom: 15px;
+        @include libre-r;
+        font-size: 3.0rem;
+        text-indent: 0;
+        color: $basicGreen;
+      }
+      &::after{
+        display: block;
+        content: "定期購入契約一覧";
+        font-size: 1.6rem;
+        color: $basicGreen;
+        text-indent: 0;
+        margin-top: -1.5rem;
+      }
+			@media screen and (min-width: 1100px){
+				margin-bottom: 120px;
+				&::before{
+					margin-bottom: 20px;
+					font-size: 3.6rem;
+					text-indent: 0;
+					color: $basicGreen;
+				}
+			}
+		}
     .huckleberry-subscription-detail-title{
       font-size: 2.2rem;
       text-align: center;
       color: #fff;
+			pointer-events: none;
+			user-select: none;
       &::before{
         display: block;
-        content: "Subscription";
+        content: "Detail";
         font-size: 2.6rem;
         font-weight: normal;
         letter-spacing: 0.06em;
@@ -52,32 +102,69 @@ body.huckleberry-subscription-list-color{
         text-indent: 0;
         margin-top: -1.5rem;
       }
+			@media screen and (min-width: 1100px){
+				margin-bottom: 120px;
+				&::before{
+					margin-bottom: 20px;
+					font-size: 3.6rem;
+					text-indent: 0;
+					color: $basicGreen;
+				}
+			}
     }
   }
   .wrap{
     @include flexSet;
     display: flex !important;
+		justify-content: space-between;
     margin-top: 40px !important;
     .content-right{
-      width: 100%;
+      width: 100% !important;
       order: 0;
+			@media screen and (min-width: 1100px){
+				width: 350px !important;
+				order: 1;
+			}
     }
     .content-left{
       width: 100%;
       order: 1;
+			@media screen and (min-width: 1100px){
+				order: 0;
+				width: calc(100% - 420px) !important;
+			}
+			&::before{
+				display: block;
+				content: "定期購入中の商品";
+				font-size: 2.2rem;
+				letter-spacing: 0.05em;
+				color: $basicGreen;
+				margin-bottom: 40px;
+			}
       section{
         margin: 0 0 60px !important;
-        article{
-          @include flexSet;
-          justify-content: flex-start;
-          margin: 0 0 25px !important;
-          border: none !important;
-        }
+				@media screen and (min-width: 1100px){
+					margin: 0 0 80px !important;
+				}
+				&:nth-of-type(1){
+					article{
+						@include flexSet;
+						justify-content: flex-start;
+						margin: 0 0 35px !important;
+						border: none !important;
+					}
+				}
+				&:nth-of-type(2){
+					article{
+						margin: 0 0 20px !important;
+						border: none !important;
+					}
+				}
       }
     }
     .content-right{
       section{
-        margin: 0 0 60px !important;
+        margin: 0 0 40px !important;
         article{
           padding: 30px 25px 25px !important;
           margin-top: 0px;
@@ -87,4 +174,90 @@ body.huckleberry-subscription-list-color{
       }
     }
   }
+	.micromodal{
+		.micromodal-overlay{
+			background-color: rgba(#000,0.6);
+		}
+		.micromodal-overlay > div{
+			max-width: 90vw;
+			padding: 30px 25px;
+			border-radius: 0;
+			border: 0px;
+			header{
+				h2{
+					font-size: 1.8rem;
+					margin-top: 0;
+				}
+				button{
+					top: -5px;
+    			background-color: transparent;
+    			border: 0;
+    			width: 22px;
+    			height: 22px;
+				}
+			}
+			main{
+				p{
+					font-size: 1.4rem;
+    			line-height: 1.6;
+				}
+				.checkbox{
+					margin-top: 30px;
+				}
+				select{
+					margin-top: 20px;
+					display: block;
+					width: 100%;
+					background-color: #fff;
+					padding: 0 12px !important;
+					height: 45px;
+					line-height: 45px;
+					box-sizing: border-box;
+					border-radius: 0px;
+					border: 1px solid $borderColor;
+					font-size: 16px;
+					font-family: inherit;
+					font-weight: 400;
+					color: $black02;
+					@include bgSet;
+					background-size: 8px !important;
+					background-position: center right 15px;
+					appearance: none;
+					background-image: url(https://cdn.shopify.com/s/files/1/0606/6932/9625/t/1/assets/select_caret.svg) !important;
+					&::placeholder {
+						color: #acacac;
+						font-size: 1.5rem;
+					}
+					&:focus {
+						outline: none;
+					}
+					&.admin{
+						background-color: #f4f4f4;
+						border: 1px solid #f4f4f4;
+					}
+				}
+			}
+			footer{
+				margin-top: 10px;
+				button{
+					width: 100%;
+					appearance: none;
+					border: none;
+					background: $basicGreen;
+					box-shadow: none;
+					color: #fff;
+					font-size: 1.5rem;
+					line-height: 45px;
+					height: 45px;
+					margin-top: 0px;
+					&.clear{
+						margin-top:5px;
+						background: #fff;
+						border: 1px solid #d8d8d8;
+						color: $basicGreen;
+					}
+				}
+			}
+		}
+	}
 }

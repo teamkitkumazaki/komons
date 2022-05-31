@@ -1,0 +1,258 @@
+#root > h2{
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 25px;
+}
+#root > h2 + p{
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+.huckleberry-subscription-product-edit.product{
+  @include flexSet;
+  justify-content: flex-start;
+  .item{
+    min-width: unset;
+    width: 47%;
+    margin-right: 6%;
+    margin-bottom: 30px;
+    figure{
+      min-height: unset;
+      margin-bottom: 15px;
+      img{
+        position: static;
+        width: 100%;
+        height: auto;
+      }
+    }
+    .title{
+      text-align: left;
+      line-height: 1.6;
+      font-size: 1.4rem;
+      min-height: 3em;
+    }
+    footer{
+      margin-top: 15px;
+      a{
+        display: block;
+        background-color: $basicGreen;
+        color: #fff;
+        line-height: 40px;
+        font-size: 1.4rem;
+        border: none;
+        margin: 0;
+      }
+    }
+    &:nth-of-type(2n){
+      margin-right: 0;
+    }
+  }
+}
+.huckleberry-subscription-product-edit.variant{
+  max-width: 500px;
+  margin: 0 auto;
+  .item{
+    figure{
+      display: block;
+      margin: 0;
+      min-height: unset;
+      margin-bottom: 25px;
+      img{
+        position: static;
+        height: auto;
+      }
+    }
+    .column-right{
+      width: 100% !important;
+      p{
+        font-size: 2.0rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+        color: $basicGreen;
+      }
+      label{
+        @include flexSet;
+        align-items: center;
+        justify-content: space-between;
+        color: $basicGreen;
+        input[type="number"]{
+          width: 100px;
+          line-height: 30px;
+          font-size: 16px;
+          padding: 0px 0px 0 10px;
+          color: $basicGreen;
+        }
+        &:nth-of-type(1){
+          display: none;
+        }
+      }
+      .price{
+        display: block;
+        margin: 20px 0 30px;
+        color: $basicGreen;
+      }
+      .btn-group{
+        .select{
+          width: 100%;
+          background-color: $basicGreen;
+          font-size: 1.5rem;
+          line-height: 50px;
+        }
+        .back{
+          margin: 10px 0 0;
+        }
+      }
+    }
+  }
+}
+.huckleberry-subscription-product-edit.back{
+  margin-top: 30px;
+  a{
+    display: block;
+    line-height: 50px;
+    color: $basicGreen;
+    border: 1px solid #d8d8d8;
+  }
+}
+
+
+@media screen and (min-width: 720px){
+  #root > h2{
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+  }
+  #root > h2 + p{
+    text-align: center;
+  }
+  .huckleberry-subscription-product-edit.product{
+    .item{
+      width: 30%;
+      margin-right: 5%;
+      margin-bottom: 60px;
+      figure{
+        min-height: unset;
+        margin-bottom: 15px;
+        img{
+          position: static;
+          height: auto;
+        }
+      }
+      .title{
+        min-height: 3em;
+      }
+      &:nth-of-type(2n){
+        margin-right: 5%;
+      }
+      &:nth-of-type(3n){
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px){
+  #root > h2{
+    font-size: 2.6rem;
+    margin-bottom: 35px;
+  }
+  #root > h2 + p{
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+  }
+  .huckleberry-subscription-product-edit.product{
+    @include flexSet;
+    justify-content: flex-start;
+    .item{
+      min-width: unset;
+      width: 22%;
+      margin-right: 4%;
+      margin-bottom: 60px;
+      figure{
+        min-height: unset;
+        margin-bottom: 15px;
+        img{
+          position: static;
+          width: 100%;
+          height: auto;
+        }
+      }
+      .title{
+        text-align: left;
+        line-height: 1.6;
+        font-size: 1.4rem;
+        min-height: 3em;
+      }
+      footer{
+        margin-top: 15px;
+        a{
+          display: block;
+          background-color: $basicGreen;
+          color: #fff;
+          line-height: 40px;
+          font-size: 1.4rem;
+          border: none;
+          margin: 0;
+        }
+      }
+      &:nth-of-type(2n){
+        margin-right: 4%;
+      }
+      &:nth-of-type(3n){
+        margin-right: 4%;
+      }
+      &:nth-of-type(4n){
+        margin-right: 0%;
+      }
+    }
+  }
+  .huckleberry-subscription-product-edit.variant{
+    max-width: 500px;
+    margin: 0 auto;
+    .item{
+      figure{
+        margin-bottom: 25px;
+      }
+      .column-right{
+        width: 100% !important;
+        p{
+          font-size: 2.0rem;
+          margin-bottom: 20px;
+          line-height: 1.6;
+          color: $basicGreen;
+        }
+        label{
+          justify-content: space-between;
+          font-size: 1.6rem;
+          input[type="number"]{
+            width: 100px;
+            line-height: 30px;
+            padding: 0px 0px 0 10px;
+          }
+        }
+        .price{
+          font-size: 1.6rem;
+          margin: 15px 0;
+        }
+        .btn-group{
+          .select{
+            font-size: 1.5rem;
+            line-height: 60px;
+          }
+          .back{
+            width: 100%;
+            margin: 10px 0 0;
+            line-height: 60px;
+            text-align: center !important;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+  }
+  .huckleberry-subscription-product-edit.back{
+    margin-top: 40px;
+    a{
+      line-height: 60px;
+    }
+  }
+}

@@ -189,7 +189,7 @@ function cartOptionController(target){
 
 function setDayDisplay(num, mode){
   console.log('num:'+ num + '/' + 'mode:' + mode);
-  var startSet = Number(num) + Number(2);
+  var startSet = Number(num) + Number(1);
   for (var i= startSet; i<30; i++) {
     if(mode == 1){
       dayFlag = dayFlag + 1;
@@ -200,11 +200,11 @@ function setDayDisplay(num, mode){
 	deliveryDate.on({
 		'change': function() {
 			if(deliveryDate.val() == firstDayParam){
-			var result = window.confirm('【四国/中国/九州地方・和歌山・秋田・青森・北海道・沖縄】へ配送される場合は' + secondDay + 'が最短の配送日となります。\n' + firstDay + 'を配送指定日にしますか？');
+			var result = window.confirm('お届け先が【四国/九州/中国地方、北海道/青森県/秋田県/和歌山県/沖縄県】の場合、最短指定日は' + secondDay + 'になります。\n' + firstDay + 'を配送指定日にしますか？');
 				if( result ) {
 
 				}else {
-					deliveryDate.val(secondDayParam);
+					deliveryDate.val('指定なし');
 				}
 			}
 			$('#dateInput').val(deliveryDate.val());
@@ -255,7 +255,11 @@ function setShippingDay(mode){
     if(todayW == 6){ /* 土曜日の場合*/
       setShippingDay2(2,mode);/* 配送を月曜日にする*/
     }else if(todayW == 5){ /* 金曜日の場合*/
-      setShippingDay2(3,mode);/* 配送を月曜日にする*/
+			if(dayTime < 14){ /* 14時までの注文の場合 */
+				setShippingDay2(0,mode);/* 当日に配送する*/
+			}else{
+				setShippingDay2(3,mode);/* 配送を月曜日にする*/
+			}
     }else{ /*月~木曜日の注文の場合*/
       setShippingDay2(1,mode);/*翌日に配送する*/
     }

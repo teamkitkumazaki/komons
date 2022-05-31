@@ -1,0 +1,66 @@
+
+
+.subscription-history{
+  max-width: 600px;
+  margin: 0 auto 40px;
+  margin-top: 0;
+  .huckleberry-subscription-list-detail{
+    margin: 0 0 15px;
+    .label{
+      font-size: 1.4rem;
+      font-weight: normal;
+    }
+    .value{
+      font-size: 1.4rem;
+    }
+    &:nth-of-type(1){
+      display: block;
+      border-bottom: 1px solid #d8d8d8;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      dt{
+        border: none;
+        font-weight: normal;
+        font-size: 1.4rem;
+        margin: 0;
+      }
+      dd{
+        border: none;
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        min-width: 100%;
+        @include libre-r;
+        color: $basicGreen;
+        font-size: 2.0rem;
+      }
+    }
+  }
+  a{
+    display: block;
+    .detail-btn{
+      padding:0;
+      box-sizing: border-box;
+      margin: 0;
+      display: block;
+      line-height: 50px;
+      margin-top: 25px;
+      border: none;
+      background: $basicGreen;
+      margin-top: 25px;
+      color: #fff;
+    }
+    .back-btn{
+      padding:0;
+      box-sizing: border-box;
+      margin: 0 0 0;
+      display: block;
+      line-height: 50px;
+      margin-top: 25px;
+      border: none;
+      border: 1px solid #d8d8d8;
+      margin-top: 25px;
+      color: $basicGreen;
+    }
+  }
+}
