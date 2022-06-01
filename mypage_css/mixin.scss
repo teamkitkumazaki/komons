@@ -74,6 +74,54 @@ $hoverColor: #2f281e;
     position: center center;
   }
 }
+@mixin greenButton{
+  display: block;
+  box-sizing: border-box;
+  cursor: pointer;
+  line-height: 50px;
+  padding: 0;
+  margin:0;
+  background: #00381f;
+  border: none;
+  color: #fff;
+  appearance: none;
+  box-shadow: none;
+  border: 0px;
+  font-size: 1.5rem;
+  font-family: inherit !important;
+  transition: background .3s;
+  text-align: center;
+  @media screen and (min-width: 980px){
+    line-height: 60px;
+  }
+  &:hover{
+    background: $bgGreen;
+  }
+}
+@mixin whiteButton{
+  display: block;
+  box-sizing: border-box;
+  cursor: pointer;
+  line-height: 50px;
+  padding: 0;
+  margin:0;
+  background: #fff;
+  border: 1px solid $borderColor !important;
+  color: $basicGreen;
+  appearance: none;
+  box-shadow: none;
+  border: 0px;
+  font-size: 1.5rem;
+  font-family: inherit !important;
+  text-align: center;
+  transition: background .3s;
+  @media screen and (min-width: 980px){
+    line-height: 60px;
+  }
+  &:hover{
+    background: $bgColor;
+  }
+}
 @mixin hover{
   transition: opacity .3s;
   &:hover{

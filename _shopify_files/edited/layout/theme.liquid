@@ -14,6 +14,7 @@
 	<meta name="facebook-domain-verification" content="n1740khqc61uch3sbafw6md4c74g7p" />
 	{{ 'style.css' | asset_url | stylesheet_tag }}
 	{%- if request.page_type contains 'account' -%}
+	<style>body.huckleberry-subscription-list-color{display: flex;align-items: center;justify-content: center;min-height: calc(100vh - 120px);max-height: unset;}#root {width: 100%;font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;}</style>
 	{{ 'subscription.css' | asset_url | stylesheet_tag }}
 	{%- endif -%}
   {%- capture seo_title -%}

@@ -1,0 +1,208 @@
+.micromodal{
+  .micromodal-overlay{
+    background-color:rgba(255,255,255,0.8);
+  }
+  .micromodal-overlay > div{
+    max-width: 90vw;
+    padding: 30px 25px;
+    border-radius: 0;
+    border: 0px;
+    background: #f4f4f4 !important;
+    border: 1px solid $basicGreen;
+    @media screen and (min-width: 720px){
+      max-width: 580px !important;
+    }
+    header{
+      h2{
+        font-size: 1.8rem;
+        margin-top: 0;
+      }
+      button{
+        top: -5px;
+        background-color: transparent;
+        border: 0;
+        width: 22px;
+        height: 22px;
+      }
+    }
+    main{
+      p{
+        font-size: 1.4rem;
+        line-height: 1.6;
+      }
+      select{
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+        background-color: #fff;
+        padding: 0 12px !important;
+        height: 45px;
+        line-height: 45px;
+        box-sizing: border-box;
+        border-radius: 0px;
+        border: 1px solid $borderColor;
+        font-size: 16px;
+        font-family: inherit;
+        font-weight: 400;
+        color: $black02;
+        @include bgSet;
+        background-size: 8px !important;
+        background-position: center right 15px;
+        appearance: none;
+        background-image: url(https://cdn.shopify.com/s/files/1/0606/6932/9625/t/1/assets/select_caret.svg) !important;
+        &::placeholder {
+          color: #acacac;
+          font-size: 1.5rem;
+        }
+        &:focus {
+          outline: none;
+        }
+        &.admin{
+          background-color: #f4f4f4;
+          border: 1px solid #f4f4f4;
+        }
+      }
+      &#modal-payment-change-content{
+        margin-bottom: 20px;
+        p{
+          &:nth-of-type(2){
+            margin-top: 15px;
+            background: #f4f4f4 !important;
+            color: $basicGreen !important;
+            padding: 12px !important;
+          }
+        }
+      }
+      &#modal-skip-content{
+        margin-bottom: -5px;
+        h4{
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+        }
+        p{
+          &:nth-of-type(1){
+            margin-bottom: 25px;
+          }
+        }
+      }
+      &#modal-quantity-modify-content{
+        margin-bottom: 20px;
+        p{
+          margin-bottom: 20px;
+        }
+        div{
+          span{
+            padding: 12px 0px !important;
+            background: #fff;
+          }
+        }
+      }
+      &#modal-delivery-days-content{
+        margin-bottom: -5px;
+        .checkbox{
+          margin: 30px auto;
+        }
+        .litepicker-wrap{
+          display: block !important;
+        }
+        .react-datepicker{
+          width: 100%;
+          .react-datepicker__navigation{
+            top: 17.5px !important;
+          }
+          .react-datepicker__month-container{
+            float: none !important;
+          }
+          .react-datepicker__header{
+            padding: 15px 0 !important;
+            .react-datepicker__current-month{
+              font-size: 1.4rem;
+              font-weight: normal;
+              margin-bottom: 10px;
+            }
+          }
+          .react-datepicker__week,
+          .react-datepicker__day-names{
+            @include flexSet;
+            justify-content: space-around;
+          }
+          .react-datepicker__day-names{
+            padding: 10px 15px 0 !important;
+          }
+          .react-datepicker__month{
+            padding: 10px 15px !important;
+          }
+        }
+      }
+      &#modal-new-order-content{
+        margin-bottom: -10px;
+        article{
+          .huckleberry-subscription-detail-product-detail{
+            margin: 0 0 15px;
+            .label{
+              font-size: 1.4rem;
+              font-weight: normal !important;
+            }
+            .value{
+              font-size: 1.4rem;
+            }
+            &:nth-of-type(1){
+              display: block;
+              border-bottom: 1px solid #d8d8d8;
+              padding-bottom: 10px;
+              margin-bottom: 20px;
+              dt{
+                border: none;
+                font-weight: normal;
+                font-size: 1.4rem;
+                margin: 0;
+              }
+              dd{
+                border: none;
+                width: 100%;
+                margin: 0;
+                text-align: left;
+                min-width: 100%;
+                @include libre-r;
+                color: $basicGreen;
+                font-size: 2.0rem;
+              }
+            }
+            &:nth-of-type(2){
+              display: none;
+            }
+          }
+          &:nth-of-type(1){
+            margin: 20px 0 0;
+            padding: 0 !important;
+          }
+          &:nth-of-type(2){
+            margin: 30px 0 0;
+            background: #fff;
+            padding: 20px !important;
+          }
+          &:nth-of-type(2) + p{
+            margin-top: 25px;
+            font-size: 1.2rem;
+            color: $basicGreen !important;
+          }
+        }
+      }
+    }
+    footer{
+      margin-top: 15px;
+      button{
+        width: 100%;
+        @include greenButton;
+        line-height: 50px !important;
+        height: 50px !important;
+        &.clear{
+          @include whiteButton;
+          margin-top:5px !important;
+          line-height: 50px !important;
+          height: 50px !important;
+        }
+      }
+    }
+  }
+}

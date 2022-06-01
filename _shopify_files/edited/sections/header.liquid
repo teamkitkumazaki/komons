@@ -1,5 +1,9 @@
 <header class="header_new">
+  {%- if request.page_type contains 'account' -%}
+  <div class="header_inner" style="background: transparent;">
+  {%- else -%}
   <div class="header_inner">
+  {%- endif -%}
     <div class="header_left">
       <div id="hLogo" class="header_logo">
         <a href="/"></a>
