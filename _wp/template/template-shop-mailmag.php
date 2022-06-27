@@ -259,9 +259,10 @@
                                           </div>
                                           <div class="item_flex" style="margin-bottom: 60px;">
                                             <div class="item_img" style="margin-bottom: 15px;">                                              <a href="https://komons-japan.com/products/k0002?utm_source=mailmag&amp;utm_medium=branding&amp;utm_campaign=branding03">
-                                                <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/132298880_o2.jpg?v=1614109378" width="100%"/></a>
+                                                <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_fa5bcb48-0b2b-4d39-96a4-3c64b59aabb3.jpg?v=1648100622&width=832" width="100%"/></a>
                                             </div>
-                                            <div class="item_txt">                                              <a class="item_name" href="https://komons-japan.com/products/k0002?utm_source=mailmag&amp;utm_medium=branding&amp;utm_campaign=branding03" style="display: block;font-weight:normal;text-decoration:none;margin-bottom:5px;font-size: 18px;line-height: 1.6;letter-spacing: 0.4px;color: #00381f;">除菌消臭ミスト / Free as a Bird</a> <span class="item_price" style="display: block;margin-bottom:20px;font-size: 14px;line-height: 1.6;letter-spacing: 0.4px;color: #00381f;">2,530円(税込)</span>
+                                            <div class="item_txt">
+                                              <a class="item_name" href="https://komons-japan.com/products/k0002?utm_source=mailmag&amp;utm_medium=branding&amp;utm_campaign=branding03" style="display: block;font-weight:normal;text-decoration:none;margin-bottom:5px;font-size: 18px;line-height: 1.6;letter-spacing: 0.4px;color: #00381f;">除菌消臭ミスト / Free as a Bird</a> <span class="item_price" style="display: block;margin-bottom:20px;font-size: 14px;line-height: 1.6;letter-spacing: 0.4px;color: #00381f;">2,530円(税込)</span>
                                               <p class="item_desc" style="display: block;margin:5px 0 25px;font-size: 14px;line-height: 1.6;letter-spacing: 0.4px;color: #00381f;">
                                                 ソファーやベッド、お気に入りの衣類に。思わず深呼吸をしたくなるような、やさしい空気を届けます。ひと吹き、ふた吹き、鳥が戯れる木々の香りにつつまれる、除菌消臭ミスト。
                                               </p>
@@ -271,7 +272,7 @@
                                           </div><!-- item_flex -->
                                           <div class="item_flex" style="margin-bottom: 60px;">
                                             <div class="item_img" style="margin-bottom: 15px;">                                              <a href="https://komons-japan.com/products/k0003?utm_source=mailmag&amp;utm_medium=branding&amp;utm_campaign=branding03">
-                                                <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/132301791_o2.jpg?v=1613984401" width="100%"/></a>
+                                                <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_470b67da-993b-4d3c-939f-f67f0c067c1c.jpg?v=1648100617&width=832" width="100%"/></a>
                                             </div>
                                             <div class="item_txt">
                                               <a class="item_name" href="https://komons-japan.com/products/k0003?utm_source=mailmag&amp;utm_medium=branding&amp;utm_campaign=branding03" style="display: block;font-weight:normal;text-decoration:none;margin-bottom:5px;font-size: 18px;line-height: 1.6;letter-spacing: 0.4px;color: #00381f;">ハンドソープ / I can hear music</a> <span class="item_price" style="display: block;margin-bottom:20px;font-size: 14px;line-height: 1.6;letter-spacing: 0.4px;color: #00381f;">1,980円(税込)</span>
@@ -284,7 +285,7 @@
                                           </div>
                                           <div class="item_flex" style="margin-bottom: 60px;">
                                             <div class="item_img" style="margin-bottom: 15px;">                                              <a href="https://komons-japan.com/products/k0004?utm_source=mailmag&amp;utm_medium=branding&amp;utm_campaign=branding03">
-                                                <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/132301713_o2.jpg?v=1614114154" width="100%"/></a>
+                                                <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_97d4ecf0-f3fb-4d43-9c14-d34849b989e2.jpg?v=1648100639&width=832" width="100%"/></a>
                                             </div>
                                             <div class="item_txt">
                                               <a class="item_name" href="https://komons-japan.com/products/k0004?utm_source=mailmag&amp;utm_medium=branding&amp;utm_campaign=branding03" style="display: block;font-weight:normal;text-decoration:none;margin-bottom:5px;font-size: 18px;line-height: 1.6;letter-spacing: 0.4px;color: #00381f;">マルチクリーナー / In a silent way</a> <span class="item_price" style="display: block;margin-bottom:20px;font-size: 14px;line-height: 1.6;letter-spacing: 0.4px;color: #00381f;">2,530円(税込)</span>

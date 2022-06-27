@@ -68,6 +68,12 @@
 @import 'component/itemNew/comp-item-thumbs.scss';
 @import 'component/itemNew/comp-gift-options-new.scss';
 @import 'component/itemNew/comp-cart-wrap.scss';
+@import 'component/itemNew/comp-cart-note.scss';
+@import 'component/itemNew/comp-subscription-wrap.scss';
+@import 'component/itemNew/comp-subscription-modal.scss';
+@import 'component/itemNew/comp-huckleberry-container.scss';
+
+
 @import 'component/itemNew/comp-cart-wrap-switch.scss';
 
 @import 'component/itemNew/comp-detail-title.scss';
@@ -83,6 +89,9 @@
 
 
 @import 'component/comp-list-link.scss';
+
+/* ジャーナル */
+@import 'component/journal/comp-item-list-journal.scss';
 
 
 /* ストア一覧・FAQ */

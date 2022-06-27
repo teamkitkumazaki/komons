@@ -1,6 +1,5 @@
 .comp-variation{
-  margin-top: 15px;
-  margin-bottom: 20px;
+  margin: 15px 15px 20px;
   .variation_wrap{
     a{
       @include flexSet;
@@ -43,8 +42,7 @@
 
 @media screen and (min-width: 720px){
   .comp-variation{
-    margin-top: 15px;
-    margin-bottom: 30px;
+    margin: 20px 20px 30px;
     .variation_wrap{
       @include flexSet;
       justify-content: space-between;
@@ -65,8 +63,7 @@
 
 @media screen and (min-width: 720px){
   .comp-variation{
-    margin-top: 15px;
-    margin-bottom: 20px;
+    margin: 20px 20px 30px;
     .variation_wrap{
       a{
         @include flexSet;

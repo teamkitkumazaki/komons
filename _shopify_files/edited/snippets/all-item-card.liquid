@@ -1,5 +1,5 @@
 {%- assign prod_price = product.price | money_without_currency -%}
-{%- if product.handle == "k0001" or product.handle == "k0002" or product.handle == "k0003" or product.handle == "k0004" or product.handle == "k0005" or product.handle == "k0006" -%}
+{%- if product.handle == "k0001" or product.handle == "k0002" or product.handle == "k0003" or product.handle == "k0005" or product.handle == "k0006" -%}
   {%- assign thumb_image = product.media[1] -%}
 {%- else -%}
   {%- assign thumb_image = product.media[0] -%}

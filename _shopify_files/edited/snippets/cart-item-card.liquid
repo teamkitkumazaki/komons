@@ -21,6 +21,11 @@
 {%- if property.product.has_only_default_variant != true -%}
   {%- assign variant_options = property.options_with_values -%}
 {%- endif -%}
+{% for variant in product.variants %}
+  {% for allocation in variant.selling_plan_allocations %}
+
+  {%- endfor -%}
+{%- endfor -%}
 {%- assign property_size = property.properties | size -%}
 
 <div class="cart_item" data-cart-item data-cart-item-key="{{ property.key }}" data-cart-item-url="{{ property.url }}" data-cart-item-title="{{ property.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ property.quantity }}">
@@ -31,7 +36,7 @@
     <div class="txt_inner">
       <div class="item_info">
         <span class="category"><span class="ja">{{ category }}</span></span>
-        <a class="links" href="{{ property.url }}">{{ prodName }}{%- for option in variant_options -%}<span class="options genre {% if property.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}</a>
+        <a class="links" href="{{ property.url }}">{{ prodName }}{%- for option in variant_options -%}<span class="options genre {% if property.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}{% unless item.properties == empty %}{% for property in property.properties %}<span class="options genre">{{ property.first }}:{{ property.last }}</span>{% endfor %}{% endunless %}</a>
         <span class="price">{{ property.price | money_without_currency }}円(税込)</span></a>
       </div>
       <div class="controll_wrap">

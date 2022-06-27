@@ -1,0 +1,164 @@
+.comp-item-list-journal{
+  @include flexSet;
+  justify-content:space-between;
+  margin-bottom: 30px;
+  br,p{
+    display: none;
+  }
+  .list_ttl{
+    display: block;
+    width: 100%;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .added{
+    display: block;
+    width: 100%;
+    margin-top: -20px;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  .list_item{
+    width:calc(50% - 7px);
+    margin-bottom: 15px;
+    a{
+      display: block;
+      margin-bottom: 20px;
+      @include hover;
+      img{
+        width: 100%;
+        margin: 0 !important;
+      }
+    }
+    .name_wrap{
+      display: block;
+      color: inherit !important;
+      @include hover;
+      .prod_name_ja{
+        display: block;
+        font-size: 1.2rem;
+        font-weight: normal;
+        line-height: 1;
+        color: $basicGreen;
+        margin-bottom: 7px;
+      }
+      .fabric_en{
+        display: block;
+        font-size: 1.2rem;
+        font-weight: normal;
+        line-height: 1;
+        @include libre-r;
+        color: $basicGreen;
+        margin-bottom: 10px;
+      }
+      .prod_name_en{
+        display: block;
+        line-height: 1.6;
+        @include libre-r;
+        letter-spacing: 0.3px;
+        font-size: 1.8rem;
+        color: #00381f;
+        margin-bottom: 10px;
+      }
+      .fabric_ja{
+        display: block;
+        line-height: 1.6;
+        @include libre-r;
+        letter-spacing: 0.3px;
+        font-size: 1.8rem;
+        color: #00381f;
+        margin-bottom: 10px;
+        text-indent: -0.1em;
+      }
+      .fabric_ja2{
+        display: block;
+        line-height: 1.6;
+        @include libre-r;
+        letter-spacing: 0.1px;
+        font-size: 1.7rem;
+        color: #00381f;
+        text-indent: -0.1em;
+        margin-bottom: 10px;
+        span{
+          margin-top: 5px;
+          display: block;
+          font-size: 1.2rem;
+        }
+      }
+      .volume{
+        @include flexSet;
+        justify-content: flex-start;
+        span{
+          color: inherit;
+          font-size: 1.2rem;
+          text-decoration: underline;
+          margin-right: 0.75em;
+          &:nth-last-of-type(1){
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-item-list-journal{
+    @include flexSet;
+    justify-content:flex-start;
+    margin-bottom: 40px;
+    .list_ttl{
+      width: 100%;
+      font-size: 2.0rem;
+      margin-bottom: 20px;
+    }
+    .added{
+      margin-top: -20px;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+    .list_item{
+      width: 31%;
+      margin-right: 3.5%;
+      margin-bottom: 15px;
+      &:nth-of-type(3n){
+        margin-right: 0;
+      }
+      a{
+        margin-bottom: 20px;
+      }
+      .name_wrap{
+        .prod_name_ja{
+          font-size: 1.4rem;
+          margin-bottom: 7px;
+        }
+        .fabric_en{
+          font-size: 1.3rem;
+          margin-bottom: 10px;
+        }
+        .prod_name_en{
+          font-size: 2.0rem;
+          margin-bottom: 10px;
+        }
+        .fabric_ja{
+          font-size: 2.0rem;
+          margin-bottom: 10px;
+        }
+        .fabric_ja2{
+          font-size: 1.9rem;
+          margin-bottom: 10px;
+          span{
+            margin-top: 5px;
+            display: block;
+            font-size: 1.3rem;
+          }
+        }
+        .volume{
+          a{
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}

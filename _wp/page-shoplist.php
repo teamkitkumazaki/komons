@@ -23,15 +23,34 @@
         </div>
       </div>
       <div class="comp-popup-store">
+        <hgroup class="shop_ttl">
+          <span class="ttl_en">Popup Store</span>
+          <h2 class="ttl_ja">ポップアップ</h2>
+        </hgroup>
         <div class="popup_item">
           <div class="img_wrap">
-						<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/ethical_labo.jpg?v=1651581111">
+						<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/choose02.jpg?v=1655968581">
           </div>
           <div class="txt_wrap">
-            <hgroup class="shop_ttl">
-              <span class="ttl_en">Popup Store</span>
-              <h2 class="ttl_ja">イベント情報</h2>
-            </hgroup>
+            <div class="shop_name"><span>CHOOSEBASE SHIBUYA</span></div>
+            <p class="address">東京都渋谷区宇田川町21－1<span>西武渋谷店 パーキング館1階</span></p>
+            <div class="event_detail">
+              <div class="detail_item">
+                <span class="ttl">開催期間</span>
+                <p class="contents">2022年6月20日~12月末</p>
+              </div>
+              <div class="detail_item">
+                <span class="ttl">営業時間</span>
+                <p class="contents">午前11時～午後9時</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_item">
+          <div class="img_wrap">
+            <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/ethical_labo.jpg?v=1651581111">
+          </div>
+          <div class="txt_wrap">
             <div class="shop_name"><span>エシカルビューティーラボ</span></div>
             <p class="address">神奈川県横浜市西区高島2-18-1<span>横浜そごう地下1階 ビューティーサロン</span></p>
             <div class="event_detail">

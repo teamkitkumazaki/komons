@@ -730,7 +730,7 @@ $(function() {
           }
         });
       }
-      
+
       $(window).on(
         'resize', function() {
           setToggleHeight();
@@ -755,6 +755,10 @@ $(function() {
 
   if (document.getElementById('giftService')) {
     faqToggle($('article'));
+  }
+
+  if (document.getElementById('itemDetailNew')) {
+    faqToggle($('#subFaq'));
   }
 
   //ギフトサービスへのスクロール
