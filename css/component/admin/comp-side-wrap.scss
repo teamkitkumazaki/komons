@@ -4,6 +4,15 @@
   margin: 0 -7vw;
   padding: 50px 7vw 60px;
   box-sizing: border-box;
+  .create_account{
+    text-align: center;
+    margin-top: 25px;
+    a{
+      display: block;
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
   &.bg{
     @media screen and (max-width: 720px){
       background: #f1f1f1;

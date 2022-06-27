@@ -15411,6 +15411,10 @@ body.loaded #loading {
   font-weight: normal;
   letter-spacing: 0.06em;
 }
+.comp-admin-subttl .ttl_desc {
+  margin-top: 25px;
+  margin-bottom: -5px;
+}
 
 @media screen and (min-width: 720px) {
   .comp-admin-subttl {
@@ -15418,6 +15422,10 @@ body.loaded #loading {
   }
   .comp-admin-subttl .ttl {
     font-size: 2.4rem;
+  }
+  .comp-admin-subttl .ttl_desc {
+    margin-top: 25px;
+    margin-bottom: -15px;
   }
 }
 @media screen and (min-width: 1100px) {
@@ -15497,6 +15505,15 @@ body.loaded #loading {
   padding: 50px 7vw 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+.comp-side-wrap .create_account {
+  text-align: center;
+  margin-top: 25px;
+}
+.comp-side-wrap .create_account a {
+  display: block;
+  color: inherit;
+  text-decoration: underline;
 }
 @media screen and (max-width: 720px) {
   .comp-side-wrap.bg {
