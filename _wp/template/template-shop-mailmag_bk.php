@@ -219,57 +219,30 @@
                                               <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1607485774/journal/storelist/icon_house_gqdq1m.png" style="display: inline; margin-right: 10px; margin-bottom: -3px;" width="16"/><span><?= $i['shop_name_kanto'] ?></span></a>
                                           <?php endforeach; ?>
                                         <?php endif; ?>
-                                        <?php if (!empty($hokuriku)) : ?>
-                                          <p class="main_desc" style="font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 40px 0 20px; background: #f1f1f1; padding: 10px 0; text-align: center;">                                     <strong style="font-size: 16px;">北陸</strong>
-                                          </p>
-                                          <?php foreach ($hokuriku as $i) : ?>
-                                            <a class="main_desc" href="<?= $i['google_map_hokuriku'] ?>" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 10px;">
-                                              <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1607485774/journal/storelist/icon_house_gqdq1m.png" style="display: inline; margin-right: 10px; margin-bottom: -3px;" width="16"/><span><?= $i['shop_name_hokuriku'] ?></span></a>
-                                          <?php endforeach; ?>
-                                        <?php endif; ?>
-                                        <?php if (!empty($chubu)) : ?>
-                                          <p class="main_desc" style="font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 40px 0 20px; background: #f1f1f1; padding: 10px 0; text-align: center;">                                     <strong style="font-size: 16px;">中部</strong>
-                                          </p>
-                                          <?php foreach ($chubu as $i) : ?>
-                                            <a class="main_desc" href="<?= $i['google_map_chubu'] ?>" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 10px;">
-                                              <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1607485774/journal/storelist/icon_house_gqdq1m.png" style="display: inline; margin-right: 10px; margin-bottom: -3px;" width="16"/><span><?= $i['shop_name_chubu'] ?></span></a>
-                                          <?php endforeach; ?>
-                                        <?php endif; ?>
-                                        <?php if (!empty($kansai)) : ?>
-                                          <p class="main_desc" style="font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 40px 0 20px; background: #f1f1f1; padding: 10px 0; text-align: center;">                                     <strong style="font-size: 16px;">関西</strong>
-                                          </p>
-                                          <?php foreach ($kansai as $i) : ?>
-                                            <a class="main_desc" href="<?= $i['google_map_kansai'] ?>" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 10px;">
-                                              <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1607485774/journal/storelist/icon_house_gqdq1m.png" style="display: inline; margin-right: 10px; margin-bottom: -3px;" width="16"/><span><?= $i['shop_name_kansai'] ?></span></a>
-                                          <?php endforeach; ?>
-                                        <?php endif; ?>
-                                        <?php if (!empty($kyusyu)) : ?>
-                                          <p class="main_desc" style="font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 40px 0 20px; background: #f1f1f1; padding: 10px 0; text-align: center;">                                     <strong style="font-size: 16px;">九州</strong>
-                                          </p>
-                                          <?php foreach ($kyusyu as $i) : ?>
-                                            <a class="main_desc" href="<?= $i['google_map_kyusyu'] ?>" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 10px;">
-                                              <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1607485774/journal/storelist/icon_house_gqdq1m.png" style="display: inline; margin-right: 10px; margin-bottom: -3px;" width="16"/><span><?= $i['shop_name_kyusyu'] ?></span></a>
-                                          <?php endforeach; ?>
-                                        <?php endif; ?>
                                         <?php if (!empty($others)) : ?>
                                           <p class="main_desc" style="font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 40px 0 20px; background: #f1f1f1; padding: 10px 0; text-align: center;">                                          <strong style="font-size: 16px;">OTHER</strong>
                                           </p>
-                                          <a class="main_desc" href="https://www.unico-fan.co.jp/staffblog/storelist/" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 10px;">
-                                              <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/c_fit,f_auto,q_auto/v1607485774/journal/storelist/icon_house_gqdq1m.png" style="display: inline; margin-right: 10px; margin-bottom: -3px;" width="16"><span>unico(全国47店舗)</span></a>
+                                          <?php foreach ($others as $i) : ?>
+                                            <a class="main_desc" href="<?= $i['google_map_others'] ?>" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 10px;">
+                                              <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1607485774/journal/storelist/icon_house_gqdq1m.png" style="display: inline; margin-right: 10px; margin-bottom: -3px;" width="16"/><span><?= $i['shop_name_others'] ?></span></a>
+                                          <?php endforeach; ?>
                                         <?php endif; ?>
                                         <p class="main_desc" style="  font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 30px 0 20px;">
                                           ※店舗によってお取り扱い商品が異なります。事前に店舗までお問い合わせください。
                                         </p>
                                         <hr style="border: none;border-top: 1px solid #d8d8d8; margin-top: 40px; margin-bottom: 35px;"/>
                                         <p class="main_desc" style="  font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 20px;">
-                                          今後もお取り扱い店舗やPOP-UPなどに関する情報は公式Instagram、Facebook, LINEで随時発信していきますので、ぜひフォローお願いします。
+                                          今後もお取り扱い店舗やPOP-UPなどに関する情報は公式Instagram、Facebook, Twitterで随時発信していきますので、ぜひフォローお願いします。
                                         </p>
                                         <a class="main_desc" href="https://www.instagram.com/komons.jp/" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px; color: #00371f; margin: 5px 0 15px; ">
                                           <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1607486194/journal/storelist/icon_ig_kirgzs.png" style="display: inline-block; margin-right: 10px; margin-bottom: -3px;" width="18"/><span>Komons公式Instagram</span></a>
                                         <a class="main_desc" href="https://www.facebook.com/komons.japan" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px; color: #00371f; margin: 5px 0 15px; ">
                                           <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1607670135/journal/storelist/icon_fb_cpz5sd.png" style="display: inline-block; margin-right: 10px; margin-bottom: -3px;" width="18"/><span>Komons公式Facebook</span></a>
+                                        <a class="main_desc" href="https://twitter.com/komons_jp" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px; color: #00371f; margin: 5px 0 15px;">
+                                          <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1607486194/journal/storelist/icon_tw_vsnu9n.png" style="display: inline-block; margin-right: 10px; margin-bottom: -3px;" width="18"/><span>Komons公式Twitter</span></a>
                                         <a class="main_desc" href="https://lin.ee/ID6naHI" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px; color: #00371f; margin: 5px 0 15px;">
-                                          <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/icon_line_14468421-1dae-4d8e-9a8f-a3ed5ae1c3fb.png?v=1628447366" style="display: inline-block; margin-right: 10px; margin-bottom: -3px;" width="18"/><span>Komons公式LINE</span></a>
+                                          <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/icon_line_14468421-1dae-4d8e-9a8f-a3ed5ae1c3fb.png?v=1628447366" style="display: inline-block; margin-right: 10px; margin-bottom: -3px;" width="18"/><span>Komons公式LINE</span>
+</a>
                                         <hr style="border: none;border-top: 1px solid #d8d8d8; margin-top: 40px; margin-bottom: 35px;"/>
                                         <p class="main_desc" style="  font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 20px;">
                                           2018年夏から販売を開始したKomonsもおかげさまで少しずつ立ち上がり、生産の体制も整ってきました。
@@ -315,9 +288,8 @@
                                             </div>
                                           </div>
                                           <div class="item_flex" style="margin-bottom: 60px;">
-                                            <div class="item_img" style="margin-bottom: 15px;">
-                                              <a href="https://komons-japan.com/products/k0004?utm_source=mailmag&amp;utm_medium=branding&amp;utm_campaign=branding03">
-                                                <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb02_afae0a0e-b907-46b7-b159-f709ecd6b02b.jpg?v=1648100639&width=832" width="100%"/></a>
+                                            <div class="item_img" style="margin-bottom: 15px;">                                              <a href="https://komons-japan.com/products/k0004?utm_source=mailmag&amp;utm_medium=branding&amp;utm_campaign=branding03">
+                                                <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_97d4ecf0-f3fb-4d43-9c14-d34849b989e2.jpg?v=1648100639&width=832" width="100%"/></a>
                                             </div>
                                             <div class="item_txt">
                                               <a class="item_name" href="https://komons-japan.com/products/k0004?utm_source=mailmag&amp;utm_medium=branding&amp;utm_campaign=branding03" style="display: block;font-weight:normal;text-decoration:none;margin-bottom:5px;font-size: 18px;line-height: 1.6;letter-spacing: 0.4px;color: #00381f;">マルチクリーナー / In a silent way</a> <span class="item_price" style="display: block;margin-bottom:20px;font-size: 14px;line-height: 1.6;letter-spacing: 0.4px;color: #00381f;">2,530円(税込)</span>

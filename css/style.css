@@ -13097,6 +13097,180 @@ body.loaded #loading {
     font-size: 1.3rem;
   }
 }
+.comp-mist-lineup {
+  margin-top: 40px;
+}
+.comp-mist-lineup .mist_ttl {
+  margin-bottom: 40px !important;
+}
+.comp-mist-lineup .mist_item {
+  margin-bottom: 60px;
+}
+.comp-mist-lineup .mist_item .item_ttl {
+  font-size: 1.8rem !important;
+}
+.comp-mist-lineup .mist_item .note {
+  font-size: 1.4rem !important;
+  line-height: 1.8 !important;
+  margin-top: 10px;
+}
+.comp-mist-lineup .mist_item .material_img {
+  margin-bottom: 35px;
+}
+.comp-mist-lineup .mist_item .material_img img {
+  width: 100%;
+}
+.comp-mist-lineup .mist_item .scent_structure .scent_ttl {
+  font-size: 1.8rem !important;
+  margin-bottom: 5px !important;
+}
+.comp-mist-lineup .mist_item .scent_structure .scent_txt {
+  font-size: 1.4rem !important;
+  line-height: 1.8 !important;
+}
+.comp-mist-lineup .mist_item .scent_structure .scent_chart {
+  background: #f8f8f8;
+  padding: 10px 20px;
+  margin: 30px 0 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.comp-mist-lineup .mist_item .scent_structure .scent_chart img {
+  -webkit-filter: brightness(0.97);
+          filter: brightness(0.97);
+}
+.comp-mist-lineup .mist_item .scent_structure .scent_item {
+  border-bottom: 1px solid #00381f;
+  padding: 20px 5px;
+}
+.comp-mist-lineup .mist_item .scent_structure .scent_item:nth-last-of-type(1) {
+  border-bottom: 0px;
+}
+.comp-mist-lineup .mist_item .scent_structure .scent_item .title {
+  display: block;
+  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.comp-mist-lineup .mist_item .scent_structure .scent_item .content {
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+}
+.comp-mist-lineup .mist_item .link_wrap {
+  margin-top: 10px;
+}
+.comp-mist-lineup .mist_item .link_wrap a {
+  display: block;
+  font-size: 1.4rem;
+  color: #fff !important;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 5px;
+  background: #00381f;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.comp-mist-lineup .mist_item .link_wrap a:hover {
+  opacity: 0.75;
+}
+
+@media screen and (min-width: 720px) {
+  .comp-mist-lineup {
+    margin-top: 80px;
+  }
+  .comp-mist-lineup .mist_ttl {
+    font-size: 2.4rem !important;
+    margin-bottom: 40px !important;
+  }
+  .comp-mist-lineup .mist_item {
+    margin-bottom: 80px;
+  }
+  .comp-mist-lineup .mist_item .item_ttl {
+    font-size: 2rem !important;
+  }
+  .comp-mist-lineup .mist_item .note {
+    font-size: 1.6rem !important;
+    line-height: 1.8 !important;
+    margin-top: 15px;
+  }
+  .comp-mist-lineup .mist_item .material_img {
+    margin-top: 20px;
+    margin-bottom: 45px;
+  }
+  .comp-mist-lineup .mist_item .material_img img {
+    width: 100%;
+  }
+  .comp-mist-lineup .mist_item .scent_structure .scent_ttl {
+    font-size: 2rem !important;
+    margin-bottom: 10px !important;
+  }
+  .comp-mist-lineup .mist_item .scent_structure .scent_txt {
+    font-size: 1.6rem !important;
+    line-height: 1.8 !important;
+  }
+  .comp-mist-lineup .mist_item .scent_structure .scent_chart {
+    padding: 40px 100px;
+    margin: 40px 0 0px;
+  }
+  .comp-mist-lineup .mist_item .scent_structure .scent_chart img {
+    -webkit-filter: brightness(0.97);
+            filter: brightness(0.97);
+  }
+  .comp-mist-lineup .mist_item .scent_structure .scent_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-bottom: 1px solid #00381f;
+    padding: 20px 5px;
+  }
+  .comp-mist-lineup .mist_item .scent_structure .scent_item:nth-last-of-type(1) {
+    border-bottom: 0px;
+  }
+  .comp-mist-lineup .mist_item .scent_structure .scent_item .title {
+    width: 150px;
+    display: block;
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.8rem;
+    margin-bottom: 0px;
+  }
+  .comp-mist-lineup .mist_item .scent_structure .scent_item .content {
+    width: calc(100% - 150px);
+    font-size: 1.5rem;
+    margin-top: 5px;
+  }
+  .comp-mist-lineup .mist_item .link_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 20px;
+  }
+  .comp-mist-lineup .mist_item .link_wrap a {
+    width: calc(50% - 5px);
+    font-size: 1.6rem;
+    padding: 15px 0;
+    margin-bottom: 0px;
+  }
+}
 /* ストア一覧・FAQ */
 .comp-category-button button {
   width: 100%;

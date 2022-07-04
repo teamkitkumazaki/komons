@@ -38,7 +38,10 @@
     </div><!-- section_inner_new -->
   </section>
 </article>
+
+{%- if product.type != "archive" and product.type != "upcoming" -%}
 {% section 'fixed-cart-wrap' %}
+{%- endif -%}
 
 {% if product.metafields.custom_fields["subscription_check"] == 1 %}
   {% include 'product-sub-modal' %}
