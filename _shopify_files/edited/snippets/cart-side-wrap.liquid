@@ -1,13 +1,8 @@
 {%- assign subProperty = 0 -%}
 {%- for item in cart.items -%}
-  {%- assign variant_options = item.options_with_values -%}
-  {%- for option in variant_options -%}
-    {% for property in item.properties %}
-      {% if property.first contains '定期' %}
-      {%- assign subProperty = subProperty | plus : 1 -%}
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endfor -%}
+  {% if item.selling_plan_allocation.selling_plan.name contains '定期'  %}
+    {%- assign subProperty = subProperty | plus : 1 -%}
+  {%- endif -%}
 {%- endfor -%}
 
 {% if subProperty < 1%}
@@ -21,10 +16,10 @@
   <p class="ttl_desc">定期購入商品のご購入にはログインが必要です。</p>
 </div>
 <div class="comp-admin-button mt">
-  <a href="{{ routes.account_login_url }}">ログインページへ</a>
+  <a href="{{ routes.account_login_url }}?route=cart">ログインページへ</a>
 </div>
 <div class="create_account">
-  <a href="{{ routes.account_register_url }}">アカウントの新規作成</a>
+  <a href="{{ routes.account_register_url }}?route=cart">アカウントの新規作成</a>
 </div>
 {% endif %}
 {%- endif -%}

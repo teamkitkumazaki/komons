@@ -33,7 +33,6 @@
     .name_wrap{
       display: block;
       color: inherit !important;
-      @include hover;
       .prod_name_ja{
         display: block;
         font-size: 1.2rem;
@@ -89,7 +88,7 @@
         @include flexSet;
         justify-content: flex-start;
         span{
-          color: inherit;
+          color: #068acc;
           font-size: 1.2rem;
           text-decoration: underline;
           margin-right: 0.75em;

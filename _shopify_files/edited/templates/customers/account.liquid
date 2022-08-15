@@ -17,14 +17,19 @@
 							<a href="{{ routes.account_logout_url }}">ログアウト</a>
 						</div>
 					</div>
+					{%- if customer.orders.size != 0 -%}
+					<!-- <div class="comp-admin-button">
+						<a href="/account?hbSubscriptionPath=/"><span>定期購買商品の変更・設定</span></a>
+					</div> -->
+					{%- endif -%}
 				</div>
 				<div class="admin_flex">
 					<div class="admin_left">
+
 					<div class="comp-admin-subttl">
 						<h2 class="ttl">ご注文履歴</h2>
 					</div>
 					{%- if customer.orders.size != 0 -%}
-					<a href="/account?hbSubscriptionPath=/">定期購買の変更</a>
 					<div id="orderList" class="comp-order-list">
 					{%- for order in customer.orders -%}
 						<div class="order_item">
@@ -87,20 +92,12 @@
 								<div class="address_item">
 									<p class="username ">{{ customer.last_name }}{{ customer.first_name }}</p>
 									<div class="address">
-									{%- if customer.default_address.zip != blank -%}
-										<p>
-											<span>〒{{ customer.default_address.zip }}</span>
-											<span>{{ customer.default_address.province }} {{ customer.default_address.city }}</span>
-											<span>{{ customer.default_address.street }}</span>
-										</p>
-									{%- else -%}
-										<p>住所情報未登録</p>
-									{%- endif -%}
+									<p>{{customer.email}}</p>
 									</div>
 								</div>
 							</div>
 							<div class="comp-admin-button mt">
-								<a href="{{ routes.account_addresses_url }}" class=" "><span class=" ">配送先情報の追加・変更</span></a>
+								<a href="{{ routes.account_addresses_url }}" class=" "><span class=" ">住所情報の追加・変更</span></a>
 							</div>
 						</div>
 					</div>

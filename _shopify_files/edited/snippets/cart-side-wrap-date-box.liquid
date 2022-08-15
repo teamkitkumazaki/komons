@@ -1,0 +1,108 @@
+<select id="deliveryDateBox">
+  <option value="指定なし">指定なし</option>
+  {% assign weekDayToday = "today" | date: "%w" %}
+  {% assign dayTime = "today" | date: "%H" %}
+  {% assign dayTime = dayTime | plus: 0 %}
+  {% assign displayIndex = 0 | plus: 0 %}
+  {% assign holidayArray = "2022-09-19, 2022-09-23, 2022-10-10, 2022-11-03, 2022-11-23" | split: ", " %}
+  {% if dayTime < 10 %}
+    {% comment %} 10時までの注文 {% endcomment %}
+    {% if dateWeekDay == '0' %}
+      {% assign bufferDate = 2 | plus: 0 %}
+      {%- elsif dateWeekDay == '6'  -%}
+      {% assign bufferDate = 3 | plus: 0 %}
+      {%- else -%}
+      {% assign bufferDate = 1 | plus: 0 %}
+      {% assign reloadTime = 10 | plus: 0 %}
+    {%- endif -%}
+  {%- else -%}
+    {% comment %} 10時以降の注文 {% endcomment %}
+    {% if dateWeekDay == '6' %}
+      {% assign bufferDate = 3 | plus: 0 %}
+      {%- elsif dateWeekDay == '5' -%}
+      {% comment %} 金曜日の14時以降以前の分岐 {% endcomment %}
+      {% if dayTime < 14 %}
+        {% assign bufferDate = 1 | plus: 0 %}
+        {% assign reloadTime = 14 | plus: 0 %}
+      {%- else -%}
+        {% assign bufferDate = 4 | plus: 0 %}
+        {% assign reloadTime = 10 | plus: 0 %}
+      {%- endif -%}
+    {%- else -%}
+      {% assign bufferDate = 2 | plus: 0 %}
+      {% assign reloadTime = 10 | plus: 0 %}
+    {%- endif -%}
+  {%- endif -%}
+
+  {% for i in (bufferDate..30) %}
+
+  {% assign seconds = i | times: 24 | times: 60 | times: 60 %}
+  {% assign dateValue = 'today' | date: '%s' | plus: seconds | date: '%Y-%m-%d' %}
+  {% assign dateDisplayM = 'today' | date: '%s' | plus: seconds | date: '%m' %}
+  {% assign dateDisplayM = dateDisplayM | plus: 0 %}
+  {% assign dateDisplayD = 'today' | date: '%s' | plus: seconds | date: '%d' %}
+  {% assign dateDisplayD = dateDisplayD | plus: 0 %}
+  {% assign dateWeekDay = 'today' | date: '%s' | plus: seconds | date: '%w' %}
+  {% if dateWeekDay == '0' %}{% assign weekDay = '(日)' %}{%- endif -%}
+  {% if dateWeekDay == '1' %}{% assign weekDay = '(月)' %}{%- endif -%}
+  {% if dateWeekDay == '2' %}{% assign weekDay = '(火)' %}{%- endif -%}
+  {% if dateWeekDay == '3' %}{% assign weekDay = '(水)' %}{%- endif -%}
+  {% if dateWeekDay == '4' %}{% assign weekDay = '(木)' %}{%- endif -%}
+  {% if dateWeekDay == '5' %}{% assign weekDay = '(金)' %}{%- endif -%}
+  {% if dateWeekDay == '6' %}{% assign weekDay = '(土)' %}{%- endif -%}
+  {% if displayIndex == 0 %}
+  {% unless holidayArray contains dateValue %}
+  <option value="{{dateValue}}">{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}} ※一部地域のみ</option>
+  {% assign displayIndex = displayIndex | plus: 1 %}
+  {% assign firstDay = dateValue %}
+  {% capture firstDayDisplay %}{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}{% endcapture %}
+  {% endunless %}
+  {%- else -%}
+  {% if displayIndex == 1 %}
+  {% capture secondDay %}{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}{% endcapture %}
+  {% assign displayIndex = displayIndex | plus: 1 %}
+  {%- endif -%}
+  <option value="{{dateValue}}">{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}</option>
+  {%- endif -%}
+  {%- endfor -%}
+</select>
+<input id="dateInput" type="hidden" name="attributes[配送希望日:]" value="指定なし">
+<p class="example">※お届け先が【四国/九州/中国地方、北海道/青森県/秋田県/和歌山県/沖縄県】の場合、最短指定日は{{secondDay}}になります。</p>
+
+<script>
+var deliveryDate = $('#deliveryDateBox');
+
+deliveryDate.on({
+  'change': function() {
+    if(deliveryDate.val() == '{{firstDay}}' ){
+    var result = window.confirm('お届け先が【四国/九州/中国地方、北海道/青森県/秋田県/和歌山県/沖縄県】の場合、最短指定日は' + '{{secondDay}}' + 'になります。\n' + '{{firstDayDisplay}}' + 'を配送指定日にしますか？');
+      if( result ) {
+
+      }else {
+        deliveryDate.val('指定なし');
+      }
+    }
+    $('#dateInput').val(deliveryDate.val());
+  }
+});
+
+function getDayUpdate(){
+  var today = new Date();
+  var dayTime = today.getHours();
+  var dayMinutes = today.getMinutes();
+  var daySeconds = today.getSeconds();
+  if(dayTime == '{{reloadTime}}' && dayMinutes == 0 && daySeconds == 0){
+    location.reload();
+  }
+  if(daySeconds == 0){
+    console.log(dayTime + '時' + dayMinutes + '分' + daySeconds + '秒');
+  }
+  setTimeout(function() {
+    getDayUpdate();
+  }, 1000);
+}
+
+getDayUpdate();
+
+
+</script>

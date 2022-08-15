@@ -17,6 +17,12 @@
 {%- endif -%}
 {%- assign property_size = item.properties | size -%}
 
+{%- for option in variant_options -%}
+{% for allocation in variant.selling_plan_allocations %}
+  {{ allocation.selling_plan.name }}
+{% endfor %}
+{% endfor %}
+
 <div class="cart_item" data-cart-item data-cart-item-key="{{ item.key }}" data-cart-item-url="{{ item.url }}" data-cart-item-title="{{ item.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ item.quantity }}">
   <div class="img_wrap">
     <a href="{{ item.url }}">{{ item.image.src | image_url: width: 300 | image_tag }}</a>

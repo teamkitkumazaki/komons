@@ -21,7 +21,7 @@
       </div><!-- cart_item -->
       <input class="product_cart_btn button" type="submit" value="カートに入れる" style="display: none">
     {%- else -%}
-    {%- if product.type != "upcoming" and product.type != "archive" and product.metafields.custom_fields["stock_state"] != 1 -%}
+    {%- if product.type != "upcoming" and product.type != "archive" and product.type != "roommist" and product.metafields.custom_fields["stock_state"] != 1 -%}
     {%- assign index = 0 -%}
     <select name="id" id="ProductSelect-product-template" style="display: none; opacity:0; height:0; overflow: hidden;">
     {% for variant in product.variants %}
@@ -42,7 +42,7 @@
     {%- endif -%}
     <div class="comp-waiting-button">
        <a href="https://journal.komons-japan.com/waiting-list/{{product.handle}}" {%- if product.type == "archive" -%}style="pointer-events: none;"{%- endif -%}>
-         {%- if product.type != "archive" -%}
+         {%- if product.type != "archive" and product.type != "roommist" -%}
          <span class="title">Waiting Listに登録</span>
          {%- if product.type != "upcoming" -%}
          <span class="desc">4月28日(木)販売再開予定</span>
@@ -50,7 +50,11 @@
          <span class="desc">発売時にメールにてお知らせいたします</span>
          {%- endif -%}
          {%- else -%}
+         {%- if product.type != "roommist" -%}
          <span class="title">完売商品</span>
+         {%- else -%}
+         <span class="title">8/1(月)販売開始</span>
+         {%- endif -%}
          {%- endif -%}
        </a>
      </div><!-- waiting-button -->
@@ -67,7 +71,7 @@
           {% for item in collection.metafields.custom_fields["variations"] %}
             {%- if item["variation_id"] != product.handle -%}
               <a href="/products/{{item["variation_id"]}}">
-                <span class="title">{{ item["variation_name"] }}({{ item["variation_ml"] }})はこちら</span>
+                <span class="title">{{ item["variation_name"] }}{% if item["variation_ml"] != blank %}({{ item["variation_ml"] }}){% endif %}はこちら</span>
                 {%- if product.type != "archive" -%}
                 <span class="desc"> {{ item["variation_price"] }}円(税込)</span>
                 {%- else -%}
@@ -85,7 +89,7 @@
         {% for item in collection.metafields.custom_fields["variations"] %}
           {%- if item["variation_id"] != product.handle -%}
             <a href="/products/{{item["variation_id"]}}">
-              <span class="title">{{ item["variation_name"] }}({{ item["variation_ml"] }})はこちら</span>
+              <span class="title">{{ item["variation_name"] }}{% if item["variation_ml"] != blank %}({{ item["variation_ml"] }}){% endif %}はこちら</span>
               <span class="desc"> {{ item["variation_price"] }}円(税込)</span>
             </a>
           {%- endif -%}

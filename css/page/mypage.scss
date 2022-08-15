@@ -9,6 +9,12 @@
     @media screen and (min-width: 720px){
       margin-bottom: 100px;
     }
+    .comp-admin-button{
+       margin-top: 50px;
+       @media screen and (min-width: 720px){
+         margin-top: 60px;
+       }
+     }
   }
   .admin_flex{
     .admin_left{

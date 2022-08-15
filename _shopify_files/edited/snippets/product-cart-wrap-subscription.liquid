@@ -58,9 +58,11 @@
               <select id="cycleSelect" class="cycle_select" name="selling_plan">
               {% for variant in product.variants %}
               <optgroup label="配送サイクル">
+              {% assign bestCycle = product.metafields["custom_fields"]["best_cycle"] | plus: 0 %}
               {% for allocation in variant.selling_plan_allocations %}
-              <option value="{{ allocation.selling_plan.id }}">
-              {{ allocation.selling_plan.name }}
+              {%- assign cycleIndex = cycleIndex | plus: 1 -%}
+              <option num="cycle{{cycleIndex}}" value="{{ allocation.selling_plan.id }}">
+              {{ allocation.selling_plan.name | remove: "【定期購入】" }}{% if bestCycle == cycleIndex %}(推奨){% endif %}
               </option>
               {% endfor %}
               </optgroup>
@@ -84,9 +86,8 @@
                 <div class="cart_item">
                   <span class="button_wrap">
                     <span class="title cart_in">カートに入れる</span>
-                    <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
+                    <span class="sub_text">※定期購入は最短2回以上のご購入契約となります</span>
                   </span>
-                  <input id="subCycle" type="hidden" name="properties[定期購入サイクル]">
                   <input id="cartSubmit" class="product_cart_btn button" type="submit" value="カートに入れる">
                 </div><!-- cart_item -->
               </div>

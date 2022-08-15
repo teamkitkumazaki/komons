@@ -35,9 +35,11 @@
           margin: 0 !important;
           text-align: left !important;
           a{
+            display: block;
             @include libre-r;
             color: $basicGreen;
-            font-size: 2.0rem;
+            font-size: 1.6rem;
+            line-height: 1.8;
             font-weight: 500;
             letter-spacing: 0.05em;
           }
@@ -136,7 +138,7 @@
           margin-bottom: 25px;
           dd{
             a{
-              font-size: 2.4rem;
+              font-size: 2.0rem;
             }
           }
         }
@@ -149,7 +151,7 @@
       .huckleberry-subscription-detail-btn-group{
         width: 100%;
         margin-top: 30px;
-        max-width: 500px;
+
       }
     }
   }

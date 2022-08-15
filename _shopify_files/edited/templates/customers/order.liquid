@@ -25,7 +25,7 @@
 								<span class="amount head">合計</span>
 							</div>
 							<div class="item_list">
-							{%- for line_item in order.line_items -%}
+							{%- for item in order.line_items -%}
 								{% include 'cart-item-card' %}
 							{%- endfor -%}
 								</div>

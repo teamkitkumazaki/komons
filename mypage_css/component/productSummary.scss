@@ -19,12 +19,14 @@
         margin-bottom: 20px !important;
       }
       &:nth-of-type(2) + div{
+        display: none;
         width: 100%;
         text-align: center;
         font-size: 1.2rem;
       }
       &:nth-of-type(2) + div + div{
         width: 100%;
+        margin-top: 0 !important;
         .new-add{
           display: block;
           width: 100%;
@@ -32,6 +34,7 @@
           @include greenButton;
         }
         .add{
+          display: none !important;
           @include whiteButton;
           /*line-height: 50px;*/
           margin-top: 5px !important;
