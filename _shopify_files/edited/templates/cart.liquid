@@ -1,3 +1,10 @@
+{%- for item in cart.items -%}
+  {% if item.selling_plan_allocation.selling_plan.name contains '定期'  %}
+    {%- assign subProperty = subProperty | plus : 1 -%}
+  {%- else -%}
+    {%- assign normalProperty = normalProperty | plus : 1 -%}
+  {%- endif -%}
+{%- endfor -%}
 <article id="cart" class="page-cart-new">
 {% section 'cart-template' %}
 {% section 'cart-relations' %}
@@ -10,6 +17,55 @@
 </section>
 </article>
 
+<div id="subscriptionModal" class="comp-subscription-modal small">
+	<div id="subscriptionModalBg" class="pop_bg"></div>
+	<div class="subpop_inner">
+		<div class="subpop_contents">
+			<div class="subpop_desc">
+				<p>定期購入商品は、通常購入商品との同梱発送が不可となります。恐れ入りますが、カートの内容を修正の上ご購入ください。</p>
+				<div class="pop_close2">
+					<button id="subscriptionPopButton">閉じる</button>
+				</div>
+			</div>
+		</div>
+	</div><!-- subpop_inner -->
+</div><!-- comp-subscription-modal -->
+
+{% if subProperty > 0 and normalProperty > 0 %}
+<script type='text/javascript'>
+console.log('subPopDisplay');
+function subPopDisplay(){
+	var subscriptionPopButton = $('#subscriptionPopButton');
+	var subscriptionModal = $('#subscriptionModal');
+	var subscriptionModalBg = $('#subscriptionModalBg');
+
+	function init(){
+		subscriptionPopButton.on({
+			'click': function() {
+				event.preventDefault();
+				subscriptionModal.addClass('open');
+			}
+		});
+		subscriptionModalBg.on({
+			'click': function() {
+				subscriptionModal.removeClass('open');
+			}
+		});
+		setTimeout(function() {
+			subscriptionModal.addClass('open');
+      console.log(subscriptionModal);
+		}, 1000);
+	}
+
+	init();
+
+}
+
+subPopDisplay();
+
+</script>
+
+{%- endif -%}
 
 
 <script type='text/javascript'>

@@ -1,15 +1,23 @@
 {%- assign subProperty = 0 -%}
+{%- assign normalProperty = 0 -%}
 {%- for item in cart.items -%}
   {% if item.selling_plan_allocation.selling_plan.name contains '定期'  %}
     {%- assign subProperty = subProperty | plus : 1 -%}
+  {%- else -%}
+    {%- assign normalProperty = normalProperty | plus : 1 -%}
   {%- endif -%}
 {%- endfor -%}
-
 {% if subProperty < 1%}
 {% include 'cart-side-wrap-inner' %}
 {%- else -%}
 {% if customer %}
-{% include 'cart-side-wrap-inner' %}
+  {% if normalProperty > 0 %}
+  <div class="cart_item_error">
+    <p>定期購入商品は、通常購入商品との同梱発送が不可となります。恐れ入りますが、カートの内容を修正の上ご購入ください。</p>
+  </div>
+  {%- else -%}
+  {% include 'cart-side-wrap-inner' %}
+  {%- endif -%}
 {% else %}
 <div class="comp-admin-subttl">
   <h2 class="ttl">ログイン</h2>
