@@ -3,7 +3,7 @@
 {% assign totalPrice = priceNum | plus: 0  %}
 {% assign souryouLimit = 5500 | minus: totalPrice  %}
 {% assign souryouNum = souryouLimit | format_number %}
-{% if totalPrice > 5500 %}
+{% if totalPrice > 5499 %}
 {%- assign souryou = 0 -%}
 {%- else -%}
 {%- assign souryou = 660 -%}

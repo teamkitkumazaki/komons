@@ -1,3 +1,4 @@
+{%- assign teikiItem = 0 | plus : 0 -%}
 {% capture email_body %}
 {% if requires_shipping %}
 {% case delivery_method %}
@@ -82,7 +83,7 @@
                 <table class="container">
                   <tr>
                     <td>
-                      <div class="img_wrap" style="padding: 0;"><img class="logo" src="https://img07.shop-pro.jp/PA01416/697/etc/header_logo.png" width="100%" /></div>
+                      <div class="img_wrap" style="padding: 0;"><img class="logo" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/header_logo.png?v=1621165398" width="100%" /></div>
                       <span class="order-number__text" style="display: block;font-size: 16px;margin-top: 20px;"></span>
                     </td>
                   </tr>
@@ -195,6 +196,7 @@
 
                                 {% if line.selling_plan_allocation %}
                                 <span class="order-list__item-variant" style="font-weight: normal;">{{ line.selling_plan_allocation.selling_plan.name }}</span><br />
+                                {%- assign teikiItem = teikiItem | plus : 1 -%}
                                 {% endif %}
 
                                 {% if line.refunded_quantity > 0 %}
@@ -485,7 +487,7 @@
                           {% if requires_shipping and shipping_address %}
                           <td class="customer-info__item">
                             <h4>配送方法</h4>
-                            <p>{{ shipping_method.title }}</p>
+                            <p>宅急便</p>
                           </td>
                           {% endif %}
                           {% assign transaction_count = transactions | size %}
@@ -587,21 +589,29 @@
         <table class="row detail container">
         <tr>
           <td class="section__cell" style="padding: 0;">
-            <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
-              <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼配送について</h3>
-              <div class="detail_content">
-                <p style="font-size: 14px;">オンラインからのご注文は基本的に平日午前10時までの注文で即日発送、それ以降は次営業日の発送となります。発送後、配送には1~2日かかってのお届けとなります。なお、離島などの場合は3日以上かかる場合もございますのでご了承ください。</p>
-                <p>※営業日：月～金(祝日を除く)</p>
-                </div>
-            </div><!-- detail_section -->
-            <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
-              <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼変更・キャンセルについて</h3>
-              <div class="detail_content">
-                <p style="font-size: 14px;">出荷前までの変更・キャンセルは受け付けておりますので、本メールに直接ご返信ください。ご連絡を頂いても配送業者への引渡が完了していた場合はキャンセルできません。ご了承下さいませ。</p>
+          {% if teikiItem > 0 %}
+          <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+            <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼定期購入について</h3>
+            <div class="detail_content">
+              <p style="font-size: 14px;">定期購入商品の内容確認・サイクルや商品の変更については<a href="https://komons-japan.com/account/login">マイページ</a>より設定が可能です。また、定期購入に関するご質問・ご不明点については<a href="https://komons-japan.com/pages/faq#faq10">よくある質問</a>をご確認ください。</p>
               </div>
-            </div><!-- detail_section -->
-            <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
-              <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼納品書・領収書について</h3>
+          </div><!-- detail_section -->
+          {% endif %}
+          <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+            <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼配送について</h3>
+            <div class="detail_content">
+              <p style="font-size: 14px;">オンラインからのご注文は基本的に平日午前10時までの注文で即日発送、それ以降は次営業日の発送となります。発送後、配送には1~2日かかってのお届けとなります。なお、離島などの場合は3日以上かかる場合もございますのでご了承ください。</p>
+              <p>※営業日：月～金(祝日を除く)</p>
+            </div>
+          </div><!-- detail_section -->
+          <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+            <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼変更・キャンセルについて</h3>
+            <div class="detail_content">
+              <p style="font-size: 14px;">出荷前までの変更・キャンセルは受け付けておりますので、本メールに直接ご返信ください。ご連絡を頂いても配送業者への引渡が完了していた場合はキャンセルできません。ご了承下さいませ。</p>
+            </div>
+          </div><!-- detail_section -->
+          <div class="detail_section" style="border-bottom: 1px dotted #d8d8d8;padding-bottom: 25px;margin-bottom: 25px;">
+            <h3 class="detail_ttl" style="font-weight: normal;font-size: 16px;margin: 0 0 10px;color: #00381f;">▼納品書・領収書について</h3>
               <div class="detail_content">
                 <p style="font-size: 14px;">特にご要望がない場合、商品のお届けに際して明細書/納品書などの同梱は致しませんので、予めご了承ください。（本メールをもって受注明細書と代えさせていただきます。）</p>
                 <p style="font-size: 14px;">明細書/納品書や領収書をご希望のお客様は、お手数ですが以下のお問い合わせ窓口までご連絡ください。</p>

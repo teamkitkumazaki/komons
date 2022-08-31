@@ -58,6 +58,7 @@ body.huckleberry-subscription-list-color {
   font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   width: 86vw !important;
   margin: 0px auto !important;
+  counter-reset: number 0;
 }
 body.huckleberry-subscription-list-color h1, body.huckleberry-subscription-list-color h2, body.huckleberry-subscription-list-color h3, body.huckleberry-subscription-list-color h4, body.huckleberry-subscription-list-color h5, body.huckleberry-subscription-list-color p {
   font-weight: normal;
@@ -77,6 +78,7 @@ body.huckleberry-subscription-list-color header {
 }
 body.huckleberry-subscription-list-color header .huckleberry-subscription-list-title {
   font-size: 2.2rem;
+  font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
   text-align: center;
   color: #fff;
   pointer-events: none;
@@ -128,6 +130,7 @@ body.huckleberry-subscription-list-color header .huckleberry-subscription-detail
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
 }
 body.huckleberry-subscription-list-color header .huckleberry-subscription-detail-title::before {
   display: block;
@@ -559,13 +562,23 @@ body.huckleberry-subscription-list-color .wrap .content-right section article {
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
+.subscription-history .huckleberry-subscription-list-detail:nth-of-type(1)::before {
+  display: inline;
+  color: #00381f;
+  font-size: 2rem;
+  font-family: inherit;
+  counter-increment: number 1;
+  content: "定期購入契約(" counter(number) ")";
+}
 .subscription-history .huckleberry-subscription-list-detail:nth-of-type(1) dt {
+  display: none;
   border: none;
   font-weight: normal;
   font-size: 1.4rem;
   margin: 0;
 }
 .subscription-history .huckleberry-subscription-list-detail:nth-of-type(1) dd {
+  display: none;
   border: none;
   width: 100%;
   margin: 0;

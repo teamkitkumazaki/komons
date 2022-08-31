@@ -11294,6 +11294,50 @@ body.loaded #loading {
 .comp-subscription-modal .subpop_inner .subpop_contents .comp-faq-contents {
   margin-bottom: 30px !important;
 }
+.comp-subscription-modal.small .subpop_inner {
+  margin-top: 0vh;
+  height: var(--wHeightPx);
+  max-height: unset;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  pointer-events: none;
+}
+.comp-subscription-modal.small .subpop_inner .subpop_contents {
+  min-height: unset;
+  padding: 30px 25px;
+  max-width: 400px;
+}
+@media screen and (min-width: 720px) {
+  .comp-subscription-modal.small .subpop_inner .subpop_contents {
+    padding: 35px 30px;
+  }
+}
+.comp-subscription-modal.small .subpop_inner .subpop_contents .subpop_desc p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+.comp-subscription-modal.small .subpop_inner .subpop_contents .subpop_desc .pop_close2 {
+  margin-top: 15px;
+}
+.comp-subscription-modal.small .subpop_inner .subpop_contents .subpop_desc .pop_close2 button {
+  width: 100%;
+  display: block;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #00381f;
+  padding: 10px 0;
+  color: #fff;
+  font-size: 1.4rem;
+  font-family: inherit;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+.comp-subscription-modal.small .subpop_inner .subpop_contents .subpop_desc .pop_close2 button:hover {
+  opacity: 0.75;
+}
 
 .comp-huckleberry-container .huckleberry-subscription-widget-container > div {
   color: #00381f !important;
@@ -15814,6 +15858,21 @@ body.loaded #loading {
   padding: 50px 7vw 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+.comp-side-wrap .cart_item_error {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  background: #00381f;
+  color: #fff;
+  padding: 20px;
+}
+@media screen and (min-width: 1100px) {
+  .comp-side-wrap .cart_item_error {
+    padding: 0px;
+    font-size: 1.6rem;
+    background: transparent;
+    color: #00381f;
+  }
 }
 .comp-side-wrap .create_account {
   text-align: center;
@@ -21766,6 +21825,8 @@ body.loaded #loading {
 .page-cart-new {
   padding-top: 120px;
   margin-bottom: 60px;
+  width: 100vw;
+  overflow: hidden;
 }
 .page-cart-new .section-banner {
   margin-bottom: 60px;

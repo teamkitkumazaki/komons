@@ -91,4 +91,43 @@
       }
     }
   }
+  &.small{
+    .subpop_inner{
+      margin-top: 0vh;
+      height: var(--wHeightPx);
+      max-height: unset;
+      align-items: center;
+      pointer-events: none;
+      .subpop_contents{
+        min-height: unset;
+        padding: 30px 25px;
+        max-width: 400px;
+        @media screen and (min-width: 720px){
+          padding: 35px 30px;
+        }
+        .subpop_desc{
+          p{
+            font-size: 1.4rem;
+            line-height: 1.8;
+          }
+          .pop_close2{
+            margin-top: 15px;
+            button{
+              width: 100%;
+              display: block;
+              border: none;
+              box-shadow: none;
+              background: $basicGreen;
+              padding: 10px 0;
+              color: #fff;
+              font-size: 1.4rem;
+              font-family: inherit;
+              @include hover;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
 }
