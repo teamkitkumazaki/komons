@@ -10956,6 +10956,8 @@ body.loaded #loading {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  border-radius: 0px;
+  background: #fff;
   background-repeat: no-repeat;
   background-position: center center;
   color: #00381f;
@@ -11691,10 +11693,12 @@ body.loaded #loading {
   padding: 12px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin-bottom: -1px;
 }
 .comp-cart-wrap-switch .button_wrap .switch_button .title {
   font-size: 1.6rem;
   letter-spacing: 0.5px;
+  color: #00381f;
 }
 .comp-cart-wrap-switch .button_wrap .switch_button .discount {
   font-size: 1.3rem;

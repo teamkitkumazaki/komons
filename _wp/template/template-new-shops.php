@@ -36,38 +36,6 @@
           <span class="ttl_en">Popup Store</span>
           <h2 class="ttl_ja">ポップアップ</h2>
         </hgroup>
-				<div class="store_item">
-          <div class="img_wrap">
-            <a target="_blank" href="https://www.idee.co.jp/shop/delier_marunouchi/"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store01.jpg?v=1660011601"></a>
-          </div>
-          <div class="txt_wrap">
-            <a target="_blank" class="shop_name" href="https://www.idee.co.jp/shop/delier_marunouchi/">Délier IDÉE</a>
-            <p class="date">開催期間：7月15日(金)-8月29日(月)</p>
-            <p class="address">東京都千代田区丸の内1-5-1 新丸ビル 4F</p>
-          </div>
-        </div><!-- store_item -->
-        <div class="store_item">
-          <div class="img_wrap">
-            <a target="_blank" href="https://www.idee.co.jp/shop/attache_shinjuku/"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store02.jpg?v=1660011601"></a>
-          </div>
-          <div class="txt_wrap">
-            <a target="_blank" class="shop_name" href="https://www.idee.co.jp/shop/attache_shinjuku/">Attaché d’IDÉE (Shinjuku)</a>
-            <p class="date">開催期間：7月15日(金)-8月29日(月)</p>
-            <p class="address">東京都新宿区西新宿1-1-5 ルミネ新宿店 ルミネ1 6F</p>
-          </div>
-        </div><!-- store_item -->
-        <div class="store_item">
-          <div class="img_wrap">
-            <a target="_blank" href="https://www.idee.co.jp/shop/ume/">
-              <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store03.jpg?v=1660011601">
-            </a>
-          </div>
-          <div class="txt_wrap">
-            <a target="_blank" class="shop_name" href="https://www.idee.co.jp/shop/ume/">IDÉE SHOP Umeda</a>
-            <p class="date">開催期間：7月15日(金)-8月29日(月)</p>
-            <p class="address">大阪府大阪市北区大深町4-20 グランフロント大阪 南館5F</p>
-          </div>
-        </div><!-- store_item -->
         <div class="store_item">
           <div class="img_wrap">
             <a target="_blank" href="https://ebetsu-t.com/">
@@ -76,7 +44,7 @@
           </div>
           <div class="txt_wrap">
             <a target="_blank" class="shop_name" href="https://ebetsu-t.com/">江別 蔦屋書店</a>
-            <p class="date">開催期間：8月1日(月) - 8月30日(火)</p>
+            <p class="date">開催期間：8月1日(月) - 9月30日(金)</p>
             <p class="address">北海道江別市牧場町14番地の1</p>
           </div>
         </div><!-- store_item -->

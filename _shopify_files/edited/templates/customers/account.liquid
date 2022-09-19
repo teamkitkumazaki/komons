@@ -18,9 +18,9 @@
 						</div>
 					</div>
 					{%- if customer.orders.size != 0 -%}
-					<!-- <div class="comp-admin-button">
+					 <div class="comp-admin-button" style="display: none;">
 						<a href="/account?hbSubscriptionPath=/"><span>定期購買商品の変更・設定</span></a>
-					</div> -->
+					</div>
 					{%- endif -%}
 				</div>
 				<div class="admin_flex">
@@ -108,3 +108,18 @@
 {% endpaginate %}
 
 {% render 'huckleberry-subscription-customer-portal' %}
+<script>
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+{%- assign pageUrl = contentForQuerystring | split:'"pageurl":"' | last | split:'"' | first | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&' -%}
+{%- assign get_query_value_by_key = '' -%}
+{%- if pageUrl contains "?" -%}
+  {%- assign pageQuerystring = pageUrl | split:'?' | last | replace:'=','&' -%}
+  {%- assign tmp = pageQuerystring | split:'&' -%}
+  {%- for kv in tmp -%}
+      {%- if kv == key -%}
+          {%- assign get_query_value_by_key = tmp[forloop.index] -%}
+          {%- break -%}
+      {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+</script>

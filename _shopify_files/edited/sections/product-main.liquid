@@ -42,7 +42,7 @@
         <div class="desc_wrap">
           <p>{{ product.metafields.custom_fields["prod_description"] }}</p>
         </div><!-- desc_wrap -->
-        {% if product.metafields.custom_fields["subscription_check"] == 1 %}
+        {% if product.metafields.custom_fields["subscription_check"] %}
         {% include 'product-cart-wrap-sub' %}
         {% else %}
         {% include 'product-cart-wrap' %}

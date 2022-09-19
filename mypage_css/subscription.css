@@ -23,19 +23,16 @@
   font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
 }
 
-#huckleberry-subscription-customer-portal {
-  padding-top: 90px;
+#huckleberry-subscription-customer-portal iframe {
   min-height: 100vh;
+  padding-top: 90px;
   margin-bottom: 80px;
 }
 @media screen and (min-width: 1100px) {
-  #huckleberry-subscription-customer-portal {
+  #huckleberry-subscription-customer-portal iframe {
     padding-top: 160px;
     margin-bottom: 120px;
   }
-}
-#huckleberry-subscription-customer-portal iframe {
-  min-height: 100vh;
 }
 #huckleberry-subscription-customer-portal article {
   margin: 0;

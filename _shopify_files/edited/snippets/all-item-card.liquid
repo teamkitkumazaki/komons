@@ -4,6 +4,8 @@
 {%- else -%}
   {%- assign thumb_image = product.media[0] -%}
 {%- endif -%}
+
+{%- unless product.handle contains 'test' -%}
 <li class="item_box">
   <div class="img_wrap">
     <a href="{{ product.url }}" {%- if product.metafields.custom_fields["stock_state"] == 1 -%}class="soldout"{%- endif -%}>
@@ -53,3 +55,4 @@
     {%- endif -%}
   </div>
 </li>
+{%- endunless -%}

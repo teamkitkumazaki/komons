@@ -14,9 +14,11 @@
       font-family: inherit;
       padding: 12px;
       box-sizing: border-box;
+      margin-bottom: -1px;
       .title{
         font-size: 1.6rem;
         letter-spacing: 0.5px;
+        color: $basicGreen;
       }
       .discount{
         font-size: 1.3rem;
