@@ -38,14 +38,14 @@
         </hgroup>
         <div class="store_item">
           <div class="img_wrap">
-            <a target="_blank" href="https://ebetsu-t.com/">
-              <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store06.jpg?v=1660011601">
+            <a target="_blank" href="https://www.instagram.com/line_enmarket/">
+              <img src="https://journal.komons-japan.com/wp-content/uploads/2022/10/store07.jpg">
             </a>
           </div>
           <div class="txt_wrap">
-            <a target="_blank" class="shop_name" href="https://ebetsu-t.com/">江別 蔦屋書店</a>
-            <p class="date">開催期間：8月1日(月) - 9月30日(金)</p>
-            <p class="address">北海道江別市牧場町14番地の1</p>
+            <a target="_blank" class="shop_name" href="https://www.instagram.com/line_enmarket/">LINE Enmarket 2022AW</a>
+            <p class="date">開催期間：10/3(月)~10/23(日)</p>
+            <p class="address">JR新宿駅 新南口コンコース内<br>NEWoMan新宿 エキナカイベントスペース</p>
           </div>
         </div><!-- store_item -->
         <div class="store_item">

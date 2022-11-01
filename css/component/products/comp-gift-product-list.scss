@@ -329,6 +329,17 @@
                 content: "マルチクリーナー";
               }
             }
+            &.sanitizer{
+              padding-left: 25px;
+              &::before{
+                width: 19px;
+                left: 3px;
+                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_multi_ggduzs.svg);
+              }
+              &::after{
+                content: "除菌アルコール";
+              }
+            }
             &.hand{
               padding-left: 27px;
               &::before{
@@ -339,7 +350,7 @@
                 content: "ハンドソープ";
               }
             }
-            &.fabric, &.mistmini, &.nerori, &.hakka{
+            &.fabric, &.mistmini, &.nerori, &.hakka, &.kuromoji{
               padding-left: 25px;
               &::before{
                 width: 20px;

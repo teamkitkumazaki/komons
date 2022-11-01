@@ -157,4 +157,5 @@ $src = $image[0];
 <?php get_template_part("parts/footer");?>
 <?php get_template_part("parts/hummenu");?>
 </body>
+<?php get_template_part("parts/script");?>
 </html>

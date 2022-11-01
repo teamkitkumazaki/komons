@@ -4815,112 +4815,6 @@ body.loaded #loading {
     max-width: 100%;
   }
 }
-.comp-detail-toggle {
-  border: 1px solid #00381f;
-  height: 66px;
-  padding: 0px 25px 25px;
-  overflow: hidden;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: height 0.3s;
-  transition: height 0.3s;
-}
-.comp-detail-toggle .toggle_button {
-  background: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  cursor: pointer;
-  padding: 25px 0;
-  position: relative;
-}
-.comp-detail-toggle .toggle_button::after {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0px;
-  margin: auto;
-  width: 20px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
-  background-size: 15px;
-  background-position: center center;
-}
-.comp-detail-toggle .toggle_button.open::after {
-  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
-}
-.comp-detail-toggle .toggle_button:focus {
-  outline: none;
-}
-.comp-detail-toggle .toggle_button .en_ttl {
-  display: block;
-  font-size: 28px;
-  line-height: 1;
-  letter-spacing: 1.5px;
-  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
-  font-weight: 400;
-  letter-spacing: 1px;
-  -webkit-font-smoothing: antialiased;
-  color: #00381f;
-  margin-right: 0.4em;
-}
-.comp-detail-toggle .toggle_button .jp_ttl {
-  display: block;
-  font-size: 20px;
-  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
-  font-size: 16px;
-  line-height: 1;
-  letter-spacing: 1.5px;
-  position: relative;
-  color: #00381f;
-}
-
-@media screen and (max-width: 760px) {
-  .comp-detail-toggle {
-    height: 43px;
-    padding: 0px 15px 15px;
-  }
-  .comp-detail-toggle .toggle_button {
-    padding: 15px 0;
-    position: relative;
-  }
-  .comp-detail-toggle .toggle_button::after {
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    background-size: 15px;
-  }
-  .comp-detail-toggle .toggle_button .en_ttl {
-    display: block;
-    font-size: 6vw;
-    letter-spacing: 0.02em;
-  }
-  .comp-detail-toggle .toggle_button .jp_ttl {
-    display: block;
-    font-size: 3.6vw;
-  }
-}
 .comp-article-quote {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -9134,7 +9028,7 @@ body.loaded #loading {
     letter-spacing: 0.05em;
   }
 }
-/* 商品一覧*/
+/* 商品*/
 .comp-product-list .item_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10038,6 +9932,17 @@ body.loaded #loading {
   .comp-gift-product-list .list_item .content_icon .icon span.multi::after {
     content: "マルチクリーナー";
   }
+  .comp-gift-product-list .list_item .content_icon .icon span.sanitizer {
+    padding-left: 25px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.sanitizer::before {
+    width: 19px;
+    left: 3px;
+    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_multi_ggduzs.svg);
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.sanitizer::after {
+    content: "除菌アルコール";
+  }
   .comp-gift-product-list .list_item .content_icon .icon span.hand {
     padding-left: 27px;
   }
@@ -10048,14 +9953,14 @@ body.loaded #loading {
   .comp-gift-product-list .list_item .content_icon .icon span.hand::after {
     content: "ハンドソープ";
   }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric, .comp-gift-product-list .list_item .content_icon .icon span.mistmini, .comp-gift-product-list .list_item .content_icon .icon span.nerori, .comp-gift-product-list .list_item .content_icon .icon span.hakka {
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric, .comp-gift-product-list .list_item .content_icon .icon span.mistmini, .comp-gift-product-list .list_item .content_icon .icon span.nerori, .comp-gift-product-list .list_item .content_icon .icon span.hakka, .comp-gift-product-list .list_item .content_icon .icon span.kuromoji {
     padding-left: 25px;
   }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric::before, .comp-gift-product-list .list_item .content_icon .icon span.mistmini::before, .comp-gift-product-list .list_item .content_icon .icon span.nerori::before, .comp-gift-product-list .list_item .content_icon .icon span.hakka::before {
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric::before, .comp-gift-product-list .list_item .content_icon .icon span.mistmini::before, .comp-gift-product-list .list_item .content_icon .icon span.nerori::before, .comp-gift-product-list .list_item .content_icon .icon span.hakka::before, .comp-gift-product-list .list_item .content_icon .icon span.kuromoji::before {
     width: 20px;
     background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_fabric_evs2ba.svg);
   }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric::after, .comp-gift-product-list .list_item .content_icon .icon span.mistmini::after, .comp-gift-product-list .list_item .content_icon .icon span.nerori::after, .comp-gift-product-list .list_item .content_icon .icon span.hakka::after {
+  .comp-gift-product-list .list_item .content_icon .icon span.fabric::after, .comp-gift-product-list .list_item .content_icon .icon span.mistmini::after, .comp-gift-product-list .list_item .content_icon .icon span.nerori::after, .comp-gift-product-list .list_item .content_icon .icon span.hakka::after, .comp-gift-product-list .list_item .content_icon .icon span.kuromoji::after {
     content: "除菌消臭ミスト";
   }
   .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini {
