@@ -151,7 +151,6 @@ $(function() {
       }else{
         $('header').removeClass('rolled_sp');
       }
-
       scrollSwitch = 0;
     };
 
@@ -193,6 +192,13 @@ $(function() {
 
       $(window).on({
         'scroll': function() {
+          if (document.getElementById('lineContact')) {
+            if ($(window).scrollTop() > 300) {
+              $('#lineContact').addClass('rolled');
+            }else{
+              $('#lineContact').removeClass('rolled');
+            }
+          }
           if (document.getElementById('headerRolled')) {
             if(window.innerWidth > 720){
               var scroll = $(window).scrollTop();
@@ -608,20 +614,22 @@ $(function() {
   //アンカーリンクで追従ヘッダーの分オフセットする
   window.onload = function() {
     var urlHash = location.hash;
-    if (0 < urlHash.length) {
-      location.hash = urlHash;
-      var scroll = $(urlHash).offset().top;
-      var w = $(window).width();
+    if(urlHash != undefined && urlHash.length > 1){
+      if (0 < urlHash.length) {
+        location.hash = urlHash;
+        var scroll = $(urlHash).offset().top;
+        var w = $(window).width();
 
-      if (w > 1100) {
-        var adScroll = scroll - 100;
-      } else {
-        var adScroll = scroll - 60;
+        if (w > 1100) {
+          var adScroll = scroll - 100;
+        } else {
+          var adScroll = scroll - 60;
+        }
+
+        $("html, body").animate({
+          scrollTop: adScroll
+        }, 0);
       }
-
-      $("html, body").animate({
-        scrollTop: adScroll
-      }, 0);
     }
   }
 

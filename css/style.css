@@ -12721,6 +12721,79 @@ body.loaded #loading {
     display: none;
   }
 }
+.comp-line-contact {
+  margin-top: 40px;
+}
+.comp-line-contact a {
+  display: block;
+  border: 1px solid #00381f;
+  padding: 17px 0;
+  border-radius: 200px;
+  text-align: center;
+  color: #00381f;
+}
+.comp-line-contact a .contact_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.comp-line-contact a .contact_flex .icon {
+  width: 24px;
+  margin-right: 8px;
+}
+.comp-line-contact a .contact_flex .icon svg {
+  fill: #00381f;
+}
+.comp-line-contact a .contact_flex .ttl {
+  margin-bottom: 2px;
+  font-size: 1.5rem;
+}
+.comp-line-contact a .txt {
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 980px) {
+  .comp-line-contact {
+    margin-top: 0px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 320px;
+    z-index: 1000;
+    -webkit-transition: bottom 0.8s;
+    transition: bottom 0.8s;
+  }
+  .comp-line-contact a {
+    border: 1px solid #00381f;
+    padding: 15px 0;
+    border-radius: 200px;
+    text-align: center;
+    background: #00381f;
+    color: #fff;
+    border: 1px solid #fff;
+    -webkit-transition: background 0.4s;
+    transition: background 0.4s;
+  }
+  .comp-line-contact a .contact_flex .icon svg {
+    fill: #fff;
+  }
+  .comp-line-contact a:hover {
+    background: #046734;
+  }
+  .comp-line-contact.rolled {
+    bottom: -200px;
+  }
+}
 .comp-list-link .link_item {
   margin-bottom: 15px;
 }
