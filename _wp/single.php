@@ -31,6 +31,7 @@ $src = $image[0];
 
     </div>
     <div class="post_body">
+      <?php remove_filter('the_content', 'wpautop');?>
         <?= the_content(); ?>
     </div>
     </div><!-- detail_inner -->

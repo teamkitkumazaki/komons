@@ -4818,8 +4818,8 @@ body.loaded #loading {
 .comp-article-quote {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 20px 30px 30px;
-  background: #f4f4f4;
+  padding: 40px;
+  background: #f8f8f8;
   margin-bottom: 40px;
 }
 .comp-article-quote .quote_ttl {
@@ -4950,9 +4950,10 @@ body.loaded #loading {
   background-image: url(../img/common/loading.svg);
 }
 .comp-article-form .form_item {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .comp-article-form .form_item .attention {
+  width: 100%;
   display: block;
   font-size: 13px;
   letter-spacing: 0.4px;
@@ -4978,23 +4979,24 @@ body.loaded #loading {
   margin-bottom: 10px;
 }
 .comp-article-form .form_item .ttl .num {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
   font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
-  font-size: 18px;
+  letter-spacing: 0;
+  font-size: 14px;
   text-align: center;
-  line-height: 35px;
+  line-height: 30px;
   background: #00381f;
   color: #fff;
   border-radius: 50%;
 }
 .comp-article-form .form_item .ttl .question {
   width: calc(100% - 45px);
-  font-size: 18px;
+  font-size: 1.6rem;
   line-height: 1.6;
 }
 .comp-article-form .form_item .form_wrap {
@@ -5064,12 +5066,15 @@ body.loaded #loading {
   color: #00381f;
   letter-spacing: 0.5px;
   border: solid 1px #c0c0c0;
-  border-radius: 5px;
+  border-radius: 0px;
   margin-top: 10px;
 }
 .comp-article-form .form_item .form_wrap input[type=email]:focus, .comp-article-form .form_item .form_wrap input[type=text]:focus {
   outline: none;
   border: 1px solid #00381f;
+}
+.comp-article-form .form_item .form_wrap input[type=email].errorInput, .comp-article-form .form_item .form_wrap input[type=text].errorInput {
+  border: 1px solid red;
 }
 .comp-article-form .form_item .form_wrap textarea {
   display: block;
@@ -5081,7 +5086,7 @@ body.loaded #loading {
   line-height: 1.6;
   letter-spacing: 0.5px;
   border: solid 1px #c0c0c0;
-  border-radius: 5px;
+  border-radius: 0px;
   height: 120px;
   margin-top: 10px;
 }
@@ -5089,16 +5094,19 @@ body.loaded #loading {
   outline: none;
   border: 1px solid #00381f;
 }
+.comp-article-form .form_item .form_wrap textarea.errorInput {
+  border: 1px solid red;
+}
 .comp-article-form .form_item .form_wrap select {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 15px 10px;
   font-size: 14px;
   font-family: inherit;
   color: #00381f;
   letter-spacing: 0.5px;
   border: solid 1px #c0c0c0;
-  border-radius: 5px;
+  border-radius: 0px;
   margin-top: 10px;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -5112,6 +5120,9 @@ body.loaded #loading {
   outline: none;
   border: 1px solid #00381f;
 }
+.comp-article-form .form_item .form_wrap select.errorInput {
+  border: 1px solid red;
+}
 .comp-article-form .form_item .form_wrap .example {
   display: block;
   margin-top: 15px;
@@ -5122,7 +5133,7 @@ body.loaded #loading {
 }
 .comp-article-form .submit_wrap {
   max-width: 500px;
-  margin: 50px auto 0;
+  margin: 25px auto 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
   position: relative;
@@ -5201,7 +5212,6 @@ body.loaded #loading {
 .comp-article-form .coupon_code {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-top: 40px;
   height: 0;
   overflow: hidden;
   -webkit-transition: height 0.3s;
@@ -5213,10 +5223,11 @@ body.loaded #loading {
 }
 .comp-article-form .coupon_code .coupon_inner .head {
   display: block;
-  font-size: 20px;
+  font-size: 1.6rem;
   font-weight: normal;
   letter-spacing: 0.8px;
   text-align: center;
+  margin-bottom: 25px;
 }
 .comp-article-form .coupon_code .coupon_inner .desc {
   text-align: center;
@@ -5233,11 +5244,7 @@ body.loaded #loading {
 .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_ttl .number {
   display: inline-block;
   padding: 0 0.1em;
-  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
-  font-weight: 400;
-  letter-spacing: 1px;
-  -webkit-font-smoothing: antialiased;
-  font-size: 32px;
+  font-size: 2.8rem;
 }
 .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_flex {
   border: 1px solid #d8d8d8;
@@ -5260,11 +5267,7 @@ body.loaded #loading {
   padding: 0px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
-  font-weight: 400;
-  letter-spacing: 1px;
-  -webkit-font-smoothing: antialiased;
-  font-size: 22px;
+  font-size: 2rem;
   letter-spacing: 1px;
 }
 .comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_flex .copy_paste {
@@ -5274,7 +5277,16 @@ body.loaded #loading {
   text-align: center;
   background: #00381f !important;
   color: #fff !important;
-  font-size: 14px;
+  font-size: 1.4rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+.comp-article-form .coupon_code .coupon_inner .coupon_wrap .coupon_flex .copy_paste:hover {
+  opacity: 0.75;
 }
 .comp-article-form .coupon_code .coupon_inner .coupon_wrap textarea {
   opacity: 0;
@@ -5345,7 +5357,7 @@ body.loaded #loading {
   }
   .comp-article-form .coupon_code {
     width: 100vw;
-    margin: 40px -8vw 0;
+    margin: 0px -8vw 0;
   }
   .comp-article-form .coupon_code .coupon_inner {
     padding: 25px 8vw;
@@ -12774,21 +12786,22 @@ body.loaded #loading {
     transition: bottom 0.8s;
   }
   .comp-line-contact a {
-    border: 1px solid #00381f;
     padding: 15px 0;
     border-radius: 200px;
     text-align: center;
-    background: #00381f;
-    color: #fff;
-    border: 1px solid #fff;
+    background: #fff;
+    color: #00381f;
+    border: 1px solid #00381f;
     -webkit-transition: background 0.4s;
     transition: background 0.4s;
-  }
-  .comp-line-contact a .contact_flex .icon svg {
-    fill: #fff;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
   }
   .comp-line-contact a:hover {
-    background: #046734;
+    opacity: 0.75;
+  }
+  .comp-line-contact a .contact_flex .icon svg {
+    fill: #00381f;
   }
   .comp-line-contact.rolled {
     bottom: -200px;
@@ -19029,14 +19042,14 @@ body.loaded #loading {
 }
 .page-journal-detail .journal_detail .post_body {
   font-size: 16px;
-  line-height: 37px;
+  line-height: 2;
   color: #00381f;
   padding-bottom: 0px;
   margin-bottom: 80px;
 }
 .page-journal-detail .journal_detail .post_body h1, .page-journal-detail .journal_detail .post_body h2 {
-  font-size: 30px;
-  line-height: 38px;
+  font-size: 2.4rem;
+  line-height: 1.6;
   margin-bottom: 25px;
   color: #333;
 }
@@ -19053,10 +19066,8 @@ body.loaded #loading {
   margin-top: -12px;
 }
 .page-journal-detail .journal_detail .post_body p.large {
-  display: inline-block;
-  font-size: 20px;
-  letter-spacing: 0.5px;
-  border-bottom: 1px dotted #00381f;
+  display: inline;
+  background: linear-gradient(transparent calc(100% - 1px), #00381f 1px);
 }
 .page-journal-detail .journal_detail .post_body p.notice {
   color: #666;
@@ -19393,8 +19404,8 @@ body.loaded #loading {
     margin-bottom: 40px;
   }
   .page-journal-detail .journal_detail .post_body h1, .page-journal-detail .journal_detail .post_body h2 {
-    font-size: 23px;
-    line-height: 32px;
+    font-size: 2.2rem;
+    line-height: 1.6;
     margin-bottom: 22px;
   }
   .page-journal-detail .journal_detail .post_body h3, .page-journal-detail .journal_detail .post_body h4 {

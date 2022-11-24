@@ -85,14 +85,14 @@
     }
     .post_body {
       font-size: 16px;
-      line-height: 37px;
+      line-height: 2;
       color: $basicGreen;
       padding-bottom: 0px;
       margin-bottom: 80px;
 
       h1,h2 {
-        font-size: 30px;
-        line-height: 38px;
+        font-size: 2.4rem;
+        line-height: 1.6;
         margin-bottom: 25px;
         color: #333;
       }
@@ -113,10 +113,8 @@
 
       p{
         &.large{
-          display: inline-block;
-          font-size: 20px;
-          letter-spacing: 0.5px;
-          border-bottom: 1px dotted $basicGreen;
+          display: inline;
+          background: linear-gradient(transparent calc(100% - 1px), $basicGreen 1px);
         }
         &.notice{
           color: #666;
@@ -471,8 +469,8 @@
       .post_body {
         margin-bottom: 40px;
         h1, h2 {
-          font-size: 23px;
-          line-height: 32px;
+          font-size: 2.2rem;
+          line-height: 1.6;
           margin-bottom: 22px;
         }
 

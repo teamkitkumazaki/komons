@@ -40,23 +40,20 @@
     z-index: 1000;
     transition: bottom .8s;
     a{
-      border: 1px solid $basicGreen;
       padding: 15px 0;
       border-radius: 200px;
       text-align: center;
-      background: $basicGreen;
-      color: #fff;
-      border: 1px solid #fff;
+      background: #fff;
+      color: $basicGreen;
+      border: 1px solid $basicGreen;
       transition: background .4s;
+      @include hover;
       .contact_flex{
         .icon{
           svg{
-            fill: #fff;
+            fill: $basicGreen;
           }
         }
-      }
-      &:hover{
-        background: $insertGreen;
       }
     }
     &.rolled{

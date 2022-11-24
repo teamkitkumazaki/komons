@@ -20,8 +20,9 @@
     }
   }
   .form_item{
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     .attention{
+      width: 100%;
       display: block;
       font-size: 13px;
       letter-spacing: 0.4px;
@@ -35,20 +36,21 @@
       align-items: center;
       margin-bottom: 10px;
       .num{
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         margin-right: 10px;
         @include libre-r;
-        font-size: 18px;
+        letter-spacing: 0;
+        font-size: 14px;
         text-align: center;
-        line-height: 35px;
+        line-height: 30px;
         background: $basicGreen;
         color: #fff;
         border-radius: 50%;
       }
       .question{
         width: calc(100% - 45px);
-        font-size: 18px;
+        font-size: 1.6rem;
         line-height: 1.6;
       }
     }
@@ -109,11 +111,14 @@
         color: $basicGreen;
         letter-spacing: 0.5px;
         border: solid 1px #c0c0c0;
-        border-radius: 5px;
+        border-radius: 0px;
         margin-top: 10px;
         &:focus{
           outline: none;
           border: 1px solid $basicGreen;
+        }
+        &.errorInput{
+          border: 1px solid red;
         }
       }
       textarea{
@@ -126,24 +131,27 @@
         line-height: 1.6;
         letter-spacing: 0.5px;
         border: solid 1px #c0c0c0;
-        border-radius: 5px;
+        border-radius: 0px;
         height: 120px;
         margin-top: 10px;
         &:focus{
           outline: none;
           border: 1px solid $basicGreen;
         }
+        &.errorInput{
+          border: 1px solid red;
+        }
       }
       select{
         display: block;
         width: 100%;
-        padding: 10px;
+        padding: 15px 10px;
         font-size: 14px;
         font-family: inherit;
         color: $basicGreen;
         letter-spacing: 0.5px;
         border: solid 1px #c0c0c0;
-        border-radius: 5px;
+        border-radius: 0px;
         margin-top: 10px;
         appearance: none;
         background-image: url(../img/contact/selector_caret.png);
@@ -153,6 +161,9 @@
         &:focus{
           outline: none;
           border: 1px solid $basicGreen;
+        }
+        &.errorInput{
+          border: 1px solid red;
         }
       }
       .example{
@@ -167,7 +178,7 @@
   }
   .submit_wrap{
     max-width: 500px;
-    margin: 50px auto 0;
+    margin: 25px auto 0;
     @include hover;
     position: relative;
     transition: opacity .2s;
@@ -238,7 +249,6 @@
   }
   .coupon_code{
     box-sizing: border-box;
-    margin-top: 40px;
     height: 0;
     overflow: hidden;
     transition: height .3s;
@@ -247,10 +257,11 @@
       padding: 25px;
       .head{
         display: block;
-        font-size: 20px;
+        font-size: 1.6rem;
         font-weight: normal;
         letter-spacing: 0.8px;
         text-align: center;
+        margin-bottom: 25px;
       }
       .desc{
         text-align: center;
@@ -265,8 +276,7 @@
           .number{
             display: inline-block;
             padding: 0 0.1em;
-            @include libre-r;
-            font-size: 32px;
+            font-size: 2.8rem;
           }
         }
         .coupon_flex{
@@ -279,8 +289,7 @@
             width: calc(100% - 150px);
             padding: 0px 20px;
             box-sizing: border-box;
-            @include libre-r;
-            font-size: 22px;
+            font-size: 2.0rem;
             letter-spacing: 1px;
           }
           .copy_paste{
@@ -290,7 +299,11 @@
             text-align: center;
             background: $basicGreen !important;
             color: #fff !important;
-            font-size: 14px;
+            font-size: 1.4rem;
+            box-shadow: none;
+            border:none;
+            @include hover;
+            cursor: pointer;
           }
         }
         textarea{
@@ -369,7 +382,7 @@
     }
     .coupon_code{
       width: 100vw;
-      margin: 40px -8vw 0;
+      margin: 0px -8vw 0;
       .coupon_inner{
         padding: 25px 8vw;
         .head{
