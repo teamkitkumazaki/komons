@@ -318,7 +318,7 @@ $(function() {
   //ハンバーガーメニューの開閉
 
   function humMenuToggle(target) {
-    var humButton = target.find('a');
+    var humButton = target.find('button');
     var closeBtn = $('#humClose');
     var menuBg = $('#menuBg');
     var menuState = 0;

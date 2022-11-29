@@ -1,8 +1,5 @@
-@charset "UTF-8";
-header{
+.header_new{
 	width: 100vw;
-	height: 73px;
-	border-top: 2px solid transparent;
 	position: fixed;
 	z-index: 500;
 	transition: all .5s;
@@ -10,345 +7,387 @@ header{
 	left:0;
 	right:0;
 	margin: auto;
+	-webkit-font-smoothing: antialiased;
 	.header_inner{
 		position: relative;
 		width: 100%;
-		height: 73px;
-		#humMenu{
-			position: absolute;
-			top: 0;
-			bottom:0;
-			height: 28px;
-			margin: auto;
-			left: 3%;
-			a{
-				display: block;
-				width: 39px;
-				height: 33px;
-				transition: all .5s;
-				@include bgSet;
-				background:{
-					image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_acfmbl.png);
-					size: 39px;
-				}
-				&:hover{
-					opacity: 0.7;
-				}
-			}
-		}
-		#hNavi{
-			position: absolute;
-			top:0;
-			bottom:0;
-			height: 25px;
-			right: 3%;
-			margin: auto;
+		@include flexSet;
+		align-items: center;
+		justify-content: space-between;
+		.header_left{
+			margin-left: 35px;
 			@include flexSet;
-			.nav_item{
+			align-items: center;
+			justify-content: flex-start;
+			.header_logo{
+				width: 155px;
+				height: 90px;
+				margin-right: 40px;
+				@include bgSet;
+				filter: invert(1) saturate(0) brightness(1000);
+				background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/logo.svg?v=1623513464) !important;
 				a{
 					display: block;
-					font-size: 13px;
-					line-height: 25px;
-					letter-spacing: 1px;
-					text-align: right;
-					color: #ffffff;
-					padding-left: 40px;
-					position: relative;
-					&::before{
-						position: absolute;
-						content: "";
-						width: 30px;
-						height: 25px;
-						top:0;
-						bottom:0;
-						left: 0;
-						margin: auto;
-						@include bgSet;
-						background:{
-							size: 30px;
-							position: left center;
-						}
-					}
+					width: 155px;
+					height: 90px;
 				}
-				&#hLogin{
-					margin-right: 40px;
-					position: relative;
-					&::after{
-						display: block;
-						content: "";
-						position: absolute;
-						right: -20px;
-						top:0;
-						bottom:0;
-						margin: auto;
-						width: 1px;
-						height: 16px;
-						background: rgba(255,255,255,0.8);
-					}
-					a{
-						&::before{
-							background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/login_icon_qymxnh.png);
-						}
-					}
+			}
+			.header_navigation{
+				@media screen and (max-width: 1100px){
+					display: none;
 				}
-				&#hCart{
-					a{
-						@include flexSet;
-						align-items: center;
-						.cart_item_num{
-							width: 25px;
-							height: 25px;
-							border-radius: 50%;
-							background-color: #fff;
-							text-align: center;
-							color: $basicGreen;
-							line-height: 25px;
+				ul{
+					margin-top: 15px;
+					@include flexSet;
+					li{
+						margin-right: 20px;
+						&:nth-last-of-type(1){
+							margin-right: 0;
+						}
+						a{
+							display: block;
 							@include libre-r;
-							font-size: 14px;
-							margin-left: 5px;
-						}
-						&::before{
-							background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_r3jbwu.png);
+							font-size: 1.8rem;
+							color: inherit;
+							color: #fff;
 						}
 					}
 				}
 			}
 		}
-		#hLogo{
-			position: absolute;
-			width: 145px;
-			height: 30px;
-			transition: all .5s;
-			left:0;
-			right:0;
-			top:0;
-			bottom:0;
-			margin: auto;
-			opacity: 1;
-			&.fade{
-				opacity: 0;
-				pointer-events: none;
-			}
-			a{
-				display: block;
-				width: 145px;
-				height: 31px;
-				background:{
-					image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/logo_white.svg?v=1623513477);
-					size: 145px;
-					position: center center;
-					repeat: no-repeat;
-				}
-			}
-		}
-	}
-}
-@media screen and (max-width: 750px){
-	header{
-		height: 58px;
-		.header_inner{
-			height: 58px;
-			#humMenu{
-				height: 25px;
-				left: 5%;
-				a{
-					width: 33px;
-					height: 30px;
-					background:{
-						size: 33px;
-					}
-					&:hover{
-						opacity: 1;
-					}
-				}
-			}
-			#hNavi{
-				top: 3px;
-				height: 25px;
-				right: 5%;
+		.header_right{
+			@include flexSet;
+			align-items: center;
+			justify-content: flex-end;
+			.header_guide{
+				@include flexSet;
 				.nav_item{
 					a{
-						width: 27px;
-						height: 25px;
-						padding-left: 0px;
+						display: block;
+						font-size: 13px;
+						line-height: 25px;
+						letter-spacing: 1px;
+						text-align: right;
+						color: #ffffff;
+						padding-left: 40px;
+						position: relative;
+						transition: color .3s;
 						&::before{
 							position: absolute;
 							content: "";
-							width: 27px;
+							width: 30px;
 							height: 25px;
+							top:0;
+							bottom:0;
+							left: 0;
+							margin: auto;
+							@include bgSet;
+							transition: filter .3s;
 							background:{
-								size: 27px;
-								position: right center;
+								size: 30px;
+								position: left center;
 							}
 						}
 					}
-					&#hLogin{
-						display: none;
-					}
-					&#hCart{
-						a{
-							.cart_item_num{
-								position: absolute;
-								width: 20px;
-								height: 20px;
-								bottom: -8px;
-								right: -8px;
-								line-height: 21px;
-								transform: scale(0.7);
-								font-size: 12px;
-								text-indent: 0.1em;
-								border: 2px solid #fff;
-							}
-							color: rgba(255,255,255,0);
-						}
-					}
-				}
-			}
-			#hLogo{
-				a{
-					background:{
-						size: 120px;
-					}
-				}
-			}
-		}
-	}
-}
-body.rolled, body.fixed, body.fixed2{
-	header{
-		border-top: 2px solid $basicGreen;
-		background: #fff;
-		box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.06);
-		.header_inner{
-			#humMenu{
-				a{
-					background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_rolled_ddjxzw.png);
-				}
-			}
-			#hNavi{
-				.nav_item{
-					a{
-						color: $basicGreen;
-					}
-					&#hLogin{
-						a{
-							&::before{
-								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/login_icon_rolled_oy80ng.png);
-							}
-						}
-					}
-					&#hCart{
-						a{
-							.cart_item_num{
-								background-color: $basicGreen;
-								color: #fff;
-							}
-							&::before{
-								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_rolled_tnklrf.png);
-							}
-						}
-					}
-				}
-			}
-			#hLogo{
-				opacity: 1 !important;
-				a{
-					pointer-events: all !important;
-					background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/logo.svg?v=1623513464);
-				}
-			}
-		}
-	}
-}
-body.fixed-header {
-	padding-top: 60px;
-
-	header{
-		height: 88px;
-		border-top: 2px solid $basicGreen;
-		background: #fff;
-		box-shadow: none !important;
-		.header_inner{
-			position: relative;
-			width: 100%;
-			height: 88px;
-			#humMenu{
-				a{
-					background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_rolled_ddjxzw.png);
-				}
-			}
-			#hNavi{
-				.nav_item{
-					a{
-						color: $basicGreen;
-					}
-					&#hLogin{
+					&.h_login{
 						margin-right: 40px;
 						position: relative;
+						&::after{
+							display: block;
+							content: "";
+							position: absolute;
+							right: -20px;
+							top:0;
+							bottom:0;
+							margin: auto;
+							width: 1px;
+							height: 16px;
+							background: rgba(255,255,255,0.8);
+						}
 						a{
 							&::before{
 								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/login_icon_rolled_oy80ng.png);
+								filter: invert(1) saturate(0) brightness(1000%);
 							}
 						}
 					}
-					&#hCart{
+					&.h_cart{
+						margin-right: 30px;
 						a{
+							@include flexSet;
+							align-items: center;
+							.cart_item_num{
+								width: 25px;
+								height: 25px;
+								border-radius: 50%;
+								background-color: #fff;
+								text-align: center;
+								color: $basicGreen;
+								line-height: 25px;
+								@include libre-r;
+								font-size: 14px;
+								margin-left: 5px;
+							}
 							&::before{
 								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_rolled_tnklrf.png);
+								filter: invert(1) saturate(0) brightness(1000%);
 							}
 						}
 					}
 				}
 			}
-			#hLogo{
-				opacity: 1 !important;
-				pointer-events: all !important;
+			.header_menu{
 				a{
-					background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/logo.svg?v=1623513464) !important;
+					display: block;
+					width: 90px;
+					height: 90px;
+					@include bgSet;
+					background-color: $basicGreen;
+					background-size: 35px;
+					background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/header_menu.svg?v=1647733005);
+					transition: background .3s;
+					&:hover{
+						background-color: #2f281e;
+					}
 				}
 			}
 		}
 	}
-}
-
-@media screen and (max-width: 750px){
-	body.rolled, body.fixed-header{
-		header{
-			height: 58px;
-			border-top: 2px solid $basicGreen;
-			.header_inner{
-				height: 55px;
-				#hNavi{
+	&.rolled{
+		.header_inner{
+			.header_left{
+				.header_logo{
+					filter: none;
+				}
+				.header_navigation ul li a{
+					color: $basicGreen;
+				}
+			}
+			.header_right{
+				.header_guide{
 					.nav_item{
 						a{
 							color: $basicGreen;
 						}
-						&#hLogin{
+						&.h_login{
 							margin-right: 40px;
 							position: relative;
+							&::after{
+								background: $basicGreen;
+							}
 							a{
 								&::before{
-									background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/login_icon_rolled_oy80ng.png);
+									filter: unset;
 								}
 							}
 						}
-						&#hCart{
+						&.h_cart{
 							a{
+								.cart_item_num{
+									background-color: $basicGreen;
+									color: #fff;
+								}
 								&::before{
-									background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_rolled_tnklrf.png);
+									filter: unset;
 								}
 							}
 						}
-					}
-				}
-				#hLogo{
-					opacity: 1 !important;
-					pointer-events: all !important;
-					a{
-						background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/logo.svg?v=1623513464) !important;
 					}
 				}
 			}
 		}
 	}
+	&.colored{
+		.header_inner{
+			.header_left{
+				.header_logo{
+					filter: invert(1) saturate(0) brightness(1000%);
+				}
+				.header_navigation ul li a{
+					color: #fff;
+				}
+			}
+			.header_right{
+				.header_guide{
+					.nav_item{
+						a{
+							color: #fff;
+						}
+						&.h_login{
+							a{
+								&::before{
+									filter: invert(1) saturate(0) brightness(1000%);
+								}
+							}
+						}
+						&.h_cart{
+							a{
+								&::before{
+									filter: invert(1) saturate(0) brightness(1000%);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 980px){
+	.header_new{
+		.header_inner{
+			.header_left{
+				margin-left: 30px;
+				.header_logo{
+					margin-right: 20px;
+					@include bgSet;
+					filter: invert(1) saturate(0) brightness(1000%);
+					transition: filter .2s;
+				}
+			}
+		}
+		&.rolled{
+			.header_inner{
+				.header_left{
+					.header_logo{
+						filter: unset;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 720px){
+	.header_new{
+		.header_inner{
+			display: block;
+			position: relative;
+			height: 58px;
+			border-top: 3px solid transparent;
+			transition: border .3s, background .3s;
+			.header_left{
+				margin-left: 0px;
+				display: block;
+				.header_logo{
+					width: 122px;
+    			height: 31px;
+					margin-right: 0px;
+					position: absolute;
+					top:0;
+					bottom:2px;
+					left:0;
+					right:0;
+					margin: auto;
+					background-size: contain;
+					a{
+						display: block;
+						width: 122px;
+	    			height: 31px;
+					}
+				}
+			}
+			.header_right{
+				flex-direction: row-reverse;
+				justify-content: space-between;
+				.header_guide{
+					@include flexSet;
+					.nav_item{
+						a{
+							width: 27px;
+							height: 25px;
+							padding-left: 0px;
+							&::before{
+								position: absolute;
+								content: "";
+								width: 27px;
+								height: 25px;
+								background:{
+									size: 27px;
+									position: right center;
+								}
+							}
+						}
+						&.h_login{
+							display: none;
+						}
+						&.h_cart{
+							margin-right: 20px;
+							a{
+								color: rgba(255,255,255,0);
+								.cart_item_num{
+									position: absolute;
+									width: 20px;
+									height: 20px;
+									bottom: -8px;
+									right: -8px;
+									line-height: 21px;
+									transform: scale(0.7);
+									font-size: 12px;
+									text-indent: 0.1em;
+									border: 2px solid #fff;
+								}
+							}
+						}
+					}
+				}
+				.header_menu{
+					a{
+						display: block;
+						width: 58px;
+						height: 58px;
+						background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_acfmbl.png);
+						background-size: 28px;
+						background-color: transparent;
+						&:hover{
+							background-color: transparent;
+						}
+					}
+				}
+			}
+		}
+		&.rolled_sp{
+			.header_inner{
+				background: #fff;
+				border-top: 3px solid $basicGreen;
+				.header_menu{
+					a{
+						background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_rolled_ddjxzw.png);
+					}
+				}
+				.header_left{
+					.header_logo{
+						filter: none;
+					}
+				}
+				.header_right{
+					.header_guide{
+						.nav_item{
+							a{
+								color: $basicGreen;
+								span{
+									display: none;
+								}
+							}
+							&.h_cart{
+								a{
+									.cart_item_num{
+										display: block;
+										background-color: $basicGreen;
+										border: 2px solid $basicGreen;
+										color: #fff;
+									}
+									&::before{
+										filter: unset;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 }

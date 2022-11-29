@@ -10,248 +10,317 @@
 	-webkit-font-smoothing: antialiased;
 	.header_inner{
 		position: relative;
-		width: 100%;
 		@include flexSet;
 		align-items: center;
 		justify-content: space-between;
+		border-top: 3px solid transparent;
+		transition: border .3s, background .3s;
+		will-change: border, background;
+		.header_menu{
+			button{
+				width: 60px;
+				height: 60px;
+				@include flexSet;
+				justify-content: center;
+				align-items: center;
+				appearance: none;
+				border: none;
+				box-shadow: none;
+				padding: 0;
+				margin: 0;
+				background: transparent;
+				cursor: pointer;
+				transition: background .3s;
+				will-change: background;
+				svg{
+					width: 32px;
+					margin: 0 auto;
+					fill: #fff;
+					transition: fill .3s;
+					will-change: fill;
+				}
+				&:hover{
+					background: $bgGreen;
+				}
+			}
+		}
 		.header_left{
-			margin-left: 35px;
-			@include flexSet;
-			align-items: center;
-			justify-content: flex-start;
+			position: absolute;
+			top:0;
+			left:0;
+			right: 10px;
+			bottom: 3px;
+			margin: auto;
+			width: 120px;
+			height: 26px;
 			.header_logo{
-				width: 155px;
-				height: 90px;
-				margin-right: 40px;
-				@include bgSet;
-				filter: invert(1) saturate(0) brightness(1000);
-				background-image: url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/logo.svg?v=1623513464) !important;
 				a{
 					display: block;
-					width: 155px;
-					height: 90px;
+					@include hover;
+					svg{
+						width: 100%;
+						fill: #fff;
+						transition: fill .3s;
+						will-change: fill;
+					}
 				}
 			}
 			.header_navigation{
-				@media screen and (max-width: 1100px){
-					display: none;
-				}
-				ul{
-					margin-top: 15px;
-					@include flexSet;
-					li{
-						margin-right: 20px;
-						&:nth-last-of-type(1){
-							margin-right: 0;
-						}
-						a{
+				display: none;
+			}
+		}
+		.right_wrap{
+			@media screen and (max-width: 719px){
+				@include flexSet;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+			}
+		}
+		.header_right{
+			margin-right: 15px;
+			.header_guide{
+				@include flexSet;
+				align-items: center;
+				.nav_item{
+					margin-right: 12px;
+					&:nth-last-of-type(1){
+						margin-right: 0;
+					}
+					a{
+						position: relative;
+						display: block;
+						@include hover;
+						.icon{
 							display: block;
+							width: 22px;
+							svg{
+								width: 100%;
+								fill: #fff;
+								transition: fill .3s;
+								will-change: fill;
+							}
+						}
+						.txt{
+							display: none;
+						}
+						.cart_item_num{
+							position: absolute;
+							width: 14px;
+							height: 14px;
+							border-radius: 50%;
+							background-color: #fff;
+							text-align: center;
+							color: $basicGreen;
+							bottom: -4px;
+							right: -4px;
+							line-height: 12px;
+							box-sizing: border-box;
 							@include libre-r;
-							font-size: 1.8rem;
-							color: inherit;
-							color: #fff;
+							font-size: 10px;
+							text-indent: 0.1em;
+							border: 1px solid $basicGreen;
+							transition: background .3s, border .3s, color .3s;
+							will-change: background, border, color;
 						}
 					}
 				}
 			}
 		}
-		.header_right{
-			@include flexSet;
-			align-items: center;
-			justify-content: flex-end;
-			.header_guide{
-				@include flexSet;
-				.nav_item{
+	}
+	&.rolled_sp{
+		.header_inner{
+			background: #fff;
+			border-top: 3px solid $basicGreen;
+			.header_menu{
+				button{
+					svg{
+						fill: $basicGreen;
+					}
+				}
+			}
+			.header_left{
+				.header_logo{
 					a{
-						display: block;
-						font-size: 13px;
-						line-height: 25px;
-						letter-spacing: 1px;
-						text-align: right;
-						color: #ffffff;
-						padding-left: 40px;
-						position: relative;
-						transition: color .3s;
-						&::before{
-							position: absolute;
-							content: "";
-							width: 30px;
-							height: 25px;
-							top:0;
-							bottom:0;
-							left: 0;
-							margin: auto;
-							@include bgSet;
-							transition: filter .3s;
-							background:{
-								size: 30px;
-								position: left center;
+						svg{
+							fill: $basicGreen;
+						}
+					}
+				}
+			}
+			.header_right{
+				.header_guide{
+					.nav_item{
+						a{
+							.icon{
+								svg{
+									fill: $basicGreen;
+								}
+							}
+							.txt{
+								display: none;
+							}
+							.cart_item_num{
+								background-color: $basicGreen;
+								color: #fff;
+								border: 1px solid #fff;
 							}
 						}
 					}
-					&.h_login{
-						margin-right: 40px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 720px){
+	.header_new{
+		.header_inner{
+			border-top: 0px solid transparent;
+			.right_wrap{
+				@include flexSet;
+				align-items: center;
+			}
+			.header_left{
+				position: static;
+				order: 0;
+				position: block;
+				margin: 0;
+				margin-left: 30px;
+				width: 175px;
+				height: 90px;
+				.header_logo{
+					@include flexSet;
+					align-items: center;
+					height: 90px;
+					a{
+						display: block;
+						svg{
+							width: 100%;
+							fill: #fff;
+							transition: fill .3s;
+							will-change: fill;
+						}
+					}
+				}
+			}
+			.header_right{
+				order: 1;
+				margin-right: 30px;
+				.header_guide{
+					@include flexSet;
+					align-items: center;
+					.nav_item{
 						position: relative;
+						margin-right: 15px;
+						padding-right: 15px;
 						&::after{
 							display: block;
 							content: "";
 							position: absolute;
-							right: -20px;
 							top:0;
 							bottom:0;
+							right:0;
 							margin: auto;
 							width: 1px;
-							height: 16px;
-							background: rgba(255,255,255,0.8);
+							height: 20px;
+							background: #fff;
 						}
-						a{
-							&::before{
-								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/login_icon_rolled_oy80ng.png);
-								filter: invert(1) saturate(0) brightness(1000%);
+						&:nth-last-of-type(1){
+							margin-right: 0px;
+							padding-right: 0px;
+							&::after{
+								display: none;
 							}
 						}
-					}
-					&.h_cart{
-						margin-right: 30px;
 						a{
 							@include flexSet;
 							align-items: center;
-							.cart_item_num{
-								width: 25px;
-								height: 25px;
-								border-radius: 50%;
-								background-color: #fff;
-								text-align: center;
-								color: $basicGreen;
-								line-height: 25px;
-								@include libre-r;
-								font-size: 14px;
-								margin-left: 5px;
+							position: relative;
+							color: #fff;
+							transition: color .3s;
+							will-change: color;
+							.icon{
+								display: block;
+								width: 22px;
+								margin-right: 10px;
 							}
-							&::before{
-								background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_rolled_tnklrf.png);
-								filter: invert(1) saturate(0) brightness(1000%);
+							.txt{
+								display: block;
+								font-size: 1.4rem;
+								margin-bottom: 2px;
+							}
+							.cart_item_num{
+								position: static;
+								width: 22px;
+								height: 22px;
+								border-radius: 50%;
+								margin-left: 10px;
+								background-color: #fff;
+								color: $basicGreen;
+								line-height: 22px;
+								box-sizing: border-box;
+								font-size: 14px;
+								border: 0px solid $basicGreen;
 							}
 						}
 					}
 				}
 			}
 			.header_menu{
-				a{
-					display: block;
+				order: 2;
+				button{
 					width: 90px;
 					height: 90px;
-					@include bgSet;
-					background-color: $basicGreen;
-					background-size: 35px;
-					background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/header_menu.svg?v=1647733005);
-					transition: background .3s;
-					&:hover{
-						background-color: #2f281e;
+					background: $basicGreen;
+					svg{
+						width: 35px;
 					}
-				}
-			}
-		}
-	}
-	&.rolled{
-		.header_inner{
-			.header_left{
-				.header_logo{
-					filter: none;
-				}
-				.header_navigation ul li a{
-					color: $basicGreen;
-				}
-			}
-			.header_right{
-				.header_guide{
-					.nav_item{
-						a{
-							color: $basicGreen;
-						}
-						&.h_login{
-							margin-right: 40px;
-							position: relative;
-							&::after{
-								background: $basicGreen;
-							}
-							a{
-								&::before{
-									filter: unset;
-								}
-							}
-						}
-						&.h_cart{
-							a{
-								.cart_item_num{
-									background-color: $basicGreen;
-									color: #fff;
-								}
-								&::before{
-									filter: unset;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	&.colored{
-		.header_inner{
-			.header_left{
-				.header_logo{
-					filter: invert(1) saturate(0) brightness(1000%);
-				}
-				.header_navigation ul li a{
-					color: #fff;
-				}
-			}
-			.header_right{
-				.header_guide{
-					.nav_item{
-						a{
-							color: #fff;
-						}
-						&.h_login{
-							a{
-								&::before{
-									filter: invert(1) saturate(0) brightness(1000%);
-								}
-							}
-						}
-						&.h_cart{
-							a{
-								&::before{
-									filter: invert(1) saturate(0) brightness(1000%);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 980px){
-	.header_new{
-		.header_inner{
-			.header_left{
-				margin-left: 30px;
-				.header_logo{
-					margin-right: 20px;
-					@include bgSet;
-					filter: invert(1) saturate(0) brightness(1000%);
-					transition: filter .2s;
 				}
 			}
 		}
 		&.rolled{
 			.header_inner{
+				background: transparent;
+				border-top: 0px solid $basicGreen;
+				.header_menu{
+					button{
+						svg{
+							fill: #fff;
+						}
+					}
+				}
 				.header_left{
 					.header_logo{
-						filter: unset;
+						a{
+							svg{
+								fill: $basicGreen;
+							}
+						}
+					}
+				}
+				.header_right{
+					.header_guide{
+						.nav_item{
+							&::after{
+								background: $basicGreen;
+							}
+							a{
+								color: $basicGreen;
+								.icon{
+									svg{
+										fill: $basicGreen;
+									}
+								}
+								.txt{
+								}
+								.cart_item_num{
+									background-color: $basicGreen;
+									color: #fff;
+									border: 0px solid #fff;
+								}
+							}
+						}
 					}
 				}
 			}
@@ -259,128 +328,175 @@
 	}
 }
 
-@media screen and (max-width: 720px){
+@media screen and (min-width: 1100px){
 	.header_new{
 		.header_inner{
-			display: block;
-			position: relative;
-			height: 58px;
-			border-top: 3px solid transparent;
-			transition: border .3s, background .3s;
 			.header_left{
-				margin-left: 0px;
-				display: block;
+				width: auto;
+				@include flexSet;
+				align-items: center;
+				margin-left: 35px;
 				.header_logo{
-					width: 122px;
-    			height: 31px;
-					margin-right: 0px;
-					position: absolute;
-					top:0;
-					bottom:2px;
-					left:0;
-					right:0;
-					margin: auto;
-					background-size: contain;
+					width: 155px;
+					margin-right: 40px;
+					height: 90px;
 					a{
 						display: block;
-						width: 122px;
-	    			height: 31px;
+						svg{
+							width: 100%;
+							fill: #fff;
+							transition: fill .3s;
+							will-change: fill;
+						}
+					}
+				}
+				.header_navigation{
+					display: block;
+					margin-top: 15px;
+					ul{
+						@include flexSet;
+						li{
+							margin-right: 20px;
+							&:nth-last-of-type(1){
+								margin-right: 0;
+							}
+							a{
+								display: block;
+								@include libre-r;
+								@include hover;
+								font-size: 1.8rem;
+								color: inherit;
+								color: #fff;
+								transition: color .3s;
+								will-change: color;
+							}
+						}
 					}
 				}
 			}
 			.header_right{
-				flex-direction: row-reverse;
-				justify-content: space-between;
+				order: 1;
+				margin-right: 30px;
 				.header_guide{
 					@include flexSet;
+					align-items: center;
 					.nav_item{
+						position: relative;
+						margin-right: 15px;
+						padding-right: 15px;
+						&::after{
+							display: block;
+							content: "";
+							position: absolute;
+							top:0;
+							bottom:0;
+							right:0;
+							margin: auto;
+							width: 1px;
+							height: 20px;
+							background: #fff;
+						}
+						&:nth-last-of-type(1){
+							margin-right: 0px;
+							padding-right: 0px;
+							&::after{
+								display: none;
+							}
+						}
 						a{
-							width: 27px;
-							height: 25px;
-							padding-left: 0px;
-							&::before{
-								position: absolute;
-								content: "";
-								width: 27px;
-								height: 25px;
-								background:{
-									size: 27px;
-									position: right center;
-								}
+							@include flexSet;
+							align-items: center;
+							position: relative;
+							color: #fff;
+							transition: color .3s;
+							will-change: color;
+							.icon{
+								display: block;
+								width: 22px;
+								margin-right: 10px;
 							}
-						}
-						&.h_login{
-							display: none;
-						}
-						&.h_cart{
-							margin-right: 20px;
-							a{
-								color: rgba(255,255,255,0);
-								.cart_item_num{
-									position: absolute;
-									width: 20px;
-									height: 20px;
-									bottom: -8px;
-									right: -8px;
-									line-height: 21px;
-									transform: scale(0.7);
-									font-size: 12px;
-									text-indent: 0.1em;
-									border: 2px solid #fff;
-								}
+							.txt{
+								display: block;
+								font-size: 1.4rem;
 							}
-						}
-					}
-				}
-				.header_menu{
-					a{
-						display: block;
-						width: 58px;
-						height: 58px;
-						background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_acfmbl.png);
-						background-size: 28px;
-						background-color: transparent;
-						&:hover{
-							background-color: transparent;
+							.cart_item_num{
+								position: static;
+								width: 22px;
+								height: 22px;
+								border-radius: 50%;
+								margin-left: 10px;
+								background-color: #fff;
+								color: $basicGreen;
+								line-height: 22px;
+								box-sizing: border-box;
+								font-size: 14px;
+								border: 0px solid $basicGreen;
+							}
 						}
 					}
 				}
 			}
+			.header_menu{
+				order: 2;
+				button{
+					width: 90px;
+					height: 90px;
+					background: $basicGreen;
+					svg{
+						width: 35px;
+					}
+				}
+			}
 		}
-		&.rolled_sp{
+		&.rolled{
 			.header_inner{
-				background: #fff;
-				border-top: 3px solid $basicGreen;
+				background: transparent;
+				border-top: 0px solid $basicGreen;
 				.header_menu{
-					a{
-						background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/menu_icon_rolled_ddjxzw.png);
+					button{
+						svg{
+							fill: #fff;
+						}
 					}
 				}
 				.header_left{
 					.header_logo{
-						filter: none;
+						a{
+							svg{
+								fill: $basicGreen;
+							}
+						}
+					}
+					.header_navigation{
+						display: block;
+						ul{
+							li{
+								a{
+									color: $basicGreen;
+								}
+							}
+						}
 					}
 				}
 				.header_right{
 					.header_guide{
 						.nav_item{
+							&::after{
+								background: $basicGreen;
+							}
 							a{
 								color: $basicGreen;
-								span{
-									display: none;
+								.icon{
+									svg{
+										fill: $basicGreen;
+									}
 								}
-							}
-							&.h_cart{
-								a{
-									.cart_item_num{
-										display: block;
-										background-color: $basicGreen;
-										border: 2px solid $basicGreen;
-										color: #fff;
-									}
-									&::before{
-										filter: unset;
-									}
+								.txt{
+								}
+								.cart_item_num{
+									background-color: $basicGreen;
+									color: #fff;
+									border: 0px solid #fff;
 								}
 							}
 						}
@@ -389,5 +505,4 @@
 			}
 		}
 	}
-
 }

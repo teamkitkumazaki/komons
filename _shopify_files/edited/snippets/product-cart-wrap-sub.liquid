@@ -106,7 +106,7 @@
         {% for item in collection.metafields.custom_fields["variations"] %}
           {%- if item["variation_id"] != product.handle -%}
             <a href="/products/{{item["variation_id"]}}">
-              <span class="title">{{ item["variation_name"] }}({{ item["variation_ml"] }})はこちら</span>
+              <span class="title">{{ item["variation_name"] }}{% if item["variation_ml"] != blank %}({{ item["variation_ml"] }}){%- endif -%}</span>
               <span class="desc"> {{ item["variation_price"] }}円(税込)</span>
             </a>
           {%- endif -%}
@@ -120,7 +120,7 @@
       {% for item in collection.metafields.custom_fields["variations"] %}
         {%- if item["variation_id"] != product.handle -%}
           <a href="/products/{{item["variation_id"]}}">
-            <span class="title">{{ item["variation_name"] }}({{ item["variation_ml"] }})はこちら</span>
+            <span class="title">{{ item["variation_name"] }}{% if item["variation_ml"] != blank %}({{ item["variation_ml"] }}){%- endif -%}</span>
             <span class="desc"> {{ item["variation_price"] }}円(税込)</span>
           </a>
         {%- endif -%}
