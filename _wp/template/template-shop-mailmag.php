@@ -2,6 +2,7 @@
 <!doctype html>
 <?php
   $tokyo = SCF::get('tokyo', 1230);
+  $north = SCF::get('north', 1230);
   $kanto = SCF::get('kanto', 1230);
   $hokuriku = SCF::get('hokuriku', 1230);
   $chubu = SCF::get('chubu', 1230);
@@ -201,14 +202,20 @@
                                         <hr style="border: none; border-top: 1px solid #d8d8d8; margin-top: 40px; margin-bottom: 35px;"/>
                                         <p class="main_desc" style="font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 20px;">                                          <strong style="font-size: 16px; font-weight: normal;">お取り扱い店舗一覧</strong>
                                         </p>
-                                        <p class="main_desc" style="font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 20px; background: #f1f1f1; padding: 10px 0; text-align: center;">                                          <strong style="font-size: 16px;">東京</strong>
-                                        </p>
                                         <?php if (!empty($tokyo)) : ?>
+                                          <p class="main_desc" style="font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 20px; background: #f1f1f1; padding: 10px 0; text-align: center;"><strong style="font-size: 16px;">東京</strong></p>
                                           <div id="areaTokyo" class="store_list_wrap">
-                                            <h3 class="area_ttl">東京都</h3>
                                           <?php foreach ($tokyo as $i) : ?>
                                             <a class="main_desc" href="<?= $i['google_map_tokyo'] ?>" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 10px;">
                                               <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1607485774/journal/storelist/icon_house_gqdq1m.png" style="display: inline; margin-right: 10px; margin-bottom: -3px;" width="16"/><span><?= $i['shop_name_tokyo'] ?></span></a>
+                                          <?php endforeach; ?>
+                                        <?php endif; ?>
+                                        <?php if (!empty($north)) : ?>
+                                          <p class="main_desc" style="font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 40px 0 20px; background: #f1f1f1; padding: 10px 0; text-align: center;"><strong style="font-size: 16px;">北海道</strong></p>
+                                          <div id="areaNorth" class="store_list_wrap">
+                                          <?php foreach ($north as $i) : ?>
+                                            <a class="main_desc" href="<?= $i['google_map_north'] ?>" style="display: flow-root; text-decoration: none; font-size: 14px;line-height: 1.73;letter-spacing: 0.4px;color: #00371f;margin: 5px 0 10px;">
+                                              <img src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1607485774/journal/storelist/icon_house_gqdq1m.png" style="display: inline; margin-right: 10px; margin-bottom: -3px;" width="16"/><span><?= $i['shop_name_north'] ?></span></a>
                                           <?php endforeach; ?>
                                         <?php endif; ?>
                                         <?php if (!empty($kanto)) : ?>

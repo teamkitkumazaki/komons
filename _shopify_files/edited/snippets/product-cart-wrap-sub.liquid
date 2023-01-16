@@ -1,4 +1,4 @@
-<div class="comp-cart-wrap-switch">
+<div class="comp-cart-wrap-switch" avairable="{{ product.available }}">
   <div class="button_wrap">
     <button id="purchaseButton" class="switch_button active">
       <span class="selector"></span>
@@ -14,32 +14,41 @@
       <div id="normalBox" class="wrapper_box" style="display: block;">
         {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
           <div class="comp-cart-wrap">
-            <div class="order_lot">
-              <span class="title">数量</span>
-                <div id="quantityWrap" class="input_wrap number">
-                  <button id="minusButton" class="minus">-</button>
-                    <input id="quantityInput" type="text" class="product_init_num" name="quantity" min="1" value="1">
-                  <button id="plusButton" class="plus">+</button>
-                </div>
-              </div><!-- order_lot -->
-              <div class="submit_button">
-                <div class="cart_box">
-                  <select name="id" id="ProductSelect-product-template" style="display: none; opacity:0; height:0; overflow: hidden;">
-                  {% for variant in product.variants %}
-                    {%- assign index = index | plus: 1 -%}
-                    <option id="label{{index}}" value="{{ variant.id }}" cPrice="{{ variant.compare_at_price | money }}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}> {{ variant.title }}</option>
-                    {% endfor %}
-                  </select>
-                  <div class="cart_item">
-                    <span class="button_wrap">
-                      <span class="title cart_in">カートに入れる</span>
-                      <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
-                    </span>
-                    <input id="cartSubmit" class="product_cart_btn button" type="submit" value="カートに入れる">
-                  </div><!-- cart_item -->
-                </div>
-              </div><!-- comp-flex-cart -->
-            </div><!-- comp-cart-wrap -->
+          {%- if product.metafields.custom_fields["stock_state"] != 1 and product.available == true -%}
+          <div class="order_lot">
+            <span class="title">数量</span>
+              <div id="quantityWrap" class="input_wrap number">
+                <button id="minusButton" class="minus">-</button>
+                  <input id="quantityInput" type="text" class="product_init_num" name="quantity" min="1" value="1">
+                <button id="plusButton" class="plus">+</button>
+              </div>
+            </div><!-- order_lot -->
+            <div class="submit_button">
+              <div class="cart_box">
+                <select name="id" id="ProductSelect-product-template" style="display: none; opacity:0; height:0; overflow: hidden;">
+                {% for variant in product.variants %}
+                  {%- assign index = index | plus: 1 -%}
+                  <option id="label{{index}}" value="{{ variant.id }}" cPrice="{{ variant.compare_at_price | money }}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}> {{ variant.title }}</option>
+                  {% endfor %}
+                </select>
+                <div class="cart_item">
+                  <span class="button_wrap">
+                    <span class="title cart_in">カートに入れる</span>
+                    <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
+                  </span>
+                  <input id="cartSubmit" class="product_cart_btn button" type="submit" value="カートに入れる">
+                </div><!-- cart_item -->
+              </div>
+            </div><!-- comp-flex-cart -->
+          {%- else -%}
+          <div class="comp-waiting-button">
+             <a href="https://journal.komons-japan.com/waiting-list/{{product.handle}}">
+               <span class="title">Waiting Listに登録</span>
+               <span class="desc">2月上旬に再販予定</span>
+             </a>
+           </div><!-- waiting-button -->
+          {%- endif -%}
+          </div><!-- comp-cart-wrap -->
             {% endform %}
           </div>
           <div id="subscriptionBox" class="wrapper_box" style="display: none;">

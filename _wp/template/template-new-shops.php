@@ -11,6 +11,7 @@
   $others = SCF::get('others', $post_id);
   $overseas = SCF::get('overseas', $post_id);*/
 	$tokyo = SCF::get('tokyo', 1230);
+	$north = SCF::get('north', 1230);
   $kanto = SCF::get('kanto', 1230);
 	$hokuriku = SCF::get('hokuriku', 1230);
 	$chubu = SCF::get('chubu', 1230);
@@ -36,18 +37,18 @@
           <span class="ttl_en">Popup Store</span>
           <h2 class="ttl_ja">ポップアップ</h2>
         </hgroup>
-        <div class="store_item">
-          <div class="img_wrap">
-            <a target="_blank" href="https://www.instagram.com/line_enmarket/">
-              <img src="https://journal.komons-japan.com/wp-content/uploads/2022/10/store07.jpg">
-            </a>
-          </div>
-          <div class="txt_wrap">
-            <a target="_blank" class="shop_name" href="https://www.instagram.com/line_enmarket/">LINE Enmarket 2022AW</a>
-            <p class="date">開催期間：10/3(月)~10/23(日)</p>
-            <p class="address">JR新宿駅 新南口コンコース内<br>NEWoMan新宿 エキナカイベントスペース</p>
-          </div>
-        </div><!-- store_item -->
+				<div class="store_item">
+					<div class="img_wrap">
+						<a target="_blank" href="https://g-roppongi.jp/">
+							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store_g.jpg?v=1671431026">
+						</a>
+					</div>
+					<div class="txt_wrap">
+						<a class="shop_name" target="_blank" href="https://g-roppongi.jp/">g KEYAKIZAKA</a>
+						<p class="date">開催期間：12月7日(水)～29日(木)</p>
+						<p class="address">東京都港区六本木6丁目10-2 六本木ヒルズ ヒルサイド B1</p>
+					</div>
+				</div><!-- store_item -->
         <div class="store_item">
           <div class="img_wrap">
             <a target="_blank" href="https://choosebase.jp/">
@@ -76,6 +77,9 @@
             <?php if (!empty($tokyo)) : ?>
               <button jump="#areaTokyo"><span>東京都</span></button>
             <?php endif; ?>
+						<?php if (!empty($north)) : ?>
+							<button jump="#areaNorth"><span>北海道</span></button>
+						<?php endif; ?>
             <?php if (!empty($kanto)) : ?>
             <button jump="#areaKanto"><span>関東</span></button>
             <?php endif; ?>
@@ -118,6 +122,26 @@
             <?php endforeach; ?>
             </div><!-- store_list_wrap -->
           <?php endif; ?>
+					<?php if (!empty($north)) : ?>
+						<div id="areaNorth" class="store_list_wrap">
+							<h3 class="area_ttl">北海道</h3>
+						<?php foreach ($north as $i) : ?>
+							<div class="store_item">
+								<?php if($i['google_map_north'] != null) : ?>
+								<a target="_blank" href="<?= $i['google_map_north'] ?>" class="shop_info">
+								<?php else:?>
+								<a class="shop_info no_link" href="javascript:void(0);">
+								<?php endif; ?>
+									<span class="shop_name"><?= $i['shop_name_north'] ?></span>
+									<span class="address"><?= $i['postal_code_north'] ?><span><?= $i['address_north'] ?></span></span>
+									<?php if (!empty($i['note_north'])) : ?>
+										<p class="detail_txt"><?= $i['note_north'] ?></p>
+									<?php endif; ?>
+								</a>
+							</div>
+						<?php endforeach; ?>
+						</div><!-- store_list_wrap -->
+					<?php endif; ?>
           <?php if (!empty($kanto)) : ?>
             <div id="areaKanto" class="store_list_wrap">
               <h3 class="area_ttl">関東</h3>

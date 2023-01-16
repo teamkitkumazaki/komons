@@ -64,8 +64,10 @@
 	imagesizes="100vw"/>
 	{%- endif -%}
 	{%- if request.page_type contains 'index' or request.page_type contains 'product' or request.page_type contains 'collection' -%}
+
 	{%- else -%}
 	<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
+	<!-- <script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script> -->
 	{%- endif -%}
 	<script>
 		function send_conversion() {
@@ -119,9 +121,13 @@
 </script>
 {%- if request.page_type contains 'index' or request.page_type contains 'product' or request.page_type contains 'collection' -%}
 <script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
+<!-- <script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script> -->
 {%- endif -%}
 <script async src="https://statics.a8.net/a8sales/a8sales.js"></script>
 <script src="{{ 'layout.js' | asset_url }}" defer="defer"></script>
+{%- if request.page_type contains 'product' -%}
+<script src="{{ 'detail.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 {%- if request.page_type contains 'review' -%}
 <script src="{{ 'review.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}

@@ -1998,6 +1998,14 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+button {
+  color: inherit;
+}
+
+.rktheme-addtocart-container {
+  /*display: none !important;*/
+}
+
 #slidecarthq * {
   font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
 }
@@ -8996,7 +9004,7 @@ body.loaded #loading {
   width: 540px;
   color: #fff;
 }
-.comp-index-product-section .txt_wrapper .txt_block h4 {
+.comp-index-product-section .txt_wrapper .txt_block .prod_category {
   font-weight: 300;
   font-size: 1.6rem;
   line-height: 1;
@@ -9004,12 +9012,13 @@ body.loaded #loading {
   /*text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);*/
   margin-bottom: 20px;
 }
-.comp-index-product-section .txt_wrapper .txt_block h4 span {
+.comp-index-product-section .txt_wrapper .txt_block .prod_category span {
   /*@include libre-r;*/
   display: inline-block;
   padding-right: 0.5em;
 }
-.comp-index-product-section .txt_wrapper .txt_block h3 {
+.comp-index-product-section .txt_wrapper .txt_block .prod_name {
+  display: block;
   font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
@@ -9098,10 +9107,10 @@ body.loaded #loading {
     left: 3%;
     right: 0;
   }
-  .comp-index-product-section .txt_wrapper .txt_block h4 {
+  .comp-index-product-section .txt_wrapper .txt_block .prod_category {
     margin-bottom: 20px;
   }
-  .comp-index-product-section .txt_wrapper .txt_block h3 {
+  .comp-index-product-section .txt_wrapper .txt_block .prod_name {
     margin-bottom: 0;
   }
   .comp-index-product-section .txt_wrapper .txt_block p {
@@ -9192,15 +9201,15 @@ body.loaded #loading {
     left: 8%;
     right: 8%;
   }
-  .comp-index-product-section .txt_wrapper .txt_block h4 {
+  .comp-index-product-section .txt_wrapper .txt_block .prod_category {
     font-size: 3.2vw;
     letter-spacing: 0.05em;
     margin-bottom: 10px;
   }
-  .comp-index-product-section .txt_wrapper .txt_block h4 span {
+  .comp-index-product-section .txt_wrapper .txt_block .prod_category span {
     padding-right: 0.5em;
   }
-  .comp-index-product-section .txt_wrapper .txt_block h3 {
+  .comp-index-product-section .txt_wrapper .txt_block .prod_name {
     font-size: 6.2vw;
     letter-spacing: 0.05em;
   }
@@ -9925,7 +9934,7 @@ body.loaded #loading {
     margin-bottom: 10px;
   }
   .comp-gift-product-list .list_item .txt_wrap .name.en {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     letter-spacing: 0.5px;
     margin-bottom: 10px;
   }
@@ -10026,7 +10035,7 @@ body.loaded #loading {
   .comp-gift-product-list .list_item .txt_wrap .name.en {
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 2.6rem;
+    font-size: 2.2rem;
   }
   .comp-gift-product-list .list_item .txt_wrap .added {
     font-size: 1.4rem;
@@ -10055,17 +10064,18 @@ body.loaded #loading {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     text-align: center;
+    padding: 10px 0 12px;
     margin-bottom: 4px;
   }
   .comp-gift-product-list .list_item .content_icon .icon span {
     position: relative;
     display: inline-block;
-    font-size: 1.2rem;
-    padding: 12px 0;
+    font-size: 1.1rem;
     letter-spacing: 0.2px;
+    padding-left: 0 !important;
   }
   .comp-gift-product-list .list_item .content_icon .icon span::before {
-    display: block;
+    display: none;
     content: "";
     width: 23px;
     height: 100%;
@@ -10097,6 +10107,15 @@ body.loaded #loading {
   }
   .comp-gift-product-list .list_item .content_icon .icon span.dish::after {
     content: "食器用洗剤";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.alchohol::after {
+    content: "アルコールスプレー";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.relax::after {
+    content: "リラックスミスト";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.refresh::after {
+    content: "リフレッシュミスト";
   }
   .comp-gift-product-list .list_item .content_icon .icon span.multi {
     padding-left: 25px;
@@ -10150,6 +10169,16 @@ body.loaded #loading {
   .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini::after {
     font-size: 12px;
     content: "除菌消臭ミスト(Mini)";
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.handmilk {
+    padding-left: 0;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.handmilk::before {
+    width: 20px;
+    /*background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_toilet_lpe5tz.svg);*/
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span.handmilk::after {
+    content: "ハンドミルク";
   }
   .comp-gift-product-list .list_item .content_icon .icon span.toilet {
     padding-left: 25px;
@@ -16815,10 +16844,16 @@ body.loaded #loading {
   opacity: 0.5;
   margin-bottom: 10px;
 }
-#index #main #sliderBtn li a {
+#index #main #sliderBtn li a, #index #main #sliderBtn li button {
   display: block;
   width: 100%;
   height: 2px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   background: #fff;
 }
 #index #main #sliderBtn li.active {

@@ -154,7 +154,7 @@
           font-size: 1.8rem;
           margin-bottom: 10px;
           &.en{
-            font-size: 2.6rem;
+            font-size: 2.2rem;
             letter-spacing: 0.5px;
             margin-bottom: 10px;
           }
@@ -259,7 +259,7 @@
           &.en{
             margin-top: 0;
             margin-bottom: 10px;
-            font-size: 2.6rem;
+            font-size: 2.2rem;
           }
         }
         .added{
@@ -279,15 +279,16 @@
           border: 1px solid $insertGreen;
           box-sizing: border-box;
           text-align: center;
+          padding: 10px 0 12px;
           margin-bottom: 4px;
           span{
             position: relative;
             display: inline-block;
-            font-size: 1.2rem;
-            padding: 12px 0;
+            font-size: 1.1rem;
             letter-spacing: 0.2px;
+            padding-left: 0 !important;
             &::before{
-              display: block;
+              display: none;
               content: "";
               width: 23px;
               height: 100%;
@@ -316,6 +317,21 @@
               }
               &::after{
                 content: "食器用洗剤";
+              }
+            }
+            &.alchohol{
+              &::after{
+                content: "アルコールスプレー";
+              }
+            }
+            &.relax{
+              &::after{
+                content: "リラックスミスト";
+              }
+            }
+            &.refresh{
+              &::after{
+                content: "リフレッシュミスト";
               }
             }
             &.multi{
@@ -369,6 +385,16 @@
               &::after{
                 font-size: 12px;
                 content: "除菌消臭ミスト(Mini)";
+              }
+            }
+            &.handmilk{
+              padding-left: 0;
+              &::before{
+                width: 20px;
+                /*background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_toilet_lpe5tz.svg);*/
+              }
+              &::after{
+                content: "ハンドミルク";
               }
             }
             &.toilet{

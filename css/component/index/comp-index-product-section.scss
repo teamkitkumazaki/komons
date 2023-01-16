@@ -93,7 +93,7 @@
       width: 540px;
       color: #fff;
 
-      h4 {
+      .prod_category {
         font-weight: 300;
         font-size: 1.6rem;
         line-height: 1;
@@ -108,7 +108,8 @@
         }
       }
 
-      h3 {
+      .prod_name {
+        display: block;
         @include libre-r;
         font-size: 3.6rem;
         letter-spacing: 0.05em;
@@ -204,13 +205,13 @@
         left: 3%;
         right: 0;
 
-        h4 {
+        .prod_category {
           margin-bottom: 20px;
 
           span {}
         }
 
-        h3 {
+        .prod_name {
           margin-bottom: 0;
         }
 
@@ -314,7 +315,7 @@
         left: 8%;
         right: 8%;
 
-        h4 {
+        .prod_category {
           font-size: 3.2vw;
           letter-spacing: 0.05em;
           margin-bottom: 10px;
@@ -324,7 +325,7 @@
           }
         }
 
-        h3 {
+        .prod_name {
           font-size: 6.2vw;
           letter-spacing: 0.05em;
         }

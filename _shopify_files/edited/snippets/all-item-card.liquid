@@ -8,8 +8,8 @@
 {%- unless product.handle contains 'test' -%}
 <li class="item_box">
   <div class="img_wrap">
-    <a href="{{ product.url }}" {%- if product.metafields.custom_fields["stock_state"] == 1 -%}class="soldout"{%- endif -%}>
-      <img loading="lazy" src="{{ thumb_image | image_url: width: 533 }}" srcset="{{ thumb_image | image_url: width: 533 }} 1440w, {{ thumb_image | image_url: width: 360 }} 768w, {{ thumb_image | image_url: width: 533 }} 2048w">
+    <a href="{{ product.url }}" {%- if product.metafields.custom_fields["stock_state"] == 1 or product.available != true -%}class="soldout"{%- endif -%}>
+      <img loading="lazy" src="{{ thumb_image | image_url: width: 533 }}" srcset="{{ thumb_image | image_url: width: 533 }} 1440w, {{ thumb_image | image_url: width: 360 }} 768w, {{ thumb_image | image_url: width: 533 }} 2048w" alt="{{ product.metafields.custom_fields["prod_display_name"] | strip_html }}">
     </a>
   </div>
   <div class="txt_wrap height-adjust">
@@ -45,7 +45,7 @@
           {% endfor %}
           </select>
           <div class="cartin_button">
-            <button><span>カートに入れる</span></button>
+            <button title="カートに入れる"><span>カートに入れる</span></button>
             <input id="cartSubmit-{{ product.id }}" type="submit" value="カートに入れる">
           </div>
         {% endform %}

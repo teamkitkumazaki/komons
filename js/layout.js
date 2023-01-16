@@ -610,6 +610,62 @@ $(function() {
     variationToggle($('#variationToggle'));
   }
 
+  function cartUpsellButtons(){
+    var upSellSectionContainer = $('#upsellSection').text().length;
+    var upSellSectionContainer2 = $('#upsellSection2').text().length;
+
+    function containerChecker(){
+      var currentLength = $('#upsellSection').text().length;
+      if(currentLength != upSellSectionContainer){
+        upSellSectionContainer = currentLength;
+        $.each($('#upsellSection').find('button'), function(index) {
+          $(this).off();
+          $(this).on({
+            'click': function() {
+              setTimeout(function() {
+                location.href = location.href;
+              }, 1000);
+            }
+          });
+        });
+      }
+      requestAnimationFrame(containerChecker);
+    }
+
+    function containerChecker2(){
+      var currentLength2 = $('#upsellSection2').text().length;
+      if(currentLength2 != upSellSectionContainer2){
+        console.log('currentLength2:' + currentLength2 + '/ upSellSectionContainer2:' + upSellSectionContainer2);
+        upSellSectionContainer2 = currentLength2;
+        $.each($('#upsellSection2').find('button'), function(index) {
+          $(this).off();
+          $(this).on({
+            'click': function() {
+              setTimeout(function() {
+                location.href = location.href;
+              }, 1000);
+            }
+          });
+        });
+      }
+      requestAnimationFrame(containerChecker2);
+    }
+
+    function init(){
+      containerChecker();
+      containerChecker2();
+    }
+
+    init();
+
+  }
+
+
+  if (document.getElementById('cart')) {
+    cartUpsellButtons();
+  }
+
+
 
   //アンカーリンクで追従ヘッダーの分オフセットする
   window.onload = function() {
@@ -645,6 +701,7 @@ $(function() {
     var toggleContentsTxt = [];
     var faqSearch = $('#faqSearch');
     var faqFlex = $('#faqFlex');
+    var windowW = window.innerWidth;
 
     function filterFaqItem(){
       var searchValue = faqSearch.val();
@@ -712,6 +769,15 @@ $(function() {
       });
     }
 
+    function windowChecker(){
+      var currentWindow = window.innerWidth;
+      if(currentWindow != windowW){
+        setToggleHeight();
+        windowW = currentWindow
+      }
+      requestAnimationFrame(windowChecker);
+    }
+
     function init() {
       $.each(target.find('.toggle_item'), function(index) {
         toggleItem[index] = $(this);
@@ -738,11 +804,7 @@ $(function() {
           }
         });
       }
-
-      $(window).on(
-        'resize', function() {
-          setToggleHeight();
-        });
+      windowChecker();
     }
 
     init();

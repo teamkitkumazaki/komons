@@ -1,5 +1,5 @@
 {%- assign thumb_image = product.media[0] -%}
-{%- if product.handle != 'ks005' -%}
+{%- if product.handle != 'ks005' and product.handle != 'k0045' -%}
 	<div class="list_item" price="{{ product.price | money_without_currency }}" recommend="2">
 		{%- if product.variants.first.inventory_quantity == 0 or product.metafields.custom_fields["stock_state"] == 1 -%}
 		<a class="item_thumb soldout" href="{{ product.url }}">{{ product.media[0] | image_url: width: 520 | image_tag }}</a>
