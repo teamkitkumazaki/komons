@@ -39,28 +39,16 @@
         </hgroup>
 				<div class="store_item">
 					<div class="img_wrap">
-						<a target="_blank" href="https://g-roppongi.jp/">
-							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store_g.jpg?v=1671431026">
+						<a target="_blank" href="https://www.lumine.ne.jp/ikebukuro/topics/topics_details.php?article_no=8583">
+							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/line_popup.jpg?v=1674028826">
 						</a>
 					</div>
 					<div class="txt_wrap">
-						<a class="shop_name" target="_blank" href="https://g-roppongi.jp/">g KEYAKIZAKA</a>
-						<p class="date">開催期間：12月7日(水)～29日(木)</p>
-						<p class="address">東京都港区六本木6丁目10-2 六本木ヒルズ ヒルサイド B1</p>
+						<a class="shop_name" target="_blank" href="https://www.lumine.ne.jp/ikebukuro/topics/topics_details.php?article_no=8583">LINE En market</a>
+						<p class="date">開催期間：1月18日(水)-1月30日(月)</p>
+						<p class="address">ルミネ池袋 B1 プリズムガーデンEVENTSPACE</p>
 					</div>
 				</div><!-- store_item -->
-        <div class="store_item">
-          <div class="img_wrap">
-            <a target="_blank" href="https://choosebase.jp/">
-              <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store04.jpg?v=1660011601">
-            </a>
-          </div>
-          <div class="txt_wrap">
-            <a class="shop_name" target="_blank" href="https://choosebase.jp/">CHOOSEBASE SHIBUYA</a>
-            <p class="date">開催期間：2022年6月20日~12月末</p>
-            <p class="address">東京都渋谷区宇田川町21－1 西武渋谷店 パーキング館1階</p>
-          </div>
-        </div><!-- store_item -->
       </div>
     </div><!-- section_inner -->
   </section>
@@ -278,6 +266,7 @@
       </div><!-- stock_flex -->
     </div><!-- section_inner_new -->
   </section>
+	<!--
   <section class="section-archive">
     <div class="section_inner_new">
       <hgroup class="shop_ttl">
@@ -333,8 +322,8 @@
             </a>
           </div>
         </div>
-      </div><!-- comp-popup-archive -->
-    </div><!-- section_inner_new -->
+      </div>
+    </div> --><!-- section_inner_new -->
   </section>
 </article>
 <?php get_template_part("parts/footer");?>

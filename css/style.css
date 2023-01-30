@@ -9771,7 +9771,7 @@ body.loaded #loading {
 }
 .comp-gift-product-list .list_item .item_thumb {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .comp-gift-product-list .list_item .item_thumb img {
   width: 100%;
@@ -9828,40 +9828,134 @@ body.loaded #loading {
   color: inherit;
   margin-bottom: 15px;
   font-size: 1.6rem;
+  line-height: 1.5;
   letter-spacing: 0em;
   margin-bottom: 10px;
+  text-indent: -0.1em;
 }
 .comp-gift-product-list .list_item .txt_wrap .name.en {
   font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
-  font-size: 2.1rem;
+  font-size: 1.6rem;
   letter-spacing: 0.5px;
   display: block;
   margin-bottom: 8px;
+  text-indent: 0em;
 }
 .comp-gift-product-list .list_item .txt_wrap .added {
-  font-size: 1.2rem;
+  width: 110%;
+  display: block;
+  font-size: 1rem;
   line-height: 1.6;
   letter-spacing: 0.08em;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+}
+.comp-gift-product-list .list_item .txt_wrap .added.list_none {
+  display: none;
 }
 .comp-gift-product-list .list_item .txt_wrap .price {
-  margin-top: 15px;
+  margin-top: 12px;
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 0.08em;
 }
 .comp-gift-product-list .list_item .product_desc {
-  display: block;
-  font-size: 1.2rem;
+  display: none;
+  font-size: 1.1rem;
   line-height: 1.8;
   letter-spacing: 0.01em;
   color: #646464;
   margin-bottom: 15px;
 }
 .comp-gift-product-list .list_item .content_icon {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 120%;
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+}
+.comp-gift-product-list .list_item .content_icon .icon {
+  display: block;
+  border: 1px solid #046734;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 4px 7px 7px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  border-radius: 2px;
+}
+.comp-gift-product-list .list_item .content_icon .icon span {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 0.1px;
+  padding-left: 0 !important;
+}
+.comp-gift-product-list .list_item .content_icon .icon span::after {
+  display: block;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #00381f;
+  letter-spacing: 0em;
+}
+.comp-gift-product-list .list_item .content_icon .icon span.dish::after {
+  content: "食器用洗剤";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.alchohol::after {
+  content: "アルコールスプレー";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.relax::after {
+  content: "リラックスミスト";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.refresh::after {
+  content: "リフレッシュミスト";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.multi::after {
+  content: "マルチクリーナー";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.sanitizer::after {
+  content: "除菌アルコールスプレー";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.hand::after {
+  content: "ハンドソープ";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.fabric::after, .comp-gift-product-list .list_item .content_icon .icon span.mistmini::after, .comp-gift-product-list .list_item .content_icon .icon span.nerori::after, .comp-gift-product-list .list_item .content_icon .icon span.hakka::after, .comp-gift-product-list .list_item .content_icon .icon span.kuromoji::after {
+  content: "除菌消臭ミスト";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.fabric_mini::after {
+  font-size: 12px;
+  content: "除菌消臭ミスト(Mini)";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.handmilk::after {
+  content: "ハンドミルク";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.toilet::after {
+  content: "トイレクリーナー";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.towel::after {
+  content: "ウォッシュタオル";
+}
+.comp-gift-product-list .list_item .content_icon .icon span.bath::after {
+  content: "バスクリーナー";
+}
+.comp-gift-product-list .list_item .content_icon .icon:nth-last-of-type(1) {
+  margin-right: 0;
 }
 .comp-gift-product-list .list_item .detail_button {
   position: absolute;
@@ -9873,10 +9967,11 @@ body.loaded #loading {
 }
 .comp-gift-product-list .list_item .detail_button .gift_detail_button {
   display: block;
-  padding: 15px 0;
-  border-top: 1px solid #046734;
+  padding: 15px 15px;
+  background: #f4f4f4;
+  border-top: 0px solid #046734;
   color: inherit;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   letter-spacing: 0.05em;
 }
 .comp-gift-product-list .list_item .detail_button .gift_detail_button span {
@@ -9948,6 +10043,28 @@ body.loaded #loading {
   .comp-gift-product-list .list_item .product_desc {
     font-size: 1.4rem;
     margin-bottom: 15px;
+  }
+  .comp-gift-product-list .list_item .content_icon {
+    width: 100%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    margin-bottom: 5px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon {
+    padding: 5px 7px 7px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span {
+    font-size: 1.3rem;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon span::after {
+    display: block;
+    font-size: 1.2rem;
+  }
+  .comp-gift-product-list .list_item .content_icon .icon:nth-last-of-type(1) {
+    margin-right: 0;
   }
   .comp-gift-product-list .list_item .detail_button .gift_detail_button {
     font-size: 1.4rem;
@@ -10043,176 +10160,6 @@ body.loaded #loading {
   .comp-gift-product-list .list_item .txt_wrap .price {
     margin-top: 15px;
     font-size: 1.4rem;
-  }
-  .comp-gift-product-list .list_item .content_icon {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon {
-    display: block;
-    width: calc(50% - 2.5px);
-    border: 1px solid #046734;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-align: center;
-    padding: 10px 0 12px;
-    margin-bottom: 4px;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span {
-    position: relative;
-    display: inline-block;
-    font-size: 1.1rem;
-    letter-spacing: 0.2px;
-    padding-left: 0 !important;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span::before {
-    display: none;
-    content: "";
-    width: 23px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 3px;
-    margin: auto;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span::after {
-    display: block;
-    font-size: 1.2rem;
-    font-family: inherit;
-    color: #00381f;
-    letter-spacing: 0em;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.dish {
-    padding-left: 27px;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.dish::before {
-    width: 21px;
-    left: 1px;
-    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_dish_argayb.svg);
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.dish::after {
-    content: "食器用洗剤";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.alchohol::after {
-    content: "アルコールスプレー";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.relax::after {
-    content: "リラックスミスト";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.refresh::after {
-    content: "リフレッシュミスト";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.multi {
-    padding-left: 25px;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.multi::before {
-    width: 19px;
-    left: 3px;
-    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_multi_ggduzs.svg);
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.multi::after {
-    content: "マルチクリーナー";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.sanitizer {
-    padding-left: 25px;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.sanitizer::before {
-    width: 19px;
-    left: 3px;
-    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_multi_ggduzs.svg);
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.sanitizer::after {
-    content: "除菌アルコール";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.hand {
-    padding-left: 27px;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.hand::before {
-    width: 22px;
-    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_hand_bfofjk.svg);
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.hand::after {
-    content: "ハンドソープ";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric, .comp-gift-product-list .list_item .content_icon .icon span.mistmini, .comp-gift-product-list .list_item .content_icon .icon span.nerori, .comp-gift-product-list .list_item .content_icon .icon span.hakka, .comp-gift-product-list .list_item .content_icon .icon span.kuromoji {
-    padding-left: 25px;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric::before, .comp-gift-product-list .list_item .content_icon .icon span.mistmini::before, .comp-gift-product-list .list_item .content_icon .icon span.nerori::before, .comp-gift-product-list .list_item .content_icon .icon span.hakka::before, .comp-gift-product-list .list_item .content_icon .icon span.kuromoji::before {
-    width: 20px;
-    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_fabric_evs2ba.svg);
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric::after, .comp-gift-product-list .list_item .content_icon .icon span.mistmini::after, .comp-gift-product-list .list_item .content_icon .icon span.nerori::after, .comp-gift-product-list .list_item .content_icon .icon span.hakka::after, .comp-gift-product-list .list_item .content_icon .icon span.kuromoji::after {
-    content: "除菌消臭ミスト";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini {
-    padding-left: 25px;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini::before {
-    width: 20px;
-    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_fabric_evs2ba.svg);
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.fabric_mini::after {
-    font-size: 12px;
-    content: "除菌消臭ミスト(Mini)";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.handmilk {
-    padding-left: 0;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.handmilk::before {
-    width: 20px;
-    /*background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_toilet_lpe5tz.svg);*/
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.handmilk::after {
-    content: "ハンドミルク";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.toilet {
-    padding-left: 25px;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.toilet::before {
-    width: 20px;
-    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_toilet_lpe5tz.svg);
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.toilet::after {
-    content: "トイレクリーナー";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.towel {
-    padding-left: 23px;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.towel::before {
-    width: 18px;
-    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328917/giftList/icon_towel_gkghwa.svg);
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.towel::after {
-    content: "ウォッシュタオル";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.bath {
-    padding-left: 27px;
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.bath::before {
-    bottom: 1px;
-    width: 20px;
-    background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_bath_xnu2oh.svg);
-  }
-  .comp-gift-product-list .list_item .content_icon .icon span.bath::after {
-    content: "バスクリーナー";
-  }
-  .comp-gift-product-list .list_item .content_icon .icon:nth-of-type(2n) {
-    margin-right: 0;
   }
   .comp-gift-product-list .list_item .product_desc {
     display: none;
@@ -21297,6 +21244,7 @@ body.loaded #loading {
     width: 60px;
     height: 45px;
     line-height: 45px;
+    padding: 0;
   }
   .page-faq .section-faq-contents .faq_flex .category_wrap {
     margin-bottom: 30px;

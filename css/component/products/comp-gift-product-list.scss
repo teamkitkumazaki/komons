@@ -8,7 +8,7 @@
     margin-bottom: 20px;
     .item_thumb{
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       img{
         width: 100%;
         height: auto;
@@ -55,38 +55,144 @@
         color: inherit;
         margin-bottom: 15px;
         font-size: 1.6rem;
+        line-height: 1.5;
         letter-spacing: 0em;
         margin-bottom: 10px;
+        text-indent: -0.1em;
         &.en{
           @include libre-r;
-          font-size: 2.1rem;
+          font-size: 1.6rem;
           letter-spacing: 0.5px;
           display: block;
           margin-bottom: 8px;
+          text-indent: 0em;
         }
       }
       .added{
-        font-size: 1.2rem;
+        width: 110%;
+        display: block;
+        font-size: 1.0rem;
         line-height: 1.6;
         letter-spacing: 0.08em;
+        transform: scale(0.9);
+        transform-origin: left top;
+        &.list_none{
+          display: none;
+        }
       }
       .price{
-        margin-top: 15px;
+        margin-top: 12px;
         display: block;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         letter-spacing: 0.08em;
       }
     }
     .product_desc{
-      display: block;
-      font-size: 1.2rem;
+      display: none;
+      font-size: 1.1rem;
       line-height: 1.8;
       letter-spacing: 0.01em;
       color: #646464;
       margin-bottom: 15px;
     }
     .content_icon{
-      display: none;
+      @include flexSet;
+      justify-content: flex-start;
+      width: 120%;
+      transform: scale(0.85);
+      transform-origin: left top;
+      .icon{
+        display: block;
+        border: 1px solid $insertGreen;
+        box-sizing: border-box;
+        padding: 4px 7px 7px;
+        margin-right: 4px;
+        margin-bottom: 4px;
+        border-radius:2px;
+        span{
+          position: relative;
+          display: inline-block;
+          font-size: 1.0rem;
+          letter-spacing: 0.1px;
+          padding-left: 0 !important;
+          &::after{
+            display: block;
+            font-size: 1.0rem;
+            font-family: inherit;
+            color: #00381f;
+            letter-spacing: 0em;
+          }
+          &.dish{
+            &::after{
+              content: "食器用洗剤";
+            }
+          }
+          &.alchohol{
+            &::after{
+              content: "アルコールスプレー";
+            }
+          }
+          &.relax{
+            &::after{
+              content: "リラックスミスト";
+            }
+          }
+          &.refresh{
+            &::after{
+              content: "リフレッシュミスト";
+            }
+          }
+          &.multi{
+            &::after{
+              content: "マルチクリーナー";
+            }
+          }
+          &.sanitizer{
+            &::after{
+              content: "除菌アルコールスプレー";
+            }
+          }
+          &.hand{
+            &::after{
+              content: "ハンドソープ";
+            }
+          }
+          &.fabric, &.mistmini, &.nerori, &.hakka, &.kuromoji{
+            &::after{
+              content: "除菌消臭ミスト";
+            }
+          }
+          &.fabric_mini{
+            &::after{
+              font-size: 12px;
+              content: "除菌消臭ミスト(Mini)";
+            }
+          }
+          &.handmilk{
+            &::after{
+              content: "ハンドミルク";
+            }
+          }
+          &.toilet{
+            &::after{
+              content: "トイレクリーナー";
+            }
+          }
+          &.towel{
+            &::after{
+              content: "ウォッシュタオル";
+            }
+          }
+          &.bath{
+            &::after{
+              content: "バスクリーナー";
+            }
+          }
+        }
+        &:nth-last-of-type(1){
+          margin-right: 0;
+        }
+      }
     }
     .detail_button{
       position: absolute;
@@ -97,10 +203,11 @@
       width: 100%;
       .gift_detail_button{
         display: block;
-        padding: 15px 0;
-        border-top: 1px solid $insertGreen;
+        padding: 15px 15px;
+        background: #f4f4f4;
+        border-top: 0px solid $insertGreen;
         color: inherit;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         letter-spacing: 0.05em;
         span{
           display: block;
@@ -170,6 +277,27 @@
       .product_desc{
         font-size: 1.4rem;
         margin-bottom: 15px;
+      }
+      .content_icon{
+        width: 100%;
+        transform: scale(1);
+        margin-bottom: 5px;
+        .icon{
+          padding: 5px 7px 7px;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          border-radius: 3px;
+          span{
+            font-size: 1.3rem;
+            &::after{
+              display: block;
+              font-size: 1.2rem;
+            }
+          }
+          &:nth-last-of-type(1){
+            margin-right: 0;
+          }
+        }
       }
       .detail_button{
         .gift_detail_button{
@@ -268,170 +396,6 @@
         .price{
           margin-top: 15px;
           font-size: 1.4rem;
-        }
-      }
-      .content_icon{
-        @include flexSet;
-        justify-content: space-between;
-        .icon{
-          display: block;
-          width: calc(50% - 2.5px);
-          border: 1px solid $insertGreen;
-          box-sizing: border-box;
-          text-align: center;
-          padding: 10px 0 12px;
-          margin-bottom: 4px;
-          span{
-            position: relative;
-            display: inline-block;
-            font-size: 1.1rem;
-            letter-spacing: 0.2px;
-            padding-left: 0 !important;
-            &::before{
-              display: none;
-              content: "";
-              width: 23px;
-              height: 100%;
-              position: absolute;
-              top:0;
-              bottom:0;
-              left:3px;
-              margin: auto;
-              @include bgSet;
-              background-size: contain;
-              transform: scale(0.8);
-            }
-            &::after{
-              display: block;
-              font-size: 1.2rem;
-              font-family: inherit;
-              color: #00381f;
-              letter-spacing: 0em;
-            }
-            &.dish{
-              padding-left: 27px;
-              &::before{
-                width: 21px;
-                left:1px;
-                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_dish_argayb.svg);
-              }
-              &::after{
-                content: "食器用洗剤";
-              }
-            }
-            &.alchohol{
-              &::after{
-                content: "アルコールスプレー";
-              }
-            }
-            &.relax{
-              &::after{
-                content: "リラックスミスト";
-              }
-            }
-            &.refresh{
-              &::after{
-                content: "リフレッシュミスト";
-              }
-            }
-            &.multi{
-              padding-left: 25px;
-              &::before{
-                width: 19px;
-                left: 3px;
-                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_multi_ggduzs.svg);
-              }
-              &::after{
-                content: "マルチクリーナー";
-              }
-            }
-            &.sanitizer{
-              padding-left: 25px;
-              &::before{
-                width: 19px;
-                left: 3px;
-                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_multi_ggduzs.svg);
-              }
-              &::after{
-                content: "除菌アルコール";
-              }
-            }
-            &.hand{
-              padding-left: 27px;
-              &::before{
-                width: 22px;
-                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_hand_bfofjk.svg);
-              }
-              &::after{
-                content: "ハンドソープ";
-              }
-            }
-            &.fabric, &.mistmini, &.nerori, &.hakka, &.kuromoji{
-              padding-left: 25px;
-              &::before{
-                width: 20px;
-                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_fabric_evs2ba.svg);
-              }
-              &::after{
-                content: "除菌消臭ミスト";
-              }
-            }
-            &.fabric_mini{
-              padding-left: 25px;
-              &::before{
-                width: 20px;
-                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_fabric_evs2ba.svg);
-              }
-              &::after{
-                font-size: 12px;
-                content: "除菌消臭ミスト(Mini)";
-              }
-            }
-            &.handmilk{
-              padding-left: 0;
-              &::before{
-                width: 20px;
-                /*background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_toilet_lpe5tz.svg);*/
-              }
-              &::after{
-                content: "ハンドミルク";
-              }
-            }
-            &.toilet{
-              padding-left: 25px;
-              &::before{
-                width: 20px;
-                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_toilet_lpe5tz.svg);
-              }
-              &::after{
-                content: "トイレクリーナー";
-              }
-            }
-            &.towel{
-              padding-left: 23px;
-              &::before{
-                width: 18px;
-                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328917/giftList/icon_towel_gkghwa.svg);
-              }
-              &::after{
-                content: "ウォッシュタオル";
-              }
-            }
-            &.bath{
-              padding-left: 27px;
-              &::before{
-                bottom: 1px;
-                width: 20px;
-                background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/v1614328915/giftList/icon_bath_xnu2oh.svg);
-              }
-              &::after{
-                content: "バスクリーナー";
-              }
-            }
-          }
-          &:nth-of-type(2n){
-            margin-right: 0;
-          }
         }
       }
       .product_desc{
