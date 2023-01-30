@@ -11,7 +11,7 @@
     <div class="journal">
       <div class="category_list">
         <ul>
-          
+
         <?php
         $all_tags = get_tags(array('hide_empty' => false));
         $current_tag_id = ((isset($_GET['tag']) && !empty($_GET['tag']))) ? $_GET['tag'] : '';
@@ -19,14 +19,14 @@
         <li<?php if (empty($current_tag_id)): ?> class="current"<?php endif; ?>><a href="/">すべて</a></li>
         <?php foreach ($all_tags as $key => $tag): ?>
           <li<?php if ($current_tag_id == $tag->term_id): ?> class="current"<?php endif; ?>><a href="?tag=<?php echo $tag->term_id; ?>"><span>#</span><?php echo $tag->name; ?></a></li>
-        <?php endforeach; ?> 
+        <?php endforeach; ?>
         </ul>
       </div>
       <ul class="posts">
         <?php
-        
+
         $paged = (int)get_query_var( 'paged', 1 );
-        
+
         $args = array(
           'posts_per_page'    => 10,
           'paged' => $paged,
@@ -58,7 +58,7 @@
 
           endwhile;
         else:
-          get_template_part( 'parts/post/content', 'none' );          
+          get_template_part( 'parts/post/content', 'none' );
         endif;
       ?>
 

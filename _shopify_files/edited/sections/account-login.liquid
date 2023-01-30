@@ -10,6 +10,7 @@
         </div>
 				<div class="form_width">
 					{%- form 'customer_login', novalidate: 'novalidate' -%}
+					<input id="checkoutURL" type="hidden" name="checkout_url" value="/account">
 					{%- if form.errors -%}
           <div class="comp-form-message">
             <div class="message_inner error">
@@ -36,7 +37,7 @@
 							<label>パスワード</label>
 							<div class="form_wrap">
 							  <input type="password" value="" name="customer[password]" id="CustomerPassword" autocomplete="current-password" class="admin" placeholder="">
-                <button id="resetPassword" class="switch_button">パスワードをお忘れですか？</button>
+                <button id="resetPassword" type="button" class="switch_button">パスワードをお忘れですか？</button>
               </div>
 						</div>
 						{% endif %}
@@ -53,3 +54,21 @@
 		</div><!-- section_inner_new -->
 	</section>
 </article>
+
+<script>
+function getParam(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+var param = getParam('route');
+console.log('param:' + param);
+if(param.indexOf('cart') != -1){
+	$('#checkoutURL').attr('value', '/cart');
+}
+</script>

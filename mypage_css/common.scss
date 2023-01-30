@@ -1,15 +1,190 @@
-article{
-  padding-top: 160px;
-  margin-bottom: 120px;
-  @media screen and (max-width: 980px){
-    margin-bottom: 80px;
-  }
-  @media screen and (max-width: 730px){
-    padding-top: 120px;
-    margin-bottom: 60px;
-  }
+#huckleberry-subscription-customer-portal-wrap > p{
+	display: none;
 }
 
-.hide {
-	display: none !important;
+#root {
+	width: 100%;
+	font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
+}
+
+#huckleberry-subscription-customer-portal{
+	iframe{
+		min-height: 100vh;
+		padding-top: 90px;
+		margin-bottom: 80px;
+		@media screen and (min-width: 1100px){
+			padding-top: 160px;
+			margin-bottom: 120px;
+		}
+	}
+  article{
+    margin:0;
+    padding: 0;
+  }
+	a, button{
+		cursor: pointer;
+		@include hover;
+	}
+}
+body.huckleberry-subscription-list-color{
+  // body
+  font-size: 1.4rem;
+  color: $basicGreen !important;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  width: 86vw !important;
+  margin: 0px auto !important;
+	counter-reset: number 0;
+  h1,h2,h3,h4,h5,p{
+    font-weight: normal;
+  }
+  button{
+    font-family: inherit;
+    letter-spacing: inherit;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: none;
+  }
+  header{
+    margin-bottom: 25px;
+		.huckleberry-subscription-list-title{
+			font-size: 2.2rem;
+			font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
+      text-align: center;
+      color: #fff;
+			pointer-events: none;
+			user-select: none;
+      &::before{
+        display: block;
+        content: "Subscription";
+        font-size: 2.6rem;
+        font-weight: normal;
+        letter-spacing: 0.06em;
+        margin-bottom: 15px;
+        @include libre-r;
+        font-size: 3.0rem;
+        text-indent: 0;
+        color: $basicGreen;
+      }
+      &::after{
+        display: block;
+        content: "定期購入契約一覧";
+        font-size: 1.6rem;
+        color: $basicGreen;
+        text-indent: 0;
+        margin-top: -1.5rem;
+      }
+			@media screen and (min-width: 1100px){
+				margin-bottom: 120px;
+				&::before{
+					margin-bottom: 20px;
+					font-size: 3.6rem;
+					text-indent: 0;
+					color: $basicGreen;
+				}
+			}
+		}
+    .huckleberry-subscription-detail-title{
+      font-size: 2.2rem;
+      text-align: center;
+      color: #fff;
+			pointer-events: none;
+			user-select: none;
+			font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;
+      &::before{
+        display: block;
+        content: "Detail";
+        font-size: 2.6rem;
+        font-weight: normal;
+        letter-spacing: 0.06em;
+        margin-bottom: 15px;
+        @include libre-r;
+        font-size: 3.0rem;
+        text-indent: 0;
+        color: $basicGreen;
+      }
+      &::after{
+        display: block;
+        content: "定期購入";
+        font-size: 1.6rem;
+        color: $basicGreen;
+        text-indent: 0;
+        margin-top: -1.5rem;
+      }
+			@media screen and (min-width: 1100px){
+				margin-bottom: 120px;
+				&::before{
+					margin-bottom: 20px;
+					font-size: 3.6rem;
+					text-indent: 0;
+					color: $basicGreen;
+				}
+			}
+    }
+  }
+  .wrap{
+    @include flexSet;
+    display: flex !important;
+		justify-content: space-between;
+    margin-top: 40px !important;
+    .content-right{
+      width: 100% !important;
+      order: 0;
+			@media screen and (min-width: 1100px){
+				width: 350px !important;
+				order: 1;
+			}
+    }
+    .content-left{
+      width: 100%;
+      order: 1;
+			@media screen and (min-width: 1100px){
+				order: 0;
+				width: calc(100% - 420px) !important;
+			}
+			&::before{
+				display: block;
+				content: "定期購入中の商品";
+				font-size: 2.2rem;
+				letter-spacing: 0.05em;
+				color: $basicGreen;
+				margin-bottom: 40px;
+				@media screen and (min-width: 1100px){
+					font-size: 2.6rem;
+				}
+			}
+      section{
+        margin: 0 0 60px !important;
+				@media screen and (min-width: 1100px){
+					margin: 0 0 80px !important;
+				}
+				&:nth-of-type(1){
+					article{
+						@include flexSet;
+						justify-content: flex-start;
+						margin: 0 0 35px !important;
+						border: none !important;
+					}
+				}
+				&:nth-of-type(2){
+					article{
+						margin: 0 0 20px !important;
+						border: none !important;
+					}
+				}
+      }
+    }
+    .content-right{
+      section{
+        margin: 0 0 40px !important;
+        article{
+          padding: 30px 25px 25px !important;
+          margin-top: 0px;
+          border: none !important;
+          margin-bottom: 15px !important;
+        }
+      }
+    }
+  }
 }

@@ -151,7 +151,6 @@ $(function() {
       }else{
         $('header').removeClass('rolled_sp');
       }
-
       scrollSwitch = 0;
     };
 
@@ -193,6 +192,13 @@ $(function() {
 
       $(window).on({
         'scroll': function() {
+          if (document.getElementById('lineContact')) {
+            if ($(window).scrollTop() > 300) {
+              $('#lineContact').addClass('rolled');
+            }else{
+              $('#lineContact').removeClass('rolled');
+            }
+          }
           if (document.getElementById('headerRolled')) {
             if(window.innerWidth > 720){
               var scroll = $(window).scrollTop();
@@ -312,7 +318,7 @@ $(function() {
   //ハンバーガーメニューの開閉
 
   function humMenuToggle(target) {
-    var humButton = target.find('a');
+    var humButton = target.find('button');
     var closeBtn = $('#humClose');
     var menuBg = $('#menuBg');
     var menuState = 0;
@@ -604,24 +610,82 @@ $(function() {
     variationToggle($('#variationToggle'));
   }
 
+  function cartUpsellButtons(){
+    var upSellSectionContainer = $('#upsellSection').text().length;
+    var upSellSectionContainer2 = $('#upsellSection2').text().length;
+
+    function containerChecker(){
+      var currentLength = $('#upsellSection').text().length;
+      if(currentLength != upSellSectionContainer){
+        upSellSectionContainer = currentLength;
+        $.each($('#upsellSection').find('button'), function(index) {
+          $(this).off();
+          $(this).on({
+            'click': function() {
+              setTimeout(function() {
+                location.href = location.href;
+              }, 1000);
+            }
+          });
+        });
+      }
+      requestAnimationFrame(containerChecker);
+    }
+
+    function containerChecker2(){
+      var currentLength2 = $('#upsellSection2').text().length;
+      if(currentLength2 != upSellSectionContainer2){
+        console.log('currentLength2:' + currentLength2 + '/ upSellSectionContainer2:' + upSellSectionContainer2);
+        upSellSectionContainer2 = currentLength2;
+        $.each($('#upsellSection2').find('button'), function(index) {
+          $(this).off();
+          $(this).on({
+            'click': function() {
+              setTimeout(function() {
+                location.href = location.href;
+              }, 1000);
+            }
+          });
+        });
+      }
+      requestAnimationFrame(containerChecker2);
+    }
+
+    function init(){
+      containerChecker();
+      containerChecker2();
+    }
+
+    init();
+
+  }
+
+
+  if (document.getElementById('cart')) {
+    cartUpsellButtons();
+  }
+
+
 
   //アンカーリンクで追従ヘッダーの分オフセットする
   window.onload = function() {
     var urlHash = location.hash;
-    if (0 < urlHash.length) {
-      location.hash = urlHash;
-      var scroll = $(urlHash).offset().top;
-      var w = $(window).width();
+    if(urlHash != undefined && urlHash.length > 1){
+      if (0 < urlHash.length) {
+        location.hash = urlHash;
+        var scroll = $(urlHash).offset().top;
+        var w = $(window).width();
 
-      if (w > 1100) {
-        var adScroll = scroll - 100;
-      } else {
-        var adScroll = scroll - 60;
+        if (w > 1100) {
+          var adScroll = scroll - 100;
+        } else {
+          var adScroll = scroll - 60;
+        }
+
+        $("html, body").animate({
+          scrollTop: adScroll
+        }, 0);
       }
-
-      $("html, body").animate({
-        scrollTop: adScroll
-      }, 0);
     }
   }
 
@@ -637,6 +701,7 @@ $(function() {
     var toggleContentsTxt = [];
     var faqSearch = $('#faqSearch');
     var faqFlex = $('#faqFlex');
+    var windowW = window.innerWidth;
 
     function filterFaqItem(){
       var searchValue = faqSearch.val();
@@ -704,6 +769,15 @@ $(function() {
       });
     }
 
+    function windowChecker(){
+      var currentWindow = window.innerWidth;
+      if(currentWindow != windowW){
+        setToggleHeight();
+        windowW = currentWindow
+      }
+      requestAnimationFrame(windowChecker);
+    }
+
     function init() {
       $.each(target.find('.toggle_item'), function(index) {
         toggleItem[index] = $(this);
@@ -730,11 +804,7 @@ $(function() {
           }
         });
       }
-      
-      $(window).on(
-        'resize', function() {
-          setToggleHeight();
-        });
+      windowChecker();
     }
 
     init();
@@ -755,6 +825,10 @@ $(function() {
 
   if (document.getElementById('giftService')) {
     faqToggle($('article'));
+  }
+
+  if (document.getElementById('itemDetailNew')) {
+    faqToggle($('#subFaq'));
   }
 
   //ギフトサービスへのスクロール

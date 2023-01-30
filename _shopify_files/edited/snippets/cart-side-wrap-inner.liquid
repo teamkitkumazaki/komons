@@ -1,0 +1,37 @@
+<div class="comp-admin-subttl">
+  <h2 class="ttl">お届け希望日時</h2>
+</div>
+<div class="comp-admin-form">
+  <div class="form_item">
+    <label class="large ">お届け希望日程</label>
+    <div class="form_wrap">
+      {% include 'cart-side-wrap-date-box' %}
+    </div>
+  </div>
+  <div class="form_item">
+    <label class="large ">お届け希望時間</label>
+    <div class="form_wrap">
+      <select id="deliveryTime" name="attributes[配送時間帯:]">
+        <option value="指定なし" selected="">指定なし</option>
+        <option value="午前中（12時まで）">午前中（12時まで）</option>
+        <option value="14時から16時">14時から16時</option>
+        <option value="16時から18時">16時から18時</option>
+        <option value="18時から20時">18時から20時</option>
+        <option value="19時から21時">19時から21時</option>
+      </select>
+    </div>
+  </div>
+  <div class="form_item">
+    <label class="large ">備考欄</label>
+    <div class="form_wrap">
+      <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" style="font-family: ts-unused;"></textarea>
+      <p class="example">1注文につき、お届け先は1件のみとなります。<br>2件以上のお届け先をご希望の場合は別々にご注文ください。</p>
+    </div>
+  </div>
+</div><!-- comp-admin-form -->
+<div class="comp-amount-wrap">
+  {% include 'cart-amount-price' %}
+</div><!-- comp-amount-wrap -->
+<div class="comp-admin-button mt">
+  <input type="submit" name="checkout" class="checkout_button " value="ご購入手続きへ">
+</div>

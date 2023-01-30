@@ -31,6 +31,7 @@ $src = $image[0];
 
     </div>
     <div class="post_body">
+      <?php remove_filter('the_content', 'wpautop');?>
         <?= the_content(); ?>
     </div>
     </div><!-- detail_inner -->
@@ -157,4 +158,5 @@ $src = $image[0];
 <?php get_template_part("parts/footer");?>
 <?php get_template_part("parts/hummenu");?>
 </body>
+<?php get_template_part("parts/script");?>
 </html>

@@ -146,24 +146,17 @@
       }
     }
   }
-  .cart_note{
-    @include flexSet;
-    justify-content: center;
-    margin-top: 20px;
-    button{
-      display: block;
-      padding: 0;
-      margin: 0 1em 0 0;
-      color: $basicGreen;
-      font-size: 1.4rem;
-      appearance: none;
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      font-family: inherit;
-      border-bottom: 1px solid $basicGreen;
-      padding-bottom: 4px;
-      cursor: pointer;
+  &.subscription{
+    margin-top: 0;
+    background: #f8f8f8;
+    padding: 15px 15px;
+    @media screen and (min-width: 720px) and (max-width: 980px){
+      padding: 25px;
+    }
+
+    .order_lot{
+      background: #fff;
+      border: 1px solid #d8d8d8;
     }
   }
 }
@@ -193,13 +186,6 @@
           border: none;
           font-size: 1.6rem;
           text-align: center;
-        }
-      }
-      .cart_note{
-        margin-top: 25px;
-        button{
-          margin: 0 1em 0 0;
-          font-size: 1.5rem;
         }
       }
     }

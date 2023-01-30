@@ -17,9 +17,15 @@
 							<a href="{{ routes.account_logout_url }}">ログアウト</a>
 						</div>
 					</div>
+					{%- if customer.orders.size != 0 -%}
+					 <div class="comp-admin-button">
+						<a href="/account?hbSubscriptionPath=/"><span>定期購買商品の変更・設定</span></a>
+					</div>
+					{%- endif -%}
 				</div>
 				<div class="admin_flex">
 					<div class="admin_left">
+
 					<div class="comp-admin-subttl">
 						<h2 class="ttl">ご注文履歴</h2>
 					</div>
@@ -86,20 +92,12 @@
 								<div class="address_item">
 									<p class="username ">{{ customer.last_name }}{{ customer.first_name }}</p>
 									<div class="address">
-									{%- if customer.default_address.zip != blank -%}
-										<p>
-											<span>〒{{ customer.default_address.zip }}</span>
-											<span>{{ customer.default_address.province }} {{ customer.default_address.city }}</span>
-											<span>{{ customer.default_address.street }}</span>
-										</p>
-									{%- else -%}
-										<p>住所情報未登録</p>
-									{%- endif -%}
+									<p>{{customer.email}}</p>
 									</div>
 								</div>
 							</div>
 							<div class="comp-admin-button mt">
-								<a href="{{ routes.account_addresses_url }}" class=" "><span class=" ">配送先情報の追加・変更</span></a>
+								<a href="{{ routes.account_addresses_url }}" class=" "><span class=" ">住所情報の追加・変更</span></a>
 							</div>
 						</div>
 					</div>
@@ -108,3 +106,20 @@
 		</section>
 	</article>
 {% endpaginate %}
+
+{% render 'huckleberry-subscription-customer-portal' %}
+<script>
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+{%- assign pageUrl = contentForQuerystring | split:'"pageurl":"' | last | split:'"' | first | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&' -%}
+{%- assign get_query_value_by_key = '' -%}
+{%- if pageUrl contains "?" -%}
+  {%- assign pageQuerystring = pageUrl | split:'?' | last | replace:'=','&' -%}
+  {%- assign tmp = pageQuerystring | split:'&' -%}
+  {%- for kv in tmp -%}
+      {%- if kv == key -%}
+          {%- assign get_query_value_by_key = tmp[forloop.index] -%}
+          {%- break -%}
+      {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+</script>

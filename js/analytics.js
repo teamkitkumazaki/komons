@@ -1,54 +1,139 @@
-var parentWrap = window.parent.document; /* iframeから親ドキュメント(チェックアウト画面を指定)*/
-/* 「次回のためこの情報を保存する」をデフォルトでチェック状態にする */
-var rememberCheck = parentWrap.getElementById('checkout_remember_me');
-if(rememberCheck != null){
-  rememberCheck.setAttribute('checked', 'checked');
-}
+function cartOptionController(target){
+  var dayFlag = 0;
+  var firstDay;
+	var firstDayParam;
+	var secondDay;
+	var secondDayParam;
+	var dayNumber = 0;
+  var deliveryDateList = $('#deliveryDateList');
+  var optionItem = [];
+  var optionItemHeight = [];
+  var optionItemLabel = [];
+  var optionItemWrap = [];
+  var delay = 0; /*曜日・時間による配送日のスライド設定*/
+  var today = new Date();
+  var startDay;
+  var y;
+  var m;
+  var paramM;
+  var d;
+  var paramD;
+  var w;
+  var paramW;
+  var time;
+  var num;
+  var testFlg = Number(0);
+  var correctDate = ['指定なし'];
+  var wd = ['日', '月', '火', '水', '木', '金', '土'];
+  var holiday = ['12/29', '12/30', '12/31', '1/1', '1/2', '1/3', '1/4', '1/10', '2/11', '2/23', '3/21', '4/29','4/30', '5/1', '5/2', '5/3', '5/4', '5/5', '7/18', '8/11', '9/19', '9/23', '10/10', '11/3', '11/23'];
+  var setDayStatus = 0;
 
-/* 決済方法欄からAmazon Payの表記を消す*/
-var elems = parentWrap.querySelectorAll('[data-gateway-name]');
-for (var i = 0; i < elems.length; i++) {
-  if(elems[i].getAttribute('data-gateway-name') == 'amazon_pay')
-    elems[i].remove();
-}
-
-/* 代引き決済手数料の表記 */
-var inputDOM = parentWrap.querySelectorAll('.input-radio');
-var subtotalWrap = parentWrap.querySelector('.total-line-table__tbody');
-var subtotalContent = subtotalWrap.innerHTML;
-var taxDisplay = parentWrap.querySelector('.payment-due-label__taxes span');
-var taxPrice = taxDisplay.getAttribute('data-checkout-total-taxes-target');
-var amountPrice = parentWrap.querySelector('.payment-due__price');
-var amountPriceDisplay = amountPrice.getAttribute('data-checkout-payment-due-target');
-
-for (var i = 0; i < inputDOM.length; i++) {
-  console.log(inputDOM[i].getAttribute('value'));
-  inputDOM[i].addEventListener("change", checkPaymentWay, false);
-}
-
-function checkPaymentWay(){
-  var paymentWay = this.getAttribute('value');
-  if(paymentWay == '64595198146'){
-    var codPriceWrap = '<tr class="total-line total-line--shipping"><th class="total-line__name" scope="row"><span>代引手数料</span></th><td class="total-line__price"><span class="skeleton-while-loading order-summary__emphasis" data-checkout-total-shipping-target="66000">￥330</span></td></tr>'
-    subtotalWrap.innerHTML = subtotalContent + codPriceWrap;
-    var taxPriceNew = taxPrice / 100;
-    taxPriceNew = taxPriceNew + 30;
-    var amountPriceNew = amountPriceDisplay / 100;
-    amountPriceNew = amountPriceNew + 330;
-    taxDisplay.innerHTML = '¥' + taxPriceNew.toLocaleString();
-    amountPrice.innerHTML = '¥' + amountPriceNew.toLocaleString();
-  }else if(paymentWay == '62885691586'){
-    subtotalWrap.innerHTML = subtotalContent;
-    var taxPriceOld = taxPrice / 100;
-    taxDisplay.innerHTML = '¥' + taxPriceOld.toLocaleString();
-    var amountPriceOld = amountPriceDisplay / 100;
-    amountPrice.innerHTML = '¥' + amountPriceOld.toLocaleString();
+  function getDayDisplay(day, mode, flg){
+    var date = new Date();
+    date.setDate(date.getDate() + day + testFlg);
+    y = date.getFullYear();
+    m = date.getMonth() + 1;
+    d = date.getDate();
+    w = date.getDay() % 7;
+    time = date.getHours();
+    if(m < 10){ paramM = '0' + m }else{ paramM = m }
+    if(d < 10){ paramD = '0' + d }else{ paramD = d }
+    var dayParam = y + '-' + paramM + '-' + paramD;
+    if(mode == 0){
+      correctDate.push(dayParam);
+    }
+  }
+  console.log('deliveryDateParam:' + deliveryDateParam);
+  if(deliveryDateParam != undefined){
+    $('#deliveryDate').val(deliveryDateParam);
   }
 }
 
-/* Amazonペイ部分の表記変更*/
-var amazonPayment = parentWrap.querySelectorAll('.amazon-payments');
-var amazonBox = amazonPayment.innerHTML;
-console.log('amazonBox:' + amazonBox);
-var noteText = `<div class="added_wrap" style="margin-bottom: 25px;"><p>※Amazon payの場合、お届け先と購入者は同一となります。</p><p>※ギフトなどで、お届け先と異なる購入者情報を入力ご希望の場合は、他の決済手段をご利用ください"</p>`;
-amazonPayment.innerHTML = noteText + amazonBox;
+function setDayDisplay(num, mode){
+  console.log('num:'+ num + '/' + 'mode:' + mode);
+  var startSet = Number(num) + Number(1);
+  for (var i= startSet; i<30; i++) {
+    if(mode == 1){
+      dayFlag = dayFlag + 1;
+    }
+    getDayDisplay(i, mode, dayFlag);
+  }
+  var selectDate = deliveryDate.val();
+  if(mode == 1){
+    console.log(correctDate);
+    var checkDateLabel = correctDate.includes(selectDate);
+    if(checkDateLabel || selectDate == '指定なし' || selectDate == undefined){
+      $('#submitLoader').addClass('open');
+    }else{
+      event.preventDefault();
+      alert('最短配送日時は' + firstDay + 'となります。申し訳ございませんが、配送指定日を再度選択お願いします。');
+    }
+  }
+}
+
+function setShippingDay2(delay, mode){
+  today.setDate(today.getDate() + 1);
+  var todayY = today.getFullYear();
+  var todayM = today.getMonth() + 1;
+  var todayD = today.getDate();
+  var todayW = today.getDay() % 7;
+  var dayTime = today.getHours();
+  var todayDate = todayM + '/' + todayD;
+  if(todayDate){
+    if($.inArray(todayDate,holiday) != -1){
+      delay = delay + 1;
+      setShippingDay2(delay, mode);
+    }else{
+      setDayDisplay(delay, mode);
+    }
+  }
+}
+
+function setShippingDay(mode){
+  today.setDate(today.getDate() + testFlg);
+  var dayTime = today.getHours();
+  var todayW = today.getDay() % 7;
+  if(dayTime < 10){ /* 10時までの注文の場合 */
+    if(todayW == 0){ /* 日曜日の場合 */
+      setShippingDay2(1,mode) /* 配送を月曜日にする*/
+    }else if(todayW == 6){ /* 土曜日の場合*/
+      setShippingDay2(2,mode); /* 配送を月曜日にする*/
+    }else{ /*月~金曜日の注文の場合*/
+      setShippingDay2(0,mode); /*当日に配送する*/
+    }
+  }else{ /* 10時以降の注文の場合 */
+    if(todayW == 6){ /* 土曜日の場合*/
+      setShippingDay2(2,mode);/* 配送を月曜日にする*/
+    }else if(todayW == 5){ /* 金曜日の場合*/
+			if(dayTime < 14){ /* 14時までの注文の場合 */
+				setShippingDay2(0,mode);/* 当日に配送する*/
+			}else{
+				setShippingDay2(3,mode);/* 配送を月曜日にする*/
+			}
+    }else{ /*月~木曜日の注文の場合*/
+      setShippingDay2(1,mode);/*翌日に配送する*/
+    }
+  }
+}
+
+
+function init(){
+  $.each(target.find('.comp-admin-button input'), function(index) {
+    $(this).on({
+      'click': function() {
+        setShippingDay(1);
+      }
+    });
+  });
+
+  setShippingDay(0);
+
+}
+
+init();
+
+}
+
+if (document.getElementById('cart')) {
+cartOptionController($('article'));
+}

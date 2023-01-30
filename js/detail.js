@@ -133,9 +133,9 @@ $(function() {
 
   // 商品詳細ページ 数量インプットの操作
   function controllBuyingQuantity(target){
-    var minusButton = target.find('#minusButton');
-    var plusButton = target.find('#plusButton');
-    var quantityInput = target.find('#quantityInput');
+    var minusButton = target.find('.minus');
+    var plusButton = target.find('.plus');
+    var quantityInput = target.find('input[type=text]');
     var quantityNum;
 
     function controllQuantity(vector){
@@ -170,9 +170,73 @@ $(function() {
 
   }
 
-  if (document.getElementById('itemDetailNew')) {
+  if (document.getElementById('quantityWrap')) {
     controllBuyingQuantity($('#quantityWrap'));
   }
+
+  if (document.getElementById('quantityWrap2')) {
+    controllBuyingQuantity($('#quantityWrap2'));
+  }
+
+  //定期購入詳細のポップアップ
+  function subPopDisplay(){
+    var subscriptionPopButton = $('#subscriptionPopButton');
+    var subscriptionModal = $('#subscriptionModal');
+    var subscriptionModalBg = $('#subscriptionModalBg');
+
+    function init(){
+      subscriptionPopButton.on({
+        'click': function() {
+          event.preventDefault();
+          subscriptionModal.addClass('open');
+        }
+      });
+      subscriptionModalBg.on({
+        'click': function() {
+          subscriptionModal.removeClass('open');
+        }
+      });
+
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('subscriptionPopButton')) {
+    subPopDisplay();
+  }
+
+  // 定期購入プランのプロパティー化
+  function subPlanDisplay(){
+    var subCycle = $('#subCycle');
+    var cycleSelect = $('#cycleSelect');
+
+    function setSubName(){
+      var selectedCycle = cycleSelect.find('option:selected');
+      subCycle.attr('value', selectedCycle.text().trim());
+    }
+
+    function init(){
+      cycleSelect.on({
+        'change': function(){
+          setSubName();
+        }
+      })
+    }
+
+    init();
+    setSubName();
+
+  }
+
+  if (document.getElementById('subCycle')) {
+    subPlanDisplay();
+  }
+
+
+
+
 
   // 商品詳細ページ トグルレイアウト
   function itemDetailToggle(){
@@ -259,8 +323,8 @@ $(function() {
 
     function setAdjuster(){
       var stickyHeight = $('#mainDetail').outerHeight();
-      if(stickyHeight > window.innerHeight){
-        var offset = window.innerHeight - stickyHeight - 40;
+      if(stickyHeight > window.innerHeight - 120){
+        var offset = window.innerHeight - stickyHeight - 100;
         mainDetail.css({
           'top': offset + 'px'
         });
@@ -269,6 +333,7 @@ $(function() {
           'top': 0 + 'px'
         });
       }
+      requestAnimationFrame(setAdjuster);
     }
 
     function init(){
@@ -443,6 +508,7 @@ $(function() {
     const purchaseButton = $('#purchaseButton');
     const subscriptionButton = $('#subscriptionButton');
     const contentSwitcher = $('#contentSwitcher');
+    const compVariation = $('#compVariation');
     const normalBox = $('#normalBox');
     const subscriptionBox = $('#subscriptionBox');
     let switchState = 0;
@@ -455,6 +521,7 @@ $(function() {
           if(switchState == 1){
             purchaseButton.addClass('active');
             subscriptionButton.removeClass('active');
+            compVariation.css({'display': 'block'});
             contentSwitcher.stop().animate({ opacity: 0 }, 300, function() {
               normalBox.css({'display': 'block'});
               subscriptionBox.css({'display': 'none'});
@@ -469,6 +536,7 @@ $(function() {
           if(switchState == 0){
             purchaseButton.removeClass('active');
             subscriptionButton.addClass('active');
+            compVariation.css({'display': 'none'});
             contentSwitcher.stop().animate({ opacity: 0 }, 300, function() {
               normalBox.css({'display': 'none'});
               subscriptionBox.css({'display': 'block'});

@@ -1,3 +1,11 @@
+{%- for item in cart.items -%}
+  {% if item.selling_plan_allocation.selling_plan.name contains '定期'  %}
+    {%- assign subProperty = subProperty | plus : 1 -%}
+  {%- else -%}
+    {%- assign normalProperty = normalProperty | plus : 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
 {%- assign productId = item.url | split : "?" -%}
 
 {%- assign noshiLength = 0 -%}
@@ -51,6 +59,7 @@
               {%- endfor -%}
             </div>
         </div><!-- comp-cart-item-list-->
+        {% unless subProperty > 0 and normalProperty > 0 %}
         {%- if noshiLength == 0 and messageLength == 0 -%}
         <div class="comp-amount-wrap left">
         {%- else -%}
@@ -68,6 +77,7 @@
           {%- endif -%}
         </div><!-- comp-option-setting -->
         {%- endif -%}
+        {%- endunless -%}
       </div><!-- item_wrap -->
       {%- if noshiLength == 0 and messageLength == 0 -%}
       <div class="comp-side-wrap bg">

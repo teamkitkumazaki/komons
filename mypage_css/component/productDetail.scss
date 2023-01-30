@@ -1,0 +1,158 @@
+.content-left{
+  article{
+    .huckleberry-subscription-detail-product-detail{
+      /*justify-content: flex-start !important;*/
+      align-items: center;
+      &:nth-of-type(2){
+        order: 0;
+        margin: 0 0 5px;
+        .label{
+          display: none;
+        }
+        .value{
+          font-size: 1.4rem;
+        }
+      }
+      &:nth-of-type(1){
+        margin-top: 5px;
+        order: 1;
+        width: 100%;
+        display: block !important;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #d8d8d8;
+        margin-bottom: 18px;
+        dt{
+          display: none !important;
+          margin: 0 !important;
+          font-size: 1.6rem;
+          font-weight: normal;
+          color: $basicGreen;
+        }
+        dd{
+          display: block;
+          max-width: unset;
+          width: 100% !important;
+          margin: 0 !important;
+          text-align: left !important;
+          a{
+            display: block;
+            @include libre-r;
+            color: $basicGreen;
+            font-size: 1.6rem;
+            line-height: 1.8;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+          }
+        }
+      }
+      &:nth-of-type(n+3){
+        order: 1;
+        width: auto;
+        margin: 0 0.5em 0 0 !important;
+        .label{
+          font-size: 1.4rem;
+          font-weight: normal;
+          color: $basicGreen;
+          &::after{
+            display: inline;
+            content: ":";
+          }
+        }
+        .value{
+          font-size: 1.4rem;
+          font-weight: normal;
+          color: $basicGreen;
+          &::after{
+            display: inline-block;
+            content: "/";
+            margin-left: 0.5em;
+          }
+        }
+      }
+      &:nth-last-of-type(1){
+        margin: 0 !important;
+        .value{
+          &::after{
+            display: none;
+          }
+        }
+      }
+      dt, dd{
+        width: auto;
+        min-width: unset;
+        border: none !important;
+      }
+    }
+    .huckleberry-subscription-detail-btn-group{
+      order: 1;
+      width: 100%;
+      margin-top: 25px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      a, button{
+        box-sizing: border-box;
+        font-family: inherit;
+      }
+      .change-amount{
+        @include greenButton;
+        line-height: 45px !important;
+        order: 0;
+        min-width: calc(50% - 5px) !important;
+        margin: 0 0 10px;
+      }
+      a{
+        order: 1;
+        @include whiteButton;
+        line-height: 45px !important;
+        min-width: calc(50% - 5px) !important;
+        margin: 0 0 10px;
+        .huckleberry-subscription-detail-btn{
+          margin:0;
+          padding: 0;
+          border: none;
+        }
+      }
+      .delete{
+        order: 2;
+        min-width: 100% !important;
+        text-align: left;
+        border: none;
+        margin: 0;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px){
+  .content-left{
+    article{
+      .huckleberry-subscription-detail-product-detail{
+        &:nth-of-type(2){
+          order: 0;
+          margin: 0 0 10px;
+        }
+        &:nth-of-type(1){
+          margin-top: 10px;
+          padding-bottom: 10px;
+          margin-bottom: 25px;
+          dd{
+            a{
+              font-size: 2.0rem;
+            }
+          }
+        }
+        &:nth-of-type(n+3){
+          order: 1;
+          width: auto;
+          margin: 0 0.5em 0 0 !important;
+        }
+      }
+      .huckleberry-subscription-detail-btn-group{
+        width: 100%;
+        margin-top: 30px;
+
+      }
+    }
+  }
+}

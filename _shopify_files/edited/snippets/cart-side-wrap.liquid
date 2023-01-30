@@ -1,41 +1,33 @@
+{%- assign subProperty = 0 -%}
+{%- assign normalProperty = 0 -%}
+{%- for item in cart.items -%}
+  {% if item.selling_plan_allocation.selling_plan.name contains '定期'  %}
+    {%- assign subProperty = subProperty | plus : 1 -%}
+  {%- else -%}
+    {%- assign normalProperty = normalProperty | plus : 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+{% if subProperty < 1%}
+{% include 'cart-side-wrap-inner' %}
+{%- else -%}
+{% if customer %}
+  {% if normalProperty > 0 %}
+  <div class="cart_item_error">
+    <p>定期購入商品は、通常購入商品との同梱発送が不可となります。恐れ入りますが、カートの内容を修正の上ご購入ください。</p>
+  </div>
+  {%- else -%}
+  {% include 'cart-side-wrap-inner' %}
+  {%- endif -%}
+{% else %}
 <div class="comp-admin-subttl">
-  <h2 class="ttl">お届け希望日時</h2>
+  <h2 class="ttl">ログイン</h2>
+  <p class="ttl_desc">定期購入商品のご購入にはログインが必要です。</p>
 </div>
-<div class="comp-admin-form">
-  <div class="form_item">
-    <label class="large ">お届け希望日程</label>
-    <div class="form_wrap">
-      <select id="deliveryDate">
-        <option value="指定なし">指定なし</option>
-      </select>
-      <input id="dateInput" type="hidden" name="attributes[配送希望日:]" value="指定なし">
-      <p class="example">四国/中国/九州地方・和歌山・秋田・青森・北海道・沖縄への最短配送日は<span id="secondDay"></span>になります。</p>
-    </div>
-  </div>
-  <div class="form_item">
-    <label class="large ">お届け希望時間</label>
-    <div class="form_wrap">
-      <select id="deliveryTime" name="attributes[配送時間帯:]">
-        <option value="指定なし" selected="">指定なし</option>
-        <option value="午前中（12時まで）">午前中（12時まで）</option>
-        <option value="14時から16時">14時から16時</option>
-        <option value="16時から18時">16時から18時</option>
-        <option value="18時から20時">18時から20時</option>
-        <option value="19時から21時">19時から21時</option>
-      </select>
-    </div>
-  </div>
-  <div class="form_item">
-    <label class="large ">備考欄</label>
-    <div class="form_wrap">
-      <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" style="font-family: ts-unused;"></textarea>
-      <p class="example">1注文につき、お届け先は1件のみとなります。<br>2件以上のお届け先をご希望の場合は別々にご注文ください。</p>
-    </div>
-  </div>
-</div><!-- comp-admin-form -->
-<div class="comp-amount-wrap">
-  {% include 'cart-amount-price' %}
-</div><!-- comp-amount-wrap -->
 <div class="comp-admin-button mt">
-  <input type="submit" name="checkout" class="checkout_button " value="ご購入手続きへ">
+  <a href="{{ routes.account_login_url }}?route=cart">ログインページへ</a>
 </div>
+<div class="create_account">
+  <a href="{{ routes.account_register_url }}?route=cart">アカウントの新規作成</a>
+</div>
+{% endif %}
+{%- endif -%}

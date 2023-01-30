@@ -1,0 +1,122 @@
+.content-right{
+  .huckleberry-subscription-detail-schedule-title,
+  .huckleberry-subscription-detail-order-title,
+  .huckleberry-subscription-detail-delivery-title,
+  .huckleberry-subscription-detail-payment-title,
+  .huckleberry-subscription-detail-payment-title{
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  .huckleberry-subscription-detail-schedule-title{
+    &::before{
+      display: inline;
+      content: '次回';
+    }
+  }
+  .huckleberry-subscription-detail-schedule{
+    main{
+      display: block !important;
+      margin: -5px 0 25px !important;
+      p{
+        &:nth-of-type(1){
+          display: none;
+          font-size: 1.4rem;
+          margin-bottom: 15px;
+        }
+        &:nth-of-type(2){
+          font-size: 1.6rem;
+          br{
+            display: none;
+          }
+        }
+      }
+    }
+    footer{
+      @include flexSet;
+      display: flex !important;
+      align-items: center;
+      justify-content: space-between;
+
+      .change{
+        width: 48%;
+        margin-top:0px;
+        @include greenButton;
+        line-height: 45px !important;
+      }
+      .change + .huckleberry-subscription-detail-order-btn-group{
+        width: 48%;
+        margin-top: 0 !important;
+        .skip{
+          max-width: 100% !important;
+          @include whiteButton;
+          line-height: 45px !important;
+        }
+      }
+      .change + .huckleberry-subscription-detail-order-btn-group + .huckleberry-subscription-detail-order-btn-group{
+        width: 100%;
+        .huckleberry-subscription-detail-skip-reset-btn{
+          color: inherit;
+          font-weight: normal;
+          letter-spacing: inherit;
+          text-decoration: underline;
+          margin-bottom: -10px;
+        }
+      }
+    }
+  }
+  .huckleberry-subscription-detail-order{
+    main{
+      font-size: 1.4rem;
+      line-height: 2;
+      margin: 0 0 20px;
+    }
+    footer{
+      button{
+        @include whiteButton;
+        line-height: 45px !important;
+      }
+    }
+  }
+  .huckleberry-subscription-detail-delivery{
+    main{
+      font-size: 1.4rem;
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    footer{
+      a{
+        @include whiteButton;
+        line-height: 45px !important;
+      }
+    }
+  }
+  .huckleberry-subscription-detail-payment{
+    main{
+      font-size: 1.4rem;
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    footer{
+      button{
+        @include whiteButton;
+        line-height: 45px !important;
+      }
+    }
+  }
+  .huckleberry-subscription-detail-btn-group{
+    justify-content: flex-start;
+    margin: 30px 0 0;
+    .huckleberry-subscription-detail-btn{
+      margin: 0 0 15px !important;
+      background: #f4f4f4;
+      border: 0px;
+    }
+  }
+  .huckleberry-subscription-detail-btn{
+    &.back{
+      margin-top: 20px;
+      @include whiteButton;
+      line-height: 45px !important;
+    }
+  }
+}

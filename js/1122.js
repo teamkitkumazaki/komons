@@ -124,7 +124,7 @@ $(function() {
 
       //初期設定
       var init = function(){
-        target.find('input[type=submit]').attr('disabled', true);
+        /*target.find('input[type=submit]').attr('disabled', true);*/
         //submitイベントの設定
         target.on({
           'submit': function(){
@@ -137,7 +137,7 @@ $(function() {
           target.find('input[name="sex"]'), //1 性別
           target.find('select[name="duration"]'), //2 結婚年数
           target.find('textarea[name=complain]'), //3 パートナーへの不満
-          target.find('textarea[name=praise]') //4 パートナーへの感謝
+          target.find('textarea[name=praise]'), //4 パートナーへの感謝
         ];
         //input要素のプロパティを設定
         $.each(items, function(index){
@@ -172,13 +172,13 @@ $(function() {
         });
         items[3].on({
           'blur': function(){
-            checkEmptyText( items[3], '※項目を記入してください。');
+            checkEmptyText( items[3], '※内容を記入してください。');
             checkAll();
           }
         });
         items[4].on({
           'blur': function(){
-            checkEmptyText( items[4], '※項目を記入してください。');
+            checkEmptyText( items[4], '※内容を記入してください。');
             checkAll();
           }
         });
@@ -238,6 +238,7 @@ $(function() {
               $('#codeNum').text(qouponCode);
               var targetHeight = $('#couponInner').outerHeight();
               $('#couponCode').css({'height': targetHeight + 'px'});
+              $('.submit_wrap').remove();
               $('#submitText').text('送信完了しました。');
             }, 1500);
           },

@@ -54,4 +54,26 @@
       }
     }
   }
+  &.flex{
+    a{
+      &:nth-of-type(1){
+        margin-bottom: 5px;
+      }
+    }
+    @media screen and (min-width: 720px){
+      max-width: 100%;
+      width: 100%;
+      @include flexSet;
+      justify-content: center;
+      align-items: center;
+      a{
+        width: 280px;
+        padding: 20px 0;
+        &:nth-of-type(1){
+          margin-bottom: 0;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
 }

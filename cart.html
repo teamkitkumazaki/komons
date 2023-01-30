@@ -180,167 +180,10 @@
 								</div><!-- cart_item -->
 							</div>
 					</div><!-- comp-cart-item-list-->
-					<div class="comp-amount-wrap">
-						<div class="amount_item">
-							<span class="ttl ">小計</span>
-							<p class="price ">4,050円(税込)</p>
-						</div>
-						<div class="amount_item" style="display: none;">
-							<span class="ttl ">割引</span>
-							<p class="price ">0円(税込)</p>
-						</div>
-						<div class="amount_item">
-							<span class="ttl ">送料</span>
-							<p class="price ">決済画面にて計算</p>
-						</div>
-						<div class="amount">
-							<p class="total_price ">合計金額：4,050円(税込)</p>
-						</div>
-					</div><!-- comp-amount-wrap -->
-					<div class="comp-admin-button mt">
-						<input type="submit" name="checkout" class="checkout_button " value="ご購入手続きへ">
-					</div>
-					<div class="anker_wrap">
-						<button class="anker_button"><span>熨斗・メッセージカードを設定</span></button>
-						<button class="anker_button"><span>配送希望日を設定</span></button>
-					</div>
-					<div class="comp-option-setting">
-						<div class="setting_item">
-							<div class="comp-admin-subttl">
-								<h2 class="ttl">熨斗の設定</h2>
-							</div>
-							<div class="option_flex">
-								<div class="img_box">
-									<div class="radio_wrap">
-                		<div class="radio_item">
-                  <label>
-                    <div class="img_wrap">
-											<img src="img/cart/noshi01.jpg">
-										</div>
-                    <div class="input_wrap">
-                      <div class="option_ttl">
-                        <input type="radio" name="attributes[熨斗の種類:]" value="紅白梅結び" checked="">
-                        <span class="radio_checker"></span>
-                        <span class="name">紅白梅結び</span>
-                      </div>
-                      <div class="option_desc">
-                        <p>結婚祝、内祝、引越し祝いなどあらゆるお祝いに使える紅白の水引。</p>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-                		<div class="radio_item">
-                  <label>
-										<div class="img_wrap">
-											<img src="img/cart/noshi02.jpg">
-										</div>
-                    <div class="input_wrap">
-                      <div class="option_ttl">
-                        <input type="radio" name="attributes[熨斗の種類:]" value="白黒あわじ結び">
-                        <span class="radio_checker"></span>
-                        <span class="name">白黒あわじ結び</span>
-                      </div>
-                      <div class="option_desc">
-                        <p>香典返しなど、弔事に広く用いられる白黒の水引き。</p>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-              		</div>
-								</div>
-								<div class="comp-admin-form">
-									<div class="form_item">
-										<label class="large ">熨斗の表書き</label>
-										<div class="form_wrap">
-                  		<input id="noshiType" type="text" name="attributes[熨斗の表書き:]">
-                  		<p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
-										</div>
-									</div>
-									<div class="form_item">
-										<label class="large ">熨斗の名入れ</label>
-										<div class="form_wrap">
-                  		<input id="noshiName" type="text" name="attributes[熨斗の名入れ:]">
-                  		<p class="example">連名の場合は、その旨ご記載ください。</p>
-										</div>
-									</div>
-								</div><!-- comp-admin-form -->
-							</div>
-						</div><!-- setting_item -->
-						<div class="setting_item">
-							<div class="comp-admin-subttl">
-								<h2 class="ttl">メッセージカード</h2>
-							</div>
-							<div class="option_flex">
-								<div class="img_box">
-									<img src="img/cart/message.jpg">
-								</div>
-								<div class="comp-admin-form">
-									<div class="form_item">
-										<label class="large ">メッセージカードの内容</label>
-										<div class="form_wrap">
-                  		<textarea id="messeageCard" type="text" name="attributes[メッセージカードの内容:]"></textarea>
-                  		<p class="example">おおむね60文字以内に収まるようにご記入ください。</p>
-										</div>
-									</div>
-								</div><!-- comp-admin-form -->
-							</div>
-						</div><!-- setting_item -->
-					</div><!-- comp-option-setting -->
 				</div><!-- item_wrap -->
-				<div class="comp-side-wrap">
-					<div class="comp-admin-subttl">
-						<h2 class="ttl">配送・購入オプション</h2>
-					</div>
-					<div class="comp-admin-form">
-						<div class="form_item">
-							<label class="large ">お届け希望日程</label>
-							<div class="form_wrap">
-								<select id="deliveryDate" name="attributes[配送希望日:]" class=" ">
-									<option value="指定なし" selected="selected" class=" ">指定なし</option>
-								</select>
-							</div>
-						</div>
-						<div class="form_item">
-							<label class="large ">お届け希望時間</label>
-							<div class="form_wrap">
-								<select id="deliveryTime" name="attributes[配送時間帯:]" class=" ">
-									<option value="指定なし" selected="" class=" ">指定なし</option>
-									<option value="午前中(12時まで)" class=" ">午前中(12時まで)</option>
-									<option value="12時から14時" class=" ">12時から14時</option>
-									<option value="14時から16時" class=" ">14時から16時</option>
-									<option value="16時から18時" class=" ">16時から18時</option>
-									<option value="18時から20時" class=" ">18時から20時</option>
-									<option value="19時から21時" class=" ">19時から21時</option>
-								</select>
-							</div>
-						</div>
-						<div class="form_item">
-							<label class="large ">備考欄</label>
-							<div class="form_wrap">
-								<textarea name="note" id="CartSpecialInstructions" class="cart-note__input" style="font-family: ts-unused;"></textarea>
-								<p class="example">1注文につき、お届け先は1件のみとなります。<br>2件以上のお届け先をご希望の場合は別々にご注文ください。</p>
-							</div>
-						</div>
-					</div><!-- comp-admin-form -->
-					<div class="comp-amount-wrap">
-						<div class="amount_item">
-							<span class="ttl ">小計</span>
-							<p class="price ">4,050円(税込)</p>
-						</div>
-						<div class="amount_item" style="display: none;">
-							<span class="ttl ">割引</span>
-							<p class="price ">0円(税込)</p>
-						</div>
-						<div class="amount_item">
-							<span class="ttl ">送料</span>
-							<p class="price ">決済画面にて計算</p>
-						</div>
-						<div class="amount">
-							<p class="total_price ">合計金額：4,050円(税込)</p>
-						</div>
-					</div>
-					<div class="comp-admin-button mt">
-						<input type="submit" name="checkout" class="checkout_button " value="ご購入手続きへ">
+				<div class="comp-side-wrap green">
+					<div class="cart_item_error">
+						<p>定期購入商品は、通常購入商品との同梱発送が不可となります。恐れ入りますが、カートの内容を修正の上ご購入ください。</p>
 					</div>
 				</div><!-- comp-side-wrap -->
 				</div><!-- cart_flex -->
@@ -665,6 +508,19 @@
 			</div><!-- content -->
 		</div><!-- search_inner -->
 	</div><!-- slideMenu comp-slide-menu -->
+	<div id="subscriptionModal" class="comp-subscription-modal small open">
+		<div id="subscriptionModalBg" class="pop_bg"></div>
+		<div class="subpop_inner">
+			<div class="subpop_contents">
+				<div class="subpop_desc">
+					<p>定期購入商品は、通常購入商品との同梱発送が不可となります。恐れ入りますが、カートの内容を修正の上ご購入ください。</p>
+					<div class="pop_close2">
+						<button id="subscriptionPopButton">閉じる</button>
+					</div>
+				</div>
+			</div>
+		</div><!-- subpop_inner -->
+	</div><!-- comp-subscription-modal -->
 </body>
 <script type="text/javascript" src="js/detail.js"></script>
 

@@ -1,0 +1,149 @@
+.comp-mist-lineup{
+  margin-top: 40px;
+  .mist_ttl{
+    margin-bottom: 40px !important;
+  }
+  .mist_item{
+    margin-bottom: 60px;
+    .item_ttl{
+      font-size: 1.8rem !important;
+    }
+    .note{
+      font-size: 1.4rem !important;
+      line-height: 1.8 !important;
+      margin-top: 10px;
+    }
+    .material_img{
+      margin-bottom: 35px;
+      img{
+        width: 100%;
+      }
+    }
+    .scent_structure{
+      .scent_ttl{
+        font-size: 1.8rem !important;
+        margin-bottom: 5px !important;
+      }
+      .scent_txt{
+        font-size: 1.4rem !important;
+        line-height: 1.8 !important;
+      }
+      .scent_chart{
+        background: #f8f8f8;
+        padding: 10px 20px;
+        margin: 30px 0 0px;
+        box-sizing: border-box;
+        img{
+          filter:brightness(.97);
+        }
+      }
+      .scent_item{
+        border-bottom: 1px solid $basicGreen;
+        padding: 20px 5px;
+        &:nth-last-of-type(1){
+          border-bottom: 0px;
+        }
+        .title{
+          display: block;
+          @include libre-r;
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+        }
+        .content{
+          font-size: 1.4rem;
+          letter-spacing: .05em;
+          line-height: 1.8;
+        }
+      }
+    }
+    .link_wrap{
+      margin-top: 10px;
+      a{
+        display: block;
+        font-size: 1.4rem;
+        color: #fff !important;
+        text-align: center;
+        padding: 15px 0;
+        margin-bottom: 5px;
+        background: $basicGreen;
+        @include hover;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-mist-lineup{
+    margin-top: 80px;
+    .mist_ttl{
+      font-size: 2.4rem !important;
+      margin-bottom: 40px !important;
+    }
+    .mist_item{
+      margin-bottom: 80px;
+      .item_ttl{
+        font-size: 2.0rem !important;
+      }
+      .note{
+        font-size: 1.6rem !important;
+        line-height: 1.8 !important;
+        margin-top: 15px;
+      }
+      .material_img{
+        margin-top: 20px;
+        margin-bottom: 45px;
+        img{
+          width: 100%;
+        }
+      }
+      .scent_structure{
+        .scent_ttl{
+          font-size: 2.0rem !important;
+          margin-bottom: 10px !important;
+        }
+        .scent_txt{
+          font-size: 1.6rem !important;
+          line-height: 1.8 !important;
+        }
+        .scent_chart{
+          padding: 40px 100px;
+          margin: 40px 0 0px;
+          img{
+            filter:brightness(.97);
+          }
+        }
+        .scent_item{
+          @include flexSet;
+          border-bottom: 1px solid $basicGreen;
+          padding: 20px 5px;
+          &:nth-last-of-type(1){
+            border-bottom: 0px;
+          }
+          .title{
+            width: 150px;
+            display: block;
+            @include libre-r;
+            font-size: 1.8rem;
+            margin-bottom: 0px;
+          }
+          .content{
+            width: calc(100% - 150px);
+            font-size: 1.5rem;
+            margin-top: 5px;
+          }
+        }
+      }
+      .link_wrap{
+        @include flexSet;
+        justify-content: space-between;
+        margin-top: 20px;
+        a{
+          width: calc(50% - 5px);
+          font-size: 1.6rem;
+          padding: 15px 0;
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}
