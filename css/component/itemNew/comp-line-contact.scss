@@ -3,7 +3,7 @@
   a{
     display: block;
     border: 1px solid $basicGreen;
-    padding: 17px 0;
+    padding: 20px 0 10px;
     border-radius: 200px;
     text-align: center;
     color: $basicGreen;
@@ -40,7 +40,7 @@
     z-index: 1000;
     transition: bottom .8s;
     a{
-      padding: 15px 0;
+      padding: 20px 0 10px;
       border-radius: 200px;
       text-align: center;
       background: #fff;

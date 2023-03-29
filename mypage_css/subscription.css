@@ -986,11 +986,9 @@ body.huckleberry-subscription-list-color .wrap .content-right section article {
     font-size: 2.2rem;
     margin-bottom: 25px;
   }
-
   #root > h2 + p {
     text-align: center;
   }
-
   .huckleberry-subscription-product-edit.product .item {
     width: 30%;
     margin-right: 5%;
@@ -1019,12 +1017,10 @@ body.huckleberry-subscription-list-color .wrap .content-right section article {
     font-size: 2.6rem;
     margin-bottom: 35px;
   }
-
   #root > h2 + p {
     font-size: 1.6rem;
     margin-bottom: 40px;
   }
-
   .huckleberry-subscription-product-edit.product {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1080,7 +1076,6 @@ body.huckleberry-subscription-list-color .wrap .content-right section article {
   .huckleberry-subscription-product-edit.product .item:nth-of-type(4n) {
     margin-right: 0%;
   }
-
   .huckleberry-subscription-product-edit.variant {
     max-width: 500px;
     margin: 0 auto;
@@ -1124,7 +1119,6 @@ body.huckleberry-subscription-list-color .wrap .content-right section article {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-
   .huckleberry-subscription-product-edit.back {
     margin-top: 40px;
   }

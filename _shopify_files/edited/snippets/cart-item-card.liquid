@@ -20,13 +20,13 @@
 
 <div class="cart_item" data-cart-item data-cart-item-key="{{ item.key }}" data-cart-item-url="{{ item.url }}" data-cart-item-title="{{ item.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ item.quantity }}">
   <div class="img_wrap">
-    <a href="{{ item.url }}">{{ item.image.src | image_url: width: 300 | image_tag }}</a>
+    <a href="{{ productId[0] }}">{{ item.image.src | image_url: width: 300 | image_tag }}</a>
   </div>
   <div class="txt_wrap">
     <div class="txt_inner">
       <div class="item_info">
         <span class="category"><span class="ja">{{ category }}</span></span>
-        <a class="links" href="{{ item.url }}">{{ prodName }}{%- for option in variant_options -%}<span class="options genre {% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}{% if item.selling_plan_allocation %}<span class="options genre">{{ item.selling_plan_allocation.selling_plan.name }}</span>
+        <a class="links" href="{{ productId[0] }}">{{ prodName }}{%- for option in variant_options -%}<span class="options genre {% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}{% if item.selling_plan_allocation %}<span class="options genre">{{ item.selling_plan_allocation.selling_plan.name }}</span>
         {% endif %}</a>
         <span class="price">{{ item.price | money_without_currency }}円(税込)</span></a>
       </div>

@@ -6,7 +6,7 @@
   {% assign dayTime = dayTime | plus: 0 %}
   {% assign displayIndex = 0 | plus: 0 %}
   {% assign dateWeekToday = "today" | date: '%s' | plus: plusSeconds | date: "%w" | plus: 0  %}
-  {% assign holidayArray = "2022-12-30,2022-12-31,2023-01-01,2023-01-02,,2023-01-03,,2023-01-04,,2023-01-09,,2023-02-11" %}
+  {% assign holidayArray = "2022-12-30,2022-12-31,2023-01-01,2023-01-02,2023-01-03,2023-01-04,2023-01-09,2023-02-11,2023-03-21" %}
   {% if dayTime < 10 %}
     <script>console.log('10時以前')</script>
     {% comment %} 10時までの注文 {% endcomment %}

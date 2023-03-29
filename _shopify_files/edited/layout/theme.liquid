@@ -64,17 +64,11 @@
 	imagesizes="100vw"/>
 	{%- endif -%}
 	{%- if request.page_type contains 'index' or request.page_type contains 'product' or request.page_type contains 'collection' -%}
-
 	{%- else -%}
 	<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
 	<!-- <script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script> -->
 	{%- endif -%}
-	<script>
-		function send_conversion() {
-			$('#cartSubmit').click();
-		}
-	</script>
-
+	{%- include 'google-tag' -%}
 	{{ content_for_header }}
 </head>
 {%- if request.page_type contains 'captcha' -%}
@@ -82,6 +76,9 @@
 	{%- else -%}
 <body class="{{ request.page_type }}">
 	{%- endif -%}
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LVFKHJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 	{%- if request.page_type contains 'account' -%}
 	{%- else -%}
 	{% section 'header' %}
@@ -95,30 +92,7 @@
 </body>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp.min.css">
-<!-- Global site tag (gtag.js) - Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-798502701"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'AW-798502701', {
-		'linker': {
-		 'domains': ['komons.jp','www.komons.jp','journal.komons.jp']
-		}
-	});
 
-	gtag('config', 'UA-120930116-1', {
-		'linker': {
-			'domains': ['komons.jp','www.komons.jp','journal.komons.jp']
-		}
-	});
-
-	gtag('config', 'G-LYPLLYGF0H', {
-		'linker': {
-		 'domains': ['komons.jp','www.komons.jp','journal.komons.jp']
-		}
-	});
-</script>
 {%- if request.page_type contains 'index' or request.page_type contains 'product' or request.page_type contains 'collection' -%}
 <script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
 <!-- <script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script> -->

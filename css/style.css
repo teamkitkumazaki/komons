@@ -12139,14 +12139,27 @@ body.loaded #loading {
   border: 1px solid #046734;
   -webkit-transition: height 0.3s;
   transition: height 0.3s;
-  margin-bottom: 7px;
+  margin-bottom: -1px;
 }
 .comp-detail-toggle-new .toggle_item:nth-last-of-type(1) {
   margin-bottom: 0;
 }
 .comp-detail-toggle-new .toggle_item .toggle_button_new {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
-  display: block;
   padding: 20px 20px;
   font-size: 1.5rem;
   text-align: left;
@@ -12158,16 +12171,46 @@ body.loaded #loading {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 12px;
-  background-position: center right 20px;
-  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/common/icon_plus_ktb441.png);
   color: inherit;
   letter-spacing: 0.08em;
+  -webkit-transition: color 0.3s, background 0.3s;
+  transition: color 0.3s, background 0.3s;
+  will-change: color, background;
+}
+.comp-detail-toggle-new .toggle_item .toggle_button_new .caret {
+  display: block;
+  width: 13px;
+  height: 13px;
+  position: relative;
+}
+.comp-detail-toggle-new .toggle_item .toggle_button_new .caret::before, .comp-detail-toggle-new .toggle_item .toggle_button_new .caret::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background: #00381f;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  will-change: background;
+}
+.comp-detail-toggle-new .toggle_item .toggle_button_new .caret::before {
+  width: 100%;
+  height: 1px;
+}
+.comp-detail-toggle-new .toggle_item .toggle_button_new .caret::after {
+  width: 1px;
+  height: 100%;
 }
 .comp-detail-toggle-new .toggle_item .toggle_button_new.active {
-  background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750795/faq/minus_njtgyg.png);
+  background-color: #00381f;
+  color: #fff;
+}
+.comp-detail-toggle-new .toggle_item .toggle_button_new.active .caret::before, .comp-detail-toggle-new .toggle_item .toggle_button_new.active .caret::after {
+  background: #fff;
 }
 .comp-detail-toggle-new .toggle_item .toggle_content_new {
   padding: 0 15px 30px;
@@ -12176,7 +12219,7 @@ body.loaded #loading {
   margin-bottom: 25px;
 }
 .comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item:nth-of-type(1) {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item:nth-last-of-type(1) {
   margin-bottom: 0;
@@ -12211,7 +12254,7 @@ body.loaded #loading {
 
 @media screen and (min-width: 720px) {
   .comp-detail-toggle-new .toggle_item {
-    margin-bottom: 7px;
+    margin-bottom: -1px;
   }
   .comp-detail-toggle-new .toggle_item .toggle_button_new {
     padding: 20px 25px;
@@ -12220,14 +12263,14 @@ body.loaded #loading {
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
   }
-  .comp-detail-toggle-new .toggle_item .toggle_button_new:hover {
-    color: #046734;
-  }
   .comp-detail-toggle-new .toggle_item .toggle_content_new {
     padding: 0 20px 40px;
   }
   .comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item {
     margin-bottom: 20px;
+  }
+  .comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item:nth-of-type(1) {
+    margin-top: 25px;
   }
   .comp-detail-toggle-new .toggle_item .toggle_content_new .detail_item .title {
     font-size: 1.6rem;
@@ -12880,7 +12923,7 @@ body.loaded #loading {
 .comp-line-contact a {
   display: block;
   border: 1px solid #00381f;
-  padding: 17px 0;
+  padding: 20px 0 10px;
   border-radius: 200px;
   text-align: center;
   color: #00381f;
@@ -12927,7 +12970,7 @@ body.loaded #loading {
     transition: bottom 0.8s;
   }
   .comp-line-contact a {
-    padding: 15px 0;
+    padding: 20px 0 10px;
     border-radius: 200px;
     text-align: center;
     background: #fff;
@@ -14672,7 +14715,7 @@ body.loaded #loading {
   position: relative;
   padding: 15px 40px;
   font-family: inherit;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   letter-spacing: 0.03em;
   color: #00381f;
   line-height: 1.5;

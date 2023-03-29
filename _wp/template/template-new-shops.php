@@ -39,14 +39,14 @@
         </hgroup>
 				<div class="store_item">
 					<div class="img_wrap">
-						<a target="_blank" href="https://www.lumine.ne.jp/ikebukuro/topics/topics_details.php?article_no=8583">
-							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/line_popup.jpg?v=1674028826">
+						<a target="_blank" href="https://www.instagram.com/p/CoqIk-1Bc1v/">
+							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/ikebukuro_popup.jpg?v=1677230882">
 						</a>
 					</div>
 					<div class="txt_wrap">
-						<a class="shop_name" target="_blank" href="https://www.lumine.ne.jp/ikebukuro/topics/topics_details.php?article_no=8583">LINE En market</a>
-						<p class="date">開催期間：1月18日(水)-1月30日(月)</p>
-						<p class="address">ルミネ池袋 B1 プリズムガーデンEVENTSPACE</p>
+						<a class="shop_name" target="_blank" href="https://www.instagram.com/p/CoqIk-1Bc1v/">LINE Enmarket POP UP SHOP</a>
+						<p class="date">開催期間：2023/2/23-2023/5/24</p>
+						<p class="address">ルミネ立川1階　エスカレーター横イベントスペース</p>
 					</div>
 				</div><!-- store_item -->
       </div>
