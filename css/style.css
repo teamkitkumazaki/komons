@@ -10691,6 +10691,11 @@ body.loaded #loading {
 .comp-cart-wrap {
   margin-top: 30px;
 }
+.comp-cart-wrap .dervery_schedule {
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 20px 0 5px;
+}
 .comp-cart-wrap .order_lot {
   padding-bottom: 10px;
   background: #f4f4f4;
@@ -12989,6 +12994,60 @@ body.loaded #loading {
   }
   .comp-line-contact.rolled {
     bottom: -200px;
+  }
+}
+.comp-variation-select {
+  margin: -10px auto 25px;
+  border: 1px solid #d8d8d8;
+  padding: 12px 10px;
+  position: relative;
+}
+.comp-variation-select .label {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  margin: auto;
+  display: block;
+  font-size: 1.4rem;
+  height: 14px;
+}
+.comp-variation-select select {
+  width: 100%;
+  font-size: 1.6rem;
+  color: #00381f;
+  font-family: inherit;
+  border: 0px;
+  text-align: right;
+  padding-right: 20px;
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-size: 8px !important;
+  background-position: center right 0px;
+  background-repeat: no-repeat;
+  background-image: url(https://cdn.shopify.com/s/files/1/0606/6932/9625/t/1/assets/select_caret.svg);
+}
+.comp-variation-select select:focus {
+  outline: none;
+}
+
+@media screen and (min-width: 720px) {
+  .comp-variation-select {
+    margin: -5px auto 30px;
+    padding: 15px;
+    position: relative;
+  }
+  .comp-variation-select select {
+    font-size: 1.4rem;
+    padding-right: 20px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 .comp-list-link .link_item {

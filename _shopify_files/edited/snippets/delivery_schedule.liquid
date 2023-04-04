@@ -1,0 +1,97 @@
+{% assign plusSeconds = 0 | times: 24 | times: 60 | times: 60 %}
+{% assign weekDayToday = "today" | date: '%s' | plus: plusSeconds | date: "%w" %}
+{% assign dayTime = "today" | date: '%s' | plus: plusSeconds | date: "%H" %}
+{% assign dayTime = dayTime | plus: 0 %}
+{% assign displayIndex = 0 | plus: 0 %}
+{% assign dateWeekToday = "today" | date: '%s' | plus: plusSeconds | date: "%w" | plus: 0  %}
+{% assign holidayArray = "2022-12-30,2022-12-31,2023-01-01,2023-01-02,2023-01-03,2023-01-04,2023-01-09,2023-02-11,2023-03-21" %}
+{% if dayTime < 10 %}
+  <script>console.log('10時以前')</script>
+  {% comment %} 10時までの注文 {% endcomment %}
+  {% if dateWeekToday == 0 %}
+    <script>console.log('日曜日')</script>
+    {% assign deriveryBufferDate = 1 | plus: 0 %}
+    {% assign bufferDate = 2 | plus: 0 %}
+    {% assign reloadTime = 10 | plus: 0 %}
+  {%- elsif dateWeekToday == 6  -%}
+    <script>console.log('土曜日')</script>
+    {% assign deriveryBufferDate = 2 | plus: 0 %}
+    {% assign bufferDate = 3 | plus: 0 %}
+    {% assign reloadTime = 10 | plus: 0 %}
+  {%- else -%}
+    {% assign deriveryBufferDate = 0 | plus: 0 %}
+    {% assign bufferDate = 1 | plus: 0 %}
+    {% if dateWeekDay == 5 %}
+      <script>console.log('金曜日')</script>
+      {% assign reloadTime = 14 | plus: 0 %}
+    {%- else -%}
+      <script>console.log('月~木曜日')</script>
+      {% assign reloadTime = 10 | plus: 0 %}
+    {%- endif -%}
+  {%- endif -%}
+{%- else -%}
+  <script>console.log('10時以降')</script>
+  {% comment %} 10時以降の注文 {% endcomment %}
+  {% if dateWeekToday == 6 %}
+    <script>console.log('土曜日')</script>
+    {% assign deriveryBufferDate = 2 | plus: 0 %}
+    {% assign bufferDate = 3 | plus: 0 %}
+  {%- elsif dateWeekToday == 5 -%}
+    <script>console.log('金曜日')</script>
+    {% comment %} 金曜日の14時以降以前の分岐 {% endcomment %}
+    {% if dayTime < 14 %}
+      {% assign deriveryBufferDate = 0 | plus: 0 %}
+      {% assign bufferDate = 1 | plus: 0 %}
+      {% assign reloadTime = 14 | plus: 0 %}
+    {%- else -%}
+      {% assign deriveryBufferDate = 3 | plus: 0 %}
+      {% assign bufferDate = 4 | plus: 0 %}
+      {% assign reloadTime = 14 | plus: 0 %}
+    {%- endif -%}
+  {%- else -%}
+    <script>console.log('日or月~木')</script>
+    {% assign deriveryBufferDate = 1 | plus: 0 %}
+    {% assign bufferDate = 2 | plus: 0 %}
+    {% assign reloadTime = 10 | plus: 0 %}
+  {%- endif -%}
+{%- endif -%}
+
+{% for i in (bufferDate..30) %}
+
+{% assign deriveryDate = deriveryBufferDate | times: 24 | times: 60 | times: 60 %}
+{% assign deriveryDateDisplay = 'today' | date: '%s' | plus: deriveryDate | date: '%Y-%m-%d' %}
+{% assign deriveryDateWeekDay = 'today' | date: '%s' | plus: deriveryDate | date: '%w' | plus: 0 %}
+{% assign seconds = i | times: 24 | times: 60 | times: 60 %}
+{% assign dateValue = 'today' | date: '%s' | plus: seconds | date: '%Y-%m-%d' %}
+{% assign dateDisplayM = 'today' | date: '%s' | plus: seconds | date: '%m' %}
+{% assign dateDisplayM = dateDisplayM | plus: 0 %}
+{% assign dateDisplayD = 'today' | date: '%s' | plus: seconds | date: '%d' %}
+{% assign dateDisplayD = dateDisplayD | plus: 0 %}
+{% assign dateWeekDay = 'today' | date: '%s' | plus: seconds | date: '%w' %}
+{% if dateWeekDay == '0' %}{% assign weekDay = '(日)' %}{%- endif -%}
+{% if dateWeekDay == '1' %}{% assign weekDay = '(月)' %}{%- endif -%}
+{% if dateWeekDay == '2' %}{% assign weekDay = '(火)' %}{%- endif -%}
+{% if dateWeekDay == '3' %}{% assign weekDay = '(水)' %}{%- endif -%}
+{% if dateWeekDay == '4' %}{% assign weekDay = '(木)' %}{%- endif -%}
+{% if dateWeekDay == '5' %}{% assign weekDay = '(金)' %}{%- endif -%}
+{% if dateWeekDay == '6' %}{% assign weekDay = '(土)' %}{%- endif -%}
+{% if displayIndex == 0 %}
+{% unless holidayArray contains deriveryDateDisplay %}
+{% if deriveryDateWeekDay != 6 and deriveryDateWeekDay != 0 %}
+{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}
+{% assign displayIndex = displayIndex | plus: 1 %}
+{% assign firstDay = dateValue %}
+{% capture firstDayDisplay %}{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}{% endcapture %}
+{%- else -%}
+{% assign deriveryBufferDate = deriveryBufferDate | plus: 1 %}
+{%- endif -%}
+{%- else -%}
+{% assign deriveryBufferDate = deriveryBufferDate | plus: 1 %}
+{% endunless %}
+{%- else -%}
+{% if displayIndex == 1 %}
+{% capture secondDay %}{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}{% endcapture %}
+{% assign displayIndex = displayIndex | plus: 1 %}
+{%- endif -%}
+{%- endif -%}
+{%- endfor -%}

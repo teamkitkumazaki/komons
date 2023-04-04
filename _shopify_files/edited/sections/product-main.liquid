@@ -42,6 +42,9 @@
         <div class="desc_wrap">
           <p>{{ product.metafields.custom_fields["prod_description"] }}</p>
         </div><!-- desc_wrap -->
+        {%- if product.type != "gift" -%}
+        {% include 'product-variation-select' %}
+        {% endif %}
         {% if product.metafields.custom_fields["subscription_check"] %}
         {% include 'product-cart-wrap-sub' %}
         {% else %}
@@ -190,7 +193,7 @@
                 <div class="detail_item">
                   <p class="title">到着日・時間指定について</p>
                   <div class="content">
-                    <p>現在ご注文頂くと最短で<span id="derivaryDate" style="font-weight: bold;"></span>にお届け致します。</p>
+                    <p>現在ご注文頂くと最短で{% include 'delivery-shcedule' %}にお届け致します。</p>
                     <p>時間に関しましては、午前中、14～16時、16～18時、18～20時、19～21時の時間帯をお選び頂くことができます。</p>
                     <p>※地域によってはご希望に添えない場合もございますので、その点ご了承下さいませ。また、天候・道路・交通事情等運送上の事情により、ご希望のお届け時間帯にお届けできない場合もございますので、ご了承下さい。</p>
                   </div>

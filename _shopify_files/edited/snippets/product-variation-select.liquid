@@ -1,0 +1,19 @@
+
+<div class="comp-variation-select">
+  <span class="label">バリエーション</span>
+  <select name="variation_select" onchange="location.href=value;">
+    {% for tag in product.tags %}
+      {% for collection in collections %}
+        {%- if collection.handle == tag -%}
+          {% for item in collection.metafields.custom_fields["variations"] %}
+          {%- if item["variation_id"] != product.handle -%}
+          <option value="/products/{{item["variation_id"]}}">{{ item["variation_name"] }}{% if item["variation_ml"] != blank %}({{ item["variation_ml"] }}){%- endif -%}</option>
+          {%- else -%}
+          <option selected value="/products/{{item["variation_id"]}}">{{ item["variation_name"] }}{% if item["variation_ml"] != blank %}({{ item["variation_ml"] }}){%- endif -%}</option>
+          {%- endif -%}
+      {% endfor %}
+      {%- endif -%}
+    {% endfor %}
+  {% endfor %}
+  </select>
+</div>
