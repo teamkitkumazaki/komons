@@ -37,7 +37,7 @@
       </span>
       <input id="cartSubmit" class="product_cart_btn button" type="submit" value="カートに入れる" style="bottom: unset;  height: 90px;">
     </div><!-- cart_item -->
-    {% include 'delivery-shcedule' %}
+    <p class="dervery_schedule">最短で{% include 'delivery-shcedule' %}にお届け致します</p>
     {%- else -%}
     {%- if product.metafields.custom_fields["stock_state"] == 1 -%}
     <div class="out_of_stock">SOLD OUT</div>

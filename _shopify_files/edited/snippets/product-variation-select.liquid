@@ -1,4 +1,4 @@
-
+{% if collection.metafields["custom_fields"]["variations"] != blank %}
 <div class="comp-variation-select">
   <span class="label">バリエーション</span>
   <select name="variation_select" onchange="location.href=value;">
@@ -17,3 +17,4 @@
   {% endfor %}
   </select>
 </div>
+{% endif %}

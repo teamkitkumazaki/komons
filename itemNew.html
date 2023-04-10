@@ -875,5 +875,25 @@
 </body>
 <script type="text/javascript" src="js/lodash.js"></script>
 <script type="text/javascript" src="js/detail.js"></script>
-
+<script src="https://www.googletagmanager.com/gtag/js?id=G-LYPLLYGF0H"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+dataLayer.push({
+  event: "cv_conversion",
+  ecommerce: {
+      transaction_id: "{{ order_number }}",  // 取引を一意に識別するID
+      value: "{{ checkout.subtotal_price | money_without_currency | remove: ',' }}", // 売上の総額
+      currency: "JPY", // 通貨コード
+      items: [
+      {
+        item_name: "{{ line_item.title }}", // 商品名
+        item_id: "{{ line_item.product_id }}", // 商品コード
+        price: "{{ line_item.final_price | money_without_currency | remove: ',' }}", // 商品価格
+        quantity: "{{ line_item.quantity }}", // 数量
+      },
+      ]
+  }
+});
+</script>
 </html>
