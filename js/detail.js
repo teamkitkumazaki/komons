@@ -1,5 +1,5 @@
 $(function() {
-
+  
   function itemDetailThumbnail(target) {
     var thumbBox = $('#thumbBox');
     var caption = $('#caption');

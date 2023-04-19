@@ -108,11 +108,6 @@
 {%- if request.page_type contains 'addresses' -%}
 <script src="{{ 'ajaxzip3.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-{%- if request.page_type contains 'customers/' -%}
-<!--<script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script> -->
-{%- endif -%}
-<!-- <script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/slick.min.js?ver{% capture today %}{{ 'today' | date: '%Y-%m-%d' }}{% endcapture %}" charset="UTF-8"></script> -->
-<script>
-	console.log('pageType:' + '{{request.page_type}}');
-</script>
+{% include 'script-cookies' %}
+
 </html>

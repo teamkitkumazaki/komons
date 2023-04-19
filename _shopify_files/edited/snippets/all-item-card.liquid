@@ -6,7 +6,7 @@
 {%- endif -%}
 
 {%- unless product.handle contains 'test' -%}
-<li class="item_box">
+<li id="handle-{{ product.handle }}" class="item_box">
   <div class="img_wrap">
     <a href="{{ product.url }}" {%- if product.metafields.custom_fields["stock_state"] == 1 or product.available != true and product.type != 'upcoming' -%}class="soldout"{%- endif -%}>
       <img loading="lazy" src="{{ thumb_image | image_url: width: 533 }}" srcset="{{ thumb_image | image_url: width: 533 }} 1440w, {{ thumb_image | image_url: width: 360 }} 768w, {{ thumb_image | image_url: width: 533 }} 2048w" alt="{{ product.metafields.custom_fields["prod_display_name"] | strip_html }}">
