@@ -38,19 +38,21 @@
       justify-content: space-between;
 
       .change{
-        width: 48%;
+        width: 100%;
         margin-top:0px;
         @include greenButton;
         line-height: 45px !important;
+        margin-bottom: 7px;
       }
       .change + .huckleberry-subscription-detail-order-btn-group{
-        width: 48%;
+        width: 100%;
         margin-top: 0 !important;
-        .skip{
-          max-width: 100% !important;
+        button{
+          max-width: 49% !important;
           @include whiteButton;
           line-height: 45px !important;
         }
+
       }
       .change + .huckleberry-subscription-detail-order-btn-group + .huckleberry-subscription-detail-order-btn-group{
         width: 100%;

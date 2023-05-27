@@ -47,7 +47,7 @@
 
 {% include 'product-sub-modal' %}
 
-{%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
+{%- if product.type == "gift" product.type == "gift-limited" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
 {% section 'gift-option-field' %}
 {%- endif -%}
 
