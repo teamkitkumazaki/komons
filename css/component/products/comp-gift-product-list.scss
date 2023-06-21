@@ -183,6 +183,11 @@
               content: "ウォッシュタオル";
             }
           }
+          &.facetowel{
+            &::after{
+              content: "フェイスタオル";
+            }
+          }
           &.bath{
             &::after{
               content: "バスクリーナー";

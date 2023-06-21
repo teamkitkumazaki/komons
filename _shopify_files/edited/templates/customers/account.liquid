@@ -88,6 +88,9 @@
 							<div class="comp-admin-subttl">
 								<h2 class="ttl">アカウント情報</h2>
 							</div>
+							<div class="comp-sns-alignment" style="display: none;">
+								{% render 'socialplus-association', providers: 'line', not_alert_when_dissociate_all_providers: 'true' %}
+							</div><!-- comp-sns-alignment -->
 							<div class="comp-user-address">
 								<div class="address_item">
 									<p class="username ">{{ customer.last_name }}{{ customer.first_name }}</p>

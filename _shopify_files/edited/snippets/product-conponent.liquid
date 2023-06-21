@@ -1,4 +1,5 @@
 {% for tag in product.tags %}
+  {% assign prodCategory = tag %}
   {% for collection in collections %}
   {%- if collection.handle == tag -%}
   {% for product in collection.products %}
@@ -27,8 +28,8 @@
 {% endif %}
 
 
-
-<div class="desc_unit">
+{% unless prodCategory contains 'towel' %}
+<div class="desc_unit" prodCategory="{{ prodCategory }}">
   <div class="comp-detail-title margin">
     <hgroup>
       <span class="title_en">Detail</span>
@@ -84,3 +85,6 @@
     </div>
   </div><!-- comp-detail-toggle-new -->
 </div>
+{% else %}
+{%- include 'towel-component' -%}
+{% endunless %}
