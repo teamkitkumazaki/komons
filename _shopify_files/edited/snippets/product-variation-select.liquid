@@ -12,7 +12,7 @@
   {% endfor %}
 {% endfor %}
 
-{% if variation_num > 0 %}
+{% if variation_num > 0 and product.type != 'commercial' %}
 <div class="comp-variation-select" num="{{ variation_num }}">
   <span class="label">バリエーション</span>
   <select name="variation_select" onchange="location.href=value;">

@@ -32,9 +32,12 @@
           <h1 class="prod_name">{{ product.metafields.custom_fields["prod_display_name"] }}</h1>
         </div><!-- prod_info -->
         <div class="price_wrap">
-        {%- if product.type != "upcoming" -%}
-          <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
-          <span class="volume">/ {% if product.metafields.custom_fields["prod_volume"] != blank %}{{ product.metafields.custom_fields["prod_volume"] }}{%- else -%}セット商品{% endif %}</span>
+        {%- if product.type == 'commercial' -%}
+        <span class="price">価格：ASK</span>
+        <span class="volume">/ 業務用{% if product.metafields.custom_fields["prod_volume"] != blank %}{{ product.metafields.custom_fields["prod_volume"] }}{% endif %}</span>
+        {% elsif product.type != "upcoming" %}
+        <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
+        <span class="volume">/ {% if product.metafields.custom_fields["prod_volume"] != blank %}{{ product.metafields.custom_fields["prod_volume"] }}{%- else -%}セット商品{% endif %}</span>
         {%- else -%}
           <span class="price">構想中</span>
         {%- endif -%}
@@ -45,12 +48,20 @@
         {%- if product.type != "gift" -%}
         {% include 'product-variation-select' %}
         {% endif %}
+        {%- if product.type != "commercial" -%}
         {% if product.metafields.custom_fields["subscription_check"] %}
         {% include 'product-cart-wrap-sub' %}
         {% else %}
         {% include 'product-cart-wrap' %}
         {% endif %}
         {% include 'product-line-contact' %}
+        {% else %}
+        <div class="commercial_item_wrap">
+          <div class="comp-waiting-button">
+            <a href="https://journal.komons-japan.com/contact"><span class="title">お問い合わせ</span><span class="desc">お問い合わせフォームよりご購入頂けます</span></a>
+          </div>
+        </div><!-- commercial_item_wrap -->
+        {% endif %}
       </div><!-- detail_inner -->
     </div><!-- main_detail -->
     {%- if product.type != "upcoming" -%}

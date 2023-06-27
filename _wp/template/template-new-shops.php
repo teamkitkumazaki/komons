@@ -39,14 +39,38 @@
         </hgroup>
 				<div class="store_item">
 					<div class="img_wrap">
-						<a target="_blank" href="https://www.instagram.com/p/CoqIk-1Bc1v/">
-							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/ikebukuro_popup.jpg?v=1677230882">
+						<a target="_blank" href="https://www.mistore.jp/store/shinjuku/shops/women_fashiongoods/goods/shopnews_list/shopnews_056.html">
+							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/isetan_display.jpg?v=1687500362">
 						</a>
 					</div>
 					<div class="txt_wrap">
-						<a class="shop_name" target="_blank" href="https://www.instagram.com/p/CoqIk-1Bc1v/">LINE Enmarket POP UP SHOP</a>
-						<p class="date">開催期間：2023/2/23-2023/5/24</p>
-						<p class="address">ルミネ立川1階　エスカレーター横イベントスペース</p>
+						<a class="shop_name" target="_blank" href="https://www.mistore.jp/store/shinjuku/shops/women_fashiongoods/goods/shopnews_list/shopnews_056.html">伊勢丹新宿店</a>
+						<p class="date">開催期間：6/21(水)〜7/11(火)</p>
+						<p class="address">伊勢丹新宿店 本館1階 ISETAN Seed</p>
+					</div>
+				</div><!-- store_item -->
+        <div class="store_item">
+          <div class="img_wrap">
+            <a target="_blank" href="https://www.idee.co.jp/shop/attache_shinjuku/">
+              <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/shinjuku_display.jpg?v=1687068178">
+            </a>
+          </div>
+          <div class="txt_wrap">
+            <a class="shop_name" target="_blank" href="https://www.idee.co.jp/shop/attache_shinjuku/">Attaché d’IDÉE 新宿ルミネ店</a>
+            <p class="date">開催期間：6/2(金)～7/3(月)</p>
+            <p class="address">ルミネ新宿店 ルミネ1 6F</p>
+          </div>
+        </div><!-- store_item -->
+				<div class="store_item">
+					<div class="img_wrap">
+						<a target="_blank" href="https://www.idee.co.jp/shop/variete_kashiwa/">
+							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/kashiwa_display.jpg?v=1687068048">
+						</a>
+					</div>
+					<div class="txt_wrap">
+						<a class="shop_name" target="_blank" href="https://www.idee.co.jp/shop/variete_kashiwa/">IDÉE SHOP VARIÉTÉ 柏高島屋店</a>
+						<p class="date">開催期間：6/2(金)～7/3(月)</p>
+						<p class="address">柏髙島屋ステーションモール 新館 8F</p>
 					</div>
 				</div><!-- store_item -->
       </div>

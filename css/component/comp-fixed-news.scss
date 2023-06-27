@@ -1,0 +1,33 @@
+.comp-fixed-news{
+  position: fixed;
+  left:0;
+  right:0;
+  bottom: calc(var(--scroll) * -1px * 0.1);
+  margin: auto;
+  width: 100%;
+  z-index: 10000;
+  .news_inner{
+    text-align: center;
+    background: $basicGreen;
+    a{
+      padding: 20px 0;
+      display: inline-block;
+      color: #fff;
+      text-decoration:underline;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 780px){
+  .comp-fixed-news{
+    .news_inner{
+      a{
+        padding: 20px 0;
+        font-size: 1.4rem;
+        @include hover;
+      }
+    }
+  }
+
+}

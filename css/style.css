@@ -8841,6 +8841,38 @@ body.loaded #loading {
     display: block;
   }
 }
+.comp-fixed-news {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--scroll) * -1px * 0.1);
+  margin: auto;
+  width: 100%;
+  z-index: 10000;
+}
+.comp-fixed-news .news_inner {
+  text-align: center;
+  background: #00381f;
+}
+.comp-fixed-news .news_inner a {
+  padding: 20px 0;
+  display: inline-block;
+  color: #fff;
+  text-decoration: underline;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 780px) {
+  .comp-fixed-news .news_inner a {
+    padding: 20px 0;
+    font-size: 1.4rem;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .comp-fixed-news .news_inner a:hover {
+    opacity: 0.75;
+  }
+}
 /* 共通 */
 .comp-section-ttl hgroup {
   display: -webkit-box;
@@ -12982,7 +13014,7 @@ body.loaded #loading {
     margin-top: 0px;
     position: fixed;
     right: 30px;
-    bottom: 30px;
+    bottom: 80px;
     width: 320px;
     z-index: 1000;
     -webkit-transition: bottom 0.8s;

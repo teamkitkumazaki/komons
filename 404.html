@@ -320,39 +320,3 @@ a8sales({
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LVFKHJ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-{% comment %}CRM PLUS on LINE ここから{% endcomment %}
-<script>
-  const socialplusLineConnectionConfig = {
-    title: 'LINEのID連携で、お得で便利に！',
-    features: [
-      {
-        text: 'LINE限定のお得な情報をお届け',
-        image: 'https://shop.socialplus.jp/storefront/line-connection-icons/special-information.svg',
-      },
-      {
-        text: 'おすすめの商品情報をお届け',
-        image: 'https://shop.socialplus.jp/storefront/line-connection-icons/product-information.svg',
-      },
-      {
-        text: 'お荷物の発送をお知らせ',
-        image: 'https://shop.socialplus.jp/storefront/line-connection-icons/shipping-notification.svg',
-      },
-    ],
-  };
-</script>
-
-{% assign primary_locale = shop.published_locales | where: 'primary' | first %}
-{% assign customer_email_hash_issued_at = 'now' | date: '%s' %}
-
-<script
-  defer
-  src="https://shop.socialplus.jp/storefront/bundle.js"
-  class="socialplus-line-connection-from-order-status"
-  data-primary-locale="{{ primary_locale.iso_code }}"
-  data-customer-email="{{ customer.email }}"
-  data-customer-email-hash="{{ customer.email | append: customer_email_hash_issued_at | hmac_sha256: 'd72a9b9b6d4ea43a9489f0aae2cb00632a9088dc1ef80b9d878d551ea5a44fa2' }}"
-  data-customer-email-hash-issued-at="{{ customer_email_hash_issued_at }}"
-  data-order-customer-url="{{ order.customer_url }}"
-></script>
-{% comment %}CRM PLUS on LINE ここまで{% endcomment %}
