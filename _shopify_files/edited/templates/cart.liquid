@@ -70,14 +70,6 @@ subPopDisplay();
 
 
 <script type='text/javascript'>
-$.each($('article').find('.comp-admin-button'), function(index) {
-	$(this).find('input').on({
-		'click': function() {
-			console.log('checkout');
-			$('#submitLoader').addClass('open');
-		}
-	});
-});
 
 /* アトリビュート保存用 */
 var cartAttributes = {{ cart | json }};

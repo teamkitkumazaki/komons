@@ -4407,7 +4407,7 @@ body.loaded #loading {
   pointer-events: none;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
-  z-index: 1000;
+  z-index: 1000000;
 }
 .comp-gift-option-pop.open {
   opacity: 1;
@@ -16061,7 +16061,7 @@ body.loaded #loading {
     margin-top: 40px;
   }
 }
-.comp-admin-button button, .comp-admin-button a, .comp-admin-button input[type=submit] {
+.comp-admin-button button, .comp-admin-button a, .comp-admin-button input[type=submit], .comp-admin-button input[type=button] {
   display: block;
   width: 100%;
   background: #00381f;
@@ -16083,15 +16083,15 @@ body.loaded #loading {
      -moz-appearance: none;
           appearance: none;
 }
-.comp-admin-button button:hover, .comp-admin-button a:hover, .comp-admin-button input[type=submit]:hover {
+.comp-admin-button button:hover, .comp-admin-button a:hover, .comp-admin-button input[type=submit]:hover, .comp-admin-button input[type=button]:hover {
   background: #2f281e;
 }
-.comp-admin-button button span, .comp-admin-button a span, .comp-admin-button input[type=submit] span {
+.comp-admin-button button span, .comp-admin-button a span, .comp-admin-button input[type=submit] span, .comp-admin-button input[type=button] span {
   position: relative;
   display: inline-block;
   padding-right: 25px;
 }
-.comp-admin-button button span::after, .comp-admin-button a span::after, .comp-admin-button input[type=submit] span::after {
+.comp-admin-button button span::after, .comp-admin-button a span::after, .comp-admin-button input[type=submit] span::after, .comp-admin-button input[type=button] span::after {
   display: block;
   content: "";
   position: absolute;
@@ -16106,7 +16106,7 @@ body.loaded #loading {
   height: 10px;
   background-image: url(https://cdn.shopify.com/s/files/1/0606/6932/9625/t/1/assets/caret.svg);
 }
-.comp-admin-button button.caret_down span::after, .comp-admin-button a.caret_down span::after, .comp-admin-button input[type=submit].caret_down span::after {
+.comp-admin-button button.caret_down span::after, .comp-admin-button a.caret_down span::after, .comp-admin-button input[type=submit].caret_down span::after, .comp-admin-button input[type=button].caret_down span::after {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }

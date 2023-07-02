@@ -3,6 +3,7 @@
 {%- assign selected3 = "" -%}
 {%- assign selected4 = "" -%}
 {%- assign selected5 = "" -%}
+{%- assign selected6 = "" -%}
 {%- if collection.handle == "all-products" -%}
   {%- assign selected1 = "selected" -%}
 {%- elsif collection.handle == "bottle" -%}
@@ -13,10 +14,13 @@
   {%- assign selected4 = "selected" -%}
 {%- elsif collection.handle == "upcoming" -%}
   {%- assign selected5 = "selected" -%}
+{%- elsif collection.handle == "commercial" -%}
+  {%- assign selected6 = "selected" -%}
 {%- endif -%}
 <select name="cat" id="cat-shopify" class="postform" onChange="location.href=value;">
   <option class="option-1" value="/collections/all-products" {{ selected1 }}>全ての商品</option>
   <option class="option-1" value="/collections/bottle" {{ selected2 }} >ボトル商品</option>
   <option class="option-1" value="/collections/refill" {{ selected3 }}>詰め替え用商品</option>
+  <option class="option-1" value="/collections/commercial" {{ selected6 }} >業務用商品</option>
   <option class="option-1" value="/collections/upcoming" {{ selected5 }} >Upcoming商品</option>
 </select>

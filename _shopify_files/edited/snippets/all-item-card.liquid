@@ -26,7 +26,7 @@
     </span>
   </div>
   <div class="comp-list-cart-button">
-    {%- if product.type == "upcoming" or request.page_type contains 'index' or request.page_type contains 'product' -%}
+    {%- if product.type == "upcoming" or product.type == "commercial" or request.page_type contains 'index' or request.page_type contains 'product' -%}
     <div class="comp-arrow-link">
       <a href={{ product.url }}><span>詳細を見る</span></a>
     </div>
