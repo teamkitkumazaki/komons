@@ -16829,6 +16829,63 @@ body.loaded #loading {
   }
 }
 
+.comp-sns-alignment .socialplus-association-component {
+  margin-bottom: -15px;
+}
+.comp-sns-alignment .socialplus-association-component .socialplus-association-row {
+  background-color: #fff;
+  border-radius: 5px;
+}
+.comp-sns-alignment .socialplus-association-component .socialplus-association-row div:nth-of-type(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.4rem;
+  color: #00381f;
+}
+.comp-sns-alignment .socialplus-association-component .socialplus-association-row div:nth-of-type(1) .socialplus-association-provider-icon {
+  margin: 0 !important;
+}
+.comp-sns-alignment .socialplus-association-component .socialplus-association-row div:nth-of-type(1) .socialplus-association-provider-name {
+  width: auto;
+  margin-left: 10px;
+}
+.comp-sns-alignment .socialplus-association-component .socialplus-association-row div:nth-of-type(1) .socialplus-association-status {
+  font-weight: normal !important;
+  color: #00381f !important;
+}
+.comp-sns-alignment .socialplus-association-component .socialplus-association-row div:nth-of-type(1) .socialplus-association-status::before {
+  display: inline;
+  content: "(";
+  margin: 0 !important;
+  border: none !important;
+}
+.comp-sns-alignment .socialplus-association-component .socialplus-association-row div:nth-of-type(1) .socialplus-association-status::after {
+  display: inline;
+  content: ")";
+}
+.comp-sns-alignment .socialplus-association-component .socialplus-association-row .socialplus-association-button-wrapper .socialplus-association-button {
+  font-family: inherit;
+  font-weight: normal !important;
+  border: none !important;
+  background: #00381f;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.comp-sns-alignment .socialplus-association-component .socialplus-association-row .socialplus-association-button-wrapper .socialplus-association-button:hover {
+  opacity: 0.75;
+}
+
 /* ########## ページ別レイアウト ########## */
 #index #main {
   width: 100%;

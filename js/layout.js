@@ -1450,7 +1450,7 @@ $(function() {
           cache: false,
           dataType:'html',
           success: function(html){
-            var product_num = 12;
+            var product_num = 16;
             var list = $(html).find('#productList').find('.item_box');
             for (var i = 0; i < product_num; i++) {
               if ( !list[i] ) break;

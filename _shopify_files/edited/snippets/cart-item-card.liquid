@@ -1,3 +1,4 @@
+{%- assign itemTitle = item.title | split : "-" -%}
 {%- assign indexNum = 0 | plus : 1 -%}
 {%- assign productId = item.url | split : "?" -%}
 {%- assign productURL = productId[0] | split : "/" -%}
@@ -8,12 +9,16 @@
   {%- assign indexNum = indexNum | plus : 1 -%}
   {%- if ajax.handle == productURL[2] -%}
     {%- assign category = ajax.metafields.custom_fields["prod_category"] -%}
-    {%- assign prodName = ajax.metafields.custom_fields["prod_display_name"] -%}
+    {%- assign prodName = ajax.metafields["custom_fields"]["prod_display_name"] -%}
     <script>console.log('{{ productURL[2] }}');</script>
   {%- endif -%}
 {% endfor %}
 {%- endif -%}
 {% endfor %}
+
+{%- if prodName == blank -%}
+{%- assign category = 'ギフトセット' -%}
+{%- endif -%}
 
 {%- assign variant_options = 'template ' | split: ' ' -%}
 {%- if item.product.has_only_default_variant != true -%}
@@ -30,7 +35,7 @@
     <div class="txt_inner">
       <div class="item_info">
         <span class="category"><span class="ja">{{ category }}</span></span>
-        <a class="links" href="{{ productId[0] }}">{{ prodName }}{%- for option in variant_options -%}<span class="options genre {% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}{% if item.selling_plan_allocation %}<span class="options genre">{{ item.selling_plan_allocation.selling_plan.name }}</span>
+        <a class="links" href="{{ productId[0] }}">{%- if prodName != blank -%}{{ prodName }}{%- else -%}<span class="name">{{ itemTitle[0] }}</span>{%- endif -%}{%- for option in variant_options -%}<span class="options genre {% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}{% if item.selling_plan_allocation %}<span class="options genre">{{ item.selling_plan_allocation.selling_plan.name }}</span>
         {% endif %}</a>
         <span class="price">{{ item.price | money_without_currency }}円(税込)</span></a>
       </div>

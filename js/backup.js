@@ -9,6 +9,7 @@ $(function() {
       var noshiType = target.find("input[type=radio]:checked").val();
       var noshiOmote = target.find("#noshiType").val();
       var noshiName = target.find('#noshiName').val();
+      var messageTxt = target.find('#messeageCard').val();
       var deliveryDate = target.find("#deliveryDateBox").val();
       var deliveryTime = target.find("#deliveryTime").val();
       var note = target.find('#CartSpecialInstructions').val();
@@ -19,6 +20,7 @@ $(function() {
           "entry.1605683860": noshiType, // 熨斗の種類
           "entry.988340836": noshiOmote, // 熨斗の表書き
           "entry.244598205": noshiName, // 熨斗の名入れ
+          "entry.1970490169": messageTxt, // メッセージカードの内容
           "entry.1818300244": deliveryDate, // お届け希望日程
           "entry.445062178": deliveryTime, // お届け希望時間
           "entry.1439783272": note, // 備考欄
