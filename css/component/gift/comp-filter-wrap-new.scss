@@ -1,0 +1,164 @@
+.comp-filter-wrap-new{
+  background: #f4f4f4;
+  padding: 40px 7vw;
+  box-sizing: border-box;
+  .filter_ttl{
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  .filter_form{
+    select{
+      display: block;
+      width: 100%;
+      padding: 15px;
+      font-size: 1.6rem;
+      font-family: inherit;
+      appearance: none;
+      border: 1px solid #d8d8d8;
+      border-radius: 5px;
+      background-image: url(https://cdn.shopify.com/s/files/1/0606/6932/9625/t/1/assets/select_caret.svg);
+      background-size: 8px;
+      background-repeat: no-repeat;
+      background-position: center right 15px;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  .category_button_wrap{
+    @include flexSet;
+    margin-bottom: -5px;
+    .button_item{
+      width: calc(50% - 2.5px);
+      margin-bottom: 5px;
+      margin-right: 5px;
+      &:nth-of-type(even){
+        margin-right: 0;
+      }
+      button{
+        display: block;
+        width: 100%;
+        background: #fff;
+        text-align: center;
+        box-shadow: none;
+        appearance: none;
+        font-family: inherit;
+        color: $basicGreen;
+        border: 1px solid #d8d8d8;
+        padding: 10px 0;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background .3s,color .3s, border .3s;
+        will-change: background,color,border;
+        &.active{
+          background: $basicGreen;
+          border: 1px solid $basicGreen;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .filter_price{
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-filter-wrap-new{
+    .filter_ttl{
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .category_button_wrap{
+      @include flexSet;
+      margin-bottom: -5px;
+      .button_item{
+        width: calc(33% - 4px);
+        margin-bottom: 6px;
+        margin-right: 6px;
+        &:nth-of-type(even){
+          margin-right: 6px;
+        }
+        &:nth-of-type(3n){
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px){
+  .comp-filter-wrap-new{
+    width: 82vw;
+    margin: 0 auto;
+    @include flexSet;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 0;
+    .filter_ttl{
+      display: block;
+      width: 100%;
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      span{
+        display: none;
+      }
+    }
+    .filter_form{
+      width: 100%;
+      select{
+        padding: 0 15px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
+    }
+    .category_button_wrap{
+      display: flex;
+      flex-wrap: nowrap;
+      margin-bottom: 0px;
+      .button_item{
+        width: calc(100% / 6);
+        margin-bottom: 0px;
+        margin-right: 5px;
+        &:nth-of-type(even){
+          margin-right: 5px;
+        }
+        &:nth-of-type(3n){
+          margin-right: 5px;
+        }
+        &:nth-last-of-type(1){
+          margin-right: 0px;
+        }
+        button{
+          display: block;
+          width: 100%;
+          background: #fff;
+          padding: 0;
+          height: 50px;
+          line-height: 50px;
+          &:hover{
+            background: #f4f4f4;
+          }
+        }
+      }
+    }
+    .filter_price{
+      width: 25%;
+      margin-bottom: 0px;
+      box-sizing: border-box;
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .filter_category{
+      width: calc(75% - 15px);
+      box-sizing: border-box;
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  }
+}

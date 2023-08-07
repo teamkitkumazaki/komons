@@ -58,7 +58,7 @@
 /* 商品*/
 @import 'component/products/comp-product-list.scss';
 @import 'component/products/comp-pager.scss';
-@import 'component/products/comp-filter-wrap.scss';
+/*@import 'component/products/comp-filter-wrap.scss';*/
 @import 'component/products/comp-gift-product-list.scss';
 @import 'component/products/comp-gift-service-list.scss';
 @import 'component/products/comp-load-more.scss';
@@ -101,8 +101,10 @@
 @import 'component/store/comp-stock-list.scss';
 @import 'component/store/comp-popup-archive.scss';
 
-/* ギフトサービス */
+/* ギフト */
 @import 'component/gift/comp-gift-service-wrap.scss';
+@import 'component/gift/comp-filter-wrap-new.scss';
+
 
 /* FAQ */
 @import 'component/faq/comp-qa.scss';
