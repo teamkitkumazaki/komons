@@ -131,35 +131,35 @@
 						<div class="filter_price">
 							<p class="filter_ttl">価格帯<span>で絞り込む</span></p>
 							<div class="filter_form">
-								<select>
-									<option value="0">全ての商品</option>
-									<option value="0">3,000円以下</option>
-									<option value="1">3,001円~5,000円</option>
-									<option value="2">5,001円~10,000円</option>
-									<option value="3">10,001円以上</option>
+								<select id="priceFilter">
+									<option value="0" min="0" max="100000">全ての商品</option>
+									<option value="1" min="0" max="3001">3,000円以下</option>
+									<option value="2" min="3001" max="5000">3,001円~5,000円</option>
+									<option value="3" min="5001" max="10000">5,001円~10,000円</option>
+									<option value="4" min="10001" max="100000">10,001円以上</option>
 								</select>
 							</div>
 						</div><!-- filter_price -->
 						<div class="filter_category">
 							<p class="filter_ttl">カテゴリー<span>で絞り込む</span></p>
-							<div class="category_button_wrap">
+							<div id="categoryFilter" class="category_button_wrap">
 								<div class="button_item">
-									<button class="active">人気ギフト</button>
+									<button prop="人気">人気ギフト</button>
 								</div>
 								<div class="button_item">
-									<button>季節限定ギフト</button>
+									<button prop="限定">季節限定ギフト</button>
 								</div>
 								<div class="button_item">
-									<button>新築祝い</button>
+									<button prop="結婚">結婚祝い</button>
 								</div>
 								<div class="button_item">
-									<button>結婚祝い</button>
+									<button prop="新築">新築祝い</button>
 								</div>
 								<div class="button_item">
-									<button>お返し/内祝い</button>
+									<button prop="内祝">お返し/内祝</button>
 								</div>
 								<div class="button_item">
-									<button>自分へのご褒美</button>
+									<button prop="自分">自分へのご褒美</button>
 								</div>
 							</div>
 						</div><!-- filter_category -->
@@ -169,7 +169,7 @@
 			<section class="section-gift-products">
 				<div class="section_inner_new">
 					<div id="giftProductList" class="comp-gift-product-list" style="opacity: 1;">
-						<div class="list_item" price="3,058" recommend="2" number="0">
+						<div class="list_item" price="3,058" category="限定,内祝">
 							<a class="item_thumb" href="/products/k1027">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/files/thumb01_2.jpg?v=1690942306&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/files/thumb01_2.jpg?v=1690942306&amp;width=533 1440w, https://komons-japan.com/cdn/shop/files/thumb01_2.jpg?v=1690942306&amp;width=360 768w, https://komons-japan.com/cdn/shop/files/thumb01_2.jpg?v=1690942306&amp;width=533 2048w">
@@ -198,7 +198,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="5,500" recommend="2" number="1">
+						<div class="list_item" price="5,500" category="限定,新築">
 							<a class="item_thumb" href="/products/k1026">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/files/housyou_gift02.jpg?v=1690101520&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/files/housyou_gift02.jpg?v=1690101520&amp;width=533 1440w, https://komons-japan.com/cdn/shop/files/housyou_gift02.jpg?v=1690101520&amp;width=360 768w, https://komons-japan.com/cdn/shop/files/housyou_gift02.jpg?v=1690101520&amp;width=533 2048w">
@@ -227,7 +227,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="2,948" recommend="2" number="2"><a class="item_thumb" href="/products/k0043">
+						<div class="list_item" price="2,948" category="人気,内祝">
+							<a class="item_thumb" href="/products/k0043">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_80f63597-b12e-45cf-bfd4-1c2d710ebadc.jpg?v=1648100609&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb01_80f63597-b12e-45cf-bfd4-1c2d710ebadc.jpg?v=1648100609&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_80f63597-b12e-45cf-bfd4-1c2d710ebadc.jpg?v=1648100609&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_80f63597-b12e-45cf-bfd4-1c2d710ebadc.jpg?v=1648100609&amp;width=533 2048w">
 							</a>
@@ -255,7 +256,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="3,058" recommend="2" number="3"><a class="item_thumb" href="/products/k0044">
+						<div class="list_item" price="3,058" category="内祝">
+							<a class="item_thumb" href="/products/k0044">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_a2e6e22b-85c1-42f2-a166-15441d603338.jpg?v=1648100675&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb01_a2e6e22b-85c1-42f2-a166-15441d603338.jpg?v=1648100675&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_a2e6e22b-85c1-42f2-a166-15441d603338.jpg?v=1648100675&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_a2e6e22b-85c1-42f2-a166-15441d603338.jpg?v=1648100675&amp;width=533 2048w">
 							</a>
@@ -283,7 +285,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="3,718" recommend="2" number="4"><a class="item_thumb" href="/products/k1012">
+						<div class="list_item" price="3,718" category="内祝">
+							<a class="item_thumb" href="/products/k1012">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb11_1ec935ec-ddb8-4fd3-94ab-975bd341ef2a.jpg?v=1673948079&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb11_1ec935ec-ddb8-4fd3-94ab-975bd341ef2a.jpg?v=1673948079&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb11_1ec935ec-ddb8-4fd3-94ab-975bd341ef2a.jpg?v=1673948079&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb11_1ec935ec-ddb8-4fd3-94ab-975bd341ef2a.jpg?v=1673948079&amp;width=533 2048w">
 							</a>
@@ -311,7 +314,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="4,510" recommend="2" number="5"><a class="item_thumb" href="/products/k0046">
+						<div class="list_item" price="4,510" category="内祝">
+							<a class="item_thumb" href="/products/k0046">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/files/thumb01_6fecc5b3-c202-42bf-97be-e650a89a9a60.jpg?v=1686108962&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/files/thumb01_6fecc5b3-c202-42bf-97be-e650a89a9a60.jpg?v=1686108962&amp;width=533 1440w, https://komons-japan.com/cdn/shop/files/thumb01_6fecc5b3-c202-42bf-97be-e650a89a9a60.jpg?v=1686108962&amp;width=360 768w, https://komons-japan.com/cdn/shop/files/thumb01_6fecc5b3-c202-42bf-97be-e650a89a9a60.jpg?v=1686108962&amp;width=533 2048w">
 							</a>
@@ -339,7 +343,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="5,940" recommend="2" number="6"><a class="item_thumb" href="/products/k1022">
+						<div class="list_item" price="5,940" category="新築">
+							<a class="item_thumb" href="/products/k1022">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/files/thumb01_0ed1d801-db65-4033-8994-2f7ccafc66ef.jpg?v=1685950899&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/files/thumb01_0ed1d801-db65-4033-8994-2f7ccafc66ef.jpg?v=1685950899&amp;width=533 1440w, https://komons-japan.com/cdn/shop/files/thumb01_0ed1d801-db65-4033-8994-2f7ccafc66ef.jpg?v=1685950899&amp;width=360 768w, https://komons-japan.com/cdn/shop/files/thumb01_0ed1d801-db65-4033-8994-2f7ccafc66ef.jpg?v=1685950899&amp;width=533 2048w">
 							</a>
@@ -367,7 +372,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="825" recommend="2" number="7"><a class="item_thumb" href="/products/k0026">
+						<div class="list_item" price="825" category="内祝,人気">
+							<a class="item_thumb" href="/products/k0026">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_d1f0ca3f-e03e-40ba-a6af-2951732aca9e.jpg?v=1648100699&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb01_d1f0ca3f-e03e-40ba-a6af-2951732aca9e.jpg?v=1648100699&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_d1f0ca3f-e03e-40ba-a6af-2951732aca9e.jpg?v=1648100699&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_d1f0ca3f-e03e-40ba-a6af-2951732aca9e.jpg?v=1648100699&amp;width=533 2048w">
 							</a>
@@ -391,7 +397,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="825" recommend="2" number="8"><a class="item_thumb" href="/products/k1019">
+						<div class="list_item" price="825" category="内祝,人気,限定">
+							<a class="item_thumb" href="/products/k1019">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/files/thumb_minigift.jpg?v=1688120000&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/files/thumb_minigift.jpg?v=1688120000&amp;width=533 1440w, https://komons-japan.com/cdn/shop/files/thumb_minigift.jpg?v=1688120000&amp;width=360 768w, https://komons-japan.com/cdn/shop/files/thumb_minigift.jpg?v=1688120000&amp;width=533 2048w">
 							</a>
@@ -415,7 +422,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="4,290" recommend="2" number="9"><a class="item_thumb" href="/products/k0012">
+						<div class="list_item" price="4,290" category="人気,新築">
+							<a class="item_thumb" href="/products/k0012">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_bed04753-175a-450b-aec4-eb26f9fd78e5.jpg?v=1648100710&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb01_bed04753-175a-450b-aec4-eb26f9fd78e5.jpg?v=1648100710&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_bed04753-175a-450b-aec4-eb26f9fd78e5.jpg?v=1648100710&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_bed04753-175a-450b-aec4-eb26f9fd78e5.jpg?v=1648100710&amp;width=533 2048w">
 							</a>
@@ -443,7 +451,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="5,060" recommend="2" number="10"><a class="item_thumb" href="/products/k0013">
+						<div class="list_item" price="5,060" category="人気,自分">
+							<a class="item_thumb" href="/products/k0013">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_dbcc5c5a-ffb9-4dd3-b689-e79032848412.jpg?v=1648100719&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb01_dbcc5c5a-ffb9-4dd3-b689-e79032848412.jpg?v=1648100719&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_dbcc5c5a-ffb9-4dd3-b689-e79032848412.jpg?v=1648100719&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_dbcc5c5a-ffb9-4dd3-b689-e79032848412.jpg?v=1648100719&amp;width=533 2048w">
 							</a>
@@ -471,7 +480,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="5,500" recommend="2" number="11"><a class="item_thumb" href="/products/k0014">
+						<div class="list_item" price="5,500" category="人気,結婚">
+							<a class="item_thumb" href="/products/k0014">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_1150cd70-9cf1-4c1c-bff6-13c3e8c3be80.jpg?v=1648100729&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb01_1150cd70-9cf1-4c1c-bff6-13c3e8c3be80.jpg?v=1648100729&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_1150cd70-9cf1-4c1c-bff6-13c3e8c3be80.jpg?v=1648100729&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_1150cd70-9cf1-4c1c-bff6-13c3e8c3be80.jpg?v=1648100729&amp;width=533 2048w">
 							</a>
@@ -499,7 +509,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="5,940" recommend="2" number="12"><a class="item_thumb" href="/products/k1011">
+						<div class="list_item" price="5,940" category="自分">
+							<a class="item_thumb" href="/products/k1011">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_11afea46-6ad7-48dd-ab12-d86a3df081f1.jpg?v=1673407100&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb01_11afea46-6ad7-48dd-ab12-d86a3df081f1.jpg?v=1673407100&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_11afea46-6ad7-48dd-ab12-d86a3df081f1.jpg?v=1673407100&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_11afea46-6ad7-48dd-ab12-d86a3df081f1.jpg?v=1673407100&amp;width=533 2048w">
 							</a>
@@ -527,7 +538,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="6,380" recommend="2" number="13"><a class="item_thumb" href="/products/k1014">
+						<div class="list_item" price="6,380" category="新築">
+							<a class="item_thumb" href="/products/k1014">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb00_f2026f4f-abe6-4e64-8be7-6483f923966b.jpg?v=1673947335&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb00_f2026f4f-abe6-4e64-8be7-6483f923966b.jpg?v=1673947335&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb00_f2026f4f-abe6-4e64-8be7-6483f923966b.jpg?v=1673947335&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb00_f2026f4f-abe6-4e64-8be7-6483f923966b.jpg?v=1673947335&amp;width=533 2048w">
 							</a>
@@ -555,7 +567,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="5,940" recommend="2" number="14"><a class="item_thumb" href="/products/k0015">
+						<div class="list_item" price="5,940" category="新築">
+							<a class="item_thumb" href="/products/k0015">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_b13003cf-9405-4cc2-827a-be68ff954139.jpg?v=1648100754&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb01_b13003cf-9405-4cc2-827a-be68ff954139.jpg?v=1648100754&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_b13003cf-9405-4cc2-827a-be68ff954139.jpg?v=1648100754&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_b13003cf-9405-4cc2-827a-be68ff954139.jpg?v=1648100754&amp;width=533 2048w">
 							</a>
@@ -587,7 +600,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="7,040" recommend="2" number="15"><a class="item_thumb" href="/products/k0016">
+						<div class="list_item" price="7,040" category="結婚">
+							<a class="item_thumb" href="/products/k0016">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_5abf400b-01e9-4963-8fef-e54a07607e91.jpg?v=1648100742&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb01_5abf400b-01e9-4963-8fef-e54a07607e91.jpg?v=1648100742&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_5abf400b-01e9-4963-8fef-e54a07607e91.jpg?v=1648100742&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_5abf400b-01e9-4963-8fef-e54a07607e91.jpg?v=1648100742&amp;width=533 2048w">
 							</a>
@@ -619,7 +633,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="7,590" recommend="2" number="16"><a class="item_thumb" href="/products/k0017">
+						<div class="list_item" price="7,590" category="新築,人気,内祝">
+							<a class="item_thumb" href="/products/k0017">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_84948e75-43c0-4167-9d12-b71a59bbc568.jpg?v=1652063814&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb01_84948e75-43c0-4167-9d12-b71a59bbc568.jpg?v=1652063814&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_84948e75-43c0-4167-9d12-b71a59bbc568.jpg?v=1652063814&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_84948e75-43c0-4167-9d12-b71a59bbc568.jpg?v=1652063814&amp;width=533 2048w">
 							</a>
@@ -651,7 +666,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="9,570" recommend="2" number="17"><a class="item_thumb" href="/products/k0027">
+						<div class="list_item" price="9,570" category="内祝い,新築">
+							<a class="item_thumb" href="/products/k0027">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_c94be9b5-7b20-4abe-b1db-da44166911f4.jpg?v=1648100771&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/products/thumb01_c94be9b5-7b20-4abe-b1db-da44166911f4.jpg?v=1648100771&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_c94be9b5-7b20-4abe-b1db-da44166911f4.jpg?v=1648100771&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_c94be9b5-7b20-4abe-b1db-da44166911f4.jpg?v=1648100771&amp;width=533 2048w">
 							</a>
@@ -687,7 +703,8 @@
 								</a>
 							</div>
 						</div>
-						<div class="list_item" price="10,010" recommend="2" number="18"><a class="item_thumb" href="/products/k1023">
+						<div class="list_item" price="10,010" category="結婚,新築">
+							<a class="item_thumb" href="/products/k1023">
 								<img loading="lazy" src="https://komons-japan.com/cdn/shop/files/thumb01_178c2d3b-6e51-464d-b306-350ed352385c.jpg?v=1685951946&amp;width=533"
 									srcset="https://komons-japan.com/cdn/shop/files/thumb01_178c2d3b-6e51-464d-b306-350ed352385c.jpg?v=1685951946&amp;width=533 1440w, https://komons-japan.com/cdn/shop/files/thumb01_178c2d3b-6e51-464d-b306-350ed352385c.jpg?v=1685951946&amp;width=360 768w, https://komons-japan.com/cdn/shop/files/thumb01_178c2d3b-6e51-464d-b306-350ed352385c.jpg?v=1685951946&amp;width=533 2048w">
 							</a>
@@ -719,6 +736,94 @@
 							</div>
 							<div class="detail_button">
 								<a class="gift_detail_button" href="/products/k1023">
+									<span>詳細を見る</span>
+								</a>
+							</div>
+						</div>
+						<div class="list_item" price="11,880" category="結婚,新築,人気">
+							<a class="item_thumb" href="/products/k0018">
+								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_869e79cd-5f9e-4616-a016-0fe288d30927.jpg?v=1648100777&amp;width=533" srcset="https://komons-japan.com/cdn/shop/products/thumb01_869e79cd-5f9e-4616-a016-0fe288d30927.jpg?v=1648100777&amp;width=533 1440w,  https://komons-japan.com/cdn/shop/products/thumb01_869e79cd-5f9e-4616-a016-0fe288d30927.jpg?v=1648100777&amp;width=360 768w,  https://komons-japan.com/cdn/shop/products/thumb01_869e79cd-5f9e-4616-a016-0fe288d30927.jpg?v=1648100777&amp;width=533 2048w">
+							</a>
+							<div class="txt_wrap">
+								<a class="name" href="/products/k0018"><span class="name">フルセット</span></a>
+								<span class="price">11,880円(税込)</span>
+							</div>
+							<p class="product_desc">
+								<span class="product_type">Komonsのレギュラー商品6種を取り揃えたフルセット。</span>
+							</p>
+							<div class="content_icon">
+
+								<div class="icon">
+									<span class="bath"></span>
+								</div>
+
+								<div class="icon">
+									<span class="dish"></span>
+								</div>
+
+								<div class="icon">
+									<span class="fabric"></span>
+								</div>
+
+								<div class="icon">
+									<span class="hand"></span>
+								</div>
+
+								<div class="icon">
+									<span class="multi"></span>
+								</div>
+
+								<div class="icon">
+									<span class="toilet"></span>
+								</div>
+
+							</div>
+							<div class="detail_button">
+								<a class="gift_detail_button" href="/products/k0018">
+									<span>詳細を見る</span>
+								</a>
+							</div>
+						</div>
+						<div class="list_item" price="1,397" category="自分">
+							<a class="item_thumb" href="/products/k1008">
+								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb00_3290c773-8a9d-406c-bd79-dfe014448e43.jpg?v=1673341642&amp;width=533" srcset="https://komons-japan.com/cdn/shop/products/thumb00_3290c773-8a9d-406c-bd79-dfe014448e43.jpg?v=1673341642&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb00_3290c773-8a9d-406c-bd79-dfe014448e43.jpg?v=1673341642&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb00_3290c773-8a9d-406c-bd79-dfe014448e43.jpg?v=1673341642&amp;width=533 2048w">
+							</a>
+							<div class="txt_wrap">
+								<a class="name" href="/products/k1008"><span class="name en">Cotton Fields (Mini)</span><span class="genre added">ギフトラッピング版</span></a>
+								<span class="price">1,397円(税込)</span>
+							</div>
+							<p class="product_desc">
+								<span class="product_type">キッチン＆マルチクリーナー</span>
+							</p>
+							<div class="content_icon">
+								<div class="icon">
+									<span class="handmilk"></span>
+								</div>
+							</div>
+							<div class="detail_button">
+								<a class="gift_detail_button" href="/products/k1008">
+									<span>詳細を見る</span>
+								</a>
+							</div>
+						</div>
+						<div class="list_item" price="1,012" category="なし">
+							<a class="item_thumb" href="/products/k1007">
+								<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_6a6f934b-5a78-451b-8107-fbe2714204a0.jpg?v=1664960616&amp;width=533" srcset="https://komons-japan.com/cdn/shop/products/thumb01_6a6f934b-5a78-451b-8107-fbe2714204a0.jpg?v=1664960616&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_6a6f934b-5a78-451b-8107-fbe2714204a0.jpg?v=1664960616&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_6a6f934b-5a78-451b-8107-fbe2714204a0.jpg?v=1664960616&amp;width=533 2048w">
+							</a>
+							<div class="txt_wrap">
+								<a class="name" href="/products/k1007"><span class="name en">This Will Be Our Year (Mini)</span><span class="genre added">アルコール65％・ギフト版</span></a>
+								<span class="price">1,012円(税込)</span>
+							</div>
+							<p class="product_desc">
+								<span class="product_type">除菌スプレー</span>
+							</p>
+							<div class="content_icon">
+								<div class="icon">
+									<span class="sanitizer"></span>
+								</div>
+							</div>
+							<div class="detail_button">
+								<a class="gift_detail_button" href="/products/k1007">
 									<span>詳細を見る</span>
 								</a>
 							</div>
@@ -888,96 +993,7 @@
 			</section>
 
 		</div>
-		<div id="shopify-section-instagram" class="shopify-section">
-			<section class="section-instagram comp-instagram-wrap">
-				<div class="section_inner">
-					<p class="insta_ttl">Instagram</p>
-					<div id="insta-feed" class="insta_feed"><a href="https://www.instagram.com/p/CmWD-TsPStU/" target="_blank" rel="noopener">
-							<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image" style="width:99%;height:99%;" src="//instafeed.nfcube.com/assets/img/pixel.gif"
-									data-src="https://scontent.cdninstagram.com/v/t51.29350-15/320660311_1975244652683122_5087133949499989941_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=1aXEcCxjbjgAX_Bfy2h&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfA9MAFDY186aIfZtFYta4ZLRcMOns3gv6pwyEbuzWXIVw&amp;oe=63C30379"
-									alt="【Ron Herman × Komons &quot;Hand ＆ Body Wash&quot;】
-.
-「Ron Herman」 及び「RHC Ron Herman」の各店舗にて、Ron Herman×Komonsのダ">
-								<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-							</div>
-						</a><a href="https://www.instagram.com/p/CmOmnqHvXhx/" target="_blank" rel="noopener">
-							<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image" style="width:99%;height:99%;" src="//instafeed.nfcube.com/assets/img/pixel.gif"
-									data-src="https://scontent.cdninstagram.com/v/t51.29350-15/319799787_664417975384651_2140978164418331946_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=Lk8kGT1fn4MAX_nRD4v&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBgkFNvyqW8XU2fQqcmlub5mNfFOXZulqbbUd55wmdJJQ&amp;oe=63C3472D"
-									alt="【大掃除の頼れる助っ人「マルチクリーナー」】
-.
-12月も後半、年の瀬まであと少しとなりました。
-この時期に悩むのはやはり大掃除ですよね。
-. そんな大掃除に活躍してくれるのが、Komonsマルチクリ">
-								<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-							</div>
-						</a><a href="https://www.instagram.com/p/CmJlIUEvFN0/" target="_blank" rel="noopener">
-							<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image" style="width:99%;height:99%;" src="//instafeed.nfcube.com/assets/img/pixel.gif"
-									data-src="https://scontent.cdninstagram.com/v/t51.29350-15/319614914_207599074979002_4775540262061665585_n.jpg?_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=MomEYKiy9q0AX_ZBCrV&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfClTbWFaY3ryZY2sUJWrHKEtaEEKsNhze0pHrNgOkdsag&amp;oe=63C29E7F"
-									alt="【g KEYAKIZAKA POP-UP開催中】
-.
-12月29日(木)まで、六本木ヒルズ「g KEYAKIZAKA」にてKomons POP UPを開催しております。
-.
-全商品ラインナップに加え、">
-								<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-							</div>
-						</a><a href="https://www.instagram.com/p/CmENGSjv83-/" target="_blank" rel="noopener">
-							<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image" style="width:99%;height:99%;" src="//instafeed.nfcube.com/assets/img/pixel.gif"
-									data-src="https://scontent.cdninstagram.com/v/t51.29350-15/319096717_717793923044253_8344580696747571343_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=PaKTODierU4AX8t7x3m&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCpE5JMSExxW8QN_BfTUvQ2rsCg7SM_wRhmMmigoCnFcQ&amp;oe=63C27DEB"
-									alt="【お歳暮にKomonsギフトセット】
-.
-お世話になったあの人へ、今年一年の感謝を込めて。
-.
-Komonsでは豊富なギフトセットをご用意。
-ご予算や用途に合わせてお選びいただけます。
-.
-熨斗やメッ">
-								<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-							</div>
-						</a><a href="https://www.instagram.com/p/CkSXmDRvFbX/" target="_blank" rel="noopener">
-							<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image" style="width:99%;height:99%;" src="//instafeed.nfcube.com/assets/img/pixel.gif"
-									data-src="https://scontent.cdninstagram.com/v/t51.29350-15/313071848_674890607298663_1697324686615510633_n.jpg?_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=TZquAIjN9SUAX9tg1K5&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDTQbXoCb5IuOH_b0OnqVGcGqNs_Le6aYtK8cOZE3yocA&amp;oe=63C3D61E"
-									alt="【ててて商店街 2022秋 出展中】
-.
-本日から2日間、品川駅前にて開催中のマーケットイベント「ててて商店街 2022秋」に参加しております。
-.
-過去に発売した季節限定の香りのファブリックミスト含">
-								<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-							</div>
-						</a><a href="https://www.instagram.com/p/CkSPycrP3iY/" target="_blank" rel="noopener">
-							<div class="instafeed-container" style="width:16.666667%;padding-top:16.666667%;"><img class="js-lazy-image" style="width:99%;height:99%;" src="//instafeed.nfcube.com/assets/img/pixel.gif"
-									data-src="https://scontent.cdninstagram.com/v/t51.29350-15/313202357_209809298141116_4832827924947514723_n.jpg?_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=v09WJilSk0QAX_65sw-&amp;_nc_ht=scontent.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBgD-JXCEUOtiH__9H_b1gJBYkqvHvAKHDU8Xsvb6W_Rw&amp;oe=63C3EB50"
-									alt="トイレクリーナー【Shelter from the Storm】
-.
-泡立ちを抑えめにすることで、これ一本で壁や床もきれいに。
-自然由来の発酵乳酸と青森ヒバ精油が便器や床・壁のカビ菌や胞子を99%死滅">
-								<div style="width:99%;height:99%;" class="instafeed-overlay "></div>
-							</div>
-						</a></div>
-					<div class="link_button">
-						<a target="_blank" href="https://www.instagram.com/komons.jp/"><span>komons.jp</span></a>
-					</div>
-				</div><!-- section_inner -->
-			</section>
-		</div>
-	</article>
-	</section>
 
-
-
-
-
-	</div>
-	<div id="shopify-section-instagram" class="shopify-section">
-		<section class="section-instagram comp-instagram-wrap">
-			<div class="section_inner">
-				<p class="insta_ttl">Instagram</p>
-				<div id="insta-feed" class="insta_feed"></div>
-				<div class="link_button">
-					<a target="_blank" href="https://www.instagram.com/komons.jp/"><span>komons.jp</span></a>
-				</div>
-			</div><!-- section_inner -->
-		</section>
-	</div>
 	</article>
 	<div id="optionPop" class="comp-gift-option-pop">
 		<div id="popBg" class="pop_bg"></div>

@@ -14393,8 +14393,9 @@ body.loaded #loading {
   }
 }
 .comp-filter-wrap-new {
-  background: #f4f4f4;
   padding: 40px 7vw;
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -14407,10 +14408,12 @@ body.loaded #loading {
   width: 100%;
   padding: 15px;
   font-size: 1.6rem;
+  color: #00381f;
   font-family: inherit;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  background-color: #f8f8f8;
   border: 1px solid #d8d8d8;
   border-radius: 5px;
   background-image: url(https://cdn.shopify.com/s/files/1/0606/6932/9625/t/1/assets/select_caret.svg);
@@ -14451,7 +14454,9 @@ body.loaded #loading {
      -moz-appearance: none;
           appearance: none;
   font-family: inherit;
+  font-size: 1.4rem;
   color: #00381f;
+  background-color: #f8f8f8;
   border: 1px solid #d8d8d8;
   padding: 10px 0;
   border-radius: 5px;
@@ -14461,9 +14466,9 @@ body.loaded #loading {
   will-change: background, color, border;
 }
 .comp-filter-wrap-new .category_button_wrap .button_item button.active {
-  background: #00381f;
-  border: 1px solid #00381f;
-  color: #fff;
+  background: #00381f !important;
+  border: 1px solid #00381f !important;
+  color: #fff !important;
 }
 .comp-filter-wrap-new .filter_price {
   margin-bottom: 30px;
@@ -14501,6 +14506,7 @@ body.loaded #loading {
   .comp-filter-wrap-new {
     width: 82vw;
     margin: 0 auto;
+    max-width: 1400px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -14517,6 +14523,7 @@ body.loaded #loading {
             justify-content: space-between;
     background: transparent;
     padding: 0;
+    border: 0px solid #d8d8d8;
   }
   .comp-filter-wrap-new .filter_ttl {
     display: block;
@@ -14536,6 +14543,7 @@ body.loaded #loading {
     line-height: 50px;
     font-size: 1.4rem;
     cursor: pointer;
+    background-color: #fff;
   }
   .comp-filter-wrap-new .category_button_wrap {
     display: -webkit-box;
@@ -14569,6 +14577,7 @@ body.loaded #loading {
   }
   .comp-filter-wrap-new .category_button_wrap .button_item button:hover {
     background: #f4f4f4;
+    color: #00381f;
   }
   .comp-filter-wrap-new .filter_price {
     width: 25%;

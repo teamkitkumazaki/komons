@@ -1,6 +1,7 @@
 .comp-filter-wrap-new{
-  background: #f4f4f4;
   padding: 40px 7vw;
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
   box-sizing: border-box;
   .filter_ttl{
     font-size: 1.6rem;
@@ -12,8 +13,10 @@
       width: 100%;
       padding: 15px;
       font-size: 1.6rem;
+      color: $basicGreen;
       font-family: inherit;
       appearance: none;
+      background-color: #f8f8f8;
       border: 1px solid #d8d8d8;
       border-radius: 5px;
       background-image: url(https://cdn.shopify.com/s/files/1/0606/6932/9625/t/1/assets/select_caret.svg);
@@ -43,7 +46,9 @@
         box-shadow: none;
         appearance: none;
         font-family: inherit;
+        font-size: 1.4rem;
         color: $basicGreen;
+        background-color: #f8f8f8;
         border: 1px solid #d8d8d8;
         padding: 10px 0;
         border-radius: 5px;
@@ -51,9 +56,9 @@
         transition: background .3s,color .3s, border .3s;
         will-change: background,color,border;
         &.active{
-          background: $basicGreen;
-          border: 1px solid $basicGreen;
-          color: #fff;
+          background: $basicGreen !important;
+          border: 1px solid $basicGreen !important;
+          color: #fff !important;
         }
       }
     }
@@ -91,11 +96,13 @@
   .comp-filter-wrap-new{
     width: 82vw;
     margin: 0 auto;
+    max-width: 1400px;
     @include flexSet;
     align-items: center;
     justify-content: space-between;
     background: transparent;
     padding: 0;
+    border: 0px solid #d8d8d8;
     .filter_ttl{
       display: block;
       width: 100%;
@@ -113,6 +120,7 @@
         line-height: 50px;
         font-size: 1.4rem;
         cursor: pointer;
+        background-color: #fff;
       }
     }
     .category_button_wrap{
@@ -141,6 +149,7 @@
           line-height: 50px;
           &:hover{
             background: #f4f4f4;
+            color: $basicGreen;
           }
         }
       }
