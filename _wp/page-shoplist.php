@@ -1,14 +1,24 @@
+<?php/*Template Name: 新店舗一覧 */?>
 <!doctype html>
 <html>
 <?php get_template_part("parts/head");?>
 <body class="fixed-header rolled">
 <?php get_template_part("parts/header");?>
 <?php
-  $post_id = get_the_ID();
+  /*$post_id = get_the_ID();
   $tokyo = SCF::get('tokyo', $post_id);
   $kanto = SCF::get('kanto', $post_id);
   $others = SCF::get('others', $post_id);
-  $overseas = SCF::get('overseas', $post_id);
+  $overseas = SCF::get('overseas', $post_id);*/
+	$tokyo = SCF::get('tokyo', 1230);
+	$north = SCF::get('north', 1230);
+  $kanto = SCF::get('kanto', 1230);
+	$hokuriku = SCF::get('hokuriku', 1230);
+	$chubu = SCF::get('chubu', 1230);
+	$kansai = SCF::get('kansai', 1230);
+	$kyusyu = SCF::get('kyusyu', 1230);
+  $others = SCF::get('others', 1230);
+	$overseas = SCF::get('overseas', 1230);
 ;?>
 <article id="stockist" class="page-stockist">
   <section class="section-main">
@@ -25,65 +35,34 @@
       <div class="comp-popup-store2">
         <hgroup class="shop_ttl">
           <span class="ttl_en">Popup Store</span>
-          <h2 class="ttl_ja">イベント情報</h2>
+          <h2 class="ttl_ja">ポップアップ</h2>
         </hgroup>
+
         <div class="store_item">
           <div class="img_wrap">
-            <a target="_blank" href="https://www.idee.co.jp/shop/delier_marunouchi/"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store01.jpg?v=1660011601"></a>
-          </div>
-          <div class="txt_wrap">
-            <a target="_blank" class="shop_name" href="https://www.idee.co.jp/shop/delier_marunouchi/">Délier IDÉE</a>
-            <p class="date">開催期間：7月15日(金)-8月29日(月)</p>
-            <p class="address">東京都千代田区丸の内1-5-1 新丸ビル 4F</p>
-          </div>
-        </div><!-- store_item -->
-        <div class="store_item">
-          <div class="img_wrap">
-            <a target="_blank" href="https://www.idee.co.jp/shop/attache_shinjuku/"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store02.jpg?v=1660011601"></a>
-          </div>
-          <div class="txt_wrap">
-            <a target="_blank" class="shop_name" href="https://www.idee.co.jp/shop/attache_shinjuku/">Attaché d’IDÉE (Shinjuku)</a>
-            <p class="date">開催期間：7月15日(金)-8月29日(月)</p>
-            <p class="address">東京都新宿区西新宿1-1-5 ルミネ新宿店 ルミネ1 6F</p>
-          </div>
-        </div><!-- store_item -->
-        <div class="store_item">
-          <div class="img_wrap">
-            <a target="_blank" href="https://www.idee.co.jp/shop/ume/">
-              <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store03.jpg?v=1660011601">
+            <a target="_blank" href="https://www.idee.co.jp/shop/attache_shinjuku/">
+              <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/shinjuku_display.jpg?v=1687068178">
             </a>
           </div>
           <div class="txt_wrap">
-            <a target="_blank" class="shop_name" href="https://www.idee.co.jp/shop/ume/">IDÉE SHOP Umeda</a>
-            <p class="date">開催期間：7月15日(金)-8月29日(月)</p>
-            <p class="address">大阪府大阪市北区大深町4-20 グランフロント大阪 南館5F</p>
+            <a class="shop_name" target="_blank" href="https://www.idee.co.jp/shop/attache_shinjuku/">Attaché d’IDÉE 新宿ルミネ店</a>
+            <p class="date">開催期間：6/2(金)～7/3(月)</p>
+            <p class="address">ルミネ新宿店 ルミネ1 6F</p>
           </div>
         </div><!-- store_item -->
-        <div class="store_item">
-          <div class="img_wrap">
-            <a target="_blank" href="https://ebetsu-t.com/">
-              <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store06.jpg?v=1660011601">
-            </a>
-          </div>
-          <div class="txt_wrap">
-            <a target="_blank" class="shop_name" href="https://ebetsu-t.com/">江別 蔦屋書店</a>
-            <p class="date">開催期間：8月1日(月) - 8月30日(火)</p>
-            <p class="address">北海道江別市牧場町14番地の1</p>
-          </div>
-        </div><!-- store_item -->
-        <div class="store_item">
-          <div class="img_wrap">
-            <a target="_blank" href="https://choosebase.jp/">
-              <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/store04.jpg?v=1660011601">
-            </a>
-          </div>
-          <div class="txt_wrap">
-            <a class="shop_name" target="_blank" href="https://choosebase.jp/">CHOOSEBASE SHIBUYA</a>
-            <p class="date">開催期間：2022年6月20日~12月末</p>
-            <p class="address">東京都渋谷区宇田川町21－1 西武渋谷店 パーキング館1階</p>
-          </div>
-        </div><!-- store_item -->
-      </div><!-- comp-popup-store2 -->
+				<div class="store_item">
+					<div class="img_wrap">
+						<a target="_blank" href="https://www.idee.co.jp/shop/variete_kashiwa/">
+							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/kashiwa_display.jpg?v=1687068048">
+						</a>
+					</div>
+					<div class="txt_wrap">
+						<a class="shop_name" target="_blank" href="https://www.idee.co.jp/shop/variete_kashiwa/">IDÉE SHOP VARIÉTÉ 柏高島屋店</a>
+						<p class="date">開催期間：6/2(金)～7/3(月)</p>
+						<p class="address">柏髙島屋ステーションモール 新館 8F</p>
+					</div>
+				</div><!-- store_item -->
+      </div>
     </div><!-- section_inner -->
   </section>
   <section class="section-shop-list">
@@ -99,9 +78,24 @@
             <?php if (!empty($tokyo)) : ?>
               <button jump="#areaTokyo"><span>東京都</span></button>
             <?php endif; ?>
+						<?php if (!empty($north)) : ?>
+							<button jump="#areaNorth"><span>北海道</span></button>
+						<?php endif; ?>
             <?php if (!empty($kanto)) : ?>
             <button jump="#areaKanto"><span>関東</span></button>
             <?php endif; ?>
+						<?php if (!empty($hokuriku)) : ?>
+						<button jump="#areaHokuriku"><span>北陸</span></button>
+						<?php endif; ?>
+						<?php if (!empty($chubu)) : ?>
+						<button jump="#areaChubu"><span>中部</span></button>
+						<?php endif; ?>
+						<?php if (!empty($kansai)) : ?>
+						<button jump="#areaKansai"><span>関西</span></button>
+						<?php endif; ?>
+						<?php if (!empty($kyusyu)) : ?>
+						<button jump="#areaKyusyu"><span>九州</span></button>
+						<?php endif; ?>
             <?php if (!empty($others)) : ?>
             <button jump="#areaOthers"><span>OTHERS</span></button>
             <?php endif; ?>
@@ -129,6 +123,26 @@
             <?php endforeach; ?>
             </div><!-- store_list_wrap -->
           <?php endif; ?>
+					<?php if (!empty($north)) : ?>
+						<div id="areaNorth" class="store_list_wrap">
+							<h3 class="area_ttl">北海道</h3>
+						<?php foreach ($north as $i) : ?>
+							<div class="store_item">
+								<?php if($i['google_map_north'] != null) : ?>
+								<a target="_blank" href="<?= $i['google_map_north'] ?>" class="shop_info">
+								<?php else:?>
+								<a class="shop_info no_link" href="javascript:void(0);">
+								<?php endif; ?>
+									<span class="shop_name"><?= $i['shop_name_north'] ?></span>
+									<span class="address"><?= $i['postal_code_north'] ?><span><?= $i['address_north'] ?></span></span>
+									<?php if (!empty($i['note_north'])) : ?>
+										<p class="detail_txt"><?= $i['note_north'] ?></p>
+									<?php endif; ?>
+								</a>
+							</div>
+						<?php endforeach; ?>
+						</div><!-- store_list_wrap -->
+					<?php endif; ?>
           <?php if (!empty($kanto)) : ?>
             <div id="areaKanto" class="store_list_wrap">
               <h3 class="area_ttl">関東</h3>
@@ -149,25 +163,97 @@
             <?php endforeach; ?>
             </div><!-- store_list_wrap -->
           <?php endif; ?>
+					<?php if (!empty($hokuriku)) : ?>
+						<div id="areaHokuriku" class="store_list_wrap">
+							<h3 class="area_ttl">北陸</h3>
+						<?php foreach ($hokuriku as $i) : ?>
+							<div class="store_item">
+								<?php if($i['google_map_hokuriku'] != null) : ?>
+								<a target="_blank" href="<?= $i['google_map_hokuriku'] ?>" class="shop_info">
+								<?php else:?>
+								<a class="shop_info no_link" href="javascript:void(0);">
+								<?php endif; ?>
+									<span class="shop_name"><?= $i['shop_name_hokuriku'] ?></span>
+									<span class="address"><?= $i['postal_code_hokuriku'] ?><span><?= $i['address_hokuriku'] ?></span></span>
+									<?php if (!empty($i['note_hokuriku'])) : ?>
+										<p class="detail_txt"><?= $i['note_hokuriku'] ?></p>
+									<?php endif; ?>
+								</a>
+							</div>
+						<?php endforeach; ?>
+						</div><!-- store_list_wrap -->
+					<?php endif; ?>
+					<?php if (!empty($chubu)) : ?>
+						<div id="areaChubu" class="store_list_wrap">
+							<h3 class="area_ttl">中部</h3>
+						<?php foreach ($chubu as $i) : ?>
+							<div class="store_item">
+								<?php if($i['google_map_chubu'] != null) : ?>
+								<a target="_blank" href="<?= $i['google_map_chubu'] ?>" class="shop_info">
+								<?php else:?>
+								<a class="shop_info no_link" href="javascript:void(0);">
+								<?php endif; ?>
+									<span class="shop_name"><?= $i['shop_name_chubu'] ?></span>
+									<span class="address"><?= $i['postal_code_chubu'] ?><span><?= $i['address_chubu'] ?></span></span>
+									<?php if (!empty($i['note_chubu'])) : ?>
+										<p class="detail_txt"><?= $i['note_chubu'] ?></p>
+									<?php endif; ?>
+								</a>
+							</div>
+						<?php endforeach; ?>
+						</div><!-- store_list_wrap -->
+					<?php endif; ?>
+					<?php if (!empty($kansai)) : ?>
+						<div id="areaKansai" class="store_list_wrap">
+							<h3 class="area_ttl">関西</h3>
+						<?php foreach ($kansai as $i) : ?>
+							<div class="store_item">
+								<?php if($i['google_map_kansai'] != null) : ?>
+								<a target="_blank" href="<?= $i['google_map_kansai'] ?>" class="shop_info">
+								<?php else:?>
+								<a class="shop_info no_link" href="javascript:void(0);">
+								<?php endif; ?>
+									<span class="shop_name"><?= $i['shop_name_kansai'] ?></span>
+									<span class="address"><?= $i['postal_code_kansai'] ?><span><?= $i['address_kansai'] ?></span></span>
+									<?php if (!empty($i['note_kansai'])) : ?>
+										<p class="detail_txt"><?= $i['note_kansai'] ?></p>
+									<?php endif; ?>
+								</a>
+							</div>
+						<?php endforeach; ?>
+						</div><!-- store_list_wrap -->
+					<?php endif; ?>
+					<?php if (!empty($kyusyu)) : ?>
+						<div id="areaKyusyu" class="store_list_wrap">
+							<h3 class="area_ttl">九州</h3>
+						<?php foreach ($kyusyu as $i) : ?>
+							<div class="store_item">
+								<?php if($i['google_map_kyusyu'] != null) : ?>
+								<a target="_blank" href="<?= $i['google_map_kyusyu'] ?>" class="shop_info">
+								<?php else:?>
+								<a class="shop_info no_link" href="javascript:void(0);">
+								<?php endif; ?>
+									<span class="shop_name"><?= $i['shop_name_kyusyu'] ?></span>
+									<span class="address"><?= $i['postal_code_kyusyu'] ?><span><?= $i['address_kyusyu'] ?></span></span>
+									<?php if (!empty($i['note_kyusyu'])) : ?>
+										<p class="detail_txt"><?= $i['note_kyusyu'] ?></p>
+									<?php endif; ?>
+								</a>
+							</div>
+						<?php endforeach; ?>
+						</div><!-- store_list_wrap -->
+					<?php endif; ?>
           <?php if (!empty($others)) : ?>
             <div id="areaOthers" class="store_list_wrap">
               <h3 class="area_ttl">OTHERS</h3>
-            <?php foreach ($others as $i) : ?>
-              <div class="store_item">
-                <?php if($i['google_map_others'] != null) : ?>
-                <a target="_blank" href="<?= $i['google_map_others'] ?>" class="shop_info">
-                <?php else:?>
-                <a class="shop_info no_link" href="javascript:void(0);">
-                <?php endif; ?>
-                  <span class="shop_name"><?= $i['shop_name_others'] ?></span>
-                  <span class="address"><?= $i['postal_code_others'] ?><span><?= $i['address_others'] ?></span></span>
-                  <?php if (!empty($i['note_others'])) : ?>
-                    <p class="detail_txt"><?= $i['note_others'] ?></p>
-                  <?php endif; ?>
-                </a>
+							<div class="store_item">
+								<a target="_blank" href="https://www.unico-fan.co.jp/staffblog/storelist/" class="shop_info">
+									<span class="shop_name">unico</span>
+                  <span class="address">全国47店舗<span></span></span>
+									<p class="detail_txt">※ギフトセットのみお取り扱い</p>
+								</a>
               </div>
-            <?php endforeach; ?>
-            </div><!-- store_list_wrap -->
+						</div>
           <?php endif; ?>
           <?php if (!empty($overseas)) : ?>
             <div id="areaOverseas" class="store_list_wrap">
@@ -193,6 +279,7 @@
       </div><!-- stock_flex -->
     </div><!-- section_inner_new -->
   </section>
+	<!--
   <section class="section-archive">
     <div class="section_inner_new">
       <hgroup class="shop_ttl">
@@ -248,8 +335,8 @@
             </a>
           </div>
         </div>
-      </div><!-- comp-popup-archive -->
-    </div><!-- section_inner_new -->
+      </div>
+    </div> --><!-- section_inner_new -->
   </section>
 </article>
 <?php get_template_part("parts/footer");?>

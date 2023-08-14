@@ -57,6 +57,7 @@
 
   .insta_feed {
     @include flexSet;
+    display: flex !important;
     border-top: 1px solid #d8d8d8 !important;
     margin-bottom: 80px !important;
 
@@ -64,7 +65,7 @@
       width: calc(100% / 6);
       box-sizing: border-box;
       position: relative !important;
-      display: block;
+      display: block !important;
       z-index: 1 !important;
       .instafeed-container{
         width: 100% !important;

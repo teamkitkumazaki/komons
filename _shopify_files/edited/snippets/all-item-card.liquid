@@ -6,7 +6,7 @@
 {%- endif -%}
 
 {%- unless product.handle contains 'test' -%}
-<li class="item_box">
+<li id="handle-{{ product.handle }}" class="item_box">
   <div class="img_wrap">
     <a href="{{ product.url }}" {%- if product.metafields.custom_fields["stock_state"] == 1 or product.available != true and product.type != 'upcoming' -%}class="soldout"{%- endif -%}>
       <img loading="lazy" src="{{ thumb_image | image_url: width: 533 }}" srcset="{{ thumb_image | image_url: width: 533 }} 1440w, {{ thumb_image | image_url: width: 360 }} 768w, {{ thumb_image | image_url: width: 533 }} 2048w" alt="{{ product.metafields.custom_fields["prod_display_name"] | strip_html }}">
@@ -18,11 +18,15 @@
       <a href="{{ product.url }}">{{ product.metafields.custom_fields["prod_display_name"] }}</a>
     </h3>
     <span class="product_detail">
+    {%- if product.type != 'commercial' -%}
       <span class="price">{%- if product.type == 'upcoming' -%}構想中{%- else -%}{{ product.price | money_without_currency }}円(税込){%- endif -%}</span>
+    {%- else -%}
+      <span class="price">価格：ASK</span>
+    {%- endif -%}
     </span>
   </div>
   <div class="comp-list-cart-button">
-    {%- if product.type == "upcoming" or request.page_type contains 'index' or request.page_type contains 'product' -%}
+    {%- if product.type == "upcoming" or product.type == "commercial" or request.page_type contains 'index' or request.page_type contains 'product' -%}
     <div class="comp-arrow-link">
       <a href={{ product.url }}><span>詳細を見る</span></a>
     </div>

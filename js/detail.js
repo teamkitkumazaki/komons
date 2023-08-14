@@ -1,5 +1,5 @@
 $(function() {
-
+  
   function itemDetailThumbnail(target) {
     var thumbBox = $('#thumbBox');
     var caption = $('#caption');
@@ -254,7 +254,7 @@ $(function() {
         var buttonHeight = toggleButton[e].outerHeight();
         var tagetHeight = toggleContents[e].outerHeight();
         toggleItem[e].css({
-          'height': buttonHeight + tagetHeight + 'px'
+          'height': buttonHeight + tagetHeight + 10 + 'px'
         });
         toggleState[e] = 1;
       } else {

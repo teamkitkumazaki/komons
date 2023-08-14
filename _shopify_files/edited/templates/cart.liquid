@@ -7,7 +7,8 @@
 {%- endfor -%}
 <article id="cart" class="page-cart-new">
 {% section 'cart-template' %}
-{% section 'cart-relations' %}
+{% section 'product-relation' %}
+{% section 'product-history' %}
 <section id="submitLoader" class="comp-submit-loader">
 	<div class="height_adjust"></div>
 	<div class="loader_inner">
@@ -69,14 +70,6 @@ subPopDisplay();
 
 
 <script type='text/javascript'>
-$.each($('article').find('.comp-admin-button'), function(index) {
-	$(this).find('input').on({
-		'click': function() {
-			console.log('checkout');
-			$('#submitLoader').addClass('open');
-		}
-	});
-});
 
 /* アトリビュート保存用 */
 var cartAttributes = {{ cart | json }};

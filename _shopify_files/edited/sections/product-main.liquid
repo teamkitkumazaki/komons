@@ -32,9 +32,12 @@
           <h1 class="prod_name">{{ product.metafields.custom_fields["prod_display_name"] }}</h1>
         </div><!-- prod_info -->
         <div class="price_wrap">
-        {%- if product.type != "upcoming" -%}
-          <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
-          <span class="volume">/ {% if product.metafields.custom_fields["prod_volume"] != blank %}{{ product.metafields.custom_fields["prod_volume"] }}{%- else -%}セット商品{% endif %}</span>
+        {%- if product.type == 'commercial' -%}
+        <span class="price">価格：ASK</span>
+        <span class="volume">/ 業務用{% if product.metafields.custom_fields["prod_volume"] != blank %}{{ product.metafields.custom_fields["prod_volume"] }}{% endif %}</span>
+        {% elsif product.type != "upcoming" %}
+        <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
+        <span class="volume">/ {% if product.metafields.custom_fields["prod_volume"] != blank %}{{ product.metafields.custom_fields["prod_volume"] }}{%- else -%}セット商品{% endif %}</span>
         {%- else -%}
           <span class="price">構想中</span>
         {%- endif -%}
@@ -42,12 +45,23 @@
         <div class="desc_wrap">
           <p>{{ product.metafields.custom_fields["prod_description"] }}</p>
         </div><!-- desc_wrap -->
+        {%- if product.type != "gift" -%}
+        {% include 'product-variation-select' %}
+        {% endif %}
+        {%- if product.type != "commercial" -%}
         {% if product.metafields.custom_fields["subscription_check"] %}
         {% include 'product-cart-wrap-sub' %}
         {% else %}
         {% include 'product-cart-wrap' %}
         {% endif %}
         {% include 'product-line-contact' %}
+        {% else %}
+        <div class="commercial_item_wrap">
+          <div class="comp-waiting-button">
+            <a href="https://journal.komons-japan.com/contact"><span class="title">お問い合わせ</span><span class="desc">お問い合わせフォームよりご購入頂けます</span></a>
+          </div>
+        </div><!-- commercial_item_wrap -->
+        {% endif %}
       </div><!-- detail_inner -->
     </div><!-- main_detail -->
     {%- if product.type != "upcoming" -%}
@@ -129,13 +143,16 @@
           <div class="comp-detail-toggle-new">
           {%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
             <div id="toggleGift" class="toggle_item">
-              <button class="toggle_button_new">ギフト対応について</button>
+              <button class="toggle_button_new">
+                <span class="txt">ギフト対応について</span>
+                <span class="caret"></span>
+              </button>
               <div class="toggle_content_new">
                 <div class="detail_item">
                   <p class="title">ラッピング/ギフトボックス</p>
                   <div class="content">
                     <div class="img_wrap">
-                      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service01.jpg?v=1642389092">
+                      <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service01.jpg?v=1642389092">
                     </div>
                     <p>全てのギフトセット商品はオリジナルのギフトBOXにお入れしてお届けいたします。</p>
                     <p>※包装紙やリボン掛けの対応は行っておりませんので、あらかじめご了承ください。</p>
@@ -145,7 +162,7 @@
                   <p class="title">熨斗/水引</p>
                   <div class="content">
                     <div class="img_wrap">
-                      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service02.jpg?v=1642389092">
+                      <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service02.jpg?v=1642389092">
                     </div>
                     <p>+110円(税込)にて熨斗対応が可能です。水引きの種類はどのシーンのお祝い事にもお使いいただける「紅白梅結び」と弔事用の「白黒あわじ結び」がございます。</p>
                     <p>※表書きをご希望の場合はご注文画面の備考欄にご入力お願い致します。<br>※特にご指定がない場合、無地熨斗となります。</p>
@@ -164,7 +181,7 @@
                   <p class="title">メッセージカード</p>
                   <div class="content">
                     <div class="img_wrap">
-                      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service04.jpg?v=1642389092">
+                      <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service04.jpg?v=1642389092">
                     </div>
                     <p>ご希望の客様には、無料にてメッセージカードをお付けしております。カード裏面にメッセージの印刷も承ります。詳しくはご購入手続き画面をご確認ください。</p>
                   </div>
@@ -173,7 +190,10 @@
             </div>
           {% endif %}
             <div id="toggleDelivary" class="toggle_item">
-              <button class="toggle_button_new">配送について</button>
+              <button class="toggle_button_new">
+                <span class="txt">配送について</span>
+                <span class="caret"></span>
+              </button>
               <div class="toggle_content_new">
                 <div class="detail_item">
                   <p class="title">送料について</p>
@@ -184,7 +204,7 @@
                 <div class="detail_item">
                   <p class="title">到着日・時間指定について</p>
                   <div class="content">
-                    <p>現在ご注文頂くと最短で<span id="derivaryDate" style="font-weight: bold;"></span>にお届け致します。</p>
+                    <p>現在ご注文頂くと最短で{% include 'delivery-shcedule' %}にお届け致します。</p>
                     <p>時間に関しましては、午前中、14～16時、16～18時、18～20時、19～21時の時間帯をお選び頂くことができます。</p>
                     <p>※地域によってはご希望に添えない場合もございますので、その点ご了承下さいませ。また、天候・道路・交通事情等運送上の事情により、ご希望のお届け時間帯にお届けできない場合もございますので、ご了承下さい。</p>
                   </div>
@@ -205,7 +225,10 @@
               </div><!-- toggle_content -->
             </div>
             <div id="togglePayment" class="toggle_item">
-              <button class="toggle_button_new">決済方法について</button>
+              <button class="toggle_button_new">
+                <span class="txt">決済方法について</span>
+                <span class="caret"></span>
+              </button>
               <div class="toggle_content_new">
                 <div class="detail_item">
                   <p class="title">クレジットカード</p>

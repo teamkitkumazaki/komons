@@ -7,6 +7,7 @@
 <article id="itemDetailNew" class="page-item-detail-new">
   {% section 'product-main' %}
   {% section 'product-relation' %}
+  {% section 'product-history' %}
   <section class="section-item-list">
     <div class="section_inner_new">
       <div class="comp-detail-title">
@@ -43,11 +44,10 @@
 {% section 'fixed-cart-wrap' %}
 {%- endif -%}
 
-{% if product.metafields.custom_fields["subscription_check"] == 1 %}
-  {% include 'product-sub-modal' %}
-{% endif %}
 
-{%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
+{% include 'product-sub-modal' %}
+
+{%- if product.type == "gift" product.type == "gift-limited" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
 {% section 'gift-option-field' %}
 {%- endif -%}
 

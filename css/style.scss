@@ -45,6 +45,7 @@
 @import 'component/comp-section-information.scss';
 @import 'component/comp-jornal-item.scss';
 @import 'component/comp-instagram-wrap.scss';
+@import 'component/comp-fixed-news.scss';
 
 
 
@@ -57,7 +58,7 @@
 /* 商品*/
 @import 'component/products/comp-product-list.scss';
 @import 'component/products/comp-pager.scss';
-@import 'component/products/comp-filter-wrap.scss';
+/*@import 'component/products/comp-filter-wrap.scss';*/
 @import 'component/products/comp-gift-product-list.scss';
 @import 'component/products/comp-gift-service-list.scss';
 @import 'component/products/comp-load-more.scss';
@@ -71,10 +72,7 @@
 @import 'component/itemNew/comp-subscription-wrap.scss';
 @import 'component/itemNew/comp-subscription-modal.scss';
 @import 'component/itemNew/comp-huckleberry-container.scss';
-
-
 @import 'component/itemNew/comp-cart-wrap-switch.scss';
-
 @import 'component/itemNew/comp-detail-title.scss';
 @import 'component/itemNew/comp-detail-desc.scss';
 @import 'component/itemNew/comp-detail-button.scss';
@@ -86,6 +84,7 @@
 @import 'component/itemNew/comp-scent-detail.scss';
 @import 'component/itemNew/comp-variation.scss';
 @import 'component/itemNew/comp-line-contact.scss';
+@import 'component/itemNew/comp-variation-select.scss';
 
 
 @import 'component/comp-list-link.scss';
@@ -102,8 +101,10 @@
 @import 'component/store/comp-stock-list.scss';
 @import 'component/store/comp-popup-archive.scss';
 
-/* ギフトサービス */
+/* ギフト */
 @import 'component/gift/comp-gift-service-wrap.scss';
+@import 'component/gift/comp-filter-wrap-new.scss';
+
 
 /* FAQ */
 @import 'component/faq/comp-qa.scss';
@@ -130,6 +131,7 @@
 @import 'component/admin/comp-admin-hr.scss';
 @import 'component/admin/comp-form-message.scss';
 @import 'component/admin/comp-page-log.scss';
+@import 'component/admin/comp-sns-alignment.scss';
 
 
 

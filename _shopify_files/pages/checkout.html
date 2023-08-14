@@ -1,3 +1,7 @@
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LVFKHJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <style>
 .icon-svg{display: none;}
 .map{display: none;}
@@ -254,18 +258,22 @@ $(function() {
 
 {% if first_time_accessed %}
 <span id="a8sales"></span>
-<script src="https://statics.a8.net/a8sales/a8sales.js"></script>
+<script src="//statics.a8.net/a8sales/a8sales.js"></script>
 <script>
+var pre_order_number = "{{ order_number }}";
+var a8_order_number = pre_order_number.replace("#","");
 a8sales({
 "pid": "s00000020287001",
-"order_number": "{{ order_number }}",
+"order_number": a8_order_number,
 "currency": "{{ shop.currency }}",
 "items": [
+{% for line_item in checkout.line_items %}
 {
-"code": "a8",
-"price": {{ checkout.subtotal_price | money_without_currency | remove: ',' }},
-"quantity": 1
+"code": "{{ line_item.product_id }}",
+"price": {{ line_item.final_price | money_without_currency | remove: ',' }},
+"quantity": {{ line_item.quantity }}
 },
+{% endfor %}
 ],
 "total_price": {{ checkout.subtotal_price | money_without_currency | remove: ',' }}
 });

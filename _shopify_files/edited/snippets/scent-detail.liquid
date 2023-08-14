@@ -11,6 +11,8 @@
   {%- endif -%}
 {% endfor %}
 {% endfor %}
+
+{%- if scent_desc != blank -%}
 <div id="scentDetail" class="desc_unit">
   <div class="scent_detail comp-scent-detail">
     <div class="comp-detail-title">
@@ -49,3 +51,4 @@
     </div><!-- scent_txt_wrap -->
   </div><!-- comp-scent-detail -->
 </div><!-- desc_unit -->
+{%- endif -%}

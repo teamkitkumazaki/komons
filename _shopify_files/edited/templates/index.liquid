@@ -47,14 +47,16 @@
   </div>
 </div>
 </section>
-<!-- <section class="section-information comp-section-information">
+<!--
+<section class="section-information comp-section-information" style="background: #ad292b;">
 	<div class="section_inner">
 		<div class="info_flex">
 			<span class="title_en">Information</span>
-			<a class="content" href="https://journal.komons-japan.com/archives/1492"><span>いい夫婦割キャンペーン 2022</a>
+			<a class="content" href="https://journal.komons-japan.com/archives/1598"><span>Happy Mother’s Day 2023</a>
 		</div>
 	</div>
-</section> -->
+</section>
+-->
   <section id="topConcept">
     <div id="headerRolled" class="concept_wrap">
         <div id="headerRolledSp" class="txt_wrap">
@@ -72,6 +74,41 @@
         </div>
     </div>
   </section>
+  {% for collection in collections %}
+    {%- if collection.title == "pickup" -%}
+      {% for product in collection.products %}
+        {% assign arrayIndex = product.handle %}
+        {% unless forloop.last %}
+          {% assign random = random | append: arrayIndex | append: ',' %}
+        {% else %}
+          {% assign random = random | append: arrayIndex %}
+        {% endunless %}
+      {% endfor %}
+    {%- endif -%}
+  {% endfor %}
+
+  {%- assign array = random | split: ',' -%}
+  {%- assign loops = array.size | times: 10 -%}
+
+  {%- capture indexes -%}
+  	{%- for i in (1..loops) -%}{{ "now" | date: "%N" | modulo: array.size }},{%- endfor -%}
+  {%- endcapture -%}
+
+  {%- assign indexes = indexes | split: ',' | uniq -%}
+
+  {%- for a in indexes -%}
+  {% assign b = a | plus: 0 %}
+  {% unless forloop.last %}
+  {% assign newArray = newArray | append: array[b] | append: ',' %}
+  {% else %}
+  {% assign newArray = newArray | append: array[b] %}
+  {% endunless %}
+  {%- endfor -%}
+  {%- assign newArray = newArray | split: ',' -%}
+
+  {% assign collectionIndex = 0 | plus: 0 %}
+
+  {%- assign products = collections.all.products | sort: 'best-selling' -%}
   <section class="section-pickup">
     <div class="section_inner_new">
       <div class="section_ttl">
@@ -79,15 +116,79 @@
       </div>
       <div class="comp-product-list">
         <ul class="item_wrapper">
-				{% for collection in collections %}
-				{%- if collection.title == "pickup" -%}
-				{% paginate collection.products by 4 %}
-				{% for product in collection.products %}
-          {%- include 'all-item-card' -%}
-				{% endfor %}
-				{% endpaginate %}
-				{%- endif -%}
-				{% endfor %}
+        <li id="handle-k1017" class="item_box">
+          <div class="img_wrap">
+            <a href="/products/k1017">
+              <img loading="lazy" src="//komons-japan.com/cdn/shop/files/thumb01_935abbe0-81f9-4174-ac8e-db6a294d9f43.jpg?v=1688117912&amp;width=533" srcset="//komons-japan.com/cdn/shop/files/thumb01_935abbe0-81f9-4174-ac8e-db6a294d9f43.jpg?v=1688117912&amp;width=533 1440w, //komons-japan.com/cdn/shop/files/thumb01_935abbe0-81f9-4174-ac8e-db6a294d9f43.jpg?v=1688117912&amp;width=360 768w, //komons-japan.com/cdn/shop/files/thumb01_935abbe0-81f9-4174-ac8e-db6a294d9f43.jpg?v=1688117912&amp;width=533 2048w" alt=" Free as a Bird2023 Summer 鹿児島ホウショウ">
+            </a>
+          </div>
+          <div class="txt_wrap height-adjust">
+            <span class="cat_ttl">除菌用ファブリックミスト</span>
+            <h3 class="prod_name">
+              <a href="/products/k1017"><span class="name en"> Free as a Bird</span><span class="genre added">2023 Summer 鹿児島ホウショウ</span></a>
+            </h3>
+            <span class="product_detail"><span class="price">2,530円(税込)</span></span>
+          </div>
+          <div class="comp-list-cart-button">
+            <div class="comp-arrow-link">
+              <a href="/products/k1017"><span>詳細を見る</span></a>
+            </div>
+          </div>
+        </li>
+        <li id="handle-k1018" class="item_box">
+          <div class="img_wrap">
+            <a href="/products/k1018">
+              <img loading="lazy" src="//komons-japan.com/cdn/shop/files/thumb_mini.jpg?v=1688119089&amp;width=533" srcset="//komons-japan.com/cdn/shop/files/thumb_mini.jpg?v=1688119089&amp;width=533 1440w, //komons-japan.com/cdn/shop/files/thumb_mini.jpg?v=1688119089&amp;width=360 768w, //komons-japan.com/cdn/shop/files/thumb_mini.jpg?v=1688119089&amp;width=533 2048w" alt="Free as a Bird (Mini)2023 Summer 鹿児島ホウショウ">
+            </a>
+          </div>
+          <div class="txt_wrap height-adjust">
+            <span class="cat_ttl">除菌用ファブリックミスト</span>
+            <h3 class="prod_name">
+              <a href="/products/k1018"><span class="name en">Free as a Bird (Mini)</span><span class="genre added">2023 Summer 鹿児島ホウショウ</span></a>
+            </h3>
+            <span class="product_detail"><span class="price">748円(税込)</span></span>
+          </div>
+          <div class="comp-list-cart-button">
+            <div class="comp-arrow-link">
+              <a href="/products/k1018"><span>詳細を見る</span></a>
+            </div>
+          </div>
+        </li>
+        <li id="handle-k1009" class="item_box">
+          <div class="img_wrap">
+            <a href="/products/k1009">
+              <img loading="lazy" src="//cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_733e4e2f-b165-4120-959a-e534ade665d5.jpg?v=1681806782&amp;width=533" srcset="//cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_733e4e2f-b165-4120-959a-e534ade665d5.jpg?v=1681806782&amp;width=533 1440w, //cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_733e4e2f-b165-4120-959a-e534ade665d5.jpg?v=1681806782&amp;width=360 768w, //cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_733e4e2f-b165-4120-959a-e534ade665d5.jpg?v=1681806782&amp;width=533 2048w" alt="All La Glory">
+            </a>
+          </div>
+          <div class="txt_wrap height-adjust">
+            <span class="cat_ttl">アウトドアスプレー</span>
+            <h3 class="prod_name">
+              <a href="/products/k1009"><span class="name en">All La Glory</span></a>
+            </h3>
+            <span class="product_detail">
+              <span class="price">1,980円(税込)</span>
+            </span>
+          </div>
+          <div class="comp-list-cart-button">
+            <div class="comp-arrow-link">
+              <a href="/products/k1009"><span>詳細を見る</span></a>
+            </div>
+          </div>
+        </li>
+        {% for collection in collections %}
+          {%- if collection.title == "pickup" -%}
+            {% for product in collection.products %}
+              {% for product in collection.products %}
+                {%- if product.handle == newArray[collectionIndex] -%}
+                {%- if collectionIndex < 5 -%}
+                  {%- include 'all-item-card' -%}
+                {%- endif -%}
+                  {% assign collectionIndex = collectionIndex | plus: 1 %}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
         </ul>
       </div>
     </div>
@@ -264,5 +365,3 @@
   {% section 'journal-list' %}
   {% section 'instagram' %}
 </article>
-
-<!--PERZONALIZATION-START Do not modify or delete this comment--><div id="perzonalization" class="perzonalization"></div><script type='text/javascript'>var productDetailsForPrz = {{ product | json }};var basketDetailsForPrz = {{ cart | json }};var filterDetailsForPrz = {{ collection | json }};var detailsForPrz = { userId: '{{ customer.id }}', language: '{{ shop.locale }}', currency:'{{ shop.currency }}' };var searchDetailsForPrz = {{ search.results | json }};if(productDetailsForPrz) { productDetailsForPrz.collections = []; }{% for collection in product.collections %}   if(productDetailsForPrz) { productDetailsForPrz.collections.push("{{ collection.title }}") }{% endfor %}if (filterDetailsForPrz) { filterDetailsForPrz.products = []; }{% for product in collection.products %}   if(filterDetailsForPrz) { filterDetailsForPrz.products.push({ id:"{{ product.id }}", handle:"{{ product.handle }}" }) }{% endfor %}</script><!--Do not modify or delete this comment PERZONALIZATION-END-->

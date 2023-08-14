@@ -96,6 +96,9 @@
 									</div>
 								</div>
 							</div>
+							<div class="comp-sns-alignment" style="display: none;">
+								{% render 'socialplus-association', providers: 'line', not_alert_when_dissociate_all_providers: 'true' %}
+							</div><!-- comp-sns-alignment -->
 							<div class="comp-admin-button mt">
 								<a href="{{ routes.account_addresses_url }}" class=" "><span class=" ">住所情報の追加・変更</span></a>
 							</div>

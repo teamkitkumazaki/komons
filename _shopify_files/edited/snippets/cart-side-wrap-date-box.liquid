@@ -6,7 +6,7 @@
   {% assign dayTime = dayTime | plus: 0 %}
   {% assign displayIndex = 0 | plus: 0 %}
   {% assign dateWeekToday = "today" | date: '%s' | plus: plusSeconds | date: "%w" | plus: 0  %}
-  {% assign holidayArray = "2022-12-30,2022-12-31,2023-01-01,2023-01-02,,2023-01-03,,2023-01-04,,2023-01-09,,2023-02-11" %}
+  {% assign holidayArray = "2023-05-03,2023-05-04,2023-05-05,2023-07-17,2023-08-11,2023-09-18,2023-10-09,2023-11-03,2023-11-23" %}
   {% if dayTime < 10 %}
     <script>console.log('10時以前')</script>
     {% comment %} 10時までの注文 {% endcomment %}
@@ -94,17 +94,21 @@
   {% assign deriveryBufferDate = deriveryBufferDate | plus: 1 %}
   {% endunless %}
   {%- else -%}
+  <script> console.log('{{ displayIndex }}')</script>
   {% if displayIndex == 1 %}
   {% capture secondDay %}{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}{% endcapture %}
   {% assign displayIndex = displayIndex | plus: 1 %}
+  {% elsif displayIndex == 7 %}
+  {% capture okinawaDay %}{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}{% endcapture %}
+  {% assign displayIndex = displayIndex | plus: 1 %}
   {%- endif -%}
   <option value="{{dateValue}}">{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}</option>
+  {% assign displayIndex = displayIndex | plus: 1 %}
   {%- endif -%}
   {%- endfor -%}
 </select>
 <input id="dateInput" type="hidden" name="attributes[配送希望日:]" value="指定なし">
-<p class="example">※お届け先が【四国/九州/中国地方、北海道/青森県/秋田県/和歌山県/沖縄県】の場合、最短指定日は{{secondDay}}になります。</p>
-<p class="example" style="display: none;">何時:{{dayTime}}時 / 曜日：{{dateWeekToday}} / 配送日：{{bufferDate}}日後から</p>
+<p class="example">※お届け先が【四国/九州/中国地方、北海道/青森県/秋田県/和歌山県】の場合、最短指定日は{{secondDay}}になります。沖縄県の場合、最短指定日は{{okinawaDay}}になります。</p>
 <script>
 var deliveryDate = $('#deliveryDateBox');
 
