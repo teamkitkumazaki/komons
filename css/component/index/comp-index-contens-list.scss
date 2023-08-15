@@ -34,3 +34,27 @@
     }
   }
 }
+
+@media screen and (min-width: 720px){
+  .comp-index-contens-list{
+    .contents_item{
+      padding: 30px 30px;
+      a{
+        .img_wrap{
+          margin-bottom: 35px;
+        }
+        .txt_wrap{
+          .ttl_wrap{
+            margin-bottom: 12px;
+            .ttl{
+              font-size: 1.8rem;
+            }
+          }
+          .description{
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}

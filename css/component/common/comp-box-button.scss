@@ -26,3 +26,25 @@
     }
   }
 }
+
+@media screen and (min-width: 720px){
+  .comp-box-button{
+    max-width: 80%;
+    margin: 0 auto;
+    .button{
+      padding: 20px 0;
+      .txt{
+        padding-right: 10px;
+        font-size: 1.6rem;
+      }
+      .arrow{
+        width: 24px;
+        height: 24px;
+        svg{
+          width: 4px;
+          fill: #fff;
+        }
+      }
+    }
+  }
+}

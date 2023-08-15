@@ -67,12 +67,10 @@
 			}
 		}
 		.right_wrap{
-			@media screen and (max-width: 719px){
-				@include flexSet;
-				align-items: center;
-				justify-content: space-between;
-				width: 100%;
-			}
+			@include flexSet;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
 		}
 		.header_right{
 			order: 1;

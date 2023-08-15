@@ -44,6 +44,9 @@
         padding: 17px 17px 80px;
         height: 74vw;
         border-bottom: 1px solid $borderColor;
+        @media screen and (min-width: 720px){
+          height: 48vw;
+        }
         .item_thumb{
           display: block;
           margin-bottom: 15px;

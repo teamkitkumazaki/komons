@@ -131,26 +131,18 @@ $(function() {
 
     if (document.getElementById('headerRolledSp')) {
     }else{
-      if(window.innerWidth < 720){
-        $('header').addClass('rolled_sp');
-      }
+      $('header').addClass('rolled_sp');
     }
 
     function afterScroll(noAnimate) {
-      if(window.innerWidth > 720){
-        $('header').addClass('rolled');
-      }else{
-        $('header').addClass('rolled_sp');
-      }
+      $('header').addClass('rolled');
+      $('header').addClass('rolled_sp');
       scrollSwitch = 1;
     };
 
     function beforeScroll() {
-      if(window.innerWidth > 720){
-        $('header').removeClass('rolled');
-      }else{
-        $('header').removeClass('rolled_sp');
-      }
+      $('header').removeClass('rolled');
+      $('header').removeClass('rolled_sp');
       scrollSwitch = 0;
     };
 
@@ -1732,6 +1724,14 @@ $(function() {
       prevArrow: prevButtonHTML,
       nextArrow: nextButtonHTML,
       responsive: [
+        {
+          breakpoint: 1100,
+          settings: {
+            speed: 600,
+            slidesToShow: 2,
+            draggable: true,
+          }
+        },
         {
           breakpoint: 750,
           settings: {

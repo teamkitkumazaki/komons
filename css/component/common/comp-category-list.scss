@@ -32,3 +32,12 @@
     }
   }
 }
+
+@media screen and (min-width: 720px){
+  .comp-category-list{
+    .category_item{
+      width: calc(100% / 3);
+      padding: 17px 17px 22px;
+    }
+  }
+}

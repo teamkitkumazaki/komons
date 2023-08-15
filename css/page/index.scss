@@ -204,6 +204,7 @@
 			}
 		}
 	}
+
 }
 @media screen and (max-width: 1150px) {
 	.page-index {
@@ -296,7 +297,7 @@
 			.concept_wrap {
 				@include waku;
 				width: calc(100% - 100px);
-				padding: 100px 50px 80px;
+				padding: 70px 50px 70px;
 			}
 
 			.txt_wrap {
@@ -306,7 +307,7 @@
 
 				h2 {
 					margin-left: 0;
-					margin-bottom: 50px;
+					margin-bottom: 30px;
 
 					span {
 						display: inline;
@@ -354,7 +355,7 @@
 		}
 	}
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 720px) {
 	.page-index {
 		.section-main {
 			width: 100%;
@@ -529,13 +530,6 @@
 						}
 					}
 				}
-			}
-		}
-
-		.section-pickup{
-			.section_ttl{
-				width: 84vw !important;
-				padding-top: 50px;
 			}
 		}
 
