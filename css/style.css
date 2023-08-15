@@ -324,28 +324,270 @@ img {
   transition: background 0.3s, border 0.3s, color 0.3s;
   will-change: background, border, color;
 }
-.header.rolled_sp .header_inner {
-  background: #fff;
-  border-top: 3px solid #00381f;
-}
-.header.rolled_sp .header_inner .header_menu button svg {
-  fill: #00381f;
-}
-.header.rolled_sp .header_inner .header_left .header_logo a svg {
-  fill: #00381f;
-}
-.header.rolled_sp .header_inner .header_right .header_guide .nav_item a .icon svg {
-  fill: #00381f;
-}
-.header.rolled_sp .header_inner .header_right .header_guide .nav_item a .txt {
-  display: none;
-}
-.header.rolled_sp .header_inner .header_right .header_guide .nav_item a .cart_item_num {
-  background-color: #00381f;
-  color: #fff;
-  border: 1px solid #fff;
+@media screen and (max-width: 1099px) {
+  .header.rolled_sp .header_inner {
+    background: #fff;
+    border-top: 3px solid #00381f;
+  }
+  .header.rolled_sp .header_inner .header_menu button svg {
+    fill: #00381f;
+  }
+  .header.rolled_sp .header_inner .header_left .header_logo a svg {
+    fill: #00381f;
+  }
+  .header.rolled_sp .header_inner .header_right .header_guide .nav_item a .icon svg {
+    fill: #00381f;
+  }
+  .header.rolled_sp .header_inner .header_right .header_guide .nav_item a .txt {
+    display: none;
+  }
+  .header.rolled_sp .header_inner .header_right .header_guide .nav_item a .cart_item_num {
+    background-color: #00381f;
+    color: #fff;
+    border: 1px solid #fff;
+  }
 }
 
+@media screen and (min-width: 1100px) {
+  .header .header_inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 35px;
+  }
+  .header .header_inner .header_left {
+    position: static;
+    display: block;
+    margin: 0;
+    margin-left: 35px;
+    width: 155px;
+    height: auto;
+  }
+  .header .header_inner .header_left .header_logo {
+    width: 155px;
+    margin-right: 0px;
+    height: auto;
+  }
+  .header .header_inner .header_left .header_logo a {
+    display: block;
+  }
+  .header .header_inner .header_left .header_logo a svg {
+    width: 100%;
+    fill: #fff;
+    -webkit-transition: fill 0.3s;
+    transition: fill 0.3s;
+    will-change: fill;
+  }
+  .header .header_inner .right_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: calc(100% - 200px);
+  }
+  .header .header_inner .header_right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    background: #1b4e37;
+    padding: 13px 25px 13px;
+    border-radius: 120px;
+    margin-right: 10px;
+  }
+  .header .header_inner .header_right .header_navigation {
+    display: block;
+    margin-top: 0px;
+  }
+  .header .header_inner .header_right .header_navigation ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header .header_inner .header_right .header_navigation ul li {
+    position: relative;
+    margin-right: 20px;
+    padding-right: 20px;
+  }
+  .header .header_inner .header_right .header_navigation ul li::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 1px;
+    height: 15px;
+    background: #f9f6f3;
+  }
+  .header .header_inner .header_right .header_navigation ul li a {
+    display: block;
+    font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    font-size: 1.8rem;
+    color: inherit;
+    color: #fff;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+    will-change: color;
+  }
+  .header .header_inner .header_right .header_navigation ul li a:hover {
+    opacity: 0.75;
+  }
+  .header .header_inner .header_right .header_guide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header .header_inner .header_right .header_guide .nav_item {
+    position: relative;
+    margin-right: 10px;
+  }
+  .header .header_inner .header_right .header_guide .nav_item::after {
+    display: none;
+  }
+  .header .header_inner .header_right .header_guide .nav_item:nth-last-of-type(1) {
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+  .header .header_inner .header_right .header_guide .nav_item:nth-last-of-type(1)::after {
+    display: none;
+  }
+  .header .header_inner .header_right .header_guide .nav_item a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    color: #fff;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+    will-change: color;
+  }
+  .header .header_inner .header_right .header_guide .nav_item a .icon {
+    display: block;
+    width: 22px;
+    margin-right: 5px;
+  }
+  .header .header_inner .header_right .header_guide .nav_item a .txt {
+    display: none;
+  }
+  .header .header_inner .header_right .header_guide .nav_item a .cart_item_num {
+    /*position: static;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-left: 10px;
+    background-color: #fff;
+    color: $basicGreen;
+    line-height: 22px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: 0px solid $basicGreen;*/
+  }
+  .header .header_inner .header_menu {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    position: static;
+    display: block;
+    width: 49px;
+    height: 49px;
+    margin-right: 35px;
+  }
+  .header .header_inner .header_menu button {
+    position: relative;
+    display: block;
+    width: 49px;
+    height: 49px;
+    background: #1b4e37;
+    border-radius: 50%;
+  }
+  .header .header_inner .header_menu button span {
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+  }
+  .header .header_inner .header_menu button span:nth-of-type(1) {
+    top: 20px;
+  }
+  .header .header_inner .header_menu button span:nth-of-type(2) {
+    bottom: 20px;
+  }
+  .header .header_inner .header_menu button svg {
+    display: none;
+  }
+  .header.rolled .header_inner {
+    background: transparent;
+    border-top: 0px solid #00381f;
+  }
+  .header.rolled .header_inner .header_menu button svg {
+    fill: #fff;
+  }
+  .header.rolled .header_inner .header_left .header_logo a svg {
+    fill: #00381f;
+  }
+}
 .footer {
   padding: 100px 0 100px;
   position: relative;
