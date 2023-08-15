@@ -1,0 +1,36 @@
+.comp-index-contens-list{
+  width: 100vw;
+  margin-left: -7vw;
+  border-top: 1px solid $borderColor;
+  @include flexSet;
+  .contents_item{
+    width: 50%;
+    border-right: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+    padding: 17px 17px;
+    box-sizing: border-box;
+    a{
+      display: block;
+      color: inherit;
+      .img_wrap{
+        display: block;
+        margin-bottom: 20px;
+      }
+      .txt_wrap{
+        .ttl_wrap{
+          @include flexSet;
+          justify-content: flex-start;
+          margin-bottom: 7px;
+          .ttl{
+            font-size: 1.5rem;
+          }
+        }
+        .description{
+          display: block;
+          font-size: 1.2rem;
+          line-height: 2;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.page-index {
+	width: 100%;
+	overflow: hidden;
+	.section-pickup{
+		padding-top: 40px;
+	}
+	.section-products{
+		padding-top: 40px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid $borderColor;
+		width: 100%;
+		overflow: hidden;
+		.comp-box-button{
+			margin-top: 20px;
+		}
+	}
+	.section-gift{
+		position: relative;
+		padding-top: 40px;
+		padding-bottom: 130px;
+		border-bottom: 1px solid $borderColor;
+		.ttl_desc{
+			width: 70%;
+		}
+	}
+	.section-laboratory{
+		padding-top: 40px;
+		padding-bottom: 40px;
+		border-bottom: 1px solid $borderColor;
+		.lab_flex{
+			.lab_img{
+				margin-bottom: 30px;
+			}
+			.lab_txt{
+				.comp-box-button{
+					margin-top: -10px;
+				}
+			}
+		}
+	}
+	.section-contents{
+		padding-top: 40px;
+	}
+	.section-category{
+		padding-top: 40px;
+	}
+	.section-instagram{
+		.insta_ttl{
+			font-size: 3.2rem;
+			margin-bottom: 40px;
+		}
+	}
+}

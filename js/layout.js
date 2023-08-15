@@ -1717,4 +1717,56 @@ $(function() {
     switchAddressFunction();
   }
 
+  var prevButtonHTML = '<button class="comp-slider-caret prev-arrow"><span class="circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07"><polygon class="cls-1" points="6.46 1.41 5.04 0 0 5.04 5.04 10.07 6.46 8.66 2.83 5.04 6.46 1.41"/></svg></span></button>';
+  var nextButtonHTML = '<button class="comp-slider-caret next-arrow"><span class="circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07"><polygon class="cls-1" points="0 8.66 1.41 10.07 6.46 5.03 1.41 0 0 1.41 3.62 5.04 0 8.66"/></svg></span></button>';
+
+  if (document.getElementById('productSlider')) {
+    $('#productSlider').slick({
+      accessibility: false,
+      infinite: true,
+      dots: false,
+      slidesToShow: 3,
+      centerMode: false,
+      autoplay: true,
+      speed: 600,
+      prevArrow: prevButtonHTML,
+      nextArrow: nextButtonHTML,
+      responsive: [
+        {
+          breakpoint: 750,
+          settings: {
+            speed: 600,
+            slidesToShow: 1,
+            draggable: true,
+          }
+        }
+      ]
+    });
+  }
+
+  if (document.getElementById('giftSlider')) {
+    $('#giftSlider').slick({
+      accessibility: false,
+      infinite: true,
+      dots: false,
+      slidesToShow: 3,
+      centerMode: false,
+      autoplay: true,
+      speed: 600,
+      prevArrow: prevButtonHTML,
+      nextArrow: nextButtonHTML,
+      responsive: [
+        {
+          breakpoint: 750,
+          settings: {
+            speed: 600,
+            slidesToShow: 2,
+            draggable: true,
+          }
+        }
+      ]
+    });
+  }
+
+
 });

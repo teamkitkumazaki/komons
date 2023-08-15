@@ -1,0 +1,243 @@
+.comp-index-gift-slider{
+  width: 100vw;
+  margin-left: -7vw;
+  .slick-slider{
+    width: 100%;
+    position: relative;
+  }
+  .comp-slider-caret{
+    top: -56px;
+    bottom: unset;
+    padding: 10px;
+    border: 1px solid $borderColor;
+    border-bottom: 0px;
+    border-right: 0px;
+    .circle{
+      width: 36px;
+      height: 36px;
+    }
+    &.prev-arrow{
+      left: unset;
+      right: 56px;
+    }
+    &.next-arrow{
+      left: unset;
+      right: 0;
+    }
+  }
+  .slick-track{
+    min-width: 100%;
+    @include flexSet;
+    &::after{
+      display: block;
+      content: "";
+      clear: both;
+    }
+    .slick-slide{
+      float: left;
+      margin: 0;
+      box-sizing: border-box;
+      border-right: 1px solid $borderColor;
+      border-top: 1px solid $borderColor;
+      .list_item{
+        position: relative;
+        padding: 17px 17px 80px;
+        height: 74vw;
+        border-bottom: 1px solid $borderColor;
+        .item_thumb{
+          display: block;
+          margin-bottom: 15px;
+          img{
+            width: 100%;
+            height: auto;
+          }
+          &.soldout{
+            position: relative;
+            &::before{
+              display: block;
+              content: "SOLD OUT";
+              color: #fff;
+              @include libre-r;
+              font-size: 1.6rem;
+              letter-spacing: 0.5px;
+              text-align: center;
+              position: absolute;
+              pointer-events: none;
+              background-color: rgba(70, 70, 70, 0.8);
+              width: 100%;
+              height: 100%;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              margin: auto;
+              z-index: 30;
+              line-height: 44vw;
+              @media screen and (min-width: 720px){
+                line-height: 30vw;
+              }
+              @media screen and (min-width: 980px){
+                font-size: 1.8rem;
+                line-height: 28vw;
+              }
+              @media screen and (min-width: 1100px){
+                line-height: 18vw;
+              }
+            }
+          }
+        }
+        .txt_wrap{
+          .name{
+            display: block;
+            color: inherit;
+            font-size: 1.4rem;
+            line-height: 1.5;
+            letter-spacing: 0em;
+            text-indent: -0.1em;
+            &.en{
+              @include libre-r;
+              font-size: 1.6rem;
+              letter-spacing: 0.5px;
+              display: block;
+              text-indent: 0em;
+            }
+          }
+          .added{
+            width: 100%;
+            display: block;
+            font-size: 1.0rem;
+            line-height: 1.6;
+            letter-spacing: 0.08em;
+            transform: scale(1);
+            transform-origin: left top;
+            margin-top: 7px;
+            &.list_none{
+              display: none;
+            }
+          }
+          .price{
+            margin-top: 12px;
+            display: block;
+            font-size: 1.2rem;
+            letter-spacing: 0.08em;
+          }
+        }
+        .product_desc{
+          display: none;
+        }
+        .content_icon{
+          @include flexSet;
+          justify-content: flex-start;
+          width: 125%;
+          transform: scale(0.8);
+          transform-origin: left top;
+          margin-top: 20px;
+          .icon{
+            display: block;
+            border: 1px solid $insertGreen;
+            box-sizing: border-box;
+            padding: 4px 7px 7px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+            border-radius:2px;
+            span{
+              position: relative;
+              display: inline-block;
+              font-size: 1.0rem;
+              letter-spacing: 0.1px;
+              padding-left: 0 !important;
+              &::after{
+                display: block;
+                font-size: 1.0rem;
+                font-family: inherit;
+                color: #00381f;
+                letter-spacing: 0em;
+              }
+              &.dish{
+                &::after{
+                  content: "食器用洗剤";
+                }
+              }
+              &.alchohol{
+                &::after{
+                  content: "アルコールスプレー";
+                }
+              }
+              &.relax{
+                &::after{
+                  content: "リラックスミスト";
+                }
+              }
+              &.refresh{
+                &::after{
+                  content: "リフレッシュミスト";
+                }
+              }
+              &.multi{
+                &::after{
+                  content: "マルチクリーナー";
+                }
+              }
+              &.sanitizer{
+                &::after{
+                  content: "除菌アルコールスプレー";
+                }
+              }
+              &.hand{
+                &::after{
+                  content: "ハンドソープ";
+                }
+              }
+              &.fabric, &.mistmini, &.nerori, &.hakka, &.kuromoji,&.housyou{
+                &::after{
+                  content: "除菌消臭ミスト";
+                }
+              }
+              &.fabric_mini{
+                &::after{
+                  font-size: 12px;
+                  content: "除菌消臭ミスト(Mini)";
+                }
+              }
+              &.handmilk{
+                &::after{
+                  content: "ハンドミルク";
+                }
+              }
+              &.toilet{
+                &::after{
+                  content: "トイレクリーナー";
+                }
+              }
+              &.towel{
+                &::after{
+                  content: "ウォッシュタオル";
+                }
+              }
+              &.facetowel{
+                &::after{
+                  content: "フェイスタオル";
+                }
+              }
+              &.bath{
+                &::after{
+                  content: "バスクリーナー";
+                }
+              }
+            }
+            &:nth-last-of-type(1){
+              margin-right: 0;
+            }
+          }
+        }
+        .comp-arrow-link{
+          position: absolute;
+          left:0;
+          right:0;
+          bottom:0;
+          margin: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.comp-new-section-ttl{
+  margin-bottom: 35px;
+  hgroup{
+    .title_en{
+      display: block;
+      font-size: 1.2rem;
+      @include libre-r;
+      margin-bottom: 12px;
+    }
+    .title_jp{
+      font-size: 2.2rem;
+      letter-spacing: 0.04em;
+      &.indent{
+        text-indent: -0.2em;
+      }
+    }
+  }
+  .ttl_desc{
+    margin-top: 15px;
+    font-size: 1.3rem;
+    line-height: 2;
+  }
+  .comp-box-button{
+    position: absolute;
+    left:7vw;
+    right:7vw;
+    bottom: 40px;
+    margin: auto;
+  }
+}

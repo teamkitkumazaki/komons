@@ -1,5 +1,5 @@
 .comp-arrow-link{
-  a{
+  a, .link_button{
     display: block;
     width: 100%;
     text-align: center;
@@ -42,7 +42,7 @@
 
 @media screen and (max-width: 730px){
   .comp-arrow-link{
-    a{
+    a, .link_button{
       padding: 13px 0;
       font-size: 12px;
       letter-spacing: 0.3px;
