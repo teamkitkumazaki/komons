@@ -5,6 +5,8 @@
     justify-content: center;
     color: inherit;
     border: 1px solid $basicGreen;
+    background-color: $basicGreen;
+    color: #fff;
     padding: 15px 0;
     .txt{
       padding-right: 10px;
@@ -14,14 +16,14 @@
       display: block;
       width: 22px;
       height: 22px;
-      background: $basicGreen;
+      background: #fff;
       border-radius: 50%;
       @include flexSet;
       align-items: center;
       justify-content: center;
       svg{
         width: 4px;
-        fill: #fff;
+        fill: $basicGreen;
       }
     }
   }
@@ -33,6 +35,8 @@
     margin: 0 auto;
     .button{
       padding: 20px 0;
+      background: #fff;
+      color: $basicGreen;
       .txt{
         padding-right: 10px;
         font-size: 1.6rem;
@@ -40,6 +44,7 @@
       .arrow{
         width: 24px;
         height: 24px;
+        background: $basicGreen;
         svg{
           width: 4px;
           fill: #fff;

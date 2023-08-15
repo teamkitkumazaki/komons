@@ -199,3 +199,131 @@
     }
   }
 }
+@media screen and (min-width: 1100px){
+  .comp-index-prod-slider{
+    .slick-slider{
+      width: 100%;
+      margin-left: 0;
+    }
+    .slick-list{
+      overflow: visible;
+    }
+    .comp-slider-caret{
+      top: -100px;
+      bottom: unset;
+      &.prev-arrow{
+        left: unset;
+        right: 65px;
+      }
+      &.next-arrow{
+        right: 0;
+      }
+    }
+    .slick-track{
+      min-width: 100%;
+      @include flexSet;
+      &::after{
+        display: block;
+        content: "";
+        clear: both;
+      }
+      .slick-slide{
+        border: 0px;
+        border-right: 1px solid #f1f1f1;
+        .box_inner{
+          position: relative;
+          padding: 0 30px 80px;
+          a{
+            .img_wrap{
+              margin-bottom: 35px;
+            }
+            .txt_wrap{
+              display: block;
+              .prod_category{
+                display: block;
+                font-size: 1.2rem;
+                margin-bottom: 7px;
+              }
+              .prod_name{
+                font-size: 2.4rem;
+                margin-bottom: 10px;
+              }
+              .prod_desc{
+                font-size: 1.3rem;
+              }
+            }
+            .comp-arrow-link{
+              left:30px;
+              right:30px;
+              bottom:0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*
+@media screen and (min-width: 1100px){
+  .comp-index-prod-slider{
+    .slick-slider{
+      width: 100%;
+      margin-left: 0;
+    }
+    .slick-list{
+      overflow: visible;
+    }
+    .comp-slider-caret{
+      top: -100px;
+      bottom: unset;
+      &.prev-arrow{
+        left: unset;
+        right: 65px;
+      }
+      &.next-arrow{
+        right: 0;
+      }
+    }
+    .slick-track{
+      min-width: 100%;
+      @include flexSet;
+      &::after{
+        display: block;
+        content: "";
+        clear: both;
+      }
+      .slick-slide{
+        .box_inner{
+          position: relative;
+          padding: 25px 25px 80px;
+          a{
+            .img_wrap{
+              margin-bottom: 35px;
+            }
+            .txt_wrap{
+              display: block;
+              .prod_category{
+                display: block;
+                font-size: 1.2rem;
+                margin-bottom: 7px;
+              }
+              .prod_name{
+                font-size: 2.4rem;
+                margin-bottom: 10px;
+              }
+              .prod_desc{
+                font-size: 1.3rem;
+              }
+            }
+            .comp-arrow-link{
+              left:25px;
+              right:25px;
+              bottom:25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+*/

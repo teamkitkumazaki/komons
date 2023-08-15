@@ -41,3 +41,48 @@
     }
   }
 }
+
+@media screen and (min-width: 1110px){
+  .comp-category-list{
+    width: 100vw;
+    margin-left: -7vw;
+    border-top: 0px solid $borderColor;
+    border-left: 0px solid $borderColor;
+    @include flexSet;
+    justify-content: flex-start;
+    margin-bottom: -50px;
+    .category_item{
+      width: 30%;
+      margin-right: 5%;
+      border-left: 0px solid $borderColor;
+      border-right: 0px solid $borderColor;
+      border-bottom: 0px solid $borderColor;
+      margin-bottom: 50px;
+      &:nth-of-type(3n){
+        margin-right: 0;
+      }
+      padding: 0px;
+      box-sizing: border-box;
+      a{
+        display: block;
+        color: inherit;
+        .img_wrap{
+          display: block;
+          margin-bottom: 25px;
+        }
+        .txt_wrap{
+          display: block;
+          .ttl_en{
+            display: block;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+          }
+          .ttl_jp{
+            display: block;
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}
