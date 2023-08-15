@@ -1,31 +1,37 @@
-.comp-index-contens-list{
+.comp-index-contens-list {
   width: 100vw;
   margin-left: -7vw;
   border-top: 1px solid $borderColor;
   @include flexSet;
-  .contents_item{
+
+  .contents_item {
     width: 50%;
     border-right: 1px solid $borderColor;
     border-bottom: 1px solid $borderColor;
-    padding: 17px 17px;
+    padding: 17px;
     box-sizing: border-box;
-    a{
+
+    a {
       display: block;
       color: inherit;
-      .img_wrap{
+
+      .img_wrap {
         display: block;
         margin-bottom: 20px;
       }
-      .txt_wrap{
-        .ttl_wrap{
+
+      .txt_wrap {
+        .ttl_wrap {
           @include flexSet;
           justify-content: flex-start;
           margin-bottom: 7px;
-          .ttl{
+
+          .ttl {
             font-size: 1.5rem;
           }
         }
-        .description{
+
+        .description {
           display: block;
           font-size: 1.2rem;
           line-height: 2;
@@ -34,23 +40,65 @@
     }
   }
 }
+@media screen and (min-width: 720px) {
+  .comp-index-contens-list {
+    .contents_item {
+      padding: 30px;
 
-@media screen and (min-width: 720px){
-  .comp-index-contens-list{
-    .contents_item{
-      padding: 30px 30px;
-      a{
-        .img_wrap{
+      a {
+        .img_wrap {
           margin-bottom: 35px;
         }
-        .txt_wrap{
-          .ttl_wrap{
+
+        .txt_wrap {
+          .ttl_wrap {
             margin-bottom: 12px;
-            .ttl{
+
+            .ttl {
               font-size: 1.8rem;
             }
           }
-          .description{
+
+          .description {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1100px) {
+  .comp-index-contens-list {
+    width: 100%;
+    margin-left: 0;
+    border-top: 1px solid $borderColor;
+    border-left: 1px solid $borderColor;
+
+    .contents_item {
+      width: 25%;
+      border-right: 1px solid $borderColor;
+      border-bottom: 1px solid $borderColor;
+      padding: 20px;
+
+      a {
+        display: block;
+        color: inherit;
+
+        .img_wrap {
+          display: block;
+          margin-bottom: 25px;
+        }
+
+        .txt_wrap {
+          .ttl_wrap {
+            margin-bottom: 10px;
+
+            .ttl {
+              font-size: 1.8rem;
+            }
+          }
+
+          .description {
             font-size: 1.4rem;
           }
         }

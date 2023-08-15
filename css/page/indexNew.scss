@@ -46,6 +46,13 @@
 	}
 	.section-category{
 		padding-top: 40px;
+		.comp-new-section-ttl{
+			.ttl_desc{
+				br{
+					display: none;
+				}
+			}
+		}
 	}
 	.section-instagram{
 		.insta_ttl{
@@ -108,5 +115,114 @@
 			}
 		}
 	}
+}
 
+@media screen and (min-width: 1100px){
+	.page-index {
+		.section-pickup{
+			padding-top: 80px;
+			padding-bottom: 120px;
+			border-bottom: 0px solid $borderColor;
+		}
+		.section-products{
+			padding-top: 0px;
+			padding-bottom: 60px;
+			border-bottom: 0px solid $borderColor;
+			.comp-box-button{
+				margin-top: 60px;
+				max-width: 600px;
+			}
+		}
+		.section-gift{
+			padding-top: 100px;
+			padding-bottom: 120px;
+			border-bottom: 0px;
+			.gift_flex{
+				@include flexSet;
+				justify-content:space-between;
+				.comp-new-section-ttl{
+					width: 25%;
+					margin-top: 20px;
+					.ttl_desc{
+						br{
+							display: none;
+						}
+					}
+					.comp-box-button{
+						margin: 25px 0 0;
+						.button{
+							width: 100%;
+							padding: 15px 15px;
+							justify-content: space-between;
+						}
+					}
+				}
+				.comp-index-gift-slider{
+					width: 66% !important;
+					margin-left: 0;
+				}
+			}
+		}
+		.section-laboratory{
+			padding-top: 0px;
+			padding-bottom: 120px;
+			border-bottom: 0px;
+			.lab_flex{
+				@include flexSet;
+				align-items: center;
+				justify-content: space-between;
+				.lab_img{
+					width: 48%;
+					margin-bottom: 0px;
+				}
+				.lab_txt{
+					width: 45%;
+					.comp-new-section-ttl{
+						margin-bottom: 30px;
+					}
+					.comp-box-button{
+						width: 220px;
+						margin-top: 0;
+						margin-left: 0;
+						a{
+							padding: 15px;
+							justify-content: space-between;
+						}
+					}
+				}
+			}
+		}
+		.section-contents{
+			padding-top: 0px;
+		}
+		.section-category{
+			padding-top: 120px;
+			padding-bottom: 120px;
+			border-bottom: 1px solid $borderColor;
+			.section_inner_new{
+				@include flexSet;
+				justify-content: space-between;
+				.comp-new-section-ttl{
+					width: 25%;
+					margin-top: 20px;
+					.ttl_desc{
+						br{
+							display: block;
+						}
+					}
+				}
+				.comp-category-list{
+					width: 70%;
+					border-left: 1px solid $borderColor;
+				}
+			}
+		}
+		.section-instagram{
+			padding-top: 100px;
+			.insta_ttl{
+				font-size: 4.0rem;
+				margin-bottom: 50px;
+			}
+		}
+	}
 }
