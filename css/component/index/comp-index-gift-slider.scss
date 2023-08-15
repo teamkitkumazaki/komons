@@ -9,7 +9,7 @@
     top: -56px;
     bottom: unset;
     padding: 10px;
-    border: 1px solid $borderColor;
+    border: 1px solid #f1f1f1;
     border-bottom: 0px;
     border-right: 0px;
     .circle{
@@ -37,13 +37,13 @@
       float: left;
       margin: 0;
       box-sizing: border-box;
-      border-right: 1px solid $borderColor;
-      border-top: 1px solid $borderColor;
+      border-right: 1px solid #f1f1f1;
+      border-top: 1px solid #f1f1f1;
       .list_item{
         position: relative;
         padding: 17px 17px 80px;
         height: 74vw;
-        border-bottom: 1px solid $borderColor;
+        border-bottom: 1px solid #f1f1f1;
         @media screen and (min-width: 720px){
           height: 48vw;
         }
@@ -248,13 +248,13 @@
 @media screen and (min-width: 1100px){
   .comp-index-gift-slider{
     width: 66%;
-    border-left: 1px solid $borderColor;
+    border-left: 1px solid #f1f1f1;
     margin-left: 0;
     .comp-slider-caret{
       top: 7.5vw;
       bottom: unset;
       padding: 0px;
-      border: 0px solid $borderColor;
+      border: 0px solid #f1f1f1;
       .circle{
         width: 50px;
         height: 50px;
@@ -322,7 +322,7 @@
       top: 7.5vw;
       bottom: unset;
       padding: 0px;
-      border: 0px solid $borderColor;
+      border: 0px solid #f1f1f1;
       .circle{
         width: 50px;
         height: 50px;
@@ -339,14 +339,40 @@
     .slick-track{
       display: block;
       .slick-slide{
-        border: 0px solid $borderColor;
-        border-bottom: 0px solid $borderColor;
+        border: 0px solid #f1f1f1;
+        border-bottom: 0px solid #f1f1f1;
         border-right: 1px solid #f1f1f1;
         .list_item{
           position: relative;
           padding: 0px 30px 70px;
           height: 26vw;
-          border-bottom: 0px solid $borderColor;
+          border-bottom: 0px solid #f1f1f1;
+          .item_thumb{
+            position: relative;
+            &::after {
+              display: block;
+              content: "";
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              margin: auto;
+              background-color: rgba(#464646, 0.8);
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: 160px;
+              background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1614236875/common/viewmore_iorulq.png);
+              opacity: 0;
+              pointer-events: none;
+              transition: opacity 0.3s;
+            }
+            &:hover{
+              &::after{
+                opacity: 1;
+              }
+            }
+          }
           .txt_wrap{
             .name{
               font-size: 1.6rem;

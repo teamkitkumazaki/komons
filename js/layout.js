@@ -221,20 +221,7 @@ $(function() {
               }
             }
           }
-          if (document.getElementById('index')) {
-            var productWrap = $('#product_wrap');
-            var topGift = $('#topGift');
-            var scroll = $(window).scrollTop();
-            if(scroll > productWrap.offset().top){
-              if(scroll < topGift.offset().top){
-                $('header').addClass('colored');
-              }else{
-                $('header').removeClass('colored');
-              }
-            }else{
-              $('header').removeClass('colored');
-            }
-          }
+
           if (document.getElementById('concept')) {
             $("section").each(function() {
               var sectionimgPos = $(this).offset().top;
@@ -247,31 +234,7 @@ $(function() {
               };
             });
           }
-          if (document.getElementById('index')) {
-            $("section").each(function() {
-              var sectionimgPos = $(this).offset().top;
-              var sectionscroll = $(window).scrollTop();
-              var windowHeight = $(window).height();
-              if (sectionscroll > sectionimgPos - windowHeight + windowHeight) {
-                var setClass = $(this).attr('id');
-                $('body').removeClass('main topConcept product01 product02 product03 product04 product05 product06 topGift topCF topJournal instagram');
-                $('body').addClass(setClass);
-              };
-            });
-
-            $(".effect").each(function() {
-              var imgPos = $(this).offset().top;
-              var scroll = $(window).scrollTop();
-              var windowHeight = $(window).height();
-              if (scroll > imgPos - windowHeight + windowHeight / 5) {
-                var animateType = $(this).attr('animate');
-                $(this).css({
-                  'opacity': '1'
-                });
-                $(this).addClass(animateType);
-              };
-            });
-          }
+          
           if (document.getElementById('itemDetail')) {
             $("section").each(function() {
               var sectionimgPos = $(this).offset().top;

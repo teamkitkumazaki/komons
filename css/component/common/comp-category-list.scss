@@ -1,14 +1,14 @@
 .comp-category-list{
   width: 100vw;
   margin-left: -7vw;
-  border-top: 1px solid $borderColor;
+  border-top: 1px solid #f1f1f1;
   @include flexSet;
   justify-content: flex-start;
   .category_item{
     width: 50%;
-    border-right: 1px solid $borderColor;
-    border-bottom: 1px solid $borderColor;
-    padding: 17px 17px 22px;
+    border-right: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 15px 15px 22px;
     box-sizing: border-box;
     a{
       display: block;
@@ -26,7 +26,29 @@
         }
         .ttl_jp{
           display: block;
-          font-size: 1.6rem;
+          font-size: 1.5rem;
+          margin-right: 7px;
+        }
+        .ttl_wrap{
+          width: 120%;
+          @include flexSet;
+          align-items: center;
+          justify-content: flex-start;
+          .caret{
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: $basicGreen;
+            border-radius: 50%;
+            @include flexSet;
+            align-items: center;
+            justify-content: center;
+            margin-top:1px;
+            svg{
+              width: 3px;
+              fill: #fff;
+            }
+          }
         }
       }
     }
@@ -46,17 +68,17 @@
   .comp-category-list{
     width: 100vw;
     margin-left: -7vw;
-    border-top: 0px solid $borderColor;
-    border-left: 0px solid $borderColor;
+    border-top: 0px solid #f1f1f1;
+    border-left: 0px solid #f1f1f1;
     @include flexSet;
     justify-content: flex-start;
     margin-bottom: -50px;
     .category_item{
       width: 30%;
       margin-right: 5%;
-      border-left: 0px solid $borderColor;
-      border-right: 0px solid $borderColor;
-      border-bottom: 0px solid $borderColor;
+      border-left: 0px solid #f1f1f1;
+      border-right: 0px solid #f1f1f1;
+      border-bottom: 0px solid #f1f1f1;
       margin-bottom: 50px;
       &:nth-of-type(3n){
         margin-right: 0;

@@ -4,16 +4,16 @@
 	.item_wrapper {
 		@include flexSet;
 		justify-content: flex-start;
-		border-top: 1px solid $borderColor;
+		border-top: 1px solid #f4f4f4;
 		.item_box {
 			width: 50%;
-			border-bottom: 1px solid $borderColor;
-			border-right: 1px solid $borderColor;
+			border-bottom: 1px solid #f4f4f4;
+			border-right: 1px solid #f4f4f4;
 			padding: 20px 15px 45px;
 			box-sizing: border-box;
 			position: relative;
 			&:nth-of-type(2n){
-				border-right: 0px solid $borderColor;
+				border-right: 0px solid #f4f4f4;
 			}
 
 			.img_wrap {
@@ -26,6 +26,11 @@
 					transition: opacity 0.3s;
 					display: block;
 					position: relative;
+
+					img{
+						width: 100% !important;
+						height: auto;
+					}
 
 					&.soldout{
 						position: relative;
@@ -159,19 +164,19 @@
 		.item_wrapper {
 			@include flexSet;
 			justify-content: flex-start;
-			border-top: 1px solid $borderColor;
+			border-top: 1px solid #f4f4f4;
 			.item_box {
 				width: calc(100% / 3);
-				border-bottom: 1px solid $borderColor;
-				border-right: 1px solid $borderColor;
+				border-bottom: 1px solid #f4f4f4;
+				border-right: 1px solid #f4f4f4;
 				padding: 20px 15px 45px;
 				box-sizing: border-box;
 				position: relative;
 				&:nth-of-type(2n){
-					border-right: 1px solid $borderColor;
+					border-right: 1px solid #f4f4f4;
 				}
 				&:nth-of-type(3n){
-					border-right: 1px solid $borderColor;
+					border-right: 1px solid #f4f4f4;
 				}
 				.img_wrap {
 					margin-bottom: 20px;
@@ -312,8 +317,8 @@
 		.item_wrapper {
 			@include flexSet;
 			justify-content: flex-start;
-			border-top: 0px solid $borderColor;
-			border-left: 0px solid $borderColor;
+			border-top: 0px solid #f4f4f4;
+			border-left: 0px solid #f4f4f4;
 			margin-bottom: -60px;
 			.item_box {
 				width: 22%;
@@ -322,7 +327,7 @@
 				border: 0px;
 				margin-bottom: 60px;
 				&:nth-of-type(2n),&:nth-of-type(3n){
-					border-right: 0px solid $borderColor;
+					border-right: 0px solid #f4f4f4;
 				}
 				&:nth-of-type(4n){
 					margin-right: 0px;
@@ -335,6 +340,29 @@
 					a {
 						width: 100%;
 						height: auto;
+						&::after {
+							display: block;
+							content: "";
+							position: absolute;
+							top: 0;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							margin: auto;
+							background-color: rgba(#464646, 0.8);
+							background-position: center center;
+							background-repeat: no-repeat;
+							background-size: 160px;
+							background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1614236875/common/viewmore_iorulq.png);
+							opacity: 0;
+							pointer-events: none;
+							transition: opacity 0.3s;
+						}
+						&:hover {
+							&::after {
+								opacity: 1;
+							}
+						}
 					}
 				}
 
@@ -401,13 +429,13 @@
 		.item_wrapper {
 			@include flexSet;
 			justify-content: flex-start;
-			border-top: 1px solid $borderColor;
-			border-left: 1px solid $borderColor;
+			border-top: 1px solid #f4f4f4;
+			border-left: 1px solid #f4f4f4;
 			.item_box {
 				width: 25%;
 				padding: 25px 25px 50px;
 				&:nth-of-type(3n){
-					border-right: 1px solid $borderColor;
+					border-right: 1px solid #f4f4f4;
 				}
 
 				.img_wrap {

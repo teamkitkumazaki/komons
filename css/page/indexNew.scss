@@ -7,7 +7,7 @@
 	.section-products{
 		padding-top: 40px;
 		padding-bottom: 20px;
-		border-bottom: 1px solid $borderColor;
+		/*border-bottom: 1px solid $borderColor;*/
 		width: 100%;
 		overflow: hidden;
 		.comp-box-button{
@@ -18,7 +18,7 @@
 		position: relative;
 		padding-top: 40px;
 		padding-bottom: 95px;
-		border-bottom: 1px solid $borderColor;
+		/*border-bottom: 1px solid $borderColor;*/
 		.ttl_desc{
 			width: 70%;
 			br{
@@ -29,7 +29,7 @@
 	.section-laboratory{
 		padding-top: 40px;
 		padding-bottom: 40px;
-		border-bottom: 1px solid $borderColor;
+		/*border-bottom: 1px solid $borderColor;*/
 		.lab_flex{
 			.lab_img{
 				margin-bottom: 30px;
@@ -44,7 +44,7 @@
 	.section-contents{
 		padding-top: 40px;
 		padding-bottom: 20px;
-		border-bottom: 1px solid $borderColor;
+		/*border-bottom: 1px solid $borderColor;*/
 		.comp-box-button{
 			margin-top: 20px;
 		}
@@ -77,7 +77,6 @@
 		.section-products{
 			padding-top: 80px;
 			padding-bottom: 40px;
-			border-bottom: 1px solid $borderColor;
 			.comp-box-button{
 				margin-top: 40px;
 			}

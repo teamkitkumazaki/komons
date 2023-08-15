@@ -1,13 +1,13 @@
 .comp-index-contens-list {
   width: 100vw;
   margin-left: -7vw;
-  border-top: 1px solid $borderColor;
+  border-top: 1px solid #f1f1f1;
   @include flexSet;
 
   .contents_item {
     width: 50%;
-    border-right: 1px solid $borderColor;
-    border-bottom: 1px solid $borderColor;
+    border-right: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
     padding: 17px;
     box-sizing: border-box;
 
@@ -23,11 +23,28 @@
       .txt_wrap {
         .ttl_wrap {
           @include flexSet;
+          align-items: center;
           justify-content: flex-start;
           margin-bottom: 7px;
 
           .ttl {
             font-size: 1.5rem;
+            margin-right: 7px;
+          }
+          .caret{
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: $basicGreen;
+            border-radius: 50%;
+            @include flexSet;
+            align-items: center;
+            justify-content: center;
+            margin-top:1px;
+            svg{
+              width: 4px;
+              fill: #fff;
+            }
           }
         }
 
@@ -75,13 +92,13 @@
   .comp-index-contens-list {
     width: 100%;
     margin-left: 0;
-    border-top: 1px solid $borderColor;
-    border-left: 1px solid $borderColor;
+    border-top: 1px solid #f1f1f1;
+    border-left: 1px solid #f1f1f1;
 
     .contents_item {
       width: 25%;
-      border-right: 1px solid $borderColor;
-      border-bottom: 1px solid $borderColor;
+      border-right: 1px solid #f1f1f1;
+      border-bottom: 1px solid #f1f1f1;
       padding: 20px;
 
       a {
@@ -115,13 +132,13 @@
   .comp-index-contens-list {
     width: 100%;
     margin-left: 0;
-    border-top: 0px solid $borderColor;
-    border-left: 0px solid $borderColor;
+    border-top: 0px solid #f1f1f1;
+    border-left: 0px solid #f1f1f1;
     .contents_item {
       width: 22%;
       margin-right: 4%;
-      border-right: 0px solid $borderColor;
-      border-bottom: 0px solid $borderColor;
+      border-right: 0px solid #f1f1f1;
+      border-bottom: 0px solid #f1f1f1;
       padding: 0px;
       &:nth-of-type(4n){
         margin-right: 0;
@@ -131,8 +148,27 @@
         color: inherit;
 
         .img_wrap {
+          position: relative;
           display: block;
           margin-bottom: 25px;
+          &::after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: rgba(#464646, 0.8);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 160px;
+            background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1614236875/common/viewmore_iorulq.png);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+          }
         }
 
         .txt_wrap {
@@ -141,6 +177,7 @@
 
             .ttl {
               font-size: 1.8rem;
+              margin-right: 8px;
             }
           }
 
@@ -148,6 +185,13 @@
             font-size: 1.3rem;
             br{
               display: block;
+            }
+          }
+        }
+        &:hover{
+          .img_wrap{
+            &::after{
+              opacity: 1;
             }
           }
         }
