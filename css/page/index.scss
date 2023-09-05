@@ -139,6 +139,7 @@
 			width: 900px;
 			margin: 0 auto;
 			writing-mode: vertical-rl;
+			font-family: 'Shippori Mincho',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
 
 			h2 {
 				text-align: left;
@@ -446,7 +447,7 @@
 
 				p {
 					font-size: 3.6vw;
-					letter-spacing: 0.1em;
+					letter-spacing: 0.05em;
 					line-height: 2;
 					margin-right: 0;
 					margin-bottom: 15px;
@@ -454,16 +455,17 @@
 
 				.button_wrap {
 					text-align: center;
-					margin: 15px auto 0;
+					margin: 25px auto 0;
 
 					a {
 						width: 100%;
-						padding: 10px 0;
-						font-weight: bold;
-						background: transparent;
-						border: 0px solid $basicGreen;
-						letter-spacing: 0.5px;
-						text-align: left;
+						padding: 20px 0;
+						border: 1px solid $basicGreen;
+						background: $basicGreen;
+						letter-spacing: inherit;
+						text-align: center;
+						font-size: 1.4rem;
+						color: #fff;
 						.txt_wrap{
 							width: auto;
 							display: inline-block;
@@ -476,7 +478,7 @@
 								width: 15px;
 								height: 15px;
 								border-radius: 100%;
-								background: #1b4e37;
+								background: #fff;
 								top: 0;
 								bottom: 0;
 								right: 0;
@@ -491,8 +493,8 @@
 								bottom: 0;
 								right: 6px;
 								margin: auto;
-								border-top: 2px solid #fff;
-								border-right: 2px solid #fff;
+								border-top: 1px solid $basicGreen;
+								border-right: 1px solid $basicGreen;
 								transform: rotate(45deg);
 							}
 						}

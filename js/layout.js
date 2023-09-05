@@ -1,13 +1,4 @@
 $(function() {
-  /*
-  var ref = document.referrer;
-  console.log('ref:' + ref);
-  if ( ref == 'https://shop.kume.jp/') {
-    console.log('login');
-  }else{
-    console.log('not login');
-  }
-  */
 
   // スクロール + ウィンドウサイズ系の対策処理
   function scrollAnimationSet(target) {
@@ -234,7 +225,7 @@ $(function() {
               };
             });
           }
-          
+
           if (document.getElementById('itemDetail')) {
             $("section").each(function() {
               var sectionimgPos = $(this).offset().top;
@@ -1714,7 +1705,7 @@ $(function() {
       dots: false,
       slidesToShow: 3,
       centerMode: false,
-      autoplay: true,
+      autoplay: false,
       speed: 600,
       prevArrow: prevButtonHTML,
       nextArrow: nextButtonHTML,

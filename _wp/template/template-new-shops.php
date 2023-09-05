@@ -39,38 +39,38 @@
         </hgroup>
 				<div class="store_item">
 					<div class="img_wrap">
-						<a target="_blank" href="https://www.mistore.jp/store/shinjuku/shops/women_fashiongoods/goods/shopnews_list/shopnews_056.html">
-							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/isetan_display.jpg?v=1687500362">
+						<a target="_blank" href="https://www.afternoon-tea.net/shop-list/atre-ebisu-gift_and_living/">
+							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/popup_ebisu.jpg?v=1692678648">
 						</a>
 					</div>
 					<div class="txt_wrap">
-						<a class="shop_name" target="_blank" href="https://www.mistore.jp/store/shinjuku/shops/women_fashiongoods/goods/shopnews_list/shopnews_056.html">伊勢丹新宿店</a>
-						<p class="date">開催期間：6/21(水)〜7/11(火)</p>
-						<p class="address">伊勢丹新宿店 本館1階 ISETAN Seed</p>
+						<a class="shop_name" target="_blank" href="https://www.afternoon-tea.net/shop-list/atre-ebisu-gift_and_living/">アトレ恵比寿 アフタヌーンティ・リビング</a>
+						<p class="date">開催期間：2023年8月10日～31日</p>
+						<p class="address">東京都渋谷区恵比寿南1-5-5 アトレ恵比寿 5階</p>
 					</div>
 				</div><!-- store_item -->
-        <div class="store_item">
-          <div class="img_wrap">
-            <a target="_blank" href="https://www.idee.co.jp/shop/attache_shinjuku/">
-              <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/shinjuku_display.jpg?v=1687068178">
-            </a>
-          </div>
-          <div class="txt_wrap">
-            <a class="shop_name" target="_blank" href="https://www.idee.co.jp/shop/attache_shinjuku/">Attaché d’IDÉE 新宿ルミネ店</a>
-            <p class="date">開催期間：6/2(金)～7/3(月)</p>
-            <p class="address">ルミネ新宿店 ルミネ1 6F</p>
-          </div>
-        </div><!-- store_item -->
 				<div class="store_item">
 					<div class="img_wrap">
-						<a target="_blank" href="https://www.idee.co.jp/shop/variete_kashiwa/">
-							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/kashiwa_display.jpg?v=1687068048">
+						<a target="_blank" href="https://www.afternoon-tea.net/shop-list/lucua-osaka-living/">
+							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/popup_osaka.jpg?v=1692678648">
 						</a>
 					</div>
 					<div class="txt_wrap">
-						<a class="shop_name" target="_blank" href="https://www.idee.co.jp/shop/variete_kashiwa/">IDÉE SHOP VARIÉTÉ 柏高島屋店</a>
-						<p class="date">開催期間：6/2(金)～7/3(月)</p>
-						<p class="address">柏髙島屋ステーションモール 新館 8F</p>
+						<a class="shop_name" target="_blank" href="https://www.afternoon-tea.net/shop-list/lucua-osaka-living/">ルクア大阪 アフタヌーンティ・リビング</a>
+						<p class="date">開催期間：2023年8月10日～31日</p>
+						<p class="address">大阪府大阪市北区梅田3-1-3 ルクアイーレ5階</p>
+					</div>
+				</div><!-- store_item -->
+				<div class="store_item">
+					<div class="img_wrap">
+						<a target="_blank" href="https://www.afternoon-tea.net/shop-list/shizuoka-isetan-living/">
+							<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/popup_shizuoka.jpg?v=1692678649">
+						</a>
+					</div>
+					<div class="txt_wrap">
+						<a class="shop_name" target="_blank" href="https://www.afternoon-tea.net/shop-list/shizuoka-isetan-living/">静岡伊勢丹 アフタヌーンティ・リビング</a>
+						<p class="date">開催期間：2023年8月10日～31日</p>
+						<p class="address">静岡県静岡市葵区呉服町1-7 静岡伊勢丹 2階</p>
 					</div>
 				</div><!-- store_item -->
       </div>

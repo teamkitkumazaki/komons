@@ -6,10 +6,8 @@
     position: relative;
   }
   .comp-slider-caret{
-    top: -56px;
+    top: -60px;
     bottom: unset;
-    padding: 10px;
-    border: 1px solid #f1f1f1;
     border-bottom: 0px;
     border-right: 0px;
     .circle{
@@ -18,12 +16,15 @@
     }
     &.prev-arrow{
       left: unset;
-      right: 56px;
+      right: 60px;
     }
     &.next-arrow{
       left: unset;
-      right: 0;
+      right: 15px;
     }
+  }
+  .slick-list{
+    overflow: hidden;
   }
   .slick-track{
     min-width: 100%;
@@ -37,13 +38,13 @@
       float: left;
       margin: 0;
       box-sizing: border-box;
-      border-right: 1px solid #f1f1f1;
-      border-top: 1px solid #f1f1f1;
+      border-right: 1px solid #fff;
+      border-top: 1px solid #fff;
       .list_item{
         position: relative;
         padding: 17px 17px 80px;
         height: 74vw;
-        border-bottom: 1px solid #f1f1f1;
+        border-bottom: 1px solid #fff;
         @media screen and (min-width: 720px){
           height: 48vw;
         }
@@ -235,10 +236,21 @@
         }
         .comp-arrow-link{
           position: absolute;
-          left:0;
-          right:0;
-          bottom:0;
+          left:15px;
+          right:15px;
+          bottom:15px;
+          width: calc(100% - 30px);
           margin: auto;
+          a{
+            padding: 12px 0;
+            /*background: $basicGreen;
+            color: #fff;*/
+            span{
+              &::before{
+                /*filter:brightness(10000);*/
+              }
+            }
+          }
         }
       }
     }

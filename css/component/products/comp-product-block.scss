@@ -4,16 +4,17 @@
 	.item_wrapper {
 		@include flexSet;
 		justify-content: flex-start;
-		border-top: 1px solid #f4f4f4;
+		border-top: 1px solid #fff;
 		.item_box {
 			width: 50%;
-			border-bottom: 1px solid #f4f4f4;
-			border-right: 1px solid #f4f4f4;
-			padding: 20px 15px 45px;
+			border-right: 1px solid #fff;
+			border-bottom: 1px solid #fff;
+			background: #f8f8f8;
+			padding: 20px 15px 65px;
 			box-sizing: border-box;
 			position: relative;
 			&:nth-of-type(2n){
-				border-right: 0px solid #f4f4f4;
+				border-right: 0px solid #fff;
 			}
 
 			.img_wrap {
@@ -142,13 +143,21 @@
 			.comp-list-cart-button{
 				position: absolute;
 				width: 100%;
-				left:0;
-				right:0;
-				bottom:0;
+				left:15px;
+				right:15px;
+				bottom:20px;
+				width: calc(100% - 30px);
 				margin: auto;
 				.comp-arrow-link{
 					a{
-						padding: 15px 0;
+						padding: 12px 0;
+						/*background: $basicGreen;
+						color: #fff;*/
+						span{
+							&::before{
+								/*filter:brightness(10000);*/
+							}
+						}
 					}
 				}
 			}
