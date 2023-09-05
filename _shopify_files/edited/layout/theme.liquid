@@ -86,6 +86,11 @@
 	{% section 'header' %}
 	{%- endif -%}
 	{{content_for_layout}}
+
+	{%- if request.page_type contains 'index' or request.page_type contains 'collection' or request.page_type contains 'product' -%}
+	{% section 'sns-wrap' %}
+	{%- endif -%}
+
 	{%- if request.page_type contains 'account' -%}
 	{% section 'header' %}
 	{%- endif -%}

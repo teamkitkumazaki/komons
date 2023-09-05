@@ -139,7 +139,7 @@ h1,h2,h3,h4,h5{
 	}
 	.article_wrap {
 		ul {
-			@include waku;
+			@include wrapper;
 			@include flexSet;
 			justify-content: flex-start;
 

@@ -18,6 +18,7 @@
 		position: relative;
 		padding-top: 40px;
 		padding-bottom: 95px;
+		margin-bottom: 45px;
 		/*border-bottom: 1px solid $borderColor;*/
 		.ttl_desc{
 			width: 70%;
@@ -49,24 +50,23 @@
 			margin-top: 20px;
 		}
 	}
-	.section-category{
-		padding-top: 40px;
-		.comp-new-section-ttl{
-			.ttl_desc{
-				br{
-					display: none;
-				}
+}
+.section-category{
+	padding-top: 40px;
+	.comp-new-section-ttl{
+		.ttl_desc{
+			br{
+				display: none;
 			}
 		}
 	}
-	.section-instagram{
-		.insta_ttl{
-			font-size: 3.2rem;
-			margin-bottom: 40px;
-		}
+}
+.section-instagram{
+	.insta_ttl{
+		font-size: 3.2rem;
+		margin-bottom: 40px;
 	}
 }
-
 @media screen and (min-width: 720px){
 	.page-index {
 		width: 100%;
@@ -84,6 +84,7 @@
 		.section-gift{
 			padding-top: 60px;
 			padding-bottom: 150px;
+			margin-bottom: 60px;
 			.ttl_desc{
 				width: 100%;
 				br{
@@ -109,14 +110,14 @@
 		.section-contents{
 			padding-top: 60px;
 		}
-		.section-category{
-			padding-top: 60px;
-		}
-		.section-instagram{
-			.insta_ttl{
-				font-size: 3.2rem;
-				margin-bottom: 40px;
-			}
+	}
+	.section-category{
+		padding-top: 60px;
+	}
+	.section-instagram{
+		.insta_ttl{
+			font-size: 3.2rem;
+			margin-bottom: 40px;
 		}
 	}
 }
@@ -125,7 +126,7 @@
 	.page-index {
 		.section-pickup{
 			padding-top: 80px;
-			padding-bottom: 120px;
+			padding-bottom: 160px;
 			border-bottom: 0px solid $borderColor;
 		}
 		.section-products{
@@ -140,6 +141,7 @@
 		.section-gift{
 			padding-top: 100px;
 			padding-bottom: 120px;
+			margin-bottom: 0;
 			border-bottom: 0px;
 			.gift_flex{
 				@include flexSet;
@@ -204,33 +206,33 @@
 				margin-top: 60px;
 			}
 		}
-		.section-category{
-			padding-top: 120px;
-			padding-bottom: 120px;
-			border-bottom: 1px solid $borderColor;
-			.section_inner_new{
-				@include flexSet;
-				justify-content: space-between;
-				.comp-new-section-ttl{
-					width: 25%;
-					margin-top: 20px;
-					.ttl_desc{
-						br{
-							display: block;
-						}
+	}
+	.section-category{
+		padding-top: 100px;
+		padding-bottom: 120px;
+		border-bottom: 1px solid $borderColor;
+		.section_inner_new{
+			@include flexSet;
+			justify-content: space-between;
+			.comp-new-section-ttl{
+				width: 25%;
+				margin-top: 0px;
+				.ttl_desc{
+					br{
+						display: block;
 					}
 				}
-				.comp-category-list{
-					width: 70%;
-				}
+			}
+			.comp-category-list{
+				width: 70%;
 			}
 		}
-		.section-instagram{
-			padding-top: 100px;
-			.insta_ttl{
-				font-size: 4.0rem;
-				margin-bottom: 50px;
-			}
+	}
+	.section-instagram{
+		padding-top: 100px;
+		.insta_ttl{
+			font-size: 4.0rem;
+			margin-bottom: 50px;
 		}
 	}
 }
