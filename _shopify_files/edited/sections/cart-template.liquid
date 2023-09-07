@@ -23,6 +23,14 @@
 {%- endfor -%}
 
 <form id="cartSubmit" action="{{ routes.cart_url }}" method="post" novalidate class="cart">
+  {%- if noshiLength == 0 -%}
+    <input type="hidden" name="attributes[熨斗の種類:]" value="">
+    <input type="hidden" name="attributes[熨斗の表書き:]"   value="">
+    <input type="hidden" name="attributes[熨斗の名入れ:]" value="">
+  {%- endif -%}
+  {%- if messageLength == 0 -%}
+    <textarea type="text" name="attributes[メッセージカードの内容:]" style="display:none;"></textarea>
+  {%- endif -%}
   <section class="section-cart">
     <div class="section_inner_new">
       <div class="comp-admin-title">

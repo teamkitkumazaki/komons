@@ -18,14 +18,14 @@
 			</div>
 			{%- include 'category-handler' -%}
 		</div><!-- title_flex -->
-		<div id="productList" class="comp-product-list">
+		<div id="productList" class="comp-product-block">
 			<ul class="item_wrapper">
 				{% for product in collection.products %}
 				{% assign product_image = product.featured_image %}
 					{%- include 'all-item-card' -%}
 				{% endfor %}
 			</ul>
-		</div><!-- comp-product-list -->
+		</div><!-- comp-product-block -->
 		{%- include 'pager' -%}
 	</div><!-- section_inner_new -->
 </section>

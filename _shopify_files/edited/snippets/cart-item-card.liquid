@@ -5,12 +5,10 @@
 {% for collection in collections %}
 {%- if collection.handle == "ajax" -%}
 {% for ajax in collection.products %}
-  <script>console.log('{{ indexNum }}:' + '{{ ajax.handle }}');</script>
   {%- assign indexNum = indexNum | plus : 1 -%}
   {%- if ajax.handle == productURL[2] -%}
     {%- assign category = ajax.metafields.custom_fields["prod_category"] -%}
     {%- assign prodName = ajax.metafields["custom_fields"]["prod_display_name"] -%}
-    <script>console.log('{{ productURL[2] }}');</script>
   {%- endif -%}
 {% endfor %}
 {%- endif -%}

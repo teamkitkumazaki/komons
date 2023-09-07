@@ -1047,6 +1047,7 @@ body {
   line-height: 1;
   font-family: YakuHanMP, "Shippori Mincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
   width: 100%;
+  -webkit-text-size-adjust: 100%;
   left: 0;
   right: 0;
   margin: auto;
@@ -3534,7 +3535,7 @@ body.loaded #loading {
   opacity: 0.75;
 }
 .comp-list-cart-button .cartin_button button {
-  padding: 16px 0;
+  padding: 14px 0;
   background: #f1f1f1;
   border: 1px solid #f1f1f1;
   display: block;
@@ -3546,7 +3547,7 @@ body.loaded #loading {
           box-shadow: none;
   font-family: inherit;
   color: #00381f;
-  font-size: 16px;
+  font-size: 1.4rem;
   line-height: 1;
   letter-spacing: 0.4px;
 }
@@ -3599,8 +3600,8 @@ body.loaded #loading {
     right: 0px;
   }
   .comp-list-cart-button .cartin_button button {
-    padding: 14px 0;
-    font-size: 12px;
+    padding: 11px 0;
+    font-size: 1.2rem;
     letter-spacing: 0.3px;
   }
   .comp-list-cart-button .cartin_button button span {
@@ -8560,13 +8561,13 @@ body.loaded #loading {
 }
 .comp-instagram-wrap {
   padding: 120px 0;
-  border-top: 0px solid #f1f1f1;
+  border-top: 1px solid #d8d8d8;
   position: relative;
   z-index: 10;
   background: #fff;
 }
 .comp-instagram-wrap.b_none {
-  border-top: 0px solid #f1f1f1;
+  border-top: 1px solid #d8d8d8;
 }
 .comp-instagram-wrap .insta_ttl {
   font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
@@ -8706,6 +8707,7 @@ body.loaded #loading {
 @media screen and (max-width: 980px) {
   .comp-instagram-wrap {
     padding: 60px 0;
+    margin-top: 40px;
   }
   .comp-instagram-wrap .insta_ttl {
     font-size: 32px;
@@ -10193,11 +10195,11 @@ body.loaded #loading {
 }
 .comp-index-gift-slider .comp-slider-caret.prev-arrow {
   left: unset;
-  right: 60px;
+  right: 45px;
 }
 .comp-index-gift-slider .comp-slider-caret.next-arrow {
   left: unset;
-  right: 15px;
+  right: 0;
 }
 .comp-index-gift-slider .slick-list {
   overflow: visible;
@@ -19692,7 +19694,7 @@ body.loaded #loading {
   .section-category {
     padding-top: 100px;
     padding-bottom: 120px;
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 0px solid #d8d8d8;
   }
   .section-category .section_inner_new {
     display: -webkit-box;
@@ -19775,6 +19777,11 @@ body.loaded #loading {
 }
 .page-item-list .section-products .title_flex .postform:focus {
   outline: none;
+}
+@media screen and (max-width: 719px) {
+  .page-item-list .section-products .comp-product-block {
+    margin-left: -5vw;
+  }
 }
 .page-item-list .section-products .comp-pager {
   max-width: 75vw;
@@ -19861,6 +19868,11 @@ body.loaded #loading {
   font-size: 1.4rem;
   letter-spacing: 0.05em;
   font-weight: normal;
+}
+@media screen and (max-width: 719px) {
+  .page-item-list .section-category .comp-category-list {
+    margin-left: -5vw;
+  }
 }
 
 @media screen and (min-width: 720px) {
@@ -20137,8 +20149,12 @@ body.loaded #loading {
 .page-item-detail-new .section-related-journal .section_inner_new {
   max-width: 82vw;
 }
-.page-item-detail-new .section-item-list {
-  margin-bottom: 60px;
+@media screen and (max-width: 719px) {
+  .page-item-detail-new .section-item-list {
+    background: #f8f8f8;
+    padding: 50px 0;
+    margin-bottom: 20px;
+  }
 }
 .page-item-detail-new .section-item-list .section_inner_new {
   max-width: 82vw;
@@ -20375,12 +20391,21 @@ body.loaded #loading {
     margin-bottom: 100px;
   }
 }
+.page-item-group-list {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 60px;
+}
 .page-item-group-list .section-basic-item {
   padding-top: 100px;
+  margin-bottom: 120px;
 }
 .page-item-group-list .section-basic-item .comp-section-ttl {
   padding-top: 60px;
   margin-bottom: 70px;
+}
+.page-item-group-list .section-basic-item .comp-new-section-ttl .ttl_desc p {
+  white-space: pre-line;
 }
 .page-item-group-list .section-basic-item .section_ttl {
   padding-top: 60px;
@@ -20517,9 +20542,8 @@ body.loaded #loading {
     padding-top: 80px;
     padding-bottom: 60px;
   }
-  .page-item-group-list .section-basic-item .comp-section-ttl {
-    max-width: 100%;
-    width: 100%;
+  .page-item-group-list .section-basic-item .comp-new-section-ttl .ttl_desc p {
+    white-space: unset;
   }
   .page-item-group-list .section-basic-item .section_ttl {
     padding-top: 60px;
@@ -20556,9 +20580,14 @@ body.loaded #loading {
   }
 }
 @media screen and (max-width: 740px) {
+  .page-item-group-list {
+    margin-top: 60px;
+  }
   .page-item-group-list .section-basic-item {
     padding-top: 40px;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #d8d8d8;
+    margin-bottom: 50px;
   }
   .page-item-group-list .section-basic-item .comp-section-ttl {
     margin-bottom: 30px;
@@ -20600,7 +20629,7 @@ body.loaded #loading {
     height: 29vw;
   }
   .page-item-group-list .section-back {
-    padding: 100px 0 80px;
+    padding: 60px 0;
   }
 }
 .journal_section {

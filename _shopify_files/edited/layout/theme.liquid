@@ -109,9 +109,6 @@
 {%- if request.page_type contains 'index' -%}
 <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-{%- if request.page_type contains 'cart' -%}
-<script src="{{ 'backup.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
 {%- if request.page_type contains 'product' -%}
 <script src="{{ 'detail.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}

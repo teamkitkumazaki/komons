@@ -210,7 +210,7 @@
 	.section-category{
 		padding-top: 100px;
 		padding-bottom: 120px;
-		border-bottom: 1px solid $borderColor;
+		border-bottom: 0px solid $borderColor;
 		.section_inner_new{
 			@include flexSet;
 			justify-content: space-between;

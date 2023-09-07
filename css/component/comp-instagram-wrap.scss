@@ -1,11 +1,11 @@
 .comp-instagram-wrap {
   padding: 120px 0;
-  border-top: 0px solid #f1f1f1;
+  border-top: 1px solid #d8d8d8;
   position: relative;
   z-index: 10;
   background: #fff;
   &.b_none{
-    border-top: 0px solid #f1f1f1;
+    border-top: 1px solid #d8d8d8;
   }
   .insta_ttl {
     @include libre-r;
@@ -139,7 +139,7 @@
 @media screen and (max-width: 980px) {
   .comp-instagram-wrap {
     padding: 60px 0;
-
+    margin-top: 40px;
     .insta_ttl {
       font-size: 32px;
       margin-bottom: 40px;

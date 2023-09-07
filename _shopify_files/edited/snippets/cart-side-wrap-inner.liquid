@@ -24,7 +24,7 @@
   <div class="form_item">
     <label class="large ">備考欄</label>
     <div class="form_wrap">
-      <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" style="font-family: ts-unused;"></textarea>
+      <textarea name="note" id="CartSpecialInstructions" class="cart-note__input"></textarea>
       <p class="example">1注文につき、お届け先は1件のみとなります。<br>2件以上のお届け先をご希望の場合は別々にご注文ください。</p>
     </div>
   </div>
@@ -33,5 +33,5 @@
   {% include 'cart-amount-price' %}
 </div><!-- comp-amount-wrap -->
 <div class="comp-admin-button mt">
-  <input type="button" name="checkout" class="checkout_button" value="ご購入手続きへ">
+  <input type="submit" name="checkout" class="checkout_button" value="ご購入手続きへ">
 </div>
