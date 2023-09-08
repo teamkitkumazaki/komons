@@ -279,12 +279,14 @@ $(function() {
         });
         $('body').addClass('fixed');
         $('#slideMenuNew').addClass('open');
+        $('header').addClass('hum_open');
         menuState = 1;
       } else {
         $('body').removeClass('fixed');
         $('body').attr('style', '');
         $('html, body').prop({scrollTop: current_scrollY});
         $('#slideMenuNew').removeClass('open');
+        $('header').removeClass('hum_open');
         menuState = 0;
       }
     }
