@@ -1266,6 +1266,7 @@ $(function() {
     var priceMinBox = [];
     var priceMaxBox = [];
     var giftListArray = [];
+    var param = location.search
 
     function categorySort(cat){
       target.stop().animate({ opacity: 0 }, time, function() {
@@ -1334,6 +1335,36 @@ $(function() {
           }
         });
       });
+
+      if(param.indexOf('tag=0') != -1){
+        console.log('tag0')
+        categoryButton[0].click();
+      }
+
+      if(param.indexOf('tag=1') != -1){
+        console.log('tag1')
+        categoryButton[1].click();
+      }
+
+      if(param.indexOf('tag=2') != -1){
+        console.log('tag2')
+        categoryButton[2].click();
+      }
+
+      if(param.indexOf('tag=3') != -1){
+        console.log('tag3')
+        categoryButton[3].click();
+      }
+
+      if(param.indexOf('tag=4') != -1){
+        console.log('tag4')
+        categoryButton[4].click();
+      }
+
+      if(param.indexOf('tag=5') != -1){
+        console.log('tag5')
+        categoryButton[5].click();
+      }
 
     }
 

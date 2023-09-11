@@ -13,11 +13,11 @@
 		@include flexSet;
 		align-items: center;
 		justify-content: space-between;
-		border-top: 3px solid transparent;
 		transition: border .3s, background .3s;
 		will-change: border, background;
 		.header_menu{
 			button{
+				position: relative;
 				width: 60px;
 				height: 60px;
 				@include flexSet;
@@ -32,15 +32,32 @@
 				cursor: pointer;
 				transition: background .3s;
 				will-change: background;
+				span{
+					position: absolute;
+					display: block;
+					width: 50%;
+					height: 1px;
+					background: #fff;
+					left:0;
+					right:0;
+					margin: auto;
+					opacity: 0;
+					transition: opacity .3s;
+					&:nth-of-type(1){
+						top: 25px;
+						transform: translateY(4px) rotate(45deg);
+					}
+					&:nth-of-type(2){
+						bottom: 25px;
+						transform: translateY(-4px) rotate(-45deg);
+					}
+				}
 				svg{
 					width: 32px;
 					margin: 0 auto;
 					fill: #fff;
 					transition: fill .3s;
 					will-change: fill;
-				}
-				&:hover{
-					background: $bgGreen;
 				}
 			}
 		}
@@ -131,7 +148,6 @@
 		@media screen and (max-width: 1099px){
 			.header_inner{
 				background: #fff;
-				border-top: 3px solid $basicGreen;
 				.header_menu{
 					button{
 						svg{
@@ -165,6 +181,52 @@
 									color: #fff;
 									border: 1px solid #fff;
 								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.hum_open{
+		.header_inner{
+			background: transparent;
+			.header_menu{
+				button{
+					span{
+						opacity: 1;
+					}
+					svg{
+						display: none;
+						fill: #fff;
+					}
+				}
+			}
+			.header_left{
+				.header_logo{
+					a{
+						svg{
+							fill: #fff;
+						}
+					}
+				}
+			}
+			.header_right{
+				.header_guide{
+					.nav_item{
+						a{
+							.icon{
+								svg{
+									fill: #fff;
+								}
+							}
+							.txt{
+								display: none;
+							}
+							.cart_item_num{
+								background-color: #fff;
+								color: $basicGreen;
+								border: 1px solid $basicGreen;
 							}
 						}
 					}
@@ -217,6 +279,8 @@
 				padding: 13px 25px 13px;
 				border-radius: 120px;
 				margin-right: 10px;
+				transition: background .2s;
+				will-change: background;
 				.header_navigation{
 					display: block;
 					margin-top: 0px;
@@ -313,7 +377,10 @@
 					height: 49px;
 					background: $basicGreen;
 					border-radius: 50%;
+					transition: background .2s;
+					will-change: background;
 					span{
+						opacity: 1;
 						position: absolute;
 						width: 50%;
 						height: 1px;
@@ -321,11 +388,15 @@
 						right:0;
 						margin: auto;
 						background: #fff;
+						transition: transform .2s, background .2s;
+						will-change: transform, background;
 						&:nth-of-type(1){
 							top: 20px;
+							transform: translateY(0) rotate(0deg);
 						}
 						&:nth-of-type(2){
 							bottom: 20px;
+							transform: translateY(0) rotate(0deg);
 						}
 					}
 					svg{
@@ -350,6 +421,63 @@
 						a{
 							svg{
 								fill: $basicGreen;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.hum_open{
+			.header_inner{
+				background: transparent;
+				.header_menu{
+					button{
+						background: #fff;
+						span{
+							opacity: 1;
+							background: $basicGreen;
+							&:nth-of-type(1){
+								top: 20px;
+								transform: translateY(4px) rotate(45deg);
+							}
+							&:nth-of-type(2){
+								bottom: 20px;
+								transform: translateY(-4px) rotate(-45deg);
+							}
+						}
+						svg{
+							display: none;
+							fill: #fff;
+						}
+					}
+				}
+				.header_left{
+					.header_logo{
+						a{
+							svg{
+								fill: #fff;
+							}
+						}
+					}
+				}
+				.header_right{
+					background: transparent;
+					.header_guide{
+						.nav_item{
+							a{
+								.icon{
+									svg{
+										fill: #fff;
+									}
+								}
+								.txt{
+									display: none;
+								}
+								.cart_item_num{
+									background-color: #fff;
+									color: $basicGreen;
+									border: 1px solid $basicGreen;
+								}
 							}
 						}
 					}
