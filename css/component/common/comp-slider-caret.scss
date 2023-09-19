@@ -15,7 +15,7 @@
     height: 50px;
     border-radius: 50%;
     box-sizing: border-box;
-    background-color: $basicGreen;
+    background-color: #f0f0f0;
     @include flexSet;
     align-items: center;
     justify-content: center;
@@ -23,7 +23,7 @@
     will-change: transform;
     svg{
       width: 6px;
-      fill: #fff;
+      fill: $basicGreen;
       transition: fill .3s;
       will-change: fill;
     }

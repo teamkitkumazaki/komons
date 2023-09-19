@@ -1,27 +1,5 @@
 @charset "UTF-8";
-/* ----- Google Fonts ----- */
-/*
-@font-face {
-    font-family: 'libre-regular';
-		font-weight: 400;
-    src: url('../fonts/LibreBaskerville-Regular.eot'),url('../fonts/LibreBaskerville-Regular.woff') format('woff'),
-    url('../fonts/LibreBaskerville-Regular.ttf') format('truetype'),
-}
-@font-face {
-    font-family: 'libre-bold';
-		font-weight: 700;
-    src: url('../fonts/librebaskerville-bold-webfont.eot'),url('../fonts/librebaskerville-bold-webfont.woff') format('woff'),
-    url('../fonts/LibreBaskerville-Bold.ttf') format('truetype'),
-}
-*/
-/* ########## 共通セクション ########## */
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -9011,7 +8989,7 @@ body.loaded #loading {
   border-radius: 50%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #00381f;
+  background-color: #f0f0f0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9032,7 +9010,7 @@ body.loaded #loading {
 }
 .comp-slider-caret .circle svg {
   width: 6px;
-  fill: #fff;
+  fill: #00381f;
   -webkit-transition: fill 0.3s;
   transition: fill 0.3s;
   will-change: fill;
@@ -9214,7 +9192,7 @@ body.loaded #loading {
   display: block;
   width: 14px;
   height: 14px;
-  background: #00381f;
+  background: #f0f0f0;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9232,7 +9210,7 @@ body.loaded #loading {
 }
 .comp-category-list .category_item a .txt_wrap .ttl_wrap .caret svg {
   width: 3px;
-  fill: #fff;
+  fill: #00381f;
 }
 
 @media screen and (min-width: 720px) {
@@ -10545,7 +10523,7 @@ body.loaded #loading {
   display: block;
   width: 18px;
   height: 18px;
-  background: #00381f;
+  background: #f0f0f0;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10563,7 +10541,7 @@ body.loaded #loading {
 }
 .comp-index-contens-list .contents_item a .txt_wrap .ttl_wrap .caret svg {
   width: 4px;
-  fill: #fff;
+  fill: #00381f;
 }
 .comp-index-contens-list .contents_item a .txt_wrap .description {
   display: block;
