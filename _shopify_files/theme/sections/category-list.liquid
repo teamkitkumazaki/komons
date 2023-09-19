@@ -1,0 +1,45 @@
+{%- assign products = collections.all.products | where: "template_suffix", 'admin' -%}
+
+<section class="section-category">
+	<div class="section_inner_new">
+		<div class="comp-new-section-ttl">
+			<hgroup>
+				<span class="title_en">Category</span>
+				<h2 class="title_jp indent">カテゴリ一覧</h2>
+			</hgroup>
+			<div class="ttl_desc">
+				<p>全ての商品は、100%天然精油ブレンド。<br>香りに徹底的にこだわった洗剤で<br>毎日の家事を少し気持ちよく。</p>
+			</div>
+		</div><!-- comp-new-section-ttl -->
+		<div class="comp-category-list">
+			{% for collection in collections %}
+			{%- if collection.handle == "admin" -%}
+			{% for product in collection.products %}
+			{%- if product.handle == "categories" -%}
+				{% for image in product.images %}
+				{%- assign altTxt = image.alt -%}
+				{%- assign altArray = altTxt | split: ',' -%}
+				<div class="category_item">
+					<a href="/collections/{{ altArray[2] }}">
+						<span class="img_wrap">
+							{{ image.src | image_url: width: 520 | image_tag }}
+						</span>
+						<span class="txt_wrap">
+							<span class="ttl_en">{{ altArray[1] }}</span>
+							<span class="ttl_wrap">
+								<span class="ttl_jp">{{ altArray[0] }}</span>
+								<span class="caret">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07"><polygon class="cls-1" points="0 8.66 1.41 10.07 6.46 5.03 1.41 0 0 1.41 3.62 5.04 0 8.66"></polygon></svg>
+								</span>
+							</span>
+						</span>
+					</a>
+				</div>
+				{% endfor %}
+			{% endif %}
+			{% endfor %}
+			{%- endif -%}
+			{% endfor %}
+		</div><!-- comp-category-list -->
+	</div><!-- section_inner -->
+</section>

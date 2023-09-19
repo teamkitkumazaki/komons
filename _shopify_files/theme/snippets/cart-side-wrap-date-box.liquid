@@ -65,6 +65,7 @@
   {% assign deriveryDate = deriveryBufferDate | times: 24 | times: 60 | times: 60 %}
   {% assign deriveryDateDisplay = 'today' | date: '%s' | plus: deriveryDate | date: '%Y-%m-%d' %}
   {% assign deriveryDateWeekDay = 'today' | date: '%s' | plus: deriveryDate | date: '%w' | plus: 0 %}
+  <script>console.log('配送日: {{deriveryDate}}'); console.log('祝日: {{deriveryDateDisplay}}'); console.log('曜日: {{deriveryDateWeekDay}}')</script>
   {% assign seconds = i | times: 24 | times: 60 | times: 60 %}
   {% assign dateValue = 'today' | date: '%s' | plus: seconds | date: '%Y-%m-%d' %}
   {% assign dateDisplayM = 'today' | date: '%s' | plus: seconds | date: '%m' %}
@@ -93,6 +94,7 @@
   {% assign deriveryBufferDate = deriveryBufferDate | plus: 1 %}
   {% endunless %}
   {%- else -%}
+  <script> console.log('{{ displayIndex }}')</script>
   {% if displayIndex == 1 %}
   {% capture secondDay %}{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}{% endcapture %}
   {% assign displayIndex = displayIndex | plus: 1 %}

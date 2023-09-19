@@ -157,33 +157,12 @@
             </div>
           </div>
         </li>
-        <li id="handle-k1009" class="item_box">
-          <div class="img_wrap">
-            <a href="/products/k1009">
-              <img loading="lazy" src="//cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_733e4e2f-b165-4120-959a-e534ade665d5.jpg?v=1681806782&amp;width=533" srcset="//cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_733e4e2f-b165-4120-959a-e534ade665d5.jpg?v=1681806782&amp;width=533 1440w, //cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_733e4e2f-b165-4120-959a-e534ade665d5.jpg?v=1681806782&amp;width=360 768w, //cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_733e4e2f-b165-4120-959a-e534ade665d5.jpg?v=1681806782&amp;width=533 2048w" alt="All La Glory">
-            </a>
-          </div>
-          <div class="txt_wrap height-adjust">
-            <span class="cat_ttl">アウトドアスプレー</span>
-            <h3 class="prod_name">
-              <a href="/products/k1009"><span class="name en">All La Glory</span></a>
-            </h3>
-            <span class="product_detail">
-              <span class="price">1,980円(税込)</span>
-            </span>
-          </div>
-          <div class="comp-list-cart-button">
-            <div class="comp-arrow-link">
-              <a href="/products/k1009"><span>詳細を見る</span></a>
-            </div>
-          </div>
-        </li>
         {% for collection in collections %}
           {%- if collection.title == "pickup" -%}
             {% for product in collection.products %}
               {% for product in collection.products %}
                 {%- if product.handle == newArray[collectionIndex] -%}
-                {%- if collectionIndex < 5 -%}
+                {%- if collectionIndex < 2 -%}
                   {%- include 'all-item-card' -%}
                 {%- endif -%}
                   {% assign collectionIndex = collectionIndex | plus: 1 %}

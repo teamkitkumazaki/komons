@@ -1,0 +1,81 @@
+{%- assign teiban = collections | where: "template_suffix", 'teiban' -%}
+
+{% assign arrayIndex = 0 | plus: 0 %}
+{%- for collection in teiban -%}
+{% assign arrayIndex = collection.handle %}
+{% unless forloop.last %}
+{% assign random = random | append: arrayIndex | append: ',' %}
+{% else %}
+{% assign random = random | append: arrayIndex %}
+{% endunless %}
+{%- endfor -%}
+
+{%- assign array = random | split: ',' -%}
+{%- assign loops = array.size | times: 10 -%}
+
+{%- capture indexes -%}
+	{%- for i in (1..loops) -%}{{ "now" | date: "%N" | modulo: array.size }},{%- endfor -%}
+{%- endcapture -%}
+
+{%- assign indexes = indexes | split: ',' | uniq -%}
+
+{%- for a in indexes -%}
+{% assign b = a | plus: 0 %}
+{% unless forloop.last %}
+{% assign newArray = newArray | append: array[b] | append: ',' %}
+{% else %}
+{% assign newArray = newArray | append: array[b] %}
+{% endunless %}
+{%- endfor -%}
+{%- assign newArray = newArray | split: ',' -%}
+
+{% assign collectionIndex = 0 | plus: 0 %}
+
+<section class="section-products">
+  <div class="section_inner_new">
+    <div class="comp-new-section-ttl">
+      <hgroup>
+        <span class="title_en">Products</span>
+        <h2 class="title_jp" style="text-indent: -0.1em;">Komonsの定番商品</h2>
+      </hgroup>
+    </div><!-- comp-new-section-ttl -->
+    <div class="comp-index-prod-slider">
+      <div id="productSlider" class="slick-slider">
+      {%- for collection in teiban -%}
+      {%- for collection in teiban -%}
+      {%- if collection.handle == newArray[collectionIndex] -%}
+      <div class="item_box slick-slide">
+        <div class="box_inner">
+          <a href="/collections/{{ collection.handle }}">
+            <span class="img_wrap">
+              {{ collection.image | image_url: width: 680 | image_tag }}
+            </span>
+            <span class="txt_wrap">
+              <span class="prod_category">{{ collection.metafields["custom_fields"]["collection_title_ja"] }}</span>
+              <span class="prod_name">{{ collection.metafields["custom_fields"]["collection_prod_name"] }}</span>
+              <span class="prod_desc">{{ collection.description }}</span>
+            </span><!-- txt_wrap -->
+            <span class="comp-arrow-link">
+              <span class="link_button" href="/collections/{{ collection.handle }}">
+                <span>詳細を見る</span>
+              </span>
+            </span>
+          </a>
+        </div>
+      </div><!-- item_box -->
+      {% assign collectionIndex = collectionIndex | plus: 1 %}
+      {%- endif -%}
+      {%- endfor -%}
+      {%- endfor -%}
+      </div><!-- slick-slider -->
+    </div><!-- comp-index-prod-slider -->
+    <div class="comp-box-button">
+      <a class="button" href="/collections/all-products">
+        <span class="txt">全商品一覧</span>
+        <span class="arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07"><polygon class="cls-1" points="0 8.66 1.41 10.07 6.46 5.03 1.41 0 0 1.41 3.62 5.04 0 8.66"></polygon></svg>
+        </span>
+      </a>
+    </div>
+  </div><!-- section_inner_new -->
+</section>

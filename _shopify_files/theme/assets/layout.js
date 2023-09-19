@@ -1,13 +1,4 @@
 $(function() {
-  /*
-  var ref = document.referrer;
-  console.log('ref:' + ref);
-  if ( ref == 'https://shop.kume.jp/') {
-    console.log('login');
-  }else{
-    console.log('not login');
-  }
-  */
 
   // スクロール + ウィンドウサイズ系の対策処理
   function scrollAnimationSet(target) {
@@ -131,26 +122,18 @@ $(function() {
 
     if (document.getElementById('headerRolledSp')) {
     }else{
-      if(window.innerWidth < 720){
-        $('header').addClass('rolled_sp');
-      }
+      $('header').addClass('rolled_sp');
     }
 
     function afterScroll(noAnimate) {
-      if(window.innerWidth > 720){
-        $('header').addClass('rolled');
-      }else{
-        $('header').addClass('rolled_sp');
-      }
+      $('header').addClass('rolled');
+      $('header').addClass('rolled_sp');
       scrollSwitch = 1;
     };
 
     function beforeScroll() {
-      if(window.innerWidth > 720){
-        $('header').removeClass('rolled');
-      }else{
-        $('header').removeClass('rolled_sp');
-      }
+      $('header').removeClass('rolled');
+      $('header').removeClass('rolled_sp');
       scrollSwitch = 0;
     };
 
@@ -229,20 +212,7 @@ $(function() {
               }
             }
           }
-          if (document.getElementById('index')) {
-            var productWrap = $('#product_wrap');
-            var topGift = $('#topGift');
-            var scroll = $(window).scrollTop();
-            if(scroll > productWrap.offset().top){
-              if(scroll < topGift.offset().top){
-                $('header').addClass('colored');
-              }else{
-                $('header').removeClass('colored');
-              }
-            }else{
-              $('header').removeClass('colored');
-            }
-          }
+
           if (document.getElementById('concept')) {
             $("section").each(function() {
               var sectionimgPos = $(this).offset().top;
@@ -255,31 +225,7 @@ $(function() {
               };
             });
           }
-          if (document.getElementById('index')) {
-            $("section").each(function() {
-              var sectionimgPos = $(this).offset().top;
-              var sectionscroll = $(window).scrollTop();
-              var windowHeight = $(window).height();
-              if (sectionscroll > sectionimgPos - windowHeight + windowHeight) {
-                var setClass = $(this).attr('id');
-                $('body').removeClass('main topConcept product01 product02 product03 product04 product05 product06 topGift topCF topJournal instagram');
-                $('body').addClass(setClass);
-              };
-            });
 
-            $(".effect").each(function() {
-              var imgPos = $(this).offset().top;
-              var scroll = $(window).scrollTop();
-              var windowHeight = $(window).height();
-              if (scroll > imgPos - windowHeight + windowHeight / 5) {
-                var animateType = $(this).attr('animate');
-                $(this).css({
-                  'opacity': '1'
-                });
-                $(this).addClass(animateType);
-              };
-            });
-          }
           if (document.getElementById('itemDetail')) {
             $("section").each(function() {
               var sectionimgPos = $(this).offset().top;
@@ -333,12 +279,14 @@ $(function() {
         });
         $('body').addClass('fixed');
         $('#slideMenuNew').addClass('open');
+        $('header').addClass('hum_open');
         menuState = 1;
       } else {
         $('body').removeClass('fixed');
         $('body').attr('style', '');
         $('html, body').prop({scrollTop: current_scrollY});
         $('#slideMenuNew').removeClass('open');
+        $('header').removeClass('hum_open');
         menuState = 0;
       }
     }
@@ -1318,6 +1266,7 @@ $(function() {
     var priceMinBox = [];
     var priceMaxBox = [];
     var giftListArray = [];
+    var param = location.search
 
     function categorySort(cat){
       target.stop().animate({ opacity: 0 }, time, function() {
@@ -1386,6 +1335,36 @@ $(function() {
           }
         });
       });
+
+      if(param.indexOf('tag=0') != -1){
+        console.log('tag0')
+        categoryButton[0].click();
+      }
+
+      if(param.indexOf('tag=1') != -1){
+        console.log('tag1')
+        categoryButton[1].click();
+      }
+
+      if(param.indexOf('tag=2') != -1){
+        console.log('tag2')
+        categoryButton[2].click();
+      }
+
+      if(param.indexOf('tag=3') != -1){
+        console.log('tag3')
+        categoryButton[3].click();
+      }
+
+      if(param.indexOf('tag=4') != -1){
+        console.log('tag4')
+        categoryButton[4].click();
+      }
+
+      if(param.indexOf('tag=5') != -1){
+        console.log('tag5')
+        categoryButton[5].click();
+      }
 
     }
 
@@ -1716,5 +1695,65 @@ $(function() {
   if (document.getElementById('addressContentWrap')) {
     switchAddressFunction();
   }
+
+  var prevButtonHTML = '<button class="comp-slider-caret prev-arrow"><span class="circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07"><polygon class="cls-1" points="6.46 1.41 5.04 0 0 5.04 5.04 10.07 6.46 8.66 2.83 5.04 6.46 1.41"/></svg></span></button>';
+  var nextButtonHTML = '<button class="comp-slider-caret next-arrow"><span class="circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07"><polygon class="cls-1" points="0 8.66 1.41 10.07 6.46 5.03 1.41 0 0 1.41 3.62 5.04 0 8.66"/></svg></span></button>';
+
+  if (document.getElementById('productSlider')) {
+    $('#productSlider').slick({
+      accessibility: false,
+      infinite: true,
+      dots: false,
+      slidesToShow: 3,
+      centerMode: false,
+      autoplay: true,
+      speed: 600,
+      prevArrow: prevButtonHTML,
+      nextArrow: nextButtonHTML,
+      responsive: [
+        {
+          breakpoint: 1100,
+          settings: {
+            speed: 600,
+            slidesToShow: 2,
+            draggable: true,
+          }
+        },
+        {
+          breakpoint: 750,
+          settings: {
+            speed: 600,
+            slidesToShow: 1,
+            draggable: true,
+          }
+        }
+      ]
+    });
+  }
+
+  if (document.getElementById('giftSlider')) {
+    $('#giftSlider').slick({
+      accessibility: false,
+      infinite: true,
+      dots: false,
+      slidesToShow: 3,
+      centerMode: false,
+      autoplay: false,
+      speed: 600,
+      prevArrow: prevButtonHTML,
+      nextArrow: nextButtonHTML,
+      responsive: [
+        {
+          breakpoint: 750,
+          settings: {
+            speed: 600,
+            slidesToShow: 2,
+            draggable: true,
+          }
+        }
+      ]
+    });
+  }
+
 
 });

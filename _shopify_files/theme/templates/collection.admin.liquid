@@ -5,7 +5,6 @@
 {%- if collection.handle == "gift" -%}
 <article id="giftList" class="page-gift-list">
 	{% section 'collection-template-gift' %}
-  {% section 'category-list' %}
   {% section 'instagram' %}
 </article>
 {%- elsif collection.handle == "dish"
@@ -15,15 +14,10 @@
 	or collection.handle == "multi"
 	or collection.handle == "toilet"
   or collection.handle == "handmilk"
-  or collection.handle == "towel"
-  or collection.handle == "roommist"
-  or collection.handle == "sanitizer"
-  or collection.handle == "outdoor"
 	-%}
 <article id="itemGroupList" class="page-item-group-list">
 	{% section 'collection-template-cat' %}
 	{% section 'section-back' %}
-  {% section 'category-list' %}
   {% section 'instagram' %}
 </article>
 {%- elsif collection.handle == "ajax" -%}
@@ -33,7 +27,6 @@
 {%- else -%}
 <article id="itemList" class="page-item-list">
 	{% section 'collection-template' %}
-  {% section 'category-list' %}
   {% section 'instagram' %}
 </article>
 {%- endif -%}
