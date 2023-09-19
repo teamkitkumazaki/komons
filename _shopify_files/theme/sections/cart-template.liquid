@@ -1,0 +1,105 @@
+{%- for item in cart.items -%}
+  {% if item.selling_plan_allocation.selling_plan.name contains '定期'  %}
+    {%- assign subProperty = subProperty | plus : 1 -%}
+  {%- else -%}
+    {%- assign normalProperty = normalProperty | plus : 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign productId = item.url | split : "?" -%}
+
+{%- assign noshiLength = 0 -%}
+{%- assign messageLength = 0 -%}
+{%- for item in cart.items -%}
+  {%- assign variant_options = item.options_with_values -%}
+  {%- for option in variant_options -%}
+    {% if option.value contains '熨斗' %}
+      {%- assign noshiLength = noshiLength | plus : 1 -%}
+    {%- endif -%}
+    {% if option.value contains 'メッセージ' %}
+      {%- assign messageLength = messageLength | plus : 1 -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+<form id="cartSubmit" action="{{ routes.cart_url }}" method="post" novalidate class="cart">
+  {%- if noshiLength == 0 -%}
+    <input type="hidden" name="attributes[熨斗の種類:]" value="">
+    <input type="hidden" name="attributes[熨斗の表書き:]"   value="">
+    <input type="hidden" name="attributes[熨斗の名入れ:]" value="">
+  {%- endif -%}
+  {%- if messageLength == 0 -%}
+    <textarea type="text" name="attributes[メッセージカードの内容:]" style="display:none;"></textarea>
+  {%- endif -%}
+  <section class="section-cart">
+    <div class="section_inner_new">
+      <div class="comp-admin-title">
+        <hgroup>
+          <h1 class="page_ttl">ショッピングカート</h1>
+          <span class="page_subttl">Shopping Cart</span>
+        </hgroup>
+        <div class="page_bread">
+          <div class="link_wrap">
+            <a id="backLink" href="javascript:history.back();">買い物を続ける</a>
+          </div>
+        </div>
+      </div><!-- comp-admin-title -->
+      <!-- <div class="section-banner">
+        <div class="section_inner_new">
+          <a target="_blank" href="https://journal.komons-japan.com/archives/1263" class="img_wrap">
+            <img class="img_pc" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/cart_banner_pc.jpg?v=1651196419">
+            <img class="img_sp" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/cart_banner_sp_4857754a-2681-486a-ae5d-2646b909b13f.jpg?v=1651196419">
+          </a>
+        </div>
+      </div> -->
+      {% if cart.item_count != 0 %}
+      <div class="cart_flex">
+        <div class="item_wrap">
+          <div class="comp-cart-item-list">
+            <div class="cart_head">
+              <span class="product head">商品</span>
+              <span class="lot head">数量</span>
+              <span class="amount head">合計</span>
+            </div>
+            <div id="cartItem" class="item_list">
+              {%- for item in cart.items -%}
+                {% include 'cart-item-card' %}
+              {%- endfor -%}
+            </div>
+        </div><!-- comp-cart-item-list-->
+        {% unless subProperty > 0 and normalProperty > 0 %}
+        {%- if noshiLength == 0 and messageLength == 0 -%}
+        <div class="comp-amount-wrap left">
+        {%- else -%}
+        <div class="comp-amount-wrap pc_none">
+        {%- endif -%}
+        {% include 'cart-amount-price' %}
+        </div><!-- comp-amount-wrap -->
+        {%- if noshiLength != 0 or messageLength != 0 -%}
+        <div class="comp-option-setting">
+          {%- if noshiLength != 0 -%}
+          {% include 'cart-noshi-setting' %}
+          {%- endif -%}
+          {%- if messageLength != 0 -%}
+          {% include 'cart-message-setting' %}
+          {%- endif -%}
+        </div><!-- comp-option-setting -->
+        {%- endif -%}
+        {%- endunless -%}
+      </div><!-- item_wrap -->
+      {%- if noshiLength == 0 and messageLength == 0 -%}
+      <div class="comp-side-wrap bg">
+      {%- else -%}
+      <div class="comp-side-wrap">
+      {%- endif -%}
+        {% include 'cart-side-wrap' %}
+      </div><!-- comp-side-wrap -->
+      </div><!-- cart_flex -->
+      {%- else -%}
+      <div class="no_entry">
+      <p>カート内に商品はありません</p>
+      </div>
+      {% endif %}
+    </div><!-- section_inner_new -->
+  </section>
+  </form>

@@ -1,0 +1,90 @@
+{% for tag in product.tags %}
+  {% assign prodCategory = tag %}
+  {% for collection in collections %}
+  {%- if collection.handle == tag -%}
+  {% for product in collection.products %}
+    {% assign category = collection.metafields.custom_fields["category_detail_name"] %}
+    {% assign useage = collection.metafields.custom_fields["category_usage"] %}
+    {% assign useway = collection.metafields.custom_fields["category_useway"] %}
+    {% assign component = collection.metafields.custom_fields["caterogory_component"] %}
+  {% endfor %}
+  {%- endif -%}
+{% endfor %}
+{% endfor %}
+
+
+
+{% if product.tags contains 'nerori' %}
+{% for collection in collections %}
+{%- if collection.handle == 'nerori' -%}
+{% for product in collection.products %}
+  {% assign category = collection.metafields.custom_fields["category_detail_name"] %}
+  {% assign useage = collection.metafields.custom_fields["category_usage"] %}
+  {% assign useway = collection.metafields.custom_fields["category_useway"] %}
+  {% assign component = collection.metafields.custom_fields["caterogory_component"] %}
+{% endfor %}
+{%- endif -%}
+{% endfor %}
+{% endif %}
+
+
+{% unless prodCategory contains 'towel' %}
+<div class="desc_unit" prodCategory="{{ prodCategory }}">
+  <div class="comp-detail-title margin">
+    <hgroup>
+      <span class="title_en">Detail</span>
+      <h2 class="title_ja">商品仕様・詳細</h2>
+    </hgroup>
+  </div>
+  <div class="comp-detail-toggle-new">
+    <div class="toggle_item">
+      <button class="toggle_button_new">
+        <span class="txt">用途・全成分・備考</span>
+        <span class="caret"></span>
+      </button>
+      <div class="toggle_content_new">
+        <div class="detail_item">
+          <p class="title">商品区分</p>
+          <div class="content" style="white-space: pre-line;"><p>{{category}}</p></div>
+        </div>
+        {% if useage != blank %}
+        <div class="detail_item">
+          {%- if product.type != "goods" -%}
+          <p class="title">用途</p>
+          {%- else -%}
+          <p class="title">素材</p>
+          {% endif %}
+          <div class="content" style="white-space: pre-line;"><p>{{useage}}</p></div>
+        </div>
+        {% endif %}
+        <div class="detail_item">
+          {%- if product.type != "goods" -%}
+          <p class="title">全成分</p>
+          {%- else -%}
+          <p class="title">持ち手サイズ</p>
+          {% endif %}
+          <div class="content" style="white-space: pre-line;"><p>{{component}}</p></div>
+        </div>
+        {% if useway != blank %}
+        <div class="detail_item">
+          {%- if product.type != "goods" -%}
+          <p class="title">使用方法</p>
+          {%- else -%}
+          <p class="title">サイズ</p>
+          {% endif %}
+          <div class="content" style="white-space: pre-line;"><p>{{useway}}</p></div>
+        </div>
+        {% endif %}
+        {%- if product.type != "goods" -%}
+        <div class="detail_item">
+          <p class="title">備考</p>
+          <div class="content"><p>天然成分を多く含むため濁りや沈殿物が生じる可能性がありますが、品質には問題はありません。開封後は6か月以内にご使用ください。<br>天然精油を使用しているため香りや色に差が生じる場合がございますが、ご使用上支障はありません。<br>※商品のデザイン、香り、仕様などは予告なく変更になる場合がございます。予めご了承ください。</p></div>
+        </div>
+        {%- endif -%}
+      </div><!-- toggle_content -->
+    </div>
+  </div><!-- comp-detail-toggle-new -->
+</div>
+{% else %}
+{%- include 'towel-component' -%}
+{% endunless %}

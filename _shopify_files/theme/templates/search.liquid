@@ -1,0 +1,37 @@
+{% paginate search.results by 10 %}
+
+<article id="itemGroupList" class="page-item-group-list">
+  <section class="section-basic-item">
+		<div class="section_inner">
+			<div class="section_ttl search_ttl">
+				<h1><span>Item List</span><font>“{{ search.terms }}”の検索結果</font></h1>
+				<form action="{{ routes.search_url }}" method="get" role="search" class="search-form search-page-form">
+					<div id="searchSubmit2" class="key_input">
+						<input type="text" name="q" placeholder="キーワードを入れて検索" value="{{ search.terms }}">
+						<button class="search_submit">検索</button>
+					</div>
+				</form>
+			</div>
+			<div class="comp-product-list">
+				{% if search.performed and search.results_count == 0 %}
+				<p class="no_entry">該当する商品がありません。</p>
+				{% endif %}
+        <ul class="item_wrapper">
+				{% paginate search.results by 20 %}
+				{%- for product in search.results -%}
+				{%- if product.object_type == 'product' -%}
+          {%- include 'all-item-card' -%}
+				{%- endif -%}
+				{%- endfor -%}
+				{% endpaginate %}
+        </ul>
+			</div>
+		</div>
+	</section>
+	{% section 'section-back' %}
+</article>
+<script>
+$('body').addClass('fixed');
+</script>
+
+{% endpaginate %}

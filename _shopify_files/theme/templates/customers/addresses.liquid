@@ -1,0 +1,42 @@
+<article id="address" class="page-address">
+  <section class="section-admin">
+    <div class="section_inner_new">
+        <div class="admin_wrapper">
+				<div class="comp-admin-title">
+					<hgroup>
+						<h1 class="page_ttl en">ADDRESS</h1>
+						<span class="page_subttl ja">住所・配送先情報</span>
+					</hgroup>
+					<div class="page_bread">
+						<div class="link_wrap">
+							<a href="{{ routes.account_logout_url }}">ログアウト</a>
+							<a href="{{ routes.account_url }}">マイページトップ</a>
+							<span class="current">住所・配送先情報</span>
+						</div>
+					</div>
+				</div>
+        <div class="address_flex">
+          <div id="adminBar" class="address_admin_bar mode-list">
+            <button id="addressList" class="admin_button list">
+              <span class="text">住所情報一覧</span>
+              <span class="circle"><span class="circle-inner"></span></span>
+            </button>
+            <button id="addressEdit" class="admin_button edit">
+              <span class="text">住所の追加変更</span>
+              <span class="circle"><span class="circle-inner"></span></span>
+            </button>
+          </div>
+          <div id="addressContentWrap" class="adrress_content_wrap">
+            <div id="wrapperList" class="content_wrapper">
+              {% section 'account-address-list' %}
+            </div><!-- wrapperList -->
+            <div id="wrapperAdd" class="content_wrapper" style="display: none;">
+              {% section 'account-address-add' %}
+            </div>
+            {% section 'account-address-edit' %}
+          </div><!-- adrress_content_wrap -->
+        </div>
+      </div><!-- admin_wrapper -->
+    </div><!-- section_inner_new -->
+  </section>
+</article>

@@ -1,0 +1,40 @@
+<div class="desc_unit">
+  <div class="comp-detail-title">
+  {%- if product.type == "gift" -%}
+    <hgroup>
+      <span class="title_en">Contents</span>
+      <h2 class="title_ja">セットの内容</h2>
+    </hgroup>
+  {%- else -%}
+  <hgroup>
+    <span class="title_en">Features</span>
+    <h2 class="title_ja">成分へのこだわり</h2>
+  </hgroup>
+  {%- endif -%}
+  </div>
+  <div class="comp-detail-desc">
+  {% for item in product.metafields.custom_fields["prod_detail_desc"] %}
+    <div class="detail_item">
+      <div class="img_wrap">
+        <img loading="lazy" src="{{ item["detail_image_url"] }}">
+      </div>
+      <div class="txt_wrap">
+      {% if item["detail_ttl_ja"] != blank %}
+        <h3 class="prod_name">{{ item["detail_ttl_en"] }}</h3>
+        <h4 class="prod_genre">{{ item["detail_ttl_ja"] }}</h4>
+        {% else %}
+        <h3 class="prod_name ja">{{ item["detail_ttl_en"] }}</h3>
+      {% endif %}
+        <div class="desc_wrap">
+          <p>{{ item["detail_desc"] }}</p>
+        </div>
+        {% if item["detail_link_url"] != blank %}
+        <div class="comp-detail-button">
+          <a href="/products/{{ item["detail_link_url"] }}"><span>商品ページへ</span></a>
+        </div>
+        {% endif %}
+      </div>
+    </div><!-- detail_item -->
+    {% endfor %}
+  </div><!-- comp-detail-desc -->
+</div><!-- desc_unit -->
