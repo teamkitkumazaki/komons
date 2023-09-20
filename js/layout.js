@@ -1738,7 +1738,7 @@ $(function() {
       dots: false,
       slidesToShow: 3,
       centerMode: false,
-      autoplay: false,
+      autoplay: true,
       speed: 600,
       prevArrow: prevButtonHTML,
       nextArrow: nextButtonHTML,

@@ -1,5 +1,27 @@
 @charset "UTF-8";
-
+/* ----- Google Fonts ----- */
+/*
+@font-face {
+    font-family: 'libre-regular';
+		font-weight: 400;
+    src: url('../fonts/LibreBaskerville-Regular.eot'),url('../fonts/LibreBaskerville-Regular.woff') format('woff'),
+    url('../fonts/LibreBaskerville-Regular.ttf') format('truetype'),
+}
+@font-face {
+    font-family: 'libre-bold';
+		font-weight: 700;
+    src: url('../fonts/librebaskerville-bold-webfont.eot'),url('../fonts/librebaskerville-bold-webfont.woff') format('woff'),
+    url('../fonts/LibreBaskerville-Bold.ttf') format('truetype'),
+}
+*/
+/* ########## 共通セクション ########## */
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -8719,8 +8741,7 @@ body.loaded #loading {
 .comp-instagram-wrap .insta_feed a .instafeed-container {
   width: 100% !important;
   padding-top: 0 !important;
-  border-left: 0px solid #d8d8d8 !important;
-  border-bottom: 0px solid #d8d8d8 !important;
+  border: 1px solid #fff !important;
   overflow: hidden;
   height: 13vw;
   max-height: 230px;
@@ -8733,8 +8754,8 @@ body.loaded #loading {
 .comp-instagram-wrap .insta_feed a .instafeed-container img {
   position: static !important;
   height: auto !important;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.2) !important;
+          transform: scale(1.2) !important;
   -webkit-transform-origin: center center;
           transform-origin: center center;
 }
