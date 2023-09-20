@@ -1,0 +1,44 @@
+.comp-slider-caret{
+  position: absolute;
+  z-index: 30;
+  top: 40px;
+  bottom:0;
+  margin: auto;
+  appearance: none;
+  pointer:cursor;
+  border:none;
+  box-shadow: none;
+  background: transparent;
+  .circle{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    @include flexSet;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s;
+    will-change: transform;
+    svg{
+      width: 6px;
+      fill: $basicGreen;
+      transition: fill .3s;
+      will-change: fill;
+    }
+  }
+  &.prev-arrow{
+    left:-5px;
+  }
+  &.next-arrow{
+    right:-5px;
+  }
+  &:hover{
+    @media screen and (min-width: 780px){
+      .circle{
+        transform: scale(1.25);
+      }
+    }
+  }
+}

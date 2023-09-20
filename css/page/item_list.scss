@@ -45,6 +45,11 @@
 				}
 			}
 		}
+		.comp-product-block{
+			@media screen and (max-width: 719px){
+				margin-left: -5vw;
+			}
+		}
 		.comp-pager{
 			max-width: 75vw;
 			margin: 20px auto 0;
@@ -123,6 +128,13 @@
 					letter-spacing: 0.05em;
 					font-weight: normal;
 				}
+			}
+		}
+	}
+	.section-category{
+		.comp-category-list{
+			@media screen and (max-width: 719px){
+				margin-left: -5vw;
 			}
 		}
 	}

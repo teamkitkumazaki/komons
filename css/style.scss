@@ -48,15 +48,27 @@
 @import 'component/comp-fixed-news.scss';
 
 
-
 /* 共通 */
 @import 'component/comp-section-ttl.scss';
+@import 'component/common/comp-new-section-ttl.scss';
+@import 'component/common/comp-slider-caret.scss';
+@import 'component/common/comp-box-button.scss';
+@import 'component/common/comp-category-list.scss';
+@import 'component/common/comp-sns-wrap.scss';
+@import 'component/common/comp-pop-menu.scss';
+
 
 /* トップページ*/
 @import 'component/index/comp-index-product-section.scss';
+@import 'component/index/comp-index-prod-slider.scss';
+@import 'component/index/comp-index-contens-list.scss';
+@import 'component/index/comp-index-gift-slider.scss';
+
 
 /* 商品*/
 @import 'component/products/comp-product-list.scss';
+@import 'component/products/comp-product-block.scss';
+
 @import 'component/products/comp-pager.scss';
 /*@import 'component/products/comp-filter-wrap.scss';*/
 @import 'component/products/comp-gift-product-list.scss';
@@ -138,6 +150,7 @@
 
 /* ########## ページ別レイアウト ########## */
 @import 'page/index.scss'; //トップページ
+@import 'page/indexNew.scss'; //トップページ
 @import 'page/item_list.scss'; //商品一覧
 @import 'page/item_detail_new.scss'; //商品詳細
 @import 'page/group.scss'; //商品グループ一覧・検索結果

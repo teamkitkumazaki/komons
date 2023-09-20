@@ -1,0 +1,238 @@
+.page-index {
+	width: 100%;
+	overflow: hidden;
+	.section-pickup{
+		padding-top: 40px;
+	}
+	.section-products{
+		padding-top: 40px;
+		padding-bottom: 20px;
+		/*border-bottom: 1px solid $borderColor;*/
+		width: 100%;
+		overflow: hidden;
+		.comp-box-button{
+			margin-top: 20px;
+		}
+	}
+	.section-gift{
+		position: relative;
+		padding-top: 40px;
+		padding-bottom: 95px;
+		margin-bottom: 45px;
+		/*border-bottom: 1px solid $borderColor;*/
+		.ttl_desc{
+			width: 70%;
+			br{
+				display: none;
+			}
+		}
+	}
+	.section-laboratory{
+		padding-top: 40px;
+		padding-bottom: 40px;
+		/*border-bottom: 1px solid $borderColor;*/
+		.lab_flex{
+			.lab_img{
+				margin-bottom: 30px;
+			}
+			.lab_txt{
+				.comp-box-button{
+					margin-top: -10px;
+				}
+			}
+		}
+	}
+	.section-contents{
+		padding-top: 40px;
+		padding-bottom: 20px;
+		/*border-bottom: 1px solid $borderColor;*/
+		.comp-box-button{
+			margin-top: 20px;
+		}
+	}
+}
+.section-category{
+	padding-top: 40px;
+	.comp-new-section-ttl{
+		.ttl_desc{
+			br{
+				display: none;
+			}
+		}
+	}
+}
+.section-instagram{
+	.insta_ttl{
+		font-size: 3.2rem;
+		margin-bottom: 40px;
+	}
+}
+@media screen and (min-width: 720px){
+	.page-index {
+		width: 100%;
+		overflow: hidden;
+		.section-pickup{
+			padding-top: 60px;
+		}
+		.section-products{
+			padding-top: 80px;
+			padding-bottom: 40px;
+			.comp-box-button{
+				margin-top: 40px;
+			}
+		}
+		.section-gift{
+			padding-top: 60px;
+			padding-bottom: 150px;
+			margin-bottom: 60px;
+			.ttl_desc{
+				width: 100%;
+				br{
+					display: block;
+				}
+			}
+		}
+		.section-laboratory{
+			padding-top: 60px;
+			padding-bottom: 60px;
+			.lab_flex{
+				.lab_img{
+					margin-bottom: 40px;
+				}
+				.lab_txt{
+					.comp-box-button{
+						width: 400px;
+						margin-left: 0;
+					}
+				}
+			}
+		}
+		.section-contents{
+			padding-top: 60px;
+		}
+	}
+	.section-category{
+		padding-top: 60px;
+	}
+	.section-instagram{
+		.insta_ttl{
+			font-size: 3.2rem;
+			margin-bottom: 40px;
+		}
+	}
+}
+
+@media screen and (min-width: 1100px){
+	.page-index {
+		.section-pickup{
+			padding-top: 80px;
+			padding-bottom: 160px;
+			border-bottom: 0px solid $borderColor;
+		}
+		.section-products{
+			padding-top: 0px;
+			padding-bottom: 60px;
+			border-bottom: 0px solid $borderColor;
+			.comp-box-button{
+				margin-top: 60px;
+				max-width: 600px;
+			}
+		}
+		.section-gift{
+			padding-top: 100px;
+			padding-bottom: 120px;
+			margin-bottom: 0;
+			border-bottom: 0px;
+			.gift_flex{
+				@include flexSet;
+				justify-content:space-between;
+				.comp-new-section-ttl{
+					width: 25%;
+					margin-top: 20px;
+					.ttl_desc{
+						br{
+							display: none;
+						}
+					}
+					.comp-box-button{
+						margin: 25px 0 0;
+						.button{
+							width: 100%;
+							padding: 15px 15px;
+							justify-content: space-between;
+						}
+					}
+				}
+				.comp-index-gift-slider{
+					margin-left: 0;
+				}
+			}
+		}
+		.section-laboratory{
+			padding-top: 0px;
+			padding-bottom: 120px;
+			border-bottom: 0px;
+			.lab_flex{
+				@include flexSet;
+				align-items: center;
+				justify-content: space-between;
+				.lab_img{
+					width: 48%;
+					margin-bottom: 0px;
+				}
+				.lab_txt{
+					width: 45%;
+					.comp-new-section-ttl{
+						margin-bottom: 30px;
+					}
+					.comp-box-button{
+						width: 220px;
+						margin-top: 0;
+						margin-left: 0;
+						a{
+							padding: 15px;
+							justify-content: space-between;
+						}
+					}
+				}
+			}
+		}
+		.section-contents{
+			padding-top: 0px;
+			margin-bottom: 0px;
+			border-bottom:0;
+			.comp-box-button{
+				max-width: 600px;
+				margin-top: 60px;
+			}
+		}
+	}
+	.section-category{
+		padding-top: 100px;
+		padding-bottom: 120px;
+		border-bottom: 0px solid $borderColor;
+		.section_inner_new{
+			@include flexSet;
+			justify-content: space-between;
+			.comp-new-section-ttl{
+				width: 25%;
+				margin-top: 0px;
+				.ttl_desc{
+					br{
+						display: block;
+					}
+				}
+			}
+			.comp-category-list{
+				width: 70%;
+			}
+		}
+	}
+	.section-instagram{
+		padding-top: 100px;
+		.insta_ttl{
+			font-size: 4.0rem;
+			margin-bottom: 50px;
+		}
+	}
+}

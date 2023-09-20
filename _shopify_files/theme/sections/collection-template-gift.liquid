@@ -1,0 +1,35 @@
+{%- assign limit = 25 -%}
+{% paginate collection.products by limit %}
+<section class="section-main">
+	<div class="main_img">
+		{{ collection.image | image_url: width: 1500 | image_tag }}
+	</div>
+	<div id="headerRolled" class="section_inner_new">
+		<div id="headerRolledSp" class="lead_txt">
+			<div class="comp-section-ttl">
+				<hgroup>
+					<span class="ttl_en">Gift Set</span>
+					<h1 class="ttl_ja">ギフト商品一覧</h1>
+				</hgroup>
+			</div>
+			<div class="main_desc">
+				<p>毎日の家事を「プラスな時間」に変えるKomonsのギフトセットを、大切な人への贈り物に。</p>
+				<p>すべてのセットはギフトボックス付き。熨斗やメッセージカードなどのギフトサービスも承ります。</p>
+			</div>
+		</div>
+	</div><!-- section_inner_new -->
+</section>
+{%- render 'gift-item-handler' -%}
+<section class="section-gift-products">
+	<div class="section_inner_new">
+		<div id="giftProductList" class="comp-gift-product-list">
+			{%- for product in collection.products -%}
+			{% include 'gift-item-card' %}
+			{%- endfor -%}
+		</div>
+	</div>
+</section>
+{%- render 'gift-service' -%}
+{%- render 'gift-faq' -%}
+
+{% endpaginate %}

@@ -1,11 +1,11 @@
 .comp-instagram-wrap {
   padding: 120px 0;
-  border-top: 1px solid #f1f1f1;
+  border-top: 1px solid #d8d8d8;
   position: relative;
   z-index: 10;
   background: #fff;
   &.b_none{
-    border-top: 0px solid #f1f1f1;
+    border-top: 1px solid #d8d8d8;
   }
   .insta_ttl {
     @include libre-r;
@@ -18,7 +18,7 @@
   }
 
   .link_button {
-    max-width: 600px;
+    max-width: 320px;
     margin: 0 auto;
 
     a {
@@ -30,8 +30,8 @@
       span {
         position: relative;
         display: inline-block;
-        padding: 25px 0 25px 35px;
-        font-size: 18px;
+        padding: 20px 0 20px 35px;
+        font-size: 1.6rem;
         letter-spacing: 0.75px;
 
         &::before {
@@ -58,8 +58,8 @@
   .insta_feed {
     @include flexSet;
     display: flex !important;
-    border-top: 1px solid #d8d8d8 !important;
-    margin-bottom: 80px !important;
+    border-top: 0px solid #d8d8d8 !important;
+    margin-bottom: 50px !important;
 
     a {
       width: calc(100% / 6);
@@ -70,15 +70,23 @@
       .instafeed-container{
         width: 100% !important;
         padding-top: 0 !important;
-        border-left: 1px solid #d8d8d8 !important;
-        border-bottom: 1px solid #d8d8d8 !important;
+        border: 1px solid #fff !important;
+        overflow: hidden;
+        height: 13vw;
+        max-height: 230px;
+        @media screen and (max-width: 1100px){
+          height: 14.5vw;
+        }
         img{
           position: static !important;
+          height: auto !important;
+          transform: scale(1.2) !important;
+          transform-origin: center center;
         }
       }
       &:nth-of-type(6) {
         .instafeed-container{
-          border-right: 1px solid #d8d8d8;
+          border-right: 0px solid #d8d8d8;
         }
       }
       &:nth-of-type(n + 7) {
@@ -123,14 +131,14 @@
     }
 
     .insta_feed {
-      margin-bottom: 60px !important;
+      margin-bottom: 20px !important;
     }
   }
 }
 @media screen and (max-width: 980px) {
   .comp-instagram-wrap {
     padding: 60px 0;
-
+    margin-top: 40px;
     .insta_ttl {
       font-size: 32px;
       margin-bottom: 40px;
@@ -143,13 +151,16 @@
       max-width: 600px !important;
       margin: 0 auto 40px !important;
       @media screen and (max-width: 720px){
-        margin: 0 auto 20px !important;
+        margin: 0 auto 10px !important;
       }
       a {
         width: calc(100% / 3) !important;
-        &:nth-of-type(3n) {
-          .instafeed-container{
-            border-right: 1px solid #d8d8d8 !important;
+        border-bottom: 3px solid #fff;
+        .instafeed-container{
+          height: 25.5vw;
+          max-height: unset;
+          @media screen and (max-width: 720px){
+            height: 28.5vw;
           }
         }
         &:nth-of-type(n + 7) {

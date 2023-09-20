@@ -86,6 +86,11 @@
 	{% section 'header' %}
 	{%- endif -%}
 	{{content_for_layout}}
+
+	{%- if request.page_type contains 'index' or request.page_type contains 'collection' or request.page_type contains 'product' -%}
+	{% section 'sns-wrap' %}
+	{%- endif -%}
+
 	{%- if request.page_type contains 'account' -%}
 	{% section 'header' %}
 	{%- endif -%}
@@ -101,8 +106,8 @@
 {%- endif -%}
 <script async src="https://statics.a8.net/a8sales/a8sales.js"></script>
 <script src="{{ 'layout.js' | asset_url }}" defer="defer"></script>
-{%- if request.page_type contains 'cart' -%}
-<script src="{{ 'backup.js' | asset_url }}" defer="defer"></script>
+{%- if request.page_type contains 'index' -%}
+<script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {%- if request.page_type contains 'product' -%}
 <script src="{{ 'detail.js' | asset_url }}" defer="defer"></script>

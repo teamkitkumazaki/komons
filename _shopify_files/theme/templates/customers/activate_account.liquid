@@ -1,0 +1,48 @@
+<article id="reset" class="page-admin-login">
+	<section class="section-login">
+    <div class="section_inner_new">
+      <div class="admin_wrapper">
+        <div class="comp-admin-title">
+          <hgroup>
+            <h1 class="page_ttl en">ACTIVATE ACCOUNT</h1>
+            <span class="page_subttl ja">アカウントを作成する</span>
+          </hgroup>
+        </div>
+				<div class="form_width">
+					{%- form 'activate_customer_password' -%}
+					{%- if form.errors -%}
+          <div class="comp-form-message">
+            <div class="message_inner error">
+							{%- for field in form.errors -%}
+								{%- if field == 'form' -%}
+									<p>{{ form.errors.messages[field] }}</p>
+								{%- else -%}
+									<p><a href="#{{ field }}">{{ form.errors.translated_fields[field] | capitalize }}{{ form.errors.messages[field] }}</a></p>
+								{%- endif -%}
+							{%- endfor -%}
+            </div>
+          </div>
+					{%- endif -%}
+					<div class="comp-admin-form">
+						<div class="form_item">
+							<label>パスワード</label>
+							<div class="form_wrap">
+								<input type="password" name="customer[password]" id="password" autocomplete="new-password" class="admin">
+							</div>
+						</div>
+						<div class="form_item">
+							<label>パスワード(確認用)</label>
+							<div class="form_wrap">
+								<input type="password" name="customer[password_confirmation]" id="password_confirmation" autocomplete="new-password" class="admin">
+							</div>
+						</div>
+					</div><!-- comp-admin-form -->
+					<div id="submitButton" class="comp-admin-button">
+						<input type="submit" class="btn" value="アカウントを作成">
+					</div>
+					{%- endform -%}
+				</div><!-- form_width -->
+			</div><!-- admin_wrapper -->
+		</div><!-- section_inner_new -->
+	</section>
+</article>

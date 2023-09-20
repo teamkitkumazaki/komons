@@ -1,0 +1,35 @@
+<div class="desc_unit">
+  <div class="comp-detail-title margin">
+    <hgroup>
+      <span class="title_en">Detail</span>
+      <h2 class="title_ja">商品仕様・詳細</h2>
+    </hgroup>
+  </div>
+  <div class="comp-detail-toggle-new">
+    <div class="toggle_item">
+      <button class="toggle_button_new">
+        <span class="txt">商品仕様</span>
+        <span class="caret"></span>
+      </button>
+      <div class="toggle_content_new">
+        <div class="detail_item">
+          <p class="title">商品区分</p>
+          <div class="content" style="white-space: pre-line;"><p>フェイスタオル</p></div>
+        </div>
+        <div class="detail_item">
+          <p class="title">素材</p>
+          <div class="content" style="white-space: pre-line;"><p>綿100%</p></div>
+        </div>
+        <div class="detail_item">
+          <p class="title">サイズ</p>
+          {% if product.handle contains 'k1015' %}
+          <div class="content" style="white-space: pre-line;"><p>340mm×350mm</p></div>
+          {% endif %}
+          {% if product.handle contains 'k1016' %}
+          <div class="content" style="white-space: pre-line;"><p>340mm×1000mm</p></div>
+          {% endif %}
+        </div>
+      </div><!-- toggle_content -->
+    </div>
+  </div><!-- comp-detail-toggle-new -->
+</div>

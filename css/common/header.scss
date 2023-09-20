@@ -1,4 +1,4 @@
-.header_new{
+.header{
 	width: 100vw;
 	position: fixed;
 	z-index: 500;
@@ -13,11 +13,11 @@
 		@include flexSet;
 		align-items: center;
 		justify-content: space-between;
-		border-top: 3px solid transparent;
 		transition: border .3s, background .3s;
 		will-change: border, background;
 		.header_menu{
 			button{
+				position: relative;
 				width: 60px;
 				height: 60px;
 				@include flexSet;
@@ -32,15 +32,32 @@
 				cursor: pointer;
 				transition: background .3s;
 				will-change: background;
+				span{
+					position: absolute;
+					display: block;
+					width: 50%;
+					height: 1px;
+					background: #fff;
+					left:0;
+					right:0;
+					margin: auto;
+					opacity: 0;
+					transition: opacity .3s;
+					&:nth-of-type(1){
+						top: 25px;
+						transform: translateY(4px) rotate(45deg);
+					}
+					&:nth-of-type(2){
+						bottom: 25px;
+						transform: translateY(-4px) rotate(-45deg);
+					}
+				}
 				svg{
 					width: 32px;
 					margin: 0 auto;
 					fill: #fff;
 					transition: fill .3s;
 					will-change: fill;
-				}
-				&:hover{
-					background: $bgGreen;
 				}
 			}
 		}
@@ -65,20 +82,19 @@
 					}
 				}
 			}
+		}
+		.right_wrap{
+			@include flexSet;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+		}
+		.header_right{
+			order: 1;
+			margin-right: 15px;
 			.header_navigation{
 				display: none;
 			}
-		}
-		.right_wrap{
-			@media screen and (max-width: 719px){
-				@include flexSet;
-				align-items: center;
-				justify-content: space-between;
-				width: 100%;
-			}
-		}
-		.header_right{
-			margin-right: 15px;
 			.header_guide{
 				@include flexSet;
 				align-items: center;
@@ -129,13 +145,60 @@
 		}
 	}
 	&.rolled_sp{
+		@media screen and (max-width: 1099px){
+			.header_inner{
+				background: #fff;
+				.header_menu{
+					button{
+						svg{
+							fill: $basicGreen;
+						}
+					}
+				}
+				.header_left{
+					.header_logo{
+						a{
+							svg{
+								fill: $basicGreen;
+							}
+						}
+					}
+				}
+				.header_right{
+					.header_guide{
+						.nav_item{
+							a{
+								.icon{
+									svg{
+										fill: $basicGreen;
+									}
+								}
+								.txt{
+									display: none;
+								}
+								.cart_item_num{
+									background-color: $basicGreen;
+									color: #fff;
+									border: 1px solid #fff;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.hum_open{
 		.header_inner{
-			background: #fff;
-			border-top: 3px solid $basicGreen;
+			background: transparent;
 			.header_menu{
 				button{
+					span{
+						opacity: 1;
+					}
 					svg{
-						fill: $basicGreen;
+						display: none;
+						fill: #fff;
 					}
 				}
 			}
@@ -143,7 +206,7 @@
 				.header_logo{
 					a{
 						svg{
-							fill: $basicGreen;
+							fill: #fff;
 						}
 					}
 				}
@@ -154,171 +217,16 @@
 						a{
 							.icon{
 								svg{
-									fill: $basicGreen;
+									fill: #fff;
 								}
 							}
 							.txt{
 								display: none;
 							}
 							.cart_item_num{
-								background-color: $basicGreen;
-								color: #fff;
-								border: 1px solid #fff;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-@media screen and (min-width: 720px){
-	.header_new{
-		.header_inner{
-			border-top: 0px solid transparent;
-			.right_wrap{
-				@include flexSet;
-				align-items: center;
-			}
-			.header_left{
-				position: static;
-				order: 0;
-				position: block;
-				margin: 0;
-				margin-left: 30px;
-				width: 175px;
-				height: 90px;
-				.header_logo{
-					@include flexSet;
-					align-items: center;
-					height: 90px;
-					a{
-						display: block;
-						svg{
-							width: 100%;
-							fill: #fff;
-							transition: fill .3s;
-							will-change: fill;
-						}
-					}
-				}
-			}
-			.header_right{
-				order: 1;
-				margin-right: 30px;
-				.header_guide{
-					@include flexSet;
-					align-items: center;
-					.nav_item{
-						position: relative;
-						margin-right: 15px;
-						padding-right: 15px;
-						&::after{
-							display: block;
-							content: "";
-							position: absolute;
-							top:0;
-							bottom:0;
-							right:0;
-							margin: auto;
-							width: 1px;
-							height: 20px;
-							background: #fff;
-						}
-						&:nth-last-of-type(1){
-							margin-right: 0px;
-							padding-right: 0px;
-							&::after{
-								display: none;
-							}
-						}
-						a{
-							@include flexSet;
-							align-items: center;
-							position: relative;
-							color: #fff;
-							transition: color .3s;
-							will-change: color;
-							.icon{
-								display: block;
-								width: 22px;
-								margin-right: 10px;
-							}
-							.txt{
-								display: block;
-								font-size: 1.4rem;
-								margin-bottom: 2px;
-							}
-							.cart_item_num{
-								position: static;
-								width: 22px;
-								height: 22px;
-								border-radius: 50%;
-								margin-left: 10px;
 								background-color: #fff;
 								color: $basicGreen;
-								line-height: 22px;
-								box-sizing: border-box;
-								font-size: 14px;
-								border: 0px solid $basicGreen;
-							}
-						}
-					}
-				}
-			}
-			.header_menu{
-				order: 2;
-				button{
-					width: 90px;
-					height: 90px;
-					background: $basicGreen;
-					svg{
-						width: 35px;
-					}
-				}
-			}
-		}
-		&.rolled{
-			.header_inner{
-				background: transparent;
-				border-top: 0px solid $basicGreen;
-				.header_menu{
-					button{
-						svg{
-							fill: #fff;
-						}
-					}
-				}
-				.header_left{
-					.header_logo{
-						a{
-							svg{
-								fill: $basicGreen;
-							}
-						}
-					}
-				}
-				.header_right{
-					.header_guide{
-						.nav_item{
-							&::after{
-								background: $basicGreen;
-							}
-							a{
-								color: $basicGreen;
-								.icon{
-									svg{
-										fill: $basicGreen;
-									}
-								}
-								.txt{
-								}
-								.cart_item_num{
-									background-color: $basicGreen;
-									color: #fff;
-									border: 0px solid #fff;
-								}
+								border: 1px solid $basicGreen;
 							}
 						}
 					}
@@ -329,17 +237,23 @@
 }
 
 @media screen and (min-width: 1100px){
-	.header_new{
+	.header{
 		.header_inner{
+			@include flexSet;
+			justify-content:space-between;
+			align-items: center;
+			padding-top: 35px;
 			.header_left{
-				width: auto;
-				@include flexSet;
-				align-items: center;
+				position: static;
+				display: block;
+				margin: 0;
 				margin-left: 35px;
+				width: 155px;
+				height: auto;
 				.header_logo{
 					width: 155px;
-					margin-right: 40px;
-					height: 90px;
+					margin-right: 0px;
+					height: auto;
 					a{
 						display: block;
 						svg{
@@ -350,21 +264,49 @@
 						}
 					}
 				}
+			}
+			.right_wrap{
+				@include flexSet;
+				justify-content: flex-end;
+				width: calc(100% - 200px);
+			}
+			.header_right{
+				@include flexSet;
+				justify-content: flex-end;
+				align-items: center;
+				order: 0;
+				background: $basicGreen;
+				padding: 13px 25px 13px;
+				border-radius: 120px;
+				margin-right: 10px;
+				transition: background .2s;
+				will-change: background;
 				.header_navigation{
 					display: block;
-					margin-top: 15px;
+					margin-top: 0px;
 					ul{
 						@include flexSet;
 						li{
+							position: relative;
 							margin-right: 20px;
-							&:nth-last-of-type(1){
-								margin-right: 0;
+							padding-right: 20px;
+							&::after{
+								display: block;
+								content: "";
+								position: absolute;
+								top:0;
+								bottom:0;
+								right:0;
+								margin: auto;
+								width: 1px;
+								height: 15px;
+								background: #f9f6f3;
 							}
 							a{
 								display: block;
 								@include libre-r;
 								@include hover;
-								font-size: 1.8rem;
+								font-size: 1.6rem;
 								color: inherit;
 								color: #fff;
 								transition: color .3s;
@@ -373,28 +315,14 @@
 						}
 					}
 				}
-			}
-			.header_right{
-				order: 1;
-				margin-right: 30px;
 				.header_guide{
 					@include flexSet;
 					align-items: center;
 					.nav_item{
 						position: relative;
-						margin-right: 15px;
-						padding-right: 15px;
+						margin-right: 10px;
 						&::after{
-							display: block;
-							content: "";
-							position: absolute;
-							top:0;
-							bottom:0;
-							right:0;
-							margin: auto;
-							width: 1px;
-							height: 20px;
-							background: #fff;
+							display: none;
 						}
 						&:nth-last-of-type(1){
 							margin-right: 0px;
@@ -413,14 +341,13 @@
 							.icon{
 								display: block;
 								width: 22px;
-								margin-right: 10px;
+								margin-right: 5px;
 							}
 							.txt{
-								display: block;
-								font-size: 1.4rem;
+								display: none;
 							}
 							.cart_item_num{
-								position: static;
+								/*position: static;
 								width: 22px;
 								height: 22px;
 								border-radius: 50%;
@@ -430,20 +357,50 @@
 								line-height: 22px;
 								box-sizing: border-box;
 								font-size: 14px;
-								border: 0px solid $basicGreen;
+								border: 0px solid $basicGreen;*/
 							}
 						}
 					}
 				}
 			}
 			.header_menu{
-				order: 2;
+				order: 1;
+				position: static;
+				display: block;
+				width: 49px;
+				height: 49px;
+				margin-right: 35px;
 				button{
-					width: 90px;
-					height: 90px;
+					position: relative;
+					display: block;
+					width: 49px;
+					height: 49px;
 					background: $basicGreen;
+					border-radius: 50%;
+					transition: background .2s;
+					will-change: background;
+					span{
+						opacity: 1;
+						position: absolute;
+						width: 50%;
+						height: 1px;
+						left:0;
+						right:0;
+						margin: auto;
+						background: #fff;
+						transition: transform .2s, background .2s;
+						will-change: transform, background;
+						&:nth-of-type(1){
+							top: 20px;
+							transform: translateY(0) rotate(0deg);
+						}
+						&:nth-of-type(2){
+							bottom: 20px;
+							transform: translateY(0) rotate(0deg);
+						}
+					}
 					svg{
-						width: 35px;
+						display: none;
 					}
 				}
 			}
@@ -467,36 +424,59 @@
 							}
 						}
 					}
-					.header_navigation{
-						display: block;
-						ul{
-							li{
-								a{
-									color: $basicGreen;
-								}
+				}
+			}
+		}
+		&.hum_open{
+			.header_inner{
+				background: transparent;
+				.header_menu{
+					button{
+						background: #fff;
+						span{
+							opacity: 1;
+							background: $basicGreen;
+							&:nth-of-type(1){
+								top: 20px;
+								transform: translateY(4px) rotate(45deg);
+							}
+							&:nth-of-type(2){
+								bottom: 20px;
+								transform: translateY(-4px) rotate(-45deg);
+							}
+						}
+						svg{
+							display: none;
+							fill: #fff;
+						}
+					}
+				}
+				.header_left{
+					.header_logo{
+						a{
+							svg{
+								fill: #fff;
 							}
 						}
 					}
 				}
 				.header_right{
+					background: transparent;
 					.header_guide{
 						.nav_item{
-							&::after{
-								background: $basicGreen;
-							}
 							a{
-								color: $basicGreen;
 								.icon{
 									svg{
-										fill: $basicGreen;
+										fill: #fff;
 									}
 								}
 								.txt{
+									display: none;
 								}
 								.cart_item_num{
-									background-color: $basicGreen;
-									color: #fff;
-									border: 0px solid #fff;
+									background-color: #fff;
+									color: $basicGreen;
+									border: 1px solid $basicGreen;
 								}
 							}
 						}

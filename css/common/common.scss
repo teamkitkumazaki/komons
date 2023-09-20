@@ -19,8 +19,9 @@ body {
 	font-size: 14px;
 	color: $basicGreen;
 	line-height: 1;
-	font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+	font-family: YakuHanMP,'Shippori Mincho',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
 	width: 100%;
+	-webkit-text-size-adjust: 100%;
 	left:0;
 	right:0;
 	margin: auto;
@@ -29,7 +30,7 @@ body {
 	}
 }
 h1,h2,h3,h4,h5{
-	font-weight: normal;
+	font-weight: 400;
 }
 .article_page,
 .article_post {
@@ -139,7 +140,7 @@ h1,h2,h3,h4,h5{
 	}
 	.article_wrap {
 		ul {
-			@include waku;
+			@include wrapper;
 			@include flexSet;
 			justify-content: flex-start;
 

@@ -1,0 +1,82 @@
+<div id="optionPop" class="comp-gift-option-pop">
+  <div id="popBg" class="pop_bg"></div>
+	{% form 'product', product, class:form_classes, id:hoge, novalidate: 'novalidate', data-product-form: '' %}
+  <div class="pop_flex">
+    <div class="height_adjust"></div>
+    <div class="pop_contents">
+      <div id="popClose" class="pop_close"></div>
+      <div class="contents_inner">
+        <p class="pop_title">下記よりギフトオプションを<span>お選びいただけます</span></span></p>
+        <div class="option_select">
+          <div class="option_item nosi">
+            <label>
+              <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_mizuhiki_nl5vi0.jpg)"></div>
+              <div class="input_wrap">
+                <input type="checkbox" name="mizuhiki" value="mizuhiki">
+                <span class="radio_checker"></span>
+                <div class="option_name">
+                  <span class="name">熨斗(のし)</span>
+                  <span id="noshiPrice" class="text_p"></span>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="option_item message">
+            <label>
+              <div class="img_wrap" style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1617607081/gift_service/option_message_f7iisa.jpg)"></div>
+              <div class="input_wrap">
+                <input type="checkbox" name="message" value="message">
+                <span class="radio_checker"></span>
+                <div class="option_name">
+                  <span class="name">メッセージカード</span>
+                  <span id="messagePrice" class="text_p"></span>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="option_item tesage">
+            <label>
+              <div class="img_wrap" {% if product.handle != 'k0018' and product.handle != 'k0027' %}style="background-image:url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/gift_service/option_tesage_yv4i6v.jpg)"{%- else -%}style="background-image:url(https://cdn.shopify.com/s/files/1/0536/9544/7234/files/tesage_large_2c7b4458-19db-48c5-a5f0-8fcc4a70f4cd.jpg?v=1644388616)"{%- endif -%}></div>
+              <div class="input_wrap">
+                <input type="checkbox" name="tesage" value="tesage">
+                <span class="radio_checker"></span>
+                <div class="option_name">
+                  <span class="name">手提げ布バッグ</span>
+                  <span id="tesagePrice" class="text_p"></span>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="desc_wrap" style="margin-top: 20px">
+            <p class="mizuhiki_desc">※水引きの種類はどのシーンのお祝い事にもお使いいただける「紅白梅結び」となります。</p>
+            <p class="mizuhiki_desc">※弔事の場合はギフトプションにて熨斗をお選びいただいた上で水引きなし、掛け紙のみの対応も可能ですのでご希望の場合は備考欄にお書き添えくださいませ。</p>
+            <p class="mizuhiki_desc">※熨斗に「表書き（御祝/内祝/御結婚祝など）」、「お名前」の印字をご希望のお客様は、カート画面の「ギフトオプション」欄にご記入ください。ご記入のない場合は、「無地熨斗」にて対応させていただきます。</p>
+            <p class="mizuhiki_desc">※メッセージカードへの印字をご希望の場合は、メッセージの内容をカート画面の「ギフトオプション」欄にご記入ください。ご記入のない場合は、「無地カード」にて対応させていただきます。</p>
+            <p class="mizuhiki_desc">※印字を承ったメッセージカードは、ギフトボックス内に同封してお届けさせていただきます。</p>
+            {%- if product.handle != "k0027" or product.handle != "k0018" -%}
+            <p class="mizuhiki_desc">※お渡し用に「手提げ紙袋（無地）」を無償でお付け可能ですので、ご希望の場合は購入備考欄にてお申し付けください。</p>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+			<select name="id" id="ProductSelect-{{ section.id }}" class="giftOptionFields" style="display: none;">
+				{% for variant in product.variants %}
+					<option value="{{ variant.id }}" id ="0-{{ forloop.index }}"
+						{%- if variant == current_variant %} selected="selected" {%- endif -%}
+					>
+						{{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+					</option>
+				{% endfor %}
+			</select>
+      <div class="fix_wrapper">
+        <div class="option_fix">
+          <button id="optionFix" class="option_fix_button" href="javascript:void(0);"><span>購入する</span></button>
+          <input class="product_cart_btn product_addcart_btn" type="submit" value="カートに入れる">
+          <input type="hidden" name="properties[カテゴリー]" value="{{ product.metafields.custom_fields["prod_category"] }}">
+          <input id="lot03" type="number" name="quantity" value="1" class="product_init_num" style="display: none;">
+        </div>
+      </div>
+    </div>
+  </div><!-- pop_flex -->
+	{% endform %}
+</div><!-- comp-gift-option-pop -->
