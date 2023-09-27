@@ -15250,6 +15250,11 @@ body.loaded #loading {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.comp-journal-posts .post_item .item_content .item_title:hover {
+  opacity: 0.75;
 }
 .comp-journal-posts .post_item .item_content .item_tags {
   display: -webkit-box;
@@ -15272,6 +15277,11 @@ body.loaded #loading {
   display: block;
   font-size: 1.2rem;
   color: #007a44;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.comp-journal-posts .post_item .item_content .item_tags li a:hover {
+  opacity: 0.75;
 }
 .comp-journal-posts .post_item .item_content .item_description {
   display: none;
@@ -15368,7 +15378,22 @@ body.loaded #loading {
     display: none;
   }
   .comp-journal-posts .post_item .item_img a {
+    overflow: hidden;
+    position: relative;
     height: 18vw;
+  }
+  .comp-journal-posts .post_item .item_img a img {
+    -webkit-transition: -webkit-transform 0.5s, -webkit-filter 0.5s;
+    transition: -webkit-transform 0.5s, -webkit-filter 0.5s;
+    transition: transform 0.5s, filter 0.5s;
+    transition: transform 0.5s, filter 0.5s, -webkit-transform 0.5s, -webkit-filter 0.5s;
+    will-change: transform, filter;
+  }
+  .comp-journal-posts .post_item .item_img a:hover img {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-filter: brightness(90%);
+            filter: brightness(90%);
   }
   .comp-journal-posts.archive .post_item:nth-of-type(4) {
     display: block;
@@ -15444,7 +15469,7 @@ body.loaded #loading {
 }
 @media screen and (min-width: 980px) {
   .comp-blogs-pager .comp_inner .link:hover {
-    background: #2f281e;
+    background: #046734;
   }
 }
 .comp-blogs-pager .comp_inner .link.previous {
@@ -15506,7 +15531,7 @@ body.loaded #loading {
 }
 @media screen and (min-width: 980px) {
   .comp-blogs-pager .comp_inner .pager_select select:hover {
-    background: #f8f8f8;
+    background: #046734;
   }
 }
 

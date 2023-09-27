@@ -29,6 +29,7 @@
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        @include hover;
       }
       .item_tags{
         @include flexSet;
@@ -40,6 +41,7 @@
             display: block;
             font-size: 1.2rem;
             color: #007a44;
+            @include hover;
           }
         }
       }
@@ -126,7 +128,19 @@
       }
       .item_img{
         a{
+          overflow: hidden;
+          position: relative;
           height: 18vw;
+          img{
+            transition: transform .5s, filter .5s;
+            will-change: transform, filter;
+          }
+          &:hover{
+            img{
+              transform: scale(1.05);
+              filter:brightness(90%);
+            }
+          }
         }
       }
     }

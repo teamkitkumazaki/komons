@@ -21,7 +21,7 @@
       will-change: background;
       &:hover{
         @media screen and (min-width: 980px){
-          background: $hoverColor;
+          background: $insertGreen;
         }
       }
       &.previous{
@@ -76,7 +76,7 @@
         will-change: background;
         &:hover{
           @media screen and (min-width: 980px){
-            background: $bgColor;
+            background: $insertGreen;
           }
         }
       }
