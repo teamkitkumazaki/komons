@@ -7,7 +7,6 @@
 @import 'common/reset.scss'; //デフォルトCSSのリセット
 @import 'common/header.scss'; //ヘッダー
 @import 'common/footer.scss'; //フッター
-/*@import 'common/hummenu.scss'; //ハンバーガーメニュー*/
 @import 'common/common.scss'; //共通レイアウト
 @import 'common/slideCart.scss'; //スライドカート
 
@@ -33,7 +32,6 @@
 @import 'component/comp-article-form.scss';
 @import 'component/comp-article-related-item.scss';
 @import 'component/comp-campaign-pop.scss';
-@import 'component/comp-slide-menu.scss';
 @import 'component/comp-store-list.scss';
 @import 'component/comp-item-group.scss';
 @import 'component/comp-arrow-link.scss';
@@ -70,7 +68,6 @@
 @import 'component/products/comp-product-block.scss';
 
 @import 'component/products/comp-pager.scss';
-/*@import 'component/products/comp-filter-wrap.scss';*/
 @import 'component/products/comp-gift-product-list.scss';
 @import 'component/products/comp-gift-service-list.scss';
 @import 'component/products/comp-load-more.scss';
@@ -104,6 +101,8 @@
 /* ジャーナル */
 @import 'component/journal/comp-item-list-journal.scss';
 @import 'component/journal/comp-mist-lineup.scss';
+@import 'component/journal/comp-article-contents.scss';
+@import 'component/journal/comp-journal-posts.scss';
 
 
 /* ストア一覧・FAQ */
@@ -155,6 +154,7 @@
 @import 'page/item_detail_new.scss'; //商品詳細
 @import 'page/group.scss'; //商品グループ一覧・検索結果
 @import 'page/journal.scss'; /*ジャーナル一覧*/
+@import 'page/article.scss'; /*ジャーナル詳細(新)*/
 @import 'page/journal_detail.scss'; /*ジャーナル詳細*/
 @import 'page/concept.scss'; /*コンセプト*/
 @import 'page/underpage.scss'; /*下層ページ共通*/

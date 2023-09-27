@@ -1,0 +1,70 @@
+.page-article{
+  padding-top: 60px;
+  margin-bottom: 60px;
+  .section-header{
+    .journal_thumb{
+      margin-bottom: 10vw;
+    }
+    .post_head{
+      @include waku;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #d8d8d8;
+      .post_date{
+        @include libre-r;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      .post_title{
+        font-size: 2.2rem;
+        font-weight: normal;
+        line-height:1.5;
+      }
+      .post_tags{
+        margin-top: 20px;
+        @include flexSet;
+        justify-content: flex-start;
+        li{
+          margin-right: 12px;
+          a{
+            color: #007a44;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+  .section-contents{
+    margin-bottom: 50px;
+    .post_share{
+      @include waku;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid #d8d8d8;
+      .post_share_ttl{
+        font-size: 1.6rem;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      ul{
+        @include flexSet;
+        li{
+          margin: 0 8px;
+          a{
+            display: block;
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
+  .section-related-item{
+    border-top: 1px solid #d8d8d8;
+    padding-top: 50px;
+    margin-bottom: 30px;
+  }
+  .section-related-journal{
+    padding-top: 50px;
+    border-top: 1px solid #d8d8d8;
+  }
+}

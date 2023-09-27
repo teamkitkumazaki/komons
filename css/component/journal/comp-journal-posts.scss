@@ -1,0 +1,51 @@
+.comp-journal-posts{
+  .post_item{
+    @include flexSet;
+    align-items: center;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #d8d8d8;
+    .item_img{
+      width: 38%;
+      a{
+        display: block;
+        height: 27vw;
+        img{
+          object-fit:cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .item_content{
+      width: 62%;
+      box-sizing: border-box;
+      padding-left: 20px;
+      .item_title{
+        color: inherit;
+        font-size: 1.4rem;
+        line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .item_tags{
+        @include flexSet;
+        justify-content: flex-start;
+        margin-top: 15px;
+        li{
+          margin-right: 10px;
+          a{
+            display: block;
+            font-size: 1.2rem;
+            color: #007a44;
+          }
+        }
+      }
+      .item_description{
+        display: none;
+      }
+    }
+  }
+}
