@@ -6,8 +6,8 @@
       margin-bottom: 10vw;
     }
     .post_head{
-      @include waku;
-      margin-bottom: 40px;
+      max-width: 86vw;
+      margin: 0 auto 40px;
       padding-bottom: 40px;
       border-bottom: 1px solid #d8d8d8;
       .post_date{
@@ -35,7 +35,8 @@
     }
   }
   .section-contents{
-    margin-bottom: 50px;
+    max-width: 86vw;
+    margin: 0 auto 50px;
     .post_share{
       @include waku;
       margin-top: 40px;
@@ -66,5 +67,50 @@
   .section-related-journal{
     padding-top: 50px;
     border-top: 1px solid #d8d8d8;
+  }
+}
+
+@media screen and (min-width: 720px){
+  .page-article{
+    padding-top: 60px;
+    margin-bottom: 80px;
+    .section-header{
+      .journal_thumb{
+        margin-bottom: 60px;
+      }
+      .post_head{
+        max-width: 86vw;
+        .post_date{
+          font-size: 1.4rem;
+          margin-bottom: 15px;
+        }
+        .post_title{
+          font-size: 2.6rem;
+        }
+        .post_tags{
+          margin-top: 25px;
+          li{
+            a{
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+    .section-contents{
+      margin-bottom: 80px;
+      .post_share{
+        @include waku;
+        margin-top: 60px;
+        padding-top: 60px;
+      }
+    }
+    .section-related-item{
+      padding-top: 80px;
+      margin-bottom: 60px;
+    }
+    .section-related-journal{
+      padding-top: 80px;
+    }
   }
 }

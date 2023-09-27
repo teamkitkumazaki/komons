@@ -15204,21 +15204,6 @@ body.loaded #loading {
     margin-bottom: 0px;
   }
 }
-.comp-article-contents {
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (max-width: 1150px) {
-  .comp-article-contents {
-    max-width: 750px;
-  }
-}
-@media screen and (max-width: 750px) {
-  .comp-article-contents {
-    width: 84vw;
-  }
-}
 .comp-article-contents .contents_item {
   margin-bottom: 30px;
 }
@@ -15228,16 +15213,32 @@ body.loaded #loading {
   margin-bottom: 20px;
 }
 .comp-article-contents .contents_item .img_wrap {
-  margin: 30px 0;
+  margin: 25px 0;
 }
 .comp-article-contents .contents_item .content_description {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 2;
 }
 .comp-article-contents .contents_item .content_description p:not(:last-child) {
   margin-bottom: 1.2rem;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-article-contents .contents_item {
+    margin-bottom: 40px;
+  }
+  .comp-article-contents .contents_item .article_ttl {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
+  .comp-article-contents .contents_item .img_wrap {
+    margin: 30px 0;
+  }
+  .comp-article-contents .contents_item .content_description {
+    font-size: 1.5rem;
+  }
+}
 .comp-journal-posts .post_item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15308,6 +15309,68 @@ body.loaded #loading {
   display: none;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-journal-posts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .comp-journal-posts .post_item {
+    width: 47%;
+    margin-right: 6%;
+    display: block;
+    padding-bottom: 0px;
+    margin-bottom: 50px;
+    border-bottom: 0px solid #d8d8d8;
+  }
+  .comp-journal-posts .post_item:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  .comp-journal-posts .post_item .item_img {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .comp-journal-posts .post_item .item_img a {
+    display: block;
+    height: 27vw;
+  }
+  .comp-journal-posts .post_item .item_content {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding-left: 0px;
+  }
+  .comp-journal-posts .post_item .item_content .item_title {
+    color: inherit;
+    font-size: 1.8rem;
+    display: block;
+    -webkit-line-clamp: unset;
+  }
+  .comp-journal-posts .post_item .item_content .item_tags {
+    margin-top: 25px;
+  }
+  .comp-journal-posts .post_item .item_content .item_tags li {
+    margin-right: 10px;
+  }
+  .comp-journal-posts .post_item .item_content .item_tags li a {
+    display: block;
+    font-size: 1.4rem;
+  }
+  .comp-journal-posts .post_item .item_content .item_description {
+    display: none;
+    margin-top: 30px;
+  }
+  .comp-journal-posts .post_item .item_content .item_description a {
+    color: #646464;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+}
 /* ストア一覧・FAQ */
 .comp-category-button button {
   width: 100%;
@@ -20813,22 +20876,10 @@ body.loaded #loading {
   margin-bottom: 10vw;
 }
 .page-article .section-header .post_head {
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
+  max-width: 86vw;
+  margin: 0 auto 40px;
   padding-bottom: 40px;
   border-bottom: 1px solid #d8d8d8;
-}
-@media screen and (max-width: 1150px) {
-  .page-article .section-header .post_head {
-    max-width: 750px;
-  }
-}
-@media screen and (max-width: 750px) {
-  .page-article .section-header .post_head {
-    width: 84vw;
-  }
 }
 .page-article .section-header .post_head .post_date {
   font-family: "EB Garamond", "Libre Baskerville", YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
@@ -20865,7 +20916,8 @@ body.loaded #loading {
   font-size: 1.4rem;
 }
 .page-article .section-contents {
-  margin-bottom: 50px;
+  max-width: 86vw;
+  margin: 0 auto 50px;
 }
 .page-article .section-contents .post_share {
   max-width: 1080px;
@@ -20917,6 +20969,62 @@ body.loaded #loading {
   border-top: 1px solid #d8d8d8;
 }
 
+@media screen and (min-width: 720px) {
+  .page-article {
+    padding-top: 60px;
+    margin-bottom: 80px;
+  }
+  .page-article .section-header .journal_thumb {
+    margin-bottom: 60px;
+  }
+  .page-article .section-header .post_head {
+    max-width: 86vw;
+  }
+  .page-article .section-header .post_head .post_date {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  .page-article .section-header .post_head .post_title {
+    font-size: 2.6rem;
+  }
+  .page-article .section-header .post_head .post_tags {
+    margin-top: 25px;
+  }
+  .page-article .section-header .post_head .post_tags li a {
+    font-size: 1.6rem;
+  }
+  .page-article .section-contents {
+    margin-bottom: 80px;
+  }
+  .page-article .section-contents .post_share {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    padding-top: 60px;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 1150px) {
+  .page-article .section-contents .post_share {
+    max-width: 750px;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 750px) {
+  .page-article .section-contents .post_share {
+    width: 84vw;
+  }
+}
+@media screen and (min-width: 720px) {
+  .page-article .section-related-item {
+    padding-top: 80px;
+    margin-bottom: 60px;
+  }
+}
+@media screen and (min-width: 720px) {
+  .page-article .section-related-journal {
+    padding-top: 80px;
+  }
+}
 /*ジャーナル詳細(新)*/
 .page-journal-detail {
   padding-bottom: 100px;

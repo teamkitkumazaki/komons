@@ -49,3 +49,58 @@
     }
   }
 }
+
+@media screen and (min-width: 720px){
+  .comp-journal-posts{
+    @include flexSet;
+    .post_item{
+      width: 47%;
+      margin-right: 6%;
+      display: block;
+      padding-bottom: 0px;
+      margin-bottom: 50px;
+      border-bottom: 0px solid #d8d8d8;
+      &:nth-of-type(2n){
+        margin-right: 0;
+      }
+      .item_img{
+        width: 100%;
+        margin-bottom: 25px;
+        a{
+          display: block;
+          height: 27vw;
+        }
+      }
+      .item_content{
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 0px;
+        .item_title{
+          color: inherit;
+          font-size: 1.8rem;
+          display: block;
+          -webkit-line-clamp: unset;
+        }
+        .item_tags{
+          margin-top: 25px;
+          li{
+            margin-right: 10px;
+            a{
+              display: block;
+              font-size: 1.4rem;
+            }
+          }
+        }
+        .item_description{
+          display: none;
+          margin-top: 30px;
+          a{
+            color: #646464;
+            font-size: 1.2rem;
+            line-height: 1.8;
+          }
+        }
+      }
+    }
+  }
+}
