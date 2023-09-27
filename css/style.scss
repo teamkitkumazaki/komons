@@ -103,6 +103,7 @@
 @import 'component/journal/comp-mist-lineup.scss';
 @import 'component/journal/comp-article-contents.scss';
 @import 'component/journal/comp-journal-posts.scss';
+@import 'component/journal/comp-blogs-pager.scss';
 
 
 /* ストア一覧・FAQ */
@@ -154,6 +155,7 @@
 @import 'page/item_detail_new.scss'; //商品詳細
 @import 'page/group.scss'; //商品グループ一覧・検索結果
 @import 'page/journal.scss'; /*ジャーナル一覧*/
+@import 'page/blogs.scss'; /*ジャーナル一覧(新)*/
 @import 'page/article.scss'; /*ジャーナル詳細(新)*/
 @import 'page/journal_detail.scss'; /*ジャーナル詳細*/
 @import 'page/concept.scss'; /*コンセプト*/
