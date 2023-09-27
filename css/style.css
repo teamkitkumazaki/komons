@@ -15371,6 +15371,70 @@ body.loaded #loading {
     line-height: 1.8;
   }
 }
+@media screen and (min-width: 980px) {
+  .comp-journal-posts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .comp-journal-posts .post_item {
+    width: 30%;
+    margin-right: 5%;
+    display: block;
+    padding-bottom: 0px;
+    margin-bottom: 80px;
+    border-bottom: 0px solid #d8d8d8;
+  }
+  .comp-journal-posts .post_item:nth-of-type(2n) {
+    margin-right: 5%;
+  }
+  .comp-journal-posts .post_item:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  .comp-journal-posts .post_item:nth-of-type(4) {
+    display: none;
+  }
+  .comp-journal-posts .post_item .item_img a {
+    height: 18vw;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .comp-journal-posts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .comp-journal-posts .post_item {
+    width: 22%;
+    margin-right: 4%;
+    margin-bottom: 80px;
+  }
+  .comp-journal-posts .post_item:nth-of-type(2n) {
+    margin-right: 4%;
+  }
+  .comp-journal-posts .post_item:nth-of-type(3n) {
+    margin-right: 4%;
+  }
+  .comp-journal-posts .post_item:nth-of-type(4n) {
+    margin-right: 0%;
+  }
+  .comp-journal-posts .post_item:nth-of-type(4) {
+    display: block;
+  }
+  .comp-journal-posts .post_item .item_img a {
+    height: 12.5vw;
+  }
+}
 /* ストア一覧・FAQ */
 .comp-category-button button {
   width: 100%;
@@ -20891,7 +20955,6 @@ body.loaded #loading {
 }
 .page-article .section-header .post_head .post_title {
   font-size: 2.2rem;
-  font-weight: normal;
   line-height: 1.5;
 }
 .page-article .section-header .post_head .post_tags {
@@ -21023,6 +21086,79 @@ body.loaded #loading {
 @media screen and (min-width: 720px) {
   .page-article .section-related-journal {
     padding-top: 80px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .page-article {
+    padding-top: 140px;
+    margin-bottom: 120px;
+  }
+  .page-article .section-header {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .page-article .section-header .journal_thumb {
+    margin-bottom: 40px;
+  }
+  .page-article .section-header .post_head {
+    position: relative;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+  }
+  .page-article .section-header .post_head .post_date {
+    position: absolute;
+    left: -140px;
+    top: 103px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    text-align: left;
+    width: 200px;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  .page-article .section-header .post_head .post_title {
+    font-size: 3rem;
+  }
+  .page-article .section-header .post_head .post_tags {
+    margin-top: 25px;
+  }
+  .page-article .section-header .post_head .post_tags li a {
+    font-size: 1.4rem;
+  }
+  .page-article .section-contents {
+    max-width: 700px;
+    margin-bottom: 120px;
+  }
+  .page-article .section-contents .post_share {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    padding-top: 80px;
+  }
+}
+@media screen and (min-width: 980px) and (max-width: 1150px) {
+  .page-article .section-contents .post_share {
+    max-width: 750px;
+  }
+}
+@media screen and (min-width: 980px) and (max-width: 750px) {
+  .page-article .section-contents .post_share {
+    width: 84vw;
+  }
+}
+@media screen and (min-width: 980px) {
+  .page-article .section-related-item {
+    padding-top: 100px;
+    margin-bottom: 120px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .page-article .section-related-journal {
+    padding-top: 100px;
+  }
+  .page-article .section-related-journal .comp-box-button {
+    max-width: 480px;
   }
 }
 /*ジャーナル詳細(新)*/

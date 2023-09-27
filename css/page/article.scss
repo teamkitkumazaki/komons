@@ -17,7 +17,6 @@
       }
       .post_title{
         font-size: 2.2rem;
-        font-weight: normal;
         line-height:1.5;
       }
       .post_tags{
@@ -111,6 +110,65 @@
     }
     .section-related-journal{
       padding-top: 80px;
+    }
+  }
+}
+
+@media screen and (min-width: 980px){
+  .page-article{
+    padding-top: 140px;
+    margin-bottom: 120px;
+    .section-header{
+      max-width: 700px;
+      margin: 0 auto;
+      .journal_thumb{
+        margin-bottom: 40px;
+      }
+      .post_head{
+        position: relative;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        .post_date{
+          position: absolute;
+          left: -140px;
+          top: 103px;
+          transform: rotate(90deg);
+          text-align: left;
+          width: 200px;
+          font-size: 1.4rem;
+          margin-bottom: 15px;
+        }
+        .post_title{
+          font-size: 3.0rem;
+        }
+        .post_tags{
+          margin-top: 25px;
+          li{
+            a{
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+    .section-contents{
+      max-width: 700px;
+      margin-bottom: 120px;
+      .post_share{
+        @include waku;
+        margin-top: 80px;
+        padding-top: 80px;
+      }
+    }
+    .section-related-item{
+      padding-top: 100px;
+      margin-bottom: 120px;
+    }
+    .section-related-journal{
+      padding-top: 100px;
+      .comp-box-button{
+        max-width: 480px;
+      }
     }
   }
 }
