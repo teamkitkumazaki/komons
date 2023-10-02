@@ -21039,6 +21039,50 @@ body.loaded #loading {
 .page-blogs .section-blog-list {
   margin-bottom: 30px;
 }
+.page-blogs .section-blog-list .category_list {
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 720px) {
+  .page-blogs .section-blog-list .category_list {
+    width: 66%;
+    margin-top: -20px;
+    margin-bottom: 30px;
+  }
+}
+.page-blogs .section-blog-list .category_list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.page-blogs .section-blog-list .category_list ul li {
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+@media screen and (min-width: 400px) {
+  .page-blogs .section-blog-list .category_list ul li {
+    margin-right: 10px;
+  }
+}
+.page-blogs .section-blog-list .category_list ul li a {
+  display: block;
+  padding: 5px 0;
+  font-size: 1.2rem;
+  color: #046734;
+}
+@media screen and (min-width: 400px) {
+  .page-blogs .section-blog-list .category_list ul li a {
+    font-size: 1.3rem;
+  }
+}
 
 @media screen and (min-width: 980px) {
   .page-blogs {
@@ -21050,6 +21094,35 @@ body.loaded #loading {
     margin-bottom: 20px;
     border-bottom: 1px solid #d8d8d8;
   }
+  .page-blogs .section-blog-list .category_list {
+    width: 100%;
+    margin-top: -20px;
+    margin-bottom: 40px;
+  }
+  .page-blogs .section-blog-list .category_list ul li {
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
+}
+@media screen and (min-width: 980px) and (min-width: 1100px) {
+  .page-blogs .section-blog-list .category_list ul li {
+    margin-right: 15px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .page-blogs .section-blog-list .category_list ul li a {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    font-size: 1.4rem;
+  }
+  .page-blogs .section-blog-list .category_list ul li a:hover {
+    opacity: 0.75;
+  }
+}
+@media screen and (min-width: 980px) and (min-width: 1100px) {
+  .page-blogs .section-blog-list .category_list ul li a {
+    font-size: 1.5rem;
+  }
 }
 /*ジャーナル一覧(新)*/
 .page-article {
@@ -21058,6 +21131,9 @@ body.loaded #loading {
 }
 .page-article .section-header .journal_thumb {
   margin-bottom: 10vw;
+}
+.page-article .section-header .journal_thumb img {
+  height: auto;
 }
 .page-article .section-header .post_head {
   max-width: 86vw;
@@ -21268,6 +21344,9 @@ body.loaded #loading {
   }
 }
 @media screen and (min-width: 980px) {
+  .page-article .section-contents .comp-box-button {
+    margin-top: 60px;
+  }
   .page-article .section-related-item {
     padding-top: 100px;
     margin-bottom: 120px;

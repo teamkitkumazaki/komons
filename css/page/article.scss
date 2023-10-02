@@ -4,6 +4,9 @@
   .section-header{
     .journal_thumb{
       margin-bottom: 10vw;
+      img{
+        height: auto;
+      }
     }
     .post_head{
       max-width: 86vw;
@@ -160,6 +163,9 @@
         @include waku;
         margin-top: 80px;
         padding-top: 80px;
+      }
+      .comp-box-button{
+        margin-top: 60px;
       }
     }
     .section-related-item{
