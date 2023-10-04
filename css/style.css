@@ -15297,6 +15297,9 @@ body.loaded #loading {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   .comp-journal-posts .post_item {
     width: 47%;
@@ -15350,16 +15353,6 @@ body.loaded #loading {
   }
 }
 @media screen and (min-width: 980px) {
-  .comp-journal-posts {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
   .comp-journal-posts .post_item {
     width: 30%;
     margin-right: 5%;
@@ -15400,16 +15393,6 @@ body.loaded #loading {
   }
 }
 @media screen and (min-width: 1100px) {
-  .comp-journal-posts {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
   .comp-journal-posts .post_item {
     width: 22%;
     margin-right: 4%;

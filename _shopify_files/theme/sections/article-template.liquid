@@ -11,7 +11,7 @@
     <h1 class="post_title">{{ article.title }}</h1>
     <ul class="post_tags">
       {% for tag in article.tags %}
-        <li>{{ tag | link_to_tag: tag }}</a>
+        <li>{{ tag | link_to_tag: tag }}</li>
       {% endfor %}
     </ul>
   </div>
