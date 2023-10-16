@@ -67,6 +67,12 @@
 		margin-bottom: 40px;
 	}
 }
+.section-journal{
+	margin-bottom: 40px;
+	.comp-box-button{
+		max-width: 600px;
+	}
+}
 @media screen and (min-width: 720px){
 	.page-index {
 		width: 100%;

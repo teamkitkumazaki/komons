@@ -1,5 +1,6 @@
 {% comment %}
   The contents of the blog.liquid template can be found in /sections/blog-template.liquid
 {% endcomment %}
-
+{% unless request.path contains 'mailmag' or request.path contains '/mailmag' %}
 {% section 'blog-template' %}
+{% unless %}

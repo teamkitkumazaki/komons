@@ -1,3 +1,6 @@
+{% if request.path contains '/mt'%}
+{% section 'mailmag-template' %}
+{% else %}
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}" style="--wHeightPx: 100vh;">
 <head>
@@ -53,7 +56,7 @@
     <meta name="description" content="{{ page_description | escape }}">
   {%- endif -%}
   {% include 'social-meta-tags' %}
-  <meta name="robots" content="index">
+	<meta name="robots" content="index">
   <meta name="robots" content="follow">
 	{%- if request.page_type contains 'index' -%}
 	<link rel="preload"
@@ -119,5 +122,5 @@
 <script src="{{ 'ajaxzip3.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {% include 'script-cookies' %}
-
 </html>
+{% endif %}

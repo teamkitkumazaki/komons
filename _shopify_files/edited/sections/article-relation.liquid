@@ -1,0 +1,84 @@
+{%- assign blog = blogs[section.settings.blog] -%}
+
+<section class="section-related-journal">
+  <div class="section_inner_new">
+    <div class="comp-new-section-ttl">
+      <hgroup>
+        <span class="title_en">Related Journal</span>
+        <h2 class="title_jp" style="text-indent: -0.2em;">その他の記事を読む</h2>
+      </hgroup>
+    </div><!-- comp-new-section-ttl -->
+    <div class="comp-journal-posts">
+      {%- for article in blog.articles limit: section.settings.post_limit -%}
+        {%- render 'journal-card' article: article -%}
+      {%- endfor -%}
+    </div><!-- comp-journal-posts -->
+    <div class="comp-box-button">
+      <a class="button" href="/blogs/journal/">
+        <span class="txt">記事一覧へ</span>
+        <span class="arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07">
+            <polygon class="cls-1" points="0 8.66 1.41 10.07 6.46 5.03 1.41 0 0 1.41 3.62 5.04 0 8.66"></polygon>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div><!-- section_inner_new -->
+</section>
+
+{% schema %}
+{
+  "name": "journal posts",
+  "class": "related-journal",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Blog posts"
+    },
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "label": "Posts",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "Show author",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View all' button",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "journal",
+      "category": "Blog",
+      "settings": {
+        "blog": "news",
+        "post_limit": 4
+      }
+    }
+  ]
+}
+{% endschema %}
