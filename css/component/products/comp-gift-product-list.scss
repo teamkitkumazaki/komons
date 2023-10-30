@@ -173,6 +173,11 @@
               content: "ハンドミルク";
             }
           }
+          &.milkmini{
+            &::after{
+              content: "ハンドミルク";
+            }
+          }
           &.toilet{
             &::after{
               content: "トイレクリーナー";

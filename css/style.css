@@ -11568,6 +11568,9 @@ body.loaded #loading {
 .comp-gift-product-list .list_item .content_icon .icon span.handmilk::after {
   content: "ハンドミルク";
 }
+.comp-gift-product-list .list_item .content_icon .icon span.milkmini::after {
+  content: "ハンドミルク";
+}
 .comp-gift-product-list .list_item .content_icon .icon span.toilet::after {
   content: "トイレクリーナー";
 }
@@ -15521,6 +15524,80 @@ body.loaded #loading {
   }
 }
 
+.comp-journal-scent {
+  background: #f6f6f6;
+  padding: 30px 20px;
+  margin-bottom: 30px;
+}
+.comp-journal-scent .scent_ttl {
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.comp-journal-scent .scent_item:not(:last-child) {
+  margin-bottom: 15px;
+}
+.comp-journal-scent .scent_item .item_ttl {
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 1.4rem;
+  background: #fff;
+  margin-bottom: 12px;
+}
+.comp-journal-scent .scent_item .item_description {
+  font-size: 1.4rem;
+  line-height: 1.86;
+}
+
+@media screen and (min-width: 720px) {
+  .comp-journal-scent {
+    padding: 30px;
+    margin-bottom: 40px;
+  }
+  .comp-journal-scent .scent_ttl {
+    text-align: left;
+    line-height: 1.6;
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  .comp-journal-scent .scent_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comp-journal-scent .scent_item:not(:last-child) {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #d8d8d8;
+  }
+  .comp-journal-scent .scent_item .item_ttl {
+    width: 100px;
+    margin-right: 15px;
+    padding: 10px 0;
+    font-size: 1.4rem;
+    background: #00381f;
+    color: #fff;
+    margin-bottom: 0;
+  }
+  .comp-journal-scent .scent_item .item_description {
+    width: calc(100% - 165px);
+    font-size: 1.4rem;
+    line-height: 1.86;
+  }
+}
 /* ストア一覧・FAQ */
 .comp-category-button button {
   width: 100%;
@@ -19574,7 +19651,6 @@ body.loaded #loading {
   position: relative;
   padding-top: 40px;
   padding-bottom: 95px;
-  margin-bottom: 45px;
   /*border-bottom: 1px solid $borderColor;*/
 }
 .page-index .section-gift .ttl_desc {
@@ -19586,10 +19662,14 @@ body.loaded #loading {
 .page-index .section-laboratory {
   padding-top: 40px;
   padding-bottom: 40px;
+  margin-bottom: 20px;
   /*border-bottom: 1px solid $borderColor;*/
 }
 .page-index .section-laboratory .lab_flex .lab_img {
   margin-bottom: 30px;
+}
+.page-index .section-laboratory .lab_flex .lab_img a {
+  display: block;
 }
 .page-index .section-laboratory .lab_flex .lab_txt .comp-box-button {
   margin-top: -10px;
@@ -19640,7 +19720,6 @@ body.loaded #loading {
   .page-index .section-gift {
     padding-top: 60px;
     padding-bottom: 150px;
-    margin-bottom: 60px;
   }
   .page-index .section-gift .ttl_desc {
     width: 100%;
@@ -19687,7 +19766,7 @@ body.loaded #loading {
   }
   .page-index .section-gift {
     padding-top: 100px;
-    padding-bottom: 120px;
+    padding-bottom: 140px;
     margin-bottom: 0;
     border-bottom: 0px;
   }
@@ -19726,7 +19805,7 @@ body.loaded #loading {
   }
   .page-index .section-laboratory {
     padding-top: 0px;
-    padding-bottom: 120px;
+    padding-bottom: 100px;
     border-bottom: 0px;
   }
   .page-index .section-laboratory .lab_flex {

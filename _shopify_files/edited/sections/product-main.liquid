@@ -45,7 +45,7 @@
         <div class="desc_wrap">
           <p>{{ product.metafields.custom_fields["prod_description"] }}</p>
         </div><!-- desc_wrap -->
-        {%- if product.type != "gift" -%}
+        {%- if product.type != "gift" and product.type != "gift-limited" -%}
         {% include 'product-variation-select' %}
         {% endif %}
         {%- if product.type != "commercial" -%}
@@ -70,7 +70,7 @@
         {% include 'product-brand-introduction' %}
         <div class="desc_unit border">
           <div class="comp-detail-title">
-          {%- if product.type == "gift" -%}
+          {%- if product.type == "gift" or product.type == "gift-limited" -%}
             <hgroup>
               <span class="title_en">Contents</span>
               <h2 class="title_ja">セットの内容</h2>
@@ -87,7 +87,7 @@
           {%- endif -%}
           </div>
           <div class="comp-detail-desc">
-          {%- if product.type == "gift" -%}
+          {%- if product.type == "gift" or product.type == "gift-limited" -%}
           {% include 'product-set-content' %}
           {%- endif -%}
           {% for item in product.metafields.custom_fields["prod_detail_desc"] %}
@@ -125,10 +125,10 @@
             {% endfor %}
           </div><!-- comp-detail-desc -->
         </div><!-- desc_unit -->
-        {% if product.type != 'gift' and product.type != 'goods' %}
+        {% if product.type != 'gift' and product.type != 'goods' and product.type != "gift-limited" %}
         {% include 'scent-detail' %}
         {% endif %}
-        {% if product.type != 'gift' %}
+        {% if product.type != 'gift' and product.type != "gift-limited" %}
         {% include 'product-conponent' %}
         {%- else -%}
         {% include 'product-conponent-gift' %}
@@ -141,7 +141,7 @@
             </hgroup>
           </div>
           <div class="comp-detail-toggle-new">
-          {%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
+          {%- if product.type == "gift" and product.type != "gift-limited" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
             <div id="toggleGift" class="toggle_item">
               <button class="toggle_button_new">
                 <span class="txt">ギフト対応について</span>

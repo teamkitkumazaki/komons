@@ -12,7 +12,7 @@
 {%- endif -%}
   <div class="submit_button">
     <div class="cart_box">
-    {%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' and product.metafields.custom_fields["stock_state"] != 1 -%}
+    {%- if product.type == "gift" or product.type == "gift-limited" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' and product.metafields.custom_fields["stock_state"] != 1 -%}
       <div id="optionSelect" class="cart_item">
         <span class="button_wrap">
           <span class="title cart_in">オプションを選択して購入</span>
@@ -65,7 +65,7 @@
     </div>
     {%- if product.type != "upcoming" -%}
     <div id="cartNoteList" class="comp-cart-note cart_note">
-      {%- if product.type == "gift" -%}
+      {%- if product.type == "gift" or product.type == "gift-limited" -%}
       <button prop="#toggleGift">ギフトサービス</button>
       {%- endif -%}
       <button prop="#toggleDelivary">配送について</button>
