@@ -1,3 +1,5 @@
+{%- assign blog = blogs[section.settings.blog] -%}
+
 <section id="topJournal" class="section-journal">
 	<div class="section_inner_new">
 		<div class="comp-new-section-ttl">
@@ -7,81 +9,10 @@
 			</hgroup>
 		</div><!-- comp-new-section-ttl -->
 		<div class="comp-journal-posts">
-			<div class="post_item">
-				<div class="item_img">
-					<a href="/blogs/journal/1650">
-						<img src="https://komons-japan.com/cdn/shop/articles/yuzu.jpg?v=1696918796&amp;width=600" alt="Komonsの精油「ゆず ～四万十川の恵み～」"
-							srcset="https://komons-japan.com/cdn/shop/articles/yuzu.jpg?v=1696918796&amp;width=352 352w, https://komons-japan.com/cdn/shop/articles/yuzu.jpg?v=1696918796&amp;width=600 600w" width="600" height="400">
-					</a>
-				</div>
-				<div class="item_content">
-					<a class="item_title" href="/blogs/journal/1650">Komonsの精油「ゆず ～四万十川の恵み～」</a>
-					<ul class="item_tags">
-
-						<li><a href="/blogs/journal/tagged/%E3%83%A2%E3%83%8E%E3%81%A5%E3%81%8F%E3%82%8A" title="Show articles tagged #モノづくり">#モノづくり</a></li>
-
-						<li><a href="/blogs/journal/tagged/%E5%8E%9F%E6%96%99" title="Show articles tagged #原料">#原料</a></li>
-
-					</ul>
-				</div>
-			</div>
-			<div class="post_item">
-				<div class="item_img">
-					<a href="/blogs/journal/1648">
-						<img src="https://komons-japan.com/cdn/shop/articles/kfl01_main.jpg?v=1696225123&amp;width=600" alt="みんなで作り上げる「香りの自社ラボ」＠南アルプス"
-							srcset="https://komons-japan.com/cdn/shop/articles/kfl01_main.jpg?v=1696225123&amp;width=352 352w, https://komons-japan.com/cdn/shop/articles/kfl01_main.jpg?v=1696225123&amp;width=600 600w" width="600" height="405">
-					</a>
-				</div>
-				<div class="item_content">
-					<a class="item_title" href="/blogs/journal/1648">みんなで作り上げる「香りの自社ラボ」＠南アルプス</a>
-					<ul class="item_tags">
-
-						<li><a href="/blogs/journal/tagged/fans-users" title="Show articles tagged #Fans &amp; Users">#Fans &amp; Users</a></li>
-
-						<li><a href="/blogs/journal/tagged/%E3%83%A2%E3%83%8E%E3%81%A5%E3%81%8F%E3%82%8A" title="Show articles tagged #モノづくり">#モノづくり</a></li>
-
-					</ul>
-				</div>
-			</div>
-			<div class="post_item">
-				<div class="item_img">
-					<a href="/blogs/journal/1614">
-						<img src="https://komons-japan.com/cdn/shop/articles/housyou_main.jpg?v=1696226137&amp;width=600" alt="2023年夏のファブリックミストは、鹿児島ホウショウブレンド。"
-							srcset="https://komons-japan.com/cdn/shop/articles/housyou_main.jpg?v=1696226137&amp;width=352 352w, https://komons-japan.com/cdn/shop/articles/housyou_main.jpg?v=1696226137&amp;width=600 600w" width="600" height="405">
-					</a>
-				</div>
-				<div class="item_content">
-					<a class="item_title" href="/blogs/journal/1614">2023年夏のファブリックミストは、鹿児島ホウショウブレンド。</a>
-					<ul class="item_tags">
-
-						<li><a href="/blogs/journal/tagged/%E3%83%A2%E3%83%8E%E3%81%A5%E3%81%8F%E3%82%8A" title="Show articles tagged #モノづくり">#モノづくり</a></li>
-
-						<li><a href="/blogs/journal/tagged/%E5%8E%9F%E6%96%99" title="Show articles tagged #原料">#原料</a></li>
-
-						<li><a href="/blogs/journal/tagged/%E6%96%B0%E5%95%86%E5%93%81" title="Show articles tagged #新商品">#新商品</a></li>
-
-					</ul>
-				</div>
-			</div>
-			<div class="post_item">
-				<div class="item_img">
-					<a href="/blogs/journal/1635">
-						<img src="https://komons-japan.com/cdn/shop/articles/kfl.jpg?v=1696227413&amp;width=600" alt="南アルプスの麓に「香りの自社ラボ」を作ります！"
-							srcset="https://komons-japan.com/cdn/shop/articles/kfl.jpg?v=1696227413&amp;width=352 352w, https://komons-japan.com/cdn/shop/articles/kfl.jpg?v=1696227413&amp;width=600 600w" width="600" height="450">
-					</a>
-				</div>
-				<div class="item_content">
-					<a class="item_title" href="/blogs/journal/1635">南アルプスの麓に「香りの自社ラボ」を作ります！</a>
-					<ul class="item_tags">
-
-						<li><a href="/blogs/journal/tagged/fans-users" title="Show articles tagged #Fans &amp; Users">#Fans &amp; Users</a></li>
-
-						<li><a href="/blogs/journal/tagged/%E3%83%A2%E3%83%8E%E3%81%A5%E3%81%8F%E3%82%8A" title="Show articles tagged #モノづくり">#モノづくり</a></li>
-
-					</ul>
-				</div>
-			</div>
-		</div>
+      {%- for article in blog.articles limit: section.settings.post_limit -%}
+        {%- render 'journal-card' article: article -%}
+      {%- endfor -%}
+    </div><!-- comp-journal-posts -->
 		<div class="comp-box-button">
 			<a class="button" href="/blogs/journal/">
 				<span class="txt">記事一覧へ</span>
@@ -94,3 +25,61 @@
 		</div>
 	</div><!-- section_inner_new -->
 </section>
+
+
+{% schema %}
+{
+  "name": "journal posts",
+  "class": "related-journal",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Blog posts"
+    },
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "label": "Posts",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "Show author",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View all' button",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "journal",
+      "category": "Blog",
+      "settings": {
+        "blog": "news",
+        "post_limit": 4
+      }
+    }
+  ]
+}
+{% endschema %}

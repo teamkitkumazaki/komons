@@ -24,15 +24,6 @@
         <p>Komonsのこだわりである100%天然精油の香り。その1つ1つの精油にスポットをあて、素材の産地や香り、そして効果効能を紹介していくこのシリーズ。<br>本日は、{{ article.metafields["custom_fields"]["scent_name"] }}の精油についてご紹介します。</p>
       </div>
     </div>
-    <div class="comp-journal-scent">
-      <h3 class="scent_ttl">{{ article.metafields["custom_fields"]["scent_name"] }}精油の特徴</h3>
-      {% for item in article.metafields["custom_fields"]["scent_features"] %}
-      <div class="scent_item">
-        <span class="item_ttl">{{ item["features_ttl"] }}</span>
-        <div class="item_description">{{ item["features_desc"] }}</div>
-      </div>
-      {% endfor %}
-    </div>
     {% endif %}
     {% for item in article.metafields["custom_fields"]["article_contents"] %}
     <div class="contents_item">
@@ -51,6 +42,19 @@
       {% endif %}
     </div>
     {% endfor %}
+
+    {% if article.metafields["custom_fields"]["scent_name"] != blank %}
+    <div class="comp-journal-scent">
+      <h3 class="scent_ttl">{{ article.metafields["custom_fields"]["scent_name"] }}精油の特徴</h3>
+      {% for item in article.metafields["custom_fields"]["scent_features"] %}
+      <div class="scent_item">
+        <span class="item_ttl">{{ item["features_ttl"] }}</span>
+        <div class="item_description">{{ item["features_desc"] }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    
   </div><!-- comp-article-contents -->
   {% if article.metafields["custom_fields"]["link_url"] != blank %}
   <div class="comp-box-button">

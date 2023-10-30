@@ -49,12 +49,26 @@
 						}
 					}
 					.price_wrap{
+						position: relative;
 						font-size: 1.3rem;
 						margin-bottom: 20px;
 						.price{
 						}
 						.volume{
 							color: #464646;
+						}
+						.sale_price{
+							position: absolute;
+							top:0;
+							bottom:0;
+							right:0;
+							margin: auto;
+							height: 12px;
+							background: #FF3938;
+							color: #fff;
+							font-size: 1.2rem;
+							padding: 7px;
+							border-radius: 5px;
 						}
 					}
 					.desc_wrap{
@@ -318,6 +332,13 @@
 							margin-bottom: 30px;
 							.volume{
 								color: #464646;
+							}
+							.sale_price{
+								position: static;
+								height: auto;
+								font-size: 1.3rem;
+								padding: 7px 15px;
+								margin-left: 10px;
 							}
 						}
 						.desc_wrap{

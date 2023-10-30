@@ -10889,6 +10889,44 @@ body.loaded #loading {
   content: "/";
   padding-right: 0.6em;
 }
+.comp-product-block .item_wrapper .item_box .txt_wrap .product_detail .price_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.comp-product-block .item_wrapper .item_box .txt_wrap .product_detail .price_flex .price_strike {
+  font-size: 1.1rem;
+  text-decoration: line-through;
+}
+.comp-product-block .item_wrapper .item_box .txt_wrap .product_detail .price_flex .arrow {
+  padding: 0 3px;
+  font-size: 1.1rem;
+}
+.comp-product-block .item_wrapper .item_box .txt_wrap .product_detail .price_flex .price {
+  font-size: 1.25rem;
+  color: #FF3938;
+  margin-bottom: 0;
+}
+.comp-product-block .item_wrapper .item_box .txt_wrap .product_detail .sale_tag {
+  display: inline-block;
+  background: #FF3938;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 7px 5px;
+  border-radius: 5px;
+  margin-top: 12px;
+}
 .comp-product-block .item_wrapper .item_box .comp-list-cart-button {
   position: absolute;
   width: calc(100% - 30px);
@@ -11155,13 +11193,42 @@ body.loaded #loading {
     margin-top: 7px;
   }
   .comp-product-block .item_wrapper .item_box .txt_wrap .product_detail {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     line-height: 1;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   .comp-product-block .item_wrapper .item_box .txt_wrap .product_detail .price {
     font-size: 1.4rem;
     margin-bottom: 10px;
+  }
+  .comp-product-block .item_wrapper .item_box .txt_wrap .product_detail .price_flex .price_strike {
+    font-size: 1.2rem;
+  }
+  .comp-product-block .item_wrapper .item_box .txt_wrap .product_detail .price_flex .arrow {
+    padding: 0 5px;
+    font-size: 1.2rem;
+  }
+  .comp-product-block .item_wrapper .item_box .txt_wrap .product_detail .price_flex .price {
+    font-size: 1.5rem;
+  }
+  .comp-product-block .item_wrapper .item_box .txt_wrap .product_detail .sale_tag {
+    font-size: 1.4rem;
+    color: #fff;
+    padding: 7px 5px;
+    margin-top: 0px;
   }
   .comp-product-block .item_wrapper .item_box .comp-list-cart-button .comp-arrow-link a {
     padding: 15px 0;
@@ -20253,11 +20320,25 @@ body.loaded #loading {
   margin-top: 5px;
 }
 .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .price_wrap {
+  position: relative;
   font-size: 1.3rem;
   margin-bottom: 20px;
 }
 .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .price_wrap .volume {
   color: #464646;
+}
+.page-item-detail-new .section-main .main_flex .main_detail .detail_inner .price_wrap .sale_price {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 12px;
+  background: #FF3938;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 7px;
+  border-radius: 5px;
 }
 .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .desc_wrap {
   font-size: 1.4rem;
@@ -20531,6 +20612,13 @@ body.loaded #loading {
   }
   .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .price_wrap .volume {
     color: #464646;
+  }
+  .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .price_wrap .sale_price {
+    position: static;
+    height: auto;
+    font-size: 1.3rem;
+    padding: 7px 15px;
+    margin-left: 10px;
   }
   .page-item-detail-new .section-main .main_flex .main_detail .detail_inner .desc_wrap {
     font-size: 1.5rem;
