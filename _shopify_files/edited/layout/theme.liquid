@@ -121,6 +121,9 @@
 {%- if request.page_type contains 'addresses' -%}
 <script src="{{ 'ajaxzip3.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
+{%- if request.page_type contains 'page' -%}
+<script src="{{ 'contact.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 {% include 'script-cookies' %}
 </html>
 {% endif %}

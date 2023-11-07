@@ -35,7 +35,19 @@
         <span class="category"><span class="ja">{{ category }}</span></span>
         <a class="links" href="{{ productId[0] }}">{%- if prodName != blank -%}{{ prodName }}{%- else -%}<span class="name">{{ itemTitle[0] }}</span>{%- endif -%}{%- for option in variant_options -%}<span class="options genre {% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}{% if item.selling_plan_allocation %}<span class="options genre">{{ item.selling_plan_allocation.selling_plan.name }}</span>
         {% endif %}</a>
-        <span class="price">{{ item.price | money_without_currency }}円(税込)</span></a>
+
+        {%- assign cpPrice = item.variant.compare_at_price | money_without_currency -%}
+
+        {% if cpPrice == blank %}
+        <span class="price" cpPrice="{{ cpPrice }}">{{ item.price | money_without_currency }}円(税込)</span></a>
+        {%- else -%}
+        <span class="price_wrapper" cpPrice="{{ cpPrice }}">
+          <span class="price_strike">{{ cpPrice }}円</span>
+          <span class="arrow">→</span>
+          <span class="price">{{ item.price | money_without_currency }}円(税込)</span>
+        </span>
+        {%- endif -%}
+
       </div>
       <div class="controll_wrap">
       {%- if request.page_type contains "customers" -%}

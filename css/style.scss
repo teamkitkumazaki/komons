@@ -108,7 +108,6 @@
 
 
 /* ストア一覧・FAQ */
-@import 'component/comp-category-button.scss';
 @import 'component/store/comp-popup-store.scss';
 @import 'component/store/comp-popup-store2.scss';
 @import 'component/store/comp-stock-list.scss';
@@ -132,7 +131,7 @@
 @import 'component/cart/comp-submit-loader.scss';
 
 
-/* 管理画面 */
+/* 管理画面系 */
 @import 'component/admin/comp-admin-title.scss';
 @import 'component/admin/comp-admin-subttl.scss';
 @import 'component/admin/comp-admin-button.scss';
@@ -145,7 +144,8 @@
 @import 'component/admin/comp-form-message.scss';
 @import 'component/admin/comp-page-log.scss';
 @import 'component/admin/comp-sns-alignment.scss';
-
+@import 'component/admin/comp-category-button.scss';
+@import 'component/admin/comp-form-wrap.scss';
 
 
 

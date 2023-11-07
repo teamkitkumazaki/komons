@@ -51,7 +51,18 @@
 					.price_wrap{
 						position: relative;
 						font-size: 1.3rem;
+						align-items: baseline;
 						margin-bottom: 20px;
+						.price_strike{
+							text-decoration:line-through;
+						}
+						.sale{
+							font-size: 1.15em;
+							color: #FF3938;
+						}
+						.arrow{
+							margin-right:5px;
+						}
 						.price{
 						}
 						.volume{

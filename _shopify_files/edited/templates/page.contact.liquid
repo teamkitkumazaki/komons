@@ -1,62 +1,97 @@
-<div class="page-width">
-  <div class="grid">
-    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
-      <div class="section-header text-center">
-        <h1>{{ page.title }}</h1>
-      </div>
-
-      {% if page.content.size > 0 %}
-        <div class="rte">
-          {{ page.content }}
-        </div>
-      {% endif %}
-
-      <div class="contact-form form-vertical">
-        {%- assign formId = 'ContactForm' -%}
-        {% form 'contact', id: formId %}
-          {% include 'form-status', form: form, form_id: formId %}
-
-          <div class="grid grid--half-gutters">
-            <div class="grid__item medium-up--one-half">
-              <label for="{{ formId }}-name">{{ 'contact.form.name' | t }}</label>
-              <input type="text" id="{{ formId }}-name" name="contact[{{ 'contact.form.name' | t }}]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
-            </div>
-            <div class="grid__item medium-up--one-half">
-              <label for="{{ formId }}-email">{{ 'contact.form.email' | t }} <span aria-hidden="true">*</span></label>
-              <input
-                type="email"
-                id="{{ formId }}-email"
-                name="contact[email]"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                aria-required="true"
-                {%- if form.errors contains 'email' -%}
-                  class="input--error"
-                  aria-invalid="true"
-                  aria-describedby="{{ formId }}-email-error"
-                {%- endif -%}
-                >
-              {%- if form.errors contains 'email' -%}
-                <span id="{{ formId}}-email-error" class="input-error-message">
-                  <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
-                  {% include 'icon-error' %}
-                  <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
-                </span>
-              {%- endif -%}
-            </div>
-          </div>
-
-          <label for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
-          <input type="tel" id="{{ formId }}-phone" name="contact[{{ 'contact.form.phone' | t }}]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
-
-          <label for="{{ formId }}-message">{{ 'contact.form.message' | t }}</label>
-          <textarea rows="10" id="{{ formId }}-message" name="contact[{{ 'contact.form.message' | t }}]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
-
-          <input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
-
-        {% endform %}
-      </div>
-    </div>
-  </div>
-</div>
+<article id="contact" class="page-contact">
+		<section class="section-contact">
+			<div class="contact_header">
+				<div class="comp-section-ttl">
+					<hgroup>
+						<span class="ttl_en">Contact</span>
+						<h1 class="ttl_ja">お問い合わせ</h1>
+					</hgroup>
+				</div><!-- comp-section-ttl -->
+				<div class="contact_desc">
+					<p>ご不明のことがあればお気軽にお問い合わせください。なお、お客様から多く寄せられるご質問は、<a href="/pages/faq">よくある質問ページ</a>でもご案内しています。併せてご参照ください。</p>
+				</div>
+				<div class="guide_wrapper">
+					<span class="category_ttl">よくある質問</span>
+					<div id="categoryList" class="category_list comp-category-button">
+						<a href="/pages/faq#faq01"><span>商品について</span></a>
+						<a href="/pages/faq#faq02"><span>購入方法</span></a>
+						<a href="/pages/faq#faq03"><span>ギフト対応</span></a>
+						<a href="/pages/faq#faq10"><span>定期購入</span></a>
+						<a href="/pages/faq#faq04"><span>配送<span class="sp_none">について</span></span></a>
+						<a href="/pages/faq#faq05"><span>キャンセル・返品</span></a>
+						<a href="/pages/faq#faq06"><span>法人<span class="sp_none">でのご</span>購入</span></a>
+						<a href="/pages/faq#faq07"><span>流通業者のお客様</span></a>
+						<a href="/pages/faq#faq08"><span>お問い合わせ先</span></a>
+					</div>
+				</div>
+			</div><!-- header_inner -->
+			<div class="contact_wrapper">
+				<div id="contactWrap" class="comp-form-wrap">
+					<div class="form_item">
+						<div class="label_wrap">
+							<label class="">お名前</label>
+							<span class="required">必須</span>
+						</div>
+						<div class="form_box">
+							<div class="name_wrap">
+								<div class="name_flex">
+									<input type="text" name="lastName" placeholder="山田" class="">
+								</div>
+								<div class="name_flex">
+									<input type="text" name="firstName" placeholder="太郎">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form_item">
+						<div class="label_wrap">
+							<label class="">メールアドレス</label>
+							<span class="required">必須</span>
+						</div>
+						<div class="form_box">
+							<input class="input-number" type="text" name="useremail" placeholder="support@komons-japan.com">
+						</div>
+					</div>
+					<div class="form_item">
+						<div class="label_wrap">
+							<label class="">メールアドレス(確認用)</label>
+							<span class="required">必須</span>
+						</div>
+						<div class="form_box">
+							<input class="input-number" type="text" name="useremail2" placeholder="support@komons-japan.com">
+						</div>
+					</div>
+					<div class="form_item b_none">
+						<div class="label_wrap">
+							<label class="">お問い合わせ内容</label>
+							<span class="required">必須</span>
+						</div>
+						<div class="form_box">
+							<textarea name="content"></textarea>
+						</div>
+					</div>
+					<div class="privacy_wrap">
+						<div class="agreement">
+							<div class="agree_wrap">
+								<label>
+									<input id="agreeBox" name="agreement" type="checkbox" value="1">
+									<span class="radio_checker"></span>
+									<span class="name"><a target="_blank" href="/privacy-policy">プライバシーポリシー</a>に同意する</span>
+								</label>
+							</div>
+						</div><!-- agreement -->
+					</div><!-- privacy_wrap -->
+					<div id="ajaxLoader" class="ajax_loader">
+						<span class="loading"></span>
+					</div>
+					<div id="statusMessage" class="status_message hidden"></div>
+					<div id="submitButton" class="submit_wrap disabled">
+						<span class="text_wrap">
+							<span class="ja"><span class="">内容を送信</span></span>
+							<input type="button" value="内容を送信" class="ga_contact">
+						</span>
+					</div>
+				</div><!-- omp-form-wrap -->
+			</div><!-- contact_wrapper -->
+		</section>
+	</article>

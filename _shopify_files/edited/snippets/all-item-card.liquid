@@ -5,8 +5,8 @@
   {%- assign thumb_image = product.media[0] -%}
 {%- endif -%}
 
-{%- unless product.handle contains 'test' -%}
-<li id="handle-{{ product.handle }}" class="item_box">
+
+<li id="handle-{{ product.handle }}" class="item_box" collection="{{ collection.handle }}">
   <div class="img_wrap">
     <a href="{{ product.url }}" {%- if product.metafields.custom_fields["stock_state"] == 1 or product.available != true and product.type != 'upcoming' -%}class="soldout"{%- endif -%}>
       <img loading="lazy" src="{{ thumb_image | image_url: width: 533 }}" srcset="{{ thumb_image | image_url: width: 533 }} 1440w, {{ thumb_image | image_url: width: 360 }} 768w, {{ thumb_image | image_url: width: 533 }} 2048w" alt="{{ product.metafields.custom_fields["prod_display_name"] | strip_html }}">
@@ -17,6 +17,7 @@
     <h3 class="prod_name">
       <a href="{{ product.url }}">{{ product.metafields.custom_fields["prod_display_name"] }}</a>
     </h3>
+    {% if product.metafields["custom_fields"]["discout_rate"] == blank %}
     <span class="product_detail">
     {%- if product.type != 'commercial' -%}
       <span class="price">{%- if product.type == 'upcoming' -%}構想中{%- else -%}{{ product.price | money_without_currency }}円(税込){%- endif -%}</span>
@@ -24,6 +25,19 @@
       <span class="price">価格：ASK</span>
     {%- endif -%}
     </span>
+    {%- else -%}
+    <span class="product_detail">
+    {% for variant in product.variants %}
+      {%- assign cpPrice =  variant.compare_at_price | money_without_currency -%}
+    {% endfor %}
+      <span class="price_flex">
+        <span class="price_strike">{{ cpPrice }}円</span>
+        <span class="arrow">→</span>
+        <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
+      </span>
+      <span class="sale_tag">{{ product.metafields["custom_fields"]["discout_rate"] }}OFF</span>
+    </span>
+    {%- endif -%}
   </div>
   <div class="comp-list-cart-button">
     {%- if product.type == "upcoming" or product.type == "commercial" or request.page_type contains 'index' or request.page_type contains 'product' -%}
@@ -59,4 +73,3 @@
     {%- endif -%}
   </div>
 </li>
-{%- endunless -%}

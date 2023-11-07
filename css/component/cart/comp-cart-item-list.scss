@@ -82,6 +82,24 @@
               letter-spacing: 0.06em;
               font-weight: 400;
             }
+            .price_wrapper{
+              @include flexSet;
+              justify-content: flex-start;
+              align-items: center;
+              margin-bottom: 20px;
+              .price_strike{
+                font-size: 1.2rem;
+                text-decoration: line-through;;
+              }
+              .arrow{
+                font-size: 1.2rem;
+                padding: 0 3px;
+              }
+              .price{
+                font-size: 1.3rem;
+                color: #FF3938;
+              }
+            }
           }
           .fixed_lot{
             position: absolute;
@@ -251,6 +269,21 @@
                   font-size: 1.2rem;
                   color: #646464;
                   letter-spacing: 0.06em;
+                }
+              }
+              .price{
+                font-size: 1.4rem;
+              }
+              .price_wrapper{
+                margin-bottom: 20px;
+                .price_strike{
+                  font-size: 1.4rem;
+                }
+                .arrow{
+                  font-size: 1.4rem;
+                }
+                .price{
+                  font-size: 1.5rem;
                 }
               }
             }
