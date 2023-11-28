@@ -2,7 +2,7 @@
 
 <article id="itemGroupList" class="page-item-group-list">
   <section class="section-basic-item">
-		<div class="section_inner">
+		<div class="section_inner_new">
 			<div class="section_ttl search_ttl">
 				<h1><span>Item List</span><font>“{{ search.terms }}”の検索結果</font></h1>
 				<form action="{{ routes.search_url }}" method="get" role="search" class="search-form search-page-form">
@@ -12,14 +12,14 @@
 					</div>
 				</form>
 			</div>
-			<div class="comp-product-list">
+			<div class="comp-product-block">
 				{% if search.performed and search.results_count == 0 %}
 				<p class="no_entry">該当する商品がありません。</p>
 				{% endif %}
         <ul class="item_wrapper">
-				{% paginate search.results by 20 %}
+				{% paginate search.results by 30 %}
 				{%- for product in search.results -%}
-				{%- if product.object_type == 'product' -%}
+				{%- if product.object_type == 'product' and product.type != "outlet" -%}
           {%- include 'all-item-card' -%}
 				{%- endif -%}
 				{%- endfor -%}

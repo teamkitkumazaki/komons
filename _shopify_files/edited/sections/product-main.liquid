@@ -59,7 +59,7 @@
         <div class="desc_wrap">
           <p>{{ product.metafields.custom_fields["prod_description"] }}</p>
         </div><!-- desc_wrap -->
-        {%- if product.type != "gift" and product.type != "gift-limited" -%}
+        {%- if product.type != "gift" and product.type != "gift-limited" and product.type != "outlet" -%}
         {% include 'product-variation-select' %}
         {% endif %}
         {%- if product.type != "commercial" -%}
