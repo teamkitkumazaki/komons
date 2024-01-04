@@ -59,7 +59,7 @@
         <div class="desc_wrap">
           <p>{{ product.metafields.custom_fields["prod_description"] }}</p>
         </div><!-- desc_wrap -->
-        {%- if product.type != "gift" and product.type != "gift-limited" and product.type != "outlet" -%}
+        {%- if product.type != "gift" and product.type != "gift-limited" and product.type != "outlet" and product.type != "fukubukuro" -%}
         {% include 'product-variation-select' %}
         {% endif %}
         {%- if product.type != "commercial" -%}
@@ -84,7 +84,7 @@
         {% include 'product-brand-introduction' %}
         <div class="desc_unit border">
           <div class="comp-detail-title">
-          {%- if product.type == "gift" or product.type == "gift-limited" -%}
+          {%- if product.type == "gift" or product.type == "gift-limited" or product.type == "fukubukuro" -%}
             <hgroup>
               <span class="title_en">Contents</span>
               <h2 class="title_ja">セットの内容</h2>
@@ -101,7 +101,7 @@
           {%- endif -%}
           </div>
           <div class="comp-detail-desc">
-          {%- if product.type == "gift" or product.type == "gift-limited" -%}
+          {%- if product.type == "gift" or product.type == "gift-limited" or product.type == "fukubukuro" -%}
           {% include 'product-set-content' %}
           {%- endif -%}
           {% for item in product.metafields.custom_fields["prod_detail_desc"] %}
@@ -139,10 +139,10 @@
             {% endfor %}
           </div><!-- comp-detail-desc -->
         </div><!-- desc_unit -->
-        {% if product.type != 'gift' and product.type != 'goods' and product.type != "gift-limited" %}
+        {% if product.type != 'gift' and product.type != 'goods' and product.type != "gift-limited" and product.type != "fukubukuro" %}
         {% include 'scent-detail' %}
         {% endif %}
-        {% if product.type != 'gift' and product.type != "gift-limited" %}
+        {% if product.type != 'gift' and product.type != "gift-limited" and product.type != "fukubukuro" %}
         {% include 'product-conponent' %}
         {%- else -%}
         {% include 'product-conponent-gift' %}
@@ -155,6 +155,21 @@
             </hgroup>
           </div>
           <div class="comp-detail-toggle-new">
+          {% if product.type == 'fukubukuro' %}
+          <div id="toggleGift" class="toggle_item">
+            <button class="toggle_button_new">
+              <span class="txt">福袋セットのご購入について</span>
+              <span class="caret"></span>
+            </button>
+            <div class="toggle_content_new">
+              <div class="detail_item">
+                <div class="content">
+                  <p>※Komons福袋セットを含むご注文は配送日時の指定が出来ません。<br>※2024年1月5日(金)以降での順次発送となります。<br>※ギフトボックスに入れての配送や、熨斗・メッセージカードなどのギフトサービスには対応しておりません。<br>※福袋と同時注文された別の商品については、同梱でのお届けとなります。<br>※弊社側の都合や不良品などの場合を除き、福袋セットの返品は対応致しかねます。</p>
+                </div>
+              </div>
+            </div><!-- toggle_content -->
+          </div>
+          {% endif %}
           {%- if product.type == "gift" and product.type != "gift-limited" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
             <div id="toggleGift" class="toggle_item">
               <button class="toggle_button_new">
@@ -218,7 +233,11 @@
                 <div class="detail_item">
                   <p class="title">到着日・時間指定について</p>
                   <div class="content">
+                    {%- if product.type != "fukubukuro" -%}
                     <p>現在ご注文頂くと最短で{% include 'delivery-shcedule' %}にお届け致します。</p>
+                    {%- else -%}
+                    <p>福袋商品は1月5日(金)より順次配送致します。</p>
+                    {%- endif -%}
                     <p>時間に関しましては、午前中、14～16時、16～18時、18～20時、19～21時の時間帯をお選び頂くことができます。</p>
                     <p>※地域によってはご希望に添えない場合もございますので、その点ご了承下さいませ。また、天候・道路・交通事情等運送上の事情により、ご希望のお届け時間帯にお届けできない場合もございますので、ご了承下さい。</p>
                   </div>

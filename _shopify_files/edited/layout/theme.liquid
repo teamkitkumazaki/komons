@@ -9,6 +9,16 @@
 	{%- if request.page_type contains 'customers' or request.page_type contains 'cart' or request.page_type contains 'account' or request.page_type contains 'blogs' or request.page_type contains 'captcha' -%}
 	<meta name="robots" content="noindex" />
 	{%- endif -%}
+	{%- if request.page_type contains 'collection' -%}
+	{%- if collection.handle == 'ajax' or collection.handle == 'all' or collection.handle contains '-mist' -%}
+		<meta name="robots" content="noindex,nofollow" />
+		<style>
+			body{
+				display: none;
+			}
+		</style>
+	{%- endif -%}
+	{%- endif -%}
 	<link rel="canonical" href="{{ canonical_url }}">
 	<meta name="google-site-verification" content="1_P1Xhv4k9Dr-1gcr7NUMd_dsqVRuE3w-AcSwmrMEj8" />
 	<link rel="shortcut icon" type="image/x-icon" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg">
@@ -120,9 +130,6 @@
 {%- endif -%}
 {%- if request.page_type contains 'addresses' -%}
 <script src="{{ 'ajaxzip3.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
-{%- if request.page_type contains 'page' -%}
-<script src="{{ 'contact.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {% include 'script-cookies' %}
 </html>

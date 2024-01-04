@@ -19,7 +19,11 @@
           <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
         </span>
       </div><!-- cart_item -->
+      {%- if product.type != "fukubukuro" -%}
       <p class="dervery_schedule">最短で{% include 'delivery-shcedule' %}にお届け致します</p>
+      {%- else -%}
+      <p class="dervery_schedule">1月5日(金)より順次発送致します</p>
+      {%- endif -%}
       <input class="product_cart_btn button" type="submit" value="カートに入れる" style="display: none">
     {%- else -%}
     {%- if product.type != "upcoming" and product.type != "archive" and product.type != "roommist" and product.metafields.custom_fields["stock_state"] != 1 -%}
@@ -37,7 +41,11 @@
       </span>
       <input id="cartSubmit" class="product_cart_btn button" type="submit" value="カートに入れる" style="bottom: unset;  height: 90px;">
     </div><!-- cart_item -->
+    {%- if product.type != "fukubukuro" -%}
     <p class="dervery_schedule">最短で{% include 'delivery-shcedule' %}にお届け致します</p>
+    {%- else -%}
+    <p class="dervery_schedule">1月5日(金)より順次発送致します</p>
+    {%- endif -%}
     {%- else -%}
     {%- if product.metafields.custom_fields["stock_state"] == 1 -%}
     <div class="out_of_stock">SOLD OUT</div>

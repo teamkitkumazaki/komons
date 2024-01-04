@@ -38,7 +38,11 @@
                   </span>
                   <input id="cartSubmit" class="product_cart_btn button" type="submit" value="カートに入れる">
                 </div><!-- cart_item -->
+                {%- if product.type != "fukubukuro" -%}
                 <p class="dervery_schedule">最短で{% include 'delivery-shcedule' %}にお届け致します</p>
+                {%- else -%}
+                <p class="dervery_schedule">1月5日(金)より順次発送致します</p>
+                {%- endif -%}
               </div>
             </div><!-- comp-flex-cart -->
           {%- else -%}

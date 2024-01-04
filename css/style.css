@@ -15257,7 +15257,7 @@ body.loaded #loading {
   line-height: 2;
 }
 .comp-article-contents .contents_item .content_description p:not(:last-child) {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 @media screen and (min-width: 720px) {
@@ -17200,7 +17200,7 @@ body.loaded #loading {
   margin-bottom: 20px;
 }
 .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .item_info .links .name {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.4;
   letter-spacing: 0.06em;
 }

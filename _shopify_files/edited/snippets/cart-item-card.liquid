@@ -1,18 +1,6 @@
-{%- assign itemTitle = item.title | split : "-" -%}
 {%- assign indexNum = 0 | plus : 1 -%}
 {%- assign productId = item.url | split : "?" -%}
 {%- assign productURL = productId[0] | split : "/" -%}
-{% for collection in collections %}
-{%- if collection.handle == "ajax" -%}
-{% for ajax in collection.products %}
-  {%- assign indexNum = indexNum | plus : 1 -%}
-  {%- if ajax.handle == productURL[2] -%}
-    {%- assign category = ajax.metafields.custom_fields["prod_category"] -%}
-    {%- assign prodName = ajax.metafields["custom_fields"]["prod_display_name"] -%}
-  {%- endif -%}
-{% endfor %}
-{%- endif -%}
-{% endfor %}
 
 {%- if prodName == blank -%}
 {%- assign category = 'ギフトセット' -%}
@@ -32,8 +20,12 @@
   <div class="txt_wrap">
     <div class="txt_inner">
       <div class="item_info">
-        <span class="category"><span class="ja">{{ category }}</span></span>
-        <a class="links" href="{{ productId[0] }}">{%- if prodName != blank -%}{{ prodName }}{%- else -%}<span class="name">{{ itemTitle[0] }}</span>{%- endif -%}{%- for option in variant_options -%}<span class="options genre {% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}{% if item.selling_plan_allocation %}<span class="options genre">{{ item.selling_plan_allocation.selling_plan.name }}</span>
+        {%- if item.product.type == 'gift' -%}
+        <span class="category"><span class="ja">ギフトセット</span></span>
+        {%- else -%}
+        <span class="category"><span class="ja">{{ item.product.metafields.custom_fields["prod_category"] }}</span></span>
+        {%- endif -%}
+        <a class="links" href="{{ productId[0] }}"><span class="name">{{ item.product.metafields.custom_fields["prod_display_name"] }}</span>{%- for option in variant_options -%}<span class="options genre {% if item.product.has_only_default_variant %} hide{% endif %}" optionName="{{ option.value }}">{{ option.value }}</span>{%- endfor -%}{% if item.selling_plan_allocation %}<span class="options genre">{{ item.selling_plan_allocation.selling_plan.name }}</span>
         {% endif %}</a>
 
         {%- assign cpPrice = item.variant.compare_at_price | money_without_currency -%}

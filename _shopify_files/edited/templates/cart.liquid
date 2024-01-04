@@ -100,8 +100,8 @@ if(deliveryDateParam != undefined){
 	if(dateValue != null || dateValue != undefined){
 		$('#dateInput').val(dateValue);
 	}else{
-		$('#deliveryDateBox').val('指定なし');
-		$('#dateInput').val('指定なし');
+		$('#deliveryDateBox').val('0');
+		$('#dateInput').val($('#deliveryDateBox').find('.option2').val());
 	}
 
 }
