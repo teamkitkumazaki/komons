@@ -1,12 +1,8 @@
-{%- if request.page_type contains 'article' -%}
-{%- assign camName = article.handle | split: '/' -%}
-{%- assign camName = camName[1] -%}
 <html>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="robots" content="noindex">
-	<meta name="robots" content="nofollow">
-  <title>{{ article.title }}</title>
+  <title>Komonsの目撃情報をぜひ教えてください。</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
   <style type="text/css">
@@ -276,14 +272,6 @@
       color: red !important;
     }
 
-		p{
-			font-size: 14px;
-			line-height: 1.83;
-			letter-spacing: 0.4px;
-			color: #00381f;
-			margin: 5px 0px 15px;
-		}
-
     /* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
     h1 a:visited,
     h2 a:visited,
@@ -548,7 +536,8 @@
     </style>
     <![endif]-->
 </head>
-<body name="{{ camName }}">
+
+<body>
   <table border="0" cellpadding="0" cellspacing="0" id="background-table" width="100%">
     <tbody>
       <tr>
@@ -563,9 +552,9 @@
                       <tr>
                         <td class="w600" width="600">
                           <div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
-                            <img src="{{ article.image | image_url: width: 1200 }}" width="100%">
+                            <img src="https://komons-japan.com/cdn/shop/articles/facility_main.jpg?v=1708950963&width=1200" width="100%">
                           </div>
-                          <h1 style="margin: 30px 0px 10px; text-align: left; padding: 0px; color: #00381f; font-size: 19px; font-weight: normal; letter-spacing: 0.5px; text-indent: -0.1em;">{{ article.title }}</h1>
+                          <h1 style="margin: 30px 0px 10px; text-align: left; padding: 0px; color: #00381f; font-size: 19px; font-weight: normal; letter-spacing: 0.5px; text-indent: -0.1em;">Komonsの目撃情報をぜひ教えてください。</h1>
                         </td>
                       </tr>
                     </tbody>
@@ -583,74 +572,117 @@
                               <tbody>
                                 <tr>
                                   <td class="w600" width="600" colspan="2">
-                                    {% if article.metafields["custom_fields"]["scent_name"] != blank %}
-                                    <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">
-                                      Komonsのこだわりである100%天然精油の香り。その1つ1つの精油にスポットをあて、素材の産地や香り、そして効果効能を紹介していくこのシリーズ。<br>本日は、{{ article.metafields["custom_fields"]["scent_name"] }}の精油についてご紹介します。</p>
-                                    <div class="flavor_chart" style="border-radius: 10px;background: #f8f8f8; padding: 20px 20px 1px; margin-top:30px; margin-bottom: 30px;">
-                                    <h2 style="margin: 10px 0px 20px; text-align: left; padding: 0px; color: #00381f; font-size: 18px; font-weight: normal; letter-spacing: 0.5px; text-indent: -0.1em; text-align: center;">{{ article.metafields["custom_fields"]["scent_name"] }}精油の特徴</h2>
-                                    {% for item in article.metafields["custom_fields"]["scent_features"] %}
-                                    <div class="flavor_item" style="margin-bottom: 20px;">
-                                      <p style="text-align: center; display: block; padding: 5px 20px; border-radius: 5px;font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; background:#fff; margin: 0 0 15px;">{{ item["features_ttl"] }}</p>
-                                      <p class="main_desc" style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin-bottom: 0;">{{ item["features_desc"] }}</p>
-                                    </div>
-                                    {% endfor %}
-                                  </div>
-                                    {% endif %}
                                     <div id="mainTxt" class="main_txt_wrap" style="margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px;">
-																		{% for item in article.metafields["custom_fields"]["article_contents"] %}
-																		{% if item["article_img"] != blank %}
-																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
-																			{{ item["article_img"] }}
-																		</div>
-																		{% endif %}
-																		{% if item["article_ttl"] != blank %}
-																		<h2 style="line-height: 1.8; margin: 25px 0px 15px; text-align: left; padding: 0px; color: #00381f; font-size: 18px; font-weight: normal; letter-spacing: 0.5px;">{{ item["article_ttl"] }}</h2>
-																		{% endif %}
-																		{% if item["article_desc"] != blank %}
 																		<div class="content_description">
-															        {{ item["article_desc"] }}
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">「毎日の家事を、心地よい時間に」をテーマに、日々の家事を少しでも良い体験にすることを目指して商品開発を続けているKomonsですが、愛用して頂いている皆様のおかげで、すこしずつ「毎日の生活」以外のシーンでも採用され始めています。</p>
 															      </div>
-															      {% endif %}
-																		{% endfor %}
-																		<div class="number" style="margin: 40px 0px 20px; padding:15px 0; background: #f8f8f8; text-align: center;"> <span style="color: #00381f; font-size: 16px; font-weight: normal; text-align: center; letter-spacing: 0.8px; text-indent: -0.1em;">{% if article.metafields["custom_fields"]["item_list_ttl"] != blank %}{{ article.metafields["custom_fields"]["item_list_ttl"] }}{% else %}おすすめ商品一覧{% endif %}</span>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/61a03b2ecbff--facility-img01-119391.jpg?v=1708951062" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">例えば、神戸開港から間もない1870年に日本最古のホテルとして始まった&nbsp;「神戸・旧居留地オリエンタルホテル」では、全客室で、Komonsラインナップの中でも特に人気のファブリックミスト“Free as a Bird”をご使用いただけます。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/61a03b2ecbff--facility-img02-15a6e3.jpg?v=1708951095" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">それ以外にも、京都や千葉や山梨などの古民家ホテル、&nbsp;MUJI HOTELを手掛けるUDS社のホテルでも採用いただくなど、天然精油が織りなす香りで素晴らしいホテルでの体験に一役買わせて頂いております。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">弊社のサイトで購入されるお客さまの中には「ホテルで初めて使って香りのファンになりました」とコメントされる方も多く、日々そのようなコメントに勇気をいただいております。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/61a03b2ecbff--1712260264-2-84bb93.jpg?v=1709908261" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">また、ホテルだけでなく最近では「飲食店のお手洗いで見つけたよ」という声を多々いただくようになりました。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">例えば、目の前で炭火焼するハンバーグが人気の行列店「挽肉と米」でも、全店舗でKomonsのハンドウォッシュやルームミストなどをご使用いただいており、お客さまへのおもてなしの一部としてご活用いただいております。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/61a03b2ecbff--facility-img04-fc821d.jpg?v=1709793041" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">実は営業メンバーがいないわたしたち。<br>ひとえに愛用頂いている皆様の口コミのおかげで、Komonsは少しずつその活躍の場を広げることが出来ています。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">「こんな場所でKomonsが使われているのを見た！」といった目撃情報。または、「このお店とKomonsの相性が良さそう！」や「ホームケア以外でもこんな商品があったら欲しい！」などのご意見があれば、ぜひ下記よりこっそり教えてください。</p>
+															      </div>
+                                    <div class="link_wrap" style="margin-top: 25px;">
+                                        <a href="https://komons-japan.com/pages/question" style="font-weight: normal; display: block; padding: 15px 0; background:#00381f; color: #fff; text-align: center; font-size: 16px; text-decoration: none; border-radius: 10px; font-weight: normal;">目撃情報はこちらへ →</a>
+                                      </div>
+																		<div class="number" style="margin: 40px 0px 20px; padding:15px 0; background: #f8f8f8; text-align: center;"> <span style="color: #00381f; font-size: 16px; font-weight: normal; text-align: center; letter-spacing: 0.8px; text-indent: -0.1em;">おすすめ商品一覧</span>
 																		</div>
                                     </div><!-- main_txt_wrap -->
                                   </td>
                                 </tr>
-                                <tr>
-																{%- assign itemIndex = 1 -%}
-																{% for item in article.metafields["custom_fields"]["related_product"] %}
-												        {% for collection in collections %}
-												        {%- if collection.handle == "all" -%}
-																{% for product in collection.products %}
-																{%- if product.handle == item["products"] -%}
-																{% assign evenOdd = itemIndex | modulo : 2 %}
-																{% if evenOdd != 0 %}<tr class="relatedItems">{%- endif -%}
-																<td width="50%;" style="vertical-align: top;">
-																	<div class="item_column2" style="box-sizing: border-box; margin-bottom: 35px;{% if evenOdd != 0 %}padding-right: 4%;{%- else -%}padding-left: 4%;{%- endif -%}">
+                                <tr class="relatedItems">
+                                  <td width="50%;" style="vertical-align: top;">
+																	<div class="item_column2" style="box-sizing: border-box; margin-bottom: 35px;padding-right: 4%;">
 																		<div class="img_wrap" style="margin-bottom: 15px;">
-																			<a href="{{ product.url }}?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign={{ camName }}">
-																				<img src="https:{{ product.media[0] | image_url: width: 550 }}" width="100%">
+																			<a href="https://komons-japan.com/products/k0002?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=20240303">
+																				<img src="https://komons-japan.com/cdn/shop/products/thumb01_fa5bcb48-0b2b-4d39-96a4-3c64b59aabb3.jpg?v=1648100622&amp;width=550" width="100%">
 																			</a>
 																		</div>
 																		<div class="txt_wrap">
-																			<a class="prod_name" href="{{ product.url }}?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block; font-size: 16px; line-height: 1; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 20px; text-decoration: none;">
-																				<span style="display: block; font-size: 11px; line-height: 1.73; letter-spacing: 0.4px; margin-bottom: 5px;">{{ product.metafields.custom_fields["prod_category"] }}</span>
-																				<span class="prodName" style="display: block; font-size: 16px; line-height: 1.4; letter-spacing: 0.4px; margin-bottom: 7px;">{{ product.metafields.custom_fields["prod_display_name"] }}</span>
+																			<a class="prod_name" href="https://komons-japan.com/products/k0002?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=20240303" style="display: block; font-size: 16px; line-height: 1; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 20px; text-decoration: none;">
+																				<span style="display: block; font-size: 11px; line-height: 1.73; letter-spacing: 0.4px; margin-bottom: 5px;">除菌用ファブリックミスト</span>
+																				<span class="prodName" style="display: block; font-size: 16px; line-height: 1.4; letter-spacing: 0.4px; margin-bottom: 7px;"><span class="name en"> Free as a Bird</span></span>
 																				<span class="addedName" style="display: block; font-size: 11px; line-height: 1.8; letter-spacing: 0.2px;"></span>
 																			</a>
-																			<p class="category" style="display: block; font-size: 12px; line-height: 1.4; letter-spacing: 0.2px;">{{ product.price | money_without_currency }}円(税込) {% if product.metafields["custom_fields"]["prod_volume"] != blank %}/ {{ product.metafields["custom_fields"]["prod_volume"] }}{%- endif -%}</p>
+																			<p class="category" style="display: block; font-size: 12px; line-height: 1.4; letter-spacing: 0.2px;">2,530円(税込) / 300ml</p>
 																		</div>
 																	</div>
 																</td>
-																{% if evenOdd == 0 %}</tr>{%- endif -%}
-																{%- assign itemIndex = itemIndex | plus:1 -%}
-											          {%- endif -%}
-																{% endfor %}
-												        {%- endif -%}
-												        {% endfor %}
-												        {% endfor %}
-                                </tr>
+																<td width="50%;" style="vertical-align: top;">
+																	<div class="item_column2" style="box-sizing: border-box; margin-bottom: 35px;padding-left: 4%;">
+																		<div class="img_wrap" style="margin-bottom: 15px;">
+																			<a href="https://komons-japan.com/products/k0003?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=20240303">
+																				<img src="https://komons-japan.com/cdn/shop/products/thumb01_470b67da-993b-4d3c-939f-f67f0c067c1c.jpg?v=1648100617&amp;width=550" width="100%">
+																			</a>
+																		</div>
+																		<div class="txt_wrap">
+																			<a class="prod_name" href="https://komons-japan.com/products/k0003?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=20240303" style="display: block; font-size: 16px; line-height: 1; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 20px; text-decoration: none;">
+																				<span style="display: block; font-size: 11px; line-height: 1.73; letter-spacing: 0.4px; margin-bottom: 5px;">ハンドソープ</span>
+																				<span class="prodName" style="display: block; font-size: 16px; line-height: 1.4; letter-spacing: 0.4px; margin-bottom: 7px;"><span class="name en">I Can Hear Music</span></span>
+																				<span class="addedName" style="display: block; font-size: 11px; line-height: 1.8; letter-spacing: 0.2px;"></span>
+																			</a>
+																			<p class="category" style="display: block; font-size: 12px; line-height: 1.4; letter-spacing: 0.2px;">2,750円(税込) / 280ml</p>
+																		</div>
+																	</div>
+																</td>
+																</tr>
+																<tr class="relatedItems">
+                                  <td width="50%;" style="vertical-align: top;">
+																	<div class="item_column2" style="box-sizing: border-box; margin-bottom: 35px;padding-right: 4%;">
+																		<div class="img_wrap" style="margin-bottom: 15px;">
+																			<a href="https://komons-japan.com/products/k0009?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=20240303">
+																				<img src="https://komons-japan.com/cdn/shop/products/thumb01_d55549d1-3996-4d61-8608-70273018d628.jpg?v=1648100627&amp;width=550" width="100%">
+																			</a>
+																		</div>
+																		<div class="txt_wrap">
+																			<a class="prod_name" href="https://komons-japan.com/products/k0009?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=20240303" style="display: block; font-size: 16px; line-height: 1; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 20px; text-decoration: none;">
+																				<span style="display: block; font-size: 11px; line-height: 1.73; letter-spacing: 0.4px; margin-bottom: 5px;">除菌用ファブリックミスト</span>
+																				<span class="prodName" style="display: block; font-size: 16px; line-height: 1.4; letter-spacing: 0.4px; margin-bottom: 7px;"><span class="name en"> Free as a Bird (Mini)</span></span>
+																				<span class="addedName" style="display: block; font-size: 11px; line-height: 1.8; letter-spacing: 0.2px;"></span>
+																			</a>
+																			<p class="category" style="display: block; font-size: 12px; line-height: 1.4; letter-spacing: 0.2px;">748円(税込) / 30ml</p>
+																		</div>
+																	</div>
+																</td>
+																<td width="50%;" style="vertical-align: top;">
+																	<div class="item_column2" style="box-sizing: border-box; margin-bottom: 35px;padding-left: 4%;">
+																		<div class="img_wrap" style="margin-bottom: 15px;">
+																			<a href="https://komons-japan.com/products/k0043?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=20240303">
+																				<img src="https://komons-japan.com/cdn/shop/products/thumb01_80f63597-b12e-45cf-bfd4-1c2d710ebadc.jpg?v=1648100609&amp;width=550" width="100%">
+																			</a>
+																		</div>
+																		<div class="txt_wrap">
+																			<a class="prod_name" href="https://komons-japan.com/products/k0043?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=20240303" style="display: block; font-size: 16px; line-height: 1; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 20px; text-decoration: none;">
+																				<span style="display: block; font-size: 11px; line-height: 1.73; letter-spacing: 0.4px; margin-bottom: 5px;">ギフトセット</span>
+																				<span class="prodName" style="display: block; font-size: 16px; line-height: 1.4; letter-spacing: 0.4px; margin-bottom: 7px;"><span class="name">ホワイトボックス</span></span>
+																				<span class="addedName" style="display: block; font-size: 11px; line-height: 1.8; letter-spacing: 0.2px;">マルチ＆ファブリックミスト</span>
+																			</a>
+																			<p class="category" style="display: block; font-size: 12px; line-height: 1.4; letter-spacing: 0.2px;">2,948円(税込) </p>
+																		</div>
+																	</div>
+																</td>
+																</tr>
                               </tbody>
                             </table>
                           </layout>
@@ -667,7 +699,7 @@
                       width="100%" /></div>
 
                   <div class="footer_flex" style="padding:20px;">
-                    <div class="footer_logo"><a href="https://www.komons-japan.com/&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display:block;text-align:center;margin-bottom:20px;"><img
+                    <div class="footer_logo"><a href="https://www.komons-japan.com/?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display:block;text-align:center;margin-bottom:20px;"><img
                           src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/logo_footer.png?ver2" style="display:inline;" width="80%" /></a>
 
                       <div class="footer_txt" style="font-size:14px;letter-spacing:0.5px;  line-height: 1.57;letter-spacing: 1px;text-align: center;color: #00381f; margin-bottom:30px;">毎日の家事を「プラスな時間」に変える<br />
@@ -678,7 +710,7 @@
                           src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_fb.png" style="width: 35px; display: inline;"></a><a href="https://www.instagram.com/komons.jp/"
                         style="margin-right: 7px; text-decoration: none;"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_ig.png" style="width: 35px; display: inline;"></a><a
                         href="https://twitter.com/komons_jp" style="margin-right: 7px; text-decoration: none;"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_tw.png"
-                          style="width: 35px; display: inline; "></a><a href="https://lin.ee/ID6naHI" style="text-decoration: none;"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/icon_line.png?v=1623523522"
+                          style="width: 35px; display: inline; "></a><a href="https://lin.ee/n39NnSQ" style="text-decoration: none;"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/icon_line.png?v=1623523522"
                           style="width: 35px; margin-right: 0px; display: inline;"></a></div>
 
                   </div>
@@ -686,12 +718,14 @@
               </tr>
               <tr>
                 <td bgcolor="#ffffff" class="w600" valign="top" width="600">
-                  <div class="footer_nav" style="font-size: 14px;line-height: 1.57;letter-spacing: 1px; font-weight: normal; padding: 0 20px;"><a href="https://komons-japan.com/collections/all-products&amp;utm_medium=mail&amp;utm_campaign={{ camName }}"
-                      style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">商品一覧</a> <a href="https://komons-japan.com/collections/gift&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ギフト商品</a>
-                    <a href="https://komons-japan.com/pages/concept&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">Komonsについて</a> <a href="https://komons-japan.com/blogs/journal/&amp;utm_medium=mail&amp;utm_campaign={{ camName }}"
-                      style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ジャーナル</a><a href="https://komons-japan.com/pages/faq&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ご利用ガイド</a><a
-                      href="https://komons-japan.com/pages/privacy-policy&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color:#003e1b;text-decoration:none;margin-bottom:10px;">プライバシー</a> <a id="mailOff" href="#aaaa"
-                      style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">メールの配信停止</a>
+                  <div class="footer_nav" style="font-size: 14px;line-height: 1.57;letter-spacing: 1px; font-weight: normal; padding: 0 20px;"><a
+                      href="https://komons-japan.com/collections/all-products?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">商品一覧</a>
+                    <a href="https://komons-japan.com/collections/gift?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ギフト商品</a>
+                    <a href="https://komons-japan.com/pages/concept?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">Komonsについて</a>
+                    <a href="https://komons-japan.com/blogs/journal?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ジャーナル</a>
+                    <a href="https://komons-japan.com/pages/faq?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ご利用ガイド</a>
+                    <a href="https://komons-japan.com/pages/privacy-policy?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color:#003e1b;text-decoration:none;margin-bottom:10px;">プライバシー</a>
+                    <a href="{% unsubscribe_link %}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">メールの配信停止</a>
                   </div>
                   <p class="copyright" style="font-size: 12px;line-height: 1.57;letter-spacing: 1px; color: #003e1b; padding: 0 20px 40px;">2018-2020 Komons All Rights Reserved</p>
                 </td>
@@ -703,30 +737,5 @@
     </tbody>
   </table>
 </body>
-<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
-<script>
-	$('body').find('img').each(function(index) {
-		if(index > 0){
-			$(this).attr('width', '100%');
-		}
-	});
-	$('#mainTxt').find('p').each(function(index) {
-		$(this).attr('style', 'font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;')
-	});
-  $('#mailOff').attr('href','{' + '% unsubscribe_link %' + '}');
-	$('.relatedItems').find('.prodName').each(function(index) {
-		var addedName = $(this).find('.added');
-		var addedNameTxt = addedName.text();
-		console.log('addedNameTxt:' + addedNameTxt);
-		addedName.remove();
-		$(this).next('.addedName').text(addedNameTxt);
-	});
-  $('.relatedItems').find('a').each(function(index) {
-    var linkHref = $(this).attr('href');
-    console.log('linkHref:' + linkHref);
-    var arrangedURL = linkHref.replace('/mt/', 'https://komons-japan.com/');
-    $(this).attr('href', arrangedURL);
-  });
-</script>
+
 </html>
-{% endif %}

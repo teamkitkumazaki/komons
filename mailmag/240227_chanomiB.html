@@ -1,12 +1,7 @@
-{%- if request.page_type contains 'article' -%}
-{%- assign camName = article.handle | split: '/' -%}
-{%- assign camName = camName[1] -%}
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="robots" content="noindex">
-	<meta name="robots" content="nofollow">
-  <title>{{ article.title }}</title>
+  <title>天然・無農薬の保湿剤。”岐阜のマチュピチュ”で生まれる茶の実オイル。</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
   <style type="text/css">
@@ -276,14 +271,6 @@
       color: red !important;
     }
 
-		p{
-			font-size: 14px;
-			line-height: 1.83;
-			letter-spacing: 0.4px;
-			color: #00381f;
-			margin: 5px 0px 15px;
-		}
-
     /* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
     h1 a:visited,
     h2 a:visited,
@@ -548,7 +535,8 @@
     </style>
     <![endif]-->
 </head>
-<body name="{{ camName }}">
+
+<body>
   <table border="0" cellpadding="0" cellspacing="0" id="background-table" width="100%">
     <tbody>
       <tr>
@@ -563,9 +551,12 @@
                       <tr>
                         <td class="w600" width="600">
                           <div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
-                            <img src="{{ article.image | image_url: width: 1200 }}" width="100%">
+                            <img src="https://komons-japan.com/cdn/shop/articles/chanomi_main.jpg?v=1708942396&width=1200" width="100%">
                           </div>
-                          <h1 style="margin: 30px 0px 10px; text-align: left; padding: 0px; color: #00381f; font-size: 19px; font-weight: normal; letter-spacing: 0.5px; text-indent: -0.1em;">{{ article.title }}</h1>
+                          <h1 style="margin: 30px 0px 10px; text-align: left; padding: 0px; color: #00381f; font-size: 19px; font-weight: normal; letter-spacing: 0.5px; text-indent: -0.1em;">天然・無農薬の保湿剤。”岐阜のマチュピチュ”で生まれる茶の実オイル。</h1>
+                          <div class="note_wrap" style="background: #f4f4f4; padding: 10px 20px 10px; margin: 20px auto;">
+                            <p class="main_desc" style="font-size: 13px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f;">※このメールは、展示会・イベント等で名刺交換をさせて頂いた方々にお送りしております。</p>
+                          </div>
                         </td>
                       </tr>
                     </tbody>
@@ -583,73 +574,72 @@
                               <tbody>
                                 <tr>
                                   <td class="w600" width="600" colspan="2">
-                                    {% if article.metafields["custom_fields"]["scent_name"] != blank %}
-                                    <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">
-                                      Komonsのこだわりである100%天然精油の香り。その1つ1つの精油にスポットをあて、素材の産地や香り、そして効果効能を紹介していくこのシリーズ。<br>本日は、{{ article.metafields["custom_fields"]["scent_name"] }}の精油についてご紹介します。</p>
-                                    <div class="flavor_chart" style="border-radius: 10px;background: #f8f8f8; padding: 20px 20px 1px; margin-top:30px; margin-bottom: 30px;">
-                                    <h2 style="margin: 10px 0px 20px; text-align: left; padding: 0px; color: #00381f; font-size: 18px; font-weight: normal; letter-spacing: 0.5px; text-indent: -0.1em; text-align: center;">{{ article.metafields["custom_fields"]["scent_name"] }}精油の特徴</h2>
-                                    {% for item in article.metafields["custom_fields"]["scent_features"] %}
-                                    <div class="flavor_item" style="margin-bottom: 20px;">
-                                      <p style="text-align: center; display: block; padding: 5px 20px; border-radius: 5px;font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; background:#fff; margin: 0 0 15px;">{{ item["features_ttl"] }}</p>
-                                      <p class="main_desc" style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin-bottom: 0;">{{ item["features_desc"] }}</p>
-                                    </div>
-                                    {% endfor %}
-                                  </div>
-                                    {% endif %}
                                     <div id="mainTxt" class="main_txt_wrap" style="margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px;">
-																		{% for item in article.metafields["custom_fields"]["article_contents"] %}
-																		{% if item["article_img"] != blank %}
-																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
-																			{{ item["article_img"] }}
-																		</div>
-																		{% endif %}
-																		{% if item["article_ttl"] != blank %}
-																		<h2 style="line-height: 1.8; margin: 25px 0px 15px; text-align: left; padding: 0px; color: #00381f; font-size: 18px; font-weight: normal; letter-spacing: 0.5px;">{{ item["article_ttl"] }}</h2>
-																		{% endif %}
-																		{% if item["article_desc"] != blank %}
 																		<div class="content_description">
-															        {{ item["article_desc"] }}
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">今回は、食器用洗剤やハンドソープなど、Komonsの商品の多くに”天然の保湿剤”として配合している”茶の実オイル(ティーシードオイル)”についてのお話。</p>
 															      </div>
-															      {% endif %}
-																		{% endfor %}
-																		<div class="number" style="margin: 40px 0px 20px; padding:15px 0; background: #f8f8f8; text-align: center;"> <span style="color: #00381f; font-size: 16px; font-weight: normal; text-align: center; letter-spacing: 0.8px; text-indent: -0.1em;">{% if article.metafields["custom_fields"]["item_list_ttl"] != blank %}{{ article.metafields["custom_fields"]["item_list_ttl"] }}{% else %}おすすめ商品一覧{% endif %}</span>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/f926e4938e67--chanomi-img01-906e60.jpg?v=1708946521" alt="" typeof="foaf:Image" width="100%">
 																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">遡ること約7年前の2017年10月。試作品づくりを行いながら、Komonsにふさわしい原料を探す旅の過程で、私はついに”マチュピチュ”にたどり着きました。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">といっても南米大陸のマチュピチュではなく、「<a target="_blank" href="https://www.itamiwake.com/travel/b-spot/gifu-machu-picchu/" style="color: inherit; text-decoration: underline;">岐阜のマチュピチュ</a>」ですが。。笑</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/f926e4938e67--chanomi-main-a6ef11.jpg?v=1709117735" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">「岐阜のマチュピチュ」とは、岐阜県の中西部、揖斐川町の上ケ流地区にある通称「天空の茶畑」と言われる場所。 </p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">Komonsの食器用洗剤やハンドソープに、保湿剤として配合している「茶の実オイル（ティーシードオイル）」はこの地域で作られています。 </p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/f926e4938e67--chanomi-img04-d51f6d.jpg?v=1708946662" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">30年以上前から無農薬栽培を行ってきた上ケ流地区。 しかし、近年では高齢化から耕作放棄地が増えてしまっています。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">お茶栽培では通常、葉っぱへ養分を回すために花が咲かないようにコントロールしながら育てます。 しかし、耕作放棄されたお茶畑では、当然ながら花は咲き放題。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">(※実は椿科であるお茶の木には、自然状態だとこんなに綺麗な花が咲きます。)</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/f926e4938e67--chanomi-img05-0103c7.jpg?v=1708946712" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">その花の時期が終わると、多くの茶の実（ティーシード）が生ります。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">これまでは高値で取引されるお茶の葉ばかりに目がとられ、捨て置かれてしまっていたこの茶の実。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">近年になって、この実からとれるオイルには、リノール酸や必須脂肪酸であるオレイン酸などが多く含まれ、高い保湿効果があることがわかってきました。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/f926e4938e67--chanomi-img06-ca9469.jpg?v=1708949926" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">茶の実の収穫期である10月、無理をいって現地に訪問させていただき、実際に耕作放棄された茶畑で茶の実を摘む作業や、それを乾燥させ粉砕、そしてオイルを絞るところまで体験させていただきました。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/f926e4938e67--chanomi-img07-db2d95.jpg?v=1708949821" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/f926e4938e67--chanomi-img08-e54615.jpg?v=1708949881" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">高いエモリエント効果を持つ茶の実の「成分」。<br>地域全体で30年も前から無農薬栽培を行ってきたことによる「安心感」。 &nbsp; </p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">そして、耕作放棄の茶畑で何十年も捨て置かれ眠っていた価値を再発見することで、”日本ならでは”のものを生み出そうとしている、その「ストーリー」に私自身が共感・ひとめぼれして「ぜひうちの商品に使わせてください！」とお願いしました。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">ハンドソープはまだしも、食器用洗剤に保湿剤としてこのティーシードオイルを使うという考えは、最初は生産者の方にも驚かれましたが、熱意が通じたのかご協力していただくことができました。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/f926e4938e67--chanomi-img09-14213d.jpg?v=1708949866" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">そして完成したのが、Dish wash（食器用洗剤）「Don’t Look Back in Anger」と、Hand wash（ハンドソープ）「I can hear music」の２つ。そして最近では保湿力が大切なハンドミルクなどにも。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">こういった日本が誇る素材・原料や、そのストーリーを編み上げることで、Komonsの1つ1つの商品は成り立っています。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/f926e4938e67--chanomi-img10-e26de7.jpg?v=1708949858" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">Komonsは、その”日本ならでは”を直接全国に、そして世界に伝えることで、それぞれの素晴らしい素材・原料を生み出す生産者にも微力ながら恩返ししていければと考えています。</p>
+															      </div>
                                     </div><!-- main_txt_wrap -->
                                   </td>
-                                </tr>
-                                <tr>
-																{%- assign itemIndex = 1 -%}
-																{% for item in article.metafields["custom_fields"]["related_product"] %}
-												        {% for collection in collections %}
-												        {%- if collection.handle == "all" -%}
-																{% for product in collection.products %}
-																{%- if product.handle == item["products"] -%}
-																{% assign evenOdd = itemIndex | modulo : 2 %}
-																{% if evenOdd != 0 %}<tr class="relatedItems">{%- endif -%}
-																<td width="50%;" style="vertical-align: top;">
-																	<div class="item_column2" style="box-sizing: border-box; margin-bottom: 35px;{% if evenOdd != 0 %}padding-right: 4%;{%- else -%}padding-left: 4%;{%- endif -%}">
-																		<div class="img_wrap" style="margin-bottom: 15px;">
-																			<a href="{{ product.url }}?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign={{ camName }}">
-																				<img src="https:{{ product.media[0] | image_url: width: 550 }}" width="100%">
-																			</a>
-																		</div>
-																		<div class="txt_wrap">
-																			<a class="prod_name" href="{{ product.url }}?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block; font-size: 16px; line-height: 1; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 20px; text-decoration: none;">
-																				<span style="display: block; font-size: 11px; line-height: 1.73; letter-spacing: 0.4px; margin-bottom: 5px;">{{ product.metafields.custom_fields["prod_category"] }}</span>
-																				<span class="prodName" style="display: block; font-size: 16px; line-height: 1.4; letter-spacing: 0.4px; margin-bottom: 7px;">{{ product.metafields.custom_fields["prod_display_name"] }}</span>
-																				<span class="addedName" style="display: block; font-size: 11px; line-height: 1.8; letter-spacing: 0.2px;"></span>
-																			</a>
-																			<p class="category" style="display: block; font-size: 12px; line-height: 1.4; letter-spacing: 0.2px;">{{ product.price | money_without_currency }}円(税込) {% if product.metafields["custom_fields"]["prod_volume"] != blank %}/ {{ product.metafields["custom_fields"]["prod_volume"] }}{%- endif -%}</p>
-																		</div>
-																	</div>
-																</td>
-																{% if evenOdd == 0 %}</tr>{%- endif -%}
-																{%- assign itemIndex = itemIndex | plus:1 -%}
-											          {%- endif -%}
-																{% endfor %}
-												        {%- endif -%}
-												        {% endfor %}
-												        {% endfor %}
                                 </tr>
                               </tbody>
                             </table>
@@ -667,7 +657,7 @@
                       width="100%" /></div>
 
                   <div class="footer_flex" style="padding:20px;">
-                    <div class="footer_logo"><a href="https://www.komons-japan.com/&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display:block;text-align:center;margin-bottom:20px;"><img
+                    <div class="footer_logo"><a href="https://www.komons-japan.com/?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display:block;text-align:center;margin-bottom:20px;"><img
                           src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/logo_footer.png?ver2" style="display:inline;" width="80%" /></a>
 
                       <div class="footer_txt" style="font-size:14px;letter-spacing:0.5px;  line-height: 1.57;letter-spacing: 1px;text-align: center;color: #00381f; margin-bottom:30px;">毎日の家事を「プラスな時間」に変える<br />
@@ -678,7 +668,7 @@
                           src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_fb.png" style="width: 35px; display: inline;"></a><a href="https://www.instagram.com/komons.jp/"
                         style="margin-right: 7px; text-decoration: none;"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_ig.png" style="width: 35px; display: inline;"></a><a
                         href="https://twitter.com/komons_jp" style="margin-right: 7px; text-decoration: none;"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_tw.png"
-                          style="width: 35px; display: inline; "></a><a href="https://lin.ee/ID6naHI" style="text-decoration: none;"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/icon_line.png?v=1623523522"
+                          style="width: 35px; display: inline; "></a><a href="https://lin.ee/n39NnSQ" style="text-decoration: none;"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/icon_line.png?v=1623523522"
                           style="width: 35px; margin-right: 0px; display: inline;"></a></div>
 
                   </div>
@@ -686,11 +676,16 @@
               </tr>
               <tr>
                 <td bgcolor="#ffffff" class="w600" valign="top" width="600">
-                  <div class="footer_nav" style="font-size: 14px;line-height: 1.57;letter-spacing: 1px; font-weight: normal; padding: 0 20px;"><a href="https://komons-japan.com/collections/all-products&amp;utm_medium=mail&amp;utm_campaign={{ camName }}"
-                      style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">商品一覧</a> <a href="https://komons-japan.com/collections/gift&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ギフト商品</a>
-                    <a href="https://komons-japan.com/pages/concept&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">Komonsについて</a> <a href="https://komons-japan.com/blogs/journal/&amp;utm_medium=mail&amp;utm_campaign={{ camName }}"
-                      style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ジャーナル</a><a href="https://komons-japan.com/pages/faq&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ご利用ガイド</a><a
-                      href="https://komons-japan.com/pages/privacy-policy&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color:#003e1b;text-decoration:none;margin-bottom:10px;">プライバシー</a> <a id="mailOff" href="#aaaa"
+                  <div class="footer_nav" style="font-size: 14px;line-height: 1.57;letter-spacing: 1px; font-weight: normal; padding: 0 20px;"><a href="https://komons-japan.com/collections/all-products?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release"
+                      style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">商品一覧</a>
+                      <a href="https://komons-japan.com/collections/gift?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ギフト商品</a>
+                      <a href="https://komons-japan.com/pages/concept?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">Komonsについて</a>
+                      <a href="https://komons-japan.com/blogs/journal?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release"
+                      style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ジャーナル</a>
+                      <a href="https://komons-japan.com/pages/faq?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ご利用ガイド</a>
+                      <a
+                      href="https://komons-japan.com/pages/privacy-policy?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color:#003e1b;text-decoration:none;margin-bottom:10px;">プライバシー</a>
+                      <a href="{% unsubscribe_link %}"
                       style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">メールの配信停止</a>
                   </div>
                   <p class="copyright" style="font-size: 12px;line-height: 1.57;letter-spacing: 1px; color: #003e1b; padding: 0 20px 40px;">2018-2020 Komons All Rights Reserved</p>
@@ -703,30 +698,5 @@
     </tbody>
   </table>
 </body>
-<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
-<script>
-	$('body').find('img').each(function(index) {
-		if(index > 0){
-			$(this).attr('width', '100%');
-		}
-	});
-	$('#mainTxt').find('p').each(function(index) {
-		$(this).attr('style', 'font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;')
-	});
-  $('#mailOff').attr('href','{' + '% unsubscribe_link %' + '}');
-	$('.relatedItems').find('.prodName').each(function(index) {
-		var addedName = $(this).find('.added');
-		var addedNameTxt = addedName.text();
-		console.log('addedNameTxt:' + addedNameTxt);
-		addedName.remove();
-		$(this).next('.addedName').text(addedNameTxt);
-	});
-  $('.relatedItems').find('a').each(function(index) {
-    var linkHref = $(this).attr('href');
-    console.log('linkHref:' + linkHref);
-    var arrangedURL = linkHref.replace('/mt/', 'https://komons-japan.com/');
-    $(this).attr('href', arrangedURL);
-  });
-</script>
+
 </html>
-{% endif %}

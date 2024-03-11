@@ -1561,9 +1561,9 @@ article .huckleberry-subscription-detail-history-detail:nth-of-type(1) dt, artic
     font-size: 1.6rem;
   }
   .form-vertical .grid .grid__item input[type=text],
-.form-vertical .grid .grid__item input[type=email],
-.form-vertical .grid .grid__item input[type=tel],
-.form-vertical .grid .grid__item input[type=password] {
+  .form-vertical .grid .grid__item input[type=email],
+  .form-vertical .grid .grid__item input[type=tel],
+  .form-vertical .grid .grid__item input[type=password] {
     display: block;
     width: 100%;
     padding: 0 12px !important;

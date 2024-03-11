@@ -1,12 +1,8 @@
-{%- if request.page_type contains 'article' -%}
-{%- assign camName = article.handle | split: '/' -%}
-{%- assign camName = camName[1] -%}
 <html>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="robots" content="noindex">
-	<meta name="robots" content="nofollow">
-  <title>{{ article.title }}</title>
+  <title>【Komons香りの旅】奈良県・吉野 / 美しい山林で育まれるヒノキ精油を求めて</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
   <style type="text/css">
@@ -276,14 +272,6 @@
       color: red !important;
     }
 
-		p{
-			font-size: 14px;
-			line-height: 1.83;
-			letter-spacing: 0.4px;
-			color: #00381f;
-			margin: 5px 0px 15px;
-		}
-
     /* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
     h1 a:visited,
     h2 a:visited,
@@ -548,7 +536,8 @@
     </style>
     <![endif]-->
 </head>
-<body name="{{ camName }}">
+
+<body>
   <table border="0" cellpadding="0" cellspacing="0" id="background-table" width="100%">
     <tbody>
       <tr>
@@ -563,9 +552,12 @@
                       <tr>
                         <td class="w600" width="600">
                           <div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
-                            <img src="{{ article.image | image_url: width: 1200 }}" width="100%">
+                            <img src="https://komons-japan.com/cdn/shop/articles/yoshino_main2.jpg?v=1707214647&width=1200" width="100%">
                           </div>
-                          <h1 style="margin: 30px 0px 10px; text-align: left; padding: 0px; color: #00381f; font-size: 19px; font-weight: normal; letter-spacing: 0.5px; text-indent: -0.1em;">{{ article.title }}</h1>
+                          <div class="note_wrap" style="background: #f4f4f4; padding: 10px 20px 10px; margin: 20px auto;">
+                            <p class="main_desc" style="font-size: 13px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f;">※このメールは、展示会・イベント等で名刺交換をさせて頂いた方々にお送りしております。</p>
+                          </div>
+                          <h1 style="margin: 30px 0px 10px; text-align: left; padding: 0px; color: #00381f; font-size: 19px; font-weight: normal; letter-spacing: 0.5px; text-indent: -0.1em;">【奈良県・吉野】美しい山林で育まれるヒノキ精油を求めて -Komons香りの旅-</h1>
                         </td>
                       </tr>
                     </tbody>
@@ -583,73 +575,75 @@
                               <tbody>
                                 <tr>
                                   <td class="w600" width="600" colspan="2">
-                                    {% if article.metafields["custom_fields"]["scent_name"] != blank %}
-                                    <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">
-                                      Komonsのこだわりである100%天然精油の香り。その1つ1つの精油にスポットをあて、素材の産地や香り、そして効果効能を紹介していくこのシリーズ。<br>本日は、{{ article.metafields["custom_fields"]["scent_name"] }}の精油についてご紹介します。</p>
-                                    <div class="flavor_chart" style="border-radius: 10px;background: #f8f8f8; padding: 20px 20px 1px; margin-top:30px; margin-bottom: 30px;">
-                                    <h2 style="margin: 10px 0px 20px; text-align: left; padding: 0px; color: #00381f; font-size: 18px; font-weight: normal; letter-spacing: 0.5px; text-indent: -0.1em; text-align: center;">{{ article.metafields["custom_fields"]["scent_name"] }}精油の特徴</h2>
-                                    {% for item in article.metafields["custom_fields"]["scent_features"] %}
-                                    <div class="flavor_item" style="margin-bottom: 20px;">
-                                      <p style="text-align: center; display: block; padding: 5px 20px; border-radius: 5px;font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; background:#fff; margin: 0 0 15px;">{{ item["features_ttl"] }}</p>
-                                      <p class="main_desc" style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin-bottom: 0;">{{ item["features_desc"] }}</p>
-                                    </div>
-                                    {% endfor %}
-                                  </div>
-                                    {% endif %}
                                     <div id="mainTxt" class="main_txt_wrap" style="margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px;">
-																		{% for item in article.metafields["custom_fields"]["article_contents"] %}
-																		{% if item["article_img"] != blank %}
-																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
-																			{{ item["article_img"] }}
-																		</div>
-																		{% endif %}
-																		{% if item["article_ttl"] != blank %}
-																		<h2 style="line-height: 1.8; margin: 25px 0px 15px; text-align: left; padding: 0px; color: #00381f; font-size: 18px; font-weight: normal; letter-spacing: 0.5px;">{{ item["article_ttl"] }}</h2>
-																		{% endif %}
-																		{% if item["article_desc"] != blank %}
 																		<div class="content_description">
-															        {{ item["article_desc"] }}
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">天然精油にこだわるKomonsが、日本各地に眠る香りを訪ね旅をする「Komons香りの旅」。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">第3回は、吉野ひのきの精油（エッセンシャルオイル）を製造している、奈良県吉野の喜多製材所さんにてヒノキ精油の抽出を見学させて頂いた際のお話。</p>
 															      </div>
-															      {% endif %}
-																		{% endfor %}
-																		<div class="number" style="margin: 40px 0px 20px; padding:15px 0; background: #f8f8f8; text-align: center;"> <span style="color: #00381f; font-size: 16px; font-weight: normal; text-align: center; letter-spacing: 0.8px; text-indent: -0.1em;">{% if article.metafields["custom_fields"]["item_list_ttl"] != blank %}{{ article.metafields["custom_fields"]["item_list_ttl"] }}{% else %}おすすめ商品一覧{% endif %}</span>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/041827de85e5--yoshino-img02-1c102f.jpg?v=1707213345" alt="" typeof="foaf:Image" width="100%">
 																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">吉野は言わずと知れた全国有数のヒノキの生産地。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">町には4つの木材市場があり、日本で一番製材屋の多い町と言われています。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/041827de85e5--yoshino-img00-bc28f3.jpg?v=1706949193" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">周辺の雰囲気は山深く、とても神秘的。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">まるでもののけ姫の世界。（山中の写真を撮るのを忘れてしまいました...）</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/041827de85e5--yoshino-img01-43ea74.jpg?v=1706949210" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">喜多製材所は、その吉野の地でいち早く、20年以上前からひのきの精油に着目し、自分たちで抽出から販売までをおこなっている会社。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">同じヒノキ精油の抽出でもその方法によって香りは異なりますが、今回はKomonsでも使用させていただいている水蒸気蒸留によるヒノキ精油の抽出プロセスを見せて頂きました。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/041827de85e5--yoshino-img05-d138ff.jpg?v=1707213192" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<h2 style="line-height: 1.8; margin: 25px 0px 15px; text-align: left; padding: 0px; color: #00381f; font-size: 18px; font-weight: normal; letter-spacing: 0.5px;">吉野ヒノキ精油の水蒸気蒸留</h2>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">使用するのは、吉野ひのきを細かく粉砕したおが粉。届いた木材を蒸留する直前に粉砕し、出来立てのおが粉を使用するのがこだわり。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/041827de85e5--yoshino-img04-19ebfa.jpg?v=1706949385" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        500㎏投入できる巨大な釜。日本でも有数の大きさです。<p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;"></p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">釜の中で高熱の水蒸気を直接おが粉に噴射すること数時間で蒸留終了。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/041827de85e5--yoshino-img07-fc45dd.jpg?v=1707213420" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/041827de85e5--yoshino-img08-b1f50f.jpg?v=1707213526" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">ヒノキならではのフレッシュな香りがあたり一面に広がります。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">まだまだ抽出できそうな香りがしますが、これ以降は一気に抽出率も悪くなり、取れる香りにもえぐみが出てきてしまうそう。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/041827de85e5--yoshino-img09-7ac873.jpg?v=1707213593" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/041827de85e5--yoshino-img11-352769.jpg?v=1706949628" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">これだけの大きな釜でも、1回に抽出できる精油は十数㎏程度。貴重な山の恵みです。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">喜多製材所さんの吉野ヒノキ精油は、他のヒノキ精油と比較しても特に香りが明るく、爽やか。すっきりした香りに仕上がっています。</p>
+															      </div>
+																		<div class="img_wrap" style="padding: 0; margin: 30px auto 20px;">
+																			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/3/assets/041827de85e5--yoshino-img12-6b7b0f.jpg?v=1707193176" alt="" typeof="foaf:Image" width="100%">
+																		</div>
+																		<div class="content_description">
+															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">その香りは、ハンドミルク・ハンドソープをはじめ多くの商品に含まれ、柑橘やフローラルの香りを下支えし、香りに丸みと厚みをもたらす役割を担うKomonsの香りには欠かせない存在です。</p>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">これからも吉野の山に思いをはせながら、その恵みを大切に使わせていただきたいと思います。</p>
+															      </div>
                                     </div><!-- main_txt_wrap -->
                                   </td>
-                                </tr>
-                                <tr>
-																{%- assign itemIndex = 1 -%}
-																{% for item in article.metafields["custom_fields"]["related_product"] %}
-												        {% for collection in collections %}
-												        {%- if collection.handle == "all" -%}
-																{% for product in collection.products %}
-																{%- if product.handle == item["products"] -%}
-																{% assign evenOdd = itemIndex | modulo : 2 %}
-																{% if evenOdd != 0 %}<tr class="relatedItems">{%- endif -%}
-																<td width="50%;" style="vertical-align: top;">
-																	<div class="item_column2" style="box-sizing: border-box; margin-bottom: 35px;{% if evenOdd != 0 %}padding-right: 4%;{%- else -%}padding-left: 4%;{%- endif -%}">
-																		<div class="img_wrap" style="margin-bottom: 15px;">
-																			<a href="{{ product.url }}?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign={{ camName }}">
-																				<img src="https:{{ product.media[0] | image_url: width: 550 }}" width="100%">
-																			</a>
-																		</div>
-																		<div class="txt_wrap">
-																			<a class="prod_name" href="{{ product.url }}?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block; font-size: 16px; line-height: 1; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 20px; text-decoration: none;">
-																				<span style="display: block; font-size: 11px; line-height: 1.73; letter-spacing: 0.4px; margin-bottom: 5px;">{{ product.metafields.custom_fields["prod_category"] }}</span>
-																				<span class="prodName" style="display: block; font-size: 16px; line-height: 1.4; letter-spacing: 0.4px; margin-bottom: 7px;">{{ product.metafields.custom_fields["prod_display_name"] }}</span>
-																				<span class="addedName" style="display: block; font-size: 11px; line-height: 1.8; letter-spacing: 0.2px;"></span>
-																			</a>
-																			<p class="category" style="display: block; font-size: 12px; line-height: 1.4; letter-spacing: 0.2px;">{{ product.price | money_without_currency }}円(税込) {% if product.metafields["custom_fields"]["prod_volume"] != blank %}/ {{ product.metafields["custom_fields"]["prod_volume"] }}{%- endif -%}</p>
-																		</div>
-																	</div>
-																</td>
-																{% if evenOdd == 0 %}</tr>{%- endif -%}
-																{%- assign itemIndex = itemIndex | plus:1 -%}
-											          {%- endif -%}
-																{% endfor %}
-												        {%- endif -%}
-												        {% endfor %}
-												        {% endfor %}
                                 </tr>
                               </tbody>
                             </table>
@@ -667,7 +661,7 @@
                       width="100%" /></div>
 
                   <div class="footer_flex" style="padding:20px;">
-                    <div class="footer_logo"><a href="https://www.komons-japan.com/&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display:block;text-align:center;margin-bottom:20px;"><img
+                    <div class="footer_logo"><a href="https://www.komons-japan.com/?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display:block;text-align:center;margin-bottom:20px;"><img
                           src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/logo_footer.png?ver2" style="display:inline;" width="80%" /></a>
 
                       <div class="footer_txt" style="font-size:14px;letter-spacing:0.5px;  line-height: 1.57;letter-spacing: 1px;text-align: center;color: #00381f; margin-bottom:30px;">毎日の家事を「プラスな時間」に変える<br />
@@ -678,7 +672,7 @@
                           src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_fb.png" style="width: 35px; display: inline;"></a><a href="https://www.instagram.com/komons.jp/"
                         style="margin-right: 7px; text-decoration: none;"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_ig.png" style="width: 35px; display: inline;"></a><a
                         href="https://twitter.com/komons_jp" style="margin-right: 7px; text-decoration: none;"><img src="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/mailmag/icon_tw.png"
-                          style="width: 35px; display: inline; "></a><a href="https://lin.ee/ID6naHI" style="text-decoration: none;"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/icon_line.png?v=1623523522"
+                          style="width: 35px; display: inline; "></a><a href="https://lin.ee/n39NnSQ" style="text-decoration: none;"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/icon_line.png?v=1623523522"
                           style="width: 35px; margin-right: 0px; display: inline;"></a></div>
 
                   </div>
@@ -686,11 +680,16 @@
               </tr>
               <tr>
                 <td bgcolor="#ffffff" class="w600" valign="top" width="600">
-                  <div class="footer_nav" style="font-size: 14px;line-height: 1.57;letter-spacing: 1px; font-weight: normal; padding: 0 20px;"><a href="https://komons-japan.com/collections/all-products&amp;utm_medium=mail&amp;utm_campaign={{ camName }}"
-                      style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">商品一覧</a> <a href="https://komons-japan.com/collections/gift&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ギフト商品</a>
-                    <a href="https://komons-japan.com/pages/concept&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">Komonsについて</a> <a href="https://komons-japan.com/blogs/journal/&amp;utm_medium=mail&amp;utm_campaign={{ camName }}"
-                      style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ジャーナル</a><a href="https://komons-japan.com/pages/faq&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ご利用ガイド</a><a
-                      href="https://komons-japan.com/pages/privacy-policy&amp;utm_medium=mail&amp;utm_campaign={{ camName }}" style="display: block;color:#003e1b;text-decoration:none;margin-bottom:10px;">プライバシー</a> <a id="mailOff" href="#aaaa"
+                  <div class="footer_nav" style="font-size: 14px;line-height: 1.57;letter-spacing: 1px; font-weight: normal; padding: 0 20px;"><a href="https://komons-japan.com/collections/all-products?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release"
+                      style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">商品一覧</a>
+                      <a href="https://komons-japan.com/collections/gift?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ギフト商品</a>
+                      <a href="https://komons-japan.com/pages/concept?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">Komonsについて</a>
+                      <a href="https://komons-japan.com/blogs/journal?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release"
+                      style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ジャーナル</a>
+                      <a href="https://komons-japan.com/pages/faq?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ご利用ガイド</a>
+                      <a
+                      href="https://komons-japan.com/pages/privacy-policy?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240130_yo_release" style="display: block;color:#003e1b;text-decoration:none;margin-bottom:10px;">プライバシー</a>
+                      <a href="{% unsubscribe_link %}"
                       style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">メールの配信停止</a>
                   </div>
                   <p class="copyright" style="font-size: 12px;line-height: 1.57;letter-spacing: 1px; color: #003e1b; padding: 0 20px 40px;">2018-2020 Komons All Rights Reserved</p>
@@ -703,30 +702,5 @@
     </tbody>
   </table>
 </body>
-<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
-<script>
-	$('body').find('img').each(function(index) {
-		if(index > 0){
-			$(this).attr('width', '100%');
-		}
-	});
-	$('#mainTxt').find('p').each(function(index) {
-		$(this).attr('style', 'font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;')
-	});
-  $('#mailOff').attr('href','{' + '% unsubscribe_link %' + '}');
-	$('.relatedItems').find('.prodName').each(function(index) {
-		var addedName = $(this).find('.added');
-		var addedNameTxt = addedName.text();
-		console.log('addedNameTxt:' + addedNameTxt);
-		addedName.remove();
-		$(this).next('.addedName').text(addedNameTxt);
-	});
-  $('.relatedItems').find('a').each(function(index) {
-    var linkHref = $(this).attr('href');
-    console.log('linkHref:' + linkHref);
-    var arrangedURL = linkHref.replace('/mt/', 'https://komons-japan.com/');
-    $(this).attr('href', arrangedURL);
-  });
-</script>
+
 </html>
-{% endif %}

@@ -85,9 +85,9 @@
 	{{ content_for_header }}
 </head>
 {%- if request.page_type contains 'captcha' -%}
-<body class="fixed">
+<body class="fixed {{ request.path }}">
 	{%- else -%}
-<body class="{{ request.page_type }}">
+<body class="{{ request.page_type }} {{ request.path }}">
 	{%- endif -%}
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LVFKHJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -130,6 +130,9 @@
 {%- endif -%}
 {%- if request.page_type contains 'addresses' -%}
 <script src="{{ 'ajaxzip3.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+{% if request.path contains 'question' %}
+<script src="{{ 'question.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {% include 'script-cookies' %}
 </html>
