@@ -895,6 +895,28 @@ $(function() {
     conceptPop($('#popButton'));
   }
 
+  // ジャーナル記事 altをキャプションに変換
+  function addArticleImgCap(target){
+    var altTxt = [];
+
+    function init(){
+      target.find("img").each(function(index) {
+        altTxt[index] = $(this).attr('alt');
+        if(altTxt[index].length > 1 && altTxt[index] != undefined){
+          $(this).parent('div').append('<p class="caption">' + altTxt[index] + '</p>');
+        }
+      });
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('articleContents')) {
+    addArticleImgCap($('#articleContents'));
+  }
+
+
   //コンタクトフォームの制御
   function formControl(target) {
     $("input").each(function() {
