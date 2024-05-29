@@ -5,7 +5,6 @@
   {%- assign thumb_image = product.media[0] -%}
 {%- endif -%}
 
-{%- unless product.type == 'fukubukuro' and collection.title == 'fukubukuro' -%}
 <li id="handle-{{ product.handle }}" class="item_box" collection="{{ collection.handle }}">
   <div class="img_wrap">
     <a href="{{ product.url }}" {%- if product.metafields.custom_fields["stock_state"] == 1 or product.available != true and product.type != 'upcoming' -%}class="soldout"{%- endif -%}>
@@ -17,7 +16,7 @@
     <h3 class="prod_name">
       <a href="{{ product.url }}">{{ product.metafields.custom_fields["prod_display_name"] }}</a>
     </h3>
-    {% if product.metafields["custom_fields"]["discout_rate"] == blank %}
+    {% if product.metafields["custom_fields"]["normal_price"] == blank %}
     <span class="product_detail">
     {%- if product.type != 'commercial' -%}
       <span class="price">{%- if product.type == 'upcoming' -%}構想中{%- else -%}{{ product.price | money_without_currency }}円(税込){%- endif -%}</span>
@@ -31,7 +30,7 @@
       {%- assign cpPrice =  variant.compare_at_price | money_without_currency -%}
     {% endfor %}
       <span class="price_flex">
-        <span class="price_strike">{{ cpPrice }}円</span>
+        <span class="price_strike">{{ product.metafields["custom_fields"]["normal_price"] }}円</span>
         <span class="arrow">→</span>
         <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
       </span>
@@ -73,4 +72,3 @@
     {%- endif -%}
   </div>
 </li>
-{%- endunless -%}

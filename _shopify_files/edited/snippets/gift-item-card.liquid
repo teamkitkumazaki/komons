@@ -10,7 +10,17 @@
 		{%- endif -%}
 	<div class="txt_wrap">
 		<a class="name" href="{{ product.url }}">{{ product.metafields.custom_fields["prod_display_name"] }}</a>
-		<span class="price">{{ product.price | money_without_currency }}円(税込)</span>
+		{% if product.metafields["custom_fields"]["normal_price"] == blank %}
+			<span class="price">{{ product.price | money_without_currency }}円(税込)</span>
+		{%- else -%}
+		<span class="price_flex">
+			<span class="price_strike">{{ product.metafields["custom_fields"]["normal_price"] }}円</span>
+			<span class="arrow">→</span>
+			<span class="price">{{ product.price | money_without_currency }}円(税込)</span>
+		</span>
+		<span class="sale_tag">{{ product.metafields["custom_fields"]["discout_rate"] }}OFF</span>
+	</span>
+    {%- endif -%}
 	</div>
 	<p class="product_desc">
 		<span class="product_type">{{product.metafields.custom_fields["category_display_name"]}}</span>

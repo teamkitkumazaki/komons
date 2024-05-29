@@ -49,7 +49,7 @@
         {% for variant in product.variants %}
           {%- assign cpPrice =  variant.compare_at_price | money_without_currency -%}
         {% endfor %}
-          <span class="price_strike">{{ cpPrice }}円</span>
+          <span class="price_strike">{{ product.metafields["custom_fields"]["normal_price"] }}円</span>
           <span class="price sale"><span class="arrow">→</span>{{ product.price | money_without_currency }}円(税込)</span>
           <span class="volume">/ {% if product.metafields.custom_fields["prod_volume"] != blank %}{{ product.metafields.custom_fields["prod_volume"] }}{%- else -%}セット商品{% endif %}</span>
           <span class="sale_price">{{ product.metafields["custom_fields"]["discout_rate"] }}OFF</span>

@@ -1,28 +1,45 @@
 {%- assign prod_price = product.price | money_without_currency -%}
-{%- if product.handle == "k0001" or product.handle == "k0002" or product.handle == "k0003" or product.handle == "k0004" or product.handle == "k0005" or product.handle == "k0006" -%}
+{%- if product.handle == "k0001" or product.handle == "k0002" or product.handle == "k0003" or product.handle == "k0005" or product.handle == "k0006" -%}
   {%- assign thumb_image = product.media[1] -%}
 {%- else -%}
-
+  {%- assign thumb_image = product.media[0] -%}
 {%- endif -%}
-<li class="item_box">
+
+<li id="handle-{{ product.handle }}" class="item_box" collection="{{ collection.handle }}">
   <div class="img_wrap">
-  {%- if product.handle == "k0001" or product.handle == "k0002" or product.handle == "k0003" or product.handle == "k0004" or product.handle == "k0005" or product.handle == "k0006" -%}
-    <a href="{{ product.url }}" {%- if product.metafields.custom_fields["stock_state"] == 1 -%}class="soldout"{%- endif -%}>{{ product.media[1] | image_url: width: 520 | image_tag }}</a>
-    {%- else -%}
-    <a href="{{ product.url }}" {%- if product.metafields.custom_fields["stock_state"] == 1 -%}class="soldout"{%- endif -%}>{{ product.media[0] | image_url: width: 520 | image_tag }}</a>
-    {%- endif -%}
+    <a href="{{ product.url }}" {%- if product.metafields.custom_fields["stock_state"] == 1 or product.available != true and product.type != 'upcoming' -%}class="soldout"{%- endif -%}>
+      <img loading="lazy" src="{{ thumb_image | image_url: width: 533 }}" srcset="{{ thumb_image | image_url: width: 533 }} 1440w, {{ thumb_image | image_url: width: 360 }} 768w, {{ thumb_image | image_url: width: 533 }} 2048w" alt="{{ product.metafields.custom_fields["prod_display_name"] | strip_html }}">
+    </a>
   </div>
   <div class="txt_wrap height-adjust">
     <span class="cat_ttl">{{ product.metafields.custom_fields["prod_category"] }}</span>
     <h3 class="prod_name">
       <a href="{{ product.url }}">{{ product.metafields.custom_fields["prod_display_name"] }}</a>
     </h3>
+    {% if product.metafields["custom_fields"]["normal_price"] == blank %}
     <span class="product_detail">
+    {%- if product.type != 'commercial' -%}
       <span class="price">{%- if product.type == 'upcoming' -%}構想中{%- else -%}{{ product.price | money_without_currency }}円(税込){%- endif -%}</span>
+    {%- else -%}
+      <span class="price">価格：ASK</span>
+    {%- endif -%}
     </span>
+    {%- else -%}
+    <span class="product_detail">
+    {% for variant in product.variants %}
+      {%- assign cpPrice =  variant.compare_at_price | money_without_currency -%}
+    {% endfor %}
+      <span class="price_flex">
+        <span class="price_strike">{{ product.metafields["custom_fields"]["normal_price"] }}円</span>
+        <span class="arrow">→</span>
+        <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
+      </span>
+      <span class="sale_tag">{{ product.metafields["custom_fields"]["discout_rate"] }}OFF</span>
+    </span>
+    {%- endif -%}
   </div>
   <div class="comp-list-cart-button">
-    {%- if product.type == "upcoming" or request.page_type contains 'index' or request.page_type contains 'product' -%}
+    {%- if product.type == "upcoming" or product.type == "commercial" or request.page_type contains 'index' or request.page_type contains 'product' -%}
     <div class="comp-arrow-link">
       <a href={{ product.url }}><span>詳細を見る</span></a>
     </div>
@@ -45,7 +62,7 @@
           {% endfor %}
           </select>
           <div class="cartin_button">
-            <button><span>カートに入れる</span></button>
+            <button title="カートに入れる"><span>カートに入れる</span></button>
             <input id="cartSubmit-{{ product.id }}" type="submit" value="カートに入れる">
           </div>
         {% endform %}
@@ -55,3 +72,4 @@
     {%- endif -%}
   </div>
 </li>
+b

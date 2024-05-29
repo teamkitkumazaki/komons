@@ -11554,6 +11554,44 @@ body.loaded #loading {
   font-size: 1.1rem;
   letter-spacing: 0.08em;
 }
+.comp-gift-product-list .list_item .txt_wrap .price_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.comp-gift-product-list .list_item .txt_wrap .price_flex .price_strike {
+  font-size: 1.1rem;
+  text-decoration: line-through;
+}
+.comp-gift-product-list .list_item .txt_wrap .price_flex .arrow {
+  padding: 0 3px;
+  font-size: 1.1rem;
+}
+.comp-gift-product-list .list_item .txt_wrap .price_flex .price {
+  font-size: 1.25rem;
+  color: #FF3938;
+  margin: 0;
+}
+.comp-gift-product-list .list_item .txt_wrap .sale_tag {
+  display: inline-block;
+  background: #FF3938;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 7px 5px;
+  border-radius: 5px;
+  margin-top: 12px;
+}
 .comp-gift-product-list .list_item .product_desc {
   display: none;
   font-size: 1.1rem;
@@ -11856,6 +11894,16 @@ body.loaded #loading {
   .comp-gift-product-list .list_item .txt_wrap .price {
     margin-top: 15px;
     font-size: 1.4rem;
+  }
+  .comp-gift-product-list .list_item .txt_wrap .price_flex .price_strike {
+    font-size: 1.2rem;
+  }
+  .comp-gift-product-list .list_item .txt_wrap .price_flex .arrow {
+    padding: 0 5px;
+    font-size: 1.2rem;
+  }
+  .comp-gift-product-list .list_item .txt_wrap .price_flex .price {
+    font-size: 1.5rem;
   }
   .comp-gift-product-list .list_item .product_desc {
     display: none;
