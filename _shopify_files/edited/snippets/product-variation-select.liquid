@@ -12,8 +12,8 @@
   {% endfor %}
 {% endfor %}
 
-{% if variation_num > 0 and product.type != 'commercial' %}
-<div class="comp-variation-select" num="{{ variation_num }}">
+{% if variation_num > 0 and product.type != 'commercial' and product.type != 'essential' %}
+<div class="comp-variation-select" num="{{ variation_num }}" type="{{ product.type }}">
   <span class="label">バリエーション</span>
   <select name="variation_select" onchange="location.href=value;">
     {% for tag in product.tags %}
@@ -29,6 +29,36 @@
       {%- endif -%}
     {% endfor %}
   {% endfor %}
+  </select>
+</div>
+{% endif %}
+
+{% if product.type == 'essential' %}
+{% for tag in product.tags %}
+  {% for collection in collections %}
+    {%- if collection.handle == 'essential' -%}
+      {% for item in collection.metafields.custom_fields["variations"] %}
+        {% if item["variation_name"] != blank %}
+          {% assign variation_num = variation_num | plus: 1 %}
+        {%- endif -%}
+      {% endfor %}
+    {%- endif -%}
+  {% endfor %}
+{% endfor %}
+<div class="comp-variation-select" num="{{ variation_num }}">
+  <span class="label">バリエーション</span>
+  <select name="variation_select" onchange="location.href=value;">
+    {% for collection in collections %}
+      {%- if collection.handle == 'essential' -%}
+        {% for item in collection.metafields.custom_fields["variations"] %}
+          {%- if item["variation_id"] != product.handle -%}
+            <option value="/products/{{item["variation_id"]}}">{{ item["variation_name"] }}</option>
+          {%- else -%}
+            <option selected value="/products/{{item["variation_id"]}}">{{ item["variation_name"] }}</option>
+          {%- endif -%}
+        {% endfor %}
+      {%- endif -%}
+    {% endfor %}
   </select>
 </div>
 {% endif %}

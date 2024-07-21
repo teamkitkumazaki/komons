@@ -56,7 +56,7 @@
   {%- endif -%}
 {%- endif -%}
 
-{% for i in (bufferDate..30) %}
+{% for i in (bufferDate..2) %}
 
 {% assign deriveryDate = deriveryBufferDate | times: 24 | times: 60 | times: 60 %}
 {% assign deriveryDateDisplay = 'today' | date: '%s' | plus: deriveryDate | date: '%Y-%m-%d' %}

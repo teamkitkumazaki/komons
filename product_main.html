@@ -1,0 +1,313 @@
+{%- assign thumbIndex = 0 -%}
+{%- assign thumbIndexNum = 0 -%}
+{% for image in product.images %}
+  {%- assign thumbIndexNum = thumbIndexNum | plus: 1 -%}
+{% endfor %}
+<section class="section-main">
+  <div class="main_flex">
+    <div id="thumbList" class="item_thumb">
+      <div class="comp-item-thumbs" {% if thumbIndexNum < 2 %}style="pointer-events: none";{%- endif -%}>
+        {% if thumbIndexNum > 1 %}
+        <div class="thumb_number">
+          <span id="currentThumb" class="current">1</span>
+          <span id="allThumb">1</span>
+        </div>
+        <button id="slideNext" class="slide_caret slide_next"></button>
+        <button id="slidePrev" class="slide_caret slide_prev"></button>
+        {%- endif -%}
+        <div id="thumbWrapper" class="thumb_wrapper">
+          <ul id="thumbBox" class="thumb_box">
+          {% for image in product.images %}
+          <li class="{% if thumbIndex == 0 %}active{% endif %} slide{{thumbIndex}}">{{ image.src | image_url: width: 1440 | image_tag }}</li>
+          {%- assign thumbIndex = thumbIndex | plus: 1 -%}
+          {% endfor %}
+        </ul>
+        </div>
+      </div>
+    </div>
+    <div id="mainDetail" class="main_detail sticky">
+      <div class="detail_inner" {%- if product.type != "upcoming" -%}id="headerRolledSp"{%- endif -%}>
+        <div class="prod_info">
+          <span class="category">{{ product.metafields.custom_fields["prod_category"] }}</span>
+          <h1 class="prod_name">{{ product.metafields.custom_fields["prod_display_name"] }}</h1>
+        </div><!-- prod_info -->
+
+        {% if product.metafields["custom_fields"]["discout_rate"] == blank %}
+        <div class="price_wrap">
+        {%- if product.type == 'commercial' -%}
+        <span class="price">価格：ASK</span>
+        <span class="volume">/ 業務用{% if product.metafields.custom_fields["prod_volume"] != blank %}{{ product.metafields.custom_fields["prod_volume"] }}{% endif %}</span>
+        {% elsif product.type != "upcoming" %}
+        <span class="price">{{ product.price | money_without_currency }}円(税込)</span>
+        <span class="volume">/ {% if product.metafields.custom_fields["prod_volume"] != blank %}{{ product.metafields.custom_fields["prod_volume"] }}{%- else -%}セット商品{% endif %}</span>
+        {%- else -%}
+          <span class="price">構想中</span>
+        {%- endif -%}
+        </div><!-- price_wrap -->
+        {%- else -%}
+        <div class="price_wrap">
+        {% for variant in product.variants %}
+          {%- assign cpPrice =  variant.compare_at_price | money_without_currency -%}
+        {% endfor %}
+          <span class="price_strike">{{ product.metafields["custom_fields"]["normal_price"] }}円</span>
+          <span class="price sale"><span class="arrow">→</span>{{ product.price | money_without_currency }}円(税込)</span>
+          <span class="volume">/ {% if product.metafields.custom_fields["prod_volume"] != blank %}{{ product.metafields.custom_fields["prod_volume"] }}{%- else -%}セット商品{% endif %}</span>
+          <span class="sale_price">{{ product.metafields["custom_fields"]["discout_rate"] }}OFF</span>
+        </div><!-- price_wrap -->
+        {%- endif -%}
+
+        <div class="desc_wrap">
+          <p>{{ product.metafields.custom_fields["prod_description"] }}</p>
+        </div><!-- desc_wrap -->
+        {%- if product.type != "gift" and product.type != "gift-limited" and product.type != "outlet" and product.type != "fukubukuro" -%}
+        {% include 'product-variation-select' %}
+        {% endif %}
+        {%- if product.type != "commercial" -%}
+        {% if product.metafields.custom_fields["subscription_check"] %}
+        {% include 'product-cart-wrap-sub' %}
+        {% else %}
+        {% include 'product-cart-wrap' %}
+        {% endif %}
+        {% include 'product-line-contact' %}
+        {% else %}
+        <div class="commercial_item_wrap">
+          <div class="comp-waiting-button">
+            <a href="https://journal.komons-japan.com/contact"><span class="title">お問い合わせ</span><span class="desc">お問い合わせフォームよりご購入頂けます</span></a>
+          </div>
+        </div><!-- commercial_item_wrap -->
+        {% endif %}
+      </div><!-- detail_inner -->
+    </div><!-- main_detail -->
+    {%- if product.type != "upcoming" -%}
+    <div id="rolledHeight" class="main_description">
+      <div class="desc_inner">
+        {% include 'product-brand-introduction' %}
+				{% if product.type != 'essential' %}
+				<!-- 成分へのこだわり -->
+        <div class="desc_unit border">
+          <div class="comp-detail-title">
+          {%- if product.type == "gift" or product.type == "gift-limited" or product.type == "fukubukuro" -%}
+            <hgroup>
+              <span class="title_en">Contents</span>
+              <h2 class="title_ja">セットの内容</h2>
+            </hgroup>
+          {%- else -%}
+          	<hgroup>
+            	<span class="title_en">Features</span>
+            	{%- if product.type == "goods" -%}
+            	<h2 class="title_ja">商品の特徴</h2>
+            	{%- else -%}
+            	<h2 class="title_ja">成分へのこだわり</h2>
+            	{%- endif -%}
+          	</hgroup>
+          {%- endif -%}
+					</div><!-- comp-detail-title -->
+          <div class="comp-detail-desc">
+          {%- if product.type == "gift" or product.type == "gift-limited" or product.type == "fukubukuro" -%}
+          {% include 'product-set-content' %}
+          {%- endif -%}
+          {% for item in product.metafields.custom_fields["prod_detail_desc"] %}
+          {%- if item["detail_desc"] != blank -%}
+          {%- if item["detail_image_url_"] != blank -%}
+            <div class="detail_item">
+              <div class="img_wrap">
+              {%- if item["detail_image_url_sp"] != blank -%}
+                <img loading="lazy" src="{{ item["detail_image_url_"] }}" srcset="{{ item["detail_image_url_"] }} 1440w, {{ item["detail_image_url_sp"] }} 768w, {{ item["detail_image_url_"] }} 2048w">
+              {%- else -%}
+                <img loading="lazy" src="{{ item["detail_image_url_"] }}">
+              {% endif %}
+              </div>
+          {% else %}
+            <div class="detail_item border">
+          {% endif %}
+              <div class="txt_wrap">
+              {% if item["detail_ttl_ja"] != blank %}
+                <h3 class="prod_name">{{ item["detail_ttl_en"] }}</h3>
+                <h4 class="prod_genre">{{ item["detail_ttl_ja"] }}</h4>
+                {% else %}
+                <h3 class="prod_name ja">{{ item["detail_ttl_en"] }}</h3>
+              {% endif %}
+                <div class="desc_wrap">
+                  <p>{{ item["detail_desc"] }}</p>
+                </div>
+                {% if item["detail_link_url"] != blank %}
+                <div class="comp-detail-button">
+                  <a href="/products/{{ item["detail_link_url"] }}"><span>商品ページへ</span></a>
+                </div>
+                {% endif %}
+              </div>
+            </div><!-- detail_item -->
+            {% endif %}
+            {% endfor %}
+          </div><!-- comp-detail-desc -->
+        </div><!-- comp-detail-desc -->
+				{% endif %}
+				<!-- end 成分へのこだわり -->
+				
+        {% if product.type != 'gift' and product.type != 'goods' and product.type != "gift-limited" and product.type != "fukubukuro" %}
+        {% include 'scent-detail' %}
+        {% endif %}
+        {% if product.type != 'gift' and product.type != "gift-limited" and product.type != "fukubukuro" %}
+        {% include 'product-conponent' %}
+        {%- else -%}
+        {% include 'product-conponent-gift' %}
+        {% endif %}
+        <div class="desc_unit">
+          <div class="comp-detail-title margin">
+            <hgroup>
+              <span class="title_en">Guide</span>
+              <h2 class="title_ja">ショッピングガイド</h2>
+            </hgroup>
+          </div>
+          <div class="comp-detail-toggle-new">
+          {% if product.type == 'fukubukuro' %}
+          <div id="toggleGift" class="toggle_item">
+            <button class="toggle_button_new">
+              <span class="txt">福袋セットのご購入について</span>
+              <span class="caret"></span>
+            </button>
+            <div class="toggle_content_new">
+              <div class="detail_item">
+                <div class="content">
+                  <p>※Komons福袋セットを含むご注文は配送日時の指定が出来ません。<br>※2024年1月5日(金)以降での順次発送となります。<br>※ギフトボックスに入れての配送や、熨斗・メッセージカードなどのギフトサービスには対応しておりません。<br>※福袋と同時注文された別の商品については、同梱でのお届けとなります。<br>※弊社側の都合や不良品などの場合を除き、福袋セットの返品は対応致しかねます。</p>
+                </div>
+              </div>
+            </div><!-- toggle_content -->
+          </div>
+          {% endif %}
+          {%- if product.type == "gift" and product.type != "gift-limited" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
+            <div id="toggleGift" class="toggle_item">
+              <button class="toggle_button_new">
+                <span class="txt">ギフト対応について</span>
+                <span class="caret"></span>
+              </button>
+              <div class="toggle_content_new">
+                <div class="detail_item">
+                  <p class="title">ラッピング/ギフトボックス</p>
+                  <div class="content">
+                    <div class="img_wrap">
+                      <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service01.jpg?v=1642389092">
+                    </div>
+                    <p>全てのギフトセット商品はオリジナルのギフトBOXにお入れしてお届けいたします。</p>
+                    <p>※包装紙やリボン掛けの対応は行っておりませんので、あらかじめご了承ください。</p>
+                  </div>
+                </div>
+                <div class="detail_item">
+                  <p class="title">熨斗/水引</p>
+                  <div class="content">
+                    <div class="img_wrap">
+                      <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service02.jpg?v=1642389092">
+                    </div>
+                    <p>+110円(税込)にて熨斗対応が可能です。水引きの種類はどのシーンのお祝い事にもお使いいただける「紅白梅結び」と弔事用の「白黒あわじ結び」がございます。</p>
+                    <p>※表書きをご希望の場合はご注文画面の備考欄にご入力お願い致します。<br>※特にご指定がない場合、無地熨斗となります。</p>
+                  </div>
+                </div>
+                <div class="detail_item">
+                  <p class="title">手提げ袋</p>
+                  <div class="content">
+                    <div class="img_wrap">
+                      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service03.jpg?v=1642389093">
+                    </div>
+                    <p>＋330円（税込）にてオリジナル手提げバッグをお付けすることが可能です。ギフトのお渡しの際にぜひご使用ください。</p>
+                  </div>
+                </div>
+                <div class="detail_item">
+                  <p class="title">メッセージカード</p>
+                  <div class="content">
+                    <div class="img_wrap">
+                      <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service04.jpg?v=1642389092">
+                    </div>
+                    <p>ご希望の客様には、無料にてメッセージカードをお付けしております。カード裏面にメッセージの印刷も承ります。詳しくはご購入手続き画面をご確認ください。</p>
+                  </div>
+                </div>
+              </div><!-- toggle_content -->
+            </div>
+          {% endif %}
+            <div id="toggleDelivary" class="toggle_item">
+              <button class="toggle_button_new">
+                <span class="txt">配送について</span>
+                <span class="caret"></span>
+              </button>
+              <div class="toggle_content_new">
+                <div class="detail_item">
+                  <p class="title">送料について</p>
+                  <div class="content">
+                    <p>お届け先1件につき税込5,500円以上で送料無料になります。（ギフト包装料・代引手数料は除く）税込5,500円未満の場合は、お届け先1件につき全国一律660円（税込）の送料となります。</p>
+                  </div>
+                </div>
+                <div class="detail_item">
+                  <p class="title">到着日・時間指定について</p>
+                  <div class="content">
+                    {%- if product.type != "fukubukuro" -%}
+                    <p>現在ご注文頂くと最短で{% include 'delivery-shcedule' %}にお届け致します。</p>
+                    {%- else -%}
+                    <p>福袋商品は1月5日(金)より順次配送致します。</p>
+                    {%- endif -%}
+                    <p>時間に関しましては、午前中、14～16時、16～18時、18～20時、19～21時の時間帯をお選び頂くことができます。</p>
+                    <p>※地域によってはご希望に添えない場合もございますので、その点ご了承下さいませ。また、天候・道路・交通事情等運送上の事情により、ご希望のお届け時間帯にお届けできない場合もございますので、ご了承下さい。</p>
+                  </div>
+                </div>
+                <div class="detail_item">
+                  <p class="title">別住所への配送</p>
+                  <div class="content">
+                    <p>可能です。オンライン注文のカート画面にて配送先住所を入力ください。また、1注文につき、お届け先は１件のみとなりますので2件以上へ配送をご希望の場合は別々にご注文下さい。</p>
+                  </div>
+                </div>
+                <div class="detail_item">
+                  <p class="title">複数住所へ配送は可能ですか？</p>
+                  <div class="content">
+                    <p>可能です。大変お手数をおかけいたしますが、送り先ごとにご注文手続きをお願いいたします。お届け先が10件以上になる場合は、問い合わせフォームまたはinfo@komons-japan.comにその旨をご連絡くださいませ。ご注文情報入力用のエクセルフォームをお送りさせていただきます。</p>
+                  </div>
+                </div>
+
+              </div><!-- toggle_content -->
+            </div>
+            <div id="togglePayment" class="toggle_item">
+              <button class="toggle_button_new">
+                <span class="txt">決済方法について</span>
+                <span class="caret"></span>
+              </button>
+              <div class="toggle_content_new">
+                <div class="detail_item">
+                  <p class="title">クレジットカード</p>
+                  <div class="content">
+                    <!-- <div class="payment_img">
+                      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/payment_credit.jpg?v=1646131094">
+                    </div> -->
+                    <p>VISA / MASTER / AMEX / JCBがご利用いただけます。</p>
+                  </div>
+                </div>
+                <div class="detail_item">
+                  <p class="title">Amazon Pay</p>
+                  <div class="content">
+                    <!--<div class="payment_img">
+                      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/payment_amazonpay.jpg?v=1646131094">
+                    </div> -->
+                    <p>Amazon.co.jpアカウントに登録されたクレジットカード情報を使った決済に対応しています。</p>
+                    <p>※Amazonにご登録頂いている配送先のみの対応となります。ギフト直送など、購入者とお届け先が同一でない場合はご利用いただけません。</p>
+                  </div>
+                </div>
+                <div class="detail_item">
+                  <p class="title">代引き決済</p>
+                  <div class="content">
+                    <p>商品代金に加え、代引き手数料(税込330円)が発生します。お届けの際に配達員にお支払いください。</p>
+                  </div>
+                </div>
+                <div class="detail_item">
+                  <p class="title">QRコード決済</p>
+                  <div class="content">
+                    <!-- <div class="payment_img">
+                      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/payment_qr.jpg?v=1646131094">
+                    </div> -->
+                    <p>QRコード決済(Paypay・LINE PAY)でのお支払いに対応しています。</p>
+                  </div>
+                </div>
+              </div><!-- toggle_content -->
+            </div>
+          </div><!-- comp-detail-toggle-new -->
+        </div><!-- desc_unit -->
+      </div><!-- desc_inner -->
+    </div>
+    {%- endif -%}
+  </div><!-- main_flex -->
+</section>

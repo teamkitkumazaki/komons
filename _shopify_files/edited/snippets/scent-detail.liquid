@@ -12,6 +12,8 @@
 {% endfor %}
 {% endfor %}
 
+<div tags="{{ product.tags }}"></div>
+
 {%- if scent_desc != blank -%}
 <div id="scentDetail" class="desc_unit">
   <div class="scent_detail comp-scent-detail">
@@ -22,7 +24,11 @@
       </hgroup>
     </div>
     <div class="scent_desc">
+      {%- if product.handle == 'k1034' -%}
+      <p style="white-space: pre-line">最初はユーカリやゆずなどのさわやかな香り、そして徐々にリラックスできる香りへ。その複雑性と香り変化を意識してブレンドしました。ヒバ・ヒノキ・ホーリーフといった木々の香りがしっかりと全体を下支えします。</p>
+      {%- else -%}
       <p style="white-space: pre-line">{{scent_desc}}</p>
+      {%- endif -%}
     </div>
     <div class="scent_img_wrap">
       <img loading="lazy" src="{{ scent_image }}">
