@@ -1,4 +1,4 @@
-<section class="section-header">
+<section class="section-header" handle="{{ article.handle }}">
   <div class="journal_thumb">
     {{ article.image | image_url: width: 1400 | image_tag }}
   </div>
@@ -43,6 +43,20 @@
     </div>
     {% endfor %}
 
+    {% if article.handle contains '20241205' %}
+    <div class="contents_item">
+      <h3 class="article_sub_ttl">キャンペーンの概要</h3>
+      <div class="content_description">
+        <p>■キャンペーン名■<br>マルチクリーナー おすすめの使い方キャンペーン</p>
+        <p>■参加方法■<br>WEBサイトの<a target="_blank" href="https://komons-japan.com/pages/question">アンケートフォーム</a>または、<a target="_blank" href="https://www.instagram.com/p/DDMODxNzg4t/">インスタグラムの投稿</a>へのコメントにマルチクリーナーの「おすすめの使い方」または「落としたい家の汚れ」をコメントする</p>
+        <p>■参加特典■<br>上記条件よりキャンペーンに参加頂いた方全員に、マルチクリーナー15%OFFクーポンをプレゼント。<br>※取得したクーポンは2025年1月31日(金)までご利用可能です。<br>※クーポンはボトル・詰め替え用どちらの商品にもお使い頂けます。</p>
+        <p>■クーポンの発行方法■<br>(1)WEBサイトのアンケートフォームの場合<br>フォームに入力頂いたメールアドレス宛にクーポンをお送りいたします。<br>(2)インスタグラムにコメント頂いた場合<br>コメント頂いたインスタグラムのアカウント宛にDMをお送りいたします。<br>※アカウントを非公開設定されている場合、クーポンをお送りすることができませんのでご注意ください。</p>
+        <p>■15%OFF対象商品<br>マルチクリーナーのボトル・詰め替え用及び、マルチクリーナーを含むギフトセット全商品となります。</p>
+        <p>■開催期間■<br>2024年12月31日(火)24時まで</p>
+      </div>
+    </div>
+    {% endif %}
+
     {% if article.metafields["custom_fields"]["scent_name"] != blank %}
     <div class="comp-journal-scent">
       <h3 class="scent_ttl">{{ article.metafields["custom_fields"]["scent_name"] }}精油の特徴</h3>
@@ -54,6 +68,7 @@
       {% endfor %}
     </div>
     {% endif %}
+
 
   </div><!-- comp-article-contents -->
   {% if article.metafields["custom_fields"]["link_url"] != blank %}

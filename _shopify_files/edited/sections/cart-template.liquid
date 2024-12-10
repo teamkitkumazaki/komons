@@ -62,10 +62,14 @@
               <span class="amount head">合計</span>
             </div>
             <div id="cartItem" class="item_list">
+              {%- assign sampleNum = 0 | plus : 0 -%}
               {%- for item in cart.items -%}
                 {% include 'cart-item-card' %}
+                {% if item.url contains 'kt1040' %}
+  							{%- assign sampleNum = sampleNum | plus : 1 -%}
+  							{%- endif -%}
               {%- endfor -%}
-            </div>
+        </div>
         </div><!-- comp-cart-item-list-->
         {% unless subProperty > 0 and normalProperty > 0 %}
         {%- if noshiLength == 0 and messageLength == 0 -%}

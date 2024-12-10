@@ -137,7 +137,7 @@ $(function() {
       });
       //input要素を配列に格納
       items = [
-        target.find('textarea[name="content"]'), //0 お問い合わせ項目
+        target.find('input[name="usermail"]'), //0 メールアドレス
       ];
       //input要素のプロパティを設定
       $.each(items, function(index){
@@ -150,22 +150,21 @@ $(function() {
           if( (e.keyCode == 13) ) return false;
         }
       });
-      //0 お問い合わせ内容
+
+      //0 メールアドレス
       items[0].on({
-        'keyup': function(){
-          console.log('blur');
-          checkEmptyText( items[0], '※内容を入力してください。' );
-          checkAll();
-        },
-        'change': function(){
-          console.log('change');
-          checkEmptyText( items[0], '※内容を入力してください。' );
+        'blur': function(){
+          checkEmptyText( items[0], '※メールアドレスをご入力ください。' );
+          if( items[0].prop('isSuccess') ) checkFormatText( items[0], 3, 'アドレスの形式をご確認ください' );
           checkAll();
         }
       });
 
       submitButton.on({
         'click': function(){
+          checkEmptyText( items[0], '※メールアドレスをご入力ください。' );
+          if( items[0].prop('isSuccess') ) checkFormatText( items[0], 3, 'アドレスの形式をご確認ください' );
+          checkAll();
           if( errorCount == 0 ){
             processOrderContent();
             var scrollHeight = $('#formWrap').offset().top;
@@ -184,10 +183,16 @@ $(function() {
       $('#ajaxLoader').addClass('loading');
       var content = target.find("textarea[name=content]").val();
       event.preventDefault();
+      var request = target.find("textarea[name=request]").val();
+      event.preventDefault();
+      var email = target.find("input[name=usermail]").val();
+      event.preventDefault();
       $.ajax({
-        url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSedTBq7IgGlu6ZbHlgM8l-I8E3GzDpb8a_EL8w9yegoP-ExDQ/formResponse",
+        url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfvvpDDjBmxnMrTfXFL_InUkjXs3KWZGbjMj7nEav4BPBoHtA/formResponse",
         data: {
-          "entry.498673555": content, /* 評価点数*/
+          "entry.1232285518": content,
+          "entry.1535642573": request,
+          "entry.1224136681": email,
         },
       type: "POST",
       dataType: "xml",

@@ -1,4 +1,4 @@
-<select id="deliveryDateBox">
+<select id="deliveryDateBox" class="jp">
   <option value="0">指定なし</option>
   {% assign plusSeconds = 0 | times: 24 | times: 60 | times: 60 %}
   {% assign weekDayToday = "today" | date: '%s' | plus: plusSeconds | date: "%w" %}
@@ -107,7 +107,7 @@
   {%- endfor -%}
 </select>
 <input id="dateInput" type="hidden" name="attributes[配送予定日:]" value="{{ secondDayValue }}">
-<p class="example">※お届け先が【四国/九州/中国地方、北海道/青森県/秋田県/和歌山県】の場合、最短指定日は{{secondDay}}になります。沖縄県の場合、最短指定日は{{okinawaDay}}になります。</p>
+<!-- <p class="example">※お届け先が【四国/九州/中国地方、北海道/青森県/秋田県/和歌山県】の場合、最短指定日は{{secondDay}}になります。沖縄県の場合、最短指定日は{{okinawaDay}}になります。</p> -->
 <script>
 var deliveryDate = $('#deliveryDateBox');
 

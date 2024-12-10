@@ -13,7 +13,7 @@
 {%- assign property_size = item.properties | size -%}
 
 
-<div class="cart_item" data-cart-item data-cart-item-key="{{ item.key }}" data-cart-item-url="{{ item.url }}" data-cart-item-title="{{ item.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ item.quantity }}">
+<div class="cart_item" data-cart-item data-cart-item-key="{{ item.key }}" data-cart-item-url="{{ item.url }}" data-cart-item-title="{{ item.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ item.quantity }}" {% if item.url contains 'kt1040' %}style="order: 1;"{%- endif -%}>
   <div class="img_wrap">
     <a href="{{ productId[0] }}">{{ item.image.src | image_url: width: 300 | image_tag }}</a>
   </div>
@@ -48,9 +48,9 @@
       </div>
       {%- else -%}
         <div class="order_lot">
-          <button class="order_button minus">-</button>
+          {% unless item.url contains 'kt1040' %}<button class="order_button minus">-</button>{%- endunless -%}
           <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0">
-          <button class="order_button plus">+</button>
+          {% unless item.url contains 'kt1040' %}<button class="order_button plus">+</button>{%- endunless -%}
           <button class="reload_button"></button>
         </div>
           <a class="cancel_button" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="text-link text-link--accent" aria-label="{{ 'cart.label.remove' | t: product: item.title }}" data-cart-remove data-role="product-remove">削除</a>

@@ -35,8 +35,6 @@
     margin: 0 auto;
     .button{
       padding: 20px 0;
-      background: #fff;
-      color: $basicGreen;
       transition: background .2s, color .2s;
       will-change: background, color;
       .txt{
@@ -46,23 +44,21 @@
       .arrow{
         width: 24px;
         height: 24px;
-        background: $basicGreen;
         transition: background .2s, color .2s;
         will-change: background, color;
         svg{
           width: 4px;
-          fill: #fff;
           transition: fill .2s;
           will-change: fill;
         }
       }
       &:hover{
-        background: $basicGreen;
-        color: #fff;
+        background: #fff;
+        color: $basicGreen;
         .arrow{
-          background:#fff;
+          background:$basicGreen;
           svg{
-            fill: $basicGreen;
+            fill: #fff;
           }
         }
       }
