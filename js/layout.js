@@ -1481,7 +1481,6 @@ $(function() {
 
 
   // 店舗一覧・FAQの目次ボタン
-
   function indexAnker(target){
     var ankerButton = [];
     var scrollTarget = [];

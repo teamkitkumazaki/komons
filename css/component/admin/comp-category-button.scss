@@ -81,6 +81,8 @@
     }
     a{
       &::after {
+        top:0;
+        right: 20px;
         transform:translate(-4px,3px) rotate(-45deg);
       }
     }
