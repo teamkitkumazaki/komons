@@ -271,7 +271,7 @@
                               <tr class="subtotal-line">
                                 <td class="subtotal-line__title">
                                   <p>
-                                    <span>小計</span>
+                                    <span>商品代金(税込)</span>
                                   </p>
                                 </td>
                                 <td class="subtotal-line__value">
@@ -323,18 +323,6 @@
                               {% endif %}
 
 
-                              <tr class="subtotal-line">
-                                <td class="subtotal-line__title">
-                                  <p>
-                                    <span>税金合計</span>
-                                  </p>
-                                </td>
-                                <td class="subtotal-line__value">
-                                  <strong>{{ tax_price | money }}</strong>
-                                </td>
-                              </tr>
-
-
                               {% if total_tip and total_tip > 0 %}
 
                               <tr class="subtotal-line">
@@ -355,7 +343,7 @@
                               <tr class="subtotal-line">
                                 <td class="subtotal-line__title">
                                   <p>
-                                    <span>合計</span>
+                                    <span>合計金額(税込)</span>
                                   </p>
                                 </td>
                                 <td class="subtotal-line__value">

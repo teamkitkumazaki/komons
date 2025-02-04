@@ -62,24 +62,64 @@
 		.footer_sns {
 			width: 360px;
 			.img_wrap{
-				margin-bottom: 30px;
+				margin-bottom: 40px;
 				a{
 					display: block;
 				}
 			}
 			.mailmag_wrap{
 				.mm_title{
-					display: block;
-					font-size: 18px;
+					@include flexSet;
+					justify-content: flex-start;
+					align-items: center;
+					font-size: 2.0rem;
 					line-height: 1;
 					letter-spacing: 0.03em;
 					margin-bottom: 15px;
+					.icon{
+						width: 20px;
+						margin-right: 7px;
+						margin-top: 3px;
+						svg{
+							.cls-1{
+								fill:$basicGreen;
+								fill-rule:evenodd;
+							}
+						}
+					}
 				}
 				.mm_desc{
 					font-size: 14px;
 					line-height: 1.8;
 					letter-spacing: 0.05em;
 					margin-bottom: 20px;
+				}
+				.line_add_button{
+					margin-bottom: 25px;
+					a{
+						@include hover;
+						@include flexSet;
+						align-items: center;
+						color: #fff;
+						background: $basicGreen;
+						padding: 15px 0;
+						border-radius: 5px;
+						font-weight: normal;
+						font-family: inherit;
+						font-size: 1.6rem;
+						letter-spacing: 0.05em;
+						.icon{
+							width: 20px;
+							margin-right: 10px;
+							margin-top: 3px;
+							svg{
+								.cls-1{
+									fill:#fff;
+									fill-rule:evenodd;
+								}
+							}
+						}
+					}
 				}
 				.form_wrap{
 					margin-bottom: 25px;
@@ -228,13 +268,11 @@
 				width: 100%;
 				@include flexSet;
 				.img_wrap{
-					order: 1;
 					width: 100%;
-					margin-bottom: 15px;
+					margin-bottom: 30px;
 				}
 				.mailmag_wrap{
 					width: 100%;
-					order: 0;
 					margin-bottom: 30px;
 				}
 				.form_wrap{
@@ -242,7 +280,6 @@
 				}
 				.sns_wrap {
 					width: 100%;
-					order: 2;
 					margin: 20px auto 0;
 					.copy_right {
 						font-size: 14px;
@@ -302,20 +339,23 @@
 				justify-content: flex-start;
 				.img_wrap{
 					max-width: 85%;
-					margin-bottom: 5px;
+					margin-bottom: 30px;
 					a{
 						display: block;
 					}
 				}
 				.mailmag_wrap{
-					margin-bottom: 20px;
+					margin-bottom: 10px;
 					.mm_title{
-						font-size: 20px;
+						font-size: 1.8rem;
 						margin-bottom: 15px;
 					}
 					.mm_desc{
 						font-size: 13px;
 						margin-bottom: 20px;
+					}
+					.line_add_button{
+						margin-bottom: 0px;
 					}
 					.form_wrap{
 						margin-bottom: 15px;

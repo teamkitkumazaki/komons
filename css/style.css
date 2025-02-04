@@ -779,23 +779,83 @@ img {
   width: 360px;
 }
 .footer .footer_wrap .footer_sns .img_wrap {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .footer .footer_wrap .footer_sns .img_wrap a {
   display: block;
 }
 .footer .footer_wrap .footer_sns .mailmag_wrap .mm_title {
-  display: block;
-  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
   line-height: 1;
   letter-spacing: 0.03em;
   margin-bottom: 15px;
+}
+.footer .footer_wrap .footer_sns .mailmag_wrap .mm_title .icon {
+  width: 20px;
+  margin-right: 7px;
+  margin-top: 3px;
+}
+.footer .footer_wrap .footer_sns .mailmag_wrap .mm_title .icon svg .cls-1 {
+  fill: #00381f;
+  fill-rule: evenodd;
 }
 .footer .footer_wrap .footer_sns .mailmag_wrap .mm_desc {
   font-size: 14px;
   line-height: 1.8;
   letter-spacing: 0.05em;
   margin-bottom: 20px;
+}
+.footer .footer_wrap .footer_sns .mailmag_wrap .line_add_button {
+  margin-bottom: 25px;
+}
+.footer .footer_wrap .footer_sns .mailmag_wrap .line_add_button a {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  background: #00381f;
+  padding: 15px 0;
+  border-radius: 5px;
+  font-weight: normal;
+  font-family: inherit;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+}
+.footer .footer_wrap .footer_sns .mailmag_wrap .line_add_button a:hover {
+  opacity: 0.75;
+}
+.footer .footer_wrap .footer_sns .mailmag_wrap .line_add_button a .icon {
+  width: 20px;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+.footer .footer_wrap .footer_sns .mailmag_wrap .line_add_button a .icon svg .cls-1 {
+  fill: #fff;
+  fill-rule: evenodd;
 }
 .footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap {
   margin-bottom: 25px;
@@ -986,17 +1046,11 @@ img {
             justify-content: center;
   }
   .footer .footer_wrap .footer_sns .img_wrap {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   .footer .footer_wrap .footer_sns .mailmag_wrap {
     width: 100%;
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
     margin-bottom: 30px;
   }
   .footer .footer_wrap .footer_sns .form_wrap {
@@ -1004,9 +1058,6 @@ img {
   }
   .footer .footer_wrap .footer_sns .sns_wrap {
     width: 100%;
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
     margin: 20px auto 0;
   }
   .footer .footer_wrap .footer_sns .sns_wrap .copy_right {
@@ -1072,21 +1123,24 @@ img {
   }
   .footer .footer_wrap .footer_sns .img_wrap {
     max-width: 85%;
-    margin-bottom: 5px;
+    margin-bottom: 30px;
   }
   .footer .footer_wrap .footer_sns .img_wrap a {
     display: block;
   }
   .footer .footer_wrap .footer_sns .mailmag_wrap {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .footer .footer_wrap .footer_sns .mailmag_wrap .mm_title {
-    font-size: 20px;
+    font-size: 1.8rem;
     margin-bottom: 15px;
   }
   .footer .footer_wrap .footer_sns .mailmag_wrap .mm_desc {
     font-size: 13px;
     margin-bottom: 20px;
+  }
+  .footer .footer_wrap .footer_sns .mailmag_wrap .line_add_button {
+    margin-bottom: 0px;
   }
   .footer .footer_wrap .footer_sns .mailmag_wrap .form_wrap {
     margin-bottom: 15px;
@@ -19355,6 +19409,8 @@ body.loaded #loading {
     right: 5px;
   }
   .comp-category-button a::after {
+    top: 0;
+    right: 20px;
     -webkit-transform: translate(-4px, 3px) rotate(-45deg);
             transform: translate(-4px, 3px) rotate(-45deg);
   }
