@@ -12,7 +12,7 @@
 {%- endif -%}
 {%- assign property_size = item.properties | size -%}
 
-
+{% unless item.url contains 'ks004' %}
 <div class="cart_item" data-cart-item data-cart-item-key="{{ item.key }}" data-cart-item-url="{{ item.url }}" data-cart-item-title="{{ item.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ item.quantity }}" {% if item.url contains 'kt1040' %}style="order: 1;"{%- endif -%}>
   <div class="img_wrap">
     <a href="{{ productId[0] }}">{{ item.image.src | image_url: width: 300 | image_tag }}</a>
@@ -48,9 +48,9 @@
       </div>
       {%- else -%}
         <div class="order_lot">
-          {% unless item.url contains 'kt1040' %}<button class="order_button minus">-</button>{%- endunless -%}
+          {% unless item.url contains 'kt1040' %}<button class="order_button minus"><span></span></button>{%- endunless -%}
           <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0">
-          {% unless item.url contains 'kt1040' %}<button class="order_button plus">+</button>{%- endunless -%}
+          {% unless item.url contains 'kt1040' %}<button class="order_button plus"><span></span></button>{%- endunless -%}
           <button class="reload_button"></button>
         </div>
           <a class="cancel_button" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="text-link text-link--accent" aria-label="{{ 'cart.label.remove' | t: product: item.title }}" data-cart-remove data-role="product-remove">削除</a>
@@ -61,3 +61,23 @@
     <div class="amount_price">¥{{ totalPrice | money_without_currency }}</div>
   </div><!-- txt_wrap -->
 </div><!-- cart_item -->
+{%- else -%}
+<div class="cart_item" style="order: 1;">
+  <div class="txt_wrap" style="width: 100%;">
+    <div class="txt_inner">
+      <div class="item_info">
+        <a class="links" href="javascript:void(0);">
+          <span class="name"><span class="name">お渡し用手提げ紙袋</span></span><span class="options genre  hide" optionname="">ギフトオプション</span>
+        </a>
+        <span class="price" cpprice="">110円(税込)</span></div>
+        <div class="controll_wrap"><div class="order_lot">
+          <button class="order_button minus"><span></span></button>
+          <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0">
+          <button class="order_button plus"><span></span></button><button class="reload_button"></button>
+        </div>
+        <a class="cancel_button" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="text-link text-link--accent" aria-label="{{ 'cart.label.remove' | t: product: item.title }}" data-cart-remove data-role="product-remove">削除</a>
+      </div>
+    </div><!-- txt_inner --><div class="amount_price">¥110</div>
+  </div><!-- txt_wrap -->
+</div>
+{%- endunless -%}

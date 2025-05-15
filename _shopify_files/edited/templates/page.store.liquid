@@ -1,0 +1,238 @@
+<article id="store" class="page-store">
+  <section class="section-bread">
+    <div class="comp-page-bread">
+      <div class="bread_item">
+        <a href="/">ホーム</a>
+        <span class="current sp_display">実店舗のご案内</span>
+      </div>
+    </div><!-- comp-page-bread -->
+  </section>
+  <section class="section-shop-info comp-section-shop-info">
+    <div class="section_inner">
+      <div class="shop_info_flex">
+        <div class="shop_info_img index">
+          <img src="{{ 'store_img_index.png' | asset_url }}">
+        </div>
+        <div class="shop_info_txt">
+          <h2 class="shop_info_ttl">実店舗のご案内</h2>
+          <h3 class="shop_info_subttl">1組様1時間予約制<br>渋谷区代官山の<br>高級中古革靴専門店</h3>
+          <div class="shop_info_description">
+            <p>当店は高級革靴ジャンルに特化した、中古革靴の専門店です。世の中にはブランドアパレルのリユース店は多くあるものの、必要とされる知識量が多すぎる故、高級革靴を専門に取り扱えるお店はほとんどないのが現状です。革靴が好きで集まった私達であれば、きちんとした中古革靴の取り扱いができるはず。それを一つ使命として考え、運営をしています。</p>
+            <p class="address_txt">〒150-0034 東京都渋谷区代官山町3-7-2F<br>Tel 03-6379-4850</p>
+          </div>
+          {% include 'business-calendar' %}
+          <div class="comp-business-calendar2">
+            <div id="businessCalendar" class="calendar_inner">
+            </div><!-- calendar_inner -->
+            <div class="calendar_description">
+              <p>営業日<br>13:00～18:00/平日<br>11:00～18:00/土、日、祝日<br>不定休（赤マークの日はお休みです）</p>
+            </div>
+          </div><!-- comp-business-calendar -->
+        </div><!-- shop_info_txt -->
+      </div><!-- shop_info_flex -->
+      <div class="shopinfo_footer">
+        <div class="footer_txt">
+          <p>当店は要予約制となっております。必ず事前にご予約のうえ、ご来店ください。<br>店頭持込買取のみのお客様は、予約の必要はございません。<br>詳しくは、当店の買取サイトをご覧ください。</p>
+        </div>
+        <div id="reservationAnker" class="comp-rounded-button">
+          <button jump="#reservationSection"><span>店舗紹介・来店予約へ</span></button>
+        </div><!-- comp-rounded-button -->
+      </div>
+    </div><!-- section_inner -->
+  </section>
+  <section class="section-message">
+    <div class="message_flex">
+      <div class="message_img">
+        <img src="{{ 'ph_store01.jpg' | asset_url }}">
+      </div>
+      <div class="message_txt">
+        <h2 class="message_ttl">お店をただ<br>モノの現金化をする<br>ためだけの場所に<br>したくない</h2>
+        <div class="message_desc">
+          <p>役職や父親という立場から解放され、たまには一人の靴好きとして誰かと趣味の会話ができる。SNSがその場所になりがちな高級革靴業界だからこそ、そんな環境をリアルで提供できる場所がもっとあった方が良いと私たちは考えています。 販売・買取など手段に関係なく、当店に関わることでお客様の毎日に少しでも楽しい事が増えた。そう感じていただければ本望です。</p>
+        </div>
+      </div><!-- message_txt -->
+    </div><!-- message_flex -->
+  </section>
+  <section class="section-staff">
+    <div class="section_inner">
+      <div class="title_wrapper">
+        <h2 class="ttl_upper">スタッフのご紹介</h2>
+        <h3 class="list_ttl">プロ意識の高いスタッフ達が<br>お客様と革靴に誠心誠意向き合います</h3>
+      </div>
+      <div class="comp-staff-list">
+        <div class="staff_item">
+          <div class="staff_img">
+            <img src="{{ 'staff_fukumoto.jpg' | asset_url }}">
+          </div>
+          <div class="staff_txt">
+            <div class="name_wrap">
+              <div class="name_en">KOUTA FUKUMOTO</div>
+              <h4 class="name_jp">福本 航太</h4>
+            </div>
+            <div class="staff_desc">
+              <div class="position">店長</div>
+              <p>滋賀県出身。イギリス留学中に出会ったセレクトショップのオーナーと意気投合し、国立理系学生から一転、アパレル業界へ飛び込んだ。欧州、北欧ブランドの新規開拓、バイイング～接客まで広く経験を積んだ後、CBRに加入。現在は店舗運営及びバイイングを行っている。</p>
+            </div>
+          </div>
+        </div><!-- staff_item -->
+        <div class="staff_item">
+          <div class="staff_img">
+            <img src="{{ 'staff_fujimoto.jpg' | asset_url }}">
+          </div>
+          <div class="staff_txt">
+            <div class="name_wrap">
+              <div class="name_en">KEIKI FUJIMOTO</div>
+              <h4 class="name_jp">藤本 桂輝</h4>
+            </div>
+            <div class="staff_desc">
+              <div class="position">EC管理, シューシャイナー</div>
+              <p>兵庫県出身。CBR加入前は、m.mowbrayを展開するR&D社でキャリアを積む。前職では、百貨店でプロシューシャイナーとして経験を積んだ後、本部にて専門店等を取引先とする営業職に従事した。現在、店舗では接客からシューケアまで幅広く仕事をしている。</p>
+            </div>
+          </div>
+        </div><!-- staff_item -->
+        <div class="staff_item">
+          <div class="staff_img">
+            <img src="{{ 'staff_taniai.jpg' | asset_url }}">
+          </div>
+          <div class="staff_txt">
+            <div class="name_wrap">
+              <div class="name_en">NOBUYO TANIAI</div>
+              <h4 class="name_jp">谷合 順代</h4>
+            </div>
+            <div class="staff_desc">
+              <div class="position">フォトグラファー</div>
+              <p>愛知県出身。CBRの最初期から業務に携わる、撮影担当スタッフ。元は大手アパレルブランドの管理職経験者。実はお店の誰よりもアパレル歴が長く、役職も上だったが、今は忙しい日々から解放され趣味のカメラにネイリストと、とても楽しく生きている。</p>
+            </div>
+          </div>
+        </div><!-- staff_item -->
+        <div class="staff_item">
+          <div class="staff_img">
+            <img src="{{ 'staff_takagi.jpg' | asset_url }}">
+          </div>
+          <div class="staff_txt">
+            <div class="name_wrap">
+              <div class="name_en">HIDENAO TAKAGI</div>
+              <h4 class="name_jp">高木 秀直</h4>
+            </div>
+            <div class="staff_desc">
+              <div class="position">シューシャイナー</div>
+              <p>東京都出身。プロシューシャイナー・プロミュージシャン（チェリスト）と、2種のプロの肩書を持つ多彩な人物。現在は音楽教室の講師、定期演奏を行う傍ら、CBRではシューシャインの大半を、高木氏が手がけている。尚、シューシャインの師は明石 優氏（元Brift H）。</p>
+            </div>
+          </div>
+        </div><!-- staff_item -->
+        <div class="staff_item">
+          <div class="staff_img">
+            <img src="{{ 'staff_nakagawa.jpg' | asset_url }}">
+          </div>
+          <div class="staff_txt">
+            <div class="name_wrap">
+              <div class="name_en">TAKASHI NAKAGAWA</div>
+              <h4 class="name_jp">中川 崇司</h4>
+            </div>
+            <div class="staff_desc">
+              <div class="position">オーナー</div>
+              <p>広島県出身。studio.CBR立ち上げ前は、百貨店にて英国ブランドのセールススタッフとして従事した。独立後は、フリーのインポートバイヤーとして活動をした後、前身店舗である永福町店をオープン。現在は主にバイイングを行っている。</p>
+            </div>
+          </div>
+        </div><!-- staff_item -->
+      </div><!-- comp-staff-list -->
+    </div><!-- section_inner -->
+  </section>
+  <section id="reservationSection" class="section-reservation">
+    <div class="reservation_flex">
+      <div class="reservation_img">
+        <img class="sp_img" src="{{ 'ph_store02.jpg' | asset_url }}">
+        <img class="pc_img" src="{{ 'ph_store02_pc.jpg' | asset_url }}">
+      </div>
+      <div class="reservation_txt">
+        <div class="title_wrapper">
+          <h2 class="ttl_upper">来店予約について</h2>
+          <h3 class="list_ttl">当店は要予約制となっております。<br>必ず事前にご予約のうえ、ご来店ください。</h3>
+        </div>
+        <div class="reservation_desc">
+          <p>1時間枠にて、予約をいただいたお客様のみのご入店とさせていただいております。予約をいただいた上でお越しください。同時にお買い取り希望がある場合は、試着中に査定をさせていただきます。尚、予約は7日前から可能となります。</p>
+          <h4 class="desc_ttl">予約に関する重要なお願い</h4>
+          <ul>
+            <li>−	１組様１時間にてご対応をさせていただいておりますが、１時間という時間枠は、意外と思っている以上に短い時間です。次の枠に予約をいただいているお客様に迷惑とならないよう、スムーズに案内をする努力はしておりますが、事前にオンラインショップをご覧いただいていないお客様への接客は、普段以上に長引いてしまう、そういうケースが段々と増えてきてしまいました。</li>
+            <li>−	営業上、すべての商品が１点ものとなってしまいますので、事前にどういう商品があるのかを見てきていただかないと、時間的に対応が難しくなってしまいます。ですので、予約をする前に、まずはオンラインショップをご覧いただき、そのうえで気に入ったものがあれば予約をいただけますと幸いです。すべてのお客様に対し予約時間通りにご案内が出来るよう最善を尽くしますので、何卒ご協力のほどお願いいたします。</li>
+          </ul>
+        </div><!-- reservation_desc -->
+      </div><!-- reservation_txt -->
+    </div><!-- reservation_flex -->
+    <div class="reservation_lower">
+      <div class="attention">
+        <h5 class="attention_ttl">ご注意</h5>
+        <ul>
+          <li>営業上、商品の取り置きは行っておりません。「予約フォームへの試着希望商品記入＝商品の仮押さえ」ではありませんので、その点はご理解ください。</li>
+          <li>ご来店をいただく前に売り切れてしまった場合は、なるべくご連絡をするように心がけていますが、どうしても目視で行っている事ですので、すべてには対応が出来ないことはご了承ください。</li>
+        </ul>
+      </div>
+      <div class="agreement_txt">上記「予約に関する重要なお願い」「ご注意」に同意して</div>
+      <div class="comp-rounded-button">
+        <a target="_blank" href="https://select-type.com/rsv/?id=eMbC8l49B3A""><span>予約する</span></a>
+      </div>
+    </div><!-- reservation_lower -->
+  </section>
+  <section id="accessSection" class="section-access">
+    <div class="section_inner">
+      <div class="title_wrapper">
+        <h3 class="list_ttl">アクセス</h3>
+      </div>
+      <div class="access_wrapper">
+        <div class="iframe_wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.01212616073!2d139.70264617571667!3d35.65207287259665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f25321e7fb01%3A0x7be65bb53b0ce4d2!2sstudio.CBR!5e0!3m2!1sja!2sjp!4v1739263310848!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="address_wrap">
+        <div class="address_item">
+          <div class="icon pin">
+            <img src="{{ 'icon_pin.png' | asset_url }}">
+          </div>
+          <div class="txt">〒150-0034 東京都渋谷区代官山町3-7-2F</div>
+        </div>
+        <div class="address_item">
+          <div class="icon tel">
+            <img src="{{ 'icon_tel.png' | asset_url }}">
+          </div>
+          <div class="txt">03-6379-4850</div>
+        </div>
+      </div>
+      <div class="transportation_wrap">
+        <div class="trans_item">
+          <h4 class="trans_ttl">お車でお越しの方へ</h4>
+          <div class="trans_description">
+            <p>店舗近隣に数箇所コインパーキング、駐車場があります。商品点数が多い場合は、駐車場とお店を複数回往復するのがご面倒だと思いますので、先にお店前で商品をお預けいただいて結構です。<br>その場合は、お電話にて店舗へご連絡をいただけましたら、お店の外まで受け取りに伺います。</p>
+          </div>
+        </div>
+        <div class="trans_item">
+          <h4 class="trans_ttl">公共交通機関でお越しの方へ</h4>
+          <div class="trans_description">
+            <div class="trans_method">
+              <div class="icon">
+                <img src="{{ 'icon_train.png' | asset_url }}">
+              </div>
+              <div class="trans_txt">代官山駅より徒歩7分程度<br>JR渋谷駅新南口から徒歩9	分程度</div>
+            </div>
+            <div class="trans_method">
+              <div class="icon">
+                <img src="{{ 'icon_bus.png' | asset_url }}">
+              </div>
+              <div class="trans_txt">渋谷ヒカリエ前から東急バス［渋71］で3分程度、<br>鉢山中学校東で降車下さい</div>
+            </div>
+          </div>
+        </div>
+      </div><!-- transportation_wrap -->
+      <div class="access_attention">
+        <div class="attention">
+          <h5 class="attention_ttl">ご来店にあたって</h5>
+          <ul>
+            <li>試着希望商品売り切れ以外の理由での予約のキャンセルはお控えください。</li>
+            <li>店頭にはスペースの関係上一部の商品しか展示を出来ておりませんので、必ず事前にオンラインショップをご覧になった上でお越しください。また、ご試着希望の商品を、予約時にお伺いしております。</li>
+            <li>予約なしでの来店は、他のお客様へのご迷惑となりますのでご遠慮ください。</li>
+            <li>店舗では展示スペースの関係でバッグの取り扱いがございません。通販のみでのご対応となります事、予めご了承ください。尚、すべて検品は行っておりますので、もし商品の質問などございましたら、電話でお問い合わせください。口頭で詳細をお伝えいたします。</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- section_inner -->
+  </section>
+</article>

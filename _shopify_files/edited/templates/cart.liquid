@@ -111,7 +111,7 @@ if(noteParam != undefined){
 }
 
 
-
+// カートページ 商品数の増減
 function controllProductQuantity(target){
   var minusButton = [];
   var plusButton = [];
@@ -134,8 +134,8 @@ function controllProductQuantity(target){
 
   function init(){
     $.each(target.find('.cart_item'), function(index) {
-      minusButton[index] = $(this).find('.minus');
-      plusButton[index] = $(this).find('.plus');
+      minusButton[index] = $(this).find('button.minus');
+      plusButton[index] = $(this).find('button.plus');
       quantityInput[index] = $(this).find('input[type="number"]');
       reloadButton[index] = $(this).find('.reload_button');
       minusButton[index].on({
@@ -151,13 +151,14 @@ function controllProductQuantity(target){
         }
       });
     });
+
   }
 
   init();
 
 }
 
-if (document.getElementById('cart')) {
+if (document.getElementById('cartItem')) {
   controllProductQuantity($('#cartItem'));
 }
 

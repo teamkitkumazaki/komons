@@ -17246,6 +17246,12 @@ body.loaded #loading {
 .comp-cart-item-list .cart_head {
   display: none;
 }
+.comp-cart-item-list .minigift_added_txt {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
 .comp-cart-item-list .item_list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17313,6 +17319,10 @@ body.loaded #loading {
 }
 .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner {
   width: calc(100% - 3.5em);
+}
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .item_info .tesage_txt {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
 }
 .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .item_info .category {
   display: block;
@@ -17403,29 +17413,35 @@ body.loaded #loading {
 .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot {
   width: 100px;
   position: relative;
-  margin-top: 15px;
+  margin-top: 20px;
 }
-.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot input[type=number] {
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot input[type=number],
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot .indicator {
   width: 100px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 8px 0;
+  padding: 0;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
   border-radius: 0px;
   border: 0px solid #e6e6e6;
   background-color: #f4f4f4;
   pointer-events: none !important;
   font-size: 1.4rem;
   font-family: inherit !important;
-  padding: 4px 0 4px 3.2em;
   -moz-appearance: textfield;
 }
-.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot input[type=number]::-webkit-outer-spin-button, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot input[type=number]::-webkit-inner-spin-button {
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot input[type=number]::-webkit-outer-spin-button, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot input[type=number]::-webkit-inner-spin-button,
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot .indicator::-webkit-outer-spin-button,
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot .indicator::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button {
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a {
+  display: block;
   position: absolute;
-  width: 40px;
+  width: 50%;
   height: 100%;
   top: 0;
   bottom: 0;
@@ -17437,16 +17453,45 @@ body.loaded #loading {
   -webkit-box-shadow: none;
           box-shadow: none;
   background: transparent;
-  line-height: 20px;
+  line-height: 40px;
   text-align: center;
+  padding: 0;
 }
-.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button.minus {
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button span, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a span {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button span::before, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button span::after, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a span::before, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a span::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
   left: 0;
-}
-.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button.plus {
   right: 0;
+  margin: auto;
+  background: #00381f;
 }
-.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button.reload_button {
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button span::before, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a span::before {
+  width: 1px;
+  height: 10px;
+}
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button span::after, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a span::after {
+  width: 10px;
+  height: 1px;
+}
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button.minus, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a.minus {
+  left: -10px;
+}
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button.minus span::before, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a.minus span::before {
+  display: none;
+}
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button.plus, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a.plus {
+  right: -10px;
+}
+.comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button.reload_button, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a.reload_button {
   display: none;
 }
 .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot .add_cart {
@@ -17681,8 +17726,29 @@ body.loaded #loading {
     width: 100px;
     margin-top: 0px;
   }
-  .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot input[type=number] {
-    padding: 10px 0 10px 3em;
+  .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot input[type=number],
+  .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot .indicator {
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+  }
+  .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a {
+    line-height: 40px;
+  }
+  .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button span, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a span {
+    height: 40px;
+  }
+  .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button.minus, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a.minus {
+    left: -5px;
+  }
+  .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button.minus span::before, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a.minus span::before {
+    display: none;
+  }
+  .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button.plus, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a.plus {
+    right: -5px;
+  }
+  .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot button.reload_button, .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .order_lot a.reload_button {
+    display: none;
   }
   .comp-cart-item-list .item_list .cart_item .txt_wrap .txt_inner .controll_wrap .cancel_button {
     position: static;
@@ -17725,6 +17791,11 @@ body.loaded #loading {
   .comp-cart-item-list .item_list .cart_item .assort_content .set_content {
     margin-top: 0px;
     font-size: 1.2rem;
+  }
+  .comp-cart-item-list .minigift_added_txt {
+    font-size: 1.4rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
   }
 }
 .comp-amount-wrap {

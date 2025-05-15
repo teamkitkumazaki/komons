@@ -104,329 +104,948 @@
 		</div><!-- header_inner -->
 	</header>
 	<article id="cart" class="page-cart-new">
-		<section class="section-cart">
-			<div class="section_inner_new">
-				<div class="comp-admin-title">
-					<hgroup>
-						<h1 class="page_ttl">ショッピングカート</h1>
-						<span class="page_subttl">Shopping Cart</span>
-					</hgroup>
-					<div class="page_bread">
-						<div class="link_wrap">
-							<a href="javascript:history.back();">買い物を続ける</a>
+		<div id="shopify-section-cart-template" class="shopify-section">
+			<form id="cartSubmit" action="/cart" method="post" novalidate="" class="cart"><textarea type="text" name="attributes[メッセージカードの内容:]" style="display:none;"></textarea>
+				<section class="section-cart">
+					<div class="section_inner_new">
+						<div class="comp-admin-title">
+							<hgroup>
+								<h1 class="page_ttl">ショッピングカート</h1>
+								<span class="page_subttl">Shopping Cart</span>
+							</hgroup>
+							<div class="page_bread">
+								<div class="link_wrap">
+									<a id="backLink" href="javascript:history.back();">買い物を続ける</a>
+								</div>
+							</div>
+						</div><!-- comp-admin-title -->
+						<!-- <div class="section-banner">
+        <div class="section_inner_new">
+          <a target="_blank" href="https://journal.komons-japan.com/archives/1263" class="img_wrap">
+            <img class="img_pc" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/cart_banner_pc.jpg?v=1651196419">
+            <img class="img_sp" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/cart_banner_sp_4857754a-2681-486a-ae5d-2646b909b13f.jpg?v=1651196419">
+          </a>
+        </div>
+      </div> -->
+
+						<div class="cart_flex">
+							<div class="item_wrap">
+								<div class="comp-cart-item-list">
+									<div class="cart_head">
+										<span class="product head">商品</span>
+										<span class="lot head">数量</span>
+										<span class="amount head">合計</span>
+									</div>
+									<div id="cartItem" class="item_list">
+										<div class="cart_item" data-cart-item="" data-cart-item-key="44296276443415:b4787654eef95da9d9860896d2dc4af9" data-cart-item-url="/products/k1005?variant=44296276443415" data-cart-item-title="【ハンドミルク】Cotton Fields"
+											data-cart-item-index="1" data-cart-item-quantity="1">
+											<div class="img_wrap">
+												<a href="/products/k1005"><img src="https://komons-japan.com/cdn/shop/products/thumb00_fed6a931-33d8-4b1b-98c5-b38f07123927.jpg?v=1673324947&amp;width=300" alt=""
+														srcset="https://komons-japan.com/cdn/shop/products/thumb00_fed6a931-33d8-4b1b-98c5-b38f07123927.jpg?v=1673324947&amp;width=300 300w" width="300" height="323"></a>
+											</div>
+											<div class="txt_wrap">
+												<div class="txt_inner">
+													<div class="item_info"><span class="category"><span class="ja">ハンドミルク</span></span><a class="links" href="/products/k1005"><span class="name"><span class="name en">Cotton Fields</span></span><span class="options genre  hide"
+																optionname=""></span></a>
+														<span class="price" cpprice="">2,970円(税込)</span>
+													</div>
+													<div class="controll_wrap">
+														<div class="order_lot">
+															<button class="order_button minus"><span></span></button><input type="number" name="updates[]" id="updates_44296276443415:b4787654eef95da9d9860896d2dc4af9" data-id="44296276443415:b4787654eef95da9d9860896d2dc4af9" value="1" min="0">
+															<button class="order_button plus"><span></span></button><button class="reload_button"></button>
+														</div>
+														<a class="cancel_button" href="/cart/change?line=1&amp;quantity=0" aria-label="【ハンドミルク】Cotton Fields を削除する" data-cart-remove="" data-role="product-remove">削除</a>
+													</div>
+												</div><!-- txt_inner -->
+												<div class="amount_price">¥2,970</div>
+											</div><!-- txt_wrap -->
+										</div><!-- cart_item -->
+
+										<div class="cart_item" data-cart-item="" data-cart-item-key="38243134931138:c75abd5230ed93d38b33f0cf1d09098a" data-cart-item-url="/products/k0043?variant=38243134931138" data-cart-item-title="ホワイトボックス(マルチ＆ファブリックミスト) - 熨斗"
+											data-cart-item-index="2" data-cart-item-quantity="1">
+											<div class="img_wrap">
+												<a href="/products/k0043"><img src="https://komons-japan.com/cdn/shop/products/thumb01_80f63597-b12e-45cf-bfd4-1c2d710ebadc.jpg?v=1741686119&amp;width=300" alt=""
+														srcset="https://komons-japan.com/cdn/shop/products/thumb01_80f63597-b12e-45cf-bfd4-1c2d710ebadc.jpg?v=1741686119&amp;width=300 300w" width="300" height="323"></a>
+											</div>
+											<div class="txt_wrap">
+												<div class="txt_inner">
+													<div class="item_info"><span class="category"><span class="ja">ギフトセット</span></span><a class="links" href="/products/k0043"><span class="name"><span class="name">ホワイトボックス</span><span
+																	class="genre added">マルチ＆ファブリックミスト</span></span><span class="options genre " optionname="熨斗">熨斗</span></a>
+														<span class="price" cpprice="">3,058円(税込)</span>
+													</div>
+													<div class="controll_wrap">
+														<div class="order_lot">
+															<button class="order_button minus"><span></span></button><input type="number" name="updates[]" id="updates_38243134931138:c75abd5230ed93d38b33f0cf1d09098a" data-id="38243134931138:c75abd5230ed93d38b33f0cf1d09098a" value="1" min="0">
+															<button class="order_button plus"><span></span></button><button class="reload_button"></button>
+														</div>
+														<a class="cancel_button" href="/cart/change?line=2&amp;quantity=0" aria-label="ホワイトボックス(マルチ＆ファブリックミスト) - 熨斗 を削除する" data-cart-remove="" data-role="product-remove">削除</a>
+													</div>
+												</div><!-- txt_inner -->
+												<div class="amount_price">¥3,058</div>
+											</div><!-- txt_wrap -->
+										</div><!-- cart_item -->
+
+										<div class="cart_item shopper">
+											<div class="txt_wrap" style="width: 100%;">
+												<div class="txt_inner">
+													<div class="item_info">
+														<div class="tesage_txt">手提げ用紙袋</div>
+														<span class="price" cpprice="">110円(税込)</span>
+													</div>
+													<div class="controll_wrap">
+														<div class="order_lot">
+															<a href="https://diffar.jp/cart/add?id=49639021969689&amp;quantity=1" class="order_button minus pjax" style="pointer-events:none;"><span></span></a>
+															<div class="indicator">0</div>
+															<a href="https://diffar.jp/cart/add?id=49639021969689&amp;quantity=1" class="order_button plus pjax"><span></span></a>
+															<button class="reload_button"></button>
+														</div>
+														<a class="cancel_button" href="">削除</a>
+													</div>
+												</div><!-- txt_inner -->
+												<div class="amount_price">¥110</div>
+											</div><!-- txt_wrap -->
+										</div><!-- cart_item -->
+									</div>
+								</div><!-- comp-cart-item-list-->
+
+								<div class="comp-amount-wrap pc_none">
+
+
+
+									<div class="amount_item">
+										<span class="ttl ">小計</span>
+										<p class="price ">6,028円(税込)</p>
+									</div>
+									<div class="amount_item">
+										<span class="ttl ">送料</span>
+										<p class="price ">送料無料</p>
+									</div>
+
+								</div><!-- comp-amount-wrap -->
+								<div class="comp-option-setting">
+									<div class="setting_item">
+										<div class="comp-admin-subttl">
+											<h2 class="ttl">熨斗の設定</h2>
+										</div>
+										<div class="option_flex">
+											<div class="img_box">
+												<div class="radio_wrap">
+													<div class="radio_item" style="width: 100%;">
+														<label>
+															<div class="img_wrap" style="margin-bottom:0;">
+																<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/cart_noshi_new2.jpg?v=1689780622">
+																<input type="hidden" name="attributes[熨斗の種類:]" value="紅白梅結び" checked="">
+															</div>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="comp-admin-form">
+												<div class="form_item">
+													<label class="large ">熨斗の表書き(任意)</label>
+													<div class="form_wrap">
+														<input id="noshiType" type="text" name="attributes[熨斗の表書き:]">
+														<p class="example">入力例) 御祝・内祝・御結婚祝・御礼・お歳暮など</p>
+													</div>
+												</div>
+												<div class="form_item">
+													<label class="large ">熨斗の名入れ(任意)</label>
+													<div class="form_wrap">
+														<input id="noshiName" type="text" name="attributes[熨斗の名入れ:]">
+														<p class="example">連名の場合は、その旨ご記載ください。</p>
+													</div>
+												</div>
+											</div><!-- comp-admin-form -->
+										</div>
+									</div>
+
+								</div><!-- comp-option-setting -->
+							</div><!-- item_wrap -->
+							<div class="comp-side-wrap">
+								<div class="comp-admin-subttl">
+									<h2 class="ttl">お届け希望日時</h2>
+								</div>
+								<div class="comp-admin-form">
+									<div class="form_item">
+										<label class="large ">お届け希望日程</label>
+										<div class="form_wrap"><select id="deliveryDateBox">
+												<option value="0">指定なし</option>
+
+
+
+
+
+
+
+												<script>
+													console.log('10時以降')
+												</script>
+
+												<script>
+													console.log('日or月~木')
+												</script>
+
+
+
+
+
+
+
+
+
+
+												<option value="2025-03-13">3月13日(木) ※一部地域のみ</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option2" value="2025-03-14">3月14日(金)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option3" value="2025-03-15">3月15日(土)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option4" value="2025-03-16">3月16日(日)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option5" value="2025-03-17">3月17日(月)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option6" value="2025-03-18">3月18日(火)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option8" value="2025-03-19">3月19日(水)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option9" value="2025-03-20">3月20日(木)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option10" value="2025-03-21">3月21日(金)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option11" value="2025-03-22">3月22日(土)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option12" value="2025-03-23">3月23日(日)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option13" value="2025-03-24">3月24日(月)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option14" value="2025-03-25">3月25日(火)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option15" value="2025-03-26">3月26日(水)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option16" value="2025-03-27">3月27日(木)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option17" value="2025-03-28">3月28日(金)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option18" value="2025-03-29">3月29日(土)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option19" value="2025-03-30">3月30日(日)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option20" value="2025-03-31">3月31日(月)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option21" value="2025-04-01">4月1日(火)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option22" value="2025-04-02">4月2日(水)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option23" value="2025-04-03">4月3日(木)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option24" value="2025-04-04">4月4日(金)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option25" value="2025-04-05">4月5日(土)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option26" value="2025-04-06">4月6日(日)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option27" value="2025-04-07">4月7日(月)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option28" value="2025-04-08">4月8日(火)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option29" value="2025-04-09">4月9日(水)</option>
+
+
+
+
+
+
+
+
+
+
+												<option class="option30" value="2025-04-10">4月10日(木)</option>
+
+											</select>
+											<input id="dateInput" type="hidden" name="attributes[配送予定日:]" value="2025-03-14">
+											<p class="example">※お届け先が【四国/九州/中国地方、北海道/青森県/秋田県/和歌山県】の場合、最短指定日は3月14日(金)になります。沖縄県の場合、最短指定日は3月19日(水)になります。</p>
+											<script>
+												var deliveryDate = $('#deliveryDateBox');
+
+												deliveryDate.on({
+													'change': function() {
+														if (deliveryDate.val() == '2025-03-13') {
+															var result = window.confirm('お届け先が【四国/九州/中国地方、北海道/青森県/秋田県/和歌山県/沖縄県】の場合、最短指定日は' + '3月14日(金)' + 'になります。\n' + '3月13日(木)' + 'を配送指定日にしますか？');
+															if (result) {
+
+															} else {
+																deliveryDate.val('指定なし');
+															}
+														}
+														var inputValue = deliveryDate.val();
+														var secondDay = $('#deliveryDate').find('.option2').val();
+														if (inputValue != 0) {
+															$('#dateInput').val(inputValue);
+														} else {
+															$('#dateInput').val(secondDayValue);
+														}
+													}
+												});
+
+												function getDayUpdate() {
+													var today = new Date();
+													var dayTime = today.getHours();
+													var dayMinutes = today.getMinutes();
+													var daySeconds = today.getSeconds();
+													if (dayTime == '10' && dayMinutes == 0 && daySeconds == 0) {
+														location.reload();
+													}
+													if (daySeconds == 0) {
+														console.log(dayTime + '時' + dayMinutes + '分' + daySeconds + '秒');
+													}
+													setTimeout(function() {
+														getDayUpdate();
+													}, 1000);
+												}
+
+												getDayUpdate();
+											</script>
+
+										</div>
+									</div>
+									<div class="form_item">
+										<label class="large ">お届け希望時間</label>
+										<div class="form_wrap">
+											<select id="deliveryTime" name="attributes[配送時間帯:]">
+												<option value="指定なし" selected="">指定なし</option>
+												<option value="午前中（12時まで）">午前中（12時まで）</option>
+												<option value="14時から16時">14時から16時</option>
+												<option value="16時から18時">16時から18時</option>
+												<option value="18時から20時">18時から20時</option>
+												<option value="19時から21時">19時から21時</option>
+											</select>
+										</div>
+									</div>
+									<div class="form_item">
+										<label class="large ">備考欄</label>
+										<div class="form_wrap">
+											<textarea name="note" id="CartSpecialInstructions" class="cart-note__input"></textarea>
+											<p class="example">1注文につき、お届け先は1件のみとなります。<br>2件以上のお届け先をご希望の場合は別々にご注文ください。</p>
+										</div>
+									</div>
+								</div><!-- comp-admin-form -->
+								<div class="comp-amount-wrap">
+
+
+
+
+									<div class="amount_item">
+										<span class="ttl ">小計</span>
+										<p class="price ">6,028円(税込)</p>
+									</div>
+									<div class="amount_item">
+										<span class="ttl ">送料</span>
+										<p class="price ">送料無料</p>
+									</div>
+
+								</div><!-- comp-amount-wrap -->
+								<div class="comp-admin-button mt">
+									<input type="submit" name="checkout" class="checkout_button" value="ご購入手続きへ">
+								</div>
+
+
+							</div><!-- comp-side-wrap -->
+						</div><!-- cart_flex -->
+					</div><!-- section_inner_new -->
+				</section>
+			</form>
+		</div>
+		<div id="shopify-section-product-relation" class="shopify-section">
+
+			<section id="relatedItem" class="section-recommendation" array="k0018">
+				<div class="section_inner_new">
+					<div class="section-related-item">
+						<div class="comp-detail-title">
+							<hgroup>
+								<span class="title_en">Related Items</span>
+								<h2 class="title_ja">こちらもおすすめです</h2>
+							</hgroup>
+						</div>
+						<div class="comp-product-list">
+							<ul class="item_wrapper">
+								<li id="handle-k1041" class="item_box" collection="pickup">
+									<div class="img_wrap">
+										<a href="/products/k1041">
+											<img loading="lazy" src="https://komons-japan.com/cdn/shop/files/thumb01_7b94caae-83eb-4cbd-8318-a743f85fba10.jpg?v=1720242103&amp;width=533"
+												srcset="https://komons-japan.com/cdn/shop/files/thumb01_7b94caae-83eb-4cbd-8318-a743f85fba10.jpg?v=1720242103&amp;width=533 1440w, https://komons-japan.com/cdn/shop/files/thumb01_7b94caae-83eb-4cbd-8318-a743f85fba10.jpg?v=1720242103&amp;width=360 768w, https://komons-japan.com/cdn/shop/files/thumb01_7b94caae-83eb-4cbd-8318-a743f85fba10.jpg?v=1720242103&amp;width=533 2048w"
+												alt="One Too Many Mornings950ml">
+										</a>
+									</div>
+									<div class="txt_wrap height-adjust">
+										<span class="cat_ttl">リードディフューザー</span>
+										<h3 class="prod_name">
+											<a href="/products/k1041"><span class="name en">One Too Many Mornings</span><span class="genre added">950ml</span></a>
+										</h3>
+
+										<span class="product_detail"><span class="price">28,600円(税込)</span></span>
+									</div>
+									<div class="comp-list-cart-button">
+										<div style="width: 100%; margin: 0 auto; padding: 0">
+											<div class="cartjs_box">
+												<form method="post" action="/cart/add" id="product_form_9557613707543" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="novalidate" data-product-form=""><input type="hidden" name="form_type"
+														value="product"><input type="hidden" name="utf8" value="✓">
+													<select name="id" id="ProductSelect-9557613707543" class="product-form__variants no-js" style="display: none;">
+
+														<option value="49335159816471">
+															Default Title
+														</option>
+
+													</select>
+													<div class="cartin_button">
+														<button title="カートに入れる"><span>カートに入れる</span></button>
+														<input id="cartSubmit-9557613707543" type="submit" value="カートに入れる">
+													</div>
+													<input type="hidden" name="product-id" value="9557613707543"><input type="hidden" name="section-id" value="product-relation">
+												</form>
+											</div>
+										</div>
+									</div>
+								</li>
+
+
+
+
+
+								<li id="handle-k0003" class="item_box" collection="pickup">
+									<div class="img_wrap">
+										<a href="/products/k0003">
+											<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb02_fced9a8b-a0b3-496f-abec-b2b9feea8c50.jpg?v=1648100617&amp;width=533"
+												srcset="https://komons-japan.com/cdn/shop/products/thumb02_fced9a8b-a0b3-496f-abec-b2b9feea8c50.jpg?v=1648100617&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb02_fced9a8b-a0b3-496f-abec-b2b9feea8c50.jpg?v=1648100617&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb02_fced9a8b-a0b3-496f-abec-b2b9feea8c50.jpg?v=1648100617&amp;width=533 2048w"
+												alt="I Can Hear Music">
+										</a>
+									</div>
+									<div class="txt_wrap height-adjust">
+										<span class="cat_ttl">ハンドソープ</span>
+										<h3 class="prod_name">
+											<a href="/products/k0003"><span class="name en">I Can Hear Music</span></a>
+										</h3>
+
+										<span class="product_detail"><span class="price">2,750円(税込)</span></span>
+									</div>
+									<div class="comp-list-cart-button">
+										<div style="width: 100%; margin: 0 auto; padding: 0">
+											<div class="cartjs_box">
+												<form method="post" action="/cart/add" id="product_form_6261291614402" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="novalidate" data-product-form=""><input type="hidden" name="form_type"
+														value="product"><input type="hidden" name="utf8" value="✓">
+													<select name="id" id="ProductSelect-6261291614402" class="product-form__variants no-js" style="display: none;">
+
+														<option value="38321477714114">
+															Default Title
+														</option>
+
+													</select>
+													<div class="cartin_button">
+														<button title="カートに入れる"><span>カートに入れる</span></button>
+														<input id="cartSubmit-6261291614402" type="submit" value="カートに入れる">
+													</div>
+													<input type="hidden" name="product-id" value="6261291614402"><input type="hidden" name="section-id" value="product-relation">
+												</form>
+											</div>
+										</div>
+									</div>
+								</li>
+
+
+
+								<li id="handle-k0018" class="item_box" collection="pickup">
+									<div class="img_wrap">
+										<a href="/products/k0018">
+											<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_869e79cd-5f9e-4616-a016-0fe288d30927.jpg?v=1741686090&amp;width=533"
+												srcset="https://komons-japan.com/cdn/shop/products/thumb01_869e79cd-5f9e-4616-a016-0fe288d30927.jpg?v=1741686090&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_869e79cd-5f9e-4616-a016-0fe288d30927.jpg?v=1741686090&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_869e79cd-5f9e-4616-a016-0fe288d30927.jpg?v=1741686090&amp;width=533 2048w"
+												alt="フルセット">
+										</a>
+									</div>
+									<div class="txt_wrap height-adjust">
+										<span class="cat_ttl">ギフトセット</span>
+										<h3 class="prod_name">
+											<a href="/products/k0018"><span class="name">フルセット</span></a>
+										</h3>
+
+										<span class="product_detail"><span class="price">11,880円(税込)</span></span>
+									</div>
+									<div class="comp-list-cart-button">
+										<div style="width: 100%; margin: 0 auto; padding: 0">
+											<div class="cartjs_box">
+												<form method="post" action="/cart/add" id="product_form_6536645607618" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="novalidate" data-product-form=""><input type="hidden" name="form_type"
+														value="product"><input type="hidden" name="utf8" value="✓">
+													<select name="id" id="ProductSelect-6536645607618" class="product-form__variants no-js" style="display: none;">
+
+														<option value="39255445012674">
+															オプションなし
+														</option>
+
+														<option value="39255445045442">
+															熨斗
+														</option>
+
+														<option value="50279833927959">
+															手提げバッグ
+														</option>
+
+														<option value="50279833960727">
+															熨斗/手提げバッグ
+														</option>
+
+														<option value="39628550832322">
+															メッセージカード
+														</option>
+
+														<option value="39628551553218">
+															熨斗/メッセージカード
+														</option>
+
+														<option value="50279833993495">
+															手提げバッグ/メッセージカード
+														</option>
+
+														<option value="50279834026263">
+															熨斗/手提げバッグ/メッセージカード
+														</option>
+
+													</select>
+													<div class="cartin_button">
+														<button title="カートに入れる"><span>カートに入れる</span></button>
+														<input id="cartSubmit-6536645607618" type="submit" value="カートに入れる">
+													</div>
+													<input type="hidden" name="product-id" value="6536645607618"><input type="hidden" name="section-id" value="product-relation">
+												</form>
+											</div>
+										</div>
+									</div>
+								</li>
+
+
+
+								<li id="handle-k1005" class="item_box" collection="pickup">
+									<div class="img_wrap">
+										<a href="/products/k1005">
+											<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb00_fed6a931-33d8-4b1b-98c5-b38f07123927.jpg?v=1673324947&amp;width=533"
+												srcset="https://komons-japan.com/cdn/shop/products/thumb00_fed6a931-33d8-4b1b-98c5-b38f07123927.jpg?v=1673324947&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb00_fed6a931-33d8-4b1b-98c5-b38f07123927.jpg?v=1673324947&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb00_fed6a931-33d8-4b1b-98c5-b38f07123927.jpg?v=1673324947&amp;width=533 2048w"
+												alt="Cotton Fields">
+										</a>
+									</div>
+									<div class="txt_wrap height-adjust">
+										<span class="cat_ttl">ハンドミルク</span>
+										<h3 class="prod_name">
+											<a href="/products/k1005"><span class="name en">Cotton Fields</span></a>
+										</h3>
+
+										<span class="product_detail"><span class="price">2,970円(税込)</span></span>
+									</div>
+									<div class="comp-list-cart-button">
+										<div style="width: 100%; margin: 0 auto; padding: 0">
+											<div class="cartjs_box">
+												<form method="post" action="/cart/add" id="product_form_8082168185111" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="novalidate" data-product-form=""><input type="hidden" name="form_type"
+														value="product"><input type="hidden" name="utf8" value="✓">
+													<select name="id" id="ProductSelect-8082168185111" class="product-form__variants no-js" style="display: none;">
+
+														<option value="44296276443415">
+															Default Title
+														</option>
+
+													</select>
+													<div class="cartin_button">
+														<button title="カートに入れる"><span>カートに入れる</span></button>
+														<input id="cartSubmit-8082168185111" type="submit" value="カートに入れる">
+													</div>
+													<input type="hidden" name="product-id" value="8082168185111"><input type="hidden" name="section-id" value="product-relation">
+												</form>
+											</div>
+										</div>
+									</div>
+								</li>
+
+
+
+
+
+
+
+
+
+
+							</ul>
 						</div>
 					</div>
-				</div><!-- comp-admin-title -->
-				<div class="cart_flex">
-					<div class="item_wrap">
-						<div class="comp-cart-item-list">
-							<div class="cart_head">
-								<span class="product head">商品</span>
-								<span class="lot head">数量</span>
-								<span class="amount head">合計</span>
-							</div>
-							<div id="cartItem" class="item_list">
-								<div class="cart_item" data-cart-item="" data-cart-item-key="47308891455767:8b18114d0f139f994431089ecba839d0" data-cart-item-url="/products/k0033-ol?variant=47308891455767"
-									data-cart-item-title="【マルチクリーナー】In a silent way / 詰め替え用・アウトレット品" data-cart-item-index="1" data-cart-item-quantity="1">
-									<div class="img_wrap">
-										<a href="/products/k0033-ol"><img src="https://komons-japan.com/cdn/shop/files/thumb01_a6d7980d-0f11-4be2-938a-042311ac6f19.jpg?v=1698644468&amp;width=300" alt=""
-												srcset="https://komons-japan.com/cdn/shop/files/thumb01_a6d7980d-0f11-4be2-938a-042311ac6f19.jpg?v=1698644468&amp;width=300 300w" width="300" height="323"></a>
-									</div>
-									<div class="txt_wrap">
-										<div class="txt_inner">
-											<div class="item_info">
-												<span class="category"><span class="ja">ギフトセット</span></span>
-												<a class="links" href="/products/k0033-ol"><span class="name">【マルチクリーナー】In a silent way / 詰め替え用・アウトレット品</span><span class="options genre  hide" optionname=""></span></a>
-												<span class="price_wrapper">
-													<span class="price_strike">2,420円</span>
-													<span class="arrow">→</span>
-													<span class="price">1,936円(税込)</span>
-												</span>
-											</div>
-											<div class="controll_wrap">
-												<div class="order_lot">
-													<button class="order_button minus">-</button>
-													<input type="number" name="updates[]" id="updates_47308891455767:8b18114d0f139f994431089ecba839d0" data-id="47308891455767:8b18114d0f139f994431089ecba839d0" value="1" min="0">
-													<button class="order_button plus">+</button>
-													<button class="reload_button"></button>
-												</div>
-												<a class="cancel_button" href="/cart/change?line=1&amp;quantity=0" aria-label="【マルチクリーナー】In a silent way / 詰め替え用・アウトレット品 を削除する" data-cart-remove="" data-role="product-remove">削除</a>
-											</div>
-										</div><!-- txt_inner -->
-										<div class="amount_price">¥1,936</div>
-									</div><!-- txt_wrap -->
-								</div>
-								<div class="cart_item">
-									<div class="img_wrap">
-										<a href="/products/kome?variant=42445999571161">
-											<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_b2d5f418-b957-45d5-8e61-18ae390070ca.jpg?v=1648100598&amp;width=300" alt="" width="300" height="323">
-										</a>
-									</div>
-									<div class="txt_wrap">
-										<div class="txt_inner">
-											<div class="item_info">
-												<span class="category">食器用洗剤</span>
-												<a class="links" href="/products/kome?variant=42445999571161">
-													<span class="name en">Don’t Look Back in Anger</span>
-												</a>
-												<span class="price">1,900円(税込)</span>
-											</div>
-											<div class="controll_wrap">
-												<div class="order_lot">
-													<button class="order_button minus">-</button>
-													<input type="number" name="updates[]" id="updates_42445999571161:13632060337b10ae34bf0aaf6c564cd2" data-id="42445999571161:13632060337b10ae34bf0aaf6c564cd2" value="2" min="0" style="font-family: ts-unused;">
-													<button class="order_button plus">+</button>
-													<button class="reload_button"></button>
-												</div>
-												<a class="cancel_button" href="/cart/change?line=1&amp;quantity=0" aria-label="translation missing: ja.cart.label.remove" data-cart-remove="" data-role="product-remove">削除</a>
-											</div>
-										</div><!-- txt_inner -->
-										<div class="amount_price">¥1,300</div>
-									</div><!-- txt_wrap -->
-								</div><!-- cart_item -->
-								<div class="cart_item">
-									<div class="img_wrap">
-										<a href="/products/kome?variant=42445999571161">
-											<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_b13003cf-9405-4cc2-827a-be68ff954139.jpg?v=1648100754&amp;width=300" alt="" width="300" height="323">
-										</a>
-									</div>
-									<div class="txt_wrap">
-										<div class="txt_inner">
-											<div class="item_info">
-												<span class="category">ギフトセット</span>
-												<a class="links" href="/products/kome?variant=42445999571161">
-													<span class="name">クリーナートリオ</span>
-													<span class="options genre">熨斗/メッセージカード</span>
-												</a>
-												<span class="price">1,900円(税込)</span>
-											</div>
-											<div class="controll_wrap">
-												<div class="order_lot">
-													<button class="order_button minus">-</button>
-													<input type="number" name="updates[]" id="updates_42445999571161:13632060337b10ae34bf0aaf6c564cd2" data-id="42445999571161:13632060337b10ae34bf0aaf6c564cd2" value="2" min="0" style="font-family: ts-unused;">
-													<button class="order_button plus">+</button>
-													<button class="reload_button"></button>
-												</div>
-												<a class="cancel_button" href="/cart/change?line=1&amp;quantity=0" aria-label="translation missing: ja.cart.label.remove" data-cart-remove="" data-role="product-remove">削除</a>
-											</div>
-										</div><!-- txt_inner -->
-										<div class="amount_price">¥1,300</div>
-									</div><!-- txt_wrap -->
-								</div><!-- cart_item -->
-							</div>
-						</div><!-- comp-cart-item-list-->
-					</div><!-- item_wrap -->
-					<div class="comp-side-wrap green">
-						<div class="cart_item_error">
-							<p>定期購入商品は、通常購入商品との同梱発送が不可となります。恐れ入りますが、カートの内容を修正の上ご購入ください。</p>
+				</div><!-- section_inner -->
+			</section>
+		</div>
+		<div id="shopify-section-product-history" class="shopify-section">
+			<section class="section-browse-history">
+				<div class="section_inner_new">
+					<div class="section-related-item">
+						<div class="comp-detail-title">
+							<hgroup>
+								<span class="title_en">Recently viewed</span>
+								<h2 class="title_ja">最近見た商品</h2>
+							</hgroup>
 						</div>
-					</div><!-- comp-side-wrap -->
-				</div><!-- cart_flex -->
-			</div><!-- section_inner_new -->
-		</section>
-		<section id="relatedItem" class="section-related-item">
-			<div class="section_inner_new">
-				<div class="comp-detail-title">
-					<hgroup>
-						<span class="title_en">Related Items</span>
-						<h2 class="title_ja">こちらもおすすめです</h2>
-					</hgroup>
-				</div>
-				<div class="comp-product-list">
-					<ul class="item_wrapper">
-						<li class="item_box">
-							<div class="img_wrap">
-								<a href="/products/k0001">
-									<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb02_4ecee77e-1c82-4d94-9e2e-464131ac1dab.jpg?v=1648100598&amp;width=520" alt="Don't Look Back in Anger"
-										srcset="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb02_4ecee77e-1c82-4d94-9e2e-464131ac1dab.jpg?v=1648100598&amp;width=352 352w" width="520" height="560">
-								</a>
-							</div>
-							<div class="txt_wrap height-adjust">
-								<span class="cat_ttl">食器用洗剤</span>
-								<h3 class="prod_name">
-									<a href="/products/k0001"><span class="name en">Don't Look Back in Anger</span></a>
-								</h3>
-								<span class="product_detail">
-									<span class="price">2,090円(税込)</span>
-								</span>
-							</div>
-							<div class="comp-list-cart-button">
-								<div class="comp-arrow-link">
-									<a href="/products/k0001"><span>詳細を見る</span></a>
-								</div>
-							</div>
-						</li>
-						<li class="item_box">
-							<div class="img_wrap">
-								<a href="/products/k0012">
-									<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_bed04753-175a-450b-aec4-eb26f9fd78e5.jpg?v=1648100710&amp;width=520" alt="キッチンコンビ"
-										srcset="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_bed04753-175a-450b-aec4-eb26f9fd78e5.jpg?v=1648100710&amp;width=352 352w" width="520" height="560">
-								</a>
-							</div>
-							<div class="txt_wrap height-adjust">
-								<span class="cat_ttl">ギフトセット</span>
-								<h3 class="prod_name">
-									<a href="/products/k0012"><span class="name">キッチンコンビ</span></a>
-								</h3>
-								<span class="product_detail">
-									<span class="price">4,290円(税込)</span>
-								</span>
-							</div>
-							<div class="comp-list-cart-button">
-								<div class="comp-arrow-link">
-									<a href="/products/k0012"><span>詳細を見る</span></a>
-								</div>
-							</div>
-						</li>
-						<li class="item_box">
-							<div class="img_wrap">
-								<a href="/products/k0063">
-									<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_c197e435-4b99-48f5-adf3-47f34cc1b810.jpg?v=1648100825&amp;width=520" alt="2021 Winter &quot;瀬戸内ネロリ&quot; / Free as a Bird(mini・gift)"
-										srcset="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_c197e435-4b99-48f5-adf3-47f34cc1b810.jpg?v=1648100825&amp;width=352 352w" width="520" height="560">
-								</a>
-							</div>
-							<div class="txt_wrap height-adjust">
-								<span class="cat_ttl">除菌用ファブリックミスト</span>
-								<h3 class="prod_name">
-									<a href="/products/k0063"><span class="name en">Free as a Bird (Mini)</span><span class="genre added">2021 Winter 瀬戸内ネロリ / Gift</span></a>
-								</h3>
-								<span class="product_detail">
-									<span class="price">825円(税込)</span>
-								</span>
-							</div>
-							<div class="comp-list-cart-button">
-								<div class="comp-arrow-link">
-									<a href="/products/k0063"><span>詳細を見る</span></a>
-								</div>
-							</div>
-						</li>
-						<li class="item_box">
-							<div class="img_wrap">
-								<a href="/products/k0026">
-									<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_d1f0ca3f-e03e-40ba-a6af-2951732aca9e.jpg?v=1648100699&amp;width=520" alt="【ギフト】Free as a Bird (Mini)"
-										srcset="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_d1f0ca3f-e03e-40ba-a6af-2951732aca9e.jpg?v=1648100699&amp;width=352 352w" width="520" height="560">
-								</a>
-							</div>
-							<div class="txt_wrap height-adjust">
-								<span class="cat_ttl">除菌用ファブリックミスト</span>
-								<h3 class="prod_name">
-									<a href="/products/k0026"><span class="name en">Free as a Bird (Mini)</span><span class="genre added">Gift</span></a>
-								</h3>
-								<span class="product_detail">
-									<span class="price">825円(税込)</span>
-								</span>
-							</div>
-							<div class="comp-list-cart-button">
-								<div class="comp-arrow-link">
-									<a href="/products/k0026"><span>詳細を見る</span></a>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div><!-- comp-product-list -->
-			</div><!-- section_inner_new -->
-		</section>
-		<section class="section-recently-viewed">
-			<div class="section_inner_new">
-				<div class="comp-detail-title">
-					<hgroup>
-						<span class="title_en">Recently viewed</span>
-						<h2 class="title_ja">最近見た商品</h2>
-					</hgroup>
-				</div>
-				<div class="comp-product-list">
-					<ul class="item_wrapper">
-						<li class="item_box">
-							<div class="img_wrap">
-								<a href="/products/k0001">
-									<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb02_4ecee77e-1c82-4d94-9e2e-464131ac1dab.jpg?v=1648100598&amp;width=520" alt="Don't Look Back in Anger"
-										srcset="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb02_4ecee77e-1c82-4d94-9e2e-464131ac1dab.jpg?v=1648100598&amp;width=352 352w" width="520" height="560">
-								</a>
-							</div>
-							<div class="txt_wrap height-adjust">
-								<span class="cat_ttl">食器用洗剤</span>
-								<h3 class="prod_name">
-									<a href="/products/k0001"><span class="name en">Don't Look Back in Anger</span></a>
-								</h3>
-								<span class="product_detail">
-									<span class="price">2,090円(税込)</span>
-								</span>
-							</div>
-							<div class="comp-list-cart-button">
-								<div class="comp-arrow-link">
-									<a href="/products/k0001"><span>詳細を見る</span></a>
-								</div>
-							</div>
-						</li>
-						<li class="item_box">
-							<div class="img_wrap">
-								<a href="/products/k0012">
-									<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_bed04753-175a-450b-aec4-eb26f9fd78e5.jpg?v=1648100710&amp;width=520" alt="キッチンコンビ"
-										srcset="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_bed04753-175a-450b-aec4-eb26f9fd78e5.jpg?v=1648100710&amp;width=352 352w" width="520" height="560">
-								</a>
-							</div>
-							<div class="txt_wrap height-adjust">
-								<span class="cat_ttl">ギフトセット</span>
-								<h3 class="prod_name">
-									<a href="/products/k0012"><span class="name">キッチンコンビ</span></a>
-								</h3>
-								<span class="product_detail">
-									<span class="price">4,290円(税込)</span>
-								</span>
-							</div>
-							<div class="comp-list-cart-button">
-								<div class="comp-arrow-link">
-									<a href="/products/k0012"><span>詳細を見る</span></a>
-								</div>
-							</div>
-						</li>
-						<li class="item_box">
-							<div class="img_wrap">
-								<a href="/products/k0063">
-									<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_c197e435-4b99-48f5-adf3-47f34cc1b810.jpg?v=1648100825&amp;width=520" alt="2021 Winter &quot;瀬戸内ネロリ&quot; / Free as a Bird(mini・gift)"
-										srcset="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_c197e435-4b99-48f5-adf3-47f34cc1b810.jpg?v=1648100825&amp;width=352 352w" width="520" height="560">
-								</a>
-							</div>
-							<div class="txt_wrap height-adjust">
-								<span class="cat_ttl">除菌用ファブリックミスト</span>
-								<h3 class="prod_name">
-									<a href="/products/k0063"><span class="name en">Free as a Bird (Mini)</span><span class="genre added">2021 Winter 瀬戸内ネロリ / Gift</span></a>
-								</h3>
-								<span class="product_detail">
-									<span class="price">825円(税込)</span>
-								</span>
-							</div>
-							<div class="comp-list-cart-button">
-								<div class="comp-arrow-link">
-									<a href="/products/k0063"><span>詳細を見る</span></a>
-								</div>
-							</div>
-						</li>
-						<li class="item_box">
-							<div class="img_wrap">
-								<a href="/products/k0026">
-									<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_d1f0ca3f-e03e-40ba-a6af-2951732aca9e.jpg?v=1648100699&amp;width=520" alt="【ギフト】Free as a Bird (Mini)"
-										srcset="https://cdn.shopify.com/s/files/1/0536/9544/7234/products/thumb01_d1f0ca3f-e03e-40ba-a6af-2951732aca9e.jpg?v=1648100699&amp;width=352 352w" width="520" height="560">
-								</a>
-							</div>
-							<div class="txt_wrap height-adjust">
-								<span class="cat_ttl">除菌用ファブリックミスト</span>
-								<h3 class="prod_name">
-									<a href="/products/k0026"><span class="name en">Free as a Bird (Mini)</span><span class="genre added">Gift</span></a>
-								</h3>
-								<span class="product_detail">
-									<span class="price">825円(税込)</span>
-								</span>
-							</div>
-							<div class="comp-list-cart-button">
-								<div class="comp-arrow-link">
-									<a href="/products/k0026"><span>詳細を見る</span></a>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div><!-- comp-product-list -->
-			</div><!-- section_inner_new -->
+						<div class="comp-product-list">
+							<ul id="itemHistory" class="item_wrapper">
+								<li id="handle-k1005" class="item_box" collection="ajax">
+									<div class="img_wrap">
+										<a href="/products/k1005">
+											<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb00_fed6a931-33d8-4b1b-98c5-b38f07123927.jpg?v=1673324947&amp;width=533"
+												srcset="https://komons-japan.com/cdn/shop/products/thumb00_fed6a931-33d8-4b1b-98c5-b38f07123927.jpg?v=1673324947&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb00_fed6a931-33d8-4b1b-98c5-b38f07123927.jpg?v=1673324947&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb00_fed6a931-33d8-4b1b-98c5-b38f07123927.jpg?v=1673324947&amp;width=533 2048w"
+												alt="Cotton Fields">
+										</a>
+									</div>
+									<div class="txt_wrap height-adjust">
+										<span class="cat_ttl">ハンドミルク</span>
+										<h3 class="prod_name">
+											<a href="/products/k1005"><span class="name en">Cotton Fields</span></a>
+										</h3>
+
+										<span class="product_detail"><span class="price">2,970円(税込)</span></span>
+									</div>
+									<div class="comp-list-cart-button">
+										<div style="width: 100%; margin: 0 auto; padding: 0">
+											<div class="cartjs_box">
+												<form method="post" action="/cart/add" id="product_form_8082168185111" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="novalidate" data-product-form=""><input type="hidden" name="form_type"
+														value="product"><input type="hidden" name="utf8" value="✓">
+													<select name="id" id="ProductSelect-8082168185111" class="product-form__variants no-js" style="display: none;">
+
+														<option value="44296276443415">
+															Default Title
+														</option>
+
+													</select>
+													<div class="cartin_button">
+														<button title="カートに入れる"><span>カートに入れる</span></button>
+														<input id="cartSubmit-8082168185111" type="submit" value="カートに入れる">
+													</div>
+													<input type="hidden" name="product-id" value="8082168185111"><input type="hidden" name="section-id" value="collection-template-ajax">
+												</form>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li id="handle-k0043" class="item_box" collection="ajax">
+									<div class="img_wrap">
+										<a href="/products/k0043">
+											<img loading="lazy" src="https://komons-japan.com/cdn/shop/products/thumb01_80f63597-b12e-45cf-bfd4-1c2d710ebadc.jpg?v=1741686119&amp;width=533"
+												srcset="https://komons-japan.com/cdn/shop/products/thumb01_80f63597-b12e-45cf-bfd4-1c2d710ebadc.jpg?v=1741686119&amp;width=533 1440w, https://komons-japan.com/cdn/shop/products/thumb01_80f63597-b12e-45cf-bfd4-1c2d710ebadc.jpg?v=1741686119&amp;width=360 768w, https://komons-japan.com/cdn/shop/products/thumb01_80f63597-b12e-45cf-bfd4-1c2d710ebadc.jpg?v=1741686119&amp;width=533 2048w"
+												alt="ホワイトボックスマルチ＆ファブリックミスト">
+										</a>
+									</div>
+									<div class="txt_wrap height-adjust">
+										<span class="cat_ttl">ギフトセット</span>
+										<h3 class="prod_name">
+											<a href="/products/k0043"><span class="name">ホワイトボックス</span><span class="genre added">マルチ＆ファブリックミスト</span></a>
+										</h3>
+
+										<span class="product_detail"><span class="price">2,948円(税込)</span></span>
+									</div>
+									<div class="comp-list-cart-button">
+										<div style="width: 100%; margin: 0 auto; padding: 0">
+											<div class="cartjs_box">
+												<form method="post" action="/cart/add" id="product_form_6237106077890" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="novalidate" data-product-form=""><input type="hidden" name="form_type"
+														value="product"><input type="hidden" name="utf8" value="✓">
+													<select name="id" id="ProductSelect-6237106077890" class="product-form__variants no-js" style="display: none;">
+
+														<option value="38243134898370">
+															オプションなし
+														</option>
+
+														<option value="38243134931138">
+															熨斗
+														</option>
+
+														<option value="38243134963906">
+															手提げバッグ
+														</option>
+
+														<option value="38243134996674">
+															熨斗/手提げバッグ
+														</option>
+
+														<option value="39628627607746">
+															メッセージカード
+														</option>
+
+														<option value="39628628754626">
+															熨斗/メッセージカード
+														</option>
+
+														<option value="50279835599127">
+															手提げバッグ/メッセージカード
+														</option>
+
+														<option value="50279835631895">
+															熨斗/手提げバッグ/メッセージカード
+														</option>
+
+													</select>
+													<div class="cartin_button">
+														<button title="カートに入れる"><span>カートに入れる</span></button>
+														<input id="cartSubmit-6237106077890" type="submit" value="カートに入れる">
+													</div>
+													<input type="hidden" name="product-id" value="6237106077890"><input type="hidden" name="section-id" value="collection-template-ajax">
+												</form>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- section_inner -->
+			</section>
+		</div>
+		<section id="submitLoader" class="comp-submit-loader">
+			<div class="height_adjust"></div>
+			<div class="loader_inner">
+				<span class="loader"></span>
+				<p class="loader_txt">ご注文を処理中です。しばらくお待ちください。</p>
+			</div><!-- loader_inner -->
 		</section>
 	</article>
 

@@ -1481,6 +1481,7 @@ $(function() {
 
 
   // 店舗一覧・FAQの目次ボタン
+
   function indexAnker(target){
     var ankerButton = [];
     var scrollTarget = [];
@@ -1523,9 +1524,9 @@ $(function() {
 
 
   function setOptionValue(){
-    $('#noshiPrice').text('+110円(税込)');
-    $('#messagePrice').text('無料');
-    $('#tesagePrice').text('+330円(税込)');
+    /*$('#noshiPrice').text('+110円(税込)');
+    $('#messagePrice').text('+110円(税込)');
+    $('#tesagePrice').text('+440円(税込)');*/
   }
 
   if (document.getElementById('optionPop')) {

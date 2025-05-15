@@ -2,6 +2,12 @@
   .cart_head{
     display: none;
   }
+  .minigift_added_txt{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
   .item_list{
     @include flexSet;
     .cart_item{
@@ -38,6 +44,10 @@
         .txt_inner{
           width: calc(100% - 3.5em);
           .item_info{
+            .tesage_txt{
+              font-size: 1.8rem;
+              margin-bottom: 15px;
+            }
             .category{
               display: block;
               font-size: 1.1rem;
@@ -115,18 +125,21 @@
             .order_lot{
               width: 100px;
               position: relative;
-              margin-top: 15px;
-              input[type="number"]{
+              margin-top: 20px;
+              input[type="number"],
+              .indicator{
                 width: 100px;
                 box-sizing: border-box;
-                padding: 8px 0;
+                padding: 0;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
                 border-radius: 0px;
                 border: 0px solid #e6e6e6;
                 background-color: #f4f4f4;
                 pointer-events: none !important;
                 font-size: 1.4rem;
                 font-family: inherit !important;
-                padding: 4px 0 4px 3.2em;
                 -moz-appearance:textfield;
                 &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
                   -webkit-appearance: none;
@@ -134,9 +147,10 @@
                 }
 
               }
-              button{
+              button, a{
+                display: block;
                 position: absolute;
-                width: 40px;
+                width: 50%;
                 height: 100%;
                 top: 0;
                 bottom: 0;
@@ -147,13 +161,44 @@
                 color: inherit;
                 box-shadow: none;
                 background: transparent;
-                line-height: 20px;
+                line-height: 40px;
                 text-align: center;
+                padding: 0;
+                span{
+                  display: block;
+                  position: relative;
+                  width: 100%;
+                  height: 30px;
+                  &::before,&::after{
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    top:0;
+                    bottom:0;
+                    left:0;
+                    right:0;
+                    margin: auto;
+                    background: $basicGreen;
+                  }
+                  &::before{
+                    width: 1px;
+                    height: 10px;
+                  }
+                  &::after{
+                    width: 10px;
+                    height: 1px;
+                  }
+                }
                 &.minus{
-                  left: 0;
+                  left: -10px;
+                  span{
+                    &::before{
+                      display: none;
+                    }
+                  }
                 }
                 &.plus{
-                  right: 0;
+                  right: -10px;
                 }
                 &.reload_button{
                   display: none;
@@ -343,8 +388,31 @@
               .order_lot{
                 width: 100px;
                 margin-top: 0px;
-                input[type="number"]{
-                  padding: 10px 0 10px 3em;
+                input[type="number"],
+                .indicator{
+                  padding: 0;
+                  height: 40px;
+                  line-height: 40px;
+                }
+                button, a{
+                  line-height: 40px;
+                  span{
+                    height: 40px;
+                  }
+                  &.minus{
+                    left: -5px;
+                    span{
+                      &::before{
+                        display: none;
+                      }
+                    }
+                  }
+                  &.plus{
+                    right: -5px;
+                  }
+                  &.reload_button{
+                    display: none;
+                  }
                 }
               }
               .cancel_button{
@@ -380,6 +448,11 @@
           }
         }
       }
+    }
+    .minigift_added_txt{
+      font-size: 1.4rem;
+      margin-top: -10px;
+      margin-bottom: 10px;
     }
   }
 }
