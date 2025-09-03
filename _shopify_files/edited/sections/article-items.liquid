@@ -1,0 +1,29 @@
+{% if article.metafields["custom_fields"]["related_product"] != blank %}
+
+<section class="section-related-item">
+  <div class="section_inner_new">
+    <div class="comp-new-section-ttl">
+      <hgroup>
+        <span class="title_en">Related Items</span>
+        <h2 class="title_jp" style="text-indent: -0.2em;">{% if article.metafields["custom_fields"]["item_list_ttl"] != blank %}{{ article.metafields["custom_fields"]["item_list_ttl"] }}{% else %}この記事に関連する商品{% endif %}</h2>
+      </hgroup>
+    </div><!-- comp-new-section-ttl -->
+    <div id="productList" class="comp-product-block">
+      <ul class="item_wrapper">
+        {% for item in article.metafields["custom_fields"]["related_product"] %}
+        {% for collection in collections %}
+        {%- if collection.handle == "ajax" -%}
+        {% for product in collection.products %}
+          {%- if product.handle == item["products"] -%}
+            {%- include 'all-item-card' -%}
+          {%- endif -%}
+        {% endfor %}
+        {%- endif -%}
+        {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- comp-item-group -->
+  </div><!-- section_inner_new -->
+</section>
+{% endif %}

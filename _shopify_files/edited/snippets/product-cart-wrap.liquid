@@ -12,14 +12,18 @@
 {%- endif -%}
   <div class="submit_button">
     <div class="cart_box">
-    {%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' and product.metafields.custom_fields["stock_state"] != 1 -%}
+    {%- if product.type == "gift" or product.type == "gift-limited" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' and product.metafields.custom_fields["stock_state"] != 1 -%}
       <div id="optionSelect" class="cart_item">
         <span class="button_wrap">
           <span class="title cart_in">オプションを選択して購入</span>
           <span class="sub_text">5,500円以上(税込)お買い上げで送料無料</span>
         </span>
       </div><!-- cart_item -->
+      {%- if product.type != "fukubukuro" -%}
       <p class="dervery_schedule">最短で{% include 'delivery-shcedule' %}にお届け致します</p>
+      {%- else -%}
+      <p class="dervery_schedule">1月5日(金)より順次発送致します</p>
+      {%- endif -%}
       <input class="product_cart_btn button" type="submit" value="カートに入れる" style="display: none">
     {%- else -%}
     {%- if product.type != "upcoming" and product.type != "archive" and product.type != "roommist" and product.metafields.custom_fields["stock_state"] != 1 -%}
@@ -37,7 +41,11 @@
       </span>
       <input id="cartSubmit" class="product_cart_btn button" type="submit" value="カートに入れる" style="bottom: unset;  height: 90px;">
     </div><!-- cart_item -->
+    {%- if product.type != "fukubukuro" -%}
     <p class="dervery_schedule">最短で{% include 'delivery-shcedule' %}にお届け致します</p>
+    {%- else -%}
+    <p class="dervery_schedule">1月5日(金)より順次発送致します</p>
+    {%- endif -%}
     {%- else -%}
     {%- if product.metafields.custom_fields["stock_state"] == 1 -%}
     <div class="out_of_stock">SOLD OUT</div>
@@ -53,7 +61,7 @@
          {%- endif -%}
          {%- else -%}
          {%- if product.type != "roommist" -%}
-         <span class="title">完売商品</span>
+         <span class="title">この商品は完売しました</span>
          {%- else -%}
          <span class="title">8/1(月)販売開始</span>
          {%- endif -%}
@@ -65,7 +73,7 @@
     </div>
     {%- if product.type != "upcoming" -%}
     <div id="cartNoteList" class="comp-cart-note cart_note">
-      {%- if product.type == "gift" -%}
+      {%- if product.type == "gift" or product.type == "gift-limited" -%}
       <button prop="#toggleGift">ギフトサービス</button>
       {%- endif -%}
       <button prop="#toggleDelivary">配送について</button>

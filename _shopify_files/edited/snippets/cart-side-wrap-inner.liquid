@@ -1,3 +1,10 @@
+{%- assign fukubukuLength = 0 | plus : 0 -%}
+{%- for item in cart.items -%}
+  {% if item.product.type == 'fukubukuro'  %}
+    {%- assign fukubukuLength = fukubukuLength | plus : 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
 <div class="comp-admin-subttl">
   <h2 class="ttl">お届け希望日時</h2>
 </div>
@@ -5,9 +12,18 @@
   <div class="form_item">
     <label class="large ">お届け希望日程</label>
     <div class="form_wrap">
+      {%- if fukubukuLength == 0  -%}
       {% include 'cart-side-wrap-date-box' %}
+      {%- else -%}
+      <select id="deliveryDateBox">
+        <option value="指定なし">1月5日(金)以降に随時配送</option>
+      </select>
+      <input id="dateInput" type="hidden" name="attributes[配送予定日:]" value="指定なし">
+      <p class="example">※福袋商品を含むご注文の配送日時指定は出来ません。</p>
+      {%- endif -%}
     </div>
   </div>
+  {%- if fukubukuLength == 0  -%}
   <div class="form_item">
     <label class="large ">お届け希望時間</label>
     <div class="form_wrap">
@@ -21,6 +37,7 @@
       </select>
     </div>
   </div>
+  {%- endif -%}
   <div class="form_item">
     <label class="large ">備考欄</label>
     <div class="form_wrap">

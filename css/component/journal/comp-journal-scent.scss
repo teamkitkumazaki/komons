@@ -1,0 +1,65 @@
+.comp-journal-scent{
+  background: #f6f6f6;
+  padding: 30px 20px;
+  margin-bottom: 30px;
+  .scent_ttl{
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .scent_item{
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+    .item_ttl{
+      display: block;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 1.4rem;
+      background: #fff;
+      margin-bottom: 12px;
+    }
+    .item_description{
+      font-size: 1.4rem;
+      line-height: 1.86;
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-journal-scent{
+    padding: 30px;
+    margin-bottom: 40px;
+    .scent_ttl{
+      text-align: left;
+      line-height: 1.6;
+      font-size: 2.0rem;
+      margin-bottom: 25px;
+    }
+    .scent_item{
+      @include flexSet;
+      align-items: center;
+      justify-content: flex-start;
+      &:not(:last-child){
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px dotted #d8d8d8;
+      }
+      .item_ttl{
+        width: 100px;
+        margin-right: 15px;
+        padding: 10px 0;
+        font-size: 1.4rem;
+        background: $basicGreen;
+        color: #fff;
+        margin-bottom: 0;
+      }
+      .item_description{
+        width: calc(100% - 165px);
+        font-size: 1.4rem;
+        line-height: 1.86;
+      }
+    }
+  }
+}

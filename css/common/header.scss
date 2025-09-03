@@ -284,12 +284,13 @@
 				.header_navigation{
 					display: block;
 					margin-top: 0px;
+					margin-right: 5px;
 					ul{
 						@include flexSet;
 						li{
 							position: relative;
-							margin-right: 20px;
-							padding-right: 20px;
+							margin-right: 15px;
+							padding-right: 15px;
 							&::after{
 								display: block;
 								content: "";
@@ -306,7 +307,7 @@
 								display: block;
 								@include libre-r;
 								@include hover;
-								font-size: 1.6rem;
+								font-size: 1.5rem;
 								color: inherit;
 								color: #fff;
 								transition: color .3s;

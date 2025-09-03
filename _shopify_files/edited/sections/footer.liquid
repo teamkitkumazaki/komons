@@ -1,186 +1,61 @@
-{%- assign social_icons = false -%}
-{%- assign inline_list = false -%}
-{%- assign locale_selector = false -%}
-{%- assign currency_selector = false -%}
-{%- assign show_payment_icons = false -%}
-{%- assign show_selectors = false -%}
-
-{%- if section.settings.show_currency_selector and shop.enabled_currencies.size > 1 -%}
-  {%- assign currency_selector = true -%}
-{%- endif -%}
-
-{%- if section.settings.show_locale_selector and shop.published_locales.size > 1 -%}
-  {%- assign locale_selector = true -%}
-{%- endif -%}
-
-{%- if section.settings.show_payment_icons -%}
-  {%- unless shop.enabled_payment_types == empty -%}
-    {%- assign show_payment_icons = true -%}
-  {%- endunless -%}
-{%- endif -%}
-
-{%- if currency_selector or locale_selector -%}
-  {%- assign show_selectors = true -%}
-{%- endif -%}
-
-{%- if
-  settings.social_twitter_link != blank
-  or settings.social_facebook_link != blank
-  or settings.social_pinterest_link != blank
-  or settings.social_instagram_link != blank
-  or settings.social_tumblr_link != blank
-  or settings.social_snapchat_link != blank
-  or settings.social_youtube_link != blank
-  or settings.social_vimeo_link != blank
-  or request.page_type == 'article'
-  or request.page_type == 'blog'
--%}
-  {%- assign social_icons = true -%}
-{%- endif -%}
-
-{%- assign payment_width_class = "one-half" -%}
-{%- if show_selectors -%}
-  {%- unless social_icons -%}
-    {%- assign payment_width_class = "" -%}
-  {%- endunless -%}
-{%- endif -%}
-
-{%- assign copyright_show_class = "medium-up--hide" -%}
-{%- if social_icons -%}
-  {%- unless show_selectors -%}
-    {%- assign copyright_show_class = "" -%}
-  {%- endunless -%}
-{%- endif -%}
-
-{%- case section.blocks.size -%}
-  {%- when 1 -%}
-    {%- assign footer_item = 'site-footer__item--full-width' -%}
-    {%- assign inline_list = true -%}
-  {%- when 2 -%}
-    {%- assign footer_item = 'site-footer__item--one-half' -%}
-    {%- assign inline_list = true -%}
-  {%- when 3 -%}
-    {%- assign footer_item = 'site-footer__item--one-third' -%}
-    {%- for block in section.blocks -%}
-      {%- if block.type == 'newsletter' -%}
-        {%- assign footer_item = 'site-footer__item--one-quarter' -%}
-        {%- break -%}
-      {%- endif -%}
-    {%- endfor -%}
-  {%- when 4 -%}
-    {%- assign footer_item = 'site-footer__item--one-quarter' -%}
-  {%- when 5 -%}
-    {%- assign footer_item = 'site-footer__item--one-fifth' -%}
-{%- endcase -%}
-
-{% comment %} Create an appropriate hover color based on text color and brightness {% endcomment %}
-{%- assign footer_text_color = section.settings.color_footer_text -%}
-{%- assign footer_text_color_brightness = section.settings.color_footer_text | color_brightness -%}
-{%- if footer_text_color_brightness <= 26 -%}
-  {%- assign footer_text_color_hover = footer_text_color | color_lighten: 25 -%}
-{%- elsif footer_text_color_brightness <= 65 -%}
-  {%- assign footer_text_color_hover = footer_text_color | color_lighten: 15 -%}
-{%- else -%}
-  {%- assign footer_text_color_hover = footer_text_color | color_darken: 10 -%}
-{%- endif -%}
-
-<style>
-  .site-footer__hr {
-    border-bottom: 1px solid {{ section.settings.color_footer_bg | color_darken: 10 }};
-  }
-
-  .site-footer p,
-  .site-footer__linklist-item a,
-  .site-footer__rte a,
-  .site-footer h4,
-  .site-footer small,
-  .site-footer__copyright-content a,
-  .site-footer__newsletter-error,
-  .site-footer__social-icons .social-icons__link {
-    color: {{ section.settings.color_footer_text }};
-  }
-
-  .site-footer {
-    color: {{ section.settings.color_footer_text }};
-    background-color: {{ section.settings.color_footer_bg }};
-  }
-
-  .site-footer__rte a {
-    border-bottom: 1px solid {{ section.settings.color_footer_text }};
-  }
-
-  .site-footer__rte a:hover,
-  .site-footer__linklist-item a:hover,
-  .site-footer__copyright-content a:hover {
-    color: {{ footer_text_color_hover }};
-    border-bottom: 1px solid {{ footer_text_color_hover }};
-  }
-
-  .site-footer__social-icons .social-icons__link:hover {
-    color: {{ footer_text_color_hover }};
-  }
-</style>
-
-
-{%- capture payment_icon_markup -%}
-  {%- if show_payment_icons -%}
-    <div class="grid__item site-footer__payment-icons">
-      <span class="visually-hidden">{{ 'general.payment.method' | t }}</span>
-      <ul class="payment-icons list--inline site-footer__icon-list">
-        {%- for type in shop.enabled_payment_types -%}
-          <li class="payment-icon">
-            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-          </li>
-        {%- endfor -%}
-      </ul>
-    </div>
-  {%- endif -%}
-{%- endcapture -%}
-
 <footer class="footer">
   <div class="footer_wrap">
     <div class="footer_menu">
       <div class="fmenu01 fmenu">
         <ul>
-          <li><a href="https://komons-japan.com/pages/concept">コンセプト</a></li>
-          <li><a href="https://komons-japan.com/collections/all-products">通常商品一覧</a></li>
-          <li><a href="https://komons-japan.com/collections/gift">ギフト商品一覧</a></li>
-          <li><a href="https://komons-japan.com/pages/gift-service">ギフトサービス</a></li>
-          <li><a href="https://journal.komons-japan.com/shoplist">ショップリスト</a></li>
-          <li><a href="https://journal.komons-japan.com/">ジャーナル</a></li>
+          <li><a href="/pages/concept">コンセプト</a></li>
+          <li><a href="/collections/all-products">通常商品一覧</a></li>
+          <li><a href="/collections/gift">ギフト商品一覧</a></li>
+          <li><a href="/pages/gift-service">ギフトサービス</a></li>
+          <li><a href="/pages/shoplist">取扱店舗一覧</a></li>
+          <li><a href="/blogs/journal/">ジャーナル</a></li>
         </ul>
       </div>
 
       <div class="fmenu02 fmenu">
-        <ul><li><a href="https://komons-japan.myshopify.com/pages/faq#fqProduct" jump="#fqProduct">製品について</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/faq#fqPurchase" jump="#fqPurchase">ご購入に際して</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/faq#fqGift" jump="#fqGift">ギフトについて</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/faq#fqDelivery" jump="#fqDelivery">配送について</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/faq#fqCancel" jump="#fqCancel">キャンセルポリシー</a></li>
+        <ul><li><a href="/pages/faq#fqProduct" jump="#fqProduct">製品について</a></li>
+          <li><a href="/pages/faq#fqPurchase" jump="#fqPurchase">ご購入に際して</a></li>
+          <li><a href="/pages/faq#fqGift" jump="#fqGift">ギフトについて</a></li>
+          <li><a href="/pages/faq#fqDelivery" jump="#fqDelivery">配送について</a></li>
+          <li><a href="/pages/faq#fqCancel" jump="#fqCancel">キャンセルポリシー</a></li>
       </ul></div>
 
       <div class="fmenu03 fmenu">
         <ul>
 					<li><a href="/account/login">ログイン</a></li>
 					<li><a href="/cart">カートを見る</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/privacy-policy">プライバシーポリシー</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/faq">FAQ</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/trade-law">特定商取引法に基づく表記</a></li>
+          <li><a href="/pages/privacy-policy">プライバシーポリシー</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+          <li><a href="/pages/trade-law">特定商取引法に基づく表記</a></li>
           <li><a href="https://unsungs-web.com/" target="_blank">運営会社</a></li>
-          <li><a href="https://journal.komons-japan.com/contact">お問い合わせ</a></li>
+          <li><a href="/pages/contact">お問い合わせ</a></li>
         </ul>
       </div>
 
     </div>
     <div class="footer_sns">
       <div class="img_wrap">
-        <a href="https://komons-japan.com/"><img loading="lazy" width="360" height="48" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/footer_logo.svg?v=1623513820" alt="komons"></a>
+        <a href="/"><img loading="lazy" width="360" height="48" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/footer_logo.svg?v=1623513820" alt="komons"></a>
       </div>
       <div class="mailmag_wrap">
-        <span class="mm_title">メールマガジンの登録</span>
-        <p class="mm_desc">商品についての情報や、新商品の販売などの最新情報をお届けしています。</p>
-        <div class="form_wrap">
-          <div class="klaviyo-form-U2xsBP"></div>
+        <div class="mm_title">
+          <span class="icon">
+            <svg viewBox="0 0 24 23.14">
+              <path class="cls-1" d="M9.84,9.94v-2.43c0-.35-.17-.52-.52-.7-.35,0-.86.35-.86.87v5.04c.17.17.52.35.86.35s.52-.35.52-.7v-2.43h0ZM5.53,11.67v-4.17c0-.35-.17-.52-.69-.52-.35,0-.52.35-.52.7v4.87c0,.35.35.52.69.52h2.42c.35,0,.69-.35.52-.87,0-.35-.35-.52-.69-.52h-1.73ZM17.61,8.2h1.73c.35,0,.69-.35.69-.7s-.35-.7-.69-.7h-2.42c-.35.17-.52.35-.52.7v4.87c0,.35.35.7.69.7h2.42c.35,0,.69-.35.69-.7s-.17-.7-.52-.7h-1.73v-1.04h1.73c.35,0,.69-.35.69-.7s-.17-.7-.69-.7h-1.73v-1.04h-.35ZM11.91,9.42c.86,1.04,1.55,2.26,2.42,3.3.17.17.35.35.52.35.35,0,.69-.35.69-.7v-4.87c0-.17-.17-.35-.52-.52-.17-.17-.35,0-.52.17-.17.17-.35.35-.35.52v2.78s0-.17-.17-.17c-.35-.7-.86-1.39-1.38-2.09-.35-.35-.52-.7-.69-.87-.17-.35-.52-.35-.69-.35-.35,0-.52.17-.52.35v5.21c.17.35.35.52.69.52s.52-.35.52-.7v-2.95ZM24,9.42c0,2.26-.69,4-1.73,5.39-.69,1.04-1.55,1.91-2.59,2.78-2.07,1.74-4.14,3.3-6.39,4.69-.52.35-1.04.52-1.38.7q-.17,0-.35.17c-.35,0-.52-.17-.52-.52s.17-.7.17-1.04.17-.7,0-1.22c0-.35-.17-.52-.35-.52-.35-.17-.69-.17-1.04-.35-1.04-.17-2.07-.52-3.11-.87-1.21-.52-2.42-1.22-3.45-2.09-1.55-1.22-2.59-2.95-3.11-5.04-.17-.7-.17-1.39-.17-2.26.17-1.74.86-3.48,1.9-4.87,1.21-1.56,2.76-2.61,4.49-3.3C7.94.55,9.5.21,11.22.03c2.59-.17,5.01.35,7.42,1.56,1.73,1.04,3.28,2.26,4.32,4,.69,1.39,1.04,2.78,1.04,3.82h0Z"/>
+            </svg>
+          </span>
+          <span class="txt">Komons公式LINE</span>
+        </div>
+        <p class="mm_desc">新商品やキャンペーンなどの最新情報をお届けしています。LINE会員限定送料無料クーポンも配布中。</p>
+        <div class="line_add_button">
+          <a target="_blank" href="https://lin.ee/n39NnSQ">
+            <span class="icon">
+              <svg viewBox="0 0 24 23.14">
+                <path class="cls-1" d="M9.84,9.94v-2.43c0-.35-.17-.52-.52-.7-.35,0-.86.35-.86.87v5.04c.17.17.52.35.86.35s.52-.35.52-.7v-2.43h0ZM5.53,11.67v-4.17c0-.35-.17-.52-.69-.52-.35,0-.52.35-.52.7v4.87c0,.35.35.52.69.52h2.42c.35,0,.69-.35.52-.87,0-.35-.35-.52-.69-.52h-1.73ZM17.61,8.2h1.73c.35,0,.69-.35.69-.7s-.35-.7-.69-.7h-2.42c-.35.17-.52.35-.52.7v4.87c0,.35.35.7.69.7h2.42c.35,0,.69-.35.69-.7s-.17-.7-.52-.7h-1.73v-1.04h1.73c.35,0,.69-.35.69-.7s-.17-.7-.69-.7h-1.73v-1.04h-.35ZM11.91,9.42c.86,1.04,1.55,2.26,2.42,3.3.17.17.35.35.52.35.35,0,.69-.35.69-.7v-4.87c0-.17-.17-.35-.52-.52-.17-.17-.35,0-.52.17-.17.17-.35.35-.35.52v2.78s0-.17-.17-.17c-.35-.7-.86-1.39-1.38-2.09-.35-.35-.52-.7-.69-.87-.17-.35-.52-.35-.69-.35-.35,0-.52.17-.52.35v5.21c.17.35.35.52.69.52s.52-.35.52-.7v-2.95ZM24,9.42c0,2.26-.69,4-1.73,5.39-.69,1.04-1.55,1.91-2.59,2.78-2.07,1.74-4.14,3.3-6.39,4.69-.52.35-1.04.52-1.38.7q-.17,0-.35.17c-.35,0-.52-.17-.52-.52s.17-.7.17-1.04.17-.7,0-1.22c0-.35-.17-.52-.35-.52-.35-.17-.69-.17-1.04-.35-1.04-.17-2.07-.52-3.11-.87-1.21-.52-2.42-1.22-3.45-2.09-1.55-1.22-2.59-2.95-3.11-5.04-.17-.7-.17-1.39-.17-2.26.17-1.74.86-3.48,1.9-4.87,1.21-1.56,2.76-2.61,4.49-3.3C7.94.55,9.5.21,11.22.03c2.59-.17,5.01.35,7.42,1.56,1.73,1.04,3.28,2.26,4.32,4,.69,1.39,1.04,2.78,1.04,3.82h0Z"/>
+              </svg>
+            </span>
+            <span class="txt">LINE友だち登録</span>
+          </a>
         </div>
       </div>
       <div class="sns_wrap">

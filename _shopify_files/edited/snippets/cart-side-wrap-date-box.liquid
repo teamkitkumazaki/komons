@@ -1,12 +1,12 @@
 <select id="deliveryDateBox">
-  <option value="指定なし">指定なし</option>
+  <option value="0">指定なし</option>
   {% assign plusSeconds = 0 | times: 24 | times: 60 | times: 60 %}
   {% assign weekDayToday = "today" | date: '%s' | plus: plusSeconds | date: "%w" %}
   {% assign dayTime = "today" | date: '%s' | plus: plusSeconds | date: "%H" %}
   {% assign dayTime = dayTime | plus: 0 %}
   {% assign displayIndex = 0 | plus: 0 %}
   {% assign dateWeekToday = "today" | date: '%s' | plus: plusSeconds | date: "%w" | plus: 0  %}
-  {% assign holidayArray = "2023-05-03,2023-05-04,2023-05-05,2023-07-17,2023-08-11,2023-09-18,2023-10-09,2023-11-03,2023-11-23" %}
+  {% assign holidayArray = "2024-12-28,2024-12-29,2024-12-30,2024-12-31,2025-01-01,2025-01-02,2025-01-03,2025-01-04,2025-01-05,2025-01-08,2025-02-11,2025-02-12,2025-02-23,2025-02-24,2025-03-20,2025-04-29,2025-05-03,2025-05-04,2025-05-05,2025-05-06,2025-07-15,,2025-07-21,2025-08-11,2025-08-12,2025-09-16,2025-09-22,2025-09-23,2025-10-14,2025-11-03,2025-11-04,2025-11-23" %}
   {% if dayTime < 10 %}
     <script>console.log('10時以前')</script>
     {% comment %} 10時までの注文 {% endcomment %}
@@ -95,17 +95,18 @@
   {%- else -%}
   {% if displayIndex == 1 %}
   {% capture secondDay %}{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}{% endcapture %}
+  {% capture secondDayValue %}{{dateValue}}{% endcapture %}
   {% assign displayIndex = displayIndex | plus: 1 %}
   {% elsif displayIndex == 7 %}
   {% capture okinawaDay %}{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}{% endcapture %}
   {% assign displayIndex = displayIndex | plus: 1 %}
   {%- endif -%}
-  <option value="{{dateValue}}">{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}</option>
+  <option class="option{{displayIndex}}" value="{{dateValue}}">{{dateDisplayM}}月{{dateDisplayD}}日{{weekDay}}</option>
   {% assign displayIndex = displayIndex | plus: 1 %}
   {%- endif -%}
   {%- endfor -%}
 </select>
-<input id="dateInput" type="hidden" name="attributes[配送希望日:]" value="指定なし">
+<input id="dateInput" type="hidden" name="attributes[配送予定日:]" value="{{ secondDayValue }}">
 <p class="example">※お届け先が【四国/九州/中国地方、北海道/青森県/秋田県/和歌山県】の場合、最短指定日は{{secondDay}}になります。沖縄県の場合、最短指定日は{{okinawaDay}}になります。</p>
 <script>
 var deliveryDate = $('#deliveryDateBox');
@@ -120,7 +121,13 @@ deliveryDate.on({
         deliveryDate.val('指定なし');
       }
     }
-    $('#dateInput').val(deliveryDate.val());
+    var inputValue = deliveryDate.val();
+    var secondDay = $('#deliveryDate').find('.option2').val();
+    if(inputValue != 0){
+      $('#dateInput').val(inputValue);
+    }else{
+      $('#dateInput').val(secondDayValue);
+    }
   }
 });
 

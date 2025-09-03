@@ -1,0 +1,90 @@
+.comp-category-button {
+  button,a {
+    display: block;
+    width: 100%;
+    font-size: 1.4rem;
+    font-family: inherit;
+    font-weight: normal;
+    line-height: normal;
+    color: inherit;
+    letter-spacing: 0.7px;
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 5px;
+    @include hover;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    &::after {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      content: "";
+      top: 0;
+      bottom: 0;
+      right: 15px;
+      margin: auto;
+      border-bottom: 1px solid $basicGreen;
+      border-right: 1px solid $basicGreen;
+      transform: rotate(-45deg);
+      transition: all 0.5s;
+    }
+  }
+}
+
+@media screen and (max-width: 980px){
+  .comp-category-button {
+    @include flexSet;
+    justify-content: flex-start;
+    button,a {
+      width: auto;
+      font-size: 1.6rem;
+      border: 0px solid #d8d8d8;
+      text-align: left;
+      padding: 10px 30px 10px 0px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      &:nth-last-of-type(1){
+        margin-right: 0;
+      }
+      &::after {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        top:-5px;
+        right: 15px;
+        transform:translate(-4px,3px) rotate(-45deg);
+      }
+    }
+  }
+}
+@media screen and (max-width: 720px){
+  .comp-category-button {
+    @include flexSet;
+    justify-content: flex-start;
+    button,a {
+      width: auto;
+      font-size: 1.4rem;
+      padding: 5px 20px 5px 0px;
+      color: inherit;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      &:nth-last-of-type(1){
+        margin-right: 0;
+      }
+      &::after {
+        top:-5px;
+        right: 5px;
+      }
+    }
+    a{
+      &::after {
+        top:0;
+        right: 20px;
+        transform:translate(-4px,3px) rotate(-45deg);
+      }
+    }
+  }
+}

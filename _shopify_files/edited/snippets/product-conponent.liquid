@@ -27,6 +27,14 @@
 {% endfor %}
 {% endif %}
 
+{% if product.type == "essential" %}
+  {% assign category = 'エッセンシャルオイル(ブレンド)' %}
+  {% assign useage = '' %}
+  {% assign useway = '' %}
+  {% assign component = '天然精油100%' %}
+  {% assign prodCategory = 'essential' %}
+{% endif %}
+
 
 {% unless prodCategory contains 'towel' %}
 <div class="desc_unit" prodCategory="{{ prodCategory }}">
@@ -75,10 +83,27 @@
           <div class="content" style="white-space: pre-line;"><p>{{useway}}</p></div>
         </div>
         {% endif %}
-        {%- if product.type != "goods" -%}
+        {%- if product.type != "goods" and product.type != "essential" and product.type != "diffuser"  -%}
         <div class="detail_item">
           <p class="title">備考</p>
           <div class="content"><p>天然成分を多く含むため濁りや沈殿物が生じる可能性がありますが、品質には問題はありません。開封後は6か月以内にご使用ください。<br>天然精油を使用しているため香りや色に差が生じる場合がございますが、ご使用上支障はありません。<br>※商品のデザイン、香り、仕様などは予告なく変更になる場合がございます。予めご了承ください。</p></div>
+        </div>
+        {%- endif -%}
+        {%- if product.type == "essential"  -%}
+        <div class="detail_item">
+          <p class="title">備考</p>
+          <div class="content">
+            <p>・火気に近づけないでください。<br>・高温/多湿になる場所、直射日光のあたる場所で使用・保管しないでください。<br>・飲まないでください。<br>・小児やペットの手の届く場所で使用・保管しないでください。<br>・直接肌につけないでください。<br>・開封後1年を目安に使い切りください。<br>・天然成分のため、まれに濁りや沈殿物、色調の変化が生じる場合がありますが、品質には問題ありません。</p>
+          </div>
+        </div>
+        {%- endif -%}
+        {%- if product.type == "diffuser"  -%}
+        <div class="detail_item">
+          <p class="title">備考</p>
+          <div class="content">
+            <p>・本商品は天然成分を非常に多く含みます。<br>・特に低温/高温化において成分の一部が析出・沈殿し、リードスティックに詰まりが発生することで、香りの拡散が弱まる場合があります。（析出によって香りが劣化することはありませんので、ご安心ください。）<br>その場合は、リードスティックの上下を入れ替えるか、または同梱の予備スティックをご使用下さい。</p>
+            <p>また、天然精油を使用しているため香りや色に差が生じる場合がございますが、ご使用上支障はありません。<br>※商品のデザイン、香り、仕様などは予告なく変更になる場合がございます。予めご了承ください。</p>
+          </div>
         </div>
         {%- endif -%}
       </div><!-- toggle_content -->

@@ -145,7 +145,7 @@ $(function() {
       //input要素を配列に格納
       items = [
         target.find('select[name="route"]'), //0 お問い合わせ項目
-        target.find('input[name="usermail"]'), //0 お問い合わせ項目
+        target.find('input[name="usermail"]'), //1 メールアドレス
       ];
       //input要素のプロパティを設定
       $.each(items, function(index){
@@ -219,6 +219,7 @@ $(function() {
       var family = target.find("input[name=family]:checked").val();
       var route = target.find("select[name=route]").val();
       var content = target.find("textarea[name=content]").val();
+      var request = target.find("textarea[name=request]").val();
       var usermail = target.find("input[name=usermail]").val();
       event.preventDefault();
       $.ajax({
@@ -230,6 +231,7 @@ $(function() {
           "entry.55464818": family, /* 家族構成 */
           "entry.531319224": route, /* 知った経緯 */
           "entry.1792741485": content, /* 良かった点/改善すべき点 */
+          "entry.356591634": request, /* こんな商品が欲しい */
           "entry.836973782": usermail /* メールアドレス */
         },
       type: "POST",

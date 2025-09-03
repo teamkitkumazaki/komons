@@ -20,7 +20,7 @@
   {% paginate collection.products by 20 %}
   {%- assign num = 0 -%}
   {%- for product in collection.products -%}
-  {%- unless product.type == "gift" or product_child.type == "mini-gift" -%}
+  {%- unless product.type == "gift" or product.type == "mini-gift" or product.type == "outlet" -%}
     {%- include 'all-item-card' -%}
   {%- endunless -%}
   {%- endfor -%}

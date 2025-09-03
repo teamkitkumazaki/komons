@@ -1,0 +1,29 @@
+{% for collection in collections %}
+{% assign category = collection.title | split: '★' %}
+
+{%- if product.vendor == 'ジョセフ チーニー' -%}
+  {% assign prodBrand = 'ジョセフ・チーニー' %}
+{%- else -%}
+  {% assign prodBrand = product.vendor %}
+{%- endif -%}
+
+{%- if collection.title contains prodBrand -%}
+	{%- unless collection.title contains 'レディース' -%}
+  {% assign prodBrandHandle = collection.handle %}
+	{%- endunless -%}
+{%- endif -%}
+
+{% endfor %}
+
+<section class="section-kaitori-link">
+  <div class="section_inner">
+    <h2 class="kaitori_ttl"><span>当店では</span>中古革靴の<br>買取もおこなっています</h2>
+    <div class="comp-rounded-button">
+      {%- if prodBrandHandle != blank and product.vendor != 'その他ブランド' and product.type != 'バッグ' and product.type != '純正シューツリー' -%}
+      <a target="_blank" href="https://kaitori.studiocbr.jp/brand/{{ prodBrandHandle }}/"><span>{{ prodBrand }}の<br>中古革靴買取についてはこちら</span></a>
+      {%- else -%}
+      <a target="_blank" href="https://kaitori.studiocbr.jp/"><span>中古革靴買取についてはこちら</span></a>
+      {%- endif -%}
+    </div><!-- comp-rounded-button -->
+  </div><!-- section_inner -->
+</section>

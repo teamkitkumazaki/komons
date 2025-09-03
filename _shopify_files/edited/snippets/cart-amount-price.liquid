@@ -1,4 +1,5 @@
 {%- assign price = cart.original_total_price | money_without_currency -%}
+{% assign discounts = cart.total_discount | money_without_currency | plus: 0 %}
 {% assign priceNum = price | remove: "," %}
 {% assign totalPrice = priceNum | plus: 0  %}
 {% assign souryouLimit = 5500 | minus: totalPrice  %}
@@ -13,6 +14,12 @@
   <span class="ttl ">小計</span>
   <p class="price ">{{cart.original_total_price | money_without_currency}}円(税込)</p>
 </div>
+{% if discounts > 0 %}
+<div class="amount_item">
+  <span class="ttl jp">割引金額</span>
+  <p class="price">¥{{cart.total_discount | money_without_currency}}<span class="jp">(税込)</span></p>
+</div>
+{%- endif -%}
 <div class="amount_item">
   <span class="ttl ">送料</span>
   {% if souryou != 0 %}

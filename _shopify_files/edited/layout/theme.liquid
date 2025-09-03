@@ -1,3 +1,6 @@
+{% if request.path contains '/mt'%}
+{% section 'mailmag-template' %}
+{% else %}
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}" style="--wHeightPx: 100vh;">
 <head>
@@ -5,6 +8,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{%- if request.page_type contains 'customers' or request.page_type contains 'cart' or request.page_type contains 'account' or request.page_type contains 'blogs' or request.page_type contains 'captcha' -%}
 	<meta name="robots" content="noindex" />
+	{%- endif -%}
+	{%- if request.page_type contains 'collection' -%}
+	{%- if collection.handle == 'ajax' or collection.handle == 'all' or collection.handle contains '-mist' -%}
+		<meta name="robots" content="noindex,nofollow" />
+		<style>
+			body{
+				display: none;
+			}
+		</style>
+	{%- endif -%}
 	{%- endif -%}
 	<link rel="canonical" href="{{ canonical_url }}">
 	<meta name="google-site-verification" content="1_P1Xhv4k9Dr-1gcr7NUMd_dsqVRuE3w-AcSwmrMEj8" />
@@ -53,7 +66,7 @@
     <meta name="description" content="{{ page_description | escape }}">
   {%- endif -%}
   {% include 'social-meta-tags' %}
-  <meta name="robots" content="index">
+	<meta name="robots" content="index">
   <meta name="robots" content="follow">
 	{%- if request.page_type contains 'index' -%}
 	<link rel="preload"
@@ -72,9 +85,9 @@
 	{{ content_for_header }}
 </head>
 {%- if request.page_type contains 'captcha' -%}
-<body class="fixed">
+<body class="fixed {{ request.path }}">
 	{%- else -%}
-<body class="{{ request.page_type }}">
+<body class="{{ request.page_type }} {{ request.path }}">
 	{%- endif -%}
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LVFKHJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -118,6 +131,9 @@
 {%- if request.page_type contains 'addresses' -%}
 <script src="{{ 'ajaxzip3.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
+{% if request.path contains 'question' or request.path contains 'request' %}
+<script src="{{ 'question.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 {% include 'script-cookies' %}
-
 </html>
+{% endif %}

@@ -12,6 +12,25 @@
 {% endfor %}
 {% endfor %}
 
+{%- if product.handle == 'k1048' -%}
+  {% assign scent_desc = '静寂な森の奥へ誘う、深みのあるウッディーノート。サンダルウッドや青森ヒバ、ベチバーの香りが、忙しい日々で疲れた心を解き放ち、落ち着いた気分へと導きます。' %}
+  {% assign scent_image = 'https://cdn.shopify.com/s/files/1/0536/9544/7234/files/chart_deepdive.jpg?v=1756436309' %}
+  {% assign scent_top = 'ジュニパーベリー、イランイラン、ローズマリー' %}
+  {% assign scent_middle = '吉野ヒノキ、シダーウッド、青森ヒバ' %}
+  {% assign scent_bottom = 'サンダルウッド、ベチバー、パチョリ' %}
+{%- endif -%}
+
+{%- if product.handle == 'k1049' -%}
+  {% assign scent_desc = '華やかな花々が咲き誇る庭園にいるような、優雅なフローラル＆シトラスノート。オレンジやベルガモットの爽やかさに、ゼラニウムやジャスミンの繊細な香りが重なり、心満たされる豊かな香りが広がります。' %}
+  {% assign scent_image = 'https://cdn.shopify.com/s/files/1/0536/9544/7234/files/chart_deramyduzy.jpg?v=1756436310' %}
+  {% assign scent_top = 'オレンジ、ベルガモット、レモン' %}
+  {% assign scent_middle = 'ジャスミンアブソリュート、ローズアブソリュート、北海道ラベンダー、吉野ヒノキ、ネロリ、ゼラニウム、青森ヒバ、オリバナム' %}
+  {% assign scent_bottom = 'サンダルウッド、ベチバー' %}
+{%- endif -%}
+
+
+<div tags="{{ product.tags }}"></div>
+
 {%- if scent_desc != blank -%}
 <div id="scentDetail" class="desc_unit">
   <div class="scent_detail comp-scent-detail">
@@ -22,7 +41,12 @@
       </hgroup>
     </div>
     <div class="scent_desc">
+      {%- if product.handle == 'k1034' -%}
+      <p style="white-space: pre-line">最初はユーカリやゆずなどのさわやかな香り、そして徐々にリラックスできる香りへ。その複雑性と香り変化を意識してブレンドしました。ヒバ・ヒノキ・ホーリーフといった木々の香りがしっかりと全体を下支えします。</p>
+
+      {%- else -%}
       <p style="white-space: pre-line">{{scent_desc}}</p>
+      {%- endif -%}
     </div>
     <div class="scent_img_wrap">
       <img loading="lazy" src="{{ scent_image }}">

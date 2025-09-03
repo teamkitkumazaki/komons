@@ -22,7 +22,15 @@
   {%- endfor -%}
 {%- endfor -%}
 
-<form id="cartSubmit" action="{{ routes.cart_url }}" method="post" novalidate class="cart">
+
+{%- assign miniGiftLength = 0 -%}
+{%- for item in cart.items -%}
+  {% if item.product.type == 'mini-gift' %}
+    {%- assign miniGiftLength = miniGiftLength | plus : 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<form id="cartSubmit" action="{{ routes.cart_url }}" method="post" novalidate class="cart" miniGiftLength="{{ miniGiftLength }}">
   {%- if noshiLength == 0 -%}
     <input type="hidden" name="attributes[熨斗の種類:]" value="">
     <input type="hidden" name="attributes[熨斗の表書き:]"   value="">
@@ -62,11 +70,38 @@
               <span class="amount head">合計</span>
             </div>
             <div id="cartItem" class="item_list">
+              {%- assign bagNum = 0 | plus : 0 -%}
               {%- for item in cart.items -%}
                 {% include 'cart-item-card' %}
+                {% if item.url contains 'ks004' %}
+  							{%- assign bagNum = bagNum | plus : 1 -%}
+  							{%- endif -%}
               {%- endfor -%}
-            </div>
-        </div><!-- comp-cart-item-list-->
+              {% if bagNum == 0 %}
+              <div class="cart_item shopper">
+								<div class="txt_wrap" style="width: 100%;">
+									<div class="txt_inner">
+										<div class="item_info">
+											<div class="tesage_txt">お渡し用手提げ紙袋</div>
+											<span class="price" cpprice="">110円(税込)</span>
+										</div>
+										<div class="controll_wrap">
+											<div class="order_lot">
+												<a href="javascript:void(0);" class="order_button minus pjax" style="pointer-events:none;"><span></span></a>
+												<div class="indicator">0</div>
+												<a href="https://komons-japan.com/cart/add?id=50279837171991&quantity=1" class="order_button plus pjax"><span></span></a>
+											</div>
+										</div>
+									</div>
+									<div class="amount_price">¥110</div>
+								</div>
+							</div><!-- cart_item -->
+              {%- endif -%}
+        		</div>
+            {% if miniGiftLength > 0 %}
+              <p class="minigift_added_txt">※ミニギフト商品にはお渡し用手提げビニール袋をセットでお付けしています。</p>
+            {%- endif -%}
+        	</div><!-- comp-cart-item-list-->
         {% unless subProperty > 0 and normalProperty > 0 %}
         {%- if noshiLength == 0 and messageLength == 0 -%}
         <div class="comp-amount-wrap left">
