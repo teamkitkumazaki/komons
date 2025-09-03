@@ -583,12 +583,11 @@
                                         <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/official_line_banner.jpg?v=1745800637" width="100%">
                                       </div>
                                       <h2 style="line-height: 1.8; margin: 25px 0px 15px; text-align: left; padding: 0px; color: #00381f; font-size: 18px; font-weight: normal; letter-spacing: 0.5px;">LINE友だち登録で10%OFFクーポンをプレゼント。</h2>
-															        <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">また、Komons公式LINEに友だち登録頂くと、10%OFFクーポンプレゼント中。</p>
-                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">その他セールやキャンペーン、新商品についての情報も配信しておりますので、この機会にぜひ合わせてご登録頂けると幸いです。</p>
-                                      <div class="coupon_wrap" style="margin-top: 30px; padding:30px 20px; background: #f4f4f4;">
+                                      <div class="coupon_wrap" style="margin: 20px 0 20px; padding:30px 20px; background: #f4f4f4;">
                                         <h3 style="font-weight: normal; text-align: center; font-size: 16px; line-height: 1; letter-spacing: 0.8px; color: #00381f; margin: 0 0 25px;">全商品10%OFFクーポンコード</h3>
-                                        <p style="font-size: 13px; line-height: 2; letter-spacing: 0.4px; color: #00381f; margin: 25px 0px 0px;">Komons公式LINEに友だち登録後、「Komons10%OFFクーポン」とトークするとクーポンを取得頂けます。<br>※ご購入金額にかかわらず全商品10%OFFにてご購入頂けます。<br/>※Komons公式HPの購入手続き画面の「クーポンコード欄」に入力してご使用ください。<br/>※本コードは1回のみご使用いただけます。</p>
+                                        <p style="font-size: 13px; line-height: 2; letter-spacing: 0.4px; color: #00381f; margin: 25px 0px 0px;">Komons公式LINEに友だち登録後、「割引クーポン」とトークするとクーポンを取得頂けます。<br>※ご購入金額にかかわらず全商品10%OFFにてご購入頂けます。<br/>※Komons公式HPの購入手続き画面の「クーポンコード欄」に入力してご使用ください。<br/>※本コードは1回のみご使用いただけます。</p>
                                       </div>
+                                      <p style="font-size: 14px; line-height: 1.83; letter-spacing: 0.4px; color: #00381f; margin: 5px 0px 15px;">その他セールやキャンペーン、新商品についての情報も配信しておりますので、この機会にぜひ合わせてご登録頂けると幸いです。</p>
                                       <div class="line_button" style="margin-top: 25px;">
                                         <a target="_blank" href="https://lin.ee/n39NnSQ" style="display: block; padding: 15px 0; border-radius: 200px; background:#084A2C; text-align: center; margin-bottom: 30px;"><img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/mailmag_line_button.png?v=1738650464" width="100%" style="width: 40%; margin: 0 auto; max-width: 160px;"></a>
                                       </div>
@@ -717,9 +716,9 @@
                     <a href="https://komons-japan.com/blogs/journal?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240210_handmilk " style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ジャーナル</a>
                     <a href="https://komons-japan.com/pages/faq?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240210_handmilk " style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">ご利用ガイド</a>
                     <a href="https://komons-japan.com/pages/privacy-policy?utm_source=mailmag&amp;utm_medium=mail&amp;utm_campaign=240210_handmilk " style="display: block;color:#003e1b;text-decoration:none;margin-bottom:10px;">プライバシー</a>
-                    <a href="{% unsubscribe_link %}" style="display: block;color: #003e1b;text-decoration:none;margin-bottom:10px;">メールの配信停止</a>
+                    <div>{{ unsubscribe_link }}</div>
                   </div>
-                  <p class="copyright" style="font-size: 12px;line-height: 1.57;letter-spacing: 1px; color: #003e1b; padding: 0 20px 40px;">2018-2020 Komons All Rights Reserved</p>
+                  <p class="copyright" style="font-size: 12px;line-height: 1.57;letter-spacing: 1px; color: #003e1b; padding: 0 20px 40px;">2018-2025 Komons All Rights Reserved</p>
                 </td>
               </tr>
             </tbody>
@@ -729,5 +728,5 @@
     </tbody>
   </table>
 </body>
-
+{{ open_tracking_block }}
 </html>

@@ -16,8 +16,12 @@
 						<div class="link_wrap">
 							<a href="{{ routes.account_logout_url }}">ログアウト</a>
 						</div>
-					</div>
-					{%- if customer.orders.size != 0 -%}
+                    </div>
+                          <!-- CRM PLUS on LINEエラーバナー -->
+                          {% render 'socialplus-error-banner' %}
+                          <!-- CRM PLUS on LINE連携バナー -->
+                          {% render 'socialplus-association', providers: 'line', not_alert_when_dissociate_all_providers: 'true' %}
+                  {%- if customer.orders.size != 0 -%}
 					 <div class="comp-admin-button">
 						<a href="/account?hbSubscriptionPath=/"><span>定期購買商品の変更・設定</span></a>
 					</div>
