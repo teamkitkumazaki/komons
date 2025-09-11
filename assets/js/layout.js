@@ -111,29 +111,15 @@ $(function() {
     var headerArrow = $('.header_arrow');
     var scrollTarget = $('#scrollTarget');
     var headerRolled = $('#headerRolled');
-    var headerRolledSp = $('#headerRolledSp');
 
-    if (document.getElementById('headerRolled')) {
-    }else{
-      if(window.innerWidth > 720){
-        $('header').addClass('rolled');
-      }
-    }
-
-    if (document.getElementById('headerRolledSp')) {
-    }else{
-      $('header').addClass('rolled_sp');
-    }
 
     function afterScroll(noAnimate) {
       $('header').addClass('rolled');
-      $('header').addClass('rolled_sp');
       scrollSwitch = 1;
     };
 
     function beforeScroll() {
       $('header').removeClass('rolled');
-      $('header').removeClass('rolled_sp');
       scrollSwitch = 0;
     };
 
@@ -150,7 +136,7 @@ $(function() {
     }
 
     function scrollUnder() {
-      var offsetHeight = scrollTarget.offset().top;
+      var offsetHeight = headerRolled.offset().top;
       if (scrollSwitch == 0) {
         $("html, body").animate({
           scrollTop: offsetHeight
@@ -175,83 +161,19 @@ $(function() {
 
       $(window).on({
         'scroll': function() {
-          if (document.getElementById('lineContact')) {
-            if ($(window).scrollTop() > 300) {
-              $('#lineContact').addClass('rolled');
-            }else{
-              $('#lineContact').removeClass('rolled');
-            }
-          }
+
           if (document.getElementById('headerRolled')) {
-            if(window.innerWidth > 720){
-              var scroll = $(window).scrollTop();
-              var rolledHeight = headerRolled.offset().top;
-              if (scroll > rolledHeight) {
-                if (scrollSwitch == 0) {
-                  afterScroll();
-                }
-              } else {
-                if (scrollSwitch == 1) {
-                  beforeScroll();
-                }
+            var scroll = $(window).scrollTop();
+            var rolledHeight = headerRolled.offset().top;
+            if (scroll > rolledHeight) {
+              if (scrollSwitch == 0) {
+                afterScroll();
+              }
+            } else {
+              if (scrollSwitch == 1) {
+                beforeScroll();
               }
             }
-          }
-          if (document.getElementById('headerRolledSp')) {
-            if(window.innerWidth < 720){
-              var scroll = $(window).scrollTop();
-              var rolledHeight = headerRolledSp.offset().top;
-              if (scroll > rolledHeight) {
-                if (scrollSwitch == 0) {
-                  afterScroll();
-                }
-              } else {
-                if (scrollSwitch == 1) {
-                  beforeScroll();
-                }
-              }
-            }
-          }
-
-          if (document.getElementById('concept')) {
-            $("section").each(function() {
-              var sectionimgPos = $(this).offset().top;
-              var sectionscroll = $(window).scrollTop();
-              var windowHeight = $(window).height();
-              if (sectionscroll + 90 > sectionimgPos - windowHeight + windowHeight) {
-                var setClass = $(this).attr('id');
-                $('body').removeClass('concept_top concept_component concept_scent concept_make concept_design ceoncept_links');
-                $('body').addClass(setClass);
-              };
-            });
-          }
-
-          if (document.getElementById('itemDetail')) {
-            $("section").each(function() {
-              var sectionimgPos = $(this).offset().top;
-              var sectionscroll = $(window).scrollTop();
-              var windowHeight = $(window).height();
-              if (sectionscroll + 300 > sectionimgPos - windowHeight + windowHeight) {
-                var setClass = $(this).attr('id');
-                $('#fixedCartWrap').removeClass('main wrap01 features scent wrap02 detail relation journal sectionBack');
-                $('#fixedCartWrap').addClass(setClass);
-              };
-            });
-          }
-          if (document.getElementById('itemDetailNew')) {
-            $("section").each(function() {
-              var rolledHeight = $('#rolledHeight').offset().top;
-              var relatedItem = $('#relatedItem').offset().top;
-              var sectionscroll = $(window).scrollTop();
-              if ( sectionscroll > rolledHeight) {
-                $('#fixedCartWrap').addClass('display');
-                if ( sectionscroll > relatedItem) {
-                  $('#fixedCartWrap').removeClass('display');
-                }
-              }else{
-                $('#fixedCartWrap').removeClass('display');
-              }
-            });
           }
         },
       });

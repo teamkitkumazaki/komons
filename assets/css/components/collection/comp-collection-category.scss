@@ -1,0 +1,113 @@
+.comp-collection-category{
+  .collection_filter{
+    @include flexSet;
+    .filter_item{
+      width: calc(50% - 10px);
+      margin-right: 20px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid $borderColor;
+      &:nth-of-type(2n){
+        margin-right: 0;
+      }
+      button{
+        width: 100%;
+        @include flexSet;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 0 10px;
+        .txt{
+          font-size: 1.4rem;
+          @include grotesk;
+        }
+        .caret{
+          width: 22px;
+          height: 22px;
+          background: $borderColor;
+          border-radius: 50%;
+          @include flexSet;
+          align-items: center;
+          justify-content: center;
+          transition: background .5s;
+          will-change: background;
+          svg{
+            width: 5px;
+            height: 10px;
+            transform: translate(0.5px,0);
+            .cls-1{
+              fill: #fff;
+              stroke: none;
+            }
+          }
+        }
+        &.active_category{
+          .caret{
+            background: $basicGreen;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 980px){
+  .comp-collection-category{
+    .collection_filter{
+      display: block;
+      .filter_item{
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid $borderColor;
+        &:nth-of-type(2n){
+          margin-right: 0;
+        }
+        button{
+          width: 100%;
+          @include flexSet;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 0 10px;
+          transition: opacity .3s, color .3s;
+          will-change: opacity, color;
+          .txt{
+            font-size: 1.4rem;
+            @include grotesk;
+          }
+          .caret{
+            width: 22px;
+            height: 22px;
+            background: $borderColor;
+            border-radius: 50%;
+            @include flexSet;
+            align-items: center;
+            justify-content: center;
+            transition: background .5s;
+            will-change: background;
+            svg{
+              width: 5px;
+              height: 10px;
+              transform: translate(0.5px,0);
+              .cls-1{
+                fill: #fff;
+                stroke: none;
+              }
+            }
+          }
+          &.active_category{
+            pointer-events: none;
+            .caret{
+              background: $basicGreen;
+            }
+          }
+          &:hover{
+            color: $hoverColor;
+            opacity: 0.8;
+            .caret{
+              background: $hoverColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -126,7 +126,37 @@ header{
 			}
 		}
 	}
-
+	&.rolled{
+		.header_inner{
+			.header_logo{
+				a{
+					svg{
+						fill: $basicGreen;
+					}
+				}
+			}
+			.header_contents{
+				.header_guide{
+					@include flexSet;
+					align-items: center;
+					.nav_item{
+						a{
+							.icon{
+								svg{
+									fill: $basicGreen;
+								}
+							}
+							.cart_item_num{
+								background-color: $basicGreen;
+								color: #fff;
+								@include grotesk;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 980px){
@@ -164,6 +194,7 @@ header{
 							}
 							a{
 								color: #fff;
+								@include grotesk;
 								font-size: 1.6rem;
 							}
 						}

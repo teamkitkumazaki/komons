@@ -1,11 +1,4 @@
 .page-index{
-	.section-index-main{
-		.main_image{
-			.pc_img{
-				display: none;
-			}
-		}
-	}
 	.section-product-list{
 		padding: 40px 0 20px;
 		.product_wrapper{
@@ -31,21 +24,6 @@
 
 @media screen and (min-width: 980px){
 	.page-index{
-		.section-index-main{
-			.main_image{
-				width: 100%;
-				height: 100vh;
-				.sp_img{
-					display: none;
-				}
-				.pc_img{
-					display: block;
-					object-fit: cover;
-					width: 100%;
-					height: 100%;
-				}
-			}
-		}
 		.section-product-list{
 			padding: 120px 0 100px;
 			.product_wrapper{

@@ -6,6 +6,7 @@
     margin-bottom: 30px;
     .list_ttl{
       font-size: 2.0rem;
+      @include grotesk;
     }
   }
   .list_contents_flex{
@@ -34,6 +35,7 @@
           .name_en{
             display: block;
             font-size: 1.6rem;
+            @include grotesk;
             margin-bottom: 10px;
           }
           .price{
@@ -60,6 +62,7 @@
     }
     .list_contents_flex{
       @include flexSet;
+      justify-content: flex-start;
       .list_item{
         width: 22%;
         margin-right: 4%;
@@ -89,6 +92,22 @@
               font-size: 1.3rem;
               margin-top: 15px;
             }
+          }
+        }
+      }
+      &.column3{
+        .list_item{
+          width: 31%;
+          margin-right: 3.5%;
+          margin-bottom: 50px;
+          &:nth-of-type(2n){
+            margin-right: 3.5%;
+          }
+          &:nth-of-type(4n){
+            margin-right: 3.5%;
+          }
+          &:nth-of-type(3n){
+            margin-right: 0%;
           }
         }
       }

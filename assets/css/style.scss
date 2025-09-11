@@ -49,6 +49,8 @@
 /* 共通 */
 @import 'components/common/comp-button-wrap.scss';
 @import 'components/common/comp-sns-wrap.scss';
+@import 'components/common/comp-page-main.scss';
+
 
 @import 'component/comp-section-ttl.scss';
 @import 'component/common/comp-new-section-ttl.scss';
@@ -72,6 +74,8 @@
 
 /* 商品*/
 @import 'components/collection/comp-product-list.scss';
+@import 'components/collection/comp-collection-category.scss';
+
 
 @import 'component/products/comp-product-list.scss';
 @import 'component/products/comp-product-block.scss';
@@ -160,11 +164,12 @@
 
 /* ########## ページ別レイアウト ########## */
 @import 'page/index.scss'; //トップページ
-@import 'page/indexNew.scss'; //トップページ
-@import 'page/item_list.scss'; //商品一覧
+@import 'page/collection.scss'; //商品一覧
+/*@import 'page/item_list.scss'; //商品一覧
 @import 'page/item_detail_new.scss'; //商品詳細
 @import 'page/group.scss'; //商品グループ一覧・検索結果
-@import 'page/journal.scss'; /*ジャーナル一覧*/
+@import 'page/journal.scss'; //  */
+
 @import 'page/blogs.scss'; /*ジャーナル一覧(新)*/
 @import 'page/article.scss'; /*ジャーナル詳細(新)*/
 @import 'page/journal_detail.scss'; /*ジャーナル詳細*/
