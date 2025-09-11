@@ -1,4 +1,29 @@
 .comp-collection-category{
+  .filter_ttl{
+    width: 100%;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  .collection_selector{
+    margin-bottom: 35px;
+    .price_filter{
+      width: 100%;
+      appearance: none;
+      font-family :inherit;
+      font-size: 1.6rem;
+      letter-spacing: 0.03em;
+      border: 0px;
+      border-bottom: 1px solid $borderColor;
+      padding: 10px 0;
+      background-image: url(https://cdn.shopify.com/s/files/1/0606/6932/9625/t/1/assets/select_caret.svg);
+      background-size: 8px;
+      background-repeat: no-repeat;
+      background-position: center right;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
   .collection_filter{
     @include flexSet;
     .filter_item{
@@ -18,6 +43,9 @@
         .txt{
           font-size: 1.4rem;
           @include grotesk;
+          &.jp{
+            font-size: 1.3rem;
+          }
         }
         .caret{
           width: 22px;
@@ -51,6 +79,18 @@
 
 @media screen and (min-width: 980px){
   .comp-collection-category{
+    .filter_ttl{
+      width: 100%;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+    .collection_selector{
+      margin-bottom: 50px;
+      .price_filter{
+        font-size: 1.5rem;
+        padding: 10px 0;
+      }
+    }
     .collection_filter{
       display: block;
       .filter_item{
@@ -62,16 +102,14 @@
           margin-right: 0;
         }
         button{
-          width: 100%;
-          @include flexSet;
-          align-items: center;
-          justify-content: space-between;
           padding: 10px 0 10px;
           transition: opacity .3s, color .3s;
           will-change: opacity, color;
           .txt{
-            font-size: 1.4rem;
-            @include grotesk;
+            font-size: 1.6rem;
+            &.jp{
+              font-size: 1.5rem;
+            }
           }
           .caret{
             width: 22px;

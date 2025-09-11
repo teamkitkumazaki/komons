@@ -9794,6 +9794,33 @@ body.loaded #loading {
     margin-right: 0%;
   }
 }
+.comp-collection-category .filter_ttl {
+  width: 100%;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+.comp-collection-category .collection_selector {
+  margin-bottom: 35px;
+}
+.comp-collection-category .collection_selector .price_filter {
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-family: inherit;
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+  border: 0px;
+  border-bottom: 1px solid #d8d8d8;
+  padding: 10px 0;
+  background-image: url(https://cdn.shopify.com/s/files/1/0606/6932/9625/t/1/assets/select_caret.svg);
+  background-size: 8px;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.comp-collection-category .collection_selector .price_filter:focus {
+  outline: none;
+}
 .comp-collection-category .collection_filter {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9837,6 +9864,9 @@ body.loaded #loading {
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.06em;
 }
+.comp-collection-category .collection_filter .filter_item button .txt.jp {
+  font-size: 1.3rem;
+}
 .comp-collection-category .collection_filter .filter_item button .caret {
   width: 22px;
   height: 22px;
@@ -9873,6 +9903,18 @@ body.loaded #loading {
 }
 
 @media screen and (min-width: 980px) {
+  .comp-collection-category .filter_ttl {
+    width: 100%;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  .comp-collection-category .collection_selector {
+    margin-bottom: 50px;
+  }
+  .comp-collection-category .collection_selector .price_filter {
+    font-size: 1.5rem;
+    padding: 10px 0;
+  }
   .comp-collection-category .collection_filter {
     display: block;
   }
@@ -9886,31 +9928,16 @@ body.loaded #loading {
     margin-right: 0;
   }
   .comp-collection-category .collection_filter .filter_item button {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     padding: 10px 0 10px;
     -webkit-transition: opacity 0.3s, color 0.3s;
     transition: opacity 0.3s, color 0.3s;
     will-change: opacity, color;
   }
   .comp-collection-category .collection_filter .filter_item button .txt {
-    font-size: 1.4rem;
-    font-family: YakuHanMP, "nhaasgrotesk", "source-han-sans-japanese", sans-serif, Helvetica, Helvetica Neue, Arial, Verdana;
-    -webkit-font-smoothing: antialiased;
-    letter-spacing: 0.06em;
+    font-size: 1.6rem;
+  }
+  .comp-collection-category .collection_filter .filter_item button .txt.jp {
+    font-size: 1.5rem;
   }
   .comp-collection-category .collection_filter .filter_item button .caret {
     width: 22px;

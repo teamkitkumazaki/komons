@@ -87,20 +87,31 @@
 	<article id="collection" class="page-collection">
 		<section class="section-index-main comp-page-main">
 			<div class="main_image">
-				<img class="sp_img" src="assets/img/collection/collection_main.jpg">
-				<img class="pc_img" src="assets/img/collection/collection_main_pc.jpg">
+				<img class="sp_img" src="assets/img/collection/gift_main.jpg">
+				<img class="pc_img" src="assets/img/collection/gift_main_pc.jpg">
 			</div>
 		</section>
 		<section id="headerRolled" class="section-product-list">
 			<div class="section_inner">
 				<div class="collection_flex">
 					<div class="collection_category">
-						<h1 class="collection_ttl">Products</h1>
+						<h1 class="collection_ttl">Gifts</h1>
 						<div class="comp-collection-category">
+							<div class="collection_selector">
+								<div class="filter_ttl">価格で絞り込み</div>
+								<select id="priceFilter" class="price_filter">
+									<option value="0" min="0" max="100000">全ての商品</option>
+									<option value="1" min="0" max="3001">3,000円以下</option>
+									<option value="2" min="3001" max="5000">3,001円~5,000円</option>
+									<option value="3" min="5001" max="10000">5,001円~10,000円</option>
+									<option value="4" min="10001" max="100000">10,001円以上</option>
+								</select>
+							</div>
+							<div class="filter_ttl">カテゴリで絞り込み</div>
 							<div class="collection_filter">
 								<div class="filter_item">
-									<button class="active_category">
-										<span class="txt">ALL</span>
+									<button>
+										<span class="txt jp">全てのギフト</span>
 										<span class="caret">
 											<svg viewBox="0 0 5.76 10">
 												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -110,7 +121,7 @@
 								</div>
 								<div class="filter_item">
 									<button>
-										<span class="txt">Kitchen</span>
+										<span class="txt jp">人気ギフト</span>
 										<span class="caret">
 											<svg viewBox="0 0 5.76 10">
 												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -120,7 +131,7 @@
 								</div>
 								<div class="filter_item">
 									<button>
-										<span class="txt">Living / Bedroom</span>
+										<span class="txt jp">結婚祝い</span>
 										<span class="caret">
 											<svg viewBox="0 0 5.76 10">
 												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -130,7 +141,7 @@
 								</div>
 								<div class="filter_item">
 									<button>
-										<span class="txt">Toilet / Bathroom</span>
+										<span class="txt jp">新築・引越し祝い</span>
 										<span class="caret">
 											<svg viewBox="0 0 5.76 10">
 												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -140,7 +151,7 @@
 								</div>
 								<div class="filter_item">
 									<button>
-										<span class="txt">Others</span>
+										<span class="txt jp">お返し/内祝</span>
 										<span class="caret">
 											<svg viewBox="0 0 5.76 10">
 												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -150,7 +161,7 @@
 								</div>
 								<div class="filter_item">
 									<button>
-										<span class="txt">Refill</span>
+										<span class="txt jp">自分へのご褒美</span>
 										<span class="caret">
 											<svg viewBox="0 0 5.76 10">
 												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -160,572 +171,249 @@
 								</div>
 							</div><!-- collection_filter -->
 						</div><!-- comp-collection-category -->
+					</div>
 					<div class="collection_list">
 						<div class="comp-product-list">
 							<div class="list_contents_flex column3">
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product01.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">マルチクリーナー</span>
-											<span class="name_en">In a silent way</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product02.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">食器用洗剤</span>
-											<span class="name_en">Don't Look Back in Anger</span>
-											<span class="price">2,350円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product03.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">フライパンブラシ</span>
-											<span class="name_en">Flypan Brush</span>
-											<span class="price">2,300円(税込)</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product04.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">ハンドソープ</span>
-											<span class="name_en">I Can Hear Music</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product01.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">マルチクリーナー</span>
-											<span class="name_en">In a silent way</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product02.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">食器用洗剤</span>
-											<span class="name_en">Don't Look Back in Anger</span>
-											<span class="price">2,350円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product03.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">フライパンブラシ</span>
-											<span class="name_en">Flypan Brush</span>
-											<span class="price">2,300円(税込)</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product04.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">ハンドソープ</span>
-											<span class="name_en">I Can Hear Music</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product01.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">マルチクリーナー</span>
-											<span class="name_en">In a silent way</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product02.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">食器用洗剤</span>
-											<span class="name_en">Don't Look Back in Anger</span>
-											<span class="price">2,350円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product03.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">フライパンブラシ</span>
-											<span class="name_en">Flypan Brush</span>
-											<span class="price">2,300円(税込)</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product04.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">ハンドソープ</span>
-											<span class="name_en">I Can Hear Music</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product01.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">マルチクリーナー</span>
-											<span class="name_en">In a silent way</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product02.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">食器用洗剤</span>
-											<span class="name_en">Don't Look Back in Anger</span>
-											<span class="price">2,350円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product03.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">フライパンブラシ</span>
-											<span class="name_en">Flypan Brush</span>
-											<span class="price">2,300円(税込)</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product04.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">ハンドソープ</span>
-											<span class="name_en">I Can Hear Music</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product01.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">マルチクリーナー</span>
-											<span class="name_en">In a silent way</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product02.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">食器用洗剤</span>
-											<span class="name_en">Don't Look Back in Anger</span>
-											<span class="price">2,350円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product03.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">フライパンブラシ</span>
-											<span class="name_en">Flypan Brush</span>
-											<span class="price">2,300円(税込)</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product04.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">ハンドソープ</span>
-											<span class="name_en">I Can Hear Music</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-							</div><!-- list_contents_flex -->
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ハンドケアコンビ</span>
+										<span class="price">2,300円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">マルチ＆ファブリックミスト</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">ハンドソープ＆ハンドミルク</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">ハンドソープ＆ミルク</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ハンドケアコンビ</span>
+										<span class="price">2,300円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">マルチ＆ファブリックミスト</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">ハンドソープ＆ハンドミルク</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">ハンドソープ＆ミルク</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ハンドケアコンビ</span>
+										<span class="price">2,300円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">マルチ＆ファブリックミスト</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">ハンドソープ＆ハンドミルク</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">ハンドソープ＆ミルク</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ハンドケアコンビ</span>
+										<span class="price">2,300円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">マルチ＆ファブリックミスト</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">ハンドソープ＆ハンドミルク</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+							<div class="list_item">
+								<a href="#aaaa">
+									<span class="img_wrap">
+										<img src="assets/img/product/gift01.jpg">
+									</span>
+									<span class="txt_wrap">
+										<span class="name_en">ホワイトボックス</span>
+										<span class="name_jp">ハンドソープ＆ミルク</span>
+										<span class="price">2,350円(税込)&nbsp;/ 300ml</span>
+									</span>
+								</a>
+							</div>
+						</div>
 						</div><!-- comp-product-list -->
 					</div>
 				</div><!-- collection_flex -->
 			</div><!-- section_inner -->
 		</section>
-		<section id="headerRolled" class="section-product-list">
+		<section class="section-links-product">
 			<div class="section_inner">
-				<div class="collection_flex">
-					<div class="collection_category">
-						<h1 class="collection_ttl">Products</h1>
-						<div class="comp-collection-category">
-							<div class="collection_filter">
-								<div class="filter_item">
-									<button class="active_category">
-										<span class="txt">ALL</span>
+				<div class="comp-copntent-list">
+					<h2 class="content_ttl">Product List</h2>
+					<div class="content_wrapper">
+						<div class="content_item">
+							<a href="#aaaa">
+								<span class="img_wrap">
+									<img src="assets/img/collection/collection_thumb.jpg">
+								</span>
+								<span class="content_wrap">
+									<span class="ttl_jp">通常商品一覧</span>
+									<span class="ttl_en">
+										<span class="txt">Product List</span>
 										<span class="caret">
-											<svg viewBox="0 0 5.76 10">
-												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+											</path>
 											</svg>
 										</span>
-									</button>
-								</div>
-								<div class="filter_item">
-									<button>
-										<span class="txt">Kitchen</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="content_item">
+							<a href="#aaaa">
+								<span class="img_wrap">
+									<img src="assets/img/collection/gift_thumb.jpg">
+								</span>
+								<span class="content_wrap">
+									<span class="ttl_jp">ギフト商品一覧</span>
+									<span class="ttl_en">
+										<span class="txt">Gift Set</span>
 										<span class="caret">
-											<svg viewBox="0 0 5.76 10">
-												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+											</path>
 											</svg>
 										</span>
-									</button>
-								</div>
-								<div class="filter_item">
-									<button>
-										<span class="txt">Living / Bedroom</span>
-										<span class="caret">
-											<svg viewBox="0 0 5.76 10">
-												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
-											</svg>
-										</span>
-									</button>
-								</div>
-								<div class="filter_item">
-									<button>
-										<span class="txt">Toilet / Bathroom</span>
-										<span class="caret">
-											<svg viewBox="0 0 5.76 10">
-												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
-											</svg>
-										</span>
-									</button>
-								</div>
-								<div class="filter_item">
-									<button>
-										<span class="txt">Others</span>
-										<span class="caret">
-											<svg viewBox="0 0 5.76 10">
-												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
-											</svg>
-										</span>
-									</button>
-								</div>
-								<div class="filter_item">
-									<button>
-										<span class="txt">Refill</span>
-										<span class="caret">
-											<svg viewBox="0 0 5.76 10">
-												<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
-											</svg>
-										</span>
-									</button>
-								</div>
-							</div><!-- collection_filter -->
-						</div><!-- comp-collection-category -->
-					</div>
-					<div class="collection_list">
-						<div class="comp-product-list">
-							<div class="list_contents_flex column3">
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product01.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">マルチクリーナー</span>
-											<span class="name_en">In a silent way</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product02.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">食器用洗剤</span>
-											<span class="name_en">Don't Look Back in Anger</span>
-											<span class="price">2,350円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product03.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">フライパンブラシ</span>
-											<span class="name_en">Flypan Brush</span>
-											<span class="price">2,300円(税込)</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product04.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">ハンドソープ</span>
-											<span class="name_en">I Can Hear Music</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product01.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">マルチクリーナー</span>
-											<span class="name_en">In a silent way</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product02.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">食器用洗剤</span>
-											<span class="name_en">Don't Look Back in Anger</span>
-											<span class="price">2,350円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product03.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">フライパンブラシ</span>
-											<span class="name_en">Flypan Brush</span>
-											<span class="price">2,300円(税込)</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product04.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">ハンドソープ</span>
-											<span class="name_en">I Can Hear Music</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product01.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">マルチクリーナー</span>
-											<span class="name_en">In a silent way</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product02.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">食器用洗剤</span>
-											<span class="name_en">Don't Look Back in Anger</span>
-											<span class="price">2,350円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product03.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">フライパンブラシ</span>
-											<span class="name_en">Flypan Brush</span>
-											<span class="price">2,300円(税込)</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product04.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">ハンドソープ</span>
-											<span class="name_en">I Can Hear Music</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product01.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">マルチクリーナー</span>
-											<span class="name_en">In a silent way</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product02.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">食器用洗剤</span>
-											<span class="name_en">Don't Look Back in Anger</span>
-											<span class="price">2,350円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product03.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">フライパンブラシ</span>
-											<span class="name_en">Flypan Brush</span>
-											<span class="price">2,300円(税込)</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product04.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">ハンドソープ</span>
-											<span class="name_en">I Can Hear Music</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product01.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">マルチクリーナー</span>
-											<span class="name_en">In a silent way</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product02.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">食器用洗剤</span>
-											<span class="name_en">Don't Look Back in Anger</span>
-											<span class="price">2,350円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product03.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">フライパンブラシ</span>
-											<span class="name_en">Flypan Brush</span>
-											<span class="price">2,300円(税込)</span>
-										</span>
-									</a>
-								</div>
-								<div class="list_item">
-									<a href="#aaaa">
-										<span class="img_wrap">
-											<img src="assets/img/product/product04.jpg">
-										</span>
-										<span class="txt_wrap">
-											<span class="name_jp">ハンドソープ</span>
-											<span class="name_en">I Can Hear Music</span>
-											<span class="price">2,300円(税込) / 300ml</span>
-										</span>
-									</a>
-								</div>
-							</div><!-- list_contents_flex -->
-						</div><!-- comp-product-list -->
-					</div>
-				</div><!-- collection_flex -->
+									</span>
+								</span>
+							</a>
+						</div>
+					</div><!-- content_wrapper -->
+				</div><!-- comp-copntent-list -->
 			</div><!-- section_inner -->
 		</section>
 		<section class="section-links-contents">
