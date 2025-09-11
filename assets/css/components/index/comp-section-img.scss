@@ -1,0 +1,16 @@
+.comp-section-img{
+  .pc_img{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .comp-section-img{
+    .pc_img{
+      display: block;
+    }
+    .sp_img{
+      display: none;
+    }
+  }
+}
