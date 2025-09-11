@@ -1,0 +1,14 @@
+.comp-detail-title{
+  margin-bottom: 25px;
+  hgroup{
+    .title_en{
+      @include grotesk;
+      display: block;
+      font-size: 2.0rem;
+      margin-bottom: 12px;
+    }
+    .title_ja{
+      font-size: 1.3rem;
+    }
+  }
+}

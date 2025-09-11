@@ -1,0 +1,83 @@
+.page-product{
+	padding-top: 85px;
+	margin-bottom: 80px;
+	.section-product-detail{
+		margin-bottom: 50px;
+		.section_wide{
+			max-width: 92vw;
+			margin: 0 auto;
+			.detail_wrap{
+				margin-top: 30px;
+				padding: 0 2vw;
+				.comp-page-bread{
+					margin-bottom: 25px;
+				}
+				.name_wrap{
+					display: block;
+					margin-bottom: 20px;
+					.prod_ttl{
+						.ttl_jp{
+							display: block;
+							font-size: 1.3rem;
+							margin-bottom: 5px;
+						}
+						.ttl_en{
+							display: block;
+							font-size: 2.8rem;
+							line-height: 1.5;
+							@include grotesk;
+						}
+					}
+					.prod_price{
+						display: block;
+						margin-top: 5px;
+						span{
+							display: inline-block;
+							font-size: 1.2rem;
+							padding-right: 5px;
+						}
+					}
+				}
+				.detail_upper{
+					margin-bottom: 30px;
+					.prod_catchcopy{
+						font-size: 1.8rem;
+						line-height: 1.6;
+						margin-bottom: 10px;
+					}
+					.description{
+						@include basicP;
+					}
+				}
+				.desc_unit{
+					position: relative;
+					margin-bottom: 40px;
+					padding-bottom: 40px;
+					&::after{
+						display: block;
+						content: "";
+						position: absolute;
+						bottom:0;
+						left:-7vw;
+						width: 100vw;
+						height: 1px;
+						background: $borderColor;
+					}
+					&:nth-last-of-type(1){
+						padding-bottom: 50px;
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	.section-product-recomend01{
+		margin-bottom: 50px;
+	}
+	.section-product-recomend02{
+		margin-bottom: 50px;
+	}
+	.section-links-product{
+		margin-bottom: 80px;
+	}
+}

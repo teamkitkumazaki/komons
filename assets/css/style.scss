@@ -50,6 +50,8 @@
 @import 'components/common/comp-button-wrap.scss';
 @import 'components/common/comp-sns-wrap.scss';
 @import 'components/common/comp-page-main.scss';
+@import 'components/common/comp-page-bread.scss';
+
 
 
 @import 'component/comp-section-ttl.scss';
@@ -72,9 +74,18 @@
 @import 'component/index/comp-index-gift-slider.scss';
 
 
-/* 商品*/
+/* 商品一覧 */
 @import 'components/collection/comp-product-list.scss';
 @import 'components/collection/comp-collection-category.scss';
+
+/* 商品詳細 */
+@import 'components/product/comp-product-images.scss';
+@import 'components/product/comp-cart-wrap-switch.scss';
+@import 'components/product/comp-cart-wrap.scss';
+@import 'components/product/comp-product-description.scss';
+@import 'components/product/comp-detail-title.scss';
+@import 'components/product/comp-detail-toggle.scss';
+@import 'components/product/comp-scent-detail.scss';
 
 
 @import 'component/products/comp-product-list.scss';
@@ -89,13 +100,11 @@
 /* 商品詳細(新)*/
 @import 'component/itemNew/comp-item-thumbs.scss';
 @import 'component/itemNew/comp-gift-options-new.scss';
-@import 'component/itemNew/comp-cart-wrap.scss';
 @import 'component/itemNew/comp-cart-note.scss';
 @import 'component/itemNew/comp-subscription-wrap.scss';
 @import 'component/itemNew/comp-subscription-modal.scss';
 @import 'component/itemNew/comp-huckleberry-container.scss';
-@import 'component/itemNew/comp-cart-wrap-switch.scss';
-@import 'component/itemNew/comp-detail-title.scss';
+
 @import 'component/itemNew/comp-detail-desc.scss';
 @import 'component/itemNew/comp-detail-button.scss';
 @import 'component/itemNew/comp-detail-toggle-new.scss';
@@ -103,7 +112,6 @@
 @import 'component/itemNew/comp-related-journal-slide.scss';
 @import 'component/itemNew/comp-fixed-cart-wrap.scss';
 @import 'component/itemNew/comp-product-image-list.scss';
-@import 'component/itemNew/comp-scent-detail.scss';
 @import 'component/itemNew/comp-variation.scss';
 @import 'component/itemNew/comp-line-contact.scss';
 @import 'component/itemNew/comp-variation-select.scss';
@@ -165,26 +173,4 @@
 /* ########## ページ別レイアウト ########## */
 @import 'page/index.scss'; //トップページ
 @import 'page/collection.scss'; //商品一覧
-/*@import 'page/item_list.scss'; //商品一覧
-@import 'page/item_detail_new.scss'; //商品詳細
-@import 'page/group.scss'; //商品グループ一覧・検索結果
-@import 'page/journal.scss'; //  */
-
-@import 'page/blogs.scss'; /*ジャーナル一覧(新)*/
-@import 'page/article.scss'; /*ジャーナル詳細(新)*/
-@import 'page/journal_detail.scss'; /*ジャーナル詳細*/
-@import 'page/concept.scss'; /*コンセプト*/
-@import 'page/underpage.scss'; /*下層ページ共通*/
-@import 'page/stockist.scss'; /*アカウント登録ページ*/
-@import 'page/contact.scss'; /*コンタクトフォーム*/
-@import 'page/faq.scss'; /*よくある質問*/
-@import 'page/giftList.scss'; /*ギフトページ*/
-@import 'page/giftService.scss'; /* ギフトサービスページ*/
-@import 'page/waitingList.scss'; /*ウェイティングリスト*/
-@import 'page/review.scss'; /*レビューページ*/
-@import 'page/challenge.scss'; /*アカウント登録ページ*/
-@import 'page/cart.scss'; /*アカウント登録ページ*/
-@import 'page/404.scss';
-@import 'page/login.scss';
-@import 'page/mypage.scss';
-@import 'page/address.scss';
+@import 'page/product.scss'; //商品詳細

@@ -1,0 +1,127 @@
+.comp-detail-toggle{
+  .toggle_item{
+    position: relative;
+    margin-bottom: -1px;
+    border: 1px solid $basicGreen;
+    .nutrition_icon{
+      position: absolute;
+      right:-15px;
+      top:-30px;
+      width: 85px;
+      z-index: 100;
+    }
+    .toggle_button{
+      width: 100%;
+      @include flexSet;
+      justify-content: space-between;
+      font-size: 1.6rem;
+      color: $basicGreen;
+      padding: 15px 20px;
+      .caret{
+        width: 14px;
+        transition: transform .2s;
+        will-change: transform;
+        .cls-1{
+          fill:none;
+          stroke: $basicGreen;
+          stroke-miterlimit:4;
+          stroke-width:2px;
+          transition: stroke .2s;
+          will-change: stroke;
+        }
+      }
+      &.open{
+        background: $basicGreen;
+        color: #fff;
+        .caret{
+          width: 14px;
+          transform: rotate(180deg) translate(0,-2px);
+          .cls-1{
+            stroke: #fff;
+          }
+        }
+      }
+    }
+    .toggle_contents{
+      box-sizing: border-box;
+      overflow: hidden;
+      transition: height .3s;
+      .toggle_inner{
+        padding: 20px;
+        .desc_wrap{
+          position: relative;
+          padding-bottom: 20px;
+          margin-bottom: 15px;
+          &::after{
+            display: block;
+            content: "";
+            position: absolute;
+            left:-20px;
+            bottom:0;
+            width: calc(100% + 40px);
+            height: 1px;
+            background: $borderColor;
+          }
+          &:nth-last-of-type(1){
+            margin-bottom: 0;
+            padding-bottom: 0px;
+            &::after{
+              display: none;
+            }
+          }
+          .title{
+            font-size: 1.6rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+          }
+          .description{
+            font-size: 1.3rem;
+            line-height: 2;
+            a{
+              color: inherit;
+              text-decoration: underline;
+              transition: color .3s;
+              &:hover{
+                color: $basicGreen;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 780px){
+  .comp-detail-toggle{
+    .toggle_item{
+      margin-bottom: -1px;
+      .toggle_button{
+        width: 100%;
+        @include flexSet;
+        font-size: 1.8rem;
+        padding: 20px;
+        .caret{
+          width: 14px;
+        }
+      }
+      .toggle_contents{
+        .toggle_inner{
+          padding: 25px 20px 25px;
+          .desc_wrap{
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            .title{
+              font-size: 1.7rem;
+              line-height: 1.6;
+              margin-bottom: 7px;
+            }
+            .description{
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

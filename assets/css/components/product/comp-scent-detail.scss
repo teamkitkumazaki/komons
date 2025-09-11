@@ -1,45 +1,41 @@
 .comp-scent-detail{
-  .comp-detail-title{
+  .scent_img_wrap{
+    padding: 10px 0px;
     margin-bottom: 20px;
+    img{
+      width: 100%;
+    }
   }
   .scent_desc{
     font-size: 1.4rem;
     letter-spacing: 0.05em;
     line-height: 1.8;
-    margin-bottom: 20px;
-  }
-  .scent_img_wrap{
-    background: #f8f8f8;
-    padding: 25px 0px;
-    margin-bottom: 20px;
-    img{
-      width: 100%;
-      filter: brightness(0.97);
-    }
+    margin-bottom: 25px;
   }
   .scent_txt_wrap{
     .scent_main_ttl{
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       line-height: 1.6;
       margin-bottom: 15px;
-      letter-spacing: 0.1em;
     }
-    .scent_item{
-      border-bottom: 1px solid $insertGreen;;
-      padding: 20px 5px;
-      &:nth-last-of-type(1){
-        border-bottom: 0px solid $insertGreen;;
-      }
-      .title{
-        display: block;
-        @include libre-r;
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-      }
-      .content{
-        font-size: 1.4rem;
-        letter-spacing: 0.05em;
-        line-height: 1.8;
+    .scent_structure{
+      border: 1px solid $basicGreen;
+      .scent_item{
+        border-bottom: 1px solid $insertGreen;;
+        padding: 20px;
+        &:nth-last-of-type(1){
+          border-bottom: 0px solid $insertGreen;;
+        }
+        .title{
+          @include grotesk;
+          display: block;
+          font-size: 1.6rem;
+          margin-bottom: 10px;
+        }
+        .content{
+          font-size: 1.3rem;
+          line-height: 1.6;
+        }
       }
     }
   }
