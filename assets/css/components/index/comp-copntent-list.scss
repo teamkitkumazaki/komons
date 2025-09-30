@@ -80,6 +80,11 @@
           .img_wrap{
             display: block;
             margin-bottom: 35px;
+            overflow: hidden;
+            img{
+              transition: transform .3s, filter .3s;
+              will-change: transform, filter;
+            }
           }
           .content_wrap{
             .ttl_jp{
@@ -96,6 +101,27 @@
                 height: 22px;
                 svg{
                   width: 5px;
+                }
+              }
+            }
+          }
+          &:hover{
+            color: $hoverColor;
+            .img_wrap{
+              img{
+                transform: scale(1.05);
+                filter: brightness(0.90);
+              }
+            }
+            .content_wrap{
+              .ttl_en{
+                .caret{
+                  background: $hoverColor;
+                  width: 22px;
+                  height: 22px;
+                  svg{
+                    width: 5px;
+                  }
                 }
               }
             }

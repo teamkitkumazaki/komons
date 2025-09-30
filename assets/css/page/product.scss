@@ -23,7 +23,7 @@
 						}
 						.ttl_en{
 							display: block;
-							font-size: 2.8rem;
+							font-size: 2.4rem;
 							line-height: 1.5;
 							@include grotesk;
 						}
@@ -79,5 +79,97 @@
 	}
 	.section-links-product{
 		margin-bottom: 80px;
+	}
+}
+
+@media screen and (min-width: 980px){
+	.page-product{
+    padding-top: 120px;
+    margin-bottom: 160px;
+    overflow: visible;
+    .section-product-detail{
+      margin-bottom: 160px;
+      overflow: visible;
+      .section_wide{
+        width: 94vw;
+        max-width: 1550px;
+        min-width: 1200px;
+          overflow: visible;
+        .flex_wrap{
+          @include flexSet;
+          align-items: flex-start;
+          overflow: visible;
+          .img_wrap{
+            position: sticky;
+            top: 100px;
+            left:0;
+            width: 50%;
+          }
+        }
+        .detail_wrap{
+          width: 50%;
+          margin-top: 30px;
+          padding: 0 60px;
+          box-sizing: border-box;
+          max-width: unset;
+          @media screen and (min-width: 1600px){
+            padding: 0 80px;
+          }
+					.comp-page-bread{
+						margin-bottom: 30px;
+					}
+					.name_wrap{
+						display: block;
+						margin-bottom: 20px;
+						.prod_ttl{
+							.ttl_jp{
+								display: block;
+								font-size: 1.4rem;
+								margin-bottom: 10px;
+							}
+							.ttl_en{
+								display: block;
+								font-size: 2.8rem;
+								line-height: 1.5;
+								@include grotesk;
+							}
+						}
+						.prod_price{
+							display: block;
+							margin-top: 15px;
+							span{
+								display: inline-block;
+								font-size: 1.4rem;
+								padding-right: 5px;
+							}
+						}
+					}
+					.detail_upper{
+						margin-bottom: 30px;
+					}
+					.desc_unit{
+						position: relative;
+						margin-bottom: 80px;
+						padding-bottom: 0px;
+						&::after{
+							display: none;
+						}
+						&:nth-last-of-type(1){
+							padding-bottom: 0;
+							margin-bottom: 0;
+						}
+					}
+        }
+      }
+    }
+		.section-product-recomend01{
+			margin-bottom: 120px;
+		}
+		.section-product-recomend02{
+			margin-bottom: 120px;
+		}
+		.section-links-product{
+			margin-bottom: 120px;
+		}
 	}
 }

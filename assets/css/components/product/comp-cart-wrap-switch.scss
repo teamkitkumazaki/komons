@@ -27,7 +27,7 @@
         font-size: 1.3rem;
         letter-spacing: 0.5px;
         margin-left: 0.5em;
-        color: red;
+        color: #AE5151;
       }
       .selector{
         width: 13px;
@@ -104,7 +104,9 @@
 
 @media screen and (min-width: 720px){
   .comp-cart-wrap-switch{
-    margin-bottom: 20px;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 60px;
     .button_wrap{
       .switch_button{
         padding: 15px 25px;
@@ -116,7 +118,7 @@
           font-size: 1.3rem;
           letter-spacing: 0.5px;
           margin-left: 0.5em;
-          color: red;
+          color: #AE5151;
         }
         .selector{
           width: 13px;

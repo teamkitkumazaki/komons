@@ -3,7 +3,7 @@
 	position: relative;
 	z-index: 10;
 	background: {
-		image: url("https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/footer_bg_ipnnmp.png");
+		color: #f4f4f4;
 		size: 1000px;
 		position: center center;
 	}
@@ -294,7 +294,6 @@
 @media screen and (max-width: 750px){
 	.footer {
 		padding: 60px 0;
-		background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1653406618/common/footer_bg_sp_dkr8t5.png);
 		.footer_wrap {
 			max-width: 80%;
 			display: block;

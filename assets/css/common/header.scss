@@ -9,6 +9,7 @@ header{
 	margin: auto;
 	-webkit-font-smoothing: antialiased;
 	.header_inner{
+		padding-top: 10px;
 		position: relative;
 		@include flexSet;
 		align-items: center;
@@ -82,19 +83,20 @@ header{
 				}
 			}
 			.header_menu{
+				margin-right: 10px;
 				button{
 					position: relative;
 					display: block;
-					width: 70px;
-					height: 70px;
-					border-radius: 0 0 0 10px;
+					width: 50px;
+					height: 50px;
+					border-radius: 50%;
 					background: $basicGreen;
 					transition: background 0.2s;
 					will-change: background;
 					span {
 						position: absolute;
-						width: 24px;
-						height: 2px;
+						width: 20px;
+						height: 1px;
 						left: 0;
 						right: 0;
 						margin: auto;
@@ -104,11 +106,11 @@ header{
 						will-change: background, transform;
 
 						&:nth-of-type(1) {
-							top: 30px;
+							top: 22px;
 						}
 
 						&:nth-of-type(2) {
-							bottom: 30px;
+							bottom: 22px;
 						}
 					}
 					&.hum_open {
@@ -136,6 +138,18 @@ header{
 				}
 			}
 			.header_contents{
+				nav{
+					ul{
+						li{
+							&::after{
+								background: $basicGreen;
+							}
+							a{
+								color: $basicGreen;
+							}
+						}
+					}
+				}
 				.header_guide{
 					@include flexSet;
 					align-items: center;
@@ -150,6 +164,58 @@ header{
 								background-color: $basicGreen;
 								color: #fff;
 								@include grotesk;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.hum_open{
+		.header_inner{
+			.header_logo{
+				a{
+					svg{
+						fill: #fff;
+					}
+				}
+			}
+			.header_contents{
+				nav{
+					ul{
+						li{
+							&::after{
+								background: #fff;
+							}
+							a{
+								color: #fff;
+							}
+						}
+					}
+				}
+				.header_guide{
+					.nav_item{
+						a{
+							.icon{
+								svg{
+									fill: #fff;
+								}
+							}
+							.cart_item_num{
+								background-color: #fff;
+								color: $basicGreen;
+							}
+						}
+					}
+				}
+				.header_menu{
+					button{
+						span {
+							&:nth-of-type(1) {
+								transform: translateY(2.5px) rotate(45deg);
+							}
+							&:nth-of-type(2) {
+								transform: translateY(-2.5px) rotate(-45deg);
 							}
 						}
 					}
@@ -191,11 +257,15 @@ header{
 								width: 1px;
 								height: 12px;
 								background: #fff;
+								transition: background .3s;
+								will-change: background;
 							}
 							a{
 								color: #fff;
 								@include grotesk;
 								font-size: 1.6rem;
+								transition: color .3s;
+								will-change: color;
 							}
 						}
 					}
@@ -250,47 +320,6 @@ header{
 				}
 				.header_menu{
 					margin-right: 30px;
-					button{
-						position: relative;
-						display: block;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						background: $basicGreen;
-						transition: background 0.2s;
-						will-change: background;
-						span {
-							position: absolute;
-							width: 24px;
-							height: 1px;
-							left: 0;
-							right: 0;
-							margin: auto;
-							background: #fff;
-							margin: auto;
-							transition: background 0.1s, transform 0.1s;
-							will-change: background, transform;
-
-							&:nth-of-type(1) {
-								top: 26px;
-							}
-
-							&:nth-of-type(2) {
-								bottom: 26px;
-							}
-						}
-						&.hum_open {
-							span {
-								&:nth-of-type(1) {
-									transform: translateY(4px) rotate(45deg);
-								}
-
-								&:nth-of-type(2) {
-									transform: translateY(-4px) rotate(-45deg);
-								}
-							}
-						}
-					}
 				}
 			}
 		}
