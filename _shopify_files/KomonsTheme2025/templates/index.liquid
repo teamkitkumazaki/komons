@@ -1,0 +1,449 @@
+{%- comment -%}
+{{ content_for_index }}
+{%- endcomment -%}
+<script>
+  (function() {
+    function removeScriptTags() {
+      var srcs = [];
+      var entry = document.getElementsByTagName('script')[0];
+      srcs.forEach(function(src) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = src;
+        script.async = false;
+        entry.parentNode.insertBefore(script, entry);
+      })
+    }
+    window.addEventListener('load', removeScriptTags, false);
+  })();
+</script>
+<div id="loading">
+  <div class="load_inner">
+    <div class="main_txt">
+      <div class="main_img"><img width="145" height="32" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/h_logo_nwjm8r.png"></div>
+      <h1 class="main_ttl">毎日の家事を、心地よい時間に。</h1>
+      <p id="loadingBar"><span></span></p>
+    </div>
+  </div>
+</div>
+
+<article id="index" class="page-index">
+  <section class="section-index-main comp-page-main">
+    <div class="main_image">
+      <img class="sp_img" src="{{ 'main.jpg' | asset_url }}">
+      <img class="pc_img first_view" src="{{ 'main_pc.jpg' | asset_url }}">
+    </div>
+  </section>
+  <section id="headerRolled" class="section-product-list">
+    <div class="section_inner">
+      <div class="product_wrapper">
+        <div class="comp-product-list">
+          <div class="list_ttl_flex">
+            <h2 class="list_ttl">Kitchen</h2>
+            <div class="comp-button-wrap">
+              <a href="#aaaa">
+                <span class="txt">All</span>
+                <span class="caret">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                    <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                  </path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div><!-- list_ttl_flex -->
+          <div class="list_contents_flex">
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product01.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">マルチクリーナー</span>
+                  <span class="name_en">In a silent way</span>
+                  <span class="price">2,300円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product02.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">食器用洗剤</span>
+                  <span class="name_en">Don't Look Back in Anger</span>
+                  <span class="price">2,350円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product03.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">フライパンブラシ</span>
+                  <span class="name_en">Flypan Brush</span>
+                  <span class="price">2,300円(税込)</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product04.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">ハンドソープ</span>
+                  <span class="name_en">I Can Hear Music</span>
+                  <span class="price">2,300円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+          </div><!-- list_contents_flex -->
+        </div><!-- comp-product-list -->
+      </div><!-- product_wrapper -->
+      <div class="product_wrapper">
+        <div class="comp-product-list">
+          <div class="list_ttl_flex">
+            <h2 class="list_ttl">Living / Bedroom</h2>
+            <div class="comp-button-wrap">
+              <a href="#aaaa">
+                <span class="txt">All</span>
+                <span class="caret">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                    <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                  </path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div><!-- list_ttl_flex -->
+          <div class="list_contents_flex">
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product01.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">マルチクリーナー</span>
+                  <span class="name_en">In a silent way</span>
+                  <span class="price">2,300円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product02.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">食器用洗剤</span>
+                  <span class="name_en">Don't Look Back in Anger</span>
+                  <span class="price">2,350円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product03.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">フライパンブラシ</span>
+                  <span class="name_en">Flypan Brush</span>
+                  <span class="price">2,300円(税込)</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product04.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">ハンドソープ</span>
+                  <span class="name_en">I Can Hear Music</span>
+                  <span class="price">2,300円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+          </div><!-- list_contents_flex -->
+        </div><!-- comp-product-list -->
+      </div><!-- product_wrapper -->
+      <div class="product_wrapper">
+        <div class="comp-product-list">
+          <div class="list_ttl_flex">
+            <h2 class="list_ttl">Toilet / Bathroom</h2>
+            <div class="comp-button-wrap">
+              <a href="#aaaa">
+                <span class="txt">All</span>
+                <span class="caret">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                    <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                  </path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div><!-- list_ttl_flex -->
+          <div class="list_contents_flex">
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product01.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">マルチクリーナー</span>
+                  <span class="name_en">In a silent way</span>
+                  <span class="price">2,300円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product02.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">食器用洗剤</span>
+                  <span class="name_en">Don't Look Back in Anger</span>
+                  <span class="price">2,350円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product03.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">フライパンブラシ</span>
+                  <span class="name_en">Flypan Brush</span>
+                  <span class="price">2,300円(税込)</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product04.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">ハンドソープ</span>
+                  <span class="name_en">I Can Hear Music</span>
+                  <span class="price">2,300円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+          </div><!-- list_contents_flex -->
+        </div><!-- comp-product-list -->
+      </div><!-- product_wrapper -->
+      <div class="product_wrapper">
+        <div class="comp-product-list">
+          <div class="list_ttl_flex">
+            <h2 class="list_ttl">Others</h2>
+            <div class="comp-button-wrap">
+              <a href="#aaaa">
+                <span class="txt">All</span>
+                <span class="caret">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                    <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                  </path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div><!-- list_ttl_flex -->
+          <div class="list_contents_flex">
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product01.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">マルチクリーナー</span>
+                  <span class="name_en">In a silent way</span>
+                  <span class="price">2,300円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product02.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">食器用洗剤</span>
+                  <span class="name_en">Don't Look Back in Anger</span>
+                  <span class="price">2,350円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product03.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">フライパンブラシ</span>
+                  <span class="name_en">Flypan Brush</span>
+                  <span class="price">2,300円(税込)</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'product04.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_jp">ハンドソープ</span>
+                  <span class="name_en">I Can Hear Music</span>
+                  <span class="price">2,300円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+          </div><!-- list_contents_flex -->
+        </div><!-- comp-product-list -->
+      </div><!-- product_wrapper -->
+    </div><!-- section_inner -->
+  </section>
+  <section class="section-index-gift">
+    <div class="comp-section-img">
+      <div class="img_wrap">
+        <img class="sp_img" src="{{ 'index_img02.jpg' | asset_url }}">
+        <img class="pc_img" src="{{ 'index_img02_pc.jpg' | asset_url }}">
+      </div>
+    </div><!-- comp-section-img -->
+    <div class="section_inner">
+      <div class="product_wrapper">
+        <div class="comp-product-list">
+          <div class="list_ttl_flex">
+            <h2 class="list_ttl">Gift</h2>
+            <div class="comp-button-wrap">
+              <a href="/collections/gift">
+                <span class="txt">All</span>
+                <span class="caret">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                    <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                  </path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div><!-- list_ttl_flex -->
+          <div class="list_contents_flex">
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'gift01.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_en">ハンドケアコンビ</span>
+                  <span class="price">2,300円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'gift01.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_en">ホワイトボックス</span>
+                  <span class="name_jp">マルチ＆ファブリックミスト</span>
+                  <span class="price">2,350円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'gift01.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_en">ホワイトボックス</span>
+                  <span class="name_jp">ハンドソープ＆ハンドミルク</span>
+                  <span class="price">2,350円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+            <div class="list_item">
+              <a href="#aaaa">
+                <span class="img_wrap">
+                  <img src="{{ 'gift01.jpg' | asset_url }}">
+                </span>
+                <span class="txt_wrap">
+                  <span class="name_en">ホワイトボックス</span>
+                  <span class="name_jp">ハンドソープ＆ミルク</span>
+                  <span class="price">2,350円(税込) / 300ml</span>
+                </span>
+              </a>
+            </div>
+          </div><!-- list_contents_flex -->
+        </div><!-- comp-product-list -->
+      </div><!-- product_wrapper -->
+    </div><!-- section_inner -->
+  </section>
+  <section class="section-index-contents">
+    <div class="comp-section-img">
+      <div class="img_wrap">
+        <img class="sp_img" src="{{ 'index_img03.jpg' | asset_url }}">
+        <img class="pc_img" src="{{ 'index_img03_pc.jpg' | asset_url }}">
+      </div>
+    </div><!-- comp-section-img -->
+    <div class="section_inner">
+      <div class="comp-copntent-list">
+        <h2 class="content_ttl">About Us</h2>
+        <div class="content_wrapper">
+          <div class="content_item">
+            <a href="#aaaa">
+              <span class="img_wrap">
+                <img src="{{ 'content_img01.jpg' | asset_url }}">
+              </span>
+              <span class="content_wrap">
+                <span class="ttl_jp">Komonsについて</span>
+                <span class="ttl_en">
+                  <span class="txt">Vision of Home Care</span>
+                  <span class="caret">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                      <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                    </path>
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="content_item">
+            <a href="#aaaa">
+              <span class="img_wrap">
+                <img src="{{ 'content_img02.jpg' | asset_url }}">
+              </span>
+              <span class="content_wrap">
+                <span class="ttl_jp">Fragrance Labについて</span>
+                <span class="ttl_en">
+                  <span class="txt">Create a Fragrance</span>
+                  <span class="caret">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                      <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                    </path>
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div><!-- content_wrapper -->
+      </div><!-- comp-copntent-list -->
+    </div><!-- section_inner -->
+    <div class="comp-section-img">
+      <div class="img_wrap">
+        <img class="sp_img" src="{{ 'index_img04.jpg' | asset_url }}">
+        <img class="pc_img" src="{{ 'index_img04_pc.jpg' | asset_url }}">
+      </div>
+    </div><!-- comp-section-img -->
+  </section>
+</article>

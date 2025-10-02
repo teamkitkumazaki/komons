@@ -1,0 +1,77 @@
+<article id="order" class="page-mypage">
+  <section class="section-admin">
+    <div class="section_inner_new">
+      <div class="admin_wrapper">
+				<div class="comp-admin-title">
+					<hgroup>
+						<h1 class="page_ttl en">ORDER</h1>
+						<span class="page_subttl ja">注文詳細：{{ order.name }}</span>
+					</hgroup>
+					<div class="page_bread">
+						<div class="link_wrap">
+							<a href="{{ routes.account_logout_url }}">ログアウト</a>
+							<a href="{{ routes.account_url }}">マイページトップ</a>
+							<span class="current">ご注文詳細</span>
+						</div>
+					</div>
+				</div>
+        <div class="admin_flex">
+					<div class="admin_left">
+					<div class="item_wrap">
+						<div class="comp-cart-item-list">
+							<div class="cart_head">
+								<span class="product head">商品</span>
+								<span class="lot head">数量</span>
+								<span class="amount head">合計</span>
+							</div>
+							<div class="item_list">
+							{%- for item in order.line_items -%}
+								{% include 'cart-item-card' %}
+							{%- endfor -%}
+								</div>
+							</div><!-- comp-cart-item-list-->
+							<div class="comp-amount-wrap left">
+								<div class="amount_item">
+									<span class="ttl">小計</span>
+									<p class="price">{{ order.line_items_subtotal_price | money_without_currency }}円(税込)</p>
+								</div>
+								<div class="amount_item">
+									<span class="ttl">送料</span>
+									<p class="price">{{ order.shipping_price | money_without_currency }}円(税込)</p>
+								</div>
+								<div class="amount">
+									<p class="total_price">合計金額：{{ order.total_price | money_without_currency }}円(税込)</p>
+								</div>
+							</div><!-- comp-amount-wrap -->
+						</div><!-- item_wrap -->
+					</div><!-- admin_left -->
+          <div class="comp-side-wrap">
+            <div class="comp-admin-subttl">
+              <h2 class="ttl">決済者情報</h2>
+            </div>
+            <div class="comp-user-address">
+              <div class="address_item">
+                <p class="username">{{ order.billing_address.last_name }}{{ order.billing_address.first_name }}</p>
+                <div class="address">
+                  <p><span>〒{{ order.billing_address.zip }}</span><span>{{ order.billing_address.province }}{{ order.billing_address.city }}</span><span>{{ order.billing_address.street }}</span></p>
+                </div>
+              </div>
+            </div>
+            <hr class="comp-admin-hr">
+            <div class="comp-admin-subttl">
+              <h2 class="ttl">配送先情報</h2>
+            </div>
+            <div class="comp-user-address">
+              <div class="address_item">
+                <p class="username">{{ order.shipping_address.last_name }}{{ order.shipping_address.first_name }}</p>
+                <div class="address">
+                  <p><span>〒{{ order.shipping_address.zip }}</span><span>{{ order.shipping_address.province }} {{ order.shipping_address.city }}</span><span>{{ order.shipping_address.street }}</span></p>
+                </div>
+              </div>
+            </div>
+          </div><!-- comp-side-wrap -->
+        </div>
+      </div><!-- admin_wrapper -->
+    </div><!-- section_inner_new -->
+  </section>
+</article>
