@@ -12,9 +12,25 @@
         font-size: 1.8rem;
         line-height: 1.6;
         margin-bottom: 10px;
+        &.set{
+          font-size: 2.0rem;
+          span{
+            display: block;
+            font-size: 1.3rem;
+          }
+        }
       }
       .desctiption_txt{
         @include basicP;
+      }
+      .comp-button-wrap{
+        margin-top: 25px;
+        a{
+          justify-content: flex-start;
+          .txt{
+            font-size: 1.5rem;
+          }
+        }
       }
     }
   }
@@ -31,6 +47,21 @@
         .desc_ttl{
           font-size: 2.0rem;
           margin-bottom: 15px;
+          &.set{
+            font-size: 2.4rem;
+            span{
+              display: block;
+              font-size: 1.6rem;
+            }
+          }
+        }
+        .comp-button-wrap{
+          margin-top: 30px;
+          a{
+            .txt{
+              font-size: 1.7rem;
+            }
+          }
         }
       }
     }
