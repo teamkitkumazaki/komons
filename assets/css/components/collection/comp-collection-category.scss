@@ -67,7 +67,7 @@
             }
           }
         }
-        &.active_category{
+        &.active_category, &.active{
           .caret{
             background: $basicGreen;
           }
@@ -131,7 +131,7 @@
               }
             }
           }
-          &.active_category{
+          &.active_category, &.active{
             pointer-events: none;
             .caret{
               background: $basicGreen;

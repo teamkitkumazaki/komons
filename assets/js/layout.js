@@ -237,6 +237,144 @@ $(function() {
 
   humMenuToggle($('#humMenu'));
 
+
+  // ギフト一覧ページ 商品フィルタリング
+  function giftProductFilter2(target){
+    var time = 300;
+    var priceFilter = $('#priceFilter');
+    var categoryFilter = $('#categoryFilter');
+    var categoryButton = [];
+    var categoryProp = [];
+    var categoryState = -1;
+    var cureentCategory = 'all';
+    var itemLength = target.find(".list_item").length;
+    var lengthNum = itemLength + 1;
+    var priceMin = 0;
+    var priceMax = 100000;
+    var priceMinBox = [];
+    var priceMaxBox = [];
+    var giftListArray = [];
+    var param = location.search;
+
+    function scrollToTop(){
+      var targetTop = target.offset().top;
+      var headerHeight = $('header').outerHeight();
+      $("html, body").animate({
+        scrollTop: targetTop - headerHeight
+      }, 400);
+    }
+
+    function categorySort(cat){
+      target.stop().animate({ opacity: 0 }, time, function() {
+        target.html('');
+        for (var i=0; i<itemLength; i++) {
+          console.log(giftListArray[i].prop);
+          if(giftListArray[i].prop.indexOf(cat) != -1 || cat == 'all'){
+            target.append(giftListArray[i].html);
+          }
+        }
+        target.stop().animate({ opacity: 1 }, time);
+        priceFilter.val(0);
+        priceMin = 0;
+        priceMax = 100000;
+        scrollToTop()
+      });
+    }
+
+    function priceRangeSort(min,max){
+      target.stop().animate({ opacity: 0 }, time, function() {
+        target.html('');
+        for (var i=0; i<itemLength; i++) {
+          if(min < giftListArray[i].price && giftListArray[i].price < max){
+            target.append(giftListArray[i].html);
+          }
+        }
+        target.stop().animate({ opacity: 1 }, time);
+        categoryFilter.find('button').removeClass('active');
+        categoryState = -1;
+        scrollToTop();
+      });
+    }
+
+    function init(){
+      target.find(".list_item").each(function(index) {
+        $(this).attr('number', index);
+        giftListArray[index] = {
+          html : $(this),
+          prop: $(this).attr('category'),
+          price : Number($(this).attr('price').replace(/,/g, '')),
+        };
+      });
+
+      priceFilter.on({
+        'change': function() {
+          var onTarget = priceFilter.find('option:selected');
+          priceMin = onTarget.attr('min');
+          priceMax = onTarget.attr('max');
+          priceRangeSort(priceMin,priceMax);
+        }
+      });
+
+      categoryFilter.find('button').each(function(index) {
+        categoryButton[index] = $(this);
+        categoryProp[index] = $(this).attr('prop');
+        console.log(index + ':' + categoryProp[index]);
+        categoryButton[index].on({
+          'click': function() {
+            categoryFilter.find('button').removeClass('active');
+            console.log('categoryProp[index]:' + categoryProp[index]);
+            if(index != categoryState){
+              categoryButton[index].addClass('active');
+              cureentCategory = categoryProp[index];
+              categoryState = index;
+            }else{
+              cureentCategory = 'all';
+              categoryState = -1;
+            }
+            categorySort(cureentCategory);
+          }
+        });
+      });
+
+      if(param.indexOf('tag=0') != -1){
+        console.log('tag0')
+        categoryButton[0].click();
+      }
+
+      if(param.indexOf('tag=1') != -1){
+        console.log('tag1')
+        categoryButton[1].click();
+      }
+
+      if(param.indexOf('tag=2') != -1){
+        console.log('tag2')
+        categoryButton[2].click();
+      }
+
+      if(param.indexOf('tag=3') != -1){
+        console.log('tag3')
+        categoryButton[3].click();
+      }
+
+      if(param.indexOf('tag=4') != -1){
+        console.log('tag4')
+        categoryButton[4].click();
+      }
+
+      if(param.indexOf('tag=5') != -1){
+        console.log('tag5')
+        categoryButton[5].click();
+      }
+
+    }
+
+    init();
+  }
+
+  if (document.getElementById('giftProductList')) {
+    giftProductFilter2($('#giftProductList'));
+  }
+
   //商品詳細ページ サムネイルの切り替え
   function thumbSwitcher(target){
     let thumbButton = [];

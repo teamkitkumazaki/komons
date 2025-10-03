@@ -9897,6 +9897,9 @@ body.loaded #loading {
   display: block;
   margin-bottom: 20px;
 }
+.comp-product-list .list_contents_flex .list_item a .img_wrap img {
+  width: 100%;
+}
 .comp-product-list .list_contents_flex .list_item a .txt_wrap {
   display: block;
   line-height: 1.3;
@@ -9913,6 +9916,12 @@ body.loaded #loading {
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.06em;
   margin-bottom: 5px;
+}
+.comp-product-list .list_contents_flex .list_item a .txt_wrap .name_en .added {
+  font-size: 1.1rem;
+  display: block;
+  line-height: 1.6;
+  margin-top: 5px;
 }
 .comp-product-list .list_contents_flex .list_item a .txt_wrap .price {
   display: block;
@@ -9992,6 +10001,9 @@ body.loaded #loading {
   .comp-product-list .list_contents_flex .list_item a .txt_wrap .name_en {
     font-size: 2rem;
     margin-bottom: 8px;
+  }
+  .comp-product-list .list_contents_flex .list_item a .txt_wrap .name_en .added {
+    font-size: 1.3rem;
   }
   .comp-product-list .list_contents_flex .list_item a .txt_wrap .price {
     font-size: 1.3rem;
@@ -10125,7 +10137,7 @@ body.loaded #loading {
   fill: #fff;
   stroke: none;
 }
-.comp-collection-category .collection_filter .filter_item button.active_category .caret {
+.comp-collection-category .collection_filter .filter_item button.active_category .caret, .comp-collection-category .collection_filter .filter_item button.active .caret {
   background: #00381f;
 }
 
@@ -10197,10 +10209,10 @@ body.loaded #loading {
     fill: #fff;
     stroke: none;
   }
-  .comp-collection-category .collection_filter .filter_item button.active_category {
+  .comp-collection-category .collection_filter .filter_item button.active_category, .comp-collection-category .collection_filter .filter_item button.active {
     pointer-events: none;
   }
-  .comp-collection-category .collection_filter .filter_item button.active_category .caret {
+  .comp-collection-category .collection_filter .filter_item button.active_category .caret, .comp-collection-category .collection_filter .filter_item button.active .caret {
     background: #00381f;
   }
   .comp-collection-category .collection_filter .filter_item button:hover {

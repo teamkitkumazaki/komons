@@ -1,23 +1,34 @@
-{%- assign limit = 24 -%}
+{%- assign limit = 60 -%}
 {% paginate collection.products by limit %}
 
 <article id="collection" class="page-collection">
   <section class="section-index-main comp-page-main">
     <div class="main_image">
-      <img class="sp_img" src="{{ 'collection_main.jpg' | asset_url }}">
-      <img class="pc_img" src="{{ 'collection_main_pc.jpg' | asset_url }}">
+      <img class="sp_img" src="{{ 'gift_main.jpg' | asset_url }}">
+      <img class="pc_img" src="{{ 'gift_main_pc.jpg' | asset_url }}">
     </div>
   </section>
   <section id="headerRolled" class="section-product-list">
     <div class="section_inner">
       <div class="collection_flex">
         <div class="collection_category">
-          <h1 class="collection_ttl">Products</h1>
+          <h1 class="collection_ttl">Gifts</h1>
           <div class="comp-collection-category">
-            <div class="collection_filter">
+            <div class="collection_selector">
+              <div class="filter_ttl">価格で絞り込み</div>
+              <select id="priceFilter" class="price_filter">
+                <option value="0" min="0" max="100000">全ての商品</option>
+                <option value="1" min="0" max="3001">3,000円以下</option>
+                <option value="2" min="3001" max="5000">3,001円~5,000円</option>
+                <option value="3" min="5001" max="10000">5,001円~10,000円</option>
+                <option value="4" min="10001" max="100000">10,001円以上</option>
+              </select>
+            </div>
+            <div class="filter_ttl">カテゴリで絞り込み</div>
+            <div id="categoryFilter" class="collection_filter">
               <div class="filter_item">
-                <button class="active_category">
-                  <span class="txt">ALL</span>
+                <button prop="all" class="active">
+                  <span class="txt jp">全てのギフト</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -26,8 +37,8 @@
                 </button>
               </div>
               <div class="filter_item">
-                <button>
-                  <span class="txt">Kitchen</span>
+                <button prop="人気">
+                  <span class="txt jp">人気ギフト</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -36,8 +47,8 @@
                 </button>
               </div>
               <div class="filter_item">
-                <button>
-                  <span class="txt">Living / Bedroom</span>
+                <button prop="結婚">
+                  <span class="txt jp">結婚祝い</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -46,8 +57,8 @@
                 </button>
               </div>
               <div class="filter_item">
-                <button>
-                  <span class="txt">Toilet / Bathroom</span>
+                <button prop="新築">
+                  <span class="txt jp">新築・引越し祝い</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -56,8 +67,8 @@
                 </button>
               </div>
               <div class="filter_item">
-                <button>
-                  <span class="txt">Others</span>
+                <button prop="内祝">
+                  <span class="txt jp">お返し/内祝</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -66,8 +77,8 @@
                 </button>
               </div>
               <div class="filter_item">
-                <button>
-                  <span class="txt">Refill</span>
+                <button prop="自分">
+                  <span class="txt jp">自分へのご褒美</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -80,11 +91,11 @@
         </div>
         <div class="collection_list">
           <div class="comp-product-list">
-            <div class="list_contents_flex column3">
-              {% for product in collection.products %}
-              {%- include 'all-item-card' -%}
-              {% endfor %}
-            </div><!-- list_contents_flex -->
+            <div id="giftProductList" class="list_contents_flex column3">
+            {% for product in collection.products %}
+              {%- include 'gift-item-card' -%}
+            {% endfor %}
+          </div>
           </div><!-- comp-product-list -->
         </div>
       </div><!-- collection_flex -->
@@ -93,8 +104,8 @@
   <section class="section-sns-wrap">
     <div class="comp-section-img">
       <div class="img_wrap">
-        <img class="sp_img" src="{{ 'collection_sns.jpg' | asset_url }}">
-        <img class="pc_img" src="{{ 'collection_sns_pc.jpg' | asset_url }}">
+        <img class="sp_img" src="{{ 'index_img02.jpg' | asset_url }}">
+        <img class="pc_img" src="{{ 'index_img02_pc.jpg' | asset_url }}">
       </div>
       {% include 'sns-links' %}
     </div><!-- comp-section-img -->
