@@ -1,4 +1,16 @@
-<header>
+{%- if request.page_type contains 'index' or request.page_type contains 'collection' -%}
+{%- assign headerType = 'normal' -%}
+{%- else -%}
+
+{%- if request.path contains 'concept' or request.path contains 'fragrance' -%}
+{%- assign headerType = 'normal' -%}
+{%- else -%}
+{%- assign headerType = 'underpage' -%}
+{%- endif -%}
+
+{%- endif -%}
+
+<header class="{{ headerType }}">
   <div class="header_inner">
     <div class="header_logo">
       <a href="/">

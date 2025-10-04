@@ -184,7 +184,6 @@ $(function() {
   scrollArrow($('body'));
 
   //ハンバーガーメニューの開閉
-
   function humMenuToggle(target) {
     var humButton = target.find('button');
     var closeBtn = $('#humClose');
@@ -610,6 +609,166 @@ $(function() {
   if (document.getElementById('product')) {
     toggleControl($('#toggles01'));
     toggleControl($('#toggles02'));
+  }
+
+  // ガイド系ページ 目次ボタン
+  function indexAnker(target){
+    var ankerButton = [];
+    var scrollTarget = [];
+
+    function windowMove(e) {
+      var headerHeight = $('header').outerHeight();
+      var scrollHeight = $(scrollTarget[e]).offset().top;
+      var adScroll = scrollHeight - headerHeight;
+      $("html, body").animate({
+        scrollTop: adScroll
+      }, 500);
+    }
+
+
+    function init(){
+      target.find('button').each(function(index) {
+        ankerButton[index] = $(this);
+        scrollTarget[index] = $(this).attr('jump');
+        ankerButton[index].on({
+          'click': function() {
+            windowMove(index);
+          }
+        });
+      });
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('categoryList')) {
+    indexAnker($('#categoryList'));
+  }
+
+  //FAQページ内の、トグル制御
+
+  function faqToggle(target) {
+    var toggleItem = [];
+    var toggleButton = [];
+    var toggleContents = [];
+    var toggleState = [];
+    var toggleTitleTxt = [];
+    var toggleContentsTxt = [];
+    var faqSearch = $('#faqSearch');
+    var faqFlex = $('#faqFlex');
+    var windowW = window.innerWidth;
+
+    function filterFaqItem(){
+      var searchValue = faqSearch.val();
+      $.each(target.find('.toggle_item'), function(index) {
+        if(searchValue.length > 1){
+          if(toggleTitleTxt[index].indexOf(searchValue) != -1 || toggleContentsTxt[index].indexOf(searchValue) != -1){
+            $(this).css({'display': 'block'});
+          }else{
+            $(this).css({'display': 'none'});
+          }
+        }else{
+          $(this).css({'display': 'block'});
+        }
+      });
+      $.each(target.find('.comp-faq-contents'), function(index) {
+        if(searchValue.length > 1){
+          if($(this).text().indexOf(searchValue) != -1){
+            $(this).css({'display': 'block'});
+          }else{
+            $(this).css({'display': 'none'});
+          }
+        }else{
+          $(this).css({'display': 'block'});
+        }
+      });
+      $.each(target.find('.item_wrap'), function(index) {
+        if(searchValue.length > 1){
+          if($(this).text().indexOf(searchValue) != -1){
+            $(this).css({'display': 'block'});
+          }else{
+            $(this).css({'display': 'none'});
+          }
+        }else{
+          $(this).css({'display': 'block'});
+        }
+      });
+    }
+
+    function toggleMove(e) {
+      if ( toggleState[e] == 0 ) {
+        toggleButton[e].addClass('active');
+        var buttonHeight = toggleButton[e].outerHeight();
+        var tagetHeight = toggleContents[e].outerHeight();
+        toggleItem[e].css({
+          'height': buttonHeight + tagetHeight + 'px'
+        });
+        toggleState[e] = 1;
+      } else {
+        toggleButton[e].removeClass('active');
+        var buttonHeight = toggleButton[e].outerHeight();
+          toggleItem[e].css({
+            'height': buttonHeight + 2 + 'px'
+          });
+        toggleState[e] = 0;
+      }
+    }
+
+    function setToggleHeight(){
+      $.each(target.find('.toggle_item'), function(index) {
+        toggleItem[index] = $(this);
+        toggleButton[index] = $(this).find('.toggle_button');
+        toggleContents[index] = $(this).find('.toggle_contents');
+        $(this).css({'height': toggleButton[index].outerHeight() + 2 + 'px'});
+        toggleState[index] = 0;
+      });
+    }
+
+    function windowChecker(){
+      var currentWindow = window.innerWidth;
+      if(currentWindow != windowW){
+        setToggleHeight();
+        windowW = currentWindow
+      }
+      requestAnimationFrame(windowChecker);
+    }
+
+    function init() {
+      $.each(target.find('.toggle_item'), function(index) {
+        toggleItem[index] = $(this);
+        toggleButton[index] = $(this).find('.toggle_button');
+        toggleContents[index] = $(this).find('.toggle_contents');
+        $(this).css({'height': toggleButton[index].outerHeight() + 2 + 'px'});
+        toggleState[index] = 0;
+        toggleTitleTxt[index] = toggleButton[index].text();
+        toggleContentsTxt[index] = toggleContents[index].text();
+        toggleButton[index].on({
+          'click': function() {
+            toggleMove(index);
+          }
+        });
+      });
+      if (document.getElementById('faq')) {
+        faqSearch.on({
+          'blur': function(){
+            faqFlex.stop().animate({opacity: 0}, 300);
+            setTimeout(function() {
+              filterFaqItem();
+              faqFlex.stop().animate({opacity: 1}, 300);
+            }, 300);
+          }
+        });
+      }
+      windowChecker();
+    }
+
+    init();
+
+  }
+
+  if (document.getElementById('faqFlex')) {
+    faqToggle($('article'));
   }
 
 

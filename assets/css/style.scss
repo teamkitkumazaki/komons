@@ -51,10 +51,8 @@
 @import 'components/common/comp-sns-wrap.scss';
 @import 'components/common/comp-page-main.scss';
 @import 'components/common/comp-page-bread.scss';
+@import 'components/common/comp-section-ttl.scss';
 
-
-
-@import 'component/comp-section-ttl.scss';
 @import 'component/common/comp-new-section-ttl.scss';
 @import 'component/common/comp-slider-caret.scss';
 @import 'component/common/comp-box-button.scss';
@@ -67,6 +65,10 @@
 @import 'components/index/comp-section-img.scss';
 @import 'components/index/comp-copntent-list.scss';
 
+/* 下層ページ */
+@import 'components/underpage/comp-category-button.scss';
+@import 'components/underpage/comp-stock-list.scss';
+@import 'components/underpage/comp-faq-contents.scss';
 
 @import 'component/index/comp-index-product-section.scss';
 @import 'component/index/comp-index-prod-slider.scss';
@@ -133,7 +135,6 @@
 /* ストア一覧・FAQ */
 @import 'component/store/comp-popup-store.scss';
 @import 'component/store/comp-popup-store2.scss';
-@import 'component/store/comp-stock-list.scss';
 @import 'component/store/comp-popup-archive.scss';
 
 /* ギフト */
@@ -142,8 +143,7 @@
 
 
 /* FAQ */
-@import 'component/faq/comp-qa.scss';
-@import 'component/faq/comp-faq-contents.scss';
+
 
 
 /* カート */
@@ -167,7 +167,7 @@
 @import 'component/admin/comp-form-message.scss';
 @import 'component/admin/comp-page-log.scss';
 @import 'component/admin/comp-sns-alignment.scss';
-@import 'component/admin/comp-category-button.scss';
+
 @import 'component/admin/comp-form-wrap.scss';
 
 
@@ -177,3 +177,4 @@
 @import 'page/collection.scss'; //商品一覧
 @import 'page/product.scss'; //商品詳細
 @import 'page/conceptNew.scss'; //商品詳細
+@import 'page/guide.scss'; //ショッピングガイド系
