@@ -38,6 +38,12 @@
       transition: all 0.5s;
     }
   }
+  &.gift{
+    button,a {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
 }
 
 @media screen and (max-width: 980px){
@@ -67,6 +73,12 @@
         top:0;
         right: 20px;
         transform:translate(-4px,3px) rotate(-45deg);
+      }
+    }
+    &.gift{
+      button,a {
+        width: auto;
+        margin-right: 5px;
       }
     }
   }
