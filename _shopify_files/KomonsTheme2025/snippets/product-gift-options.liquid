@@ -1,0 +1,62 @@
+{% if product.type == 'gift' %}
+<div class="comp-gift-variation-select">
+  <div class="title_wrap">
+    <h2 class="gift_option_ttl">ギフトオプション<span>(複数選択可)</span></h2>
+    <div class="detail_button">
+      <button id="giftDetailButton">
+        <span class="icon">
+          <img src="{{ 'icon_question.svg' | asset_url }}">
+        </span>
+        <span class="txt">ギフトサービスについて</span>
+      </button>
+    </div>
+  </div><!-- title_wrap -->
+  <div class="gift_otion_wrap">
+    <div class="option_item noshi">
+      <label>
+        <div class="option_img">
+          <img src="{{ 'option_noshi.jpg' | asset_url }}">
+        </div>
+        <div class="input_wrap">
+          <input type="checkbox" name="mizuhiki" value="mizuhiki">
+          <span class="radio_checker"></span>
+          <div class="option_name">
+            <span class="name">熨斗(のし)</span>
+            <span id="noshiPrice" class="text_p">+220円(税込)</span>
+          </div>
+        </div>
+      </label>
+    </div>
+    <div class="option_item message">
+      <label>
+        <div class="option_img">
+          <img src="{{ 'option_message.jpg' | asset_url }}">
+        </div>
+        <div class="input_wrap">
+          <input type="checkbox" name="message" value="message">
+          <span class="radio_checker"></span>
+          <div class="option_name">
+            <span class="name">メッセージカード</span>
+            <span id="messagePrice" class="text_p">+110円(税込)</span>
+          </div>
+        </div>
+      </label>
+    </div>
+    <div class="option_item tesage">
+      <label>
+        <div class="option_img">
+          <img src="{{ 'option_bag.jpg' | asset_url }}">
+        </div>
+        <div class="input_wrap">
+          <input type="checkbox" name="tesage" value="tesage">
+          <span class="radio_checker"></span>
+          <div class="option_name">
+            <span class="name">手提げ布バッグ</span>
+            <span id="tesagePrice" class="text_p">+440円(税込)</span>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div><!-- gift_otion_wrap -->
+</div><!-- comp-gift-variation-select -->
+{% endif %}

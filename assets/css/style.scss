@@ -91,38 +91,8 @@
 @import 'components/product/comp-scent-detail.scss';
 @import 'components/product/comp-variation-select.scss';
 @import 'components/product/comp-gift-variation-select.scss';
-
-
-@import 'component/products/comp-product-list.scss';
-@import 'component/products/comp-product-block.scss';
-
+@import 'components/product/comp-product-chart.scss';
 @import 'component/products/comp-pager.scss';
-@import 'component/products/comp-gift-product-list.scss';
-@import 'component/products/comp-gift-service-list.scss';
-@import 'component/products/comp-load-more.scss';
-
-
-/* 商品詳細(新)*/
-@import 'component/itemNew/comp-item-thumbs.scss';
-@import 'component/itemNew/comp-gift-options-new.scss';
-@import 'component/itemNew/comp-cart-note.scss';
-@import 'component/itemNew/comp-subscription-wrap.scss';
-@import 'component/itemNew/comp-subscription-modal.scss';
-@import 'component/itemNew/comp-huckleberry-container.scss';
-
-@import 'component/itemNew/comp-detail-desc.scss';
-@import 'component/itemNew/comp-detail-button.scss';
-@import 'component/itemNew/comp-detail-toggle-new.scss';
-@import 'component/itemNew/comp-related-item-slide.scss';
-@import 'component/itemNew/comp-related-journal-slide.scss';
-@import 'component/itemNew/comp-fixed-cart-wrap.scss';
-@import 'component/itemNew/comp-product-image-list.scss';
-@import 'component/itemNew/comp-variation.scss';
-@import 'component/itemNew/comp-line-contact.scss';
-
-
-
-@import 'component/comp-list-link.scss';
 
 /* ジャーナル */
 @import 'component/journal/comp-item-list-journal.scss';
@@ -132,37 +102,32 @@
 @import 'component/journal/comp-blogs-pager.scss';
 @import 'component/journal/comp-journal-scent.scss';
 
-
-/* ストア一覧・FAQ */
-@import 'component/store/comp-popup-store.scss';
-@import 'component/store/comp-popup-store2.scss';
-@import 'component/store/comp-popup-archive.scss';
-
-
-
 /* カート */
-@import 'component/cart/comp-cart-item-list.scss';
-@import 'component/cart/comp-amount-wrap.scss';
-@import 'component/cart/comp-option-setting.scss';
-@import 'component/cart/comp-browse-history.scss';
-@import 'component/cart/comp-submit-loader.scss';
+@import 'components/cart/comp-cart-item-list.scss';
+@import 'components/cart/comp-amount-wrap.scss';
+@import 'components/cart/comp-option-setting.scss';
+@import 'components/cart/comp-browse-history.scss';
+@import 'components/cart/comp-submit-loader.scss';
+
+/* 法的ページ */
+@import 'components/law/comp-transaction-contents.scss';
+
 
 
 /* 管理画面系 */
-@import 'component/admin/comp-admin-title.scss';
-@import 'component/admin/comp-admin-subttl.scss';
-@import 'component/admin/comp-admin-button.scss';
-@import 'component/admin/comp-side-wrap.scss';
-@import 'component/admin/comp-admin-form.scss';
-@import 'component/admin/comp-user-address.scss';
-@import 'component/admin/comp-address-list.scss';
-@import 'component/admin/comp-order-list.scss';
-@import 'component/admin/comp-admin-hr.scss';
-@import 'component/admin/comp-form-message.scss';
-@import 'component/admin/comp-page-log.scss';
-@import 'component/admin/comp-sns-alignment.scss';
-
-@import 'component/admin/comp-form-wrap.scss';
+@import 'components/admin/comp-admin-title.scss';
+@import 'components/admin/comp-admin-subttl.scss';
+@import 'components/admin/comp-admin-button.scss';
+@import 'components/admin/comp-side-wrap.scss';
+@import 'components/admin/comp-admin-form.scss';
+@import 'components/admin/comp-user-address.scss';
+@import 'components/admin/comp-address-list.scss';
+@import 'components/admin/comp-order-list.scss';
+@import 'components/admin/comp-admin-hr.scss';
+@import 'components/admin/comp-form-message.scss';
+@import 'components/admin/comp-page-log.scss';
+@import 'components/admin/comp-sns-alignment.scss';
+@import 'components/admin/comp-form-wrap.scss';
 
 
 
@@ -172,3 +137,5 @@
 @import 'page/product.scss'; //商品詳細
 @import 'page/conceptNew.scss'; //商品詳細
 @import 'page/guide.scss'; //ショッピングガイド系
+@import 'page/law.scss'; //ショッピングガイド系
+@import 'page/cart.scss'; //カート

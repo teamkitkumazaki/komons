@@ -1,40 +1,375 @@
+{% if product.metafields["custom_fields"]["product_detail"] != blank %}
 <div class="desc_unit">
-  <div class="comp-detail-title">
-  {%- if product.type == "gift" -%}
-    <hgroup>
-      <span class="title_en">Contents</span>
-      <h2 class="title_ja">セットの内容</h2>
-    </hgroup>
-  {%- else -%}
-  <hgroup>
-    <span class="title_en">Features</span>
-    <h2 class="title_ja">成分へのこだわり</h2>
-  </hgroup>
-  {%- endif -%}
-  </div>
-  <div class="comp-detail-desc">
-  {% for item in product.metafields.custom_fields["prod_detail_desc"] %}
-    <div class="detail_item">
-      <div class="img_wrap">
-        <img loading="lazy" src="{{ item["detail_image_url"] }}">
-      </div>
-      <div class="txt_wrap">
-      {% if item["detail_ttl_ja"] != blank %}
-        <h3 class="prod_name">{{ item["detail_ttl_en"] }}</h3>
-        <h4 class="prod_genre">{{ item["detail_ttl_ja"] }}</h4>
-        {% else %}
-        <h3 class="prod_name ja">{{ item["detail_ttl_en"] }}</h3>
-      {% endif %}
-        <div class="desc_wrap">
-          <p>{{ item["detail_desc"] }}</p>
-        </div>
-        {% if item["detail_link_url"] != blank %}
-        <div class="comp-detail-button">
-          <a href="/products/{{ item["detail_link_url"] }}"><span>商品ページへ</span></a>
-        </div>
-        {% endif %}
-      </div>
-    </div><!-- detail_item -->
-    {% endfor %}
-  </div><!-- comp-detail-desc -->
+	<div class="comp-detail-title">
+		<hgroup>
+			<span class="title_en">Features</span>
+			<h2 class="title_ja">成分へのこだわり</h2>
+		</hgroup>
+	</div>
+	<div class="comp-product-description">
+		{% for item in product.metafields["custom_fields"]["product_detail"] %}
+		<div class="description_item">
+			<div class="desc_img">
+				<img src="{{ item["detail_img_url"] }}" alt="">
+			</div>
+			<div class="desc_txt">
+				{% if item["detail_ttl"] != blank %}
+				<h3 class="desc_ttl">{{ item["detail_ttl"] }}</h3>
+				{% endif %}
+				{% if item["detail_description"] != blank %}
+				<div class="desctiption_txt">
+					<p>{{ item["detail_description"] }}</p>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+		{% endfor %}
+	</div><!-- comp-product-description -->
 </div><!-- desc_unit -->
+{% endif %}
+
+{% if product.type == 'gift' %}
+<div class="desc_unit">
+	<div class="comp-detail-title">
+		<hgroup>
+			<span class="title_en">Set Content</span>
+			<h2 class="title_ja">セット内容</h2>
+		</hgroup>
+	</div>
+	<div class="comp-product-description">
+
+	{% if product.tags contains 'hand' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/hand_thumb_98651305-ace2-4032-86cd-5e072078abc0.jpg?v=1703487021" alt="" typeof="foaf:Image">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">I can hear Music<span>ハンドソープ</span></h3>
+			<div class="desctiption_txt">
+				<p>家に帰り、いちばん最初にする「手を洗う」という行為は、心も体もONからOFFへと切替えるスイッチ。手を洗うたびに気持ちの良いメロディが流れるような香りと手触りのハンドソープ。</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k0003">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+
+	{% if product.tags contains 'multi' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img loading="lazy" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/set_product/img_multi_fnjrgg.jpg">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">In a silent way<span>マルチクリーナー</span></h3>
+			<div class="desctiption_txt">
+				<p>暮らす場所は、いつも清潔であってほしい。キッチンや洗面台、テーブルやフローリングや窓。清々しく、静かに、暮らしを支えてくれるものたちに。ほんのり香りが漂う、マルチクリーナーをつくりました。</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k0004">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
+
+	{% if product.tags contains 'dish' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img loading="lazy" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/dish_thumb_08b624eb-e6e5-4c7a-8c7c-c941cc8b032d.jpg?v=1703487021">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">Don’t Look Back in Anger<span>食器用洗剤</span></h3>
+			<div class="desctiption_txt">
+				<p>ちょっと面倒な、食事のあとの食器洗い。夫婦のどちらがやるかでおしつけあったりもするこの時間を、もっと「プラスの時間」に変えられたら。そんな思いでつくった、使うたびに豊かな香りが部屋中に広がる手にも優しい食器用洗剤。</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k0001">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
+
+	{% if product.tags contains 'fabric' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img loading="lazy" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/set_product/img_fabric_elymv2.jpg">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">Free as a Bird<span>ファブリックミスト</span></h3>
+			<div class="desctiption_txt">
+				<p>ソファーやベッド、お気に入りの衣類に。思わず深呼吸をしたくなるような、やさしい空気を届けます。ひと吹き、ふた吹き、鳥が戯れる木々の香りにつつまれる、除菌消臭ミスト。</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k0002">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
+
+	{% if product.tags contains 'toilet' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img loading="lazy" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/set_product/img_toilet_ju2fgk.jpg">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">Shelter from the Storm<span>トイレクリーナー</span></h3>
+			<div class="desctiption_txt">
+				<p>せわしない社会の中で、本当に「ひとり」になれる場所は、とても少ないものです。トイレはきっと、そのひとつ。狭いけれど、とても静かで、とても落ち着く場所。トイレをもっと豊かで、より気持ちのいい空間にします。</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k0006">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
+
+	{% if product.tags contains 'bath' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img loading="lazy" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/set_product/img_bath_eirnka.jpg">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">What a Wonderful World<span>バスクリーナー</span></h3>
+			<div class="desctiption_txt">
+				<p>お風呂という場所は、世界でもっとも素晴らしい場所だと思いませんか。心も体もリフレッシュする、とても大切な時間です。いつも清潔で美しいお風呂場のために。お風呂掃除がもっと楽しくなる、ほのかな香りが残る洗剤を。</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k0005">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
+
+	{% if product.tags contains 'mistmini' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img loading="lazy" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/set_product/fab_mini_anpwga.jpg">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">Free as a Bird (Mini)<span>ファブリックミストMini</span></h3>
+			<div class="desctiption_txt">
+				<p>ソファーやベッド、お気に入りの衣類に。思わず深呼吸をしたくなるような、やさしい空気を届ける除菌消臭ミスト。持ち運びに便利なMiniサイズでマスクスプレーとしても人気です。</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k0009">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
+
+	{% if product.tags contains 'handmilk' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img loading="lazy" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/category_milk.jpg?v=1673343206">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">Cotton Fields<span>ハンドミルク</span></h3>
+			<div class="desctiption_txt">
+				<p>塗っているときはしっとり、その後はサラッとが特徴のハンドミルク。穏やかな香りと高い保湿効果で水仕事の後の手肌を優しくいたわります。忙しい毎日や家事の合間のご褒美に。</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k1005">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
+
+	{% if product.tags contains 'milkmini' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img loading="lazy" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/milkmini.jpg?v=1698139532">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">Cotton Fields<span>ハンドミルク(Mini)</span></h3>
+			<div class="desctiption_txt">
+				<p>持ち運びに便利なMiniサイズのハンドミルク。穏やかな香りと高い保湿効果で水仕事の後の手肌を優しくいたわります。忙しい毎日や家事の合間のご褒美に。(50ml＝約50回分)</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k1006">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
+
+	{% if product.tags contains 'towel' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img loading="lazy" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/sample_du8d4l.jpg?v=1685952890g">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">Wash Towel<span>Komonsオリジナルウォッシュタオル</span></h3>
+			<div class="desctiption_txt">
+				<p>木の葉をイメージした柄のKomonsオリジナルフェイスタオル。今治で100年続くタオルメーカー「藤高」協力のもとつくりました。柔らかさと吸収性を両立しつつ、しっかりした生地感で長く使ってもへたらないのが特徴です。ぜひキッチンや洗面台などで、他のKomons商品と一緒にご使用ください。(50ml＝約50回分)</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k1015">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
+
+	{% if product.tags contains 'facetowel' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img loading="lazy" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/sample_du8d4l.jpg?v=1685952890g">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">Face Towel<span>Komonsオリジナルフェイスタオル</span></h3>
+			<div class="desctiption_txt">
+				<p>木の葉をイメージした柄のKomonsオリジナルフェイスタオル。今治で100年続くタオルメーカー「藤高」協力のもとつくりました。柔らかさと吸収性を両立しつつ、しっかりした生地感で長く使ってもへたらないのが特徴です。ぜひキッチンや洗面台などで、他のKomons商品と一緒にご使用ください。(50ml＝約50回分)</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k1016">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
+
+	{% if product.tags contains 'alchohol' %}
+	<div class="description_item">
+		<div class="desc_img">
+			<img loading="lazy" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/category_alcohole.jpg?v=1673427560">
+		</div>
+		<div class="desc_txt">
+			<h3 class="desc_ttl set">This Will Be Our Year<span>除菌アルコールスプレー</span></h3>
+			<div class="desctiption_txt">
+				<p>持ち運びに便利なMiniサイズ。100％植物由来の除菌成分、自然栽培のお茶の実から絞った保湿剤、そして何よりKomonsらしい100％天然精油の香りのアルコールスプレーです。</p>
+			</div>
+			<div class="comp-button-wrap">
+				<a href="/products/k0058">
+					<span class="txt">詳細を見る</span>
+					<span class="caret">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+							<path class="cls-1"
+								d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+							</path>
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	{%- endif -%}
+
+	{% for item in product.metafields["custom_fields"]["product_detail"] %}
+		<div class="description_item">
+			<div class="desc_img">
+				<img src="{{ item["detail_img_url"] }}" alt="">
+			</div>
+			<div class="desc_txt">
+				{% if item["detail_ttl"] != blank %}
+				<h3 class="desc_ttl">{{ item["detail_ttl"] }}</h3>
+				{% endif %}
+				{% if item["detail_description"] != blank %}
+				<div class="desctiption_txt">
+					<p>{{ item["detail_description"] }}</p>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	{% endfor %}
+
+
+
+	</div>
+</div>
+{% endif %}

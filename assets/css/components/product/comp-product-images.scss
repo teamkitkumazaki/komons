@@ -1,14 +1,15 @@
 .comp-product-images {
   .thumb_img {
     margin-bottom: 10px;
-    min-height: 92vw;
+    height: 92vw;
     @include flexSet;
     align-items: center;
     justify-content: center;
     background: #f8f8f8;
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -31,20 +32,21 @@
 
       .thumb_item {
         width: 23.7vw;
-        min-height: 16vw;
         padding: 0 5px;
         box-sizing: border-box;
 
         button {
           display: block;
           width: 100%;
-          min-height: 16vw;
+          height: 23.7vw;
           @include flexSet;
           align-items: center;
           background: #f8f8f8;
 
           img {
-            height: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
         }
       }
@@ -60,10 +62,13 @@
       width: calc(100% - 90px);
       order: 1;
       margin-bottom: 10px;
+      height: auto;
       min-height: 40vw;
       max-height: 685px;
 
-      img {}
+      img {
+        object-fit: unset;
+      }
     }
 
     .thumbnails {
@@ -78,13 +83,15 @@
 
         .thumb_item {
           width: 80px;
-          min-height: 80px;
-          padding: 5px 0;
+          height: 80px;
+          padding: 0;
           box-sizing: border-box;
+          overflow: hidden;
+          margin-bottom: 10px;
 
           button {
             overflow: hidden;
-            min-height: 80px;
+            height: 80px;
 
             img {
               transition: transform 0.3s,filter 0.3s;

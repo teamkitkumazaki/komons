@@ -26,6 +26,12 @@
 							font-size: 2.4rem;
 							line-height: 1.5;
 							@include grotesk;
+							.genre{
+								display: block;
+								font-size: 1.4rem;
+								margin-top: 3px;
+								margin-bottom: 20px;
+							}
 						}
 					}
 					.prod_price{
@@ -132,6 +138,12 @@
 								font-size: 2.8rem;
 								line-height: 1.5;
 								@include grotesk;
+								.genre{
+									display: block;
+									font-size: 1.5rem;
+									margin-top: 5px;
+									margin-bottom: 25px;
+								}
 							}
 						}
 						.prod_price{

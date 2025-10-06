@@ -1,0 +1,108 @@
+<div class="desc_unit">
+  <div class="comp-detail-title">
+    <hgroup>
+      <span class="title_en">Details</span>
+      <h2 class="title_ja">商品仕様・詳細</h2>
+    </hgroup>
+  </div>
+  <div id="toggles01" class="comp-detail-toggle">
+  {% if product.metafields["custom_fields"]["spec_detail"] != blank %}
+    <div class="toggle_item" type="open">
+      <button class="toggle_button open">
+        <span class="txt">商品概要・原材料</span>
+        <span class="caret">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.56 7.6">
+            <polyline id="Rectangle-27" class="cls-1" points="12.89 .74 6.78 6.26 .67 .74"></polyline>
+          </svg>
+        </span>
+      </button>
+      <div class="toggle_contents">
+        <div id="toggleDetailInner" class="toggle_inner">
+          {% for item in product.metafields["custom_fields"]["spec_detail"] %}
+          <div class="desc_wrap">
+            {% if item["spec_detai_ttl"] != blank %}
+            <p class="title">{{ item["spec_detai_ttl"] }}</p>
+            {% endif %}
+            {% if item["spec_detail_description"] != blank %}
+            <div class="description" style="white-space: pre-line;">{{ item["spec_detail_description"] }}</div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div><!-- toggle_inner -->
+      </div><!-- toggle_contents -->
+    </div><!-- toggle_item -->
+  {% endif %}
+    <div class="toggle_item" type="close">
+      <button class="toggle_button">
+        <span class="txt">配送について</span>
+        <span class="caret">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.56 7.6">
+            <polyline id="Rectangle-27" class="cls-1" points="12.89 .74 6.78 6.26 .67 .74"></polyline>
+          </svg>
+        </span>
+      </button>
+      <div class="toggle_contents" style="height: 0px;">
+        <div class="toggle_inner">
+          <div class="desc_wrap">
+            <p class="title">送料について</p>
+            <div class="description">
+              <p>お届け先1件につき税込5,500円以上で送料無料になります。（ギフト包装料・代引手数料は除く）税込5,500円未満の場合は、お届け先1件につき全国一律660円（税込）の送料となります。</p>
+            </div>
+          </div>
+          <div class="desc_wrap">
+            <p class="title">到着日・時間指定について</p>
+            <div class="description">
+              <p>現在ご注文頂くと最短で 9月13日(土) にお届け致します。</p>
+              <p>時間に関しましては、午前中、14～16時、16～18時、18～20時、19～21時の時間帯をお選び頂くことができます。</p>
+              <p>※地域によってはご希望に添えない場合もございますので、その点ご了承下さいませ。また、天候・道路・交通事情等運送上の事情により、ご希望のお届け時間帯にお届けできない場合もございますので、ご了承下さい。</p>
+            </div>
+          </div>
+          <div class="desc_wrap">
+            <p class="title">別住所への配送</p>
+            <div class="description">
+              <p>可能です。オンライン注文のカート画面にて配送先住所を入力ください。また、1注文につき、お届け先は１件のみとなりますので2件以上へ配送をご希望の場合は別々にご注文下さい。 9月13日(土) にお届け致します。</p>
+            </div>
+          </div>
+          <div class="desc_wrap">
+            <p class="title">複数住所へ配送は可能ですか？</p>
+            <div class="description">
+              <p>可能です。大変お手数をおかけいたしますが、送り先ごとにご注文手続きをお願いいたします。お届け先が10件以上になる場合は、問い合わせフォームまたはinfo@komons-japan.comにその旨をご連絡くださいませ。ご注文情報入力用のエクセルフォームをお送りさせていただきます。</p>
+            </div>
+          </div>
+        </div><!-- toggle_inner -->
+      </div><!-- toggle_contents -->
+    </div><!-- toggle_item -->
+    <div class="toggle_item" type="close">
+      <button class="toggle_button">
+        <span class="txt">決済方法について</span>
+        <span class="caret">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.56 7.6">
+            <polyline id="Rectangle-27" class="cls-1" points="12.89 .74 6.78 6.26 .67 .74"></polyline>
+          </svg>
+        </span>
+      </button>
+      <div class="toggle_contents" style="height: 0px;">
+        <div class="toggle_inner">
+          <div class="desc_wrap">
+            <p class="title">代引き決済</p>
+            <div class="description">
+              <p>VISA / MASTER / AMEX / JCBがご利用いただけます。</p>
+            </div>
+          </div>
+          <div class="desc_wrap">
+            <p class="title">クレジットカード</p>
+            <div class="description">
+              <p>商品代金に加え、代引き手数料(税込330円)が発生します。お届けの際に配達員にお支払いください。</p>
+            </div>
+          </div>
+          <div class="desc_wrap">
+            <p class="title">QRコード決済</p>
+            <div class="description">
+              <p>QRコード決済(Paypay・LINE PAY)でのお支払いに対応しています。</p>
+            </div>
+          </div>
+        </div><!-- toggle_inner -->
+      </div><!-- toggle_contents -->
+    </div><!-- toggle_item -->
+  </div><!-- comp-detail-toggle -->
+</div>

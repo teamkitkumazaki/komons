@@ -1,0 +1,37 @@
+.page-law{
+  padding-top: 100px;
+  .section-underpage{
+    padding-bottom: 50px;
+    .underpage_wrapper{
+      .title_wrap{
+        margin-bottom: 30px;
+      }
+      .underpage_content{
+
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 980px){
+  .page-law{
+    padding-top: 160px;
+    .section-underpage{
+      padding-bottom: 160px;
+      .underpage_wrapper{
+        max-width: 780px;
+        margin: 0 auto;
+        .title_wrap{
+          margin-bottom: 50px;
+          .comp-section-ttl{
+            text-align: center;
+          }
+        }
+        .underpage_content{
+
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,35 @@
+{% if product.metafields["custom_fields"]["scent_chart"] != blank %}
+<div id="scentDetail" class="desc_unit">
+  <div class="comp-detail-title">
+    <hgroup>
+      <span class="title_en">Scent</span>
+      <h2 class="title_ja">香りの特徴</h2>
+    </hgroup>
+  </div>
+  <div class="scent_detail comp-scent-detail">
+    {% assign chartValue = product.metafields["custom_fields"]["scent_chart"] | split: ',' %}
+    <div class="comp-product-chart" style="--chart01:{{ chartValue[0] }}; --chart02:{{ chartValue[1] }}; --chart03:{{ chartValue[2] }}; --chart04:{{ chartValue[3] }}; --chart05:{{ chartValue[4] }};">
+      <div class="chart_inner"></div>
+    </div>
+    {% endif %}
+    {% if product.metafields["custom_fields"]["scent_description"] != blank %}
+    <div class="scent_desc">
+      <p style="white-space: pre-line">{{ product.metafields["custom_fields"]["scent_description"] }}</p>
+    </div>
+    {% endif %}
+    {% if product.metafields["custom_fields"]["scent_detail"] != blank %}
+    <div class="scent_txt_wrap">
+      <div class="scent_structure">
+        {% for item in product.metafields["custom_fields"]["scent_detail"] %}
+        <div class="scent_item">
+          <span class="title">{{ item["scent_detail_ttl"] }}</span>
+          <div class="content">
+            <p>{{ item["scent_detail_content"] }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div><!-- scent_txt_wrap -->
+  </div><!-- comp-scent-detail -->
+</div>
+{% endif %}
