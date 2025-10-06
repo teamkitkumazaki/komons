@@ -14237,6 +14237,35 @@ body.loaded #loading {
     line-height: 1.6;
   }
 }
+.comp-terms-content .item_wrap {
+  margin-bottom: 40px;
+}
+.comp-terms-content .item_wrap:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.comp-terms-content .item_wrap .ttl_h3 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.comp-terms-content .item_wrap .desc_wrap {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.comp-terms-content .item_wrap .desc_wrap p {
+  margin-bottom: 1em;
+}
+.comp-terms-content .item_wrap .desc_wrap p:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 980px) {
+  .comp-terms-content .item_wrap .desc_wrap {
+    font-size: 1.5rem;
+  }
+}
+
 /* 管理画面系 */
 .comp-admin-title {
   text-align: center;
@@ -16563,7 +16592,7 @@ body.loaded #loading {
     padding-top: 160px;
   }
   .page-law .section-underpage {
-    padding-bottom: 160px;
+    padding-bottom: 120px;
   }
   .page-law .section-underpage .underpage_wrapper {
     max-width: 780px;
