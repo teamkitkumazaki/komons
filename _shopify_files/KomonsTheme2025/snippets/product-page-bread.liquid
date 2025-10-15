@@ -1,0 +1,33 @@
+{% if product.tags contains 'kitchen' %}
+  {% assign categoryTtl = 'キッチン用品' %}
+  {% assign categoryHandle = 'kitchen' %}
+{% endif %}
+
+{% if product.tags contains 'toilet-bath' %}
+  {% assign categoryTtl = 'トイレ/バスルーム' %}
+  {% assign categoryHandle = 'toilet' %}
+{% endif %}
+
+{% if product.tags contains 'living' %}
+  {% assign categoryTtl = 'リビング/寝室' %}
+  {% assign categoryHandle = 'living' %}
+{% endif %}
+
+{% if product.tags contains 'others' %}
+  {% assign categoryTtl = 'その他の商品' %}
+  {% assign categoryHandle = 'others' %}
+{% endif %}
+
+<div class="comp-page-bread">
+  <div class="link_wrap">
+    <a href="/">ホーム</a>
+    {% unless product.type contains 'gift' %}
+    <a href="/collections/all-products">通常商品一覧</a>
+    {% else %}
+    <a href="/collections/gift">ギフト商品一覧</a>
+    {% endunless %}
+    {% if categoryHandle != blank %}
+    <a href="/collections/{{ categoryHandle }}#headerRolled">{{ categoryTtl }}</a>
+    {% endif %}
+  </div>
+</div>

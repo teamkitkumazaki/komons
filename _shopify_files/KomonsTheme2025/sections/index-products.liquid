@@ -1,81 +1,137 @@
-{%- assign teiban = collections | where: "template_suffix", 'teiban' -%}
+{% assign collectionIndex01 = 0 | plus: 0 %}
+{% assign collectionIndex02 = 0 | plus: 0 %}
+{% assign collectionIndex03 = 0 | plus: 0 %}
+{% assign collectionIndex04 = 0 | plus: 0 %}
 
-{% assign arrayIndex = 0 | plus: 0 %}
-{%- for collection in teiban -%}
-{% assign arrayIndex = collection.handle %}
-{% unless forloop.last %}
-{% assign random = random | append: arrayIndex | append: ',' %}
-{% else %}
-{% assign random = random | append: arrayIndex %}
-{% endunless %}
-{%- endfor -%}
-
-{%- assign array = random | split: ',' -%}
-{%- assign loops = array.size | times: 10 -%}
-
-{%- capture indexes -%}
-	{%- for i in (1..loops) -%}{{ "now" | date: "%N" | modulo: array.size }},{%- endfor -%}
-{%- endcapture -%}
-
-{%- assign indexes = indexes | split: ',' | uniq -%}
-
-{%- for a in indexes -%}
-{% assign b = a | plus: 0 %}
-{% unless forloop.last %}
-{% assign newArray = newArray | append: array[b] | append: ',' %}
-{% else %}
-{% assign newArray = newArray | append: array[b] %}
-{% endunless %}
-{%- endfor -%}
-{%- assign newArray = newArray | split: ',' -%}
-
-{% assign collectionIndex = 0 | plus: 0 %}
-
-<section class="section-products">
-  <div class="section_inner_new">
-    <div class="comp-new-section-ttl">
-      <hgroup>
-        <span class="title_en">Products</span>
-        <h2 class="title_jp" style="text-indent: -0.1em;">Komonsの定番商品</h2>
-      </hgroup>
-    </div><!-- comp-new-section-ttl -->
-    <div class="comp-index-prod-slider">
-      <div id="productSlider" class="slick-slider">
-      {%- for collection in teiban -%}
-      {%- for collection in teiban -%}
-      {%- if collection.handle == newArray[collectionIndex] -%}
-      <div class="item_box slick-slide">
-        <div class="box_inner">
-          <a href="/collections/{{ collection.handle }}">
-            <span class="img_wrap">
-              {{ collection.image | image_url: width: 680 | image_tag }}
-            </span>
-            <span class="txt_wrap">
-              <span class="prod_category">{{ collection.metafields["custom_fields"]["collection_title_ja"] }}</span>
-              <span class="prod_name">{{ collection.metafields["custom_fields"]["collection_prod_name"] }}</span>
-              <span class="prod_desc">{{ collection.description }}</span>
-            </span><!-- txt_wrap -->
-            <span class="comp-arrow-link">
-              <span class="link_button" href="/collections/{{ collection.handle }}">
-                <span>詳細を見る</span>
-              </span>
-            </span>
-          </a>
-        </div>
-      </div><!-- item_box -->
-      {% assign collectionIndex = collectionIndex | plus: 1 %}
-      {%- endif -%}
-      {%- endfor -%}
-      {%- endfor -%}
-      </div><!-- slick-slider -->
-    </div><!-- comp-index-prod-slider -->
-    <div class="comp-box-button">
-      <a class="button" href="/collections/all-products">
-        <span class="txt">全商品一覧</span>
-        <span class="arrow">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07"><polygon class="cls-1" points="0 8.66 1.41 10.07 6.46 5.03 1.41 0 0 1.41 3.62 5.04 0 8.66"></polygon></svg>
-        </span>
-      </a>
-    </div>
-  </div><!-- section_inner_new -->
+<section id="headerRolled" class="section-product-list">
+	<div class="section_inner">
+		<div class="product_wrapper">
+			<div class="comp-product-list">
+				<div class="list_ttl_flex">
+					<h2 class="list_ttl">Kitchen</h2>
+					<div class="comp-button-wrap">
+						<a href="/collections/kitchen#headerRolled">
+							<span class="txt">All</span>
+							<span class="caret">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+									<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+								</path>
+								</svg>
+							</span>
+						</a>
+					</div>
+				</div><!-- list_ttl_flex -->
+				<div class="list_contents_flex">
+				{% for collection in collections %}
+					{%- if collection.handle == 'kitchen' -%}
+						{% for product in collection.products %}
+							{% for product in collection.products %}
+								{%- if collectionIndex01 < 4 -%}
+									{%- include 'all-item-card' -%}
+								{%- endif -%}
+									{% assign collectionIndex01 = collectionIndex01 | plus: 1 %}
+							{%- endfor -%}
+						{%- endfor -%}
+					{%- endif -%}
+				{%- endfor -%}
+				</div><!-- list_contents_flex -->
+			</div><!-- comp-product-list -->
+		</div><!-- product_wrapper -->
+		<div class="product_wrapper">
+			<div class="comp-product-list">
+				<div class="list_ttl_flex">
+					<h2 class="list_ttl">Living / Bedroom</h2>
+					<div class="comp-button-wrap">
+						<a href="/collections/living#headerRolled">
+							<span class="txt">All</span>
+							<span class="caret">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+									<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+								</path>
+								</svg>
+							</span>
+						</a>
+					</div>
+				</div><!-- list_ttl_flex -->
+				<div class="list_contents_flex">
+				{% for collection in collections %}
+					{%- if collection.handle == 'living' -%}
+						{% for product in collection.products %}
+							{% for product in collection.products %}
+								{%- if collectionIndex02 < 4 -%}
+									{%- include 'all-item-card' -%}
+								{%- endif -%}
+									{% assign collectionIndex02 = collectionIndex02 | plus: 1 %}
+							{%- endfor -%}
+						{%- endfor -%}
+					{%- endif -%}
+				{%- endfor -%}
+				</div><!-- list_contents_flex -->
+			</div><!-- comp-product-list -->
+		</div><!-- product_wrapper -->
+		<div class="product_wrapper">
+			<div class="comp-product-list">
+				<div class="list_ttl_flex">
+					<h2 class="list_ttl">Toilet / Bathroom</h2>
+					<div class="comp-button-wrap">
+						<a href="/collections/toilet#headerRolled">
+							<span class="txt">All</span>
+							<span class="caret">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+									<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+								</path>
+								</svg>
+							</span>
+						</a>
+					</div>
+				</div><!-- list_ttl_flex -->
+				<div class="list_contents_flex">
+					{% for collection in collections %}
+						{%- if collection.handle == 'toilet' -%}
+							{% for product in collection.products %}
+								{% for product in collection.products %}
+									{%- if collectionIndex03 < 4 -%}
+										{%- include 'all-item-card' -%}
+									{%- endif -%}
+									{% assign collectionIndex03 = collectionIndex03 | plus: 1 %}
+								{%- endfor -%}
+							{%- endfor -%}
+						{%- endif -%}
+					{%- endfor -%}
+				</div><!-- list_contents_flex -->
+			</div><!-- comp-product-list -->
+		</div><!-- product_wrapper -->
+		<div class="product_wrapper">
+			<div class="comp-product-list">
+				<div class="list_ttl_flex">
+					<h2 class="list_ttl">Others</h2>
+					<div class="comp-button-wrap">
+						<a href="/collections/others">
+							<span class="txt">All</span>
+							<span class="caret">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+									<path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+								</path>
+								</svg>
+							</span>
+						</a>
+					</div>
+				</div><!-- list_ttl_flex -->
+				<div class="list_contents_flex">
+				{% for collection in collections %}
+					{%- if collection.handle == 'others' -%}
+						{% for product in collection.products %}
+							{% for product in collection.products %}
+								{%- if collectionIndex04 < 4 -%}
+									{%- include 'all-item-card' -%}
+								{%- endif -%}
+								{% assign collectionIndex04 = collectionIndex04 | plus: 1 %}
+							{%- endfor -%}
+						{%- endfor -%}
+					{%- endif -%}
+				{%- endfor -%}
+				</div><!-- list_contents_flex -->
+			</div><!-- comp-product-list -->
+		</div><!-- product_wrapper -->
+	</div><!-- section_inner -->
 </section>

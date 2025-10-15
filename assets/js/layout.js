@@ -13,9 +13,9 @@ $(function() {
       position.style.setProperty('--wHeight', window.innerHeight);
       position.style.setProperty('--wHeightPx', window.innerHeight + 'px');
       position.style.setProperty('--scroll', window.scrollY);
-      if(window.scrollY > window.innerHeight){
+      if (window.scrollY > window.innerHeight) {
         scButtonWrap.addClass('display');
-      }else{
+      } else {
         scButtonWrap.removeClass('display');
       }
       requestAnimationFrame(setProperties);
@@ -43,28 +43,27 @@ $(function() {
   function loadingAnimation() {
     var sliderImg = "https://journal.komons-japan.com/wp-content/themes/komons-theme/img/main_slide01.jpg";
 
-    function popUpBanner(target){
-     var urlParam = location.search.substring(1);
+    function popUpBanner(target) {
+      var urlParam = location.search.substring(1);
 
-     var popBg = $('#popBg');
-     var closeBanner = target.find('#closeBanner');
-     var popClose = target.find('#popCloseButton');
+      var popBg = $('#popBg');
+      var closeBanner = target.find('#closeBanner');
 
-     function init(){
-       target.addClass('open');
-       popBg.on({
-         'click': function() {
-           target.removeClass('open');
-         }
-       });
-     }
+      function init() {
+        target.addClass('open');
+        popBg.on({
+          'click': function() {
+            target.removeClass('open');
+          }
+        });
+      }
 
-     if ( urlParam.match(/returntop/)) {
+      if (urlParam.match(/returntop/)) {
 
-     }else{
-       init();
-     }
-   }
+      } else {
+        init();
+      }
+    }
 
     var imgPreloader = new Image();
     var img = $('.first_view');
@@ -104,85 +103,6 @@ $(function() {
     loadingAnimation();
   }
 
-  // スクロール系のイベントまとめ
-  function scrollArrow(target) {
-    var scrollSwitch = 0;
-    var scrollArrow = $('#arrowScroll a');
-    var headerArrow = $('.header_arrow');
-    var scrollTarget = $('#scrollTarget');
-    var headerRolled = $('#headerRolled');
-
-
-    function afterScroll(noAnimate) {
-      $('header').addClass('rolled');
-      scrollSwitch = 1;
-    };
-
-    function beforeScroll() {
-      $('header').removeClass('rolled');
-      scrollSwitch = 0;
-    };
-
-    function scrollIndex() {
-      if (scrollSwitch == 0) {
-        $("html, body").animate({
-          scrollTop: 1100
-        }, 700);
-      } else {
-        $("html, body").animate({
-          scrollTop: 0
-        }, 1000);
-      }
-    }
-
-    function scrollUnder() {
-      var offsetHeight = headerRolled.offset().top;
-      if (scrollSwitch == 0) {
-        $("html, body").animate({
-          scrollTop: offsetHeight
-        }, 700);
-      } else {
-        $("html, body").animate({
-          scrollTop: 0
-        }, 1000);
-      }
-    }
-
-    function init() {
-      $('.header_arrow a').on({
-        'click': function() {
-          if (document.getElementById('top')) {
-            scrollIndex();
-          } else {
-            scrollUnder();
-          }
-        }
-      });
-
-      $(window).on({
-        'scroll': function() {
-
-          if (document.getElementById('headerRolled')) {
-            var scroll = $(window).scrollTop();
-            var rolledHeight = headerRolled.offset().top;
-            if (scroll > rolledHeight) {
-              if (scrollSwitch == 0) {
-                afterScroll();
-              }
-            } else {
-              if (scrollSwitch == 1) {
-                beforeScroll();
-              }
-            }
-          }
-        },
-      });
-    };
-    init();
-  }
-
-  scrollArrow($('body'));
-
   //ハンバーガーメニューの開閉
   function humMenuToggle(target) {
     var humButton = target.find('button');
@@ -205,7 +125,9 @@ $(function() {
       } else {
         $('body').removeClass('fixed');
         $('body').attr('style', '');
-        $('html, body').prop({scrollTop: current_scrollY});
+        $('html, body').prop({
+          scrollTop: current_scrollY
+        });
         $('#slideMenuNew').removeClass('open');
         $('header').removeClass('hum_open');
         menuState = 0;
@@ -237,562 +159,1180 @@ $(function() {
   humMenuToggle($('#humMenu'));
 
 
-  // ギフト一覧ページ 商品フィルタリング
-  function giftProductFilter2(target){
-    var time = 300;
-    var priceFilter = $('#priceFilter');
-    var categoryFilter = $('#categoryFilter');
-    var categoryButton = [];
-    var categoryProp = [];
-    var categoryState = -1;
-    var cureentCategory = 'all';
-    var itemLength = target.find(".list_item").length;
-    var lengthNum = itemLength + 1;
-    var priceMin = 0;
-    var priceMax = 100000;
-    var priceMinBox = [];
-    var priceMaxBox = [];
-    var giftListArray = [];
-    var param = location.search;
+  function preSetScript() {
 
-    function scrollToTop(){
-      var targetTop = target.offset().top;
-      var headerHeight = $('header').outerHeight();
-      $("html, body").animate({
-        scrollTop: targetTop - headerHeight
-      }, 400);
-    }
+    // スクロール系のイベントまとめ
+    function scrollArrow(target) {
+      var scrollSwitch = 0;
+      var scrollArrow = $('#arrowScroll a');
+      var headerArrow = $('.header_arrow');
+      var scrollTarget = $('#scrollTarget');
+      var headerRolled = $('#headerRolled');
 
-    function categorySort(cat){
-      target.stop().animate({ opacity: 0 }, time, function() {
-        target.html('');
-        for (var i=0; i<itemLength; i++) {
-          console.log(giftListArray[i].prop);
-          if(giftListArray[i].prop.indexOf(cat) != -1 || cat == 'all'){
-            target.append(giftListArray[i].html);
-          }
+
+      function afterScroll(noAnimate) {
+        $('header').addClass('rolled');
+        scrollSwitch = 1;
+      };
+
+      function beforeScroll() {
+        $('header').removeClass('rolled');
+        scrollSwitch = 0;
+      };
+
+      function scrollIndex() {
+        if (scrollSwitch == 0) {
+          $("html, body").animate({
+            scrollTop: 1100
+          }, 700);
+        } else {
+          $("html, body").animate({
+            scrollTop: 0
+          }, 1000);
         }
-        target.stop().animate({ opacity: 1 }, time);
-        priceFilter.val(0);
-        priceMin = 0;
-        priceMax = 100000;
-        scrollToTop()
-      });
-    }
+      }
 
-    function priceRangeSort(min,max){
-      target.stop().animate({ opacity: 0 }, time, function() {
-        target.html('');
-        for (var i=0; i<itemLength; i++) {
-          if(min < giftListArray[i].price && giftListArray[i].price < max){
-            target.append(giftListArray[i].html);
-          }
+      function scrollUnder() {
+        var offsetHeight = headerRolled.offset().top;
+        if (scrollSwitch == 0) {
+          $("html, body").animate({
+            scrollTop: offsetHeight
+          }, 700);
+        } else {
+          $("html, body").animate({
+            scrollTop: 0
+          }, 1000);
         }
-        target.stop().animate({ opacity: 1 }, time);
-        categoryFilter.find('button').removeClass('active');
-        categoryState = -1;
-        scrollToTop();
-      });
-    }
+      }
 
-    function init(){
-      target.find(".list_item").each(function(index) {
-        $(this).attr('number', index);
-        giftListArray[index] = {
-          html : $(this),
-          prop: $(this).attr('category'),
-          price : Number($(this).attr('price').replace(/,/g, '')),
-        };
-      });
-
-      priceFilter.on({
-        'change': function() {
-          var onTarget = priceFilter.find('option:selected');
-          priceMin = onTarget.attr('min');
-          priceMax = onTarget.attr('max');
-          priceRangeSort(priceMin,priceMax);
-        }
-      });
-
-      categoryFilter.find('button').each(function(index) {
-        categoryButton[index] = $(this);
-        categoryProp[index] = $(this).attr('prop');
-        console.log(index + ':' + categoryProp[index]);
-        categoryButton[index].on({
+      function init() {
+        $('.header_arrow a').on({
           'click': function() {
-            categoryFilter.find('button').removeClass('active');
-            console.log('categoryProp[index]:' + categoryProp[index]);
-            if(index != categoryState){
-              categoryButton[index].addClass('active');
-              cureentCategory = categoryProp[index];
-              categoryState = index;
-            }else{
-              cureentCategory = 'all';
-              categoryState = -1;
+            if (document.getElementById('top')) {
+              scrollIndex();
+            } else {
+              scrollUnder();
             }
-            categorySort(cureentCategory);
           }
         });
-      });
 
-      if(param.indexOf('tag=0') != -1){
-        console.log('tag0')
-        categoryButton[0].click();
-      }
+        $(window).on({
+          'scroll': function() {
 
-      if(param.indexOf('tag=1') != -1){
-        console.log('tag1')
-        categoryButton[1].click();
-      }
-
-      if(param.indexOf('tag=2') != -1){
-        console.log('tag2')
-        categoryButton[2].click();
-      }
-
-      if(param.indexOf('tag=3') != -1){
-        console.log('tag3')
-        categoryButton[3].click();
-      }
-
-      if(param.indexOf('tag=4') != -1){
-        console.log('tag4')
-        categoryButton[4].click();
-      }
-
-      if(param.indexOf('tag=5') != -1){
-        console.log('tag5')
-        categoryButton[5].click();
-      }
-
+            if (document.getElementById('headerRolled')) {
+              var scroll = $(window).scrollTop();
+              var rolledHeight = window.innerHeight;
+              if (scroll > rolledHeight) {
+                if (scrollSwitch == 0) {
+                  afterScroll();
+                }
+              } else {
+                if (scrollSwitch == 1) {
+                  beforeScroll();
+                }
+              }
+            }
+          },
+        });
+      };
+      init();
     }
 
-    init();
-  }
+    scrollArrow($('body'));
 
-  if (document.getElementById('giftProductList')) {
-    giftProductFilter2($('#giftProductList'));
-  }
+    // ギフト一覧ページ 商品フィルタリング
+    function giftProductFilter2(target) {
+      var time = 300;
+      var priceFilter = $('#priceFilter');
+      var categoryFilter = $('#categoryFilter');
+      var categoryButton = [];
+      var categoryProp = [];
+      var categoryState = -1;
+      var cureentCategory = 'all';
+      var itemLength = target.find(".list_item").length;
+      var lengthNum = itemLength + 1;
+      var priceMin = 0;
+      var priceMax = 100000;
+      var priceMinBox = [];
+      var priceMaxBox = [];
+      var giftListArray = [];
+      var param = location.search;
 
-  //商品詳細ページ サムネイルの切り替え
-  function thumbSwitcher(target){
-    let thumbButton = [];
-    let thumbSrc = [];
-    let thumbSrcSet = [];
-    let thumbBox = target.find('.thumb_img');
-    let thumbImage = thumbBox.find('img');
-    let slideNum = target.find('.thumbnails').find('img').length;
-    const time = 200;
-    let currentSlide = 0;
-    console.log('slideNum:' + slideNum);
+      function scrollToTop() {
+        var targetTop = target.offset().top;
+        var headerHeight = $('header').outerHeight();
+        $("html, body").animate({
+          scrollTop: targetTop - headerHeight
+        }, 400);
+      }
 
-    function switchImage(num){
-      console.log('num:' + num);
-      thumbBox.stop().animate({ opacity: 0 }, time, function() {
+      function categorySort(cat) {
+        target.stop().animate({
+          opacity: 0
+        }, time, function() {
+          target.html('');
+          for (var i = 0; i < itemLength; i++) {
+            console.log(giftListArray[i].prop);
+            if (giftListArray[i].prop.indexOf(cat) != -1 || cat == 'all') {
+              target.append(giftListArray[i].html);
+            }
+          }
+          target.stop().animate({
+            opacity: 1
+          }, time);
+          priceFilter.val(0);
+          priceMin = 0;
+          priceMax = 100000;
+          scrollToTop()
+        });
+      }
+
+      function priceRangeSort(min, max) {
+        target.stop().animate({
+          opacity: 0
+        }, time, function() {
+          target.html('');
+          for (var i = 0; i < itemLength; i++) {
+            if (min < giftListArray[i].price && giftListArray[i].price < max) {
+              target.append(giftListArray[i].html);
+            }
+          }
+          target.stop().animate({
+            opacity: 1
+          }, time);
+          categoryFilter.find('button').removeClass('active');
+          categoryState = -1;
+          scrollToTop();
+        });
+      }
+
+      function init() {
+        target.find(".list_item").each(function(index) {
+          $(this).attr('number', index);
+          giftListArray[index] = {
+            html: $(this),
+            prop: $(this).attr('category'),
+            price: Number($(this).attr('price').replace(/,/g, '')),
+          };
+        });
+
+        priceFilter.on({
+          'change': function() {
+            var onTarget = priceFilter.find('option:selected');
+            priceMin = onTarget.attr('min');
+            priceMax = onTarget.attr('max');
+            priceRangeSort(priceMin, priceMax);
+          }
+        });
+
+        categoryFilter.find('button').each(function(index) {
+          categoryButton[index] = $(this);
+          categoryProp[index] = $(this).attr('prop');
+          console.log(index + ':' + categoryProp[index]);
+          categoryButton[index].on({
+            'click': function() {
+              categoryFilter.find('button').removeClass('active');
+              console.log('categoryProp[index]:' + categoryProp[index]);
+              if (index != categoryState) {
+                categoryButton[index].addClass('active');
+                cureentCategory = categoryProp[index];
+                categoryState = index;
+              } else {
+                cureentCategory = 'all';
+                categoryState = -1;
+              }
+              categorySort(cureentCategory);
+            }
+          });
+        });
+
+        if (param.indexOf('tag=0') != -1) {
+          console.log('tag0')
+          categoryButton[0].click();
+        }
+
+        if (param.indexOf('tag=1') != -1) {
+          console.log('tag1')
+          categoryButton[1].click();
+        }
+
+        if (param.indexOf('tag=2') != -1) {
+          console.log('tag2')
+          categoryButton[2].click();
+        }
+
+        if (param.indexOf('tag=3') != -1) {
+          console.log('tag3')
+          categoryButton[3].click();
+        }
+
+        if (param.indexOf('tag=4') != -1) {
+          console.log('tag4')
+          categoryButton[4].click();
+        }
+
+        if (param.indexOf('tag=5') != -1) {
+          console.log('tag5')
+          categoryButton[5].click();
+        }
+
+      }
+
+      init();
+    }
+
+    if (document.getElementById('giftProductList')) {
+      giftProductFilter2($('#giftProductList'));
+    }
+
+    //商品詳細ページ サムネイルの切り替え
+    function thumbSwitcher(target) {
+      let thumbButton = [];
+      let thumbSrc = [];
+      let thumbSrcSet = [];
+      let thumbBox = target.find('.thumb_img');
+      let thumbImage = thumbBox.find('img');
+      let slideNum = target.find('.thumbnails').find('img').length;
+      const time = 200;
+      let currentSlide = 0;
+      console.log('slideNum:' + slideNum);
+
+      function switchImage(num) {
+        console.log('num:' + num);
+        thumbBox.stop().animate({
+          opacity: 0
+        }, time, function() {
           thumbImage.attr('src', thumbSrc[num]);
           thumbImage.attr('srcset', thumbSrcSet[num]);
           $('.active_thumb').removeClass('active_thumb');
           thumbButton[num].addClass('active_thumb');
-          thumbBox.stop().animate({ opacity: 1 }, time);
-      });
-    }
-
-    function thumbHeightControll(){
-      var thumbHeight = thumbImage.outerHeight();
-      $('#thumnails').css({'max-height': thumbHeight + 'px'});
-      requestAnimationFrame(thumbHeightControll);
-    }
-
-    function slideNext(){
-      if (currentSlide < slideNum - 1) {
-        currentSlide = currentSlide + 1;
-      } else {
-        currentSlide = 0;
+          thumbBox.stop().animate({
+            opacity: 1
+          }, time);
+        });
       }
-      thumbButton[currentSlide].click();
-      /*switchImage(currentSlide);*/
-    };
 
-    function slidePrev(){
-      if (currentSlide == 0) {
-        currentSlide = slideNum - 1;
-      } else {
-        currentSlide = currentSlide - 1;
+      function thumbHeightControll() {
+        var thumbHeight = thumbImage.outerHeight();
+        $('#thumnails').css({
+          'max-height': thumbHeight + 'px'
+        });
+        requestAnimationFrame(thumbHeightControll);
       }
-      thumbButton[currentSlide].click();
-      /*switchImage(currentSlide);*/
-    };
 
-    function tabTouch(){
-      if(startTouchX - endTouchX > 50){
-        slideNext();
-      }else if(startTouchX - endTouchX < - 50){
-        slidePrev();
-      }
-    };
+      function slideNext() {
+        if (currentSlide < slideNum - 1) {
+          currentSlide = currentSlide + 1;
+        } else {
+          currentSlide = 0;
+        }
+        thumbButton[currentSlide].click();
+        /*switchImage(currentSlide);*/
+      };
 
-    function windowDrag() {
-      if (startDragX - endDragX > 100) {
-        slideNext();
-      } else if (startDragX - endDragX < -100) {
-        slidePrev();
-      }
-    };
+      function slidePrev() {
+        if (currentSlide == 0) {
+          currentSlide = slideNum - 1;
+        } else {
+          currentSlide = currentSlide - 1;
+        }
+        thumbButton[currentSlide].click();
+        /*switchImage(currentSlide);*/
+      };
 
-    function init(){
-      thumbHeightControll();
-      $.each(target.find('.thumbnails').find('button'), function(index) {
-        thumbButton[index] = $(this);
-        thumbSrc[index] = $(this).find('img').attr("src");
-        thumbSrcSet[index] = $(this).find('img').attr("srcset");
-        thumbButton[index].on({
-          'click': function() {
-            switchImage(index);
+      function tabTouch() {
+        if (startTouchX - endTouchX > 50) {
+          slideNext();
+        } else if (startTouchX - endTouchX < -50) {
+          slidePrev();
+        }
+      };
+
+      function windowDrag() {
+        if (startDragX - endDragX > 100) {
+          slideNext();
+        } else if (startDragX - endDragX < -100) {
+          slidePrev();
+        }
+      };
+
+      function init() {
+        thumbHeightControll();
+        $.each(target.find('.thumbnails').find('button'), function(index) {
+          thumbButton[index] = $(this);
+          thumbSrc[index] = $(this).find('img').attr("src");
+          thumbSrcSet[index] = $(this).find('img').attr("srcset");
+          thumbButton[index].on({
+            'click': function() {
+              switchImage(index);
+            }
+          });
+        });
+
+        thumbBox.find('img').on({
+          'dragstart': function(e) {
+            event.preventDefault();
+            startDragX = event.pageX;
+          },
+          'dragend': function(e) {
+            endDragX = event.pageX;
+            windowDrag();
           }
         });
-      });
 
-      thumbBox.find('img').on({
-        'dragstart': function(e) {
-          event.preventDefault();
-          startDragX = event.pageX;
-        },
-        'dragend': function(e) {
-          endDragX = event.pageX;
-          windowDrag();
-        }
-      });
+        thumbBox.find('img').on({
+          'touchstart': function(e) {
+            event.preventDefault();
+            startTouchX = event.changedTouches[0].pageX;
+          },
+          'touchmove': function(e) {},
+          'touchend': function(e) {
+            endTouchX = event.changedTouches[0].pageX;
+            tabTouch();
+          }
+        });
 
-      thumbBox.find('img').on({
-        'touchstart' : function(e){
-          event.preventDefault();
-          startTouchX = event.changedTouches[0].pageX;
-        },
-        'touchmove' : function(e){
-        },
-        'touchend' : function(e){
-          endTouchX = event.changedTouches[0].pageX;
-          tabTouch();
-        }
-      });
+        $(window).on({
+          'resize': function() {
+            thumbHeightControll();
+          }
+        });
+      }
 
-      $(window).on({
-        'resize': function(){
-          thumbHeightControll();
-        }
-      });
+      init();
+
     }
 
-    init();
+    if (document.getElementById('product')) {
+      thumbSwitcher($('#prodImages'));
+    }
 
-  }
+    //商品詳細ページ 購入数の増減 & バリエーションの切り替え
+    function cartWrapControll() {
+      var minusButton = $('#minusButton');
+      var plusButton = $('#plusButton');
+      var quantityInput = $('#quantityInput');
+      var quantityNum = 1;
 
-  if (document.getElementById('product')) {
-    thumbSwitcher($('#prodImages'));
-  }
-
-  //商品詳細ページ 購入数の増減 & バリエーションの切り替え
-  function cartWrapControll(){
-    var minusButton = $('#minusButton');
-    var plusButton = $('#plusButton');
-    var quantityInput = $('#quantityInput');
-    var quantityNum = 1;
-
-    function controllQuantity(vector){
-      quantityNum = quantityInput.val();
-      if(vector == 1){
-        quantityInput.attr('value', Number(quantityNum) + 1);
+      function controllQuantity(vector) {
         quantityNum = quantityInput.val();
-      }else{
-        if(quantityNum != 1){
-          quantityInput.attr('value', Number(quantityNum) - 1);
+        if (vector == 1) {
+          quantityInput.attr('value', Number(quantityNum) + 1);
           quantityNum = quantityInput.val();
+        } else {
+          if (quantityNum != 1) {
+            quantityInput.attr('value', Number(quantityNum) - 1);
+            quantityNum = quantityInput.val();
+          }
         }
       }
+
+
+      function init() {
+
+        minusButton.on({
+          'click': function() {
+            event.preventDefault();
+            controllQuantity(-1);
+          }
+        });
+
+        plusButton.on({
+          'click': function() {
+            event.preventDefault();
+            controllQuantity(1);
+          }
+        });
+
+      };
+
+      init();
+
     }
 
+    if (document.getElementById('product')) {
+      cartWrapControll();
+    }
 
-    function init(){
+    // 定期・通常購入の切り替えレイアウト
+    function switchCartWrap(){
+      const purchaseButton = $('#purchaseButton');
+      const subscriptionButton = $('#subscriptionButton');
+      const contentSwitcher = $('#contentSwitcher');
+      const compVariation = $('#compVariation');
+      const normalBox = $('#normalBox');
+      const subscriptionBox = $('#subscriptionBox');
+      let switchState = 0;
 
-      minusButton.on({
-        'click': function() {
-          event.preventDefault();
-          controllQuantity(-1);
+
+
+      function init(){
+        purchaseButton.on({
+          'click': function(){
+            if(switchState == 1){
+              purchaseButton.addClass('active');
+              subscriptionButton.removeClass('active');
+              compVariation.css({'display': 'block'});
+              contentSwitcher.stop().animate({ opacity: 0 }, 300, function() {
+                normalBox.css({'display': 'block'});
+                subscriptionBox.css({'display': 'none'});
+                contentSwitcher.stop().animate({ opacity: 1 }, 300);
+                switchState = 0;
+              });
+            }
+          }
+        })
+        subscriptionButton.on({
+          'click': function(){
+            if(switchState == 0){
+              purchaseButton.removeClass('active');
+              subscriptionButton.addClass('active');
+              compVariation.css({'display': 'none'});
+              contentSwitcher.stop().animate({ opacity: 0 }, 300, function() {
+                normalBox.css({'display': 'none'});
+                subscriptionBox.css({'display': 'block'});
+                contentSwitcher.stop().animate({ opacity: 1 }, 300);
+                switchState = 1;
+              });
+            }
+          }
+        })
+      }
+
+      init();
+    }
+
+    if (document.getElementById('product')) {
+      switchCartWrap();
+    }
+
+    //ギフト商品オプション選択欄
+    function optionPopup(target){
+      var posi;
+      var optionPop = $('#optionPop');
+      var giftOptionFields = $('#ProductSelect-product-template');
+      var optionValue = [];
+      var mizuhiki = $('.mizuhiki');
+      var tesageState = $("input[name='tesage']");
+      var messageState = $('input[name="message"]');
+      var muzihikiState = $('input[name="mizuhiki"]');
+      var tesageDisplay = $('#tesageDisplay');
+      var mizuhikiDisplay = $('#mizuhikiDisplay');
+      var tesageCheck;
+      var mizuhikiCheck;
+      var messageCheck;
+
+      function withMessage(){
+        if(tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki'){
+          giftOptionFields.val(optionValue[7]);
+        }else if(tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki'){
+          giftOptionFields.val(optionValue[5]);
+        }else if(tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki'){
+          giftOptionFields.val(optionValue[6]);
+        }else if(tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki'){
+          giftOptionFields.val(optionValue[4]);
         }
-      });
+      }
 
-      plusButton.on({
-        'click': function() {
-          event.preventDefault();
-          controllQuantity(1);
+      function withoutMessage(){
+        if(tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki'){
+          giftOptionFields.val(optionValue[3]);
+        }else if(tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki'){
+          giftOptionFields.val(optionValue[1]);
+        }else if(tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki'){
+          giftOptionFields.val(optionValue[2]);
+        }else if(tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki'){
+          giftOptionFields.val(optionValue[0]);
         }
-      });
+      }
 
-    };
+      function optionShifter(){
+        tesageCheck = $("input[name='tesage']:checked").val();
+        mizuhikiCheck = $("input[name='mizuhiki']:checked").val();
+        messageCheck = $("input[name='message']:checked").val();
+        if(messageCheck == 'message'){
+          withMessage();
+        }else{
+          withoutMessage();
+        }
+      }
 
-    init();
-
-  }
-
-  if (document.getElementById('product')) {
-    cartWrapControll();
-  }
-
-  // 商品詳細ページ 蛇腹式レイアウト
-  function toggleControl(target){
-    let toggleItem = [];
-    let toggleButton = [];
-    let toggleContents = [];
-    let toggleInner = [];
-    let toggleType = [];
-    let toggleState = [];
-    let toggleState2 = [];
-    let toggleInToggle = [];
-    let windowWidth;
-    let spWidth = 721;
-
-
-    function toggleMove(e) {
-      var buttonHeight = toggleButton[e].outerHeight();
-      var tagetHeight = toggleInner[e].outerHeight();
-      if (toggleState[e] == -1 || toggleState[e] == 0) {
-        toggleButton[e].addClass('open');
-        toggleContents[e].css({
-          'height': tagetHeight + 'px'
+      function optionPopOpen(){
+        posi = $(window).scrollTop();
+        $('body').addClass('fixed');
+        $('body').css({
+          position: 'fixed',
+          top: -1 * posi
         });
-        toggleState[e] = 1;
-      } else {
-        toggleButton[e].removeClass('open');
-        var toggleHeight = toggleButton[e].outerHeight();
+        target.addClass('open');
+      }
+
+      function optionPopClose(){
+        $('body').removeClass('fixed');
+        $('body').attr('style', '');
+        $('html, body').prop({scrollTop: posi});
+        target.removeClass('open');
+      }
+
+      function displayMizuhikiOption(){
+        var state = $('input[name="tesage"]:checked').val();
+        var contentsHeight = mizuhiki.find('.mizuhiki_inner').outerHeight();
+        if(state == 'tesage'){
+          $('#0-3').click();
+        }else{
+          $('#0-2').click();
+        }
+      }
+
+      function init(){
+
+        giftOptionFields.find("option").each(function(index) {
+          optionValue[index] = $(this).attr('value');
+        });
+
+        muzihikiState.on({
+          'click': function(){
+            optionShifter();
+          }
+        });
+
+        tesageState.on({
+          'click': function(){
+            optionShifter();
+          }
+        });
+
+        messageState.on({
+          'click': function(){
+            optionShifter();
+          }
+        });
+      }
+
+      init();
+
+    }
+
+    if (document.getElementById('product')) {
+      optionPopup($('#optionPop'));
+    }
+
+    // 商品詳細ページ 蛇腹式レイアウト
+    function toggleControl(target) {
+      let toggleItem = [];
+      let toggleButton = [];
+      let toggleContents = [];
+      let toggleInner = [];
+      let toggleType = [];
+      let toggleState = [];
+      let toggleState2 = [];
+      let toggleInToggle = [];
+      let windowWidth;
+      let spWidth = 721;
+
+
+      function toggleMove(e) {
+        var buttonHeight = toggleButton[e].outerHeight();
+        var tagetHeight = toggleInner[e].outerHeight();
+        if (toggleState[e] == -1 || toggleState[e] == 0) {
+          toggleButton[e].addClass('open');
+          toggleContents[e].css({
+            'height': tagetHeight + 'px'
+          });
+          toggleState[e] = 1;
+        } else {
+          toggleButton[e].removeClass('open');
+          var toggleHeight = toggleButton[e].outerHeight();
           toggleContents[e].css({
             'height': 0 + 'px'
           });
-        toggleState[e] = 0;
+          toggleState[e] = 0;
+        }
       }
+
+      function init() {
+        windowWidth = $(window).width();
+        $.each(target.find('.toggle_item'), function(index) {
+          toggleItem[index] = $(this);
+          toggleButton[index] = $(this).find('.toggle_button');
+          toggleContents[index] = $(this).find('.toggle_contents');
+          toggleInner[index] = $(this).find('.toggle_inner');
+          toggleType[index] = toggleItem[index].attr('type');
+          var tagetHeight = toggleInner[index].outerHeight();
+          if (toggleType[index] == 'open') {
+            toggleContents[index].css({
+              'height': tagetHeight + 'px'
+            });
+            toggleState[index] = 1;
+            toggleState2[index] = -1;
+          } else if (toggleType[index] == 'close') {
+            toggleContents[index].css({
+              'height': 0 + 'px'
+            });
+            toggleState[index] = 0;
+            toggleState2[index] = -1;
+          } else {
+            toggleContents[index].css({
+              'height': tagetHeight + 'px'
+            });
+            toggleState[index] = 1;
+            toggleState2[index] = -1;
+          }
+          toggleButton[index].on({
+            'click': function() {
+              toggleMove(index);
+            }
+          });
+
+        });
+      }
+
+      init();
+
     }
 
-    function init(){
-      windowWidth = $(window).width();
-      $.each(target.find('.toggle_item'), function(index) {
-        toggleItem[index] = $(this);
-        toggleButton[index] = $(this).find('.toggle_button');
-        toggleContents[index] = $(this).find('.toggle_contents');
-        toggleInner[index] = $(this).find('.toggle_inner');
-        toggleType[index] = toggleItem[index].attr('type');
-        var tagetHeight = toggleInner[index].outerHeight();
-        if(toggleType[index] == 'open'){
-          toggleContents[index].css({'height': tagetHeight + 'px'});
-          toggleState[index] = 1;
-          toggleState2[index] = -1;
-        }else if(toggleType[index] == 'close'){
-          toggleContents[index].css({'height': 0 + 'px'});
-          toggleState[index] = 0;
-          toggleState2[index] = -1;
-        }else{
-          toggleContents[index].css({'height': tagetHeight + 'px'});
-          toggleState[index] = 1;
-          toggleState2[index] = -1;
-        }
-        toggleButton[index].on({
-          'click': function() {
-            toggleMove(index);
+    if (document.getElementById('product')) {
+      toggleControl($('#toggles01'));
+      toggleControl($('#toggles02'));
+    }
+
+    // ガイド系ページ 目次ボタン
+    function indexAnker(target) {
+      var ankerButton = [];
+      var scrollTarget = [];
+
+      function windowMove(e) {
+        var headerHeight = $('header').outerHeight();
+        var scrollHeight = $(scrollTarget[e]).offset().top;
+        var adScroll = scrollHeight - headerHeight;
+        $("html, body").animate({
+          scrollTop: adScroll
+        }, 500);
+      }
+
+
+      function init() {
+        target.find('button').each(function(index) {
+          ankerButton[index] = $(this);
+          scrollTarget[index] = $(this).attr('jump');
+          ankerButton[index].on({
+            'click': function() {
+              windowMove(index);
+            }
+          });
+        });
+      }
+
+      init();
+
+    }
+
+    if (document.getElementById('categoryList')) {
+      indexAnker($('#categoryList'));
+    }
+
+    //FAQページ内の、トグル制御
+
+    function faqToggle(target) {
+      var toggleItem = [];
+      var toggleButton = [];
+      var toggleContents = [];
+      var toggleState = [];
+      var toggleTitleTxt = [];
+      var toggleContentsTxt = [];
+      var faqSearch = $('#faqSearch');
+      var faqFlex = $('#faqFlex');
+      var windowW = window.innerWidth;
+
+      function filterFaqItem() {
+        var searchValue = faqSearch.val();
+        $.each(target.find('.toggle_item'), function(index) {
+          if (searchValue.length > 1) {
+            if (toggleTitleTxt[index].indexOf(searchValue) != -1 || toggleContentsTxt[index].indexOf(searchValue) != -1) {
+              $(this).css({
+                'display': 'block'
+              });
+            } else {
+              $(this).css({
+                'display': 'none'
+              });
+            }
+          } else {
+            $(this).css({
+              'display': 'block'
+            });
           }
         });
-
-      });
-    }
-
-    init();
-
-  }
-
-  if (document.getElementById('product')) {
-    toggleControl($('#toggles01'));
-    toggleControl($('#toggles02'));
-  }
-
-  // ガイド系ページ 目次ボタン
-  function indexAnker(target){
-    var ankerButton = [];
-    var scrollTarget = [];
-
-    function windowMove(e) {
-      var headerHeight = $('header').outerHeight();
-      var scrollHeight = $(scrollTarget[e]).offset().top;
-      var adScroll = scrollHeight - headerHeight;
-      $("html, body").animate({
-        scrollTop: adScroll
-      }, 500);
-    }
-
-
-    function init(){
-      target.find('button').each(function(index) {
-        ankerButton[index] = $(this);
-        scrollTarget[index] = $(this).attr('jump');
-        ankerButton[index].on({
-          'click': function() {
-            windowMove(index);
+        $.each(target.find('.comp-faq-contents'), function(index) {
+          if (searchValue.length > 1) {
+            if ($(this).text().indexOf(searchValue) != -1) {
+              $(this).css({
+                'display': 'block'
+              });
+            } else {
+              $(this).css({
+                'display': 'none'
+              });
+            }
+          } else {
+            $(this).css({
+              'display': 'block'
+            });
           }
         });
-      });
-    }
-
-    init();
-
-  }
-
-  if (document.getElementById('categoryList')) {
-    indexAnker($('#categoryList'));
-  }
-
-  //FAQページ内の、トグル制御
-
-  function faqToggle(target) {
-    var toggleItem = [];
-    var toggleButton = [];
-    var toggleContents = [];
-    var toggleState = [];
-    var toggleTitleTxt = [];
-    var toggleContentsTxt = [];
-    var faqSearch = $('#faqSearch');
-    var faqFlex = $('#faqFlex');
-    var windowW = window.innerWidth;
-
-    function filterFaqItem(){
-      var searchValue = faqSearch.val();
-      $.each(target.find('.toggle_item'), function(index) {
-        if(searchValue.length > 1){
-          if(toggleTitleTxt[index].indexOf(searchValue) != -1 || toggleContentsTxt[index].indexOf(searchValue) != -1){
-            $(this).css({'display': 'block'});
-          }else{
-            $(this).css({'display': 'none'});
+        $.each(target.find('.item_wrap'), function(index) {
+          if (searchValue.length > 1) {
+            if ($(this).text().indexOf(searchValue) != -1) {
+              $(this).css({
+                'display': 'block'
+              });
+            } else {
+              $(this).css({
+                'display': 'none'
+              });
+            }
+          } else {
+            $(this).css({
+              'display': 'block'
+            });
           }
-        }else{
-          $(this).css({'display': 'block'});
-        }
-      });
-      $.each(target.find('.comp-faq-contents'), function(index) {
-        if(searchValue.length > 1){
-          if($(this).text().indexOf(searchValue) != -1){
-            $(this).css({'display': 'block'});
-          }else{
-            $(this).css({'display': 'none'});
-          }
-        }else{
-          $(this).css({'display': 'block'});
-        }
-      });
-      $.each(target.find('.item_wrap'), function(index) {
-        if(searchValue.length > 1){
-          if($(this).text().indexOf(searchValue) != -1){
-            $(this).css({'display': 'block'});
-          }else{
-            $(this).css({'display': 'none'});
-          }
-        }else{
-          $(this).css({'display': 'block'});
-        }
-      });
-    }
-
-    function toggleMove(e) {
-      if ( toggleState[e] == 0 ) {
-        toggleButton[e].addClass('active');
-        var buttonHeight = toggleButton[e].outerHeight();
-        var tagetHeight = toggleContents[e].outerHeight();
-        toggleItem[e].css({
-          'height': buttonHeight + tagetHeight + 'px'
         });
-        toggleState[e] = 1;
-      } else {
-        toggleButton[e].removeClass('active');
-        var buttonHeight = toggleButton[e].outerHeight();
+      }
+
+      function toggleMove(e) {
+        if (toggleState[e] == 0) {
+          toggleButton[e].addClass('active');
+          var buttonHeight = toggleButton[e].outerHeight();
+          var tagetHeight = toggleContents[e].outerHeight();
+          toggleItem[e].css({
+            'height': buttonHeight + tagetHeight + 'px'
+          });
+          toggleState[e] = 1;
+        } else {
+          toggleButton[e].removeClass('active');
+          var buttonHeight = toggleButton[e].outerHeight();
           toggleItem[e].css({
             'height': buttonHeight + 2 + 'px'
           });
-        toggleState[e] = 0;
+          toggleState[e] = 0;
+        }
       }
-    }
 
-    function setToggleHeight(){
-      $.each(target.find('.toggle_item'), function(index) {
-        toggleItem[index] = $(this);
-        toggleButton[index] = $(this).find('.toggle_button');
-        toggleContents[index] = $(this).find('.toggle_contents');
-        $(this).css({'height': toggleButton[index].outerHeight() + 2 + 'px'});
-        toggleState[index] = 0;
-      });
-    }
-
-    function windowChecker(){
-      var currentWindow = window.innerWidth;
-      if(currentWindow != windowW){
-        setToggleHeight();
-        windowW = currentWindow
+      function setToggleHeight() {
+        $.each(target.find('.toggle_item'), function(index) {
+          toggleItem[index] = $(this);
+          toggleButton[index] = $(this).find('.toggle_button');
+          toggleContents[index] = $(this).find('.toggle_contents');
+          $(this).css({
+            'height': toggleButton[index].outerHeight() + 2 + 'px'
+          });
+          toggleState[index] = 0;
+        });
       }
-      requestAnimationFrame(windowChecker);
+
+      function windowChecker() {
+        var currentWindow = window.innerWidth;
+        if (currentWindow != windowW) {
+          setToggleHeight();
+          windowW = currentWindow
+        }
+        requestAnimationFrame(windowChecker);
+      }
+
+      function init() {
+        $.each(target.find('.toggle_item'), function(index) {
+          toggleItem[index] = $(this);
+          toggleButton[index] = $(this).find('.toggle_button');
+          toggleContents[index] = $(this).find('.toggle_contents');
+          $(this).css({
+            'height': toggleButton[index].outerHeight() + 2 + 'px'
+          });
+          toggleState[index] = 0;
+          toggleTitleTxt[index] = toggleButton[index].text();
+          toggleContentsTxt[index] = toggleContents[index].text();
+          toggleButton[index].on({
+            'click': function() {
+              toggleMove(index);
+            }
+          });
+        });
+        if (document.getElementById('faq')) {
+          faqSearch.on({
+            'blur': function() {
+              faqFlex.stop().animate({
+                opacity: 0
+              }, 300);
+              setTimeout(function() {
+                filterFaqItem();
+                faqFlex.stop().animate({
+                  opacity: 1
+                }, 300);
+              }, 300);
+            }
+          });
+        }
+        windowChecker();
+      }
+
+      init();
+
     }
 
-    function init() {
-      $.each(target.find('.toggle_item'), function(index) {
-        toggleItem[index] = $(this);
-        toggleButton[index] = $(this).find('.toggle_button');
-        toggleContents[index] = $(this).find('.toggle_contents');
-        $(this).css({'height': toggleButton[index].outerHeight() + 2 + 'px'});
-        toggleState[index] = 0;
-        toggleTitleTxt[index] = toggleButton[index].text();
-        toggleContentsTxt[index] = toggleContents[index].text();
-        toggleButton[index].on({
+    if (document.getElementById('faqFlex')) {
+      faqToggle($('article'));
+    }
+
+
+
+    // キーワード検索 ヘッダー
+    function keywordSearchControll2(target) {
+      var wordInput = target.find('input[type="text"]');
+      var submitButton = target.find('button');
+
+      function init() {
+        submitButton.on({
           'click': function() {
-            toggleMove(index);
+            var searchWord = wordInput.val();
+            if (searchWord.length > 1 && searchWord != null) {
+              location.href = 'https://www.komons-japan.com/?mode=srh&keyword=' + searchWord;
+            }
           }
         });
-      });
-      if (document.getElementById('faq')) {
-        faqSearch.on({
-          'blur': function(){
-            faqFlex.stop().animate({opacity: 0}, 300);
-            setTimeout(function() {
-              filterFaqItem();
-              faqFlex.stop().animate({opacity: 1}, 300);
-            }, 300);
-          }
-        });
-      }
-      windowChecker();
+      };
+
+      init();
     }
 
-    init();
+    keywordSearchControll2($('#searchSubmit'));
 
-  }
+    /* ログインページの切り替えレイアウト */
+    function switchLoginFunction() {
+      var loginLayout = $('#login');
+      var resetLayout = $('#reset');
+      var resetPassword = $('#resetPassword');
+      var loginBack = $('#loginBack');
+      var urlHash = location.hash;
 
-  if (document.getElementById('faqFlex')) {
-    faqToggle($('article'));
-  }
+      function switchLogin() {
+        $('#contentSwitcher').animate({
+          opacity: 0
+        }, 400, function() {
+          loginLayout.css({
+            'display': 'block'
+          });
+          resetLayout.css({
+            'display': 'none'
+          });
+          $("#contentSwitcher").css({
+            'display': 'block'
+          });
+          setTimeout(function() {
+            $("#contentSwitcher").animate({
+              opacity: 1
+            }, 400);
+          }, 50);
+        });
+      }
+
+      function switchReset() {
+        $('#contentSwitcher').animate({
+          opacity: 0
+        }, 400, function() {
+          loginLayout.css({
+            'display': 'none'
+          });
+          resetLayout.css({
+            'display': 'block'
+          });
+          $("#contentSwitcher").css({
+            'display': 'block'
+          });
+          setTimeout(function() {
+            $("#contentSwitcher").animate({
+              opacity: 1
+            }, 400);
+          }, 50);
+        });
+      }
+
+      function init() {
+        if (urlHash.indexOf('recover') > -1) {
+          switchReset();
+        }
+        resetPassword.on({
+          'click': function() {
+            event.preventDefault();
+            switchReset();
+          }
+        });
+
+        loginBack.on({
+          'click': function() {
+            event.preventDefault();
+            switchLogin();
+          }
+        });
+
+      }
+
+      init();
+
+    }
+
+    if (document.getElementById('contentSwitcher')) {
+      switchLoginFunction();
+    }
+
+    /* 住所一覧ページの切り替えレイアウト */
+    function switchAddressFunction() {
+      var addressContentWrap = $('#addressContentWrap');
+      var wrapperList = $('#wrapperList');
+      var wrapperAdd = $('#wrapperAdd');
+      var addressList = $('#addressList');
+      var addressEdit = $('#addressEdit');
+      var adminBar = $('#adminBar');
+      var editbutton = [];
+      var editId = [];
 
 
+      function switchList() {
+        adminBar.removeClass('mode-edit').addClass('mode-list');
+        window.scroll({
+          top: 0,
+          behavior: 'smooth'
+        });
+        addressContentWrap.animate({
+          opacity: 0
+        }, 400, function() {
+          $('.content_wrapper').css({
+            'display': 'none'
+          });
+          wrapperList.css({
+            'display': 'block'
+          });
+          addressContentWrap.css({
+            'display': 'block'
+          });
+          setTimeout(function() {
+            addressContentWrap.animate({
+              opacity: 1
+            }, 400);
+          }, 50);
+        });
+      }
 
-  // キーワード検索 ヘッダー
-  function keywordSearchControll2(target){
-    var wordInput = target.find('input[type="text"]');
-    var submitButton = target.find('button');
-    function init(){
-      submitButton.on({
-        'click': function() {
-          var searchWord = wordInput.val();
-          if(searchWord.length > 1 && searchWord != null){
-            location.href = 'https://www.komons-japan.com/?mode=srh&keyword=' + searchWord;
+      function switchAdd() {
+        adminBar.addClass('mode-edit').removeClass('mode-list');
+        window.scroll({
+          top: 0,
+          behavior: 'smooth'
+        });
+        addressContentWrap.animate({
+          opacity: 0
+        }, 400, function() {
+          $('.content_wrapper').css({
+            'display': 'none'
+          });
+          wrapperAdd.css({
+            'display': 'block'
+          });
+          addressContentWrap.css({
+            'display': 'block'
+          });
+          setTimeout(function() {
+            addressContentWrap.animate({
+              opacity: 1
+            }, 400);
+          }, 50);
+        });
+      }
+
+      function switchEdit(e) {
+        adminBar.addClass('mode-edit').removeClass('mode-list');
+        window.scroll({
+          top: 0,
+          behavior: 'smooth'
+        });
+        addressContentWrap.animate({
+          opacity: 0
+        }, 400, function() {
+          $('.content_wrapper').css({
+            'display': 'none'
+          });
+          $('#' + editId[e]).css({
+            'display': 'block'
+          });
+          addressContentWrap.css({
+            'display': 'block'
+          });
+          setTimeout(function() {
+            addressContentWrap.animate({
+              opacity: 1
+            }, 400);
+          }, 50);
+        });
+      }
+
+      function init() {
+        addressList.on({
+          'click': function() {
+            event.preventDefault();
+            switchList();
+          }
+        });
+
+        addressEdit.on({
+          'click': function() {
+            event.preventDefault();
+            switchAdd();
+          }
+        });
+
+        $.each($('article').find('.btn_edit'), function(index) {
+          editbutton[index] = $(this);
+          editId[index] = $(this).attr('formId');
+          editbutton[index].on({
+            'click': function() {
+              console.log(editId[index]);
+              switchEdit(index);
+            }
+          });
+        });
+
+      }
+
+      init();
+
+    }
+
+    if (document.getElementById('addressContentWrap')) {
+      switchAddressFunction();
+    }
+
+  };
+
+  preSetScript();
+
+  //PJAXの制御
+  function pjaxControll() {
+    var linkTarget = [];
+    var linkType = [];
+    var linkURL = [];
+    var humButton = $('#humButton button')
+
+    function addPjaxClass() {
+      $.each($('body').find('a'), function(index) {
+        linkTarget[index] = $(this).attr('target');
+        linkType[index] = $(this).attr('linkType');
+        if (linkTarget[index] != '_blank' || linkTarget[index] == undefined) {
+          if (linkType[index] != 'langChange') {
+            $(this).addClass('pjax');
           }
         }
       });
-    };
+    }
 
-    init();
+    addPjaxClass();
+
+    // pjax遷移開始
+    var nextUrl = '';
+    $(document).on('click', '.pjax', function(e) {
+      var linkType = $(this).attr('target');
+      var linkProp = $(this).attr('linkType');
+      var linkURL = $(this).attr('href');
+      $.each($('body').find('a'), function(index) {
+        /*$(this).css('pointer-events', 'none');*/
+      });
+      if (linkType != '_blank' || linkType == undefined) {
+        if (linkURL != '/cart') {
+          e.preventDefault();
+          nextUrl = $(this).attr('href');
+          $('header').addClass('rolled');
+          if (linkProp == 'headerLink') {
+            setTimeout(function() {
+              $('#humButton').click();
+            }, 500);
+          }
+          if (nextUrl.indexOf('logout') == -1) {
+            // 遷移先のURLを取得
+            $('#container').animate({
+              opacity: 0
+            }, 250, function() {
+              $.pjax({ //エフェクトが終わったらPjaxイベント
+                url: nextUrl,
+                container: '#container',
+                fragment: '#container',
+                timeout: 5000,
+              });
+              console.log('nextUrl:' + nextUrl);
+              console.log('nextUrl.indexOf:' + nextUrl.indexOf('headerRolled'));
+              setTimeout(function() {
+                if (document.getElementById('headerRolled') && nextUrl.indexOf('headerRolled') == -1 ) {
+                  $('header').removeClass('rolled').removeClass('underpage');
+                }
+                if (document.getElementById('brandIntroduction')){
+                  $('#brandIntroduction').css({'display': 'none'});
+                }
+              }, 500);
+
+            });
+          } else {
+            location.href = nextUrl;
+          }
+        }
+      }
+    });
+
+    $(document).on('change', '.pjax-select', function(e) {
+      var nextUrl = '';
+      e.preventDefault();
+      nextUrl = $(this).val();
+      // 遷移先のURLを取得
+      $('#innerWrapper').animate({
+        opacity: 0
+      }, 250, function() {
+        $.pjax({ //エフェクトが終わったらPjaxイベント
+          url: nextUrl,
+          container: '#innerWrapper',
+          fragment: '#innerWrapper',
+          timeout: 5000,
+        });
+
+      });
+    });
+
+    //Pjaxイベントが終わったときの動作
+    $(document).on('pjax:end', function() {
+      addPjaxClass();
+      /*asyncLoad();*/
+      $.each($('body').find('a'), function(index) {
+        /*$(this).css('pointer-events', 'all');*/
+      });
+      $('#container').animate({
+        opacity: 1
+      }, 250, function() {
+        preSetScript();
+      });
+      $('#innerWrapper').animate({
+        opacity: 1
+      }, 250, function() {});
+    });
+
+    // タイムアウト時
+    $(document).on('pjax:timeout', function() {
+      location.href = nextUrl;
+      $('#container').animate({
+        opacity: 1
+      }, 250);
+      $('#innerWrapper').animate({
+        opacity: 1
+      }, 250, function() {});
+      preSetScript();
+      addPjaxClass();
+    });
+
   }
 
-  keywordSearchControll2($('#searchSubmit'));
-
-
+  pjaxControll();
 
 });

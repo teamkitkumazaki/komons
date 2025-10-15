@@ -1,7 +1,8 @@
 {%- assign limit = 24 -%}
+
 {% paginate collection.products by limit %}
 
-<article id="collection" class="page-collection">
+<article id="collection" class="page-collection" limit="{{ limit }}" handle="{{ collection.handle }}">
   <section class="section-index-main comp-page-main">
     <div class="main_image">
       <img class="sp_img" src="{{ 'collection_main.jpg' | asset_url }}">
@@ -12,68 +13,69 @@
     <div class="section_inner">
       <div class="collection_flex">
         <div class="collection_category">
-          <h1 class="collection_ttl">Products</h1>
+          <div class="collection_ttl">{{ collection.handle | capitalize }}</div>
+          <h1 class="collection_ttl_jp">{{ collection.title }}</h1>
           <div class="comp-collection-category">
             <div class="collection_filter">
               <div class="filter_item">
-                <button class="active_category">
+                <a {% if collection.handle == 'all-products' %}class="active_category"{% endif %} href="/collections/all-products#headerRolled">
                   <span class="txt">ALL</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
               <div class="filter_item">
-                <button>
+                <a {% if collection.handle == 'kitchen' %}class="active_category"{% endif %} href="/collections/kitchen#headerRolled">
                   <span class="txt">Kitchen</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
               <div class="filter_item">
-                <button>
+                <a {% if collection.handle == 'living' %}class="active_category"{% endif %} href="/collections/living#headerRolled">
                   <span class="txt">Living / Bedroom</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
               <div class="filter_item">
-                <button>
+                <a {% if collection.handle == 'toilet' %}class="active_category"{% endif %} href="/collections/toilet#headerRolled">
                   <span class="txt">Toilet / Bathroom</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
               <div class="filter_item">
-                <button>
+                <a {% if collection.handle == 'others' %}class="active_category"{% endif %} href="/collections/others#headerRolled">
                   <span class="txt">Others</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
               <div class="filter_item">
-                <button>
+                <a {% if collection.handle == 'refill' %}class="active_category"{% endif %} href="/collections/refill#headerRolled">
                   <span class="txt">Refill</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
             </div><!-- collection_filter -->
           </div><!-- comp-collection-category -->

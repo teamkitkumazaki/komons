@@ -5,6 +5,100 @@
   {% section 'product-main' %}
   {% section 'product-relation' %}
   {% section 'product-history' %}
+  <section class="section-links-product">
+    <div class="section_inner">
+      <div class="comp-copntent-list">
+        <h2 class="content_ttl">Product List</h2>
+        <div class="content_wrapper">
+          <div class="content_item">
+            <a href="/collections/all-product">
+              <span class="img_wrap">
+                <img src="{{ 'collection_thumb.jpg' | asset_url }}">
+              </span>
+              <span class="content_wrap">
+                <span class="ttl_jp">通常商品一覧</span>
+                <span class="ttl_en">
+                  <span class="txt">Product List</span>
+                  <span class="caret">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                      <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                    </path>
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="content_item">
+            <a href="/collections/gift">
+              <span class="img_wrap">
+                <img src="{{ 'gift_thumb.jpg' | asset_url }}">
+              </span>
+              <span class="content_wrap">
+                <span class="ttl_jp">ギフト商品一覧</span>
+                <span class="ttl_en">
+                  <span class="txt">Gift Set</span>
+                  <span class="caret">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                      <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                    </path>
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div><!-- content_wrapper -->
+      </div><!-- comp-copntent-list -->
+    </div><!-- section_inner -->
+  </section>
+  <section class="section-index-contents">
+    <div class="section_inner">
+      <div class="comp-copntent-list">
+        <h2 class="content_ttl">About Us</h2>
+        <div class="content_wrapper">
+          <div class="content_item">
+            <a href="/pages/concept">
+              <span class="img_wrap">
+                <img src="{{ 'content_img01.jpg' | asset_url }}">
+              </span>
+              <span class="content_wrap">
+                <span class="ttl_jp">Komonsについて</span>
+                <span class="ttl_en">
+                  <span class="txt">Vision of Home Care</span>
+                  <span class="caret">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                      <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                    </path>
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="content_item">
+            <a href="/pages/fragrance">
+              <span class="img_wrap">
+                <img src="{{ 'content_img02.jpg' | asset_url }}">
+              </span>
+              <span class="content_wrap">
+                <span class="ttl_jp">Fragrance Labについて</span>
+                <span class="ttl_en">
+                  <span class="txt">Create a Fragrance</span>
+                  <span class="caret">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                      <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                    </path>
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div><!-- content_wrapper -->
+      </div><!-- comp-copntent-list -->
+    </div><!-- section_inner -->
+  </section>
 </article>
 
 {% assign current_variant = product.selected_or_first_available_variant %}

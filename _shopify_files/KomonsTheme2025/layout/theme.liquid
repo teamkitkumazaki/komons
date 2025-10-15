@@ -25,6 +25,7 @@
 	<link rel="apple-touch-icon" href="https://journal.komons-japan.com/wp-content/themes/komons-theme/img/icon/icon.jpg" sizes="200x200">
 	<meta name="google-site-verification" content="hmx_ejVjHWOZdBvcBBZJDO223RAXBT-8VFHv1_SuNdg" />
 	<meta name="facebook-domain-verification" content="n1740khqc61uch3sbafw6md4c74g7p" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp.min.css">
 	{{ 'style.css' | asset_url | stylesheet_tag }}
 	{%- if request.page_type contains 'account' -%}
 	<style>body.huckleberry-subscription-list-color{display: flex;align-items: center;justify-content: center;min-height: calc(100vh - 120px);max-height: unset;}#root {width: 100%;font-family: YakuHanMP, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif !important;}</style>
@@ -76,11 +77,7 @@
 	as="image" href="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide02_sp_bphwgj.jpg"
 	imagesizes="100vw"/>
 	{%- endif -%}
-	{%- if request.page_type contains 'index' or request.page_type contains 'product' or request.page_type contains 'collection' -%}
-	{%- else -%}
-	<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
-	<!-- <script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script> -->
-	{%- endif -%}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	{%- include 'google-tag' -%}
 	{{ content_for_header }}
 </head>
@@ -89,42 +86,40 @@
 	{%- else -%}
 <body class="{{ request.page_type }} {{ request.path }}">
 	{%- endif -%}
+
+
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LVFKHJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 
+	{%- if request.page_type contains 'index' -%}
+	<div id="loading">
+	  <div class="load_inner">
+	    <div class="main_txt">
+	      <div class="main_img"><img width="145" height="32" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/h_logo_nwjm8r.png"></div>
+	      <h1 class="main_ttl">毎日の家事を、心地よい時間に。</h1>
+	      <p id="loadingBar"><span></span></p>
+	    </div>
+	  </div>
+	</div>
+	{%- endif -%}
 
-	{%- if request.page_type contains 'account' -%}
-	{%- else -%}
 	{% section 'header' %}
-	{%- endif -%}
-	{{content_for_layout}}
 
-	{%- if request.page_type contains 'index' or request.page_type contains 'collection' or request.page_type contains 'product' -%}
-	{% section 'sns-wrap' %}
-	{%- endif -%}
+	<div id="container" class="page-container">
+		{{content_for_layout}}
+		{%- if request.page_type contains 'index' or request.page_type contains 'collection' or request.page_type contains 'product' -%}
+		{% section 'sns-wrap' %}
+		{%- endif -%}
+		{% include 'script-cookies' %}
+	</div>
 
-	{%- if request.page_type contains 'account' -%}
-	{% section 'header' %}
-	{%- endif -%}
 	{% section 'footer' %}
 	{% section 'slide-menu' %}
 </body>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp.min.css">
 
-{%- if request.page_type contains 'index' or request.page_type contains 'product' or request.page_type contains 'collection' -%}
-<script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
-<!-- <script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script> -->
-{%- endif -%}
-<script async src="https://statics.a8.net/a8sales/a8sales.js"></script>
+<script src="{{ 'pjax.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'layout.js' | asset_url }}" defer="defer"></script>
-{%- if request.page_type contains 'index' -%}
-<script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
-{%- if request.page_type contains 'product' -%}
-<script src="{{ 'detail.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
 {%- if request.page_type contains 'review' -%}
 <script src="{{ 'review.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
@@ -134,6 +129,5 @@
 {% if request.path contains 'question' or request.path contains 'request' %}
 <script src="{{ 'question.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-{% include 'script-cookies' %}
 </html>
 {% endif %}

@@ -1,16 +1,28 @@
-<section class="section-browse-history">
-  <div class="section_inner_new">
-    <div class="section-related-item">
-      <div class="comp-detail-title">
-        <hgroup>
-          <span class="title_en">Recently viewed</span>
-          <h2 class="title_ja">最近見た商品</h2>
-        </hgroup>
-      </div>
-      <div class="comp-product-list">
-				<ul id="itemHistory" class="item_wrapper">
-			  </ul>
-		  </div>
+<section class="section-product-recomend02">
+  <div class="section_inner">
+    <div class="comp-product-list">
+      <div class="list_ttl_flex">
+        <div class="comp-detail-title" style="margin-bottom: 0;">
+          <hgroup>
+            <span class="title_en">Recently viewed</span>
+            <h2 class="title_ja">最近見た商品</h2>
+          </hgroup>
+        </div>
+        <div class="comp-button-wrap">
+          <a href="/collections/{{ relatedHandle }}">
+            <span class="txt">All</span>
+            <span class="caret">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                <path class="cls-1"
+                  d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                </path>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div><!-- list_ttl_flex -->
+      <div id="itemHistory class="list_contents_flex">
+      </div><!-- list_contents_flex -->
     </div>
   </div><!-- section_inner -->
 </section>

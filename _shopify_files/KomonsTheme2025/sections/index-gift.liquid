@@ -1,63 +1,44 @@
+{% assign collectionIndexes = 0 | plus: 0 %}
 
-<section class="section-gift">
-  <div class="section_inner_new">
-    <div class="gift_flex">
-      <div class="comp-new-section-ttl flex">
-        <hgroup>
-          <span class="title_en">Gift Set</span>
-          <h2 class="title_jp indent">ギフトセット</h2>
-          <div class="ttl_desc">
-            <p>すべてのセットはギフトボックス付き。<br>熨斗やメッセージカードなどのギフトサービスも承ります。</p>
+<section class="section-index-gift">
+  <div class="comp-section-img">
+    <div class="img_wrap">
+      <img class="sp_img" src="{{ 'index_img02.jpg' | asset_url }}">
+      <img class="pc_img" src="{{ 'index_img02_pc.jpg' | asset_url }}">
+    </div>
+  </div><!-- comp-section-img -->
+  <div class="section_inner">
+    <div class="product_wrapper">
+      <div class="comp-product-list">
+        <div class="list_ttl_flex">
+          <h2 class="list_ttl">Gift</h2>
+          <div class="comp-button-wrap">
+            <a href="/collections/gift">
+              <span class="txt">All</span>
+              <span class="caret">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
+                  <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z">
+                </path>
+                </svg>
+              </span>
+            </a>
           </div>
-        </hgroup>
-        <div class="comp-box-button">
-          <a class="button" href="/collections/gift">
-            <span class="txt">ギフト商品一覧</span>
-            <span class="arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07">
-                <polygon class="cls-1" points="0 8.66 1.41 10.07 6.46 5.03 1.41 0 0 1.41 3.62 5.04 0 8.66"></polygon>
-              </svg>
-            </span>
-          </a>
-        </div>
-      </div><!-- comp-new-section-ttl -->
-      <div class="comp-index-gift-slider">
-        <div id="giftSlider" class="slick-slider">
-				{% for collection in collections %}
-				{%- if collection.handle == "pickup-gift" -%}
-				{% for product in collection.products %}
-				{%- assign thumb_image = product.media[0] -%}
-				<div class="item_box slick-slide">
-					<div class="list_item">
-						<a class="item_thumb" href="{{ product.url }}">
-							<img loading="lazy" src="{{ thumb_image | image_url: width: 533 }}" srcset="{{ thumb_image | image_url: width: 533 }} 1440w, {{ thumb_image | image_url: width: 360 }} 768w, {{ thumb_image | image_url: width: 533 }} 2048w">
-						</a>
-						<div class="txt_wrap">
-							<a class="name" href="{{ product.url }}">{{ product.metafields.custom_fields["prod_display_name"] }}</a>
-							<span class="price">{{ product.price | money_without_currency }}円(税込)</span>
-						</div>
-						<p class="product_desc">
-							<span class="product_type">{{product.metafields.custom_fields["category_display_name"]}}</span>
-						</p>
-						<div class="content_icon">
-							{% for tag in product.tags %}
-							<div class="icon">
-								<span class="{{ tag }}"></span>
-							</div>
-							{% endfor %}
-						</div>
-						<div class="comp-arrow-link">
-							<a class="link_button" href="{{ product.url }}">
-								<span>詳細を見る</span>
-							</a>
-						</div>
-					</div>
-				</div><!-- item_box -->
-				{% endfor %}
-				{%- endif -%}
-				{% endfor %}
-        </div><!-- slick-slider -->
-      </div><!-- comp-index-gift-slider -->
-    </div><!-- gift_flex -->
+        </div><!-- list_ttl_flex -->
+        <div class="list_contents_flex">
+        {% for collection in collections %}
+          {%- if collection.handle == 'gift' -%}
+            {% for product in collection.products %}
+              {% for product in collection.products %}
+                {%- if collectionIndexes < 4 -%}
+                  {%- include 'all-item-card' -%}
+                {%- endif -%}
+                  {% assign collectionIndexes = collectionIndexes | plus: 1 %}
+              {%- endfor -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+        </div><!-- list_contents_flex -->
+      </div><!-- comp-product-list -->
+    </div><!-- product_wrapper -->
   </div><!-- section_inner -->
 </section>

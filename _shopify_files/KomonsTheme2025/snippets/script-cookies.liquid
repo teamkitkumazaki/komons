@@ -59,7 +59,7 @@ function getItemHistory(){
       var prop = [];
       var prodHTML = [];
       for (var i = 0; i < 8; i++) {
-        $.each($(html).find('.item_box'), function(index) {
+        $.each($(html).find('.list_item'), function(index) {
           prop[index] = $(this).attr('id');
           prodHTML[index] = $(this);
           if('handle-' + historyArray[i] == prop[index] ){
@@ -99,7 +99,7 @@ function setHistory(i){
 
 }
 
-if (document.getElementById('itemDetailNew')) {
+if (document.getElementById('product')) {
 	setHistory('{{ product.handle }}');
 }
 

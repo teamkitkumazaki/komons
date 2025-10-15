@@ -7,6 +7,12 @@
     .desc_img{
       margin-bottom: 20px;
     }
+    hr{
+      padding: 0;
+      margin: 0 0 30px;
+      border: none;
+      background: #d8d8d8;
+    }
     .desc_txt{
       .desc_ttl{
         font-size: 1.8rem;
@@ -43,6 +49,9 @@
       .desc_img{
         margin-bottom: 30px;
       }
+      hr{
+        margin: -20px 0 30px;
+      }
       .desc_txt{
         .desc_ttl{
           font-size: 2.0rem;
@@ -62,6 +71,11 @@
               font-size: 1.7rem;
             }
           }
+        }
+      }
+      &:nth-of-type(1){
+        hr{
+          margin: 0 0 30px;
         }
       }
     }

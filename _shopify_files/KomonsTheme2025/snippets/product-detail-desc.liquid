@@ -9,9 +9,13 @@
 	<div class="comp-product-description">
 		{% for item in product.metafields["custom_fields"]["product_detail"] %}
 		<div class="description_item">
+			{% if item["detail_img_url"] != blank %}
 			<div class="desc_img">
 				<img src="{{ item["detail_img_url"] }}" alt="">
 			</div>
+			{% else %}
+			<hr>
+			{% endif %}
 			<div class="desc_txt">
 				{% if item["detail_ttl"] != blank %}
 				<h3 class="desc_ttl">{{ item["detail_ttl"] }}</h3>

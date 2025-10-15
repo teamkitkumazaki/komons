@@ -31,17 +31,7 @@
         </div><!-- comp-product-images -->
       </div>
       <div class="detail_wrap">
-        <div class="comp-page-bread">
-          <div class="link_wrap">
-            <a href="/" class="pjax">ホーム</a>
-            {% if product.type contains 'gift' %}
-            <a href="/collections/all-products" class="pjax">通常商品一覧</a>
-            {% else %}
-            <a href="/collections/gift" class="pjax">ギフト商品一覧</a>
-            {% endif %}
-            <span class="current">{{ product.title }}</span>
-          </div>
-        </div>
+        {% include 'product-page-bread' %}
         <div class="name_wrap">
           <h1 class="prod_ttl">
             <span class="ttl_jp">{{ product.metafields.custom_fields["prod_category"] }}</span>
