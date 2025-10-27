@@ -1,5 +1,5 @@
 .page-article{
-  padding-top: 60px;
+  padding-top: 80px;
   margin-bottom: 60px;
   overflow: hidden;
   .section-header{
@@ -41,7 +41,6 @@
     max-width: 86vw;
     margin: 0 auto 50px;
     .post_share{
-      @include waku;
       margin-top: 40px;
       padding-top: 40px;
       border-top: 1px solid #d8d8d8;
@@ -69,8 +68,11 @@
   }
   .section-related-journal{
     padding-top: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     border-top: 1px solid #d8d8d8;
+  }
+  .section-links-product{
+    margin-bottom: 50px;
   }
 }
 
@@ -104,7 +106,6 @@
     .section-contents{
       margin-bottom: 80px;
       .post_share{
-        @include waku;
         margin-top: 60px;
         padding-top: 60px;
       }
@@ -123,7 +124,7 @@
 @media screen and (min-width: 980px){
   .page-article{
     padding-top: 140px;
-    margin-bottom: 20px;
+    margin-bottom: 160px;
     .section-header{
       max-width: 700px;
       margin: 0 auto;
@@ -161,7 +162,6 @@
       max-width: 700px;
       margin-bottom: 120px;
       .post_share{
-        @include waku;
         margin-top: 80px;
         padding-top: 80px;
       }
@@ -171,16 +171,19 @@
     }
     .section-related-item{
       padding-top: 100px;
-      margin-bottom: 120px;
+      margin-bottom: 80px;
     }
     .section-related-journal{
       padding-top: 100px;
-      margin-bottom: 20px;
+      margin-bottom: 100px;
       padding-bottom: 100px;
       border-bottom: 1px solid #d8d8d8;
       .comp-box-button{
         max-width: 480px;
       }
+    }
+    .section-links-product{
+      margin-bottom: 120px;
     }
   }
 }

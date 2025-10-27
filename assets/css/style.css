@@ -7944,6 +7944,92 @@ body.loaded #loading {
   }
 }
 
+.comp-box-button .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-content: center;
+  color: inherit;
+  border: 1px solid #00381f;
+  background-color: #00381f;
+  color: #fff;
+  padding: 15px 0;
+}
+.comp-box-button .button .txt {
+  padding-right: 10px;
+  font-size: 1.4rem;
+}
+.comp-box-button .button .arrow {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-content: center;
+}
+.comp-box-button .button .arrow svg {
+  width: 4px;
+  fill: #00381f;
+}
+
+@media screen and (min-width: 720px) {
+  .comp-box-button {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .comp-box-button .button {
+    padding: 20px 0;
+    -webkit-transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s;
+    will-change: background, color;
+  }
+  .comp-box-button .button .txt {
+    padding-right: 10px;
+    font-size: 1.6rem;
+  }
+  .comp-box-button .button .arrow {
+    width: 24px;
+    height: 24px;
+    -webkit-transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s;
+    will-change: background, color;
+  }
+  .comp-box-button .button .arrow svg {
+    width: 4px;
+    -webkit-transition: fill 0.2s;
+    transition: fill 0.2s;
+    will-change: fill;
+  }
+  .comp-box-button .button:hover {
+    background: #fff;
+    color: #00381f;
+  }
+  .comp-box-button .button:hover .arrow {
+    background: #00381f;
+  }
+  .comp-box-button .button:hover .arrow svg {
+    fill: #fff;
+  }
+}
 .comp-new-section-ttl {
   margin-bottom: 35px;
 }
@@ -8061,92 +8147,6 @@ body.loaded #loading {
   }
 }
 
-.comp-box-button .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-content: center;
-  color: inherit;
-  border: 1px solid #00381f;
-  background-color: #00381f;
-  color: #fff;
-  padding: 15px 0;
-}
-.comp-box-button .button .txt {
-  padding-right: 10px;
-  font-size: 1.4rem;
-}
-.comp-box-button .button .arrow {
-  display: block;
-  width: 22px;
-  height: 22px;
-  background: #fff;
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-content: center;
-}
-.comp-box-button .button .arrow svg {
-  width: 4px;
-  fill: #00381f;
-}
-
-@media screen and (min-width: 720px) {
-  .comp-box-button {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  .comp-box-button .button {
-    padding: 20px 0;
-    -webkit-transition: background 0.2s, color 0.2s;
-    transition: background 0.2s, color 0.2s;
-    will-change: background, color;
-  }
-  .comp-box-button .button .txt {
-    padding-right: 10px;
-    font-size: 1.6rem;
-  }
-  .comp-box-button .button .arrow {
-    width: 24px;
-    height: 24px;
-    -webkit-transition: background 0.2s, color 0.2s;
-    transition: background 0.2s, color 0.2s;
-    will-change: background, color;
-  }
-  .comp-box-button .button .arrow svg {
-    width: 4px;
-    -webkit-transition: fill 0.2s;
-    transition: fill 0.2s;
-    will-change: fill;
-  }
-  .comp-box-button .button:hover {
-    background: #fff;
-    color: #00381f;
-  }
-  .comp-box-button .button:hover .arrow {
-    background: #00381f;
-  }
-  .comp-box-button .button:hover .arrow svg {
-    fill: #fff;
-  }
-}
 .comp-category-list {
   width: 100vw;
   margin-left: -7vw;
@@ -17174,6 +17174,206 @@ body.loaded #loading {
     padding: 180px 0 120px;
   }
   .page-blogs .section-links-product {
+    margin-bottom: 120px;
+  }
+}
+.page-article {
+  padding-top: 80px;
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+.page-article .section-header .journal_thumb {
+  margin-bottom: 10vw;
+}
+.page-article .section-header .journal_thumb img {
+  height: auto;
+}
+.page-article .section-header .post_head {
+  max-width: 86vw;
+  margin: 0 auto 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.page-article .section-header .post_head .post_date {
+  /*font-family: 'EB Garamond', 'Libre Baskerville', YakuHanMP, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;*/
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.page-article .section-header .post_head .post_title {
+  font-size: 2.2rem;
+  line-height: 1.5;
+}
+.page-article .section-header .post_head .post_tags {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.page-article .section-header .post_head .post_tags li {
+  margin-right: 12px;
+}
+.page-article .section-header .post_head .post_tags li a {
+  color: #007a44;
+  font-size: 1.4rem;
+}
+.page-article .section-contents {
+  max-width: 86vw;
+  margin: 0 auto 50px;
+}
+.page-article .section-contents .post_share {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #d8d8d8;
+}
+.page-article .section-contents .post_share .post_share_ttl {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.page-article .section-contents .post_share ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.page-article .section-contents .post_share ul li {
+  margin: 0 8px;
+}
+.page-article .section-contents .post_share ul li a {
+  display: block;
+  width: 60px;
+}
+.page-article .section-related-item {
+  border-top: 1px solid #d8d8d8;
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+.page-article .section-related-journal {
+  padding-top: 50px;
+  margin-bottom: 50px;
+  border-top: 1px solid #d8d8d8;
+}
+.page-article .section-links-product {
+  margin-bottom: 50px;
+}
+
+@media screen and (min-width: 720px) {
+  .page-article {
+    padding-top: 60px;
+    margin-bottom: 80px;
+  }
+  .page-article .section-header .journal_thumb {
+    margin-bottom: 60px;
+  }
+  .page-article .section-header .post_head {
+    max-width: 86vw;
+  }
+  .page-article .section-header .post_head .post_date {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  .page-article .section-header .post_head .post_title {
+    font-size: 2.6rem;
+  }
+  .page-article .section-header .post_head .post_tags {
+    margin-top: 25px;
+  }
+  .page-article .section-header .post_head .post_tags li a {
+    font-size: 1.6rem;
+  }
+  .page-article .section-contents {
+    margin-bottom: 80px;
+  }
+  .page-article .section-contents .post_share {
+    margin-top: 60px;
+    padding-top: 60px;
+  }
+  .page-article .section-related-item {
+    padding-top: 80px;
+    margin-bottom: 60px;
+  }
+  .page-article .section-related-journal {
+    padding-top: 80px;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .page-article {
+    padding-top: 140px;
+    margin-bottom: 160px;
+  }
+  .page-article .section-header {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .page-article .section-header .journal_thumb {
+    margin-bottom: 40px;
+  }
+  .page-article .section-header .post_head {
+    position: relative;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+  }
+  .page-article .section-header .post_head .post_date {
+    position: absolute;
+    left: -140px;
+    top: 103px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    text-align: left;
+    width: 200px;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  .page-article .section-header .post_head .post_title {
+    font-size: 3rem;
+  }
+  .page-article .section-header .post_head .post_tags {
+    margin-top: 25px;
+  }
+  .page-article .section-header .post_head .post_tags li a {
+    font-size: 1.4rem;
+  }
+  .page-article .section-contents {
+    max-width: 700px;
+    margin-bottom: 120px;
+  }
+  .page-article .section-contents .post_share {
+    margin-top: 80px;
+    padding-top: 80px;
+  }
+  .page-article .section-contents .comp-box-button {
+    margin-top: 60px;
+  }
+  .page-article .section-related-item {
+    padding-top: 100px;
+    margin-bottom: 80px;
+  }
+  .page-article .section-related-journal {
+    padding-top: 100px;
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  .page-article .section-related-journal .comp-box-button {
+    max-width: 480px;
+  }
+  .page-article .section-links-product {
     margin-bottom: 120px;
   }
 }

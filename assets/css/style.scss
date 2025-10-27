@@ -54,10 +54,10 @@
 @import 'components/common/comp-section-ttl.scss';
 @import 'components/common/comp-pop-menu.scss';
 @import 'components/common/comp-pager.scss';
+@import 'components/common/comp-box-button.scss';
+@import 'components/common/comp-new-section-ttl.scss';
 
-@import 'component/common/comp-new-section-ttl.scss';
 @import 'component/common/comp-slider-caret.scss';
-@import 'component/common/comp-box-button.scss';
 @import 'component/common/comp-category-list.scss';
 
 
@@ -142,7 +142,8 @@
 @import 'page/product.scss'; //商品詳細
 @import 'page/conceptNew.scss'; //商品詳細
 @import 'page/guide.scss'; //ショッピングガイド系
-@import 'page/blogs.scss'; //商品一覧
+@import 'page/blogs.scss'; //ジャーナル一覧
+@import 'page/article.scss'; //ジャーナル詳細
 @import 'page/law.scss'; //ショッピングガイド系
 @import 'page/cart.scss'; //カート
 @import 'page/login.scss'; //カート
