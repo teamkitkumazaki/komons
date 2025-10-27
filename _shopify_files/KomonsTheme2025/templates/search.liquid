@@ -1,37 +1,49 @@
-{% paginate search.results by 10 %}
+{% paginate search.results by 30 %}
 
-<article id="itemGroupList" class="page-item-group-list">
-  <section class="section-basic-item">
-		<div class="section_inner_new">
-			<div class="section_ttl search_ttl">
-				<h1><span>Item List</span><font>“{{ search.terms }}”の検索結果</font></h1>
-				<form action="{{ routes.search_url }}" method="get" role="search" class="search-form search-page-form">
-					<div id="searchSubmit2" class="key_input">
-						<input type="text" name="q" placeholder="キーワードを入れて検索" value="{{ search.terms }}">
-						<button class="search_submit">検索</button>
-					</div>
-				</form>
-			</div>
-			<div class="comp-product-block">
-				{% if search.performed and search.results_count == 0 %}
-				<p class="no_entry">該当する商品がありません。</p>
-				{% endif %}
-        <ul class="item_wrapper">
-				{% paginate search.results by 30 %}
-				{%- for product in search.results -%}
-				{%- if product.object_type == 'product' and product.type != "outlet" -%}
-          {%- include 'all-item-card' -%}
-				{%- endif -%}
-				{%- endfor -%}
-				{% endpaginate %}
-        </ul>
-			</div>
-		</div>
-	</section>
-	{% section 'section-back' %}
+<article id="collection" class="page-collection">
+  <section id="headerRolled" class="section-product-list">
+    <div class="section_inner">
+      <div class="collection_flex">
+        <div class="collection_category">
+          <div class="collection_ttl">Item List</div>
+          <h1 class="collection_ttl_jp">“{{ search.terms }}”の検索結果</h1>
+          <div class="comp-searh-wrap">
+            <form action="{{ routes.search_url }}" method="get" role="search" class="search-form search-page-form">
+               <div class="search_wrap">
+                <div id="searchSubmit2" class="key_input">
+                  <input type="text" name="q" placeholder="キーワードを入れて検索" value="{{ search.terms }}">
+                  <button class="search_submit">検索</button>
+                </div>
+               </div>
+            </form>
+          </div>
+        </div>
+        <div class="collection_list">
+          {% if search.performed and search.results_count == 0 %}
+          <p class="no_entry">該当する商品がありません。</p>
+          {% endif %}
+          <div class="comp-product-list">
+            <div class="list_contents_flex column3">
+              {%- for product in search.results -%}
+              {%- if product.object_type == 'product' and product.type != "outlet" -%}
+                {%- include 'all-item-card' -%}
+              {%- endif -%}
+              {%- endfor -%}
+            </div><!-- list_contents_flex -->
+          </div><!-- comp-product-list -->
+        </div>
+      </div><!-- collection_flex -->
+    </div><!-- section_inner -->
+  </section>
+  <section class="section-sns-wrap">
+    <div class="comp-section-img">
+      <div class="img_wrap">
+        <img class="sp_img" src="{{ 'collection_sns.jpg' | asset_url }}">
+        <img class="pc_img" src="{{ 'collection_sns_pc.jpg' | asset_url }}">
+      </div>
+      {% include 'sns-links' %}
+    </div><!-- comp-section-img -->
+  </section>
 </article>
-<script>
-$('body').addClass('fixed');
-</script>
 
 {% endpaginate %}

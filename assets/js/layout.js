@@ -109,28 +109,46 @@ $(function() {
     var closeBtn = $('#humClose');
     var menuBg = $('#menuBg');
     var menuState = 0;
+    var humLinks = [];
+    var humBg = [];
+    var navImg = $('#navImg');
+    var bgState = 'none';
     var current_scrollY;
 
     function humMenuShift() {
       if (menuState == 0) {
         current_scrollY = $(window).scrollTop();
-        $('body').css({
+        /*$('body').css({
           position: 'fixed',
           top: -1 * current_scrollY
         });
-        $('body').addClass('fixed');
+        $('body').addClass('fixed');*/
         $('#slideMenuNew').addClass('open');
         $('header').addClass('hum_open');
         menuState = 1;
       } else {
-        $('body').removeClass('fixed');
+        /*$('body').removeClass('fixed');
         $('body').attr('style', '');
         $('html, body').prop({
           scrollTop: current_scrollY
-        });
+        });*/
         $('#slideMenuNew').removeClass('open');
         $('header').removeClass('hum_open');
         menuState = 0;
+      }
+    }
+
+    function humBgChange(e){
+      console.log('e:' + e);
+      if(bgState != humBg[e]){
+        $.each(navImg.find('img'), function(index) {
+          if(humBg[e] == $(this).attr('id')){
+            $(this).css('display', 'block');
+          }else{
+            $(this).css('display', 'none');
+          }
+        });
+        bgState = humBg[e];
       }
     }
 
@@ -150,6 +168,19 @@ $(function() {
           humMenuShift();
         }
       });
+
+      $.each($('#slideMenuNew').find('a'), function(index) {
+        humLinks[index] = $(this);
+        humBg[index] = humLinks[index].attr("bgType");
+        if(window.outerWidth > 700){
+          humLinks[index].on({
+            'mouseover': function() {
+              humBgChange(index);
+            }
+          });
+        }
+      });
+
     }
 
     init()
@@ -606,6 +637,50 @@ $(function() {
       switchCartWrap();
     }
 
+    //定期購入詳細のポップアップ
+    function subPopDisplay(){
+      var subscriptionPopButton = $('#subscriptionPopButton');
+      var giftDetailButton = $('#giftDetailButton');
+      var subscriptionModal = $('#subscriptionModal');
+      var subscriptionModalBg = $('#subscriptionModalBg');
+
+      function init(){
+        subscriptionPopButton.on({
+          'click': function() {
+            event.preventDefault();
+            subscriptionModal.addClass('open');
+          }
+        });
+
+        giftDetailButton.on({
+          'click': function() {
+            event.preventDefault();
+            subscriptionModal.addClass('open');
+          }
+        });
+
+        subscriptionModalBg.on({
+          'click': function() {
+            subscriptionModal.removeClass('open');
+          }
+        });
+
+      }
+
+      init();
+
+    }
+
+    if (document.getElementById('subscriptionPopButton')) {
+      subPopDisplay();
+    }
+
+    if (document.getElementById('giftDetailButton')) {
+      subPopDisplay();
+    }
+
+
+
     //ギフト商品オプション選択欄
     function optionPopup(target){
       var posi;
@@ -982,6 +1057,12 @@ $(function() {
       faqToggle($('article'));
     }
 
+    if (document.getElementById('subFaq')) {
+      faqToggle($('#subFaq'));
+    }
+
+
+
 
 
     // キーワード検索 ヘッダー
@@ -1250,7 +1331,7 @@ $(function() {
           $('header').addClass('rolled');
           if (linkProp == 'headerLink') {
             setTimeout(function() {
-              $('#humButton').click();
+              $('#humMenu').find('button').click();
             }, 500);
           }
           if (nextUrl.indexOf('logout') == -1) {

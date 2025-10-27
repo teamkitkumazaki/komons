@@ -22,9 +22,9 @@
   <div class="link_wrap">
     <a href="/">ホーム</a>
     {% unless product.type contains 'gift' %}
-    <a href="/collections/all-products">通常商品一覧</a>
+    <a href="/collections/all-products#headerRolled">通常商品一覧</a>
     {% else %}
-    <a href="/collections/gift">ギフト商品一覧</a>
+    <a href="/collections/gift#headerRolled">ギフト商品一覧</a>
     {% endunless %}
     {% if categoryHandle != blank %}
     <a href="/collections/{{ categoryHandle }}#headerRolled">{{ categoryTtl }}</a>

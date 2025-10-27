@@ -4,11 +4,19 @@
 			<button class="pop_close"></button>
 			<div class="subpop_contents">
 				<div class="comp-detail-title margin">
+					{%- unless product.type == "gift" -%}
 					<hgroup>
 						<span class="title_en">Subscription</span>
 						<h2 class="title_ja">定期購入について</h2>
 					</hgroup>
+				{%- else -%}
+					<hgroup>
+						<span class="title_en">Gift Service</span>
+						<h2 class="title_ja">ギフトサービスについて</h2>
+					</hgroup>
+				{%- endunless -%}
 				</div>
+				{%- unless product.type == "gift" -%}
 				<div class="subfaq_wrap">
 					<div id="subFaq" class="comp-faq-contents">
 						<div class="item_wrap">
@@ -105,6 +113,18 @@
 						</div>
 					</div>
 				</div>
+				{%- else -%}
+				<div class="gift_service">
+					<ul>
+						<li>※お渡し用の手提げ袋については、ショッピングカート画面でご購入いただけます。</li>
+						<li>※水引きの種類はどのシーンのお祝い事にもお使いいただける「紅白梅結び」となります。</li>
+						<li>※弔事の場合はギフトプションにて熨斗をお選びいただいた上で水引きなし、掛け紙のみの対応も可能ですのでご希望の場合は備考欄にお書き添えくださいませ。</li>
+						<li>※熨斗に「表書き（御祝/内祝/御結婚祝など）」、「お名前」の印字をご希望のお客様は、カート画面の「ギフトオプション」欄にご記入ください。ご記入のない場合は、「無地熨斗」にて対応させていただきます。</li>
+						<li>※メッセージカードへの印字をご希望の場合は、メッセージの内容をカート画面の「ギフトオプション」欄にご記入ください。ご記入のない場合は、「無地カード」にて対応させていただきます。</li>
+						<li>※印字を承ったメッセージカードは、ギフトボックス内に同封してお届けさせていただきます。</li>
+					</ul>
+				</div>
+				{%- endunless -%}
 			</div>
 		</div><!-- subpop_inner -->
 	</div>

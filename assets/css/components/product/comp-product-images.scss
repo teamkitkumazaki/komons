@@ -25,7 +25,7 @@
     }
 
     .thumb_inner {
-      width: calc(23vw * var(--thumbItem) + 2vw);
+      width: calc(23.7vw * var(--thumbItem) + 2vw);
       display: flex;
       flex-wrap: unset;
       transform: translate(-5px,0);
@@ -38,7 +38,7 @@
         button {
           display: block;
           width: 100%;
-          height: 23.7vw;
+          height: 21vw;
           @include flexSet;
           align-items: center;
           background: #f8f8f8;

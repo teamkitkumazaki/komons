@@ -53,6 +53,7 @@
 @import 'components/common/comp-page-bread.scss';
 @import 'components/common/comp-section-ttl.scss';
 @import 'components/common/comp-pop-menu.scss';
+@import 'components/common/comp-pager.scss';
 
 @import 'component/common/comp-new-section-ttl.scss';
 @import 'component/common/comp-slider-caret.scss';
@@ -93,14 +94,14 @@
 @import 'components/product/comp-gift-variation-select.scss';
 @import 'components/product/comp-product-chart.scss';
 @import 'components/product/comp-subscription-wrap.scss';
-@import 'component/products/comp-pager.scss';
 
 /* ジャーナル */
+@import 'components/journal/comp-journal-category.scss';
+@import 'components/journal/comp-journal-posts.scss';
+
 @import 'component/journal/comp-item-list-journal.scss';
 @import 'component/journal/comp-mist-lineup.scss';
 @import 'component/journal/comp-article-contents.scss';
-@import 'component/journal/comp-journal-posts.scss';
-@import 'component/journal/comp-blogs-pager.scss';
 @import 'component/journal/comp-journal-scent.scss';
 
 /* カート */
@@ -141,6 +142,7 @@
 @import 'page/product.scss'; //商品詳細
 @import 'page/conceptNew.scss'; //商品詳細
 @import 'page/guide.scss'; //ショッピングガイド系
+@import 'page/blogs.scss'; //商品一覧
 @import 'page/law.scss'; //ショッピングガイド系
 @import 'page/cart.scss'; //カート
 @import 'page/login.scss'; //カート

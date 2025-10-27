@@ -63,55 +63,55 @@
           </div>
           <div id="subscriptionBox" class="wrapper_box" style="display: none;">
             {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
-            <div class="comp-subscription-wrap">
+            <div class="comp-cart-wrap">
+              <div class="subscription_cycle">
+                <label>配送サイクル</label>
+                <select id="cycleSelect" class="cycle_select" name="selling_plan">
+                {% for variant in product.variants %}
+                  <optgroup label="配送サイクル">
+                  {% assign bestCycle = product.metafields["custom_fields"]["best_cycle"] | plus: 0 %}
+                  {% for allocation in variant.selling_plan_allocations %}
+                    {%- assign cycleIndex = cycleIndex | plus: 1 -%}
+                    <option num="cycle{{cycleIndex}}" value="{{ allocation.selling_plan.id }}">
+                    {{ allocation.selling_plan.name | remove: "【定期購入】" }}{% if bestCycle == cycleIndex %}(推奨){% endif %}
+                    </option>
+                  {% endfor %}
+                  </optgroup>
+                {% endfor %}
+              </select>
+              </div>
               <div class="order_lot">
                 <span class="title">数量</span>
                 <div id="quantityWrap2" class="input_wrap number">
-                  <button class="minus">-</button>
+                  <button type="button" class="minus"><span></span></button>
                   <input type="text" class="product_init_num" name="quantity" min="1" value="1">
-                  <button id="plusButton2" class="plus">+</button>
+                  <button type="button" id="plusButton2" class="plus"><span></span></button>
                 </div>
               </div><!-- order_lot -->
-              <div class="subscription_cycle">
-              <label>配送サイクル</label>
-              <select id="cycleSelect" class="cycle_select" name="selling_plan">
-              {% for variant in product.variants %}
-              <optgroup label="配送サイクル">
-              {% assign bestCycle = product.metafields["custom_fields"]["best_cycle"] | plus: 0 %}
-              {% for allocation in variant.selling_plan_allocations %}
-              {%- assign cycleIndex = cycleIndex | plus: 1 -%}
-              <option num="cycle{{cycleIndex}}" value="{{ allocation.selling_plan.id }}">
-              {{ allocation.selling_plan.name | remove: "【定期購入】" }}{% if bestCycle == cycleIndex %}(推奨){% endif %}
-              </option>
-              {% endfor %}
-              </optgroup>
-              {% endfor %}
-              </select>
-            </div>
-            <div class="subscription_pop">
-              <button id="subscriptionPopButton">
-                <span class="icon"></span>
-                <span class="text">定期購入について</span>
-              </button>
-            </div>
-            <div class="submit_button">
-              <div class="cart_box">
-              <select name="id" id="ProductSelect-product-template" style="display: none; opacity:0; height:0; overflow: hidden;">
-              {% for variant in product.variants %}
-                {%- assign index = index | plus: 1 -%}
-                <option id="label{{index}}" value="{{ variant.id }}" cPrice="{{ variant.compare_at_price | money }}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}> {{ variant.title }}</option>
-                {% endfor %}
-              </select>
-                <div class="cart_item">
-                  <span class="button_wrap">
-                    <span class="title cart_in">カートに入れる</span>
-                    <span class="sub_text">定期購入は最低2回以上の購入契約となります</span>
-                  </span>
-                  <input id="cartSubmit" class="product_cart_btn button" type="submit" value="カートに入れる">
-                </div><!-- cart_item -->
+              <div class="subscription_pop">
+                <button type="button" id="subscriptionPopButton">
+                  <span class="icon"></span>
+                  <span class="text">定期購入について</span>
+                </button>
               </div>
-            </div><!-- comp-flex-cart -->
-          </div><!-- comp-subscription-wrap -->
+              <div class="submit_button">
+                <div class="cart_box">
+                  <div id="cartInButton" class="cartin">
+                    <div class="purchaseButton">
+                      <button type="submit" style="display: block;">
+                        <span class="icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 20.98">
+                            <path class="cls-1" d="M7.2,20.84c.22,.09,.45,.14,.69,.14s.48-.05,.69-.14h0c.22-.09,.42-.23,.59-.39h0c.16-.17,.3-.37,.39-.59,.09-.21,.14-.45,.14-.69s-.05-.48-.14-.69c-.09-.22-.23-.42-.39-.59h0c-.17-.17-.37-.3-.59-.39-.21-.09-.45-.14-.69-.14s-.48,.05-.69,.14c-.22,.09-.42,.23-.59,.39-.17,.17-.3,.37-.39,.59-.09,.22-.14,.45-.14,.69s.05,.48,.14,.69h0c.09,.22,.23,.42,.39,.59h0c.17,.17,.37,.3,.59,.4m8.94-.39c.17,.17,.37,.3,.59,.39h0c.21,.09,.45,.14,.69,.14s.48-.05,.69-.14c.22-.09,.42-.23,.59-.39h0c.17-.17,.3-.37,.39-.59,.09-.21,.14-.45,.14-.69s-.05-.48-.14-.69c-.09-.22-.23-.42-.39-.59-.17-.17-.37-.3-.59-.39-.22-.09-.45-.14-.69-.14s-.48,.05-.69,.14c-.22,.09-.42,.23-.59,.39h0c-.17,.17-.3,.37-.39,.59-.09,.22-.14,.45-.14,.69s.05,.48,.14,.69h0c.09,.22,.23,.42,.39,.59h0s0,0,0,0ZM.5,1.01H3.6c.1,0,.19,.04,.26,.11,.1,.1,.18,.26,.21,.44l.83,4.47,1.2,6.45c.04,.23,.12,.44,.23,.63-.13,.08-.24,.17-.35,.28-.33,.34-.54,.8-.54,1.3s.21,.97,.54,1.31c.34,.33,.8,.54,1.31,.54h12.12c.28,0,.51-.23,.51-.5s-.23-.5-.51-.5H7.29c-.23,0-.44-.1-.59-.25-.15-.15-.25-.36-.25-.59s.1-.44,.25-.59c.15-.15,.36-.25,.59-.25h11.86c.4,0,.73-.15,.98-.4,.25-.25,.42-.6,.48-.97l1.38-7.4s.01-.09,.01-.12c0-.19-.08-.36-.21-.48-.1-.1-.24-.18-.39-.21-.05-.01-.09-.01-.14-.01H5.64s-.03,0-.04,0l-.54-2.88c-.07-.37-.23-.72-.48-.97-.25-.25-.58-.41-.98-.41H.5C.23,0,0,.23,0,.51s.23,.5,.5,.5"></path>
+                          </svg>
+                        </span>
+                        <span class="txt">カートに入れる</span>
+                      </button>
+                    </div>
+                  </div>
+                  <p class="dervery_schedule">定期購入は最低2回以上の購入契約となります</p>
+                </div>
+              </div>
+          </div><!-- comp-cart-wrap -->
           {% endform %}
       </div>
     </div>

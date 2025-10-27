@@ -13,6 +13,43 @@
 					font-size: 1.4rem;
 					margin-bottom: 25px;
 				}
+				.search_wrap{
+					.key_input{
+						@include flexSet;
+						justify-content: space-between;
+						align-items: flex-end;
+						position: relative;
+						input[type="text"]{
+							width: calc(100% - 75px);
+							border: none;
+							height: 35px;
+							line-height: 35px;
+							font-size: 16px;
+							font-family: inherit;
+							box-sizing: border-box;
+							border-bottom: 1px solid #979797;
+							border-radius: 0px;
+							&:focus{
+								outline: none;
+							}
+						}
+						.search_submit{
+							width: 60px;
+							font-size: 1.4rem;
+							padding: 7px 0;
+							color: #fff;
+							text-align: center;
+							background: $basicGreen;
+							font-family: inherit;
+							border: none;
+							box-shadow: none;
+							cursor: pointer;
+							position: absolute;
+							right: 0;
+							bottom: 0;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -46,6 +83,21 @@
 					.collection_ttl_jp{
 						font-size: 1.6rem;
 						margin-bottom: 35px;
+					}
+					.search_wrap{
+						width: 100%;
+						.key_input{
+							@include flexSet;
+							justify-content: space-between;
+							align-items: flex-end;
+							input[type="text"]{
+								width: calc(100% - 80px);
+								font-size: 16px;
+							}
+							.search_submit{
+								width: 60px;
+							}
+						}
 					}
 				}
 				.collection_list{

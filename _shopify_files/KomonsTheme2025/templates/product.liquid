@@ -101,6 +101,12 @@
   </section>
 </article>
 
+{% include 'product-sub-modal' %}
+
+{%- if product.type == "gift" -%}
+{% section 'gift-option-field' %}
+{%- endif -%}
+
 {% assign current_variant = product.selected_or_first_available_variant %}
 
 <script type="application/ld+json">

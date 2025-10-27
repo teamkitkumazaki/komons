@@ -89,6 +89,32 @@
       .comp-faq-contents{
         margin-bottom: 30px !important;
       }
+      .gift_service{
+        ul{
+          padding-top: 15px;
+          border-top: 1px solid #d8d8d8;
+          @media screen and (min-width: 720px){
+            padding-top: 20px;
+          }
+          li{
+            font-size: 1.3rem;
+            line-height: 1.76;
+            border-bottom: 1px solid #d8d8d8;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            @media screen and (min-width: 720px){
+              padding-bottom: 20px;
+              margin-bottom: 20px;
+              font-size: 1.4rem;
+            }
+            &:nth-last-of-type(1){
+              border-bottom: 0px solid #d8d8d8;
+              margin-bottom: 0px;
+              padding-bottom: 0px;
+            }
+          }
+        }
+      }
     }
   }
   &.small{

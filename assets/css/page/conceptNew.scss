@@ -38,7 +38,7 @@
           margin-bottom: 40px;
         }
         .concept_description{
-          max-width: 60%;
+          max-width: calc(100% - 200px);
           p{
             br{
               display: block;
