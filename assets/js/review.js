@@ -211,6 +211,7 @@ $(function() {
     };
 
     function processOrderContent(){
+      var radioProp = [];
       submitButton.addClass('disabled');
       $('#ajaxLoader').addClass('loading');
       var point = target.find('input[name=point]').val();
@@ -218,6 +219,10 @@ $(function() {
       var age = target.find("input[name=age]:checked").val();
       var family = target.find("input[name=family]:checked").val();
       var route = target.find("select[name=route]").val();
+      $('input:checkbox[name=product]:checked').each(function() {
+        radioProp.push($(this).val());
+        console.log(radioProp.join());
+      });
       var content = target.find("textarea[name=content]").val();
       var request = target.find("textarea[name=request]").val();
       var usermail = target.find("input[name=usermail]").val();
@@ -230,6 +235,7 @@ $(function() {
           "entry.161097082": age, /* 年齢 */
           "entry.55464818": family, /* 家族構成 */
           "entry.531319224": route, /* 知った経緯 */
+          "entry.1450448374": radioProp.join(), /* 使った商品 */
           "entry.1792741485": content, /* 良かった点/改善すべき点 */
           "entry.356591634": request, /* こんな商品が欲しい */
           "entry.836973782": usermail /* メールアドレス */

@@ -63,11 +63,12 @@
       order: 1;
       margin-bottom: 10px;
       height: auto;
-      min-height: 40vw;
+      height: 40vw;
       max-height: 685px;
 
       img {
         object-fit: unset;
+        max-height: 685px;
       }
     }
 

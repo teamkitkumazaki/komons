@@ -158,7 +158,7 @@
         display: block;
         width: 20px;
         height: 20px;
-        margin-right: 5px;
+        margin-right: 10px;
         @include bgSet;
         background-size: contain;
         background-image: url(https://cdn.shopify.com/s/files/1/0608/6233/3116/files/question.svg?v=1654511205);
@@ -181,8 +181,7 @@
           color: #fff;
           border-radius: 0px;
           .icon{
-            @include flexSet;
-            align-items: center;
+            display: block;
             width: 26px;
             margin-right: 12px;
             svg{

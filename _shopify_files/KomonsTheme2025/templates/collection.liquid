@@ -1,6 +1,8 @@
 {%- assign limit = 24 -%}
 
+{% assign collectionTitle = collection.title | split: '-' %}
 {% paginate collection.products by limit %}
+
 
 <article id="collection" class="page-collection" limit="{{ limit }}" handle="{{ collection.handle }}">
   <section class="section-index-main comp-page-main">
@@ -13,8 +15,8 @@
     <div class="section_inner">
       <div class="collection_flex">
         <div class="collection_category">
-          <div class="collection_ttl">{{ collection.handle | capitalize }}</div>
-          <h1 class="collection_ttl_jp">{{ collection.title }}</h1>
+          <div class="collection_ttl">{{ collectionTitle[0] }}</div>
+          <h1 class="collection_ttl_jp">{{ collectionTitle[1] }}</h1>
           <div class="comp-collection-category">
             <div class="collection_filter">
               <div class="filter_item">
@@ -48,8 +50,8 @@
                 </a>
               </div>
               <div class="filter_item">
-                <a {% if collection.handle == 'toilet' %}class="active_category"{% endif %} href="/collections/toilet#headerRolled">
-                  <span class="txt">Toilet / Bathroom</span>
+                <a {% if collection.handle == 'bathroom-toilet' %}class="active_category"{% endif %} href="/collections/bathroom-toilet#headerRolled">
+                  <span class="txt">Bathroom/Toilet</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
                       <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
@@ -68,7 +70,17 @@
                 </a>
               </div>
               <div class="filter_item">
-                <a {% if collection.handle == 'refill' %}class="active_category"{% endif %} href="/collections/refill#headerRolled">
+                <a {% if collection.handle == 'select' %}class="active_category"{% endif %} href="/collections/select#headerRolled">
+                  <span class="txt">Select</span>
+                  <span class="caret">
+                    <svg viewBox="0 0 5.76 10">
+                      <path class="cls-1" d="m4.07,5L.25,8.81c-.08.08-.08.17-.17.25,0,.08-.08.17-.08.25s0,.17.08.25c0,.08.08.17.17.25.17.08.34.17.51.17s.34-.08.51-.17l4.32-4.32c.08-.17.17-.34.17-.51s-.08-.34-.17-.51L1.27.17c-.17-.08-.34-.17-.51-.17S.42.08.25.17s-.17.34-.25.51c0,.17.08.34.17.51l3.9,3.81Z"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              <div class="filter_item">
+                <a {% if collection.handle == 'refills' %}class="active_category"{% endif %} href="/collections/refills#headerRolled">
                   <span class="txt">Refill</span>
                   <span class="caret">
                     <svg viewBox="0 0 5.76 10">
@@ -82,11 +94,23 @@
         </div>
         <div class="collection_list">
           <div class="comp-product-list">
-            <div class="list_contents_flex column3">
+            <div id="itemListWrap" class="list_contents_flex column3">
               {% for product in collection.products %}
               {%- include 'all-item-card' -%}
               {% endfor %}
             </div><!-- list_contents_flex -->
+            {%- if paginate.pages > 1 -%}
+            <div class="comp-box-button">
+              <button id="productPagenate" class="button" pagenate="{{ paginate.pages }}">
+                <span class="txt">商品をもっと見る</span>
+                <span class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07">
+                    <polygon class="cls-1" points="0 8.66 1.41 10.07 6.46 5.03 1.41 0 0 1.41 3.62 5.04 0 8.66"></polygon>
+                  </svg>
+                </span>
+              </button>
+            </div>
+            {%- endif -%}
           </div><!-- comp-product-list -->
         </div>
       </div><!-- collection_flex -->

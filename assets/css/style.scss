@@ -19,7 +19,6 @@
 @import 'component/comp-waiting-list.scss';
 @import 'component/comp-waiting-button.scss';
 @import 'component/comp-pickup-items.scss';
-@import 'component/comp-list-cart-button.scss';
 @import 'component/comp-related-product.scss';
 
 @import 'component/comp-centered-title.scss';
@@ -40,7 +39,6 @@
 @import 'component/comp-upsell.scss';
 @import 'component/comp-review-question.scss';
 @import 'component/comp-journal-footer.scss';
-@import 'component/comp-section-information.scss';
 @import 'component/comp-jornal-item.scss';
 @import 'component/comp-instagram-wrap.scss';
 @import 'component/comp-fixed-news.scss';
@@ -56,9 +54,7 @@
 @import 'components/common/comp-pager.scss';
 @import 'components/common/comp-box-button.scss';
 @import 'components/common/comp-new-section-ttl.scss';
-
-@import 'component/common/comp-slider-caret.scss';
-@import 'component/common/comp-category-list.scss';
+@import 'components/common/comp-section-information.scss';
 
 
 
@@ -72,15 +68,11 @@
 @import 'components/underpage/comp-faq-contents.scss';
 @import 'components/underpage/comp-gift-service-wrap.scss';
 
-@import 'component/index/comp-index-product-section.scss';
-@import 'component/index/comp-index-prod-slider.scss';
-@import 'component/index/comp-index-contens-list.scss';
-@import 'component/index/comp-index-gift-slider.scss';
-
 
 /* 商品一覧 */
 @import 'components/collection/comp-product-list.scss';
 @import 'components/collection/comp-collection-category.scss';
+@import 'components/collection/comp-list-cart-button.scss';
 
 /* 商品詳細 */
 @import 'components/product/comp-product-images.scss';
@@ -116,9 +108,6 @@
 @import 'components/law/comp-transaction-contents.scss';
 @import 'components/law/comp-terms-content.scss';
 
-
-
-
 /* 管理画面系 */
 @import 'components/admin/comp-admin-title.scss';
 @import 'components/admin/comp-admin-subttl.scss';
@@ -149,3 +138,6 @@
 @import 'page/login.scss'; //カート
 @import 'page/mypage.scss'; //マイページ
 @import 'page/address.scss'; //マイページ
+@import 'page/404.scss'; //404
+@import 'page/review.scss'; //404
+@import 'page/waitingList.scss'; //404

@@ -1,5 +1,6 @@
+{% assign pagenate = canonical_url | split: '=' %}
 
-<div id="handle-{{ product.handle }}" class="list_item" collection="{{ collection.handle }}">
+<div id="handle-{{ product.handle }}" class="list_item" collection="{{ collection.handle }}" {% if canonical_url contains 'page=' %}style="display: none;"{% endif %} canonical_url="{{ canonical_url }}" paginate="{{ pagenate[1] }}">
   <a href="{{ product.url }}">
     <span class="img_wrap">
       <img loading="lazy" src="{{ product.media[0] | image_url: width: 533 }}" srcset="{{ product.media[0] | image_url: width: 533 }} 1440w, {{ product.media[0] | image_url: width: 360 }} 768w, {{ product.media[0] | image_url: width: 533 }} 2048w" alt="{{ product.metafields.custom_fields["prod_display_name"] | strip_html }}">
@@ -10,4 +11,44 @@
       <span class="price">{{ product.price | money_without_currency }}円(税込) / {{ product.metafields.custom_fields["prod_volume"] }}</span>
     </span>
   </a>
+  <div class="comp-list-cart-button">
+    {%- if product.type == "upcoming" or product.type == "commercial" or request.page_type contains 'index' or request.page_type contains 'product' -%}
+    <div class="comp-arrow-link">
+      <a href={{ product.url }}><span>詳細を見る</span></a>
+    </div>
+    {%- else -%}
+      {%- if product.variants.first.inventory_quantity == 0 or product.metafields.custom_fields["stock_state"] == 1 -%}
+      <div class="comp-arrow-link">
+        <a href={{ product.url }}><span>詳細を見る</span></a>
+      </div>
+      {%- else -%}
+      <div style="width: 100%; margin: 0 auto; padding: 0">
+        <div class="cartjs_box">
+        {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+          <select name="id" id="ProductSelect-{{ product.id }}" class="product-form__variants no-js" style="display: none;">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}"
+              {%- if variant == current_variant %} selected="selected" {%- endif -%}
+            >
+              {{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+            </option>
+          {% endfor %}
+          </select>
+          <div class="cartin_button">
+            <button title="カートに入れる">
+              <span class="icon">
+                <svg viewBox="0 0 22 20.98">
+                  <use class="cls-1" xlink:href="#cartIcon"></use>
+                </svg>
+              </span>
+              <span class="txt">カートに入れる</span>
+            </button>
+            <input id="cartSubmit-{{ product.id }}" type="submit" value="カートに入れる">
+          </div>
+        {% endform %}
+        </div>
+      </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
 </div>

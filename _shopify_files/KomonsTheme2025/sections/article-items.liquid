@@ -8,8 +8,8 @@
         <h2 class="title_jp" style="text-indent: -0.2em;">{% if article.metafields["custom_fields"]["item_list_ttl"] != blank %}{{ article.metafields["custom_fields"]["item_list_ttl"] }}{% else %}この記事に関連する商品{% endif %}</h2>
       </hgroup>
     </div><!-- comp-new-section-ttl -->
-    <div id="productList" class="comp-product-block">
-      <ul class="item_wrapper">
+    <div id="productList" class="comp-product-list">
+      <div class="list_contents_flex">
         {% for item in article.metafields["custom_fields"]["related_product"] %}
         {% for collection in collections %}
         {%- if collection.handle == "all" -%}
@@ -21,9 +21,8 @@
         {%- endif -%}
         {% endfor %}
         {% endfor %}
-      </ul>
-    </div>
-    <!-- comp-item-group -->
+      </div><!-- list_contents_flex -->
+    </div><!-- comp-product-list -->
   </div><!-- section_inner_new -->
 </section>
 {% endif %}

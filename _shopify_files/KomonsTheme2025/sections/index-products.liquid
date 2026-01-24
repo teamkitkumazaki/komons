@@ -55,7 +55,7 @@
 				</div><!-- list_ttl_flex -->
 				<div class="list_contents_flex">
 				{% for collection in collections %}
-					{%- if collection.handle == 'living' -%}
+					{%- if collection.handle == 'living-bedroom-pickup' -%}
 						{% for product in collection.products %}
 							{% for product in collection.products %}
 								{%- if collectionIndex02 < 4 -%}
@@ -72,9 +72,9 @@
 		<div class="product_wrapper">
 			<div class="comp-product-list">
 				<div class="list_ttl_flex">
-					<h2 class="list_ttl">Toilet / Bathroom</h2>
+					<h2 class="list_ttl">Bathroom/Toilet</h2>
 					<div class="comp-button-wrap">
-						<a href="/collections/toilet#headerRolled">
+						<a href="/collections/bathroom-toilet#headerRolled">
 							<span class="txt">All</span>
 							<span class="caret">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.76 10" style="fill:#fff;">
@@ -87,7 +87,7 @@
 				</div><!-- list_ttl_flex -->
 				<div class="list_contents_flex">
 					{% for collection in collections %}
-						{%- if collection.handle == 'toilet' -%}
+						{%- if collection.handle == 'bathroom-toilet-pickup' -%}
 							{% for product in collection.products %}
 								{% for product in collection.products %}
 									{%- if collectionIndex03 < 4 -%}
@@ -133,5 +133,15 @@
 				</div><!-- list_contents_flex -->
 			</div><!-- comp-product-list -->
 		</div><!-- product_wrapper -->
+		<div class="comp-box-button">
+			<a class="button" href="/collections/all-products">
+				<span class="txt">商品一覧へ</span>
+				<span class="arrow">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07">
+						<polygon class="cls-1" points="0 8.66 1.41 10.07 6.46 5.03 1.41 0 0 1.41 3.62 5.04 0 8.66"></polygon>
+					</svg>
+				</span>
+			</a>
+		</div>
 	</div><!-- section_inner -->
 </section>

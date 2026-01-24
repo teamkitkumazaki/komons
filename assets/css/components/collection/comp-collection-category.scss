@@ -15,6 +15,8 @@
       border: 0px;
       border-bottom: 1px solid $borderColor;
       padding: 10px 0;
+      color: inherit;
+      background-color: transparent;
       background-image: url(https://cdn.shopify.com/s/files/1/0606/6932/9625/t/1/assets/select_caret.svg);
       background-size: 8px;
       background-repeat: no-repeat;
@@ -26,6 +28,7 @@
   }
   .collection_filter{
     @include flexSet;
+    justify-content: flex-start;
     .filter_item{
       width: calc(50% - 10px);
       margin-right: 20px;
@@ -58,6 +61,8 @@
           justify-content: center;
           transition: background .5s;
           will-change: background;
+          transform-origin: center center;
+          transform: rotate(90deg);
           svg{
             width: 5px;
             height: 10px;
@@ -73,6 +78,17 @@
             background: $basicGreen;
           }
         }
+      }
+    }
+  }
+  .comp-box-button{
+    max-width: 100%;
+    margin-top: 15px;
+    button{
+      padding: 12px 0;
+      .arrow{
+        transform-origin: center center;
+        transform: rotate(90deg);
       }
     }
   }
@@ -122,6 +138,7 @@
             justify-content: center;
             transition: background .5s;
             will-change: background;
+            transform: rotate(0deg);
             svg{
               width: 5px;
               height: 10px;
@@ -145,6 +162,17 @@
               background: $hoverColor;
             }
           }
+        }
+      }
+    }
+    .comp-box-button{
+      max-width: 100%;
+      margin-top: 25px;
+      button{
+        padding: 12px;
+        justify-content: space-between;
+        .arrow{
+          transform: rotate(0deg);
         }
       }
     }

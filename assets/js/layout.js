@@ -18,6 +18,12 @@ $(function() {
       } else {
         scButtonWrap.removeClass('display');
       }
+
+      if (document.getElementById('headerRolled')) {
+      }else{
+        $('header').addClass('underpage');
+      }
+
       requestAnimationFrame(setProperties);
     }
 
@@ -82,12 +88,6 @@ $(function() {
             setTimeout(function() {
               $('.main_img').addClass('loaded');
               $('.main_logo').addClass('loaded');
-              backGroundSlider($('#sliderBtn'));
-              /*setTimeout(function() {
-                if (document.getElementById('camPop')) {
-                  popUpBanner($('#camPop'));
-                }
-              }, 1500);*/
             }, 100);
           }, 1200);
 
@@ -108,6 +108,7 @@ $(function() {
     var humButton = target.find('button');
     var closeBtn = $('#humClose');
     var menuBg = $('#menuBg');
+    var headerLogoLink = $('#headerLogoLink');
     var menuState = 0;
     var humLinks = [];
     var humBg = [];
@@ -125,6 +126,7 @@ $(function() {
         $('body').addClass('fixed');*/
         $('#slideMenuNew').addClass('open');
         $('header').addClass('hum_open');
+        headerLogoLink.attr('linktype', 'headerLink');
         menuState = 1;
       } else {
         /*$('body').removeClass('fixed');
@@ -134,17 +136,18 @@ $(function() {
         });*/
         $('#slideMenuNew').removeClass('open');
         $('header').removeClass('hum_open');
+        headerLogoLink.attr('linktype', 'normalLink');
         menuState = 0;
       }
     }
 
-    function humBgChange(e){
+    function humBgChange(e) {
       console.log('e:' + e);
-      if(bgState != humBg[e]){
+      if (bgState != humBg[e]) {
         $.each(navImg.find('img'), function(index) {
-          if(humBg[e] == $(this).attr('id')){
+          if (humBg[e] == $(this).attr('id')) {
             $(this).css('display', 'block');
-          }else{
+          } else {
             $(this).css('display', 'none');
           }
         });
@@ -172,7 +175,7 @@ $(function() {
       $.each($('#slideMenuNew').find('a'), function(index) {
         humLinks[index] = $(this);
         humBg[index] = humLinks[index].attr("bgType");
-        if(window.outerWidth > 700){
+        if (window.outerWidth > 700) {
           humLinks[index].on({
             'mouseover': function() {
               humBgChange(index);
@@ -195,9 +198,6 @@ $(function() {
     // スクロール系のイベントまとめ
     function scrollArrow(target) {
       var scrollSwitch = 0;
-      var scrollArrow = $('#arrowScroll a');
-      var headerArrow = $('.header_arrow');
-      var scrollTarget = $('#scrollTarget');
       var headerRolled = $('#headerRolled');
 
 
@@ -252,7 +252,7 @@ $(function() {
 
             if (document.getElementById('headerRolled')) {
               var scroll = $(window).scrollTop();
-              var rolledHeight = window.innerHeight;
+              var rolledHeight = 400;
               if (scroll > rolledHeight) {
                 if (scrollSwitch == 0) {
                   afterScroll();
@@ -269,7 +269,73 @@ $(function() {
       init();
     }
 
-    scrollArrow($('body'));
+
+    setTimeout(function() {
+      scrollArrow($('body'));
+    }, 1000);
+
+    // 商品一覧ページ ページャーの実装
+    function collectionPagePager(target){
+
+      var currentPage = Number(1);
+      var targetDom = $('#itemListWrap');
+      var pages = target.attr('pagenate');
+      var limit = 24;
+
+      var productItemProp = [];
+
+      function readNextPage(){
+
+        productItemProp = [];
+
+        $.each($('article').find('.list_item'), function(index) {
+          productItemProp[index] = $(this).attr('paginate');
+          if(productItemProp[index] == currentPage){
+            $(this).css({'display': 'block'});
+          }
+        });
+
+        currentPage = currentPage + Number(1);
+        console.log(location.origin + location.pathname + '?page=' + currentPage);
+
+
+        if(pages < currentPage){
+          target.remove();
+        }else{
+          $.ajax({
+            url: location.origin + location.pathname + '/?page=' + currentPage,
+            cache: false,
+            dataType: 'html',
+            success: function(html) {
+              var prop = [];
+              var prodHTML = [];
+              $.each($(html).find('#itemListWrap').find('.list_item'), function(index) {
+                prodHTML[index] = $(this);
+                targetDom.append(prodHTML[index]);
+              });
+            }
+          });
+        }
+
+      }
+
+      function init(){
+        readNextPage();
+
+        target.on({
+          'click': function() {
+            readNextPage();
+          }
+        });
+      }
+
+      init();
+
+    }
+
+    if (document.getElementById('productPagenate')) {
+      collectionPagePager($('#productPagenate'));
+    }
 
     // ギフト一覧ページ 商品フィルタリング
     function giftProductFilter2(target) {
@@ -289,6 +355,11 @@ $(function() {
       var giftListArray = [];
       var param = location.search;
 
+      var giftServiceButton = $('#giftServiceButton');
+      var collectionList = $('#collectionList');
+      var giftList = $('#giftList');
+      var serviceList = $('#serviceList');
+
       function scrollToTop() {
         var targetTop = target.offset().top;
         var headerHeight = $('header').outerHeight();
@@ -297,8 +368,25 @@ $(function() {
         }, 400);
       }
 
+      function displayGiftService(){
+        categoryFilter.find('button').each(function(index) {
+          $(this).removeClass('active');
+          categoryState = -1;
+        });
+        collectionList.stop().animate({
+          opacity: 0
+        }, time, function() {
+          giftList.css({'display': 'none'});
+          serviceList.css({'display': 'block'});
+          collectionList.stop().animate({
+            opacity: 1
+          }, time);
+          scrollToTop();
+        });
+      }
+
       function categorySort(cat) {
-        target.stop().animate({
+        collectionList.stop().animate({
           opacity: 0
         }, time, function() {
           target.html('');
@@ -308,7 +396,9 @@ $(function() {
               target.append(giftListArray[i].html);
             }
           }
-          target.stop().animate({
+          giftList.css({'display': 'block'});
+          serviceList.css({'display': 'none'});
+          collectionList.stop().animate({
             opacity: 1
           }, time);
           priceFilter.val(0);
@@ -319,7 +409,7 @@ $(function() {
       }
 
       function priceRangeSort(min, max) {
-        target.stop().animate({
+        collectionList.stop().animate({
           opacity: 0
         }, time, function() {
           target.html('');
@@ -328,7 +418,9 @@ $(function() {
               target.append(giftListArray[i].html);
             }
           }
-          target.stop().animate({
+          giftList.css({'display': 'block'});
+          serviceList.css({'display': 'none'});
+          collectionList.stop().animate({
             opacity: 1
           }, time);
           categoryFilter.find('button').removeClass('active');
@@ -353,6 +445,12 @@ $(function() {
             priceMin = onTarget.attr('min');
             priceMax = onTarget.attr('max');
             priceRangeSort(priceMin, priceMax);
+          }
+        });
+
+        giftServiceButton.on({
+          'click': function() {
+            displayGiftService();
           }
         });
 
@@ -586,7 +684,7 @@ $(function() {
     }
 
     // 定期・通常購入の切り替えレイアウト
-    function switchCartWrap(){
+    function switchCartWrap() {
       const purchaseButton = $('#purchaseButton');
       const subscriptionButton = $('#subscriptionButton');
       const contentSwitcher = $('#contentSwitcher');
@@ -597,32 +695,52 @@ $(function() {
 
 
 
-      function init(){
+      function init() {
         purchaseButton.on({
-          'click': function(){
-            if(switchState == 1){
+          'click': function() {
+            if (switchState == 1) {
               purchaseButton.addClass('active');
               subscriptionButton.removeClass('active');
-              compVariation.css({'display': 'block'});
-              contentSwitcher.stop().animate({ opacity: 0 }, 300, function() {
-                normalBox.css({'display': 'block'});
-                subscriptionBox.css({'display': 'none'});
-                contentSwitcher.stop().animate({ opacity: 1 }, 300);
+              compVariation.css({
+                'display': 'block'
+              });
+              contentSwitcher.stop().animate({
+                opacity: 0
+              }, 300, function() {
+                normalBox.css({
+                  'display': 'block'
+                });
+                subscriptionBox.css({
+                  'display': 'none'
+                });
+                contentSwitcher.stop().animate({
+                  opacity: 1
+                }, 300);
                 switchState = 0;
               });
             }
           }
         })
         subscriptionButton.on({
-          'click': function(){
-            if(switchState == 0){
+          'click': function() {
+            if (switchState == 0) {
               purchaseButton.removeClass('active');
               subscriptionButton.addClass('active');
-              compVariation.css({'display': 'none'});
-              contentSwitcher.stop().animate({ opacity: 0 }, 300, function() {
-                normalBox.css({'display': 'none'});
-                subscriptionBox.css({'display': 'block'});
-                contentSwitcher.stop().animate({ opacity: 1 }, 300);
+              compVariation.css({
+                'display': 'none'
+              });
+              contentSwitcher.stop().animate({
+                opacity: 0
+              }, 300, function() {
+                normalBox.css({
+                  'display': 'none'
+                });
+                subscriptionBox.css({
+                  'display': 'block'
+                });
+                contentSwitcher.stop().animate({
+                  opacity: 1
+                }, 300);
                 switchState = 1;
               });
             }
@@ -638,13 +756,13 @@ $(function() {
     }
 
     //定期購入詳細のポップアップ
-    function subPopDisplay(){
+    function subPopDisplay() {
       var subscriptionPopButton = $('#subscriptionPopButton');
       var giftDetailButton = $('#giftDetailButton');
       var subscriptionModal = $('#subscriptionModal');
       var subscriptionModalBg = $('#subscriptionModalBg');
 
-      function init(){
+      function init() {
         subscriptionPopButton.on({
           'click': function() {
             event.preventDefault();
@@ -682,7 +800,7 @@ $(function() {
 
 
     //ギフト商品オプション選択欄
-    function optionPopup(target){
+    function optionPopup(target) {
       var posi;
       var optionPop = $('#optionPop');
       var giftOptionFields = $('#ProductSelect-product-template');
@@ -697,42 +815,42 @@ $(function() {
       var mizuhikiCheck;
       var messageCheck;
 
-      function withMessage(){
-        if(tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki'){
+      function withMessage() {
+        if (tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki') {
           giftOptionFields.val(optionValue[7]);
-        }else if(tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki'){
+        } else if (tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki') {
           giftOptionFields.val(optionValue[5]);
-        }else if(tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        } else if (tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki') {
           giftOptionFields.val(optionValue[6]);
-        }else if(tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        } else if (tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki') {
           giftOptionFields.val(optionValue[4]);
         }
       }
 
-      function withoutMessage(){
-        if(tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki'){
+      function withoutMessage() {
+        if (tesageCheck == 'tesage' && mizuhikiCheck == 'mizuhiki') {
           giftOptionFields.val(optionValue[3]);
-        }else if(tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki'){
+        } else if (tesageCheck != 'tesage' && mizuhikiCheck == 'mizuhiki') {
           giftOptionFields.val(optionValue[1]);
-        }else if(tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        } else if (tesageCheck == 'tesage' && mizuhikiCheck != 'mizuhiki') {
           giftOptionFields.val(optionValue[2]);
-        }else if(tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki'){
+        } else if (tesageCheck != 'tesage' && mizuhikiCheck != 'mizuhiki') {
           giftOptionFields.val(optionValue[0]);
         }
       }
 
-      function optionShifter(){
+      function optionShifter() {
         tesageCheck = $("input[name='tesage']:checked").val();
         mizuhikiCheck = $("input[name='mizuhiki']:checked").val();
         messageCheck = $("input[name='message']:checked").val();
-        if(messageCheck == 'message'){
+        if (messageCheck == 'message') {
           withMessage();
-        }else{
+        } else {
           withoutMessage();
         }
       }
 
-      function optionPopOpen(){
+      function optionPopOpen() {
         posi = $(window).scrollTop();
         $('body').addClass('fixed');
         $('body').css({
@@ -742,43 +860,45 @@ $(function() {
         target.addClass('open');
       }
 
-      function optionPopClose(){
+      function optionPopClose() {
         $('body').removeClass('fixed');
         $('body').attr('style', '');
-        $('html, body').prop({scrollTop: posi});
+        $('html, body').prop({
+          scrollTop: posi
+        });
         target.removeClass('open');
       }
 
-      function displayMizuhikiOption(){
+      function displayMizuhikiOption() {
         var state = $('input[name="tesage"]:checked').val();
         var contentsHeight = mizuhiki.find('.mizuhiki_inner').outerHeight();
-        if(state == 'tesage'){
+        if (state == 'tesage') {
           $('#0-3').click();
-        }else{
+        } else {
           $('#0-2').click();
         }
       }
 
-      function init(){
+      function init() {
 
         giftOptionFields.find("option").each(function(index) {
           optionValue[index] = $(this).attr('value');
         });
 
         muzihikiState.on({
-          'click': function(){
+          'click': function() {
             optionShifter();
           }
         });
 
         tesageState.on({
-          'click': function(){
+          'click': function() {
             optionShifter();
           }
         });
 
         messageState.on({
-          'click': function(){
+          'click': function() {
             optionShifter();
           }
         });
@@ -1086,6 +1206,45 @@ $(function() {
 
     keywordSearchControll2($('#searchSubmit'));
 
+    // カートページ 配送方法の指定
+    function controllDeliveryMethods(){
+      var methodLabel = [];
+      var deliveryOptionWrap = $('#deliveryOptions');
+      var deliveryOptions = $('input[name=delivery_method]');
+      var sideWrapDay = $('#sideWrapDay');
+      var sideWrapDate = $('#sideWrapDate');
+      var methodInput = $('#methodInput');
+
+      function setMethod(e,f){
+        $('.active_label').removeClass('active_label');
+        methodLabel[e].addClass('active_label');
+        methodInput.val(f);
+      }
+
+      function init(){
+
+        $.each(deliveryOptionWrap.find('label'), function(index) {
+          methodLabel[index] = $(this);
+          methodLabel[index].on({
+            'click': function() {
+              var methodValue = $('input[name=delivery_method]:checked').val();
+              console.log('methodValue:' + methodValue);
+              setMethod(index, methodValue);
+            }
+          });
+        });
+
+
+      }
+
+      init();
+
+    }
+
+    if (document.getElementById('deliveryOptions')) {
+      controllDeliveryMethods();
+    }
+
     /* ログインページの切り替えレイアウト */
     function switchLoginFunction() {
       var loginLayout = $('#login');
@@ -1290,6 +1449,387 @@ $(function() {
       switchAddressFunction();
     }
 
+    function setHankaku2Zenkaku(str){
+      var nrwStr = str.replace( /[Ａ-Ｚａ-ｚ０-９－！”＃＄％＆’（）＝＜＞，．？＿［］｛｝＠＾～￥]/g, function(s) {
+        return String.fromCharCode(s.charCodeAt(0) - 65248);
+      }).replace(/[ー]/g, '').replace(/[−]/g, '');
+      return nrwStr;
+    }
+
+
+
+    function hankaku2Zenkaku(target) {
+      var str = target.val();
+      str = str.replace( /[Ａ-Ｚａ-ｚ０-９－！”＃＄％＆’（）＝＜＞，．？＿［］｛｝＠＾～￥]/g, function(s) {
+        return String.fromCharCode(s.charCodeAt(0) - 65248);
+      }).replace(/[ー]/g, '').replace(/[−]/g, '');
+
+      console.log('str:' + str);
+      target.val(str.trim().replace(/\s+/g, ''));
+    }
+
+    $('.input-number').on({
+      'blur': function(){
+        hankaku2Zenkaku($(this));
+      }
+    });
+
+    function hankaku2ZenkakuAdd(target) {
+      var str = target.val();
+      str = str.replace( /[Ａ-Ｚａ-ｚ０-９－！”＃＄％＆’（）＝＜＞，．？＿［］｛｝＠＾～￥]/g, function(s) {
+        return String.fromCharCode(s.charCodeAt(0) - 65248);
+      }).replace(/[ー]/g, '');
+
+      console.log('str:' + str);
+      target.val(str.trim().trim().replace(/\s+/g, ''));
+    }
+
+    $('.input-address').on({
+      'blur': function(){
+        hankaku2ZenkakuAdd($(this));
+      }
+    });
+
+
+    function hankana2Zenkana(str) {
+      var kanaMap = {
+          'ｶﾞ': 'ガ', 'ｷﾞ': 'ギ', 'ｸﾞ': 'グ', 'ｹﾞ': 'ゲ', 'ｺﾞ': 'ゴ',
+          'ｻﾞ': 'ザ', 'ｼﾞ': 'ジ', 'ｽﾞ': 'ズ', 'ｾﾞ': 'ゼ', 'ｿﾞ': 'ゾ',
+          'ﾀﾞ': 'ダ', 'ﾁﾞ': 'ヂ', 'ﾂﾞ': 'ヅ', 'ﾃﾞ': 'デ', 'ﾄﾞ': 'ド',
+          'ﾊﾞ': 'バ', 'ﾋﾞ': 'ビ', 'ﾌﾞ': 'ブ', 'ﾍﾞ': 'ベ', 'ﾎﾞ': 'ボ',
+          'ﾊﾟ': 'パ', 'ﾋﾟ': 'ピ', 'ﾌﾟ': 'プ', 'ﾍﾟ': 'ペ', 'ﾎﾟ': 'ポ',
+          'ｳﾞ': 'ヴ', 'ﾜﾞ': 'ヷ', 'ｦﾞ': 'ヺ',
+          'ｱ': 'ア', 'ｲ': 'イ', 'ｳ': 'ウ', 'ｴ': 'エ', 'ｵ': 'オ',
+          'ｶ': 'カ', 'ｷ': 'キ', 'ｸ': 'ク', 'ｹ': 'ケ', 'ｺ': 'コ',
+          'ｻ': 'サ', 'ｼ': 'シ', 'ｽ': 'ス', 'ｾ': 'セ', 'ｿ': 'ソ',
+          'ﾀ': 'タ', 'ﾁ': 'チ', 'ﾂ': 'ツ', 'ﾃ': 'テ', 'ﾄ': 'ト',
+          'ﾅ': 'ナ', 'ﾆ': 'ニ', 'ﾇ': 'ヌ', 'ﾈ': 'ネ', 'ﾉ': 'ノ',
+          'ﾊ': 'ハ', 'ﾋ': 'ヒ', 'ﾌ': 'フ', 'ﾍ': 'ヘ', 'ﾎ': 'ホ',
+          'ﾏ': 'マ', 'ﾐ': 'ミ', 'ﾑ': 'ム', 'ﾒ': 'メ', 'ﾓ': 'モ',
+          'ﾔ': 'ヤ', 'ﾕ': 'ユ', 'ﾖ': 'ヨ',
+          'ﾗ': 'ラ', 'ﾘ': 'リ', 'ﾙ': 'ル', 'ﾚ': 'レ', 'ﾛ': 'ロ',
+          'ﾜ': 'ワ', 'ｦ': 'ヲ', 'ﾝ': 'ン',
+          'ｧ': 'ァ', 'ｨ': 'ィ', 'ｩ': 'ゥ', 'ｪ': 'ェ', 'ｫ': 'ォ',
+          'ｯ': 'ッ', 'ｬ': 'ャ', 'ｭ': 'ュ', 'ｮ': 'ョ',
+          '｡': '。', '､': '、', 'ｰ': 'ー', '｢': '「', '｣': '」', '･': '・'
+      };
+      var reg = new RegExp('(' + Object.keys(kanaMap).join('|') + ')', 'g');
+      return str.replace(reg, function (match) {return kanaMap[match];}).replace(/ﾞ/g, '゛').replace(/ﾟ/g, '゜');
+    }
+
+    $('.input-kana').on({
+      'blur': function(){
+        var value = $(this).val();
+        var value = hankana2Zenkana(value.trim().replace(/\s+/g, ''));
+        $(this).val(value);
+      },
+    });
+
+
+    function setContactForm(target){
+      var ERROR_MESSAGE_CLASSNAME = 'errorMsg'; //エラー時のメッセージ要素のclass名
+      var ERROR_INPUT_CLASSNAME = 'errorInput'; //エラー時のinput要素のclass名
+      var errorCount = 0;
+      var submitWrap = $('#submit');
+      var submitButton = $('#submitButton input');
+      var items = []; //チェック対象となるテキスト入力要素を格納した配列
+
+      //項目チェックする
+      var checkAll = function(){
+        errorCount = 0;
+
+        //input,textareaのチェック
+        for( var i=0; i<items.length; i++ ){
+          if( items[i].prop('isSuccess') == false ){
+            errorCount++;
+          };
+        };
+
+        console.log('errorCount:' + errorCount);
+
+        if( errorCount == 0 ){
+          submitButton.removeClass('disabled');
+        }else{
+          submitButton.addClass('disabled');
+        };
+      };
+
+      //エラーメッセージの追加
+      var addErrorMessage = function(selector, msg){
+        removeErrorMessage(selector);
+        selector.parent('div').append('<span class="attention '+ERROR_MESSAGE_CLASSNAME+'">'+msg+'</span>');
+        selector.addClass(ERROR_INPUT_CLASSNAME);
+      };
+
+      //エラーメッセージの削除
+      var removeErrorMessage = function(selector){
+        var msgSelector = selector.parent('div').find('.'+ERROR_MESSAGE_CLASSNAME);
+        if( msgSelector.length != 0 ){
+          msgSelector.remove();
+          selector.removeClass(ERROR_INPUT_CLASSNAME);
+        };
+      };
+
+      //input,textareaの未入力チェック
+      var checkEmptyText = function(selector, msg){
+        if( selector.val() == '' ||  selector.val() == null){
+          addErrorMessage(selector, msg);
+          selector.prop('isSuccess', false);
+        }else{
+          removeErrorMessage(selector);
+          selector.prop('isSuccess', true);
+        };
+      };
+
+      var emptyThrough = function(selector){
+        if( selector.val() == '' ||  selector.val() == null){
+          removeErrorMessage(selector);
+          selector.prop('isSuccess', true);
+        }
+      };
+
+      //radioの未入力チェック
+      var checkRadioBox = function(selector, msg){
+        if( selector.prop("checked")){
+          removeErrorMessage(selector);
+          selector.prop('isSuccess', true);
+        }else{
+          addErrorMessage(selector, msg);
+          selector.prop('isSuccess', false);
+        };
+      };
+
+      //文字列のフォーマットチェック
+      function checkFormatText(selector, _mode, msg){
+        var value = selector.val();
+        switch(_mode){
+          //全角のみ
+          case 0:
+            if(value.match(/^[^ -~｡-ﾟ]*$/)){
+              selector.prop('isSuccess', true);
+              removeErrorMessage(selector);
+            }else{
+              selector.prop('isSuccess', false);
+            };
+            break;
+          //ふりがなのみ
+          case 1:
+            if(value.match(/^[\u3040-\u309F]+$/)){
+              selector.prop('isSuccess', true);
+            }else{
+              selector.prop('isSuccess', false);
+            };
+            break;
+          //半角数字のみ
+          case 2:
+            if(value.match(/^[0-9\-]+$/) || value.length < 1){
+              selector.prop('isSuccess', true);
+            }else{
+              selector.prop('isSuccess', false);
+            };
+            break;
+          //メールアドレスかどうか
+          case 3:
+            if(value.match(/^[a-zA-Z0-9!$&*.=^`|~#%'+\/?_{}-]+@([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,6}$/)){
+              selector.prop('isSuccess', true);
+            }else{
+              selector.prop('isSuccess', false);
+            };
+            break;
+          //カタカナのみ
+          case 4:
+            if(value.match(/^[\u30A0-\u30FF]+$/) || value.match(/^[\uFF61-\uFF9F]+$/)){
+              selector.prop('isSuccess', true);
+            }else{
+              selector.prop('isSuccess', false);
+            };
+            break;
+          //全てエラーにする
+          case 5:
+            selector.prop('isSuccess', false);
+            break;
+        };
+        if( selector.prop('isSuccess') == false ){
+          addErrorMessage(selector, msg);
+        }else{
+          removeErrorMessage(selector);
+        };
+      };
+
+      //初期設定
+      var init = function(){
+        target.find('input[type=button]').attr('disabled', false);
+        //submitイベントの設定
+        target.on({
+          'submit': function(){
+            checkAll();
+          }
+        });
+        //input要素を配列に格納
+        items = [
+          target.find('input[name="lastName"]'), //0 お名前(姓)
+          target.find('input[name="firstName"]'), //1 お名前(名)
+          target.find('input[name="useremail"]'), //2 メールアドレス
+          target.find('input[name="useremail2"]'), //3 メールアドレス(確認用)
+          target.find('textarea[name="content"]'), //4  お問い合わせ内容
+          target.find('input[name=agreement]'), //5 プラポリへの合意
+        ];
+        //input要素のプロパティを設定
+        $.each(items, function(index){
+          items[index].prop('isSuccess', false);
+        });
+
+
+        //enterキーでsubmitしてしまうのを防止する
+        target.find('input[type=text]').on({
+          'keypress': function(e){
+            if( (e.keyCode == 13) ) return false;
+          }
+        });
+
+        //0 お名前(姓)
+        items[0].on({
+          'blur': function(){
+            checkEmptyText( items[0], '※お名前(姓)は必須です。');
+            checkAll();
+          }
+        });
+
+        //1 お名前(名)
+        items[1].on({
+          'blur': function(){
+            checkEmptyText( items[1], '※お名前(名)は必須です。');
+            checkAll();
+          }
+        });
+
+        //2 メールアドレス
+        items[2].on({
+          'blur': function(){
+            checkEmptyText( items[2], '※メールアドレスは必須です。');
+            if( items[2].prop('isSuccess') ) checkFormatText( items[2], 3, '※メールアドレスの形式をご確認ください' );
+            checkAll();
+          }
+        });
+
+        //3 メールアドレス(確認用)
+        items[3].on({
+          'blur': function(){
+            checkEmptyText( items[3], '※確認用メールアドレスは必須です。');
+            if( items[3].prop('isSuccess') ){
+              checkFormatText( items[3], 3, '※確認用メールアドレスの形式をご確認ください' );
+              if(items[2].val() != items[3].val()){
+                checkFormatText( items[3], 5, '※メールアドレスが一致しません。' );
+              }
+            }
+
+            checkAll();
+
+          }
+        });
+
+        //4 お問い合わせ内容
+        items[4].on({
+          'blur': function(){
+            checkEmptyText( items[4], '※お問い合わせ内容は必須です。' );
+            checkAll();
+          }
+        });
+
+        items[5].prop('isSuccess', true);
+
+        //0 プラポリへの合意
+        items[5].on({
+          'change': function(){
+            var agreeState = $('input[name=agreement]:checked').val();
+            if(agreeState == 1){
+              $('#submitButton').removeClass('disabled');
+            }else{
+              $('#submitButton').addClass('disabled');
+            }
+          }
+        });
+
+        submitButton.on({
+          'click': function(){
+            checkEmptyText( items[0], '※お名前(姓)は必須です。');
+            checkEmptyText( items[1], '※お名前(名)は必須です。');
+            checkEmptyText( items[2], '※メールアドレスは必須です。');
+            if( items[2].prop('isSuccess') ) checkFormatText( items[2], 3, '※メールアドレスの形式をご確認ください' );
+            checkEmptyText( items[3], '※確認用メールアドレスは必須です。');
+            if( items[3].prop('isSuccess') ){
+              checkFormatText( items[3], 3, '※確認用メールアドレスの形式をご確認ください' );
+              if(items[2].val() != items[3].val()){
+                checkFormatText( items[3], 5, '※メールアドレスが一致しません。' );
+              }
+            }
+            checkEmptyText( items[4], '※お問い合わせ内容は必須です。' );
+
+            checkAll();
+            if( errorCount == 0 ){
+              processOrderContent();
+            }else{
+              alert('入力内容に不備があります。入力内容を確認いただき、再度送信ボタンを押してください。');
+              var offset = $('header').outerHeight();
+              var scrollHeight = $('#contactWrap').offset().top;
+              $("html, body").animate({
+                scrollTop: scrollHeight - offset
+              }, 300);
+            };
+          }
+        })
+      };
+
+      function processOrderContent(){
+        $('#submitButton').addClass('completed');
+        $('#ajaxLoader').addClass('loading_state');
+        // お名前
+        var userName = target.find("input[name=lastName]").val() + target.find("input[name=firstName]").val();
+        // メールアドレス
+        var userMail = target.find("input[name=useremail]").val();
+        //種別
+        var content = target.find("textarea[name=content]").val();
+        event.preventDefault();
+        $.ajax({
+          url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfjTnS7OK3ismY6zJdr-8voqq_Bjf_23j92-OqFq647GDQInQ/formResponse",
+          data: {
+            "entry.1215989745": userName,
+            "entry.33351572": userMail,
+            "entry.1082353849": content,
+          },
+          type: "POST",
+          dataType: "xml",
+          statusCode: {
+            0: function () {
+              setTimeout(function() {
+                $('#ajaxLoader').removeClass('loading_state');
+                $('#submitButton').remove();
+                $('#statusMessage').addClass('complete').html('<span class="text">入力内容は正常に送信されました。<span>自動返信メールをご確認ください。</span></span>');
+                /*location.href = 'https://' + location.hostname + '/pages/completed'*/
+              }, 1000);
+            },
+            200: function () {
+              $('#ajaxLoader').removeClass('loading_state');
+              $('#submitButton').remove();
+              $('#statusMessage').addClass('error').html('<span class="text">送信に失敗しました。お手数ではございますが、時間を置いてもう一度お試しください。</span>');
+              setTimeout(function() {
+                location.href = 'https://' + location.hostname + '/'
+              }, 3000);
+            }
+          }
+      });
+    }
+
+      init();
+
+    };
+
+
+
+    if (document.getElementById('contactWrap')) {
+      setContactForm($('#contactWrap'));
+    }
+
   };
 
   preSetScript();
@@ -1306,8 +1846,10 @@ $(function() {
         linkTarget[index] = $(this).attr('target');
         linkType[index] = $(this).attr('linkType');
         if (linkTarget[index] != '_blank' || linkTarget[index] == undefined) {
-          if (linkType[index] != 'langChange') {
-            $(this).addClass('pjax');
+          if(linkTarget[index] != '_self'){
+            if (linkType[index] != 'langChange') {
+              $(this).addClass('pjax');
+            }
           }
         }
       });
@@ -1325,7 +1867,7 @@ $(function() {
         /*$(this).css('pointer-events', 'none');*/
       });
       if (linkType != '_blank' || linkType == undefined) {
-        if (linkURL != '/cart') {
+        if (linkURL != '/cart' || linkURL != '/account/login') {
           e.preventDefault();
           nextUrl = $(this).attr('href');
           $('header').addClass('rolled');
@@ -1348,13 +1890,15 @@ $(function() {
               console.log('nextUrl:' + nextUrl);
               console.log('nextUrl.indexOf:' + nextUrl.indexOf('headerRolled'));
               setTimeout(function() {
-                if (document.getElementById('headerRolled') && nextUrl.indexOf('headerRolled') == -1 ) {
+                if (document.getElementById('brandIntroduction')) {
+                  $('#brandIntroduction').css({
+                    'display': 'none'
+                  });
+                }
+                if (document.getElementById('headerRolled') && nextUrl.indexOf('headerRolled') == -1) {
                   $('header').removeClass('rolled').removeClass('underpage');
                 }
-                if (document.getElementById('brandIntroduction')){
-                  $('#brandIntroduction').css({'display': 'none'});
-                }
-              }, 500);
+              }, 1000);
 
             });
           } else {
@@ -1365,55 +1909,71 @@ $(function() {
     });
 
     $(document).on('change', '.pjax-select', function(e) {
-      var nextUrl = '';
-      e.preventDefault();
-      nextUrl = $(this).val();
-      // 遷移先のURLを取得
-      $('#innerWrapper').animate({
-        opacity: 0
-      }, 250, function() {
-        $.pjax({ //エフェクトが終わったらPjaxイベント
-          url: nextUrl,
-          container: '#innerWrapper',
-          fragment: '#innerWrapper',
-          timeout: 5000,
-        });
+        var nextUrl = '';
+        e.preventDefault();
+        nextUrl = $(this).val();
+        if (nextUrl.indexOf('logout') == -1) {
+          // 遷移先のURLを取得
+          $('#container').animate({
+            opacity: 0
+          }, 250, function() {
+            $.pjax({ //エフェクトが終わったらPjaxイベント
+              url: nextUrl,
+              container: '#container',
+              fragment: '#container',
+              timeout: 5000,
+            });
+            console.log('nextUrl:' + nextUrl);
+            console.log('nextUrl.indexOf:' + nextUrl.indexOf('headerRolled'));
+            setTimeout(function() {
+              if (document.getElementById('headerRolled') && nextUrl.indexOf('headerRolled') == -1) {
+                $('header').removeClass('rolled').removeClass('underpage');
+              }
+              if (document.getElementById('brandIntroduction')) {
+                $('#brandIntroduction').css({
+                  'display': 'none'
+                });
+              }
+            }, 500);
 
-      });
+          });
+        } else {
+          location.href = nextUrl;
+        }
     });
 
-    //Pjaxイベントが終わったときの動作
-    $(document).on('pjax:end', function() {
-      addPjaxClass();
-      /*asyncLoad();*/
-      $.each($('body').find('a'), function(index) {
-        /*$(this).css('pointer-events', 'all');*/
-      });
-      $('#container').animate({
-        opacity: 1
-      }, 250, function() {
-        preSetScript();
-      });
-      $('#innerWrapper').animate({
-        opacity: 1
-      }, 250, function() {});
+  //Pjaxイベントが終わったときの動作
+  $(document).on('pjax:end', function() {
+    addPjaxClass();
+    /*asyncLoad();*/
+    $.each($('body').find('a'), function(index) {
+      /*$(this).css('pointer-events', 'all');*/
     });
-
-    // タイムアウト時
-    $(document).on('pjax:timeout', function() {
-      location.href = nextUrl;
-      $('#container').animate({
-        opacity: 1
-      }, 250);
-      $('#innerWrapper').animate({
-        opacity: 1
-      }, 250, function() {});
+    $('#container').animate({
+      opacity: 1
+    }, 250, function() {
       preSetScript();
-      addPjaxClass();
     });
+    $('#innerWrapper').animate({
+      opacity: 1
+    }, 250, function() {});
+  });
 
-  }
+  // タイムアウト時
+  $(document).on('pjax:timeout', function() {
+    location.href = nextUrl;
+    $('#container').animate({
+      opacity: 1
+    }, 250);
+    $('#innerWrapper').animate({
+      opacity: 1
+    }, 250, function() {});
+    preSetScript();
+    addPjaxClass();
+  });
 
-  pjaxControll();
+}
+
+pjaxControll();
 
 });

@@ -21,6 +21,10 @@
       will-change: background;
       border: 0;
       @include hover;
+      &.disabled{
+        pointer-events: none;
+        opacity: 0.6;
+      }
     }
     .pager_select{
       width: 42%;

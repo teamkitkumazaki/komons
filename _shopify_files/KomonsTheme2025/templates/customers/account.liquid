@@ -14,16 +14,16 @@
 					</hgroup>
 					<div class="page_bread">
 						<div class="link_wrap">
-							<a href="{{ routes.account_logout_url }}">ログアウト</a>
+							<a href="{{ routes.account_logout_url }}" target="_self">ログアウト</a>
 						</div>
-                    </div>
-                          <!-- CRM PLUS on LINEエラーバナー -->
-                          {% render 'socialplus-error-banner' %}
-                          <!-- CRM PLUS on LINE連携バナー -->
-                          {% render 'socialplus-association', providers: 'line', not_alert_when_dissociate_all_providers: 'true' %}
-                  {%- if customer.orders.size != 0 -%}
+					</div>
+					<!-- CRM PLUS on LINEエラーバナー -->
+					{% render 'socialplus-error-banner' %}
+					<!-- CRM PLUS on LINE連携バナー -->
+					{% render 'socialplus-association', providers: 'line', not_alert_when_dissociate_all_providers: 'true' %}
+					{%- if customer.orders.size != 0 -%}
 					 <div class="comp-admin-button">
-						<a href="/account?hbSubscriptionPath=/"><span>定期購買商品の変更・設定</span></a>
+						<a href="/account?hbSubscriptionPath=/" target="_self"><span>定期購買商品の変更・設定</span></a>
 					</div>
 					{%- endif -%}
 				</div>
@@ -37,7 +37,7 @@
 					<div id="orderList" class="comp-order-list">
 					{%- for order in customer.orders -%}
 						<div class="order_item">
-							<a href="{{ order.customer_url }}" class="order_bar">
+							<a href="{{ order.customer_url }}" class="order_bar" target="_self">
 								<span class="bar_text">
 									<span class="title">ご注文番号:</span>
 									<span class="order_num">{{ order.name }}</span>
@@ -61,23 +61,29 @@
 					<div class="comp-pager">
 						<div class="comp_inner">
 						{%- if prev > 0 -%}
-							<a class="link previous" href="{{ shop.url }}/account?page={{prev}}">前へ</a>
+							<a class="link previous" href="{{ shop.url }}/account?page={{prev}}" target="_self">前へ</a>
 							{%- else -%}
-							<a class="link previous disabled" href="{{ shop.url }}/account?page={{prev}}">前へ</a>
+							<a class="link previous disabled" href="{{ shop.url }}/account?page={{prev}}" target="_self">前へ</a>
 						{%- endif -%}
-						<select class="pjax-select" name="pager" onchange="location.href=value;">
-						{% for i in (1..pagenum) %}
+						<div class="pager_select">
+							<select class="pjax-select" name="pager" onchange="location.href=value;">
+							{% for i in (1..pagenum) %}
 							{%- if i == paginate.current_page -%}
 								<option selected="selected" value="{{ shop.url }}/account?page={{i}}">{{i}}/{{pagenum}}</option>
 							{%- else -%}
 								<option value="{{ shop.url }}/account?page={{i}}">{{i}}/{{pagenum}}</option>
 							{%- endif -%}
-						{% endfor %}
-						</select>
+							{% endfor %}
+							</select>
+							<div class="pager_select_label">
+								<span class="label_text">{{ paginate.current_page }}<span class="label_divider">/</span>{{pagenum}}</span>
+								<span class="label_arrow"></span>
+							</div>
+						</div>
 						{%- if paginate.current_page < pagenum -%}
-							<a class="link next" href="{{ shop.url }}/account?page={{next}}">次へ</a>
+							<a class="link next" href="{{ shop.url }}/account?page={{next}}" target="_self">次へ</a>
 						{%- else -%}
-							<a class="link next disabled" href="{{ shop.url }}/account?page={{next}}">次へ</a>
+							<a class="link next disabled" href="{{ shop.url }}/account?page={{next}}" target="_self">次へ</a>
 						{%- endif -%}
 					</div><!-- comp_inner -->
 					</div><!-- comp-pager -->
@@ -104,7 +110,7 @@
 								{% render 'socialplus-association', providers: 'line', not_alert_when_dissociate_all_providers: 'true' %}
 							</div><!-- comp-sns-alignment -->
 							<div class="comp-admin-button mt">
-								<a href="{{ routes.account_addresses_url }}" class=" "><span class=" ">住所情報の追加・変更</span></a>
+								<a href="{{ routes.account_addresses_url }}" target="_self"><span>住所情報の追加・変更</span></a>
 							</div>
 						</div>
 					</div>

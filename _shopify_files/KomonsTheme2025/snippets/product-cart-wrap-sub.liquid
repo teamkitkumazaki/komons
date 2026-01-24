@@ -47,7 +47,7 @@
                     </button>
                   </div>
                 </div>
-                <p class="dervery_schedule">5,500円(税込)以上のご注文で送料無料<br>最短で8月20日(水)までにお届け</p>
+                <p class="dervery_schedule">5,500円(税込)以上のご注文で送料無料<br>最短で{% include 'delivery-shcedule' %}までにお届け</p>
               </div>
             </div><!-- comp-flex-cart -->
           {%- else -%}
@@ -97,6 +97,12 @@
               <div class="submit_button">
                 <div class="cart_box">
                   <div id="cartInButton" class="cartin">
+                  <select name="id" id="ProductSelect-product-template2" style="display: none; opacity:0; height:0; overflow: hidden;">
+                  {% for variant in product.variants %}
+                    {%- assign index = index | plus: 1 -%}
+                    <option id="label{{index}}" value="{{ variant.id }}" cPrice="{{ variant.compare_at_price | money }}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}> {{ variant.title }}</option>
+                    {% endfor %}
+                  </select>
                     <div class="purchaseButton">
                       <button type="submit" style="display: block;">
                         <span class="icon">

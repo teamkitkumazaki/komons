@@ -1,5 +1,6 @@
 .comp-box-button{
   .button{
+    width: 100%;
     @include flexSet;
     align-items: center;
     justify-content: center;

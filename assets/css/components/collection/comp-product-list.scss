@@ -11,10 +11,13 @@
   }
   .list_contents_flex{
     @include flexSet;
+    justify-content: flex-start;
     .list_item{
+      position: relative;
       width: 48%;
       margin-right: 4%;
       margin-bottom: 30px;
+      padding-bottom: 60px;
       &:nth-of-type(2n){
         margin-right: 0;
       }
@@ -54,6 +57,21 @@
           }
         }
       }
+      .comp-list-cart-button{
+        position: absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        width: 100%;
+      }
+    }
+  }
+  .comp-box-button{
+    button{
+      .arrow{
+        transform: rotate(90deg);
+        transform-origin: center center;
+      }
     }
   }
 }
@@ -76,6 +94,7 @@
         width: 22%;
         margin-right: 4%;
         margin-bottom: 50px;
+        padding-bottom: 70px;
         &:nth-of-type(2n){
           margin-right: 4%;
         }
@@ -112,13 +131,13 @@
               margin-top: 20px;
             }
           }
-        }
-        &:hover{
-          color: $hoverColor;
-          .img_wrap{
-            img{
-              transform: scale(1.05);
-              filter:brightness(0.97);
+          &:hover{
+            color: $hoverColor;
+            .img_wrap{
+              img{
+                transform: scale(1.05);
+                filter:brightness(0.97);
+              }
             }
           }
         }
@@ -137,6 +156,16 @@
           &:nth-of-type(3n){
             margin-right: 0%;
           }
+        }
+      }
+    }
+    .comp-box-button{
+      max-width: 400px;
+      button{
+        padding: 12px 0;
+        .arrow{
+          transform: rotate(90deg);
+          transform-origin: center center;
         }
       }
     }

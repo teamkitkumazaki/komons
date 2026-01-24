@@ -52,29 +52,30 @@
   .cartin_button{
     position: relative;
     cursor: pointer;
-    @include hover;
     button{
-      padding: 14px 0;
+      @include flexSet;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
       background: #f1f1f1;
       border: 1px solid #f1f1f1;
-      display: block;
       width: 100%;
       appearance: none;
       box-shadow: none;
       font-family: inherit;
-      color: #00381f;
-      font-size: 1.4rem;
+      color: $basicGreen;
+      font-size: 1.2rem;
       line-height: 1;
       letter-spacing: 0.4px;
-      span{
-        display: inline-block;
-        position: relative;
-        padding-left: 25px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-image: url(https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/cart_icon_rolled_tnklrf.png);
-        background-size: 20px;
-        background-position: center left;
+      .icon{
+        display: block;
+        width: 16px;
+        margin-right: 8px;
+        svg{
+          .cls-1{
+            fill: $basicGreen;
+          }
+        }
       }
       &:focus{
         outline: none;
@@ -96,7 +97,7 @@
   }
 }
 
-@media screen and (max-width: 760px){
+@media screen and (min-width: 980px){
   .comp-list-cart-button{
     .soldout{
       height: 38px;
@@ -124,11 +125,34 @@
     }
     .cartin_button{
       button{
-        padding: 11px 0;
-        font-size: 1.2rem;
+        padding: 12px 0;
+        font-size: 1.5rem;
         letter-spacing: 0.3px;
-        span{
-          background-size: 15px;
+        transition: background .3s, color .3s;
+        will-change: background, color;
+        .icon{
+          display: block;
+          width: 20px;
+          margin-right: 10px;
+          svg{
+            .cls-1{
+              transition: fill .3s;
+              will-change: fill;
+            }
+          }
+        }
+      }
+      &:hover{
+        button{
+          background: $basicGreen;
+          color: #fff;
+          .icon{
+            svg{
+              .cls-1{
+                fill: #fff;
+              }
+            }
+          }
         }
       }
     }

@@ -12,7 +12,7 @@
     <div class="section_inner">
       <div class="collection_flex">
         <div class="collection_category">
-          <h1 class="collection_ttl">Gifts</h1>
+          <h1 class="collection_ttl">Gift</h1>
           <div class="comp-collection-category">
             <div class="collection_selector">
               <div class="filter_ttl">価格で絞り込み</div>
@@ -87,16 +87,29 @@
                 </button>
               </div>
             </div><!-- collection_filter -->
+            <div class="comp-box-button">
+              <button id="giftServiceButton" class="button">
+                <span class="txt">ギフトサービスについて</span>
+                <span class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.46 10.07">
+                    <polygon class="cls-1" points="0 8.66 1.41 10.07 6.46 5.03 1.41 0 0 1.41 3.62 5.04 0 8.66"></polygon>
+                  </svg>
+                </span>
+              </button>
+            </div>
           </div><!-- comp-collection-category -->
         </div>
-        <div class="collection_list">
-          <div class="comp-product-list">
+        <div id="collectionList" class="collection_list">
+          <div id="giftLost" class="comp-product-list">
             <div id="giftProductList" class="list_contents_flex column3">
             {% for product in collection.products %}
               {%- include 'gift-item-card' -%}
             {% endfor %}
-          </div>
+            </div>
           </div><!-- comp-product-list -->
+          <div id="giftService" class="gift_service" style="display: none;">
+            {% include 'gift-wrapping' %}
+          </div>
         </div>
       </div><!-- collection_flex -->
     </div><!-- section_inner -->

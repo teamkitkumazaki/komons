@@ -3,6 +3,7 @@
   padding: 25px 0;
   .info_flex{
     @include flexSet;
+    align-items: center;
     justify-content: flex-start;
     color: #fff;
     .title_en{

@@ -28,6 +28,9 @@
       }
       .desctiption_txt{
         @include basicP;
+        p{
+          white-space: pre-line;
+        }
       }
       .comp-button-wrap{
         margin-top: 25px;

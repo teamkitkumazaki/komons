@@ -13,7 +13,7 @@
         <h1 class="title_jp" style="text-indent: -0.2em;">ジャーナル記事一覧</h1>
       </hgroup>
     </div>
-    <div class="category_list">
+    <div class="comp-journal-category">
       <ul>
         <li class="current"><a href="/blogs/journal">すべて</a></li>
         {%- for tag in blog.all_tags -%}
@@ -27,7 +27,7 @@
       {% endfor %}
     </div>
     {%- if paginate.pages > 1 -%}
-    {%- render 'list-pager', paginate: paginate -%}
+    {%- render 'pager', paginate: paginate -%}
     {%- endif -%}
   </div><!-- section_inner_new -->
 </section>

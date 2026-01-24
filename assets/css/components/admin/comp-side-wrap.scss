@@ -1,7 +1,7 @@
 .comp-side-wrap{
   width: 100vw;
   background: #fff;
-  margin: 0 -7vw;
+  margin: 0 -5vw;
   padding: 50px 7vw 60px;
   box-sizing: border-box;
   .cart_item_error{
@@ -29,13 +29,13 @@
   &.bg{
     @media screen and (max-width: 720px){
       background: #f1f1f1;
-      margin: 50px -7vw;
+      margin: 50px -5vw;
     }
   }
 }
 @media screen and (min-width: 720px){
   .comp-side-wrap{
-    padding: 60px 7vw 80px;
+    padding: 60px 5vw 80px;
   }
 }
 

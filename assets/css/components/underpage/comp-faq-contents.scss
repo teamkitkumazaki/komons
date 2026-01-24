@@ -29,6 +29,7 @@
       overflow: hidden;
       transition: height .2s;
       will-change: height;
+      min-height: 55px;
       margin-bottom: 5px;
       .toggle_button{
         width: 100%;

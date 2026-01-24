@@ -6,7 +6,7 @@
     </hgroup>
   </div>
   <div id="toggles01" class="comp-detail-toggle">
-  {% if product.metafields["custom_fields"]["spec_detail"] != blank %}
+    {% if product.metafields["custom_fields"]["spec_detail"] != blank %}
     <div class="toggle_item" type="open">
       <button class="toggle_button open">
         <span class="txt">商品概要・原材料</span>
@@ -31,7 +31,61 @@
         </div><!-- toggle_inner -->
       </div><!-- toggle_contents -->
     </div><!-- toggle_item -->
-  {% endif %}
+    {% endif %}
+    {% if product.type == 'gift' %}
+    <div class="toggle_item" type="close">
+      <button class="toggle_button">
+        <span class="txt">ギフトサービスについて</span>
+        <span class="caret">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.56 7.6">
+            <polyline id="Rectangle-27" class="cls-1" points="12.89 .74 6.78 6.26 .67 .74"></polyline>
+          </svg>
+        </span>
+      </button>
+      <div class="toggle_contents" style="height: 0px;">
+        <div class="toggle_inner">
+          <div class="detail_item">
+            <p class="title">ラッピング/ギフトボックス</p>
+            <div class="content">
+              <div class="img_wrap">
+                <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service01.jpg?v=1642389092">
+              </div>
+              <p>全てのギフトセット商品はオリジナルのギフトBOXにお入れしてお届けいたします。</p>
+              <p>※包装紙やリボン掛けの対応は行っておりませんので、あらかじめご了承ください。</p>
+            </div>
+          </div>
+          <div class="detail_item">
+            <p class="title">熨斗/水引</p>
+            <div class="content">
+              <div class="img_wrap">
+                <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service02.jpg?v=1642389092">
+              </div>
+              <p>+220円(税込)にて熨斗対応が可能です。水引きの種類はどのシーンのお祝い事にもお使いいただける「紅白梅結び」と弔事用の「白黒あわじ結び」がございます。</p>
+              <p>※表書きをご希望の場合はご注文画面の備考欄にご入力お願い致します。<br>※特にご指定がない場合、無地熨斗となります。</p>
+            </div>
+          </div>
+          <div class="detail_item">
+            <p class="title">手提げ袋</p>
+            <div class="content">
+              <div class="img_wrap">
+                <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service03.jpg?v=1642389093">
+              </div>
+              <p>＋440円(税込)にてオリジナル手提げバッグをお付けすることが可能です。ギフトのお渡しの際にぜひご使用ください。</p>
+            </div>
+          </div>
+          <div class="detail_item">
+            <p class="title">メッセージカード</p>
+            <div class="content">
+              <div class="img_wrap">
+                <img src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/service04.jpg?v=1642389092">
+              </div>
+              <p>ご希望の客様には、1枚110円（税込）にてメッセージカードをお付けしております。カード裏面にメッセージの印刷も承ります。詳しくはご購入手続き画面をご確認ください。</p>
+            </div>
+          </div>
+        </div><!-- toggle_inner -->
+      </div><!-- toggle_contents -->
+    </div><!-- toggle_item -->
+    {% endif %}
     <div class="toggle_item" type="close">
       <button class="toggle_button">
         <span class="txt">配送について</span>
@@ -52,7 +106,7 @@
           <div class="desc_wrap">
             <p class="title">到着日・時間指定について</p>
             <div class="description">
-              <p>現在ご注文頂くと最短で 9月13日(土) にお届け致します。</p>
+              <p>現在ご注文頂くと最短で{% include 'delivery-shcedule' %}にお届け致します。</p>
               <p>時間に関しましては、午前中、14～16時、16～18時、18～20時、19～21時の時間帯をお選び頂くことができます。</p>
               <p>※地域によってはご希望に添えない場合もございますので、その点ご了承下さいませ。また、天候・道路・交通事情等運送上の事情により、ご希望のお届け時間帯にお届けできない場合もございますので、ご了承下さい。</p>
             </div>
@@ -60,7 +114,7 @@
           <div class="desc_wrap">
             <p class="title">別住所への配送</p>
             <div class="description">
-              <p>可能です。オンライン注文のカート画面にて配送先住所を入力ください。また、1注文につき、お届け先は１件のみとなりますので2件以上へ配送をご希望の場合は別々にご注文下さい。 9月13日(土) にお届け致します。</p>
+              <p>可能です。オンライン注文のカート画面にて配送先住所を入力ください。また、1注文につき、お届け先は1件のみとなりますので2件以上へ配送をご希望の場合は別々にご注文下さい。 9月13日(土) にお届け致します。</p>
             </div>
           </div>
           <div class="desc_wrap">
