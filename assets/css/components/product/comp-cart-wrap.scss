@@ -180,6 +180,11 @@
           font-size: 1.6rem;
           color: #fff;
           border-radius: 0px;
+          transition: background .3s;
+          will-change: background;
+          &:hover{
+            background: $hoverColor;
+          }
           .icon{
             display: block;
             width: 26px;
